@@ -1,0 +1,101 @@
+/*
+  # base.sass
+  要素に影響を与えるスタイルを定義  
+  animate.cssでもmargin, paddingを0にしている  
+  font-family, font-size, line-heightは  
+  neatのgridによりvarsを反映
+  */
+
+/*
+  # reset
+  html5用のreset.cssから引用  
+  body, tableなどはnormalize.css  
+  section elementsは削除
+  */
+
+body, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  vertical-align: baseline
+  font-weight: normal
+  background: transparent
+
+/*
+  # html
+  remの基準値を設定
+  */
+
+html
+  font-size: $em-base
+
+/*
+  # body
+  positionはrelativeを予め設定  
+  z-indexに予め0を設定  
+  color, bgcolorのvarsの値を反映  
+  */
+
+body
+  position: relative
+  color: $base-color
+  background-color: $base-background-color
+  z-index: $base-z-index
+
+/*
+  # section elements
+  outer-containerを設定
+  overflowをvisibleに設定
+  */
+
+header, footer, section, article, nav, aside
+  +outer-container
+  overflow: visible
+
+/*
+  # img
+  ブロック要素に内容した際2pxの隙間の対応
+  */
+
+img
+  vertical-align: bottom
+
+/*
+  # anchor
+  下線を消す
+  */
+
+a
+  text-decoration: none
+
+/*
+  # small
+  smallのデフォルトをvarsの値を反映
+  */
+
+small
+  font-size: $small-font-size
+
+/*
+  # list
+  装飾を消す
+  */
+
+li
+  list-style-type: none
+
+/*
+  # address
+  斜体を消す
+  */
+
+address
+  font-style: normal

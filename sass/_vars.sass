@@ -1,0 +1,197 @@
+/*
+  # vars.sass
+  グローバルな変数を定義
+  */
+
+/*
+  # neat
+  responsiveの横幅とカラム数を設定
+  */
+
+$mobile-columns: 4
+$mobile: new-breakpoint(max-width 500px $mobile-columns)
+
+/*
+  # grid
+  $base-emはbourbonの$em-baseと共有 -> config.sass  
+  $base-remはgridの最小単位
+  */
+
+$base-em:  $em-base
+$base-rem: 1rem
+
+/*
+  # webfont
+  sass上でwebfontを読み込むmixinを使用   
+  sass-web-fonts  libsass対応  
+  読み込むフォントの設定
+  */
+
+$url: web-fonts-url('Hind')
+@import url($url)
+
+
+/*
+  # font-family
+  遊ゴシックはieでのline-heightで  
+  違いがあるため見送り。メイリオで統一  
+  遊書体はオプションで設定可能  
+  font-family, font-size, line-heightは  
+  neatのgridによりvarsを反映  
+  web-fontの読込は_config.sassで設定
+  
+  * $YuGothic-font-family - ゴシック体
+  * $YuMincho-font-family - 明朝体
+  */
+
+$base-san-serif: 'Meiryo', arial, Helvetica, sans-serif
+$base-serif: 'HG明朝E', 'Hiragino Mincho ProN', 'Meiryo', serif
+
+$corp-font-family: 'Hind', 'ヒラギノ明朝 ProN W6', 'HiraMinProN-W6', 'MS 明朝', 'MS-PMincho', serif
+
+$YuGothic-font-family: 'YuGothic', $base-san-serif
+$YuMincho-font-family: 'YuMincho', $base-serif
+
+$base-font-family: $base-san-serif
+$heading-font-family: $base-serif
+
+/*
+  # font-size
+  font-family, font-size, line-heightは  
+  neatのgridによりvarsを反映  
+  modules/typographyでもvarsを反映
+  */
+
+$base-font-size:        1.6rem
+$small-font-size:       1.4rem
+$heading-font-size:     2rem
+
+/*
+  # line-height
+  font-family, font-size, line-heightは  
+  neatのgridによりvarsを反映  
+  modules/typographyでもvarsを反映
+  */
+
+$base-line-height:      3rem
+$small-line-height:     2rem
+$heading-line-height:   3rem
+
+/*
+  # spacing
+  gridに関わるspacingの設定  
+  $base-remの整数倍になるよう設定すること
+  */
+
+$base-spacing:          $base-rem * 2
+$small-spacing:         $base-rem
+
+/*
+  # letter-spacing
+  font-family, font-size, line-heightは  
+  modules/typographyでvarsを反映  
+  neatのgridによりvarsを反映
+  */
+
+$base-letter-spacing:      normal
+$small-letter-spacing:     0.2rem
+$heading-letter-spacing:   0.6rem
+
+/*
+  # base color
+  基本となるカラーの設定  
+  _array.sassでバリエーションを設定
+  */
+
+$gray-darker:           lighten(#000, 33.5%)
+$gray-dark:             lighten(#000, 55%)
+$gray:                  lighten(#000, 80.5%)
+$gray-light:            lighten(#000, 87.7%)
+$gray-lighter:          lighten(#000, 97.5%)
+
+$brand-primary:         #337AB7
+$brand-success:         #5CB85C
+$brand-info   :         #5BC0DE
+$brand-warning:         #F0AD4E
+$brand-danger :         #D9534F
+
+$corp-color:            #008D9F
+$corp-color-secondary:  #002356
+$corp-background-color: #FFFEEE
+
+$base-color:            #000
+$base-color-reverse:    #000
+$base-color-link:       #428BCA
+$base-color-link-hover: darken($base-color-link, 15%)
+$base-color-button:     $brand-primary
+$base-border-color:     $gray
+$base-background-color: #FFF
+$secondary-background-color: $gray-lighter
+
+$color-white:           #FFF
+$color-black:           #000
+
+/*
+  # border
+  デフォルトのborderとborder-radiusを設定
+  */
+
+$base-border: 1px solid $base-border-color
+$base-border-radius: 3px
+
+/*
+  # form
+  デフォルトのborderとborder-radiusを設定
+  */
+
+$form-border-color:     $base-border-color
+$form-border-radius:    $base-border-radius
+$form-bg:               $gray-lighter
+$form-color-required:   $brand-danger
+$form-color-note:       $brand-danger
+
+/*
+  # animation
+  * アニメーションの長さ
+  * アニメーションのタイミング
+  を設定
+  */
+
+$base-duration:         150ms
+$base-timing:           ease
+
+/*
+  # shadow
+  shadowの深さを設定  
+  左から水平, 垂直, ぼかし, 距離, 色, (inset)
+  */
+
+$small-shadow:  0 0.3px 1.3px 0px rgba(0,0,0,.3)
+$base-shadow:   0 0px   10px  0px rgba(0,0,0,.2)
+$large-shadow:  0 0px   30px  0px rgba(0,0,0,.2)
+
+/*
+  # z-index
+  bodyに設定するデフォルトz-index -> _base.sassで設定
+  */
+
+$base-z-index: 0
+
+/*
+  # front
+  frontはアピアランスがadmin(default)と違うため個別設定
+  */
+
+$front-base-font-family:       $corp-font-family
+$front-base-font-size:         $base-font-size
+$front-small-font-size:        $small-font-size
+$front-heading-font-size:      $heading-font-size
+$front-base-line-height:       $base-line-height
+$front-small-line-height:      $small-line-height
+$front-heading-line-height:    $heading-line-height
+$front-base-letter-spacing:    $base-letter-spacing
+$front-small-letter-spacing:   $base-letter-spacing
+$front-heading-letter-spacing: $base-letter-spacing
+$front-base-color:             $corp-color
+$front-color-secondary:        $corp-color-secondary
+$front-base-background-color:  $corp-background-color

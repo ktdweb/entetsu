@@ -1,0 +1,44 @@
+#
+# specific version for CPI
+#
+# AddHandler x-httpd-php559 .php
+# suPHP_ConfigPath /usr/home/aa120v5xup/html/api/
+
+#
+# BASIC Auth
+#
+# AuthType Basic
+# AuthName "enter your ID and password"
+# BAISC Auth for CPI
+# AuthUserfile /home/aa120v5xup/html/api/.htpasswd
+# AuthUserfile /var/www/html/api/.htpasswd
+# Require valid-user
+
+#
+# HTTP Method
+#
+<Limit GET POST PUT DELETE>
+  Order deny,allow
+  Allow from localhost
+</Limit>
+
+#
+# setting for Slim
+#
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+
+  # RewriteBase /
+
+  # HTTPS normalize
+  # RewriteCond %{SERVER_PORT} ^80$
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L]
+
+  # BASIC AUTH for PHP-CGI
+  # RewriteCond %{HTTP:Authorization} ^(.*)
+  # RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</ifModule>

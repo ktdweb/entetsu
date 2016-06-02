@@ -1,0 +1,32 @@
+/*
+  # modules/debug.sass
+  debugに関するクラスを定義
+  prefixはなし  
+  
+  'g'キーでグリッドの表示切り替えが可能  
+  以下のコードをhtmlに追加 
+  ```
+  document.onkeydown = function(e) {  
+    document.body.style.height = 'auto';
+    (e.which == 71) ? document.body.classList.toggle('grid') : '';  
+  };  
+  ```
+  */
+
+/*
+  # grid
+  ::afterとz-indexで全面に表示  
+  */
+
+body.grid::after
+  content: ''
+  display: inline-block
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  background-image: linear-gradient(to bottom, cyan 1px, transparent 1px)
+  background-position: 0 0
+  background-repeat: repeat-y
+  background-size: 100% $base-rem
+  z-index: 9999

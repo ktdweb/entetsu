@@ -1,0 +1,82 @@
+/*
+  # pages/front/Sample.sass
+  sass/sample/index.htmlのspに関するクラスを定義  
+  prefixには`pf-Sample`を付与
+  */
+
+/*
+  # header
+  spは4:4のカラムで中央揃え  
+  各リンクは縦並び
+  */
+
+#Sample
+  +media($mobile)
+    header
+      h1
+        +span-columns(4)
+        text-align: center
+      nav
+        +span-columns(4)
+        text-align: center
+        a
+          display: block
+          padding-right: 0
+
+/*
+  # #bootstrap
+  2カラムとなるように設定  
+  bottomに一行分追加
+  */
+
+#Sample
+  +media($mobile)
+    #bootstrap
+      div
+        +span-columns(2)
+        +shift(1)
+        margin-bottom: $base-spacing
+
+/*
+  # #animate
+  2カラムとなるように設定  
+  縦並びに変更  
+  bottomに一行分追加
+  */
+
+#Sample
+  +media($mobile)
+    #fontawesome
+      div
+        pre
+          +span-columns(2)
+          +shift()
+      a
+        display: block
+        margin: $base-spacing * 2
+
+/*
+  # #utils
+  2カラムとなるように設定
+  */
+
+#Sample
+  +media($mobile)
+    #utils
+      #responsive
+        div
+          +span-columns(2)
+          +shift(1)
+
+/*
+  # #colors
+  1の4並びとなるように設定
+  */
+
+#Sample
+  +media($mobile)
+    #colors
+      div
+        p
+          +span-columns(1)
+          +omega(4n)
