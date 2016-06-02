@@ -1,0 +1,47 @@
+{
+  "name": "sass-app",
+  "version": "0.0.1",
+  "description": "sass minimum app",
+  "main": "sample/css/style.css",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/kobabasu/micro-sass.git"
+  },
+
+  "keywords": [
+    "sass",
+    "bourbon",
+    "neat",
+    "bitters"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+
+  "scripts": {
+    "global": "npm install -g bower styledocco;",
+    "gitkeep": "touch ../css/.gitkeep; touch ../docs/.gitkeep;",
+    "preinstall": "cp ./{.bowerrc,bower.json} ../; mkdir ../{css,docs}; npm run gitkeep; cd ../; bower install",
+    "start": "NODE_ENV=production NODE_PATH=../",
+
+    "sass": "sassc -M ./sass/style.sass > ./css/style.css -m ./css/style.css",
+
+    "sass:min": "sassc -t compressed -M ./sass/style.sass > ./css/style.min.css -m ./css/style.min.css",
+    "doc:sass": "styledocco -n 'micro-sass' -o ../docs/sass --preprocessor 'sass' ../sass/*.sass ../sass/*.scss ../sass/**/*.sass",
+    "doc:pages": "styledocco -n 'pages' -o ../docs/pages --preprocessor 'sass' ../sass/pages/*.sass ../sass/pages/**/*.sass",
+    "doc:layouts": "styledocco -n 'layouts' -o ../docs/layouts --preprocessor 'sass' ../sass/layouts/*.sass ../sass/layouts/**/*.sass",
+
+    "build": "npm run sass:min; npm run doc:pages; npm run doc:layouts; npm run doc:sass"
+  },
+
+  "preferGlobal": true,
+  "author": "kobabasu",
+  "license": "MIT"
+}

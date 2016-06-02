@@ -1,0 +1,45 @@
+/*
+  # config.sass
+  各ライブラリ用の環境設定 
+  */
+
+/*
+  # sass
+  sassのwarningを抑制
+  */
+
+$disable-warnings: true
+
+/*
+  # bourbon
+  remの基準値を設定
+  vars.sass内で読込  
+  vars.sass内でbase-emをエイリアスとして設定
+  */
+
+$em-base: 10px
+
+/*
+  # neat
+  neatの設定  
+  visual-gridは縦のgridを表示する設定  
+  gridを消す場合は$visual-gridをfalseに
+  */
+
+$max-width: 960px
+$visual-grid: true
+$visual-grid-color: #EEE
+$visual-grid-index: back
+$visual-grid-opacity: 0.4
+
+/*
+  # font-awesome
+  fontawesomeのパスの設定
+  */
+
+$fa-font-path: '#{$path-root}/vendor/font-awesome/fonts'
+
+/*
+  # normalize.css
+  style.cssで設定
+  */

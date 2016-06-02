@@ -1,0 +1,13 @@
+/*
+  # motions/blink.sass
+  まばたきのように3回点滅するアニメーション
+  */
+
+.blink
+  +animation(blink 0.2s linear 0.2s 2 forwards)
+
+  +keyframes(blink)
+    from 
+      opacity: 0
+    to
+      opacity: 1

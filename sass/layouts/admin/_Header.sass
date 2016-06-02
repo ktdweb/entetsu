@@ -1,0 +1,22 @@
+/*
+  # layouts/admin/Header.sass
+  admin/Header.jsxに関するクラスを定義  
+  prefixには`la-Header`を付与
+  */
+
+/*
+  # #Admin > header
+  4:8のカラム navは右揃え  
+  navの右にパディングを追加
+  */
+
+& > header
+  padding: $small-spacing $base-spacing 0
+  h1
+    +span-columns(4)
+  nav
+    +span-columns(8)
+    text-align: right
+    i
+      padding-left: $base-spacing * 2
+      padding-right: $small-spacing
