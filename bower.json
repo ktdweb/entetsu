@@ -1,0 +1,12 @@
+{
+  "name": "sass-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "normalize.css": null,
+    "bourbon": null,
+    "neat": null,
+    "animate.css-scss": null,
+    "sass-web-fonts": null,
+    "font-awesome": null
+  }
+}

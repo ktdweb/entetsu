@@ -1,0 +1,52 @@
+{
+  "name": "REST",
+  "version": "0.0.1",
+  "description": "RESTful Application with slim3",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/kobabasu/rest.git"
+  },
+
+  "keywords": [
+    "slim",
+    "mailcatcher",
+    "frisby",
+    "REST"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "frisby": "*"
+  },
+
+  "browser": {
+  },
+  "browserify": [ "js" ],
+  "eslintConfig": {
+    "parser": "babel-eslint"
+  },
+
+  "scripts": {
+    "global": "npm install -g babel babel-eslint jasmine-node;",
+    "start": "NODE_ENV=development",
+
+    "babel": "babel ./spec/src --out-dir ./spec/js" ,
+    "jasmine": "jasmine-node spec/js",
+
+    "test": "npm run babel; npm run jasmine",
+    "build": "npm run babel"
+  },
+
+  "preferGlobal": true,
+  "author": "kobabasu",
+  "license": "MIT"
+}

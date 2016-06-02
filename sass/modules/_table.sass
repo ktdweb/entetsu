@@ -1,0 +1,93 @@
+/*
+  # modules/table.sass
+  tableに関するクラスを定義  
+  prefixはなし
+  */
+
+table
+  width: 100%
+
+th, td
+  font-size: $small-font-size
+  padding-left: $small-spacing
+  padding-right: $small-spacing
+
+/*
+ # th
+ font-weightをnormal
+ デフォルトを左寄せ
+ */
+
+th
+  font-weight: normal
+  text-align: left
+
+/*
+ # thead
+ theadのthは中央寄せ
+ */
+
+thead th
+  text-align: center
+
+/*
+  # caption
+  テーブルの表題は左寄せ
+  font-sizeはsmall  
+  line-heigthtはbaseを設定
+  */
+
+caption
+  font-size: $small-font-size
+  line-height: $base-line-height
+  text-align: left
+
+/*
+  # div.table
+  レイアウト目的で使用する  
+  各td間にはpaddingを設定
+  */
+
+div.table
+  display: table
+  width: 100%
+  & > div
+    display: table-cell
+    padding-left: $small-spacing / 2
+    padding-right: $small-spacing / 2
+  & > div:first-child
+    padding-left: 0
+  & > div:last-child
+    padding-right: 0
+
+/*
+  # .sheet
+  一覧スタイルを提供  
+  縦線なし
+  */
+
+table.sheet
+  th
+    border-top: $base-border
+    border-bottom: $base-border
+    background-color: $secondary-background-color
+  td
+    border-bottom: $base-border
+
+/*
+  # .chart
+  表スタイルを提供  
+  縦線あり
+  */
+
+table.chart
+  th
+    border: $base-border
+    background-color: $secondary-background-color
+  td
+    border: $base-border
+
+/*
+  # .cells
+  modules/_grid.sassにて設定
+  */

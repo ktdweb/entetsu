@@ -1,0 +1,53 @@
+{
+  "name": "gulp-app",
+  "version": "0.0.2",
+  "description": "gulp minimum app",
+  "main": "./gulpfile.babel.js",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/kobabasu/micro-gulp.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulp-shell"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-router": "*",
+    "react-document-title": "*",
+    "object-assign": "*",
+    "keymirror": "*",
+    "moment": "*",
+    "clone": "*",
+    "history": "*",
+    "flux": "*"
+  },
+  "devDependencies": {
+    "gulp": "gulpjs/gulp.git#4.0",
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babelify": "*",
+    "protractor": "*",
+
+    "react-addons": "*"
+  },
+
+  "scripts": {
+    "global": "npm install -g gulp gulp-shell",
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+
+  "preferGlobal": true,
+  "author": "kobabasu",
+  "license": "MIT"
+}

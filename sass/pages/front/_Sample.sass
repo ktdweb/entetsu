@@ -1,0 +1,146 @@
+/*
+  # pages/front/Sample.sass
+  sass/sample/index.htmlに関するクラスを定義  
+  prefixには`pf-Sample`を付与
+  */
+
+#Sample
+  +outer-container(960px)
+
+/*
+  # header, footer, section
+  margin-bottomに1行分のスペースを追加
+  */
+
+#Sample
+  header, footer, section
+    +outer-container
+    margin-bottom: $base-spacing * 2
+
+/*
+  # header
+  ヘッダの先頭に一行分のスペースを加える  
+  2:10のカラム navは右揃え  
+  navの右にパディングを追加
+  */
+
+#Sample
+  header
+    padding-top: $base-spacing
+    h1
+      +span-columns(2)
+    nav
+      +span-columns(10)
+      text-align: right
+      a
+        padding-right: $base-spacing
+        &:last-child
+          padding-right: 0
+
+/*
+  # section, footer
+  section, footerはデフォルトで中央揃え
+  */
+
+#Sample
+  section, footer
+    text-align: center
+
+/*
+  # #bootstrap
+  Alignment Class用にdivを3で横並び
+  */
+
+#Sample
+  #bootstrap
+    div
+      +span-columns(3)
+
+/*
+  # #animate
+  animate.cssサンプル用にdivを4で横並び  
+  width, heightを指定しboxをつける
+  */
+
+#Sample
+  #animate
+    div
+      +span-columns(4)
+      p
+        margin: 0 auto $base-spacing
+        width: $base-rem * 8
+        height: $base-rem * 8
+        line-height: $base-rem * 8
+
+/*
+  # #fontawesome
+  fa-stackがgridにあわないためaにheightを指定
+  */
+
+#Sample
+  #fontawesome
+    div
+      margin-bottom: $base-spacing * 2
+    a
+      display: inline-block
+      height: $base-spacing * 2
+      margin: 0 $base-spacing * 2
+
+/*
+  # #utils
+  onlypc, onlyspのためにdivを4で用意  
+  widthのためにpをbox化
+  */
+
+#Sample
+  #utils
+    #responsive
+      div
+        +span-columns(4)
+        +shift(4)
+    #widths
+      text-align: center
+      div span
+        display: block
+        text-align: left
+      div p
+        font-size: $small-font-size
+        height: $base-rem * 2
+        background-color: $gray
+
+/*
+  # #colors
+  カラー用にboxを用意  
+  neatのautomatic rowで構成
+  */
+
+#Sample
+  #colors
+    div
+      +outer-container
+      margin-bottom: $base-spacing * 2
+      p
+        +span-columns(2)
+        +omega(6n)
+        height: $base-rem * 8
+        line-height: $base-rem * 8
+    a
+      display: inline-block
+      height: $base-spacing * 2
+      margin: 0 $base-spacing * 2
+
+/*
+  # #shadows
+  shadows用にboxを用意  
+  neatのautomatic rowで構成
+  */
+
+#Sample
+  #shadows
+    div
+      +span-columns(4)
+      p
+        margin: 0 auto $base-spacing
+        width: $base-rem * 8
+        height: $base-rem * 8
+        line-height: $base-rem * 8

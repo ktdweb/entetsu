@@ -1,0 +1,123 @@
+/*
+  # modules/form.sass
+  formに関するクラスを定義  
+  prefixはなし
+  */
+
+
+/*
+  # form内のパーツ
+  右側にmarginを追加  
+  左右にpaddingを追加  
+  border, border-radiusはvarsの値を初期値として設定
+  */
+
+input, select, textarea, button
+  margin-right: $small-spacing
+  padding: 0 $small-spacing
+  border: 1px solid $form-border-color
+  border-radius: $form-border-radius
+
+form
+  input:last-child, select:last-child,
+  textarea:last-child, button:last-child
+    margin-right: 0
+
+/*
+  # select[multiple], textarea
+  内側にpaddingを設定  
+  line-heightはbaseだと大きすぎるため狭くする
+  */
+
+select[multiple], textarea
+  line-height: $small-line-height
+  padding: $small-spacing / 2
+
+/*
+  # select[multiple], textarea の高さ
+  高さをそれぞれ固定
+  */
+
+select[multiple]
+  height: $small-line-height * 6
+
+textarea
+  height: $small-line-height * 4
+
+/*
+  # radio, checkbox
+  文字を中心にもっていくため  
+  vertical-alignを設定
+  */
+
+input[type=radio], input[type=checkbox]
+  vertical-align: -$small-spacing / 2
+  margin-left: $small-spacing
+  margin-right: $base-spacing
+
+/*
+ # textarea
+ 横幅を100%に設定
+ */
+
+textarea
+  width: 100%
+
+/*
+  # button
+  文字色は白で固定  
+  背景色のvarsの初期値を設定  
+  borderはgridの関係でなし  
+  font-sizeはsmall  
+  labelでラップしている場合や  
+  labelに隣接している場合には  
+  左にmarginをとる
+  */
+
+button
+  font-size: $small-font-size
+  color: $color-white
+  background-color: $base-color-button
+  border: none
+  cursor: pointer
+
+label+button
+  margin-left: $small-spacing
+
+label>button
+  margin-left: $small-spacing
+
+/*
+  # p
+  pタグを説明文用に利用  
+  paddingは合計small-spacingを設定
+  */
+
+form p
+  margin-bottom: $small-spacing
+
+/*
+  # small
+  smallタグを注釈用に利用  
+  色はvarsよりbrand-dangerをデフォルト  
+  paddingは合計small-spacingを設定
+  */
+
+form small
+  display: block
+  color: $brand-danger
+  padding: $small-spacing / 2
+
+/*
+  # input[type=file]
+  fileはappearanceをlabelで置換  
+  labelでinputをラップする必要がある
+  */
+
+label.inputFileButton
+  display: inline-block
+  padding-top: $small-spacing / 2
+  cursor: pointer
+  @extend button
+  & input[type=file]
+    display: none
