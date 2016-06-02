@@ -1,0 +1,78 @@
+/*
+  # layouts/front/Front.sass
+  front/Front.jsxに関するクラスを定義  
+  section#Frontに関するクラスを定義  
+  prefixには`lf-`を付与
+  */
+
+/*
+  # ready-Front
+  主にflux用  
+  javascriptでbodyに後からidを追加している  
+  react-routerでbackground-colorなど  
+  pagesからbodyを制御したい場合に使用
+  */
+
+#ready-Front
+  background-color: $front-base-background-color
+  // background-repeat: no-repeat
+  // +bgImg('bg_lt.gif', 'bg_lb.gif', 'bg_rt.gif', 'bg_rb.gif')
+  // +bgPos(top left, bottom left, top right, bottom right)
+
+/*
+  # fullscreen
+  fulllscreen用の設定  
+  html, bodyは予めmodules/fullscreenで100%に  
+  react用のdiv#rootはmodules/reactに記述  
+  必要がなければbodyに変更  
+  */
+
+#Front
+  min-height: 100%
+
+#root > #Front
+  height: auto
+
+/*
+  # #Front
+  frontのdefault設定
+  */
+
+#Front
+  +outer-container()
+  font-family: $front-base-font-family
+  font-size: $front-base-font-size
+  color: $front-color-secondary
+  line-height: $front-base-line-height
+  letter-spacing: $front-base-letter-spacing
+  text-align: center
+  margin: 0 auto
+
+/*
+  # article[id]
+  すべてのページに共通する設定
+  */
+
+#Front > article[id]
+  +outer-container()
+
+/*
+  # Headings
+  h1, h2, h3, h4, h5, h6に設定 
+  */
+
+#Front
+  h1, h2, h3, h4, h5, h6
+    font-weight: normal
+
+/*
+  # page title
+  ページタイトルのh1
+  */
+
+#Front > article[id] > h1:first-child
+  font-size: $front-heading-font-size
+  line-height: $front-heading-line-height
+  letter-spacing: $heading-letter-spacing
+  font-weight: inherit
+  letter-spacing: inherit

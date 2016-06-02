@@ -1,0 +1,9 @@
+#
+# branch毎の設定など変更してもmergeされない
+#
+# .git/configに以下を記述
+# [merge "ours"]
+# 	name = "Keep ours merge" 
+#   driver = true
+
+#.htaccess merge=ours

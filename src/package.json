@@ -1,0 +1,66 @@
+{
+  "name": "flux-app",
+  "version": "0.0.1",
+  "description": "flux minimum app",
+  "main": "sample/dist/app.js",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/kobabasu/micro-flux.git"
+  },
+
+  "keywords": [
+    "es6",
+    "react",
+    "react-router",
+    "flux"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-router": "*",
+    "react-document-title": "*",
+    "object-assign": "*",
+    "keymirror": "*",
+    "moment": "*",
+    "clone": "*",
+    "history": "*",
+    "flux": "*"
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babelify": "*"
+  },
+
+  "browser": {
+  },
+  "browserify": [ "js", "jsx" ],
+  "eslintConfig": {
+    "parser": "babel-eslint"
+  },
+
+  "scripts": {
+    "global": "npm install -g babel-core babel-cli babel-eslint browserify babelify;",
+
+    "gitkeep": "touch ../{js,dist}/.gitkeep;",
+    "preinstall": "mkdir ../{js,dist}; cp -f ./sample/.htaccess ../.htaccess; npm run gitkeep;",
+    "postinstall": "if [ ! -e ../node_modules ]; then mv -f ./node_modules ../; else rm -fr ./node_modules; echo 'node_modules exist'; fi;",
+    "start": "NODE_ENV=production NODE_PATH=../node_modules",
+
+    "babel": "babel ../src --out-dir ../js --presets [es2015, react]",
+    "browserify": "browserify -d --compact false ../js/app.js > ../dist/build.js -t [ babelify --presets [ es2015 react ] ]",
+
+    "build": "npm run babel; npm run browserify"
+  },
+
+  "preferGlobal": true,
+  "author": "kobabasu",
+  "license": "MIT"
+}

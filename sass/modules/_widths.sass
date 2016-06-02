@@ -1,0 +1,14 @@
+/*
+  # modules/widths.sass
+  widthに関するクラスを定義  
+  _arrays.sassで設定
+  */
+
+/*
+  # widths
+  .w-{サイズ名}に展開 
+  */
+
+@each $key, $val in $widths
+  .w-#{$key}
+    width: $val !important

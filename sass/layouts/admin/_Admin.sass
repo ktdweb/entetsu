@@ -1,0 +1,78 @@
+/*
+  # layouts/admin/Admin.sass
+  admin/Admin.jsxに関するクラスを定義  
+  section#Adminに関するクラスを定義  
+  prefixには`la-`を付与
+  */
+
+/*
+  # ready-Admin
+  主にflux用  
+  javascriptでbodyに後からidを追加している  
+  react-routerでbackground-colorなど  
+  pagesからbodyを制御したい場合に使用
+  */
+
+#ready-Admin
+  background-color: $base-background-color
+  // background-repeat: no-repeat
+  // +bgImg('bg_lt.gif', 'bg_lb.gif', 'bg_rt.gif', 'bg_rb.gif')
+  // +bgPos(top left, bottom left, top right, bottom right)
+
+/*
+  # fullscreen
+  fulllscreen用の設定  
+  html, bodyは予めmodules/fullscreenで100%に  
+  react用のdiv#rootはmodules/reactに記述  
+  必要がなければbodyに変更  
+  */
+
+#Admin
+  min-height: 100%
+
+#root > #Admin
+  height: auto
+
+/*
+  # #Admin
+  adminのdefault設定
+  */
+
+#Admin
+  +outer-container(100%)
+  font-family: inherit
+  font-size: inherit
+  color: inherit
+  line-height: inherit
+  letter-spacing: inherit
+  text-align: inherit
+  margin: 0 auto
+
+/*
+  # article[id]
+  すべてのページに共通する設定
+  */
+
+#Admin > article[id]
+  +outer-container()
+  padding: 0 $base-spacing
+
+/*
+  # Headings
+  h1, h2, h3, h4, h5, h6に設定 
+  */
+
+#Admin
+  h1, h2, h3, h4, h5, h6
+    font-family: $base-san-serif
+
+/*
+  # page title
+  ページタイトルのh1
+  */
+
+#Admin > article[id] > h1
+  font-size: $heading-font-size
+  font-weight: inherit
+  line-height: $heading-line-height
+  letter-spacing: inherit

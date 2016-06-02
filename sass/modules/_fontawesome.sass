@@ -1,0 +1,22 @@
+/*
+  # modules/fontawesome.sass
+  fontawesomeを拡張するクラスを定義  
+  prefixはなし
+  */
+
+/*
+  # fa-circle
+  fa-circleが円の中心にこないため調整
+  */
+
+.fa-stack .fa-circle
+  line-height: 1.0em !important
+
+/*
+  # i.fa
+  fontawesomeにデフォルトで右側にスペースを追加  
+  fa-circleには効かない用に設定
+  */
+
+i.fa:not(.fa-circlie > i.fa)
+  padding-right: $small-spacing

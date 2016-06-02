@@ -1,0 +1,61 @@
+{
+  "name": "karma-app",
+  "version": "0.0.1",
+  "description": "minimum karma app",
+  "main": "sample/Hello.js",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/kobabasu/micro-karma.git"
+  },
+
+  "keywords": [
+    "es6",
+    "babel",
+    "karma",
+    "jasmine",
+    "test"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+
+  "dependencies": {
+    "babel-core": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babelify": "*",
+
+    "react-addons": "*"
+  },
+  "devDependencies": {
+  },
+
+  "browser": {
+  },
+  "browserify": [ "js", "jsx" ],
+  "eslintConfig": {
+    "parser": "babel-eslint"
+  },
+
+  "scripts": {
+    "global": "npm install -g browserify karma karma-chrome-launcher karma-jasmine;",
+
+    "gitkeep": "touch ./spec/.gitkeep; touch ./dist/.gitkeep;",
+    "preinstall": "npm run gitkeep;",
+    "start": "NODE_ENV=production",
+
+    "babel": "babel ./src --out-dir ./spec --presets [es2015, react]",
+    "browserify": "browserify -d --compact false ./spec/*.js > ./dist/build.js -t [ babelify --presets [ es2015 react ] ]",
+    "babel sample": "babel ./sample/src --out-dir ./sample/js -t [ babelify --presets [ es2015 react ] ]",
+    "karma": "karma start karma.conf.js",
+
+    "test": "npm run babel; npm run browserify; npm run karma",
+    "build": "npm run babel; npm run babel sample; npm run browserify"
+  },
+
+  "preferGlobal": true,
+  "author": "kobabasu",
+  "license": "MIT"
+}
