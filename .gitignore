@@ -10,14 +10,12 @@ memory
 
 node_modules
 vendor
+sys-common
 
 js/*
-dist/*
-css/*
 docs/*
 
 spec/js/*
-spec/dist/*
 
 /.htaccess
 
