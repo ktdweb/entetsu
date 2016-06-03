@@ -857,7 +857,7 @@ var Home = function (_React$Component) {
   _createClass(Home, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'Front Home' }), _react2.default.createElement('h1', null, 'Front Home'));
+      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('h1', null, 'Front Home'));
     }
   }]);
 
