@@ -13,12 +13,9 @@ vendor
 sys-common
 
 js/*
-dist/*
-css/*
 docs/*
 
 spec/js/*
-spec/dist/*
 
 /.htaccess
 
