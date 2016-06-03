@@ -18,6 +18,8 @@ docs/*
 spec/js/*
 
 /.htaccess
+/index.html
+/index.php
 
 !.gitkeep
 !.htaccess.sample
