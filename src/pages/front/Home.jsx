@@ -11,7 +11,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <article id="Home">
-        <DocumentTitle title="遠鉄アシスト" />
+        <DocumentTitle title="遠鉄アシスト production" />
         <h1>Front Home</h1>
       </article>
     );
