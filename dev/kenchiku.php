@@ -11,7 +11,7 @@
 
         <img src="imgs/top_kenchiku.jpg" width="1040" />
 
-        <img src="imgs/top_kenchiku_column.jpg" width="1040" />
+        <img src="imgs/top_kennchiku_column.jpg" width="1040" />
 
         <?php include 'includes/footer.php' ?>
     </article>
