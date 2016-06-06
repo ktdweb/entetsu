@@ -9,9 +9,7 @@
     <article>
         <?php include 'includes/header.php' ?>
 
-        <img src="imgs/top_top.jpg" width="1040" />
-
-        <img src="imgs/top_top_column.jpg" width="1040" />
+        <img src="imgs/top_kyujin.jpg" width="1040" />
 
         <?php include 'includes/footer.php' ?>
     </article>
