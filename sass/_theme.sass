@@ -11,6 +11,14 @@
   font-sizeをあげる
   */
 
-article[id] > h1
-  font-size: $heading-font-size
-  line-height: $heading-line-height
+
+article
+  +outer-container()
+  margin-bottom: 0
+  padding-bottom: 0
+
+#grand_menu
+  margin-left: 10px
+
+#grand_menu a
+  float: left
