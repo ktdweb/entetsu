@@ -9,10 +9,9 @@
     <article>
         <?php include 'includes/header.php' ?>
 
-        <img src="imgs/top_top.jpg" width="1030" />
+        <img src="imgs/top_mansion.jpg" width="1030" />
 
-        <h1>会社案内</h1>
-        <h2>仮ページ</h2>
+        <img src="imgs/top_mansion_column.jpg" width="1040" />
 
         <?php include 'includes/footer.php' ?>
     </article>
