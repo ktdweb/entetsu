@@ -781,7 +781,20 @@ var Header = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('i', { className: 'fa fa-home' }), ' HOME')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, 'ビル管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, 'マンション管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '運転・送迎でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '戦略事業')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '会社案内')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '遠鉄アシストの魅力')))));
+      return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '/' }, _react2.default.createElement('img', {
+        src: 'imgs/logo.png',
+        width: '170',
+        height: '40',
+        alt: 'logo'
+      })), _react2.default.createElement('div', null, _react2.default.createElement('input', {
+        type: 'text',
+        placeholder: 'サイト内検索'
+      }), _react2.default.createElement('i', { className: 'fa fa-search' })), _react2.default.createElement('img', {
+        src: 'imgs/tel.png',
+        width: '380',
+        height: '40',
+        alt: 'tel'
+      })), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('i', { className: 'fa fa-home' }), ' HOME')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, 'ビル管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, 'マンション管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '運転・送迎でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '戦略事業')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '会社案内')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '遠鉄アシストの魅力')))));
     }
   }]);
 

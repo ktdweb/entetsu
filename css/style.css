@@ -6764,30 +6764,62 @@ article {
   # #Front > header
   12のカラム navは右揃え
   navの右にパディングを追加
+  */
+  /*
+  # #Front > header > div
+  ロゴと問い合わせ電話番号
+  両方とも画像の配置
+  */
+  /*
+  # #Front > header > div > div
+  サイト内検索フォーム
+  */
+  /*
+  # #Front > header > nav
+  グランドメニュー
   */ }
   #Front > header {
+    margin: 1rem auto;
     padding: 1rem 2rem 0; }
-    #Front > header nav {
-      padding: 0 auto;
-      font-size: 1.2rem;
+  #Front > header div {
+    text-align: right;
+    padding: 0 1rem; }
+    #Front > header div a {
+      float: left; }
+    #Front > header div img:last-child {
+      float: right; }
+  #Front > header div div {
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-right: 2rem; }
+    #Front > header div div input {
+      width: 16rem;
       border: 2px solid black;
-      border-radius: 3px;
-      padding: 1rem;
+      font-size: 1.2rem; }
+    #Front > header div div i {
+      margin-left: -4rem;
+      cursor: pointer; }
+  #Front > header nav {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 3px solid black;
+    border-radius: 6px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    #Front > header nav:last-child {
+      margin-right: 0; }
+    #Front > header nav li {
       float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 100%; }
-      #Front > header nav:last-child {
-        margin-right: 0; }
-      #Front > header nav li {
-        float: left;
-        padding: 0 1.5rem;
-        border-right: 1px solid black;
-        cursor: pointer; }
-        #Front > header nav li:last-child {
-          border-right: none; }
-      #Front > header nav a {
-        color: #000; }
+      padding: 0 1.5rem;
+      border-right: 1px solid black;
+      cursor: pointer; }
+      #Front > header nav li:last-child {
+        border-right: none; }
+    #Front > header nav a {
+      color: #000; }
 
 /*
   # pages/index.sass
