@@ -12,18 +12,23 @@ export default class Header extends React.Component {
 
     return (
       <header id="Header">
-        <p>Header</p>
-
-        <ul>
-          <li><Link to={root + '/'}
-            >front home</Link></li>
-          <li><Link to={root + '/sample'}
-            >front sample</Link></li>
-          <li><Link to={root + '/admin/'}
-            >admin home</Link></li>
-          <li><Link to={root + '/admin/count'}
-            >admin count</Link></li>
-        </ul>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">
+                <i className="fa fa-home" />
+                &nbsp;HOME
+              </a>
+            </li>
+            <li><a href="#">仕事を探す</a></li>
+            <li><a href="#">ビル管理でお困りの方</a></li>
+            <li><a href="#">マンション管理でお困りの方</a></li>
+            <li><a href="#">運転・送迎でお困りの方</a></li>
+            <li><a href="#">戦略事業</a></li>
+            <li><a href="#">会社案内</a></li>
+            <li><a href="#">遠鉄アシストの魅力</a></li>
+          </ul>
+        </nav>
       </header>
     );
   }

@@ -52,8 +52,8 @@ $corp-font-family: 'Hind', 'ヒラギノ明朝 ProN W6', 'HiraMinProN-W6', 'MS �
 $YuGothic-font-family: 'YuGothic', $base-san-serif
 $YuMincho-font-family: 'YuMincho', $base-serif
 
-$base-font-family: $base-san-serif
-$heading-font-family: $base-serif
+$base-font-family: $YuGothic-font-family
+$heading-font-family: $YuGothic-font-family
 
 /*
   # font-size
@@ -63,7 +63,7 @@ $heading-font-family: $base-serif
   */
 
 $base-font-size:        1.6rem
-$small-font-size:       1.4rem
+$small-font-size:       1.2rem
 $heading-font-size:     2rem
 
 /*
@@ -182,7 +182,7 @@ $base-z-index: 0
   frontはアピアランスがadmin(default)と違うため個別設定
   */
 
-$front-base-font-family:       $corp-font-family
+$front-base-font-family:       $base-font-family
 $front-base-font-size:         $base-font-size
 $front-small-font-size:        $small-font-size
 $front-heading-font-size:      $heading-font-size
@@ -194,4 +194,4 @@ $front-small-letter-spacing:   $base-letter-spacing
 $front-heading-letter-spacing: $base-letter-spacing
 $front-base-color:             $corp-color
 $front-color-secondary:        $corp-color-secondary
-$front-base-background-color:  $corp-background-color
+$front-base-background-color:  $base-background-color

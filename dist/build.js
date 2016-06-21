@@ -69,7 +69,7 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-var root = { documentRoot: '/src/sample' };
+var root = { documentRoot: '' };
 
 // components
 
@@ -711,7 +711,7 @@ var Front = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', { id: 'Front' }, _react2.default.createElement('h1', null, 'Front'), this.props.header, this.props.main);
+      return _react2.default.createElement('div', { id: 'Front' }, this.props.header, this.props.main);
     }
   }]);
 
@@ -721,8 +721,76 @@ var Front = function (_React$Component) {
 exports.default = Front;
 
 },{"react":249,"react-router":58}],12:[function(require,module,exports){
-arguments[4][10][0].apply(exports,arguments)
-},{"dup":10,"react":249,"react-router":58}],13:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Header = function (_React$Component) {
+  _inherits(Header, _React$Component);
+
+  function Header(props) {
+    _classCallCheck(this, Header);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this, props));
+  }
+
+  _createClass(Header, [{
+    key: 'render',
+    value: function render() {
+      var root = this.props.route.global.documentRoot;
+
+      return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('i', { className: 'fa fa-home' }), ' HOME')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, 'ビル管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, 'マンション管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '運転・送迎でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '戦略事業')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '会社案内')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '#' }, '遠鉄アシストの魅力')))));
+    }
+  }]);
+
+  return Header;
+}(_react2.default.Component);
+
+exports.default = Header;
+
+},{"react":249,"react-router":58}],13:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -857,7 +925,7 @@ var Home = function (_React$Component) {
   _createClass(Home, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('h1', null, 'Front Home'));
+      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト production' }), _react2.default.createElement('h1', null, 'Front Home'));
     }
   }]);
 

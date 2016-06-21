@@ -47,7 +47,7 @@
   # normalize
   noramalizeはcssを読込
   */
-@import url("../vendor/normalize.css/normalize.css");
+@import url("/vendor/normalize.css/normalize.css");
 /*
   # vendor
   bourbon, neat, animate, fontawesomeを読込
@@ -2728,8 +2728,8 @@ html {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/survey/vendor/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.3");
-  src: url("/survey/vendor/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3") format("embedded-opentype"), url("/survey/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3") format("woff2"), url("/survey/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.3") format("woff"), url("/survey/vendor/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.3") format("truetype"), url("/survey/vendor/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular") format("svg");
+  src: url("/vendor/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.3");
+  src: url("/vendor/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3") format("embedded-opentype"), url("/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3") format("woff2"), url("/vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.3") format("woff"), url("/vendor/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.3") format("truetype"), url("/vendor/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5378,7 +5378,7 @@ a {
   smallのデフォルトをvarsの値を反映
   */
 small {
-  font-size: 1.4rem; }
+  font-size: 1.2rem; }
 
 /*
   # list
@@ -5461,7 +5461,7 @@ address {
   secondary textを設定
   */
 h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small, .lead small, .lead .small {
-  font-size: 1.4rem !important;
+  font-size: 1.2rem !important;
   line-height: 2rem !important; }
 
 /*
@@ -5470,7 +5470,7 @@ h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .sma
   rem基準値分のmargin-bottomを設定
   */
 .lead {
-  font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif !important;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif !important;
   font-size: 2rem !important;
   line-height: 4rem !important;
   margin-bottom: 0 !important; }
@@ -5711,7 +5711,7 @@ dd > p {
   vars.sassから読込デフォルトとして設定
   */
 body {
-  font-family: "Meiryo", arial, Helvetica, sans-serif;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   letter-spacing: normal; }
 
@@ -5720,7 +5720,7 @@ body {
   vars.sassから読込デフォルトとして設定
   */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 2rem;
   letter-spacing: normal; }
 
@@ -6145,7 +6145,7 @@ table {
   width: 100%; }
 
 th, td {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding-left: 1rem;
   padding-right: 1rem; }
 
@@ -6172,7 +6172,7 @@ thead th {
   line-heigthtはbaseを設定
   */
 caption {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 3rem;
   text-align: left; }
 
@@ -6329,7 +6329,7 @@ textarea {
   左にmarginをとる
   */
 button, label.inputFileButton {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #FFF;
   background-color: #337AB7;
   border: none;
@@ -6531,11 +6531,6 @@ article {
 #grand_menu a {
   float: left; }
 
-h1, h2 {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  margin-left: 10rem; }
-
 /*
   # layouts/index.sass
   layoutsディレクトリ内で利用するファイルをリストアップ
@@ -6688,7 +6683,7 @@ h1, h2 {
   pagesからbodyを制御したい場合に使用
   */
 #ready-Front {
-  background-color: #FFFEEE; }
+  background-color: #FFF; }
 
 /*
   # fullscreen
@@ -6698,7 +6693,8 @@ h1, h2 {
   必要がなければbodyに変更
   */
 #Front {
-  min-height: 100%; }
+  min-height: 100%;
+  width: 1040px; }
 
 #root > #Front {
   height: auto; }
@@ -6711,7 +6707,7 @@ h1, h2 {
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "Hind", "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "MS 明朝", "MS-PMincho", serif;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   color: #002356;
   line-height: 3rem;
@@ -6763,7 +6759,35 @@ h1, h2 {
   # layouts/front/Header.sass
   front/Header.jsxに関するクラスを定義
   prefixには`lf-Header`を付与
+  */
+  /*
+  # #Front > header
+  12のカラム navは右揃え
+  navの右にパディングを追加
   */ }
+  #Front > header {
+    padding: 1rem 2rem 0; }
+    #Front > header nav {
+      padding: 0 auto;
+      font-size: 1.2rem;
+      border: 2px solid black;
+      border-radius: 3px;
+      padding: 1rem;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      #Front > header nav:last-child {
+        margin-right: 0; }
+      #Front > header nav li {
+        float: left;
+        padding: 0 1.5rem;
+        border-right: 1px solid black;
+        cursor: pointer; }
+        #Front > header nav li:last-child {
+          border-right: none; }
+      #Front > header nav a {
+        color: #000; }
 
 /*
   # pages/index.sass
@@ -6924,7 +6948,7 @@ h1, h2 {
     display: block;
     text-align: left; }
   #Sample #utils #widths div p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     height: 2rem;
     background-color: #cdcdcd; }
 

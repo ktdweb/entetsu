@@ -9,7 +9,7 @@ export default class Home extends React.Component {
   }
 
   render() {
-    return (
+    return(
       <article id="Home">
         <DocumentTitle title="Admin Home" />
         <h1>Admin Home</h1>
