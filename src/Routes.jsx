@@ -2,7 +2,7 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 import { Router, Route } from 'react-router'
 
-const root = { documentRoot: '/src/sample' };
+const root = { documentRoot: '' };
 
 // components
 import Count        from './components/Count'

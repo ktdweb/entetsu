@@ -3,3 +3,29 @@
   front/Header.jsxに関するクラスを定義  
   prefixには`lf-Header`を付与
   */
+
+/*
+  # #Front > header
+  12のカラム navは右揃え  
+  navの右にパディングを追加
+  */
+
+& > header
+  padding: $small-spacing $base-spacing 0
+  nav
+    padding: 0 auto
+    font-size: $small-font-size
+    border: 2px solid black
+    border-radius: $base-border-radius
+    padding: 1rem
+    +span-columns(12)
+    li
+      float: left
+      padding: 0 ($small-spacing * 1.5)
+      border-right: 1px solid black
+      cursor: pointer
+      &:last-child
+        border-right: none
+    & a
+      color: $color-black
+
