@@ -225,27 +225,29 @@ export default class Footer extends React.Component {
 
         <div className="lf-credit">
           <div>
-            <a href="/">
-              <img
-                src="imgs/logo_footer.png"
-                width="140"
-                height="35"
-                alt="logo"
-                />
-            </a>
+            <div>
+              <a href="/">
+                <img
+                  src="imgs/logo_footer.png"
+                  width="140"
+                  height="35"
+                  alt="logo"
+                  />
+              </a>
 
-            <p>
-              遠鉄アシスト株式会社<br />
-              静岡県浜松市中区旭町12-1　遠鉄百貨店新館　事務所フロア11階<br />
-              TEL.053-450-1511（代）　FAX.053-450-1512<br />
-              Copyright(C) Entetsu Assist Co.,Ltd. All Rights Reserved.
-            </p>
-          </div>
+              <p>
+                遠鉄アシスト株式会社<br />
+                静岡県浜松市中区旭町12-1　遠鉄百貨店新館　事務所フロア11階<br />
+                TEL.053-450-1511（代）　FAX.053-450-1512<br />
+                Copyright(C) Entetsu Assist Co.,Ltd. All Rights Reserved.
+              </p>
+            </div>
 
-          <div>
-            ビル管理・清掃  - 053-455-3451<br />
-            マンション管理  - 053-450-9922<br />
-            運行管理請負    - 053-450-1515
+            <div>
+              ビル管理・清掃  - 053-455-3451<br />
+              マンション管理  - 053-450-9922<br />
+              運行管理請負    - 053-450-1515
+            </div>
           </div>
         </div>
       </footer>

@@ -5350,14 +5350,7 @@ body {
   overflowをvisibleに設定
   */
 header, footer, section, article, nav, aside {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
   overflow: visible; }
-  header::after, footer::after, section::after, article::after, nav::after, aside::after {
-    clear: both;
-    content: "";
-    display: table; }
 
 /*
   # img
@@ -5534,15 +5527,6 @@ html, body {
   # #root
   react用のindex.htmlに記述されるdiv#rootの設定
   */
-#root {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto; }
-  #root::after {
-    clear: both;
-    content: "";
-    display: table; }
-
 /*
   # fullscreen
   body,htmlの設定はfullscreenに記述
@@ -6693,7 +6677,7 @@ article {
   */
 #Front {
   min-height: 100%;
-  width: 1040px; }
+  /* width: $max-width */ }
 
 #root > #Front {
   height: auto; }
@@ -6703,9 +6687,6 @@ article {
   frontのdefault設定
   */
 #Front {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
   font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   color: #000;
@@ -6713,24 +6694,13 @@ article {
   letter-spacing: normal;
   text-align: left;
   margin: 0 auto; }
-  #Front::after {
-    clear: both;
-    content: "";
-    display: table; }
 
 /*
   # article[id]
   すべてのページに共通する設定
   */
 #Front > article[id] {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 0; }
-  #Front > article[id]::after {
-    clear: both;
-    content: "";
-    display: table; }
 
 /*
   # Headings
@@ -6804,47 +6774,74 @@ article {
   部署電話番号
   */ }
   #Front > header {
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.2rem;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    margin: 1rem auto;
-    padding: 1rem 2rem 0; }
+    width: 1040px; }
   #Front > header div {
-    text-align: right;
-    padding: 0 1rem; }
-    #Front > header div a {
-      float: left; }
-    #Front > header div img:last-child {
-      float: right; }
-  #Front > header div div {
-    display: inline-block;
-    margin-top: 0.5rem;
-    margin-right: 2rem; }
-    #Front > header div div input {
-      width: 16rem;
-      border: 2px solid black;
-      font-size: 1.2rem; }
-    #Front > header div div i {
-      margin-left: -4rem;
-      cursor: pointer; }
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem; }
+    #Front > header div::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #Front > header div div:nth-child(1) {
+      padding-left: 1rem;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      #Front > header div div:nth-child(1):last-child {
+        margin-right: 0; }
+    #Front > header div div:nth-child(2) {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      margin-top: 0.5rem;
+      text-align: right; }
+      #Front > header div div:nth-child(2):last-child {
+        margin-right: 0; }
+    #Front > header div div:nth-child(3) {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 40.29137%;
+      padding-right: 1rem;
+      text-align: right; }
+      #Front > header div div:nth-child(3):last-child {
+        margin-right: 0; }
+  #Front > header div div input {
+    width: 16rem;
+    border: 2px solid black; }
+  #Front > header div div i {
+    margin-left: -4rem;
+    font-size: 1.6rem;
+    cursor: pointer; }
   #Front > header nav {
-    margin-top: 1rem;
-    padding: 1rem;
-    font-size: 1.2rem;
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 0;
     border: 3px solid black;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.85);
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%; }
-    #Front > header nav:last-child {
-      margin-right: 0; }
+    text-align: center; }
+    #Front > header nav::after {
+      clear: both;
+      content: "";
+      display: table; }
     #Front > header nav li {
-      float: left;
+      display: inline-block;
       padding: 0 1.5rem;
-      border-right: 1px solid black;
-      cursor: pointer; }
+      border-right: 1px solid black; }
       #Front > header nav li:last-child {
         border-right: none; }
     #Front > header nav a {
@@ -6899,9 +6896,7 @@ article {
       #Front > footer .lf-external div:last-child a:nth-child(even) img {
         margin-left: 1rem; }
   #Front > footer .lf-credit {
-    max-width: 1040px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     margin: 0;
     line-height: 2rem;
     text-align: left;
@@ -6909,30 +6904,35 @@ article {
     border-top: 1px solid #EEEEEE;
     overflow: hidden;
     zoom: 1; }
-    #Front > footer .lf-credit::after {
-      clear: both;
-      content: "";
-      display: table; }
-  #Front > footer .lf-credit div:first-child {
+    #Front > footer .lf-credit div {
+      max-width: 1040px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem; }
+      #Front > footer .lf-credit div::after {
+        clear: both;
+        content: "";
+        display: table; }
+  #Front > footer .lf-credit div div:first-child {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 74.41059%; }
-    #Front > footer .lf-credit div:first-child:last-child {
+    #Front > footer .lf-credit div div:first-child:last-child {
       margin-right: 0; }
-    #Front > footer .lf-credit div:first-child a img {
+    #Front > footer .lf-credit div div:first-child a img {
       float: left;
       margin-right: 4rem; }
-    #Front > footer .lf-credit div:first-child p {
+    #Front > footer .lf-credit div div:first-child p {
       float: left;
       margin-bottom: 0; }
-  #Front > footer .lf-credit div:last-child {
+  #Front > footer .lf-credit div div:last-child {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 23.23176%;
     text-align: right; }
-    #Front > footer .lf-credit div:last-child:last-child {
+    #Front > footer .lf-credit div div:last-child:last-child {
       margin-right: 0; }
 
 /*
@@ -7255,4 +7255,63 @@ article {
   # pages/front/Home.sass
   front/Home.jsxに関するクラスを定義
   prefixには`pf-Home`を付与
+  */
+  /*
+  # pages/front/Detail.sass
+  詳細ページに関するクラスを定義
+  prefixには`pf-Detail`を付与
+  */
+  /*
+  # pages/front/Comapny.sass
+  front/Company.jsxに関するクラスを定義
+  prefixには`pf-Detail`を付与
   */ }
+  #Front article.pf-Detail {
+    margin-top: 20rem; }
+  #Front article.pf-Detail section {
+    margin: 0 6rem; }
+  #Front article.pf-Detail h1 {
+    font-size: 2.56rem;
+    font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+  #Front article.pf-Detail p {
+    color: #555;
+    font-size: 1.44rem;
+    line-height: 2.5rem; }
+  #Front article.pf-Detail .odd {
+    text-align: right; }
+  #Front article.pf-Detail .odd-white {
+    color: white; }
+    #Front article.pf-Detail .odd-white p {
+      color: white; }
+  #Front article#Company {
+    margin-top: 20rem;
+    background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
+  #Front article#Company section:nth-child(3) {
+    margin-top: 18rem; }
+  #Front article#Company h1 {
+    margin-bottom: 4rem; }
+  #Front article#Company section:nth-child(5) {
+    margin: 8rem 6rem; }
+  #Front article#Company p {
+    margin-right: -1.5rem; }
+  #Front article#Company section:nth-child(6) {
+    margin: 8rem 6rem; }
+    #Front article#Company section:nth-child(6) h3 {
+      clear: both;
+      line-height: 1rem; }
+    #Front article#Company section:nth-child(6) img {
+      float: left;
+      margin-right: 2rem;
+      margin-bottom: 2rem; }
+  #Front article#Company section table {
+    width: 60%;
+    display: inline-block; }
+    #Front article#Company section table td {
+      vertical-align: top;
+      border-top: 1px solid #999;
+      line-height: 3rem; }
+    #Front article#Company section table td:first-child {
+      width: 12rem; }
