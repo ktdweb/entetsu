@@ -6725,7 +6725,8 @@ article {
 #Front > article[id] {
   max-width: 1040px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  z-index: 0; }
   #Front > article[id]::after {
     clear: both;
     content: "";
@@ -6803,6 +6804,9 @@ article {
   部署電話番号
   */ }
   #Front > header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     margin: 1rem auto;
     padding: 1rem 2rem 0; }
   #Front > header div {
@@ -6829,6 +6833,7 @@ article {
     font-size: 1.2rem;
     border: 3px solid black;
     border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.85);
     float: left;
     display: block;
     margin-right: 2.35765%;
@@ -6845,7 +6850,8 @@ article {
     #Front > header nav a {
       color: #000; }
   #Front > footer {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    margin-bottom: 0; }
     #Front > footer > div, #Front > footer > nav {
       padding: 2rem; }
   #Front > footer .lf-contents {

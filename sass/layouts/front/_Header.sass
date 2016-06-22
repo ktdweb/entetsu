@@ -11,6 +11,9 @@
   */
 
 & > header
+  position: fixed
+  top: 0
+  z-index: 1000
   margin: $small-spacing auto
   padding: $small-spacing $base-spacing 0
 
@@ -59,6 +62,7 @@
     font-size: $small-font-size
     border: 3px solid black
     border-radius: $base-border-radius * 2
+    background-color: rgba(255,255,255, 0.85)
     +span-columns(12)
     li
       float: left

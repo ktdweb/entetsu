@@ -23,8 +23,11 @@ import FrontFooter  from './layouts/front/Footer'
 import AdminHome    from './pages/admin/Home'
 
 // pages/front
-import FrontHome    from './pages/front/Home'
-import FrontSample  from './pages/front/Sample'
+import FrontHome      from './pages/front/Home'
+import FrontCleaning  from './pages/front/Cleaning'
+import FrontBuilding  from './pages/front/Building'
+import FrontMansion   from './pages/front/Mansion'
+import FrontDriving   from './pages/front/Driving'
 
 const routes = (
   <Router history={browserHistory}>
@@ -40,11 +43,36 @@ const routes = (
           footer: FrontFooter
         }} />
 
-      <Route path={root.documentRoot + '/sample'}
+      <Route path={root.documentRoot + '/cleaning'}
         global={root}
         components={{
           header: FrontHeader,
-          main: FrontSample
+          main: FrontCleaning,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/building'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontBuilding,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/mansion'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontMansion,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/driving'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontDriving,
+          footer: FrontFooter
         }} />
     </Route>
 
