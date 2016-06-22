@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
-export default class Home extends React.Component {
+export default class Works extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,14 +10,14 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <article id="Home">
-        <DocumentTitle title="遠鉄アシスト" />
+      <article id="Works">
+        <DocumentTitle title="遠鉄アシスト | 仕事を探す" />
 
         <img
-          src="imgs/pages/top.jpg"
+          src="imgs/pages/works.jpg"
           width="1040"
-          height="1090"
-          alt="top"
+          height="550"
+          alt="mansion"
           />
       </article>
     );

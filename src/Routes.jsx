@@ -24,6 +24,7 @@ import AdminHome    from './pages/admin/Home'
 
 // pages/front
 import FrontHome      from './pages/front/Home'
+import FrontWorks     from './pages/front/Works'
 import FrontCleaning  from './pages/front/Cleaning'
 import FrontBuilding  from './pages/front/Building'
 import FrontMansion   from './pages/front/Mansion'
@@ -40,6 +41,14 @@ const routes = (
         components={{
           header: FrontHeader,
           main: FrontHome,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/works'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontWorks,
           footer: FrontFooter
         }} />
 
