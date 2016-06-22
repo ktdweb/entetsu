@@ -47,7 +47,7 @@ export default class Header extends React.Component {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/works">
                 仕事を探す
               </a>
             </li>
