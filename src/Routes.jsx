@@ -17,6 +17,7 @@ import AdminHeader  from './layouts/admin/Header'
 // layouts/front
 import Front        from './layouts/front/Front'
 import FrontHeader  from './layouts/front/Header'
+import FrontFooter  from './layouts/front/Footer'
 
 // pages/admin
 import AdminHome    from './pages/admin/Home'
@@ -35,7 +36,8 @@ const routes = (
         global={root}
         components={{
           header: FrontHeader,
-          main: FrontHome
+          main: FrontHome,
+          footer: FrontFooter
         }} />
 
       <Route path={root.documentRoot + '/sample'}
