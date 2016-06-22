@@ -41,7 +41,7 @@ export default class Header extends React.Component {
         <nav>
           <ul>
             <li>
-              <a href="#">
+              <a href="/">
                 <i className="fa fa-home" />
                 &nbsp;HOME
               </a>
@@ -52,17 +52,22 @@ export default class Header extends React.Component {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/cleaning">
+                清掃でお困りの方
+              </a>
+            </li>
+            <li>
+              <a href="/building">
                 ビル管理でお困りの方
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/mansion">
                 マンション管理でお困りの方
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/driving">
                 運転・送迎でお困りの方
               </a>
             </li>
@@ -74,11 +79,6 @@ export default class Header extends React.Component {
             <li>
               <a href="#">
                 会社案内
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                遠鉄アシストの魅力
               </a>
             </li>
           </ul>
