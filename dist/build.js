@@ -1356,7 +1356,7 @@ var Home = function (_React$Component) {
       return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('img', {
         src: 'imgs/pages/top.jpg',
         width: '1040',
-        height: '1090',
+        height: '1080',
         alt: 'top'
       }));
     }
