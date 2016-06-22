@@ -16,7 +16,7 @@ export default class Home extends React.Component {
         <img
           src="imgs/pages/top.jpg"
           width="1040"
-          height="1090"
+          height="1080"
           alt="top"
           />
       </article>
