@@ -13,14 +13,16 @@ export default class Header extends React.Component {
     return (
       <header id="Header">
         <div>
-          <a href="/">
-            <img
-              src="imgs/logo.png"
-              width="170"
-              height="40"
-              alt="logo"
-              />
-          </a>
+          <div>
+            <a href="/">
+              <img
+                src="imgs/logo.png"
+                width="170"
+                height="40"
+                alt="logo"
+                />
+            </a>
+          </div>
 
           <div>
             <input
@@ -30,12 +32,14 @@ export default class Header extends React.Component {
             <i className="fa fa-search" />
           </div>
 
-          <img
-            src="imgs/tel.png"
-            width="380"
-            height="40"
-            alt="tel"
-            />
+          <div>
+            <img
+              src="imgs/tel.png"
+              width="380"
+              height="40"
+              alt="tel"
+              />
+          </div>
         </div>
         
         <nav>
@@ -72,12 +76,12 @@ export default class Header extends React.Component {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/company#company05">
                 戦略事業
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/company">
                 会社案内
               </a>
             </li>

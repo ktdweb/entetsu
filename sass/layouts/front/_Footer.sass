@@ -60,7 +60,7 @@
 
 & > footer
   .lf-credit
-    +outer-container()
+    +fill-parent()
     margin: 0
     line-height: $small-line-height
     text-align: left
@@ -68,6 +68,9 @@
     border-top: 1px solid #EEEEEE
     overflow: hidden
     zoom: 1
+    div
+      +outer-container()
+      padding: 0 $small-spacing
 
 /*
   # #Front > footer .lf-credit div:first-child
@@ -76,14 +79,15 @@
 
 & > footer
   .lf-credit
-    div:first-child
-      +span-columns(9)
-      a img
-        float: left
-        margin-right: $base-spacing * 2
-      p
-        float: left
-        margin-bottom: 0
+    div
+      div:first-child
+        +span-columns(9)
+        a img
+          float: left
+          margin-right: $base-spacing * 2
+        p
+          float: left
+          margin-bottom: 0
 
 /*
   # #Front > footer .lf-credit div:first-child
@@ -92,6 +96,7 @@
 
 & > footer
   .lf-credit
-    div:last-child
-      +span-columns(3)
-      text-align: right
+    div
+      div:last-child
+        +span-columns(3)
+        text-align: right

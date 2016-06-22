@@ -29,6 +29,7 @@ import FrontCleaning  from './pages/front/Cleaning'
 import FrontBuilding  from './pages/front/Building'
 import FrontMansion   from './pages/front/Mansion'
 import FrontDriving   from './pages/front/Driving'
+import FrontCompany   from './pages/front/Company'
 
 const routes = (
   <Router history={browserHistory}>
@@ -81,6 +82,14 @@ const routes = (
         components={{
           header: FrontHeader,
           main: FrontDriving,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/company'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontCompany,
           footer: FrontFooter
         }} />
     </Route>

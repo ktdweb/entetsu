@@ -11,11 +11,15 @@
   */
 
 & > header
+  margin: 0 auto
+  padding: $base-spacing
+  font-size: $small-font-size
   position: fixed
   top: 0
+  left: 0
+  right: 0
   z-index: 1000
-  margin: $small-spacing auto
-  padding: $small-spacing $base-spacing 0
+  width: 1040px
 
 /*
   # #Front > header > div
@@ -25,12 +29,19 @@
 
 & > header
   div
-    text-align: right
-    padding: 0 $small-spacing
-    a
-     float: left 
-    img:last-child
-     float: right
+    +outer-container()
+    margin-bottom: $small-spacing / 2
+    div:nth-child(1)
+      padding-left: $small-spacing
+      +span-columns(4)
+    div:nth-child(2)
+      +span-columns(3)
+      margin-top: $small-spacing / 2
+      text-align: right
+    div:nth-child(3)
+      +span-columns(5)
+      padding-right: $small-spacing
+      text-align: right
 
 /*
   # #Front > header > div > div
@@ -39,15 +50,12 @@
 
 & > header div
     div
-      display: inline-block
-      margin-top: $small-spacing / 2
-      margin-right: $base-spacing
       input
         width: $base-spacing * 8
         border: 2px solid black
-        font-size: $small-font-size
       i
         margin-left: - $base-spacing * 2
+        font-size: $base-font-size
         cursor: pointer
 
 /*
@@ -57,18 +65,16 @@
 
 & > header
   nav
-    margin-top: $small-spacing
-    padding: 1rem
-    font-size: $small-font-size
+    +outer-container()
+    padding: $small-spacing 0
     border: 3px solid black
     border-radius: $base-border-radius * 2
     background-color: rgba(255,255,255, 0.85)
-    +span-columns(12)
+    text-align: center
     li
-      float: left
+      display: inline-block
       padding: 0 ($small-spacing * 1.5)
       border-right: 1px solid black
-      cursor: pointer
       &:last-child
         border-right: none
     & a
