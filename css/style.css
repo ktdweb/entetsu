@@ -5721,7 +5721,6 @@ body {
   */
 h1, h2, h3, h4, h5, h6 {
   font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
-  font-size: 2rem;
   letter-spacing: normal; }
 
 /*
@@ -6709,10 +6708,10 @@ article {
   margin-right: auto;
   font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 1.6rem;
-  color: #002356;
+  color: #000;
   line-height: 3rem;
   letter-spacing: normal;
-  text-align: center;
+  text-align: left;
   margin: 0 auto; }
   #Front::after {
     clear: both;
@@ -6764,30 +6763,171 @@ article {
   # #Front > header
   12のカラム navは右揃え
   navの右にパディングを追加
+  */
+  /*
+  # #Front > header > div
+  ロゴと問い合わせ電話番号
+  両方とも画像の配置
+  */
+  /*
+  # #Front > header > div > div
+  サイト内検索フォーム
+  */
+  /*
+  # #Front > header > nav
+  グランドメニュー
+  */
+  /*
+  # layouts/front/Footer.sass
+  front/Footer.jsxに関するクラスを定義
+  prefixには`lf-Footer`を付与
+  */
+  /*
+  # #Front > footer
+  footer全体の設定
+  */
+  /*
+  # #Front > footer .lf-external
+  関連リンク、公共事業リンク・バナー
+  */
+  /*
+  # #Front > footer .lf-credit
+  一番下の会社情報、電話番号
+  */
+  /*
+  # #Front > footer .lf-credit div:first-child
+  会社情報
+  */
+  /*
+  # #Front > footer .lf-credit div:first-child
+  部署電話番号
   */ }
   #Front > header {
+    margin: 1rem auto;
     padding: 1rem 2rem 0; }
-    #Front > header nav {
-      padding: 0 auto;
-      font-size: 1.2rem;
+  #Front > header div {
+    text-align: right;
+    padding: 0 1rem; }
+    #Front > header div a {
+      float: left; }
+    #Front > header div img:last-child {
+      float: right; }
+  #Front > header div div {
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-right: 2rem; }
+    #Front > header div div input {
+      width: 16rem;
       border: 2px solid black;
-      border-radius: 3px;
-      padding: 1rem;
+      font-size: 1.2rem; }
+    #Front > header div div i {
+      margin-left: -4rem;
+      cursor: pointer; }
+  #Front > header nav {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 3px solid black;
+    border-radius: 6px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    #Front > header nav:last-child {
+      margin-right: 0; }
+    #Front > header nav li {
+      float: left;
+      padding: 0 1.5rem;
+      border-right: 1px solid black;
+      cursor: pointer; }
+      #Front > header nav li:last-child {
+        border-right: none; }
+    #Front > header nav a {
+      color: #000; }
+  #Front > footer {
+    font-size: 1.2rem; }
+    #Front > footer > div, #Front > footer > nav {
+      padding: 2rem; }
+  #Front > footer .lf-contents {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto; }
+    #Front > footer .lf-contents::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #Front > footer .lf-contents div {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 100%; }
-      #Front > header nav:last-child {
+      width: 14.70196%; }
+      #Front > footer .lf-contents div:last-child {
         margin-right: 0; }
-      #Front > header nav li {
-        float: left;
-        padding: 0 1.5rem;
-        border-right: 1px solid black;
-        cursor: pointer; }
-        #Front > header nav li:last-child {
-          border-right: none; }
-      #Front > header nav a {
-        color: #000; }
+      #Front > footer .lf-contents div i {
+        margin-right: 0.5rem; }
+      #Front > footer .lf-contents div p {
+        line-height: 3rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #EEE; }
+      #Front > footer .lf-contents div ul li {
+        line-height: 2rem; }
+  #Front > footer .lf-external {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid #EEEEEE; }
+    #Front > footer .lf-external::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #Front > footer .lf-external div p {
+      margin-bottom: 1rem; }
+    #Front > footer .lf-external div a img {
+      border: 1px solid black; }
+    #Front > footer .lf-external div:first-child {
+      float: left; }
+      #Front > footer .lf-external div:first-child a img {
+        margin-right: 1rem; }
+    #Front > footer .lf-external div:last-child {
+      float: right; }
+      #Front > footer .lf-external div:last-child a:nth-child(even) img {
+        margin-left: 1rem; }
+  #Front > footer .lf-credit {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+    line-height: 2rem;
+    text-align: left;
+    background-color: #F5F5F5;
+    border-top: 1px solid #EEEEEE;
+    overflow: hidden;
+    zoom: 1; }
+    #Front > footer .lf-credit::after {
+      clear: both;
+      content: "";
+      display: table; }
+  #Front > footer .lf-credit div:first-child {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    #Front > footer .lf-credit div:first-child:last-child {
+      margin-right: 0; }
+    #Front > footer .lf-credit div:first-child a img {
+      float: left;
+      margin-right: 4rem; }
+    #Front > footer .lf-credit div:first-child p {
+      float: left;
+      margin-bottom: 0; }
+  #Front > footer .lf-credit div:last-child {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    text-align: right; }
+    #Front > footer .lf-credit div:last-child:last-child {
+      margin-right: 0; }
 
 /*
   # pages/index.sass

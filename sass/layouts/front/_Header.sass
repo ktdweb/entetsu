@@ -11,13 +11,54 @@
   */
 
 & > header
+  margin: $small-spacing auto
   padding: $small-spacing $base-spacing 0
+
+/*
+  # #Front > header > div
+  ロゴと問い合わせ電話番号
+  両方とも画像の配置
+  */
+
+& > header
+  div
+    text-align: right
+    padding: 0 $small-spacing
+    a
+     float: left 
+    img:last-child
+     float: right
+
+/*
+  # #Front > header > div > div
+  サイト内検索フォーム
+  */
+
+& > header div
+    div
+      display: inline-block
+      margin-top: $small-spacing / 2
+      margin-right: $base-spacing
+      input
+        width: $base-spacing * 8
+        border: 2px solid black
+        font-size: $small-font-size
+      i
+        margin-left: - $base-spacing * 2
+        cursor: pointer
+
+/*
+  # #Front > header > nav
+  グランドメニュー
+  */
+
+& > header
   nav
-    padding: 0 auto
-    font-size: $small-font-size
-    border: 2px solid black
-    border-radius: $base-border-radius
+    margin-top: $small-spacing
     padding: 1rem
+    font-size: $small-font-size
+    border: 3px solid black
+    border-radius: $base-border-radius * 2
     +span-columns(12)
     li
       float: left
@@ -28,4 +69,3 @@
         border-right: none
     & a
       color: $color-black
-

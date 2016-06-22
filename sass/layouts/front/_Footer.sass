@@ -1,0 +1,96 @@
+/*
+  # layouts/front/Footer.sass
+  front/Footer.jsxに関するクラスを定義  
+  prefixには`lf-Footer`を付与
+  */
+
+/*
+  # #Front > footer
+  footer全体の設定
+  */
+
+& > footer
+  font-size: $small-font-size
+  & > div, & > nav
+    padding: $base-spacing
+
+& > footer
+  .lf-contents
+    +outer-container()
+    div
+      +span-columns(2)
+      i
+        margin-right: $small-spacing / 2
+      p 
+        line-height: $base-line-height
+        margin-bottom: $small-spacing
+        border-bottom: 1px solid #EEE
+      ul li
+        line-height: $small-line-height
+
+
+/*
+  # #Front > footer .lf-external
+  関連リンク、公共事業リンク・バナー
+  */
+
+& > footer
+  .lf-external
+    +outer-container()
+    border-top: 1px solid #EEEEEE
+    div
+      p
+        margin-bottom: $small-spacing
+      a img
+        border: 1px solid black
+    div:first-child
+      float: left
+      a img
+        margin-right: $small-spacing
+    div:last-child
+      float: right
+      a:nth-child(even) img
+        margin-left: $small-spacing
+
+/*
+  # #Front > footer .lf-credit
+  一番下の会社情報、電話番号
+  */
+
+& > footer
+  .lf-credit
+    +outer-container()
+    margin: 0
+    line-height: $small-line-height
+    text-align: left
+    background-color: #F5F5F5
+    border-top: 1px solid #EEEEEE
+    overflow: hidden
+    zoom: 1
+
+/*
+  # #Front > footer .lf-credit div:first-child
+  会社情報 
+  */
+
+& > footer
+  .lf-credit
+    div:first-child
+      +span-columns(9)
+      a img
+        float: left
+        margin-right: $base-spacing * 2
+      p
+        float: left
+        margin-bottom: 0
+
+/*
+  # #Front > footer .lf-credit div:first-child
+  部署電話番号
+  */
+
+& > footer
+  .lf-credit
+    div:last-child
+      +span-columns(3)
+      text-align: right
