@@ -16,7 +16,7 @@ export default class Building extends React.Component {
         <img
           src="imgs/pages/building.jpg"
           width="1040"
-          height="1090"
+          height="1050"
           alt="building"
           />
       </article>
