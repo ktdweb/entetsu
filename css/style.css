@@ -6514,6 +6514,11 @@ article {
 #grand_menu a {
   float: left; }
 
+#canvas {
+  display: block;
+  background-color: white;
+  margin-top: 11rem; }
+
 /*
   # layouts/index.sass
   layoutsディレクトリ内で利用するファイルをリストアップ
@@ -6787,7 +6792,13 @@ article {
     max-width: 1040px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 0.5rem;
+    /*
+      div:nth-child(2)
+        @include span-columns(3)
+        margin-top: $small-spacing / 2
+        text-align: right
+      */ }
     #Front > header div::after {
       clear: both;
       content: "";
@@ -6804,19 +6815,10 @@ article {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 23.23176%;
-      margin-top: 0.5rem;
-      text-align: right; }
-      #Front > header div div:nth-child(2):last-child {
-        margin-right: 0; }
-    #Front > header div div:nth-child(3) {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 40.29137%;
+      width: 65.88078%;
       padding-right: 1rem;
       text-align: right; }
-      #Front > header div div:nth-child(3):last-child {
+      #Front > header div div:nth-child(2):last-child {
         margin-right: 0; }
   #Front > header div div input {
     width: 16rem;
