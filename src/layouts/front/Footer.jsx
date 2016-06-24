@@ -74,7 +74,6 @@ export default class Footer extends React.Component {
               <li>遠鉄アシストについて</li>
               <li>社長メッセージ</li>
               <li>会社概要</li>
-              <li>採用情報</li>
               <li>戦略事業</li>
               <li>指定管理業務</li>
             </ul>
@@ -89,7 +88,6 @@ export default class Footer extends React.Component {
               <li>お仕事を探す</li>
               <li>よくある質問</li>
               <li>お問い合わせ</li>
-              <li>サイトマップ</li>
               <li>グループ会社一覧</li>
               <li>個人情報の取扱について</li>
             </ul>
