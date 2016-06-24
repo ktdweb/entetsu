@@ -779,10 +779,10 @@ var Footer = function (_React$Component) {
         height: '35',
         alt: '浜松城公園'
       })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
-        src: 'imgs/banners/03.jpg',
+        src: 'imgs/banners/02.jpg',
         width: '140',
         height: '35',
-        alt: '浜松まつり会館キャンペーン'
+        alt: '浜松まつり会館'
       })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
         src: 'imgs/banners/04.jpg',
         width: '140',
