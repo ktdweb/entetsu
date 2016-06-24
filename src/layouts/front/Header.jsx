@@ -5,6 +5,16 @@ export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
+
+    /*
+    <div>
+      <input
+        type="text"
+        placeholder="サイト内検索"
+        />
+      <i className="fa fa-search" />
+    </div>
+    */
   }
 
   render() {
@@ -22,14 +32,6 @@ export default class Header extends React.Component {
                 alt="logo"
                 />
             </a>
-          </div>
-
-          <div>
-            <input
-              type="text"
-              placeholder="サイト内検索"
-              />
-            <i className="fa fa-search" />
           </div>
 
           <div>

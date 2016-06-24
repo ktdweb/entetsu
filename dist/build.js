@@ -770,7 +770,7 @@ var Footer = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('footer', { id: 'Footer' }, _react2.default.createElement('nav', { className: 'lf-contents' }, _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '清掃'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '清掃業務管理'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'ビル管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '取り組み'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'マンション管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '取り組み'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '運行管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '導入事例'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, '安全・安心・快適への取組'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '会社案内'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, '遠鉄アシストについて'), _react2.default.createElement('li', null, '社長メッセージ'), _react2.default.createElement('li', null, '会社概要'), _react2.default.createElement('li', null, '採用情報'), _react2.default.createElement('li', null, '戦略事業'), _react2.default.createElement('li', null, '指定管理業務'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'その他'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'お仕事を探す'), _react2.default.createElement('li', null, 'よくある質問'), _react2.default.createElement('li', null, 'お問い合わせ'), _react2.default.createElement('li', null, 'サイトマップ'), _react2.default.createElement('li', null, 'グループ会社一覧'), _react2.default.createElement('li', null, '個人情報の取扱について')))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
+      return _react2.default.createElement('footer', { id: 'Footer' }, _react2.default.createElement('nav', { className: 'lf-contents' }, _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '清掃'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '清掃業務管理'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'ビル管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '取り組み'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'マンション管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '取り組み'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '運行管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '導入事例'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, '安全・安心・快適への取組'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '会社案内'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, '遠鉄アシストについて'), _react2.default.createElement('li', null, '社長メッセージ'), _react2.default.createElement('li', null, '会社概要'), _react2.default.createElement('li', null, '戦略事業'), _react2.default.createElement('li', null, '指定管理業務'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'その他'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'お仕事を探す'), _react2.default.createElement('li', null, 'よくある質問'), _react2.default.createElement('li', null, 'お問い合わせ'), _react2.default.createElement('li', null, 'グループ会社一覧'), _react2.default.createElement('li', null, '個人情報の取扱について')))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/hamamatsu-jyo/'
       }, _react2.default.createElement('img', {
@@ -973,6 +973,16 @@ var Header = function (_React$Component) {
     _classCallCheck(this, Header);
 
     return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this, props));
+
+    /*
+    <div>
+      <input
+        type="text"
+        placeholder="サイト内検索"
+        />
+      <i className="fa fa-search" />
+    </div>
+    */
   }
 
   _createClass(Header, [{
@@ -985,10 +995,7 @@ var Header = function (_React$Component) {
         width: '170',
         height: '40',
         alt: 'logo'
-      }))), _react2.default.createElement('div', null, _react2.default.createElement('input', {
-        type: 'text',
-        placeholder: 'サイト内検索'
-      }), _react2.default.createElement('i', { className: 'fa fa-search' })), _react2.default.createElement('div', null, _react2.default.createElement('img', {
+      }))), _react2.default.createElement('div', null, _react2.default.createElement('img', {
         src: 'imgs/tel.png',
         width: '380',
         height: '40',
