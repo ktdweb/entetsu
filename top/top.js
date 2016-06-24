@@ -212,7 +212,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,1280,768);
 
 // stage content:
 (lib.名称未設定2 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 	// text
 	this.instance = new lib.シンボル2();
