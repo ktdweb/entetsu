@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
-export default class Company extends React.Component {
+export default class BuildingDetail extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,43 +10,26 @@ export default class Company extends React.Component {
 
   render() {
     return (
-      <article id="Company" className="pf-Detail">
+      <article id="BuildingDetail" className="pf-Detail">
         <DocumentTitle title="遠鉄アシスト | 会社概要" />
 
         <section id="company01">
-          <h1>遠鉄アシストについて</h1>
+          <h1>機能するビルディング</h1>
           <p>
-            当社は、1999年7月21日、遠州鉄道株式会社の100％子会社として、<br />
-            運行管理部門で企業団体や自治体などのアシストをすることを目的に設立されました。<br />
-            遠州鉄道のバス部門との連携をとりながら、<br />
-            規制が緩和されつつあった人材派遣などの人材ビジネスへの参入を図りました。<br />
-          </p>
-          <p>
-            一方では、グループ内の再編に伴い、2002年7月、株式会社遠鉄総合ビルサービスから<br />
-            ビル管理・清掃部門とマンション管理部門を譲り受け、業容を拡大しました。<br />
-            運行管理、ビル・マンション管理、清掃、<br />
-            指定管理施設運営、食品検査、生活支援サービスを運営しています。
+            仕事に集中できる環境。<br />
+            始業ベルとともに、一斉にスタートする職場には、<br />
+            なにが求められているか?<br />
+            オフィスとして求められるもの全てを<br />
+            遠鉄アシストはサポートします。
           </p>
         </section>
 
         <section className="odd odd-white">
-          <h1>社長メッセージ</h1>
+          <h1>遠鉄アシストのサービス</h1>
           <p>
             (サンプルテキスト)<br />
             私たち遠鉄アシストは、「アシスト」という社名が示す通り、<br />
             地域社会のお手伝いをしている「人間中心」の会社です。
-          </p>
-          <p>
-            当社は、遠鉄グループの一員として、静岡県西部地方を中心に、企業や学校、行政等の<br />
-            アウトソーシングに対応して、運行管理、ビル・マンション管理、清掃、<br />
-            指定管理施設運営、食品検査、生活支援サービスを運営しています。
-          </p>
-          <p>
-            さて、当社の経営ビジョンですが、「時代の変化をとらえ、自ら変革できる会社になる！」です。<br />
-            現在は時代の流れが大変速く、高齢化社会を迎え、人々の価値観も日々変わっています。<br />
-            したがって、我々は変化の風をしっかりとらえ、その変化に対応して、自ら変わっていかなければ、<br />
-            取り残されてしまいます。もし、時代の変化に対応した変革ができなければ、<br />
-            社会に必要のない会社になってしまいます。
           </p>
         </section>
 
@@ -67,30 +50,28 @@ export default class Company extends React.Component {
 
                   <p>
                     ［ビルサービス課］<br />
-                    TEL.053-455-3451　FAX.053-454-3507
+                    TEL.053-455-3451
                   </p>
 
                   <p>
                     ［マンション管理サービス課］<br />
-                    TEL.053-450-9922　FAX.053-454-3507
+                    TEL.053-450-9922
                   </p>
                   <p>
                     ［運行管理サービス課］<br />
-                    TEL.053-450-1515　FAX.053-450-1512
+                    TEL.053-450-1515
                   </p>
                   <p>
                     ［指定管理サービス課］<br />
-                    TEL.053-450-1516　FAX.053-450-1512
+                    TEL.053-450-1516
                   </p>
                   <p>
                     ［食品検査センター］<br />
-                    TEL.053-441-5075　FAX.053-441-5111
+                    TEL.053-450-1533
                   </p>
                   <p>
                     ［ベンリーえんてつ］<br />
-                    <a href="http://e-tomitsuka.benry.com/" target="_blank">
-                      連絡先 (ベンリーえんてつ)
-                    </a>
+                    TEL.053-472-0255
                   </p>
                 </td>
               </tr>
@@ -118,22 +99,21 @@ export default class Company extends React.Component {
               <tr>
                 <td>登録許認可・認定</td>
                 <td>
+                  一般労働者派遣事業（派22-020046）<br />
                   有料職業紹介業（22-ユ-020029）<br />
                   建築物環境衛生総合管理業<br />
                   建築物飲料水貯水槽清掃業<br />
                   建築物ねずみ昆虫等防除業<br />
                   マンション管理業<br />
                   警備業<br />
-                  医療関連サービスマーク<br />
-                  プライバシーマーク（第19000927(01)号）<br />
-                  一般労働者派遣事業（ハ22-020046）
+                  医療関連サービスマーク
                 </td>
               </tr>
 
               <tr>
                 <td>加盟団体</td>
                 <td>
-                  一般社団法人　日本自動車運行管理協会<br />
+                  加盟団体	一般社団法人　日本自動車運行管理協会<br />
                   一般社団法人　中部地区自動車管理業協会<br />
                   一般社団法人　日本人材派遣協会<br />
                   一般社団法人　マンション管理業協会<br />
@@ -306,9 +286,9 @@ export default class Company extends React.Component {
             多くの企業からの検査をうけたまわっております
           </p>
 
-          <h3>生活支援サービス</h3>
+          <h3>ベンリー</h3>
           <p>
-            <a href="" target="_blank">
+            <a href="http://e-tomitsuka.benry.com/" target="_blank">
               <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
             </a>
             暮らしの困った解決!<br />

@@ -115,15 +115,6 @@ export default class Footer extends React.Component {
           
               <a href="#">
                 <img
-                  src="imgs/banners/02.jpg"
-                  width="140"
-                  height="35"
-                  alt="浜松まつり会館"
-                  />
-              </a>
-          
-              <a href="#">
-                <img
                   src="imgs/banners/03.jpg"
                   width="140"
                   height="35"

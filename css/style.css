@@ -7265,6 +7265,11 @@ article {
   # pages/front/Comapny.sass
   front/Company.jsxに関するクラスを定義
   prefixには`pf-Detail`を付与
+  */
+  /*
+  # pages/front/BuildingDetail.sass
+  front/BuildingDetail.jsxに関するクラスを定義
+  prefixには`pf-BuildingDetail`を付与
   */ }
   #Front article.pf-Detail {
     margin-top: 20rem; }
@@ -7314,4 +7319,36 @@ article {
       border-top: 1px solid #999;
       line-height: 3rem; }
     #Front article#Company section table td:first-child {
+      width: 12rem; }
+  #Front article#BuildingDetail {
+    margin-top: 20rem;
+    background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
+  #Front article#BuildingDetail section:nth-child(3) {
+    margin-top: 18rem; }
+  #Front article#BuildingDetail h1 {
+    margin-bottom: 4rem; }
+  #Front article#BuildingDetail section:nth-child(5) {
+    margin: 8rem 6rem; }
+  #Front article#BuildingDetail p {
+    margin-right: -1.5rem; }
+  #Front article#BuildingDetail section:nth-child(6) {
+    margin: 8rem 6rem; }
+    #Front article#BuildingDetail section:nth-child(6) h3 {
+      clear: both;
+      line-height: 1rem; }
+    #Front article#BuildingDetail section:nth-child(6) img {
+      float: left;
+      margin-right: 2rem;
+      margin-bottom: 2rem; }
+  #Front article#BuildingDetail section table {
+    width: 60%;
+    display: inline-block; }
+    #Front article#BuildingDetail section table td {
+      vertical-align: top;
+      border-top: 1px solid #999;
+      line-height: 3rem; }
+    #Front article#BuildingDetail section table td:first-child {
       width: 12rem; }
