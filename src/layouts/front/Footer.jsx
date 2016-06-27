@@ -75,7 +75,6 @@ export default class Footer extends React.Component {
               <li>社長メッセージ</li>
               <li>会社概要</li>
               <li>戦略事業</li>
-              <li>指定管理業務</li>
             </ul>
           </div>
 
@@ -86,10 +85,6 @@ export default class Footer extends React.Component {
             </p>
             <ul>
               <li>お仕事を探す</li>
-              <li>よくある質問</li>
-              <li>お問い合わせ</li>
-              <li>グループ会社一覧</li>
-              <li>個人情報の取扱について</li>
             </ul>
           </div>
 
@@ -110,8 +105,11 @@ export default class Footer extends React.Component {
                   alt="浜松城公園"
                   />
               </a>
-          
-              <a href="#">
+
+              <a
+                target="_blank"
+                href="http://www.hamamatsu-navi.jp/matsuri/"
+                >
                 <img
                   src="imgs/banners/02.jpg"
                   width="140"
@@ -119,8 +117,11 @@ export default class Footer extends React.Component {
                   alt="浜松まつり会館"
                   />
               </a>
-          
-              <a href="#">
+
+              <a
+                target="_blank"
+                href="http://www.ryuyo-kaiyopark.jp/"
+                >
                 <img
                   src="imgs/banners/04.jpg"
                   width="140"
@@ -129,9 +130,12 @@ export default class Footer extends React.Component {
                   />
               </a>
             </p>
-          
+
             <p>
-              <a href="#">
+              <a
+                target="_blank"
+                href="http://www.h-seisyounen-ie.com/"
+                >
                 <img
                   src="imgs/banners/05.jpg"
                   width="140"
@@ -140,7 +144,10 @@ export default class Footer extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a
+                target="_blank"
+                href="http://www.entetsuassist-dms.com/busparking/"
+                >
                 <img
                   src="imgs/banners/06.jpg"
                   width="140"
@@ -148,8 +155,11 @@ export default class Footer extends React.Component {
                   alt="観光バス駐車場"
                   />
               </a>
-          
-              <a href="#">
+
+              <a
+                target="_blank"
+                href="http://www.hamamatsu-navi.jp/parking/"
+                >
                 <img
                   src="imgs/banners/07.jpg"
                   width="140"
@@ -157,8 +167,11 @@ export default class Footer extends React.Component {
                   alt="浜松市営駐車場"
                   />
               </a>
-          
-              <a href="#">
+ 
+              <a
+                target="_blank"
+                href="http://www.entetsuassist-dms.com/sanaru-park/"
+                >
                 <img
                   src="imgs/banners/08.jpg"
                   width="140"
@@ -168,11 +181,14 @@ export default class Footer extends React.Component {
               </a>
             </p>
           </div>
-          
+
           <div>
             <span>関連リンク</span>
             <p>
-              <a href="#">
+              <a
+                target="_blank"
+                href="https://netsuper.entstore.co.jp/"
+                >
                 <img
                   src="imgs/links/01.jpg"
                   width="140"
@@ -180,32 +196,37 @@ export default class Footer extends React.Component {
                   alt="ネットスーパー"
                   />
               </a>
-          
-              <a href="#">
+
+              <a
+                target="_blank"
+                href="https://cards.entetsu.co.jp/"
+                >
                 <img
                   src="imgs/links/02.jpg"
                   width="140"
                   height="35"
-                  alt="ネットスーパー"
+                  alt="えんてつカード"
                   />
               </a>
             </p>
+
             <p>
-              <a href="#">
-                <img
-                  src="imgs/links/03.jpg"
-                  width="140"
-                  height="35"
-                  alt="ネットスーパー"
-                  />
-              </a>
-          
-              <a href="#">
+              <img
+                src="imgs/links/03.jpg"
+                width="140"
+                height="35"
+                alt="子育て中"
+                />
+
+              <a
+                target="_blank"
+                href="https://cards.entetsu.co.jp/kidsclub/"
+                >
                 <img
                   src="imgs/links/04.jpg"
                   width="140"
                   height="35"
-                  alt="ネットスーパー"
+                  alt="えんてつカード キッズクラブ"
                   />
               </a>
             </p>
