@@ -6887,7 +6887,7 @@ article {
       display: table; }
     #Front > footer .lf-external div p {
       margin-bottom: 1rem; }
-    #Front > footer .lf-external div a img {
+    #Front > footer .lf-external div img {
       border: 1px solid black; }
     #Front > footer .lf-external div:first-child {
       float: left; }
@@ -7290,6 +7290,33 @@ article {
     color: white; }
     #Front article.pf-Detail .odd-white p {
       color: white; }
+  #Front section.pf-Column {
+    width: 60%;
+    text-align: left;
+    margin-bottom: 10rem; }
+    #Front section.pf-Column h1 {
+      margin-bottom: 1rem; }
+  #Front section.pf-Column.odd {
+    width: 60%;
+    text-align: left;
+    margin-left: 34rem; }
+  #Front div#service {
+    width: 60rem;
+    margin-left: 30rem; }
+    #Front div#service p {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+      padding-top: 3rem;
+      float: right;
+      border: 1px solid white;
+      margin-right: 1rem;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      line-height: 1.5rem; }
+    #Front div#service p:hover {
+      background-color: #123866; }
   #Front article#Company {
     margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail_company.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
@@ -7330,34 +7357,12 @@ article {
     #Front article#Company div.ceo img {
       border: 1px solid white; }
   #Front article#BuildingDetail {
+    position: relative;
     margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
     background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front article#BuildingDetail section:nth-child(3) {
-    margin-top: 18rem; }
-  #Front article#BuildingDetail h1 {
-    margin-bottom: 4rem; }
-  #Front article#BuildingDetail section:nth-child(5) {
-    margin: 8rem 6rem; }
-  #Front article#BuildingDetail p {
-    margin-right: -1.5rem; }
-  #Front article#BuildingDetail section:nth-child(6) {
-    margin: 8rem 6rem; }
-    #Front article#BuildingDetail section:nth-child(6) h3 {
-      clear: both;
-      line-height: 1rem; }
-    #Front article#BuildingDetail section:nth-child(6) img {
-      float: left;
-      margin-right: 2rem;
-      margin-bottom: 2rem; }
-  #Front article#BuildingDetail section table {
-    width: 60%;
-    display: inline-block; }
-    #Front article#BuildingDetail section table td {
-      vertical-align: top;
-      border-top: 1px solid #999;
-      line-height: 3rem; }
-    #Front article#BuildingDetail section table td:first-child {
-      width: 12rem; }
+  #Front #building01 {
+    position: absolute;
+    top: 1580px; }
