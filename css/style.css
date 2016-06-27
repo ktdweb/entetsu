@@ -7292,13 +7292,14 @@ article {
       color: white; }
   #Front article#Company {
     margin-top: 20rem;
-    background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-image: url("../imgs/detail/bg_detail_company.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 1620px, left 0 bottom 0px;
     background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
   #Front article#Company section:nth-child(3) {
     margin-top: 18rem; }
   #Front article#Company h1 {
+    margin-top: 8rem;
     margin-bottom: 4rem; }
   #Front article#Company section:nth-child(5) {
     margin: 8rem 6rem; }
@@ -7322,6 +7323,12 @@ article {
       line-height: 3rem; }
     #Front article#Company section table td:first-child {
       width: 12rem; }
+  #Front article#Company div.ceo {
+    margin-bottom: 3rem; }
+    #Front article#Company div.ceo p {
+      margin-right: 0.5rem; }
+    #Front article#Company div.ceo img {
+      border: 1px solid white; }
   #Front article#BuildingDetail {
     margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");

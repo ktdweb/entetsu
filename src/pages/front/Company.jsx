@@ -31,23 +31,56 @@ export default class Company extends React.Component {
 
         <section className="odd odd-white">
           <h1>社長メッセージ</h1>
-          <p>
-            (サンプルテキスト)<br />
-            私たち遠鉄アシストは、「アシスト」という社名が示す通り、<br />
-            地域社会のお手伝いをしている「人間中心」の会社です。
-          </p>
-          <p>
-            当社は、遠鉄グループの一員として、静岡県西部地方を中心に、企業や学校、行政等の<br />
-            アウトソーシングに対応して、運行管理、ビル・マンション管理、清掃、<br />
-            指定管理施設運営、食品検査、生活支援サービスを運営しています。
-          </p>
-          <p>
-            さて、当社の経営ビジョンですが、「時代の変化をとらえ、自ら変革できる会社になる！」です。<br />
-            現在は時代の流れが大変速く、高齢化社会を迎え、人々の価値観も日々変わっています。<br />
-            したがって、我々は変化の風をしっかりとらえ、その変化に対応して、自ら変わっていかなければ、<br />
-            取り残されてしまいます。もし、時代の変化に対応した変革ができなければ、<br />
-            社会に必要のない会社になってしまいます。
-          </p>
+            <p>
+              "困った!をありがとうに"は、私たち遠鉄アシストの９年後のありたい姿です。<br />
+              2015年度から始まった３ヶ年計画シャイン2017を作成するにあたり、みんなで考えました。<br />
+              2023年度には、当社に係わる全ての人の「困った」を解決し「ありがとう」と言われ、<br />
+              仕事を通じてお客様に感動を与えられる会社になりたいと思っています。<br />
+              当社は「アシスト」という社名が示す通り、<br />
+              法人、個人を問わず地域社会のお手伝いをしている「人間中心」の会社です。<br />
+
+              遠鉄グループの一員として、静岡県西部地方を中心に、企業や学校、行政等のアウトソーシングや&nbsp;&nbsp;<br />
+              個人の生活上の困りごとに対応して、<br />
+              「運行管理サービス事業」「指定管理サービス事業」「ビル管理・清掃事業」<br />
+              「食品検査事業」「マンション管理・清掃事業」「生活支援サービス事業」の六事業を&nbsp;&nbsp;<br />
+              主要事業として運営しています。
+            </p>
+
+            <p>
+              この六事業で9年後に我々が目指す姿になるためには、<br />
+              まず、「すべての人々の、日々変化する「ニーズ」を把握し、<br />
+              対応するために「変わり続ける」会社になっている」ことが必要です。<br />
+              したがって、これを3年後（2017年度）のありたい姿としました。<br />
+              現在は時代の流れが大変速く、高齢化社会を迎え、人々の価値観も日々変わっています。<br />
+              したがって、我々は変化の風をしっかりとらえ、その変化に対応して、<br />
+              自ら変わっていかなければ、取り残されてしまいます。<br />
+              もし、時代の変化に対応した変革ができなければ、社会に必要のない会社になってしまいます。<br />
+              逆に言えば、その変化に対応できれば、どんなに厳しい時代でも、<br />
+              「お客様に、パートナーに、スタッフに選ばれる会社」になって、<br />
+              永続的に存在・発展することができます。そうなるためには、<br />
+              まず、遠鉄アシストの社員が会社に誇りを持ち、<br />
+              同じ目線で明るく前向きに頑張ることが重要です。<br />
+              その上で、お客様のご意見やご要望を把握し、その声を我々が提供するサービスに生かす。<br />
+              また、ビジネスパートナーとは、情報交換を密にして、共存共栄できる関係を構築する。<br />
+              そして、地域社会から信頼され、貢献し続けることができる。こんな会社が私たちの目指している姿です。
+            </p>
+
+            <p>
+              私たちが提供している商品は、形のある物ではなく、<br />
+              安全、安心、信頼、迅速、好感、快適、清潔といった形のないサービスです。<br />
+              それだからこそ、お客様からの信頼感が最も重要であり、<br />
+              信頼感を得るために一番大切にしている財産は&nbsp;&nbsp;<br />
+              「人間力のある社員」と「良いビジネスパートナー」です。<br />
+              まだまだ小さな会社ですが、そのことを忘れず「大きな希望」を持って、<br />
+              目標に向かって日々仕事に取り組んでおります。
+            </p>
+
+            <div className="ceo">
+              <p>取締役社長<br />藤野 聡</p>
+              <img src="imgs/detail/company_ceo_photo.jpg" width="140" height="210" alt="CEO" />
+            </div>
+
+            <img src="imgs/detail/company_message.png" width="500" height="317" alt="message" />
         </section>
 
         <section id="company02">
@@ -251,22 +284,33 @@ export default class Company extends React.Component {
         </section>
 
         <section id="company04" className="odd">
-          <h1>指定管理業務</h1>
 
-          <h3>行政の指定管理者として公共事業業務を受託<br />
-          市民の立場・目線で地域の暮らしを支えます</h3>
+        </section>
+
+        <section>
+          <h1>遠鉄アシストの戦略事業</h1> 
+
+          <h3>指定管理業務</h3>
+
+          <p>
+            <img src="imgs/detail/company_banner00.jpg" width="260" height="98" alt="指定管理事業" />
+            行政の指定管理者として公共事業業務を受託<br />
+            市民の立場・目線で地域の暮らしを支えます
+          </p>
 
           <p>
             遠鉄アシストのお取引先は、浜松市内を中心に約1300社。<br />
             設備管理、清掃等様々な業務を通じて培った豊富な実績により、<br />
             民間企業だけでなく、浜松市をはじめ多くの行政機関ともお取引をいただいております。 
           </p>
+
           <p>
             行政機関との関係では、指定管理事業にも取り組みはじめ、<br />
             浜松城公園、浜松まつり会館、浜松市立青少年の家等の管理運営に携わっております。<br />
             静岡県西部地域の観光振興や地域の活性化、青少年の健全育成等、<br />
             遠鉄グループ経営理念の延長線上にある事業に参画しております。
           </p>
+
           <p>
             地域の皆様に育てられた企業として、今まで培ってきた経験、ノウハウ、実績を持って、<br />
             地域の方々に恩返しができるよう努力しております。
@@ -278,39 +322,30 @@ export default class Company extends React.Component {
             <li><a href="http://www.h-seisyounen-ie.com/" target="_blank">浜松市立青少年の家</a></li>
             <li><a href="http://www.hamamatsu-navi.jp/busparking/" target="_blank">浜松市観光バス公共駐車場</a></li>
             <li><a href="http://www.hamamatsu-navi.jp/parking/index.html" target="_blank">浜松市営駐車場</a></li>
-            <li>浜松市営住宅</li>
-            <li>浜松市立浜北図書館</li>
-            <li><a href="http://www.ryuyo-kaiyopark.jp/">竜洋海洋センター</a></li>
-            <li>遠州灘海浜公園</li>
-            <div id="company05"></div>
-            <li>佐鳴湖公園</li>
-            <li>浜名湖体験学習施設　ウォット</li>
-            <li>浜松市茶室　松韻亭</li>
-            <li>リベーラ磐田市営駐車場</li>
+            <li><a href="http://www.city.hamamatsu.shizuoka.jp/jutaku/home_tochi/home/house/" target="_blank">浜松市営住宅</a></li>
+            <li><a href="http://www.lib-city-hamamatsu.jp/access/hamakita.htm" target="_blank">浜松市立浜北図書館</a></li>
+            <li><a href="http://www.ryuyo-kaiyopark.jp/" target="_blank">竜洋海洋センター</a></li>
+            <li><a href="http://www.enshunada.com/" target="_blank">遠州灘海浜公園</a></li>
+            <li><a href="http://www.city.hamamatsu.shizuoka.jp/koen-kan/park/parks/sanaruko/sanaru_index.html" target="_blank">佐鳴湖公園</a></li>
+            <li><a href="http://www.orange.ne.jp/~ulotto/" target="_blank">浜名湖体験学習施設　ウォット</a></li>
+            <li><a href="http://www.shouintei.jp/" target="_blank">浜松市茶室　松韻亭</a></li>
+            <li><a href="http://www.city.iwata.shizuoka.jp/shisetsu/entry/shisetsu100026.php" target="_blank">リベーラ磐田市営駐車場</a></li>
           </ul>
 
-        </section>
-
-        <section>
-          <h1>遠鉄アシストの戦略事業</h1> 
           <p>
             遠鉄アシストでは、新しい業務にも積極的に取り組みます。
           </p>
 
           <h3>食品検査</h3>
           <p>
-            <a href="http://www.entetsu.co.jp/kensa/" target="_blank">
-              <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品管理" />
-            </a>
+            <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品管理" />
             全国の上場企業をはじめ、地元企業など<br />
             多くの企業からの検査をうけたまわっております
           </p>
 
           <h3>生活支援サービス</h3>
           <p>
-            <a href="" target="_blank">
-              <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
-            </a>
+            <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
             暮らしの困った解決!<br />
             ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します
           </p>
