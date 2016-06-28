@@ -16,13 +16,11 @@ export default class MansionDetail extends React.Component {
         <DocumentTitle title="遠鉄アシスト | 会社概要" />
 
         <section id="mansion01">
-          <h1>機能するビルディング</h1>
+          <h1>地域に溶け込む住まい</h1>
           <p>
-            仕事に集中できる環境。<br />
-            始業ベルとともに、一斉にスタートする職場には、<br />
-            なにが求められているか?<br />
-            オフィスとして求められるもの全てを<br />
-            遠鉄アシストはサポートします。
+            周辺環境に違和感なく溶け込み、人の住まいとしてあり続ける建物。<br />
+            そんな中で気持ちよく過ごせる空間。周りとの共存・共栄。<br />
+            そんなノウハウを遠鉄アシストはご提供します。
           </p>
         </section>
 
@@ -34,19 +32,11 @@ export default class MansionDetail extends React.Component {
           </p>
 
           <div id="service">
-
-            <p value="5" onClick={this.onService.bind(this)} >保安警備</p>
-            <p value="4" onClick={this.onService.bind(this)} >駐車場管理</p>
-            <p value="3" onClick={this.onService.bind(this)} >環境衛生管理</p>
-            <p value="2" onClick={this.onService.bind(this)} >諸設備<br />メンテナンス</p>
-            <p value="1" onClick={this.onService.bind(this)} >設備管理</p>
-          </div>
-
-          <div id="service">
-            <p value="9" onClick={this.onService.bind(this)} >その他</p>
-            <p value="8" onClick={this.onService.bind(this)} >設備管理業務</p>
-            <p value="7" onClick={this.onService.bind(this)} >管理員業務</p>
-            <p value="6" onClick={this.onService.bind(this)} >事務管理業務</p>
+            <p value="5" onClick={this.onService.bind(this)} >その他</p>
+            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
+            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
+            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
+            <p value="1" onClick={this.onService.bind(this)} >事務管理</p>
           </div>
 
           <div id="desc">
@@ -186,25 +176,6 @@ title: '働く皆様と財産の安全を見守ります',
 text: 'リスクマネジメント意識が高まる現在、お客様と利用者の生命・財産の安全を確保するため、高いモラルと信頼性のある保安警備技術で皆様の安全をしっかり見守ります。',
 },
 
-{
-title: '管理運営がよりスムーズに',
-text: '管理組合様のスムーズな管理運営をサポートすべく、会計、出納事務をはじめ、マンションの維持修繕に関する企画、調整業務、理事会・総会支援業務、図書、関連書類の管理等を一括してお引き受けいたします。',
-},
-
-{
-title: '安全・安心・快適を見据えて',
-text: '入居者の皆様が日々、安全・安心・快適に生活できるよう、マンションを訪問される方への対応、ライフラインや設備など各種点検の立ち合いを日常的または定期的に行います。入居者の皆様からのご質問やご相談も承り、必要に応じて管理組合様にご報告いたします。',
-},
-
-{
-title: '建物設備の異常は迅速に対応',
-text: 'マンションの建物や設備の異常をいち早く発見し、トラブルを未然に防ぐために、建物や設備を定期的に点検・検査します。また、これらのデータをもとに、経年劣化を踏まえた修繕や保守の必要性についてご提案します。',
-},
-
-{
-title: '物品販売やリースについても承ります',
-text: 'ホスピタリティーを重視し、常に快適な環境でお客様を迎えるため、マット、リース、清掃用洗剤などを提供。使用環境や使用頻度などに応じて最適な物品をご提案いたします。お気軽にご相談ください。',
-},
 ]
 
       this.setState({service: txt[e.target.value]});

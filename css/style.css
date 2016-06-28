@@ -7328,7 +7328,7 @@ article {
       line-height: 1.5rem;
       cursor: pointer; }
     #Front div#service p:hover {
-      background-color: #123866; }
+      background-color: rgba(0, 0, 0, 0.1); }
   #Front div#desc {
     clear: both;
     width: 400px;
@@ -7338,7 +7338,7 @@ article {
       margin-bottom: 0.5rem; }
   #Front article#Company {
     margin-top: 20rem;
-    background-image: url("../imgs/detail/bg_detail_company.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-image: url("../imgs/detail/bg_detail_company.png"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 1620px, left 0 bottom 0px;
     background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
