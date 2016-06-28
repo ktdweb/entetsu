@@ -273,6 +273,7 @@ export default class Company extends React.Component {
             <img src="imgs/detail/map.jpg" width="640" height="164" alt="map" />
           </p>
 
+          <div id="company05"></div>
           <p>
             [経路] <br />
             JR浜松駅北口を出て、遠鉄バスターミナルの<br />
@@ -322,14 +323,14 @@ export default class Company extends React.Component {
             <li><a href="http://www.h-seisyounen-ie.com/" target="_blank">浜松市立青少年の家</a></li>
             <li><a href="http://www.hamamatsu-navi.jp/busparking/" target="_blank">浜松市観光バス公共駐車場</a></li>
             <li><a href="http://www.hamamatsu-navi.jp/parking/index.html" target="_blank">浜松市営駐車場</a></li>
-            <li><a href="http://www.hamamatsu-navi.jp/parking/" target="_blank">浜松市営住宅</a></li>
-            <li><a href="http://www.lib-city-hamamatsu.jp/access/hamakita.htm" target="_blank">浜松市立浜北図書館</a></li>
+            <li>浜松市営住宅</li>
+            <li>浜松市立浜北図書館</li>
             <li><a href="http://www.ryuyo-kaiyopark.jp/" target="_blank">竜洋海洋センター</a></li>
-            <li><a href="http://www.enshunada.com/" target="_blank">遠州灘海浜公園</a></li>
+            <li>遠州灘海浜公園</li>
             <li><a href="http://www.entetsuassist-dms.com/sanaru-park/" target="_blank">佐鳴湖公園</a></li>
             <li><a href="http://www.orange.ne.jp/~ulotto/" target="_blank">浜名湖体験学習施設　ウォット</a></li>
             <li><a href="http://www.shouintei.jp/" target="_blank">浜松市茶室　松韻亭</a></li>
-            <li><a href="http://www.city.iwata.shizuoka.jp/shisetsu/entry/shisetsu100026.php" target="_blank">リベーラ磐田市営駐車場</a></li>
+            <li>リベーラ磐田市営駐車場</li>
           </ul>
 
           <p>
@@ -341,6 +342,7 @@ export default class Company extends React.Component {
             <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品管理" />
             全国の上場企業をはじめ、地元企業など<br />
             多くの企業からの検査をうけたまわっております
+            詳細は<a href="http://www.entetsu.co.jp/kensa/" target="_blank" >こちら</a>のHPをごらんください
           </p>
 
           <h3>生活支援サービス</h3>
@@ -348,6 +350,7 @@ export default class Company extends React.Component {
             <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
             暮らしの困った解決!<br />
             ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します
+            詳細は<a href="http://e-tomitsuka.benry.com/" target="_blank" >こちら</a>のHPをごらんください
           </p>
         </section>
 	

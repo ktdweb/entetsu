@@ -30,12 +30,66 @@ export default class Home extends React.Component {
           height="624"
           ></canvas>
 
-        <img
-          src="imgs/pages/top.jpg"
-          width="1040"
-          height="365"
-          alt="top"
-          />
+        <table className="menuTop">
+          <tbody>
+            <tr>
+              <td>
+                <img src="imgs/pages/top/col_a.jpg"
+                  width="405"
+                  height="315"
+                  alt="新着情報"
+                />
+              </td>
+              <td>
+                <p>
+                  <a
+                    href="company#company05"
+                    target="_blank"
+                     >
+                    <img src="imgs/pages/top/col_b01.jpg"
+                      width="260"
+                      height="97"
+                      alt="指定管理事業"
+                    />
+                  </a>
+                </p>
+
+                <p>
+                  <a
+                    href="http://www.entetsu.co.jp/kensa/"
+                    target="_blank"
+                     >
+                  <img src="imgs/pages/top/col_b02.jpg"
+                    width="260"
+                    height="97"
+                    alt="食品検査センター"
+                  />
+                  </a>
+                </p>
+
+                <p>
+                  <a
+                    href="http://e-tomitsuka.benry.com/"
+                    target="_blank"
+                     >
+                  <img src="imgs/pages/top/col_b03.jpg"
+                    width="260"
+                    height="97"
+                    alt="ベンリーえんてつ"
+                  />
+                  </a>
+                </p>
+              </td>
+              <td>
+                <img src="imgs/pages/top/col_c.jpg"
+                  width="277"
+                  height="326"
+                  alt="ベンリーえんてつ"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </article>
     );
   }

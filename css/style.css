@@ -7273,6 +7273,12 @@ article {
   front/BuildingDetail.jsxに関するクラスを定義
   prefixには`pf-BuildingDetail`を付与
   */ }
+  #Front .menuTop {
+    margin-top: 2rem; }
+    #Front .menuTop td {
+      vertical-align: top; }
+      #Front .menuTop td p {
+        margin-bottom: 1.2rem; }
   #Front article.pf-Detail {
     margin-top: 20rem; }
   #Front article.pf-Detail section {
