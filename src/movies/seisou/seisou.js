@@ -606,7 +606,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,289.2,153.8);
 
 	this.shape_1 = new cjs.Shape();
 	this.shape_1.graphics.f("#FFFFFF").s().p("Ah1B8IAAj3QACBiBFBIQBFBLBfACg");
-	this.shape_1.setTransform(11.9,611.5);
+	this.shape_1.setTransform(10.9,612.5);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.f("#FFFFFF").s().p("AjyjyIHlAAInmHlg");
@@ -614,7 +614,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,289.2,153.8);
 
 	this.shape_3 = new cjs.Shape();
 	this.shape_3.graphics.f("#FFFFFF").s().p("AjyDzIHlnlIAAHlg");
-	this.shape_3.setTransform(1015.6,599.6);
+	this.shape_3.setTransform(1016.6,600.6);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
