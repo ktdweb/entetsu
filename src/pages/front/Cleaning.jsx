@@ -30,12 +30,14 @@ export default class Cleaning extends React.Component {
           height="624"
           ></canvas>
 
+        <a href="/seisou_detail">
         <img
           src="imgs/pages/cleaning.jpg"
           width="1040"
           height="375"
           alt="cleaning"
           />
+        </a>
       </article>
     );
   }

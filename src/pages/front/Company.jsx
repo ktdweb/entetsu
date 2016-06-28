@@ -18,8 +18,8 @@ export default class Company extends React.Component {
           <p>
             当社は、1999年7月21日、遠州鉄道株式会社の100％子会社として、<br />
             運行管理部門で企業団体や自治体などのアシストをすることを目的に設立されました。<br />
-            遠州鉄道のバス部門との連携をとりながら、<br />
-            規制が緩和されつつあった人材派遣などの人材ビジネスへの参入を図りました。<br />
+            遠州鉄道のバス部門との連携をとりながら、
+            規制が緩和されつつあった人材派遣などの<br />人材ビジネスへの参入を図りました。<br />
           </p>
           <p>
             一方では、グループ内の再編に伴い、2002年7月、株式会社遠鉄総合ビルサービスから<br />
@@ -29,14 +29,14 @@ export default class Company extends React.Component {
           </p>
         </section>
 
-        <section className="odd odd-white">
+        <section id="company02" className="odd odd-white">
           <h1>社長メッセージ</h1>
             <p>
               "困った!をありがとうに"は、私たち遠鉄アシストの９年後のありたい姿です。<br />
               2015年度から始まった３ヶ年計画シャイン2017を作成するにあたり、みんなで考えました。<br />
               2023年度には、当社に係わる全ての人の「困った」を解決し「ありがとう」と言われ、<br />
               仕事を通じてお客様に感動を与えられる会社になりたいと思っています。<br />
-              当社は「アシスト」という社名が示す通り、<br />
+              当社は「アシスト」という社名が示す通り、
               法人、個人を問わず地域社会のお手伝いをしている「人間中心」の会社です。<br />
 
               遠鉄グループの一員として、静岡県西部地方を中心に、企業や学校、行政等のアウトソーシングや&nbsp;&nbsp;<br />
@@ -159,7 +159,7 @@ export default class Company extends React.Component {
                   警備業<br />
                   医療関連サービスマーク<br />
                   プライバシーマーク（第19000927(01)号）<br />
-                  一般労働者派遣事業（ハ22-020046）
+                  一般労働者派遣事業（派22-020046）
                 </td>
               </tr>
 
@@ -273,6 +273,7 @@ export default class Company extends React.Component {
             <img src="imgs/detail/map.jpg" width="640" height="164" alt="map" />
           </p>
 
+          <div id="company05"></div>
           <p>
             [経路] <br />
             JR浜松駅北口を出て、遠鉄バスターミナルの<br />
@@ -322,14 +323,14 @@ export default class Company extends React.Component {
             <li><a href="http://www.h-seisyounen-ie.com/" target="_blank">浜松市立青少年の家</a></li>
             <li><a href="http://www.hamamatsu-navi.jp/busparking/" target="_blank">浜松市観光バス公共駐車場</a></li>
             <li><a href="http://www.hamamatsu-navi.jp/parking/index.html" target="_blank">浜松市営駐車場</a></li>
-            <li><a href="http://www.hamamatsu-navi.jp/parking/" target="_blank">浜松市営住宅</a></li>
-            <li><a href="http://www.lib-city-hamamatsu.jp/access/hamakita.htm" target="_blank">浜松市立浜北図書館</a></li>
+            <li>浜松市営住宅</li>
+            <li>浜松市立浜北図書館</li>
             <li><a href="http://www.ryuyo-kaiyopark.jp/" target="_blank">竜洋海洋センター</a></li>
-            <li><a href="http://www.enshunada.com/" target="_blank">遠州灘海浜公園</a></li>
+            <li>遠州灘海浜公園</li>
             <li><a href="http://www.entetsuassist-dms.com/sanaru-park/" target="_blank">佐鳴湖公園</a></li>
             <li><a href="http://www.orange.ne.jp/~ulotto/" target="_blank">浜名湖体験学習施設　ウォット</a></li>
             <li><a href="http://www.shouintei.jp/" target="_blank">浜松市茶室　松韻亭</a></li>
-            <li><a href="http://www.city.iwata.shizuoka.jp/shisetsu/entry/shisetsu100026.php" target="_blank">リベーラ磐田市営駐車場</a></li>
+            <li>リベーラ磐田市営駐車場</li>
           </ul>
 
           <p>
@@ -340,14 +341,16 @@ export default class Company extends React.Component {
           <p>
             <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品管理" />
             全国の上場企業をはじめ、地元企業など<br />
-            多くの企業からの検査をうけたまわっております
+            多くの企業からの検査をうけたまわっております<br />
+            詳細は<a href="http://www.entetsu.co.jp/kensa/" target="_blank" >こちら</a>のHPをごらんください
           </p>
 
           <h3>生活支援サービス</h3>
           <p>
             <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
             暮らしの困った解決!<br />
-            ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します
+            ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します<br />
+            詳細は<a href="http://e-tomitsuka.benry.com/" target="_blank" >こちら</a>のHPをごらんください
           </p>
         </section>
 	

@@ -7272,7 +7272,28 @@ article {
   # pages/front/BuildingDetail.sass
   front/BuildingDetail.jsxに関するクラスを定義
   prefixには`pf-BuildingDetail`を付与
+  */
+  /*
+  # pages/front/MansionDetail.sass
+  front/MansionDetail.jsxに関するクラスを定義
+  prefixには`pf-MansionDetail`を付与
+  */
+  /*
+  # pages/front/SeisouDetail.sass
+  front/SeisouDetail.jsxに関するクラスを定義
+  prefixには`pf-SeisouDetail`を付与
+  */
+  /*
+  # pages/front/UnkouDetail.sass
+  front/UnkouDetail.jsxに関するクラスを定義
+  prefixには`pf-UnkouDetail`を付与
   */ }
+  #Front .menuTop {
+    margin-top: 2rem; }
+    #Front .menuTop td {
+      vertical-align: top; }
+      #Front .menuTop td p {
+        margin-bottom: 1.2rem; }
   #Front article.pf-Detail {
     margin-top: 20rem; }
   #Front article.pf-Detail section {
@@ -7291,18 +7312,18 @@ article {
     #Front article.pf-Detail .odd-white p {
       color: white; }
   #Front section.pf-Column {
-    width: 60%;
+    width: 50%;
     text-align: left;
     margin-bottom: 10rem; }
     #Front section.pf-Column h1 {
       margin-bottom: 1rem; }
   #Front section.pf-Column.odd {
-    width: 60%;
+    width: 50%;
     text-align: left;
-    margin-left: 34rem; }
+    margin-left: 46rem; }
   #Front div#service {
     width: 60rem;
-    margin-left: 30rem; }
+    margin-left: 33rem; }
     #Front div#service p {
       position: relative;
       width: 10rem;
@@ -7314,12 +7335,20 @@ article {
       text-align: center;
       border-radius: 5px;
       font-size: 1.2rem;
-      line-height: 1.5rem; }
+      line-height: 1.5rem;
+      cursor: pointer; }
     #Front div#service p:hover {
-      background-color: #123866; }
+      background-color: rgba(0, 0, 0, 0.1); }
+  #Front div#desc {
+    clear: both;
+    width: 400px;
+    margin-left: 38rem;
+    text-align: left; }
+    #Front div#desc p:first-child {
+      margin-bottom: 0.5rem; }
   #Front article#Company {
     margin-top: 20rem;
-    background-image: url("../imgs/detail/bg_detail_company.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-image: url("../imgs/detail/bg_detail_company.png"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 1620px, left 0 bottom 0px;
     background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
@@ -7359,10 +7388,112 @@ article {
   #Front article#BuildingDetail {
     position: relative;
     margin-top: 20rem;
-    background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-image: url("../imgs/detail/bg_detail.svg"), url("../imgs/detail/bg_building.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
-    background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front #building01 {
+  #Front section#building02 {
+    padding-top: 10rem; }
+  #Front section#building03 {
+    padding-top: 44rem; }
+  #Front section#building04 {
+    padding-top: 16rem; }
+  #Front section#building05 {
+    padding-top: 20rem;
+    padding-bottom: 10rem; }
+  #Front article#BuildingDetail div#add01 {
     position: absolute;
-    top: 1580px; }
+    top: 1200px;
+    right: 0px; }
+  #Front article#BuildingDetail div#add02 {
+    position: absolute;
+    top: 2000px;
+    left: 0px; }
+  #Front article#BuildingDetail div#add03 {
+    position: absolute;
+    top: 2400px;
+    right: 0px; }
+  #Front article#MansionDetail {
+    position: relative;
+    margin-top: 20rem;
+    background-image: url("../imgs/detail/bg_detail_mansion.svg"), url("../imgs/detail/bg_mansion.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
+  #Front section#mansion02 {
+    padding-top: 20rem; }
+  #Front section#mansion03 {
+    padding-top: 30rem; }
+  #Front section#mansion04 {
+    padding-top: 16rem; }
+  #Front section#mansion05 {
+    padding-top: 20rem;
+    padding-bottom: 10rem; }
+  #Front article#MansionDetail div#add01 {
+    position: absolute;
+    top: 900px;
+    right: 0px; }
+  #Front article#MansionDetail div#add02 {
+    position: absolute;
+    top: 2200px;
+    left: 0px; }
+  #Front article#MansionDetail div#add03 {
+    position: absolute;
+    top: 2700px;
+    right: 0px; }
+  #Front article#SeisouDetail {
+    position: relative;
+    margin-top: 20rem;
+    background-image: url("../imgs/detail/bg_detail_seisou.svg"), url("../imgs/detail/bg_seisou.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
+  #Front section#seisou02 {
+    padding-top: 10rem; }
+  #Front section#seisou03 {
+    padding-top: 40rem; }
+  #Front section#seisou04 {
+    padding-top: 16rem; }
+  #Front section#seisou05 {
+    padding-top: 20rem;
+    padding-bottom: 10rem; }
+  #Front article#SeisouDetail div#add01 {
+    position: absolute;
+    top: 800px;
+    right: 0px; }
+  #Front article#SeisouDetail div#add02 {
+    position: absolute;
+    top: 1200px;
+    left: 0px; }
+  #Front article#SeisouDetail div#add03 {
+    position: absolute;
+    top: 2200px;
+    right: 0px; }
+  #Front article#UnkouDetail {
+    position: relative;
+    margin-top: 20rem;
+    background-image: url("../imgs/detail/bg_detail_unkou.svg"), url("../imgs/detail/bg_unkou.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
+  #Front section#unkou02 {
+    padding-top: 4rem; }
+  #Front section#unkou03 {
+    padding-top: 28rem; }
+  #Front section#unkou04 {
+    padding-top: 16rem; }
+  #Front section#unkou05 {
+    padding-top: 20rem;
+    padding-bottom: 10rem; }
+  #Front article#UnkouDetail div#add01 {
+    position: absolute;
+    top: 900px;
+    right: 0px; }
+  #Front article#UnkouDetail div#add02 {
+    position: absolute;
+    top: 1300px;
+    left: 0px; }
+  #Front article#UnkouDetail div#add03 {
+    position: absolute;
+    top: 1600px;
+    right: 0px; }
