@@ -30,12 +30,14 @@ export default class Mansion extends React.Component {
           height="624"
           ></canvas>
 
-        <img
-          src="imgs/pages/mansion.jpg"
-          width="1040"
-          height="380"
-          alt="mansion"
-          />
+        <a href="mansion_detail">
+          <img
+            src="imgs/pages/mansion.jpg"
+            width="1040"
+            height="380"
+            alt="mansion"
+            />
+        </a>
       </article>
     );
   }

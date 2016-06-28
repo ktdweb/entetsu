@@ -98,7 +98,7 @@ const routes = (
           footer: FrontFooter
         }} />
 
-      <Route path={root.documentRoot + '/seisou_detail'}
+      <Route path={root.documentRoot + '/building_detail'}
         global={root}
         components={{
           header: FrontHeader,

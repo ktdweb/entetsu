@@ -30,12 +30,14 @@ export default class Driving extends React.Component {
           height="624"
           ></canvas>
 
-        <img
-          src="imgs/pages/driving.jpg"
-          width="1040"
-          height="375"
-          alt="driving"
-          />
+        <a href="unkou_detail">
+          <img
+            src="imgs/pages/driving.jpg"
+            width="1040"
+            height="375"
+            alt="driving"
+            />
+        </a>
       </article>
     );
   }
