@@ -6519,6 +6519,9 @@ article {
   background-color: white;
   margin-top: 11rem; }
 
+#mainImage img {
+  margin-top: 11rem; }
+
 /*
   # layouts/index.sass
   layoutsディレクトリ内で利用するファイルをリストアップ

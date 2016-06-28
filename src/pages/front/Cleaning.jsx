@@ -24,11 +24,13 @@ export default class Cleaning extends React.Component {
       <article id="Cleaning">
         <DocumentTitle title="遠鉄アシスト | 清掃" />
 
-        <canvas
-          id="canvas"
-          width="1040"
-          height="624"
-          ></canvas>
+        <div id="mainImage">
+          <canvas
+            id="canvas"
+            width="1040"
+            height="624"
+            ></canvas>
+        </div>
 
         <a href="/seisou_detail">
         <img
@@ -43,13 +45,26 @@ export default class Cleaning extends React.Component {
   }
 
   init() {
-    canvas = document.getElementById("canvas");
-    var images = images||{};
-    var ss = ss||{};
-    var loader = new createjs.LoadQueue(false);
-    loader.addEventListener("fileload", this.handleFileLoad);
-    loader.addEventListener("complete", this.handleComplete);
-    loader.loadManifest(lib.properties.manifest);
+    let ua = this.ua();
+    if (ua.eq_IE9) {
+      let mainImage = document.getElementById("mainImage");
+      let canvas = document.getElementById("canvas");
+      let body = document.getElementById("Home");
+      let img = document.createElement("img");
+      img.src = 'imgs/legacy/driving.jpg';
+      img.width = 1040;
+      img.height = 624;
+      mainImage.removeChild(canvas);
+      mainImage.appendChild(img);
+    } else {
+      canvas = document.getElementById("canvas");
+      var images = images||{};
+      var ss = ss||{};
+      var loader = new createjs.LoadQueue(false);
+      loader.addEventListener("fileload", this.handleFileLoad);
+      loader.addEventListener("complete", this.handleComplete);
+      loader.loadManifest(lib.properties.manifest);
+    }
   }
 
   handleFileLoad(evt) {	
@@ -107,5 +122,23 @@ export default class Cleaning extends React.Component {
         lastW = iw; lastH = ih; lastS = sRatio;		
       }
     })(false,'both',false,1);	
+  }
+
+  ua() {
+    return {
+    lte_IE6:typeof window.addEventListener == "undefined" && typeof document.documentElement.style.maxHeight == "undefined",
+    lte_IE7:typeof window.addEventListener == "undefined" && typeof document.querySelectorAll == "undefined",
+    lte_IE8:typeof window.addEventListener == "undefined" && typeof document.getElementsByClassName == "undefined",
+    lte_IE9:document.uniqueID && typeof window.matchMedia == "undefined",
+    gte_IE10:document.uniqueID && window.matchMedia ,
+    eq_IE8:document.uniqueID && document.documentMode === 8,
+    eq_IE9:document.uniqueID && document.documentMode === 9,
+    eq_IE10:document.uniqueID && document.documentMode === 10,
+    eq_IE11:document.uniqueID && document.documentMode === 11,
+    //        eq_IE10:document.uniqueID && window.matchMedia && document.selection,
+    //        eq_IE11:document.uniqueID && window.matchMedia && !document.selection,
+    //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
+    Trident:document.uniqueID
+    }
   }
 }

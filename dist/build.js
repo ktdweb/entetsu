@@ -1221,11 +1221,11 @@ var Building = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Building' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | ビル管理' }), _react2.default.createElement('canvas', {
+      return _react2.default.createElement('article', { id: 'Building' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | ビル管理' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('canvas', {
         id: 'canvas',
         width: '1040',
         height: '624'
-      }), _react2.default.createElement('a', { href: 'building_detail' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: 'building_detail' }, _react2.default.createElement('img', {
         src: 'imgs/pages/building.jpg',
         width: '1040',
         height: '375',
@@ -1235,13 +1235,26 @@ var Building = function (_React$Component) {
   }, {
     key: 'init',
     value: function init() {
-      canvas = document.getElementById("canvas");
-      var images = images || {};
-      var ss = ss || {};
-      var loader = new createjs.LoadQueue(false);
-      loader.addEventListener("fileload", this.handleFileLoad);
-      loader.addEventListener("complete", this.handleComplete);
-      loader.loadManifest(lib.properties.manifest);
+      var ua = this.ua();
+      if (ua.eq_IE9) {
+        var mainImage = document.getElementById("mainImage");
+        var _canvas = document.getElementById("canvas");
+        var body = document.getElementById("Home");
+        var img = document.createElement("img");
+        img.src = 'imgs/legacy/cleaning.jpg';
+        img.width = 1040;
+        img.height = 624;
+        mainImage.removeChild(_canvas);
+        mainImage.appendChild(img);
+      } else {
+        canvas = document.getElementById("canvas");
+        var images = images || {};
+        var ss = ss || {};
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", this.handleFileLoad);
+        loader.addEventListener("complete", this.handleComplete);
+        loader.loadManifest(lib.properties.manifest);
+      }
     }
   }, {
     key: 'handleFileLoad',
@@ -1306,6 +1319,25 @@ var Building = function (_React$Component) {
           lastW = iw;lastH = ih;lastS = sRatio;
         }
       })(false, 'both', false, 1);
+    }
+  }, {
+    key: 'ua',
+    value: function ua() {
+      return {
+        lte_IE6: typeof window.addEventListener == "undefined" && typeof document.documentElement.style.maxHeight == "undefined",
+        lte_IE7: typeof window.addEventListener == "undefined" && typeof document.querySelectorAll == "undefined",
+        lte_IE8: typeof window.addEventListener == "undefined" && typeof document.getElementsByClassName == "undefined",
+        lte_IE9: document.uniqueID && typeof window.matchMedia == "undefined",
+        gte_IE10: document.uniqueID && window.matchMedia,
+        eq_IE8: document.uniqueID && document.documentMode === 8,
+        eq_IE9: document.uniqueID && document.documentMode === 9,
+        eq_IE10: document.uniqueID && document.documentMode === 10,
+        eq_IE11: document.uniqueID && document.documentMode === 11,
+        //        eq_IE10:document.uniqueID && window.matchMedia && document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
+        Trident: document.uniqueID
+      };
     }
   }]);
 
@@ -1503,11 +1535,11 @@ var Cleaning = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Cleaning' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 清掃' }), _react2.default.createElement('canvas', {
+      return _react2.default.createElement('article', { id: 'Cleaning' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 清掃' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('canvas', {
         id: 'canvas',
         width: '1040',
         height: '624'
-      }), _react2.default.createElement('a', { href: '/seisou_detail' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '/seisou_detail' }, _react2.default.createElement('img', {
         src: 'imgs/pages/cleaning.jpg',
         width: '1040',
         height: '375',
@@ -1517,13 +1549,26 @@ var Cleaning = function (_React$Component) {
   }, {
     key: 'init',
     value: function init() {
-      canvas = document.getElementById("canvas");
-      var images = images || {};
-      var ss = ss || {};
-      var loader = new createjs.LoadQueue(false);
-      loader.addEventListener("fileload", this.handleFileLoad);
-      loader.addEventListener("complete", this.handleComplete);
-      loader.loadManifest(lib.properties.manifest);
+      var ua = this.ua();
+      if (ua.eq_IE9) {
+        var mainImage = document.getElementById("mainImage");
+        var _canvas = document.getElementById("canvas");
+        var body = document.getElementById("Home");
+        var img = document.createElement("img");
+        img.src = 'imgs/legacy/driving.jpg';
+        img.width = 1040;
+        img.height = 624;
+        mainImage.removeChild(_canvas);
+        mainImage.appendChild(img);
+      } else {
+        canvas = document.getElementById("canvas");
+        var images = images || {};
+        var ss = ss || {};
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", this.handleFileLoad);
+        loader.addEventListener("complete", this.handleComplete);
+        loader.loadManifest(lib.properties.manifest);
+      }
     }
   }, {
     key: 'handleFileLoad',
@@ -1588,6 +1633,25 @@ var Cleaning = function (_React$Component) {
           lastW = iw;lastH = ih;lastS = sRatio;
         }
       })(false, 'both', false, 1);
+    }
+  }, {
+    key: 'ua',
+    value: function ua() {
+      return {
+        lte_IE6: typeof window.addEventListener == "undefined" && typeof document.documentElement.style.maxHeight == "undefined",
+        lte_IE7: typeof window.addEventListener == "undefined" && typeof document.querySelectorAll == "undefined",
+        lte_IE8: typeof window.addEventListener == "undefined" && typeof document.getElementsByClassName == "undefined",
+        lte_IE9: document.uniqueID && typeof window.matchMedia == "undefined",
+        gte_IE10: document.uniqueID && window.matchMedia,
+        eq_IE8: document.uniqueID && document.documentMode === 8,
+        eq_IE9: document.uniqueID && document.documentMode === 9,
+        eq_IE10: document.uniqueID && document.documentMode === 10,
+        eq_IE11: document.uniqueID && document.documentMode === 11,
+        //        eq_IE10:document.uniqueID && window.matchMedia && document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
+        Trident: document.uniqueID
+      };
     }
   }]);
 
@@ -1745,11 +1809,11 @@ var Driving = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Driving' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 運行管理' }), _react2.default.createElement('canvas', {
+      return _react2.default.createElement('article', { id: 'Driving' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 運行管理' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('canvas', {
         id: 'canvas',
         width: '1040',
         height: '624'
-      }), _react2.default.createElement('a', { href: 'unkou_detail' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: 'unkou_detail' }, _react2.default.createElement('img', {
         src: 'imgs/pages/driving.jpg',
         width: '1040',
         height: '375',
@@ -1759,13 +1823,26 @@ var Driving = function (_React$Component) {
   }, {
     key: 'init',
     value: function init() {
-      canvas = document.getElementById("canvas");
-      var images = images || {};
-      var ss = ss || {};
-      var loader = new createjs.LoadQueue(false);
-      loader.addEventListener("fileload", this.handleFileLoad);
-      loader.addEventListener("complete", this.handleComplete);
-      loader.loadManifest(lib.properties.manifest);
+      var ua = this.ua();
+      if (ua.eq_IE9) {
+        var mainImage = document.getElementById("mainImage");
+        var _canvas = document.getElementById("canvas");
+        var body = document.getElementById("Home");
+        var img = document.createElement("img");
+        img.src = 'imgs/legacy/driving.jpg';
+        img.width = 1040;
+        img.height = 624;
+        mainImage.removeChild(_canvas);
+        mainImage.appendChild(img);
+      } else {
+        canvas = document.getElementById("canvas");
+        var images = images || {};
+        var ss = ss || {};
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", this.handleFileLoad);
+        loader.addEventListener("complete", this.handleComplete);
+        loader.loadManifest(lib.properties.manifest);
+      }
     }
   }, {
     key: 'handleFileLoad',
@@ -1830,6 +1907,25 @@ var Driving = function (_React$Component) {
           lastW = iw;lastH = ih;lastS = sRatio;
         }
       })(false, 'both', false, 1);
+    }
+  }, {
+    key: 'ua',
+    value: function ua() {
+      return {
+        lte_IE6: typeof window.addEventListener == "undefined" && typeof document.documentElement.style.maxHeight == "undefined",
+        lte_IE7: typeof window.addEventListener == "undefined" && typeof document.querySelectorAll == "undefined",
+        lte_IE8: typeof window.addEventListener == "undefined" && typeof document.getElementsByClassName == "undefined",
+        lte_IE9: document.uniqueID && typeof window.matchMedia == "undefined",
+        gte_IE10: document.uniqueID && window.matchMedia,
+        eq_IE8: document.uniqueID && document.documentMode === 8,
+        eq_IE9: document.uniqueID && document.documentMode === 9,
+        eq_IE10: document.uniqueID && document.documentMode === 10,
+        eq_IE11: document.uniqueID && document.documentMode === 11,
+        //        eq_IE10:document.uniqueID && window.matchMedia && document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
+        Trident: document.uniqueID
+      };
     }
   }]);
 
@@ -1915,11 +2011,11 @@ var Home = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('canvas', {
+      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('canvas', {
         id: 'canvas',
         width: '1040',
         height: '624'
-      }), _react2.default.createElement('table', { className: 'menuTop' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('td', null, _react2.default.createElement('img', { src: 'imgs/pages/top/col_a.jpg',
+      })), _react2.default.createElement('table', { className: 'menuTop' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('td', null, _react2.default.createElement('img', { src: 'imgs/pages/top/col_a.jpg',
         width: '405',
         height: '315',
         alt: '新着情報'
@@ -1953,13 +2049,26 @@ var Home = function (_React$Component) {
   }, {
     key: 'init',
     value: function init() {
-      canvas = document.getElementById("canvas");
-      var images = images || {};
-      var ss = ss || {};
-      var loader = new createjs.LoadQueue(false);
-      loader.addEventListener("fileload", this.handleFileLoad);
-      loader.addEventListener("complete", this.handleComplete);
-      loader.loadManifest(lib.properties.manifest);
+      var ua = this.ua();
+      if (ua.eq_IE9) {
+        var mainImage = document.getElementById("mainImage");
+        var _canvas = document.getElementById("canvas");
+        var body = document.getElementById("Home");
+        var img = document.createElement("img");
+        img.src = 'imgs/legacy/top.jpg';
+        img.width = 1040;
+        img.height = 624;
+        mainImage.removeChild(_canvas);
+        mainImage.appendChild(img);
+      } else {
+        canvas = document.getElementById("canvas");
+        var images = images || {};
+        var ss = ss || {};
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", this.handleFileLoad);
+        loader.addEventListener("complete", this.handleComplete);
+        loader.loadManifest(lib.properties.manifest);
+      }
     }
   }, {
     key: 'handleFileLoad',
@@ -2024,6 +2133,25 @@ var Home = function (_React$Component) {
           lastW = iw;lastH = ih;lastS = sRatio;
         }
       })(false, 'both', false, 1);
+    }
+  }, {
+    key: 'ua',
+    value: function ua() {
+      return {
+        lte_IE6: typeof window.addEventListener == "undefined" && typeof document.documentElement.style.maxHeight == "undefined",
+        lte_IE7: typeof window.addEventListener == "undefined" && typeof document.querySelectorAll == "undefined",
+        lte_IE8: typeof window.addEventListener == "undefined" && typeof document.getElementsByClassName == "undefined",
+        lte_IE9: document.uniqueID && typeof window.matchMedia == "undefined",
+        gte_IE10: document.uniqueID && window.matchMedia,
+        eq_IE8: document.uniqueID && document.documentMode === 8,
+        eq_IE9: document.uniqueID && document.documentMode === 9,
+        eq_IE10: document.uniqueID && document.documentMode === 10,
+        eq_IE11: document.uniqueID && document.documentMode === 11,
+        //        eq_IE10:document.uniqueID && window.matchMedia && document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
+        Trident: document.uniqueID
+      };
     }
   }]);
 
@@ -2109,11 +2237,11 @@ var Mansion = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Mansion' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | マンション管理' }), _react2.default.createElement('canvas', {
+      return _react2.default.createElement('article', { id: 'Mansion' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | マンション管理' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('canvas', {
         id: 'canvas',
         width: '1040',
         height: '624'
-      }), _react2.default.createElement('a', { href: 'mansion_detail' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: 'mansion_detail' }, _react2.default.createElement('img', {
         src: 'imgs/pages/mansion.jpg',
         width: '1040',
         height: '380',
@@ -2123,13 +2251,26 @@ var Mansion = function (_React$Component) {
   }, {
     key: 'init',
     value: function init() {
-      canvas = document.getElementById("canvas");
-      var images = images || {};
-      var ss = ss || {};
-      var loader = new createjs.LoadQueue(false);
-      loader.addEventListener("fileload", this.handleFileLoad);
-      loader.addEventListener("complete", this.handleComplete);
-      loader.loadManifest(lib.properties.manifest);
+      var ua = this.ua();
+      if (ua.eq_IE9) {
+        var mainImage = document.getElementById("mainImage");
+        var _canvas = document.getElementById("canvas");
+        var body = document.getElementById("Home");
+        var img = document.createElement("img");
+        img.src = 'imgs/legacy/mansion.jpg';
+        img.width = 1040;
+        img.height = 624;
+        mainImage.removeChild(_canvas);
+        mainImage.appendChild(img);
+      } else {
+        canvas = document.getElementById("canvas");
+        var images = images || {};
+        var ss = ss || {};
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", this.handleFileLoad);
+        loader.addEventListener("complete", this.handleComplete);
+        loader.loadManifest(lib.properties.manifest);
+      }
     }
   }, {
     key: 'handleFileLoad',
@@ -2194,6 +2335,25 @@ var Mansion = function (_React$Component) {
           lastW = iw;lastH = ih;lastS = sRatio;
         }
       })(false, 'both', false, 1);
+    }
+  }, {
+    key: 'ua',
+    value: function ua() {
+      return {
+        lte_IE6: typeof window.addEventListener == "undefined" && typeof document.documentElement.style.maxHeight == "undefined",
+        lte_IE7: typeof window.addEventListener == "undefined" && typeof document.querySelectorAll == "undefined",
+        lte_IE8: typeof window.addEventListener == "undefined" && typeof document.getElementsByClassName == "undefined",
+        lte_IE9: document.uniqueID && typeof window.matchMedia == "undefined",
+        gte_IE10: document.uniqueID && window.matchMedia,
+        eq_IE8: document.uniqueID && document.documentMode === 8,
+        eq_IE9: document.uniqueID && document.documentMode === 9,
+        eq_IE10: document.uniqueID && document.documentMode === 10,
+        eq_IE11: document.uniqueID && document.documentMode === 11,
+        //        eq_IE10:document.uniqueID && window.matchMedia && document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !document.selection,
+        //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
+        Trident: document.uniqueID
+      };
     }
   }]);
 
