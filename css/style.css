@@ -7272,6 +7272,11 @@ article {
   # pages/front/BuildingDetail.sass
   front/BuildingDetail.jsxに関するクラスを定義
   prefixには`pf-BuildingDetail`を付与
+  */
+  /*
+  # pages/front/MansionDetail.sass
+  front/MansionDetail.jsxに関するクラスを定義
+  prefixには`pf-MansionDetail`を付与
   */ }
   #Front .menuTop {
     margin-top: 2rem; }
@@ -7395,6 +7400,34 @@ article {
     top: 2000px;
     left: 0px; }
   #Front article#BuildingDetail div#add03 {
+    position: absolute;
+    top: 2400px;
+    right: 0px; }
+  #Front article#MansionDetail {
+    position: relative;
+    margin-top: 20rem;
+    background-image: url("../imgs/detail/bg_detail_mansion.svg"), url("../imgs/detail/bg_mansion.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
+  #Front section#mansion02 {
+    padding-top: 10rem; }
+  #Front section#mansion03 {
+    padding-top: 44rem; }
+  #Front section#mansion04 {
+    padding-top: 16rem; }
+  #Front section#mansion05 {
+    padding-top: 20rem;
+    padding-bottom: 10rem; }
+  #Front article#MansionDetail div#add01 {
+    position: absolute;
+    top: 1200px;
+    right: 0px; }
+  #Front article#MansionDetail div#add02 {
+    position: absolute;
+    top: 2000px;
+    left: 0px; }
+  #Front article#MansionDetail div#add03 {
     position: absolute;
     top: 2400px;
     right: 0px; }

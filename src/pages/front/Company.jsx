@@ -341,7 +341,7 @@ export default class Company extends React.Component {
           <p>
             <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品管理" />
             全国の上場企業をはじめ、地元企業など<br />
-            多くの企業からの検査をうけたまわっております
+            多くの企業からの検査をうけたまわっております<br />
             詳細は<a href="http://www.entetsu.co.jp/kensa/" target="_blank" >こちら</a>のHPをごらんください
           </p>
 
@@ -349,7 +349,7 @@ export default class Company extends React.Component {
           <p>
             <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
             暮らしの困った解決!<br />
-            ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します
+            ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します<br />
             詳細は<a href="http://e-tomitsuka.benry.com/" target="_blank" >こちら</a>のHPをごらんください
           </p>
         </section>
