@@ -6,6 +6,8 @@ export default class BuildingDetail extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = { service: { title: '', text: '' } };
   }
 
   render() {
@@ -32,18 +34,25 @@ export default class BuildingDetail extends React.Component {
           </p>
 
           <div id="service">
-            <p>保安警備</p>
-            <p>駐車場管理</p>
-            <p>環境衛生管理</p>
-            <p>諸設備<br />メンテナンス</p>
-            <p>設備管理</p>
+
+            <p value="5" onClick={this.onService.bind(this)} >保安警備</p>
+            <p value="4" onClick={this.onService.bind(this)} >駐車場管理</p>
+            <p value="3" onClick={this.onService.bind(this)} >環境衛生管理</p>
+            <p value="2" onClick={this.onService.bind(this)} >諸設備<br />メンテナンス</p>
+            <p value="1" onClick={this.onService.bind(this)} >設備管理</p>
           </div>
 
           <div id="service">
-            <p>その他</p>
-            <p>設備管理業務</p>
-            <p>管理員業務</p>
-            <p>事務管理業務</p>
+            <p value="9" onClick={this.onService.bind(this)} >その他</p>
+            <p value="8" onClick={this.onService.bind(this)} >設備管理業務</p>
+            <p value="7" onClick={this.onService.bind(this)} >管理員業務</p>
+            <p value="6" onClick={this.onService.bind(this)} >事務管理業務</p>
+          </div>
+
+          <div id="desc">
+            
+            <p className="mgnBtm0"><strong>{this.state.service.title}</strong></p>
+            <p>{this.state.service.text}</p>
           </div>
         </section>
 
@@ -70,7 +79,7 @@ export default class BuildingDetail extends React.Component {
         </section>
 
 
-        <section id="building03" className="pf-Column odd">
+        <section id="building04" className="pf-Column odd">
           <h1 className="text-right">遠鉄アシストの特徴</h1>
 
           <p className="text-right">遠鉄アシストの組織力が、清掃業務を 円滑にバックアップします。</p>
@@ -87,7 +96,7 @@ export default class BuildingDetail extends React.Component {
           </p>
         </section>
 
-        <section id="building04" className="pf-Column">
+        <section id="building05" className="pf-Column">
           <h1>遠鉄アシストのサポート</h1>
 
           <p>専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。</p>
@@ -138,7 +147,66 @@ export default class BuildingDetail extends React.Component {
             ビルの保守・管理に努めています。
           </p>
         </section>
+
+        <div id="add01"><img src="imgs/detail/building/add01.png" width="353" height="400" alt="add01" /></div>
+        <div id="add02"><img src="imgs/detail/building/add02.png" width="353" height="400" alt="add02" /></div>
+        <div id="add03"><img src="imgs/detail/building/add03.png" width="353" height="400" alt="add03" /></div>
       </article>
     );
+  }
+
+  onService(e) {
+      let txt = [
+{
+title: '',
+text: ''
+},
+
+{
+title: '日常の保守と長期的な展望に立った管理業務を行います',
+text: '常に快適な空間の維持に心掛け、ビルの総合管理業として、多様化するニーズに柔軟に対応。安全・安心・快適なサービスの提供により、お客様の満足度を高めます。',
+},
+
+{
+title: '',
+text: '住みやすいマンションを実現し、資産価値を高めるためのマンション内諸設備のメンテナンスを展開しております。',
+},
+
+{
+title: '安全を基本に、接客・接遇面でもご満足いただけます',
+text: '安全で効率的な駐車場運営と付加価値の高い接客サービスで対応。お客様に安心して気持ちよくご利用いただける駐車場であることを目指し、行き届いた駐車場管理を行います。',
+},
+{
+title: '働く皆様と財産の安全を見守ります',
+text: 'リスクマネジメント意識が高まる現在、お客様と利用者の生命・財産の安全を確保するため、高いモラルと信頼性のある保安警備技術で皆様の安全をしっかり見守ります。',
+},
+
+{
+title: '働く皆様と財産の安全を見守ります',
+text: 'リスクマネジメント意識が高まる現在、お客様と利用者の生命・財産の安全を確保するため、高いモラルと信頼性のある保安警備技術で皆様の安全をしっかり見守ります。',
+},
+
+{
+title: '管理運営がよりスムーズに',
+text: '管理組合様のスムーズな管理運営をサポートすべく、会計、出納事務をはじめ、マンションの維持修繕に関する企画、調整業務、理事会・総会支援業務、図書、関連書類の管理等を一括してお引き受けいたします。',
+},
+
+{
+title: '安全・安心・快適を見据えて',
+text: '入居者の皆様が日々、安全・安心・快適に生活できるよう、マンションを訪問される方への対応、ライフラインや設備など各種点検の立ち合いを日常的または定期的に行います。入居者の皆様からのご質問やご相談も承り、必要に応じて管理組合様にご報告いたします。',
+},
+
+{
+title: '建物設備の異常は迅速に対応',
+text: 'マンションの建物や設備の異常をいち早く発見し、トラブルを未然に防ぐために、建物や設備を定期的に点検・検査します。また、これらのデータをもとに、経年劣化を踏まえた修繕や保守の必要性についてご提案します。',
+},
+
+{
+title: '物品販売やリースについても承ります',
+text: 'ホスピタリティーを重視し、常に快適な環境でお客様を迎えるため、マット、リース、清掃用洗剤などを提供。使用環境や使用頻度などに応じて最適な物品をご提案いたします。お気軽にご相談ください。',
+},
+]
+
+      this.setState({service: txt[e.target.value]});
   }
 }

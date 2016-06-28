@@ -30,12 +30,14 @@ export default class Building extends React.Component {
           height="624"
           ></canvas>
 
+        <a href="building_detail">
         <img
           src="imgs/pages/building.jpg"
           width="1040"
           height="375"
           alt="building"
           />
+        </a>
       </article>
     );
   }

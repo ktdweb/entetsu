@@ -32,6 +32,9 @@ import FrontDriving   from './pages/front/Driving'
 import FrontCompany   from './pages/front/Company'
 
 import FrontBuildingDetail  from './pages/front/BuildingDetail'
+import FrontSeisouDetail  from './pages/front/SeisouDetail'
+import FrontMansionDetail  from './pages/front/MansionDetail'
+import FrontUnkouDetail  from './pages/front/UnkouDetail'
 
 const routes = (
   <Router history={browserHistory}>
@@ -95,11 +98,43 @@ const routes = (
           footer: FrontFooter
         }} />
 
+      <Route path={root.documentRoot + '/seisou_detail'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontBuildingDetail,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/seisou_detail'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontSeisouDetail,
+          footer: FrontFooter
+        }} />
+
       <Route path={root.documentRoot + '/building_detail'}
         global={root}
         components={{
           header: FrontHeader,
           main: FrontBuildingDetail,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/mansion_detail'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontMansionDetail,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/unkou_detail'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontUnkouDetail,
           footer: FrontFooter
         }} />
     </Route>
