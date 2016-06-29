@@ -1236,7 +1236,7 @@ var Building = function (_React$Component) {
     key: 'init',
     value: function init() {
       var ua = this.ua();
-      if (ua.eq_IE9) {
+      if (ua.eq_IE9 || ua.eq_IE10) {
         var mainImage = document.getElementById("mainImage");
         var _canvas = document.getElementById("canvas");
         var body = document.getElementById("Home");
@@ -1550,7 +1550,7 @@ var Cleaning = function (_React$Component) {
     key: 'init',
     value: function init() {
       var ua = this.ua();
-      if (ua.eq_IE9) {
+      if (ua.eq_IE9 || ua.eq_IE10) {
         var mainImage = document.getElementById("mainImage");
         var _canvas = document.getElementById("canvas");
         var body = document.getElementById("Home");
@@ -1824,7 +1824,7 @@ var Driving = function (_React$Component) {
     key: 'init',
     value: function init() {
       var ua = this.ua();
-      if (ua.eq_IE9) {
+      if (ua.eq_IE9 || ua.eq_IE10) {
         var mainImage = document.getElementById("mainImage");
         var _canvas = document.getElementById("canvas");
         var body = document.getElementById("Home");
@@ -2252,7 +2252,7 @@ var Mansion = function (_React$Component) {
     key: 'init',
     value: function init() {
       var ua = this.ua();
-      if (ua.eq_IE9) {
+      if (ua.eq_IE9 || ua.eq_IE10) {
         var mainImage = document.getElementById("mainImage");
         var _canvas = document.getElementById("canvas");
         var body = document.getElementById("Home");

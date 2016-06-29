@@ -46,7 +46,7 @@ export default class Building extends React.Component {
 
   init() {
     let ua = this.ua();
-    if (ua.eq_IE9) {
+    if (ua.eq_IE9 || ua.eq_IE10) {
       let mainImage = document.getElementById("mainImage");
       let canvas = document.getElementById("canvas");
       let body = document.getElementById("Home");
