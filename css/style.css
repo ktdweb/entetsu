@@ -7388,6 +7388,10 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
+  #Front #company02 #ceoMessage {
+    width: 60%;
+    text-align: justify;
+    margin-left: 34rem; }
   #Front article#BuildingDetail {
     position: relative;
     margin-top: 20rem;

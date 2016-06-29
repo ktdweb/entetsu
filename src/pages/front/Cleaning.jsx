@@ -51,7 +51,7 @@ export default class Cleaning extends React.Component {
       let canvas = document.getElementById("canvas");
       let body = document.getElementById("Home");
       let img = document.createElement("img");
-      img.src = 'imgs/legacy/driving.jpg';
+      img.src = 'imgs/legacy/cleaning.jpg';
       img.width = 1040;
       img.height = 624;
       mainImage.removeChild(canvas);
