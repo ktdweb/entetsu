@@ -153,7 +153,6 @@ export default class Company extends React.Component {
               <tr>
                 <td>登録許認可・認定</td>
                 <td>
-                  有料職業紹介業（22-ユ-020029）<br />
                   建築物環境衛生総合管理業<br />
                   建築物飲料水貯水槽清掃業<br />
                   建築物ねずみ昆虫等防除業<br />
@@ -161,6 +160,7 @@ export default class Company extends React.Component {
                   警備業<br />
                   医療関連サービスマーク<br />
                   プライバシーマーク（第19000927(01)号）<br />
+                  有料職業紹介業（22-ユ-020029）<br />
                   一般労働者派遣事業（派22-020046）
                 </td>
               </tr>
