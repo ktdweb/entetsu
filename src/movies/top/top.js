@@ -324,19 +324,19 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	// frame
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AA6g5QhThOh4gDIEjAAIAAEVQgDh2hVhOg");
-	this.shape.setTransform(1028.1,11.3,0.813,0.813);
+	this.shape.setTransform(1029.1,10.3,0.813,0.813);
 
 	this.shape_1 = new cjs.Shape();
 	this.shape_1.graphics.f("#FFFFFF").s().p("AiRCZIAAkxQADB5BVBZQBVBcB2ADg");
-	this.shape_1.setTransform(11.9,611.6,0.813,0.813);
+	this.shape_1.setTransform(10.9,612.6,0.813,0.813);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.f("#FFFFFF").s().p("AkrkrIJXAAIpXJXg");
-	this.shape_2.setTransform(24.4,24.4,0.813,0.813);
+	this.shape_2.setTransform(23.4,23.4,0.813,0.813);
 
 	this.shape_3 = new cjs.Shape();
 	this.shape_3.graphics.f("#FFFFFF").s().p("AkqErIJVpVIAAJVg");
-	this.shape_3.setTransform(1015.6,599.6,0.813,0.813);
+	this.shape_3.setTransform(1016.6,600.6,0.813,0.813);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(80));
 

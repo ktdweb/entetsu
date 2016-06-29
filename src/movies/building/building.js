@@ -554,7 +554,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,245.2,219.8);
 	// FlashAICB
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AAvgtQhDhAhhgCIDrAAIAADfQgChfhFg+g");
-	this.shape.setTransform(1028.1,11.3);
+	this.shape.setTransform(1029.1,10.3);
 
 	this.shape_1 = new cjs.Shape();
 	this.shape_1.graphics.f("#FFFFFF").s().p("Ah1B8IAAj3QACBiBFBIQBFBLBfACg");
@@ -562,7 +562,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,245.2,219.8);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.f("#FFFFFF").s().p("AjyjyIHlAAInlHlg");
-	this.shape_2.setTransform(24.4,24.4);
+	this.shape_2.setTransform(23.4,23.4);
 
 	this.shape_3 = new cjs.Shape();
 	this.shape_3.graphics.f("#FFFFFF").s().p("AjyDzIHlnlIAAHlg");
