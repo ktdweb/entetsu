@@ -7398,8 +7398,6 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
-  #Front body {
-    -webkit-transform: translate3d(0, 0, 0); }
   #Front article#BuildingDetail {
     position: relative;
     margin-top: 14rem;
@@ -7407,7 +7405,8 @@ article {
     perspective: 10px;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: auto;
+    overflow-scrolling: touch; }
     #Front article#BuildingDetail section {
       position: absolute;
       width: 100%;
