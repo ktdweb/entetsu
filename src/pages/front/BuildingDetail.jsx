@@ -22,7 +22,7 @@ export default class BuildingDetail extends React.Component {
         let ty = String(140 + parseInt(y / 15)) + 'px';
         target.style.right = ty;
       } else if (y > 0 && y < 800) {
-        let tx = String(0 + parseInt(y / 15)) + 'px';
+        let tx = String(0 + parseInt(y / 5)) + 'px';
         bg.style.top = tx;
       } else {
         bg.style.top = tx;

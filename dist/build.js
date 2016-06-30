@@ -1423,7 +1423,7 @@ var BuildingDetail = function (_React$Component) {
           var _ty = String(140 + parseInt(y / 15)) + 'px';
           target.style.right = _ty;
         } else if (y > 0 && y < 800) {
-          var _tx = String(0 + parseInt(y / 15)) + 'px';
+          var _tx = String(0 + parseInt(y / 5)) + 'px';
           bg.style.top = _tx;
         } else {
           bg.style.top = tx;
