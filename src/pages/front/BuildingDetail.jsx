@@ -13,12 +13,17 @@ export default class BuildingDetail extends React.Component {
   componentDidMount() {
     let el = document.getElementById('BuildingDetail');
     let target = document.getElementById('hex01').firstChild;
+    let bg = document.getElementById('building01');
+
     el.addEventListener("scroll", function() {
       let y = this.scrollTop;
       let ty = 0;
       if (y > 100 && y < 1600) {
         let ty = String(140 + parseInt(y / 15)) + 'px';
         target.style.right = ty;
+      } else if (y > 0 && y < 100) {
+        let tx = String(0 + parseInt(y / 15)) + 'px';
+        bg.style.top = - tx;
       } else {
         target.style.right = ty;
       }
