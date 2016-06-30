@@ -7406,7 +7406,7 @@ article {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; }
+    scroll-behavior: smooth; }
     #Front article#BuildingDetail section {
       position: absolute;
       width: 100%;
