@@ -16,6 +16,10 @@ $bg: 123, 456, 789
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
   */
 
+
+body
+  -webkit-transform: translate3d(0,0,0)
+
 article#BuildingDetail
   position: relative
   margin-top: 14rem
@@ -24,10 +28,6 @@ article#BuildingDetail
   height: 100vh
   overflow-x: hidden
   overflow-y: auto
-  -webkit-overflow-scrolling: touch
-
-  & > *
-    -webkit-transform: translateZ(0px)
 
   section
     position: absolute
@@ -79,33 +79,33 @@ article#BuildingDetail
     background-size: 1040px auto
     background-repeat: no-repeat
     z-index: -1
-    transform: translateZ(0px) scale(1)
+    transform: translateZ(-1px) scale(1.1)
     div
       width: 50%
       text-align: justify
 
-  section#building04
-      top: 1620px
-      padding-top: 26rem
-      height: 440px
-      z-index: 1
-      div
-        width: 55%
-        text-align: right
-        margin-left: 40rem
+section#building04
+    top: 1620px
+    padding-top: 26rem
+    height: 440px
+    z-index: 1
+    div
+      width: 55%
+      text-align: right
+      margin-left: 40rem
 
-  section#building05
-      top: 2220px
-      padding-top: 440px 
-      height: 1180px
-      background-image: url('../imgs/detail/bg_company03.jpg')
-      background-position:  left 0px bottom 0px
-      background-size: 1040px auto
-      background-repeat: no-repeat
-      z-index: -1
-      transform: translateZ(-1px) scale(1.1)
-      div
-        width: 59%
+section#building05
+    top: 2220px
+    padding-top: 440px 
+    height: 1180px
+    background-image: url('../imgs/detail/bg_company03.jpg')
+    background-position:  left 0px bottom 0px
+    background-size: 1040px auto
+    background-repeat: no-repeat
+    z-index: -1
+    transform: translateZ(-1px) scale(1.1)
+    div
+      width: 59%
 
 article#BuildingDetail
   div.pf-BuildingDetail-hex-left

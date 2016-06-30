@@ -7398,6 +7398,8 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
+  #Front body {
+    -webkit-transform: translate3d(0, 0, 0); }
   #Front article#BuildingDetail {
     position: relative;
     margin-top: 14rem;
@@ -7405,10 +7407,7 @@ article {
     perspective: 10px;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; }
-    #Front article#BuildingDetail > * {
-      -webkit-transform: translateZ(0px); }
+    overflow-y: auto; }
     #Front article#BuildingDetail section {
       position: absolute;
       width: 100%;
@@ -7456,31 +7455,31 @@ article {
       background-size: 1040px auto;
       background-repeat: no-repeat;
       z-index: -1;
-      transform: translateZ(0px) scale(1); }
+      transform: translateZ(-1px) scale(1.1); }
       #Front article#BuildingDetail section#building03 div {
         width: 50%;
         text-align: justify; }
-    #Front article#BuildingDetail section#building04 {
-      top: 1620px;
-      padding-top: 26rem;
-      height: 440px;
-      z-index: 1; }
-      #Front article#BuildingDetail section#building04 div {
-        width: 55%;
-        text-align: right;
-        margin-left: 40rem; }
-    #Front article#BuildingDetail section#building05 {
-      top: 2220px;
-      padding-top: 440px;
-      height: 1180px;
-      background-image: url("../imgs/detail/bg_company03.jpg");
-      background-position: left 0px bottom 0px;
-      background-size: 1040px auto;
-      background-repeat: no-repeat;
-      z-index: -1;
-      transform: translateZ(-1px) scale(1.1); }
-      #Front article#BuildingDetail section#building05 div {
-        width: 59%; }
+  #Front section#building04 {
+    top: 1620px;
+    padding-top: 26rem;
+    height: 440px;
+    z-index: 1; }
+    #Front section#building04 div {
+      width: 55%;
+      text-align: right;
+      margin-left: 40rem; }
+  #Front section#building05 {
+    top: 2220px;
+    padding-top: 440px;
+    height: 1180px;
+    background-image: url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px bottom 0px;
+    background-size: 1040px auto;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: translateZ(-1px) scale(1.1); }
+    #Front section#building05 div {
+      width: 59%; }
   #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:first-child {
     position: absolute;
     top: 120px;
