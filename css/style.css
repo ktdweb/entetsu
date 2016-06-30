@@ -7348,8 +7348,7 @@ article {
       border-radius: 5px;
       font-size: 1.2rem;
       line-height: 1.5rem;
-      cursor: pointer;
-      color: white; }
+      cursor: pointer; }
     #Front div#service p:hover {
       background-color: rgba(0, 0, 0, 0.1); }
   #Front div#desc {
@@ -7482,40 +7481,37 @@ article {
       width: 59%; }
   #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:first-child {
     position: absolute;
-    top: 120px;
-    left: 190px;
-    z-index: 1; }
+    top: 50px;
+    left: -82px;
+    z-index: -1;
+    transform: translateZ(-2px) scale(1.2); }
   #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:last-child {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; }
+    top: 0px;
+    left: 120px;
+    z-index: 1; }
   #Front article#BuildingDetail div.pf-BuildingDetail-hex-right {
     position: relative; }
     #Front article#BuildingDetail div.pf-BuildingDetail-hex-right img:first-child {
       position: absolute;
-      top: 90px;
-      right: 210px;
-      z-index: 1; }
+      top: 0px;
+      right: 240px;
+      z-index: 0; }
     #Front article#BuildingDetail div.pf-BuildingDetail-hex-right img:last-child {
       position: absolute;
-      top: 0;
-      right: -22px;
+      top: 50px;
+      right: -82px;
       z-index: -1;
-      transform: translateZ(-0.5px) scale(1.05); }
+      transform: translateZ(-2px) scale(1.2); }
   #Front article#BuildingDetail div#hex01 {
     position: absolute;
     top: 1000px;
     right: 0px; }
-  #Front article#BuildingDetail div#add01 {
-    position: absolute;
-    top: 1000px;
-    right: 0px; }
-  #Front article#BuildingDetail div#add02 {
+  #Front article#BuildingDetail div#hex02 {
     position: absolute;
     top: 1700px;
     left: 0px; }
-  #Front article#BuildingDetail div#add03 {
+  #Front article#BuildingDetail div#hex03 {
     position: absolute;
     top: 2600px;
     right: 0px; }

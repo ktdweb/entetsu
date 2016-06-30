@@ -12,15 +12,31 @@ export default class BuildingDetail extends React.Component {
 
   componentDidMount() {
     let el = document.getElementById('BuildingDetail');
-    let target = document.getElementById('hex01').firstChild;
+    let target1 = document.getElementById('hex01').firstChild;
+    let target2 = document.getElementById('hex02').lastChild;
+    let target3 = document.getElementById('hex03').firstChild;
     el.addEventListener("scroll", function() {
-      let y = this.scrollTop;
-      let ty = 0;
-      if (y > 100 && y < 1600) {
-        let ty = String(140 + parseInt(y / 15)) + 'px';
-        target.style.right = ty;
+      let x = this.scrollTop;
+      let rx = String(180 + parseInt(x / 50)) + 'px';
+      let lx = String(180 + parseInt(x / 50)) + 'px';
+      console.log(x);
+
+      if (x > 200 && x < 1500) {
+        target1.style.right = rx;
       } else {
-        target.style.right = ty;
+        target1.style.right = rx;
+      }
+
+      if (x > 1801 && x < 2200) {
+        target2.style.left = lx;
+      } else {
+        target2.style.left = lx;
+      }
+
+      if (x > 2201 && x < 2600) {
+        target3.style.right = rx;
+      } else {
+        target3.style.right = rx;
       }
     });
   }
@@ -172,8 +188,14 @@ export default class BuildingDetail extends React.Component {
           <img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" />
           <img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" />
         </div>
-        <div id="add02"><img src="imgs/detail/building/add02.png" width="353" height="400" alt="add02" /></div>
-        <div id="add03"><img src="imgs/detail/building/add03.png" width="353" height="400" alt="add03" /></div>
+        <div id="hex02" className="pf-BuildingDetail-hex-left">
+          <img src="imgs/detail/building/hex02l.png" width="210" height="340" alt="01" />
+          <img src="imgs/detail/building/hex02r.png" width="210" height="340" alt="02" />
+        </div>
+        <div id="hex03" className="pf-BuildingDetail-hex-right">
+          <img src="imgs/detail/building/hex03l.png" width="210" height="340" alt="01" />
+          <img src="imgs/detail/building/hex03r.png" width="210" height="340" alt="02" />
+        </div>
       </article>
     );
   }
