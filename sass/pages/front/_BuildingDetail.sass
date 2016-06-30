@@ -16,9 +16,6 @@ $bg: 123, 456, 789
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
   */
 
-body
-  -webkit-overflow-scrolling: touch
-
 article#BuildingDetail
   position: relative
   margin-top: 14rem
@@ -27,11 +24,13 @@ article#BuildingDetail
   height: 100vh
   overflow-x: hidden
   overflow-y: auto
+  -webkit-overflow-scrolling: touch
   section
     position: absolute
     width: 100%
     margin: 0
     padding: 0 5rem
+    overflow-y: auto
     h1
       font-size: $base-font-size * 1.6
       font-family: $YuMincho-font-family

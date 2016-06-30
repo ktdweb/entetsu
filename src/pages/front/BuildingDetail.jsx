@@ -15,7 +15,7 @@ export default class BuildingDetail extends React.Component {
     let target = document.getElementById('hex01').firstChild;
     el.addEventListener("scroll", function() {
       let y = this.scrollTop;
-      let ty = 0
+      let ty = 0;
       if (y > 100 && y < 1600) {
         let ty = String(120 + parseInt(y / 15)) + 'px';
         target.style.right = ty;
@@ -172,8 +172,6 @@ export default class BuildingDetail extends React.Component {
           <img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" />
           <img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" />
         </div>
-        <div id="hex"><img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" /></div>
-        <div id="hexR"><img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" /></div>
         <div id="add02"><img src="imgs/detail/building/add02.png" width="353" height="400" alt="add02" /></div>
         <div id="add03"><img src="imgs/detail/building/add03.png" width="353" height="400" alt="add03" /></div>
       </article>
