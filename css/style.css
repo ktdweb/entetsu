@@ -7405,7 +7405,9 @@ article {
     transform-style: preserve-3d;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0px); }
     #Front article#BuildingDetail section {
       position: absolute;
       width: 100%;
