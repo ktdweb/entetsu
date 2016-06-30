@@ -23,8 +23,9 @@ export default class BuildingDetail extends React.Component {
         target.style.right = ty;
       } else if (y > 0 && y < 100) {
         let tx = String(0 + parseInt(y / 15)) + 'px';
-        bg.style.top = - tx;
+        bg.style.top = tx;
       } else {
+        bg.style.top = tx;
         target.style.right = ty;
       }
     });
