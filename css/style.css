@@ -7398,15 +7398,16 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
+  #Front body {
+    -webkit-overflow-scrolling: touch; }
   #Front article#BuildingDetail {
     position: relative;
     margin-top: 14rem;
-    perspective: 10px;
     transform-style: preserve-3d;
+    perspective: 10px;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; }
+    overflow-y: auto; }
     #Front article#BuildingDetail section {
       position: absolute;
       width: 100%;
@@ -7428,7 +7429,7 @@ article {
       background-size: 800px auto;
       background-repeat: no-repeat;
       z-index: -2;
-      transform: translateZ(-3px) scale(1.3); }
+      transform: translateZ(-4px) scale(1.4); }
     #Front article#BuildingDetail section#building02 {
       top: 40px;
       padding-top: 26rem;
@@ -7454,7 +7455,7 @@ article {
       background-size: 1040px auto;
       background-repeat: no-repeat;
       z-index: -1;
-      transform: translateZ(-1px) scale(1.1); }
+      transform: translateZ(-3px) scale(1.2); }
       #Front article#BuildingDetail section#building03 div {
         width: 50%;
         text-align: justify; }
@@ -7479,6 +7480,33 @@ article {
     transform: translateZ(-1px) scale(1.1); }
     #Front section#building05 div {
       width: 59%; }
+  #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:first-child {
+    position: absolute;
+    top: 120px;
+    left: 190px;
+    z-index: 1; }
+  #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; }
+  #Front article#BuildingDetail div.pf-BuildingDetail-hex-right {
+    position: relative; }
+    #Front article#BuildingDetail div.pf-BuildingDetail-hex-right img:first-child {
+      position: absolute;
+      top: 120px;
+      right: 190px;
+      z-index: 1;
+      transform: translateX(20px) translateZ(-1px) scale(1.1); }
+    #Front article#BuildingDetail div.pf-BuildingDetail-hex-right img:last-child {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1; }
+  #Front article#BuildingDetail div#hex01 {
+    position: absolute;
+    top: 1000px;
+    right: 0px; }
   #Front article#BuildingDetail div#add01 {
     position: absolute;
     top: 1000px;

@@ -10,6 +10,21 @@ export default class BuildingDetail extends React.Component {
     this.state = { service: { title: '', text: '' } };
   }
 
+  componentDidMount() {
+    let el = document.getElementById('BuildingDetail');
+    let target = document.getElementById('hex01').firstChild;
+    el.addEventListener("scroll", function() {
+      let y = this.scrollTop;
+      let ty = 0
+      if (y > 100 && y < 1600) {
+        let ty = String(120 + parseInt(y / 15)) + 'px';
+        target.style.right = ty;
+      } else {
+        target.style.right = ty;
+      }
+    });
+  }
+
   render() {
     return (
       <article id="BuildingDetail">
@@ -152,12 +167,21 @@ export default class BuildingDetail extends React.Component {
             </p>
           </div>
         </section>
-
-        <div id="add01"><img src="imgs/detail/building/add01.png" width="353" height="400" alt="add01" /></div>
+        
+        <div id="hex01" className="pf-BuildingDetail-hex-right">
+          <img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" />
+          <img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" />
+        </div>
+        <div id="hex"><img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" /></div>
+        <div id="hexR"><img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" /></div>
         <div id="add02"><img src="imgs/detail/building/add02.png" width="353" height="400" alt="add02" /></div>
         <div id="add03"><img src="imgs/detail/building/add03.png" width="353" height="400" alt="add03" /></div>
       </article>
     );
+  }
+
+  parallaxY() {
+    console.log('test');
   }
 
   onService(e) {
