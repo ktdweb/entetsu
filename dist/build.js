@@ -1418,7 +1418,7 @@ var BuildingDetail = function (_React$Component) {
         var y = this.scrollTop;
         var ty = 0;
         if (y > 100 && y < 1600) {
-          var _ty = String(120 + parseInt(y / 15)) + 'px';
+          var _ty = String(140 + parseInt(y / 15)) + 'px';
           target.style.right = _ty;
         } else {
           target.style.right = ty;

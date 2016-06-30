@@ -25,12 +25,15 @@ article#BuildingDetail
   overflow-x: hidden
   overflow-y: auto
   -webkit-overflow-scrolling: touch
+
+  & > *
+    -webkit-transform: translateZ(0px)
+
   section
     position: absolute
     width: 100%
     margin: 0
     padding: 0 5rem
-    overflow-y: auto
     h1
       font-size: $base-font-size * 1.6
       font-family: $YuMincho-font-family
@@ -38,7 +41,7 @@ article#BuildingDetail
       color: #555
       font-size: $base-font-size * 0.9
       line-height: $base-spacing * 1.25
-
+  
   section#building01
     top: 40px
     padding-top: 0rem
@@ -76,34 +79,33 @@ article#BuildingDetail
     background-size: 1040px auto
     background-repeat: no-repeat
     z-index: -1
-    transform: translateZ(-3px) scale(1.2)
+    transform: translateZ(0px) scale(1)
     div
       width: 50%
       text-align: justify
 
-section#building04
-    top: 1620px
-    padding-top: 26rem
-    height: 440px
-    z-index: 1
-    div
-      width: 55%
-      text-align: right
-      margin-left: 40rem
+  section#building04
+      top: 1620px
+      padding-top: 26rem
+      height: 440px
+      z-index: 1
+      div
+        width: 55%
+        text-align: right
+        margin-left: 40rem
 
-section#building05
-    top: 2220px
-    padding-top: 440px 
-    height: 1180px
-    background-image: url('../imgs/detail/bg_company03.jpg')
-    background-position:  left 0px bottom 0px
-    background-size: 1040px auto
-    background-repeat: no-repeat
-    z-index: -1
-    transform: translateZ(-1px) scale(1.1)
-    div
-      width: 59%
-
+  section#building05
+      top: 2220px
+      padding-top: 440px 
+      height: 1180px
+      background-image: url('../imgs/detail/bg_company03.jpg')
+      background-position:  left 0px bottom 0px
+      background-size: 1040px auto
+      background-repeat: no-repeat
+      z-index: -1
+      transform: translateZ(-1px) scale(1.1)
+      div
+        width: 59%
 
 article#BuildingDetail
   div.pf-BuildingDetail-hex-left
@@ -122,15 +124,15 @@ article#BuildingDetail
     position: relative
     img:first-child
       position: absolute
-      top: 120px
-      right: 190px
+      top: 90px
+      right: 210px
       z-index: 1
-      transform: translateX(20px) translateZ(-1px) scale(1.1)
     img:last-child
       position: absolute
-      top: 0
-      right: 0
+      top: 0 
+      right: -22px
       z-index: -1
+      transform: translateZ(-0.5px) scale(1.05)
  
   div#hex01
     position: absolute

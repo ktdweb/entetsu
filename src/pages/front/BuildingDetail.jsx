@@ -17,7 +17,7 @@ export default class BuildingDetail extends React.Component {
       let y = this.scrollTop;
       let ty = 0;
       if (y > 100 && y < 1600) {
-        let ty = String(120 + parseInt(y / 15)) + 'px';
+        let ty = String(140 + parseInt(y / 15)) + 'px';
         target.style.right = ty;
       } else {
         target.style.right = ty;
