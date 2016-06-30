@@ -7406,8 +7406,7 @@ article {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    -webkit-transform: translateZ(0px); }
+    -webkit-overflow-scrolling: touch; }
     #Front article#BuildingDetail section {
       position: absolute;
       width: 100%;
