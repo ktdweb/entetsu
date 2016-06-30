@@ -7398,13 +7398,12 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
-  #Front body {
-    perspective: 10px; }
   #Front article#BuildingDetail {
     position: relative;
     margin-top: 14rem;
     transform-style: preserve-3d;
-    height: 100vh;
+    perspective: 10px;
+    height: 2000px;
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; }
