@@ -7277,6 +7277,15 @@ article {
   prefixには`pf-BuildingDetail`を付与
   */
   /*
+    background-image: , url('../imgs/detail/bg_building.jpg'), url('../imgs/detail/bg_company02.jpg'), url('../imgs/detail/bg_company03.jpg')
+
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px
+
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
+  */
+  /*
   # pages/front/MansionDetail.sass
   front/MansionDetail.jsxに関するクラスを定義
   prefixには`pf-MansionDetail`を付与
@@ -7339,7 +7348,8 @@ article {
       border-radius: 5px;
       font-size: 1.2rem;
       line-height: 1.5rem;
-      cursor: pointer; }
+      cursor: pointer;
+      color: white; }
     #Front div#service p:hover {
       background-color: rgba(0, 0, 0, 0.1); }
   #Front div#desc {
@@ -7390,31 +7400,95 @@ article {
       border: 1px solid white; }
   #Front article#BuildingDetail {
     position: relative;
-    margin-top: 20rem;
-    background-image: url("../imgs/detail/bg_detail.png"), url("../imgs/detail/bg_building.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
-    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front section#building02 {
-    padding-top: 10rem; }
-  #Front section#building03 {
-    padding-top: 44rem; }
+    margin-top: 14rem;
+    perspective: 10px;
+    transform-style: preserve-3d;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    #Front article#BuildingDetail section {
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      padding: 0 5rem; }
+      #Front article#BuildingDetail section h1 {
+        font-size: 2.56rem;
+        font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+      #Front article#BuildingDetail section p {
+        color: #555;
+        font-size: 1.44rem;
+        line-height: 2.5rem; }
+    #Front article#BuildingDetail section#building01 {
+      top: 40px;
+      padding-top: 0rem;
+      height: 640px;
+      background-image: url("../imgs/detail/bg_building.jpg");
+      background-position: left 0px top 160px;
+      background-size: 800px auto;
+      background-repeat: no-repeat;
+      z-index: -2;
+      transform: translateZ(-3px) scale(1.3); }
+    #Front article#BuildingDetail section#building02 {
+      top: 40px;
+      padding-top: 26rem;
+      height: 840px;
+      background-image: url("../imgs/detail/bg_detail.png");
+      background-position: left 0px top 0px;
+      background-size: 1040px auto;
+      background-repeat: no-repeat;
+      text-align: right;
+      color: white;
+      z-index: 0;
+      transform: translateZ(0px) scale(1); }
+      #Front article#BuildingDetail section#building02 p {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 2rem; }
+    #Front article#BuildingDetail section#building03 {
+      top: 640px;
+      padding-top: 26rem;
+      height: 980px;
+      background-image: url("../imgs/detail/bg_company02.jpg");
+      background-position: left 0px top 0px;
+      background-size: 1040px auto;
+      background-repeat: no-repeat;
+      z-index: -1;
+      transform: translateZ(-1px) scale(1.1); }
+      #Front article#BuildingDetail section#building03 div {
+        width: 50%;
+        text-align: justify; }
   #Front section#building04 {
-    padding-top: 16rem; }
+    top: 1620px;
+    padding-top: 26rem;
+    height: 440px;
+    z-index: 1; }
+    #Front section#building04 div {
+      width: 55%;
+      text-align: right;
+      margin-left: 40rem; }
   #Front section#building05 {
-    padding-top: 20rem;
-    padding-bottom: 10rem; }
+    top: 2220px;
+    padding-top: 440px;
+    height: 1180px;
+    background-image: url("../imgs/detail/bg_company03.jpg");
+    background-position: left 0px bottom 0px;
+    background-size: 1040px auto;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: translateZ(-1px) scale(1.1); }
+    #Front section#building05 div {
+      width: 59%; }
   #Front article#BuildingDetail div#add01 {
     position: absolute;
-    top: 1200px;
+    top: 1000px;
     right: 0px; }
   #Front article#BuildingDetail div#add02 {
     position: absolute;
-    top: 2000px;
+    top: 1700px;
     left: 0px; }
   #Front article#BuildingDetail div#add03 {
     position: absolute;
-    top: 2400px;
+    top: 2600px;
     right: 0px; }
   #Front article#MansionDetail {
     position: relative;

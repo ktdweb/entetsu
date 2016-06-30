@@ -6,46 +6,115 @@
 
 $bg: 123, 456, 789
 
+/*
+    background-image: , url('../imgs/detail/bg_building.jpg'), url('../imgs/detail/bg_company02.jpg'), url('../imgs/detail/bg_company03.jpg')
+
+    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px
+
+    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
+  */
+
 article#BuildingDetail
   position: relative
-  margin-top: 20rem
+  margin-top: 14rem
+  perspective: 10px
+  transform-style: preserve-3d
+  height: 100vh
+  overflow-x: hidden
+  overflow-y: auto
+  section
+    position: absolute
+    width: 100%
+    margin: 0
+    padding: 0 5rem
+    h1
+      font-size: $base-font-size * 1.6
+      font-family: $YuMincho-font-family
+    p
+      color: #555
+      font-size: $base-font-size * 0.9
+      line-height: $base-spacing * 1.25
 
-  background-image: url('../imgs/detail/bg_detail.png'), url('../imgs/detail/bg_building.jpg'), url('../imgs/detail/bg_company02.jpg'), url('../imgs/detail/bg_company03.jpg')
+  section#building01
+    top: 40px
+    padding-top: 0rem
+    height: 640px
+    background-image: url('../imgs/detail/bg_building.jpg')
+    background-position:  left 0px top 160px
+    background-size: 800px auto
+    background-repeat: no-repeat
+    z-index: -2
+    transform: translateZ(-3px) scale(1.3)
 
-  background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px
+  section#building02
+    top: 40px
+    padding-top: 26rem
+    height: 840px
+    background-image: url('../imgs/detail/bg_detail.png')
+    background-position:  left 0px top 0px
+    background-size: 1040px auto
+    background-repeat: no-repeat
+    text-align: right
+    color: white
+    z-index: 0
+    transform: translateZ(0px) scale(1)
+    p
+      color: white
+      font-size: $small-font-size
+      line-height: $small-line-height
 
-  background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto
-
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
-
-
-section#building01
-
-section#building02
-  padding-top: 10rem
-
-section#building03
-  padding-top: 44rem
+  section#building03
+    top: 640px
+    padding-top: 26rem
+    height: 980px
+    background-image: url('../imgs/detail/bg_company02.jpg')
+    background-position:  left 0px top 0px
+    background-size: 1040px auto
+    background-repeat: no-repeat
+    z-index: -1
+    transform: translateZ(-1px) scale(1.1)
+    div
+      width: 50%
+      text-align: justify
 
 section#building04
-  padding-top: 16rem
+    top: 1620px
+    padding-top: 26rem
+    height: 440px
+    z-index: 1
+    div
+      width: 55%
+      text-align: right
+      margin-left: 40rem
 
 section#building05
-  padding-top: 20rem
-  padding-bottom: 10rem
+    top: 2220px
+    padding-top: 440px 
+    height: 1180px
+    background-image: url('../imgs/detail/bg_company03.jpg')
+    background-position:  left 0px bottom 0px
+    background-size: 1040px auto
+    background-repeat: no-repeat
+    z-index: -1
+    transform: translateZ(-1px) scale(1.1)
+    div
+      width: 59%
+
 
 article#BuildingDetail
   div#add01
     position: absolute
-    top: 1200px
+    top: 1000px
     right: 0px
 
   div#add02
     position: absolute
-    top: 2000px
+    top: 1700px
     left: 0px
 
   div#add03
     position: absolute
-    top: 2400px
+    top: 2600px
     right: 0px
