@@ -1414,19 +1414,13 @@ var BuildingDetail = function (_React$Component) {
     value: function componentDidMount() {
       var el = document.getElementById('BuildingDetail');
       var target = document.getElementById('hex01').firstChild;
-      var bg = document.getElementById('building01');
-
       el.addEventListener("scroll", function () {
         var y = this.scrollTop;
         var ty = 0;
         if (y > 100 && y < 1600) {
           var _ty = String(140 + parseInt(y / 15)) + 'px';
           target.style.right = _ty;
-        } else if (y > 0 && y < 800) {
-          var _tx = String(40 + parseInt(y / 1)) + 'px';
-          bg.style.top = _tx;
         } else {
-          bg.style.top = tx;
           target.style.right = ty;
         }
       });
