@@ -7403,7 +7403,7 @@ article {
     margin-top: 14rem;
     transform-style: preserve-3d;
     perspective: 10px;
-    height: 2400px;
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; }
@@ -7421,7 +7421,7 @@ article {
         font-size: 1.44rem;
         line-height: 2.5rem; }
     #Front article#BuildingDetail section#building01 {
-      top: -240px;
+      top: 40px;
       padding-top: 0rem;
       height: 640px;
       background-image: url("../imgs/detail/bg_building.jpg");
