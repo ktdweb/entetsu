@@ -6627,7 +6627,8 @@ article {
   navの右にパディングを追加
   */ }
   #Admin > header {
-    padding: 1rem 2rem 0; }
+    padding: 1rem 2rem 0;
+    max-width: 960px; }
     #Admin > header h1 {
       float: left;
       display: block;
@@ -6836,6 +6837,7 @@ article {
     #Front > header nav a {
       color: #000; }
   #Front > footer {
+    min-width: 960px;
     font-size: 1.2rem;
     margin-bottom: 0; }
     #Front > footer > div, #Front > footer > nav {
@@ -7291,7 +7293,7 @@ article {
       #Front .menuTop td p {
         margin-bottom: 1.2rem; }
   #Front #mainImage {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     background-image: url("../imgs/pages/top/cleaning_bg_l.png"), url("../imgs/pages/top/cleaning_bg_r.png");
     background-position: left 0px top 0, right 0px top 0;
     background-size: contain, contain;
