@@ -946,19 +946,19 @@ p.nominalBounds = new cjs.Rectangle(41,20,180.9,136.8);
 	// FlashAICB
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#FFFFFF").s().p("AAvgtQhDhAhhgCIDrAAIAADfQgChfhFg+g");
-	this.shape.setTransform(1028.1,11.3);
+	this.shape.setTransform(1029.1,10.3);
 
 	this.shape_1 = new cjs.Shape();
 	this.shape_1.graphics.f("#FFFFFF").s().p("Ah1B8IAAj3QACBiBFBIQBFBLBfACg");
-	this.shape_1.setTransform(11.9,611.6);
+	this.shape_1.setTransform(10.9,612.6);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.f("#FFFFFF").s().p("AjyjyIHlAAInlHlg");
-	this.shape_2.setTransform(24.4,24.4);
+	this.shape_2.setTransform(23.4,23.4);
 
 	this.shape_3 = new cjs.Shape();
 	this.shape_3.graphics.f("#FFFFFF").s().p("AjyDzIHlnlIAAHlg");
-	this.shape_3.setTransform(1015.6,599.6);
+	this.shape_3.setTransform(1016.6,600.6);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
