@@ -6498,11 +6498,13 @@ body.grid::after {
   font-sizeをあげる
   */
 article {
-  max-width: 1040px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  min-width: 960px;
   margin-bottom: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  text-align: center; }
   article::after {
     clear: both;
     content: "";
@@ -6513,14 +6515,6 @@ article {
 
 #grand_menu a {
   float: left; }
-
-#canvas {
-  display: block;
-  background-color: white;
-  margin-top: 11rem; }
-
-#mainImage img {
-  margin-top: 11rem; }
 
 /*
   # layouts/index.sass
@@ -6591,7 +6585,7 @@ article {
   すべてのページに共通する設定
   */
 #Admin > article[id] {
-  max-width: 1040px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 0 2rem; }
@@ -6782,26 +6776,16 @@ article {
   部署電話番号
   */ }
   #Front > header {
-    margin: 0 auto;
+    position: fixed;
     padding: 2rem;
     font-size: 1.2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    width: 1040px; }
+    width: 100%;
+    z-index: 1000; }
   #Front > header div {
-    max-width: 1040px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0.5rem;
-    /*
-      div:nth-child(2)
-        @include span-columns(3)
-        margin-top: $small-spacing / 2
-        text-align: right
-      */ }
+    margin-bottom: 0.5rem; }
     #Front > header div::after {
       clear: both;
       content: "";
@@ -6831,7 +6815,7 @@ article {
     font-size: 1.6rem;
     cursor: pointer; }
   #Front > header nav {
-    max-width: 1040px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem 0;
@@ -6857,7 +6841,7 @@ article {
     #Front > footer > div, #Front > footer > nav {
       padding: 2rem; }
   #Front > footer .lf-contents {
-    max-width: 1040px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto; }
     #Front > footer .lf-contents::after {
@@ -6880,7 +6864,7 @@ article {
       #Front > footer .lf-contents div ul li {
         line-height: 2rem; }
   #Front > footer .lf-external {
-    max-width: 1040px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-top: 1px solid #EEEEEE; }
@@ -6910,7 +6894,7 @@ article {
     overflow: hidden;
     zoom: 1; }
     #Front > footer .lf-credit div {
-      max-width: 1040px;
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
       padding: 0 1rem; }
@@ -6993,7 +6977,7 @@ article {
   margin-bottomに1行分のスペースを追加
   */
 #Sample header, #Sample footer, #Sample section {
-  max-width: 1040px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem; }
@@ -7109,7 +7093,7 @@ article {
   neatのautomatic rowで構成
   */
 #Sample #colors div {
-  max-width: 1040px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem; }
@@ -7297,6 +7281,12 @@ article {
       vertical-align: top; }
       #Front .menuTop td p {
         margin-bottom: 1.2rem; }
+  #Front #mainImage {
+    background-color: #f1f1f1;
+    background-image: url("../imgs/pages/top/cleaning_bg_l.png"), url("../imgs/pages/top/cleaning_bg_r.png");
+    background-position: left 0px top 0, right 0px top 0;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat; }
   #Front article.pf-Detail {
     margin-top: 20rem; }
   #Front article.pf-Detail section {
