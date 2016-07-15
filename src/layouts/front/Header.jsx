@@ -48,8 +48,7 @@ export default class Header extends React.Component {
           <ul>
             <li>
               <a href="/">
-                <i className="fa fa-home" />
-                &nbsp;HOME
+                HOME
               </a>
             </li>
             <li>

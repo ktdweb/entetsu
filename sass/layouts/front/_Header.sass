@@ -11,15 +11,11 @@
   */
 
 & > header
-  margin: 0 auto
+  position: fixed
   padding: $base-spacing
   font-size: $small-font-size
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
+  width: 100%
   z-index: 1000
-  width: 1040px
 
 /*
   # #Front > header > div
@@ -34,12 +30,6 @@
     div:nth-child(1)
       padding-left: $small-spacing
       +span-columns(4)
-    /*
-      div:nth-child(2)
-        +span-columns(3)
-        margin-top: $small-spacing / 2
-        text-align: right
-      */
     div:nth-child(2)
       +span-columns(8)
       padding-right: $small-spacing
