@@ -6778,7 +6778,6 @@ article {
   */ }
   #Front > header {
     position: fixed;
-    max-width: 1040px;
     padding: 2rem;
     font-size: 1.2rem;
     width: 100%;
@@ -6838,7 +6837,6 @@ article {
     #Front > header nav a {
       color: #000; }
   #Front > footer {
-    max-width: 1040px;
     font-size: 1.2rem;
     margin-bottom: 0; }
     #Front > footer > div, #Front > footer > nav {
