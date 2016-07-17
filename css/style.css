@@ -7293,10 +7293,15 @@ article {
         margin-bottom: 1.2rem; }
   #Front #mainImage {
     background-color: #ffffff;
+    width: 100%;
+    height: 630px;
     background-image: url("../imgs/pages/top/cleaning_bg_l.png"), url("../imgs/pages/top/cleaning_bg_r.png");
     background-position: left 0px top 0, right 0px top 0;
     background-size: contain, contain;
     background-repeat: no-repeat, no-repeat; }
+    #Front #mainImage canvas {
+      width: 1040px;
+      height: 630px; }
   #Front article.pf-Detail {
     margin-top: 20rem; }
   #Front article.pf-Detail section {

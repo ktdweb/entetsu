@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
-import data from '../../../src/movies/seisou/seisou'
+import data from '../../../src/movies/cleaning/cleaning'
 
 var canvas;
 var lib = data.lib;
@@ -28,15 +28,15 @@ export default class Cleaning extends React.Component {
           <canvas
             id="canvas"
             width="1040"
-            height="624"
+            height="630"
             ></canvas>
         </div>
 
         <a href="/seisou_detail">
         <img
           src="imgs/pages/cleaning.jpg"
-          width="1040"
-          height="375"
+          width="960"
+          height="346"
           alt="cleaning"
           />
         </a>
@@ -83,7 +83,7 @@ export default class Cleaning extends React.Component {
       })
     }
 
-    exportRoot = new lib.seisou();
+    exportRoot = new lib.cleaning();
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);	
 

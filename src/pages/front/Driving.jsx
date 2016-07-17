@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
-import data from '../../../src/movies/unkou/unkou'
+import data from '../../../src/movies/driving/driving'
 
 var canvas;
 var lib = data.lib;
@@ -83,7 +83,7 @@ export default class Driving extends React.Component {
       })
     }
 
-    exportRoot = new lib.unkou();
+    exportRoot = new lib.driving();
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);	
 
