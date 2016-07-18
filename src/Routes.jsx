@@ -18,6 +18,7 @@ import AdminHeader  from './layouts/admin/Header'
 import Front        from './layouts/front/Front'
 import FrontHeader  from './layouts/front/Header'
 import FrontFooter  from './layouts/front/Footer'
+import Cover        from './layouts/front/Cover'
 
 // pages/admin
 import AdminHome    from './pages/admin/Home'
@@ -25,10 +26,6 @@ import AdminHome    from './pages/admin/Home'
 // pages/front
 import FrontHome      from './pages/front/Home'
 import FrontWorks     from './pages/front/Works'
-import FrontCleaning  from './pages/front/Cleaning'
-import FrontBuilding  from './pages/front/Building'
-import FrontMansion   from './pages/front/Mansion'
-import FrontDriving   from './pages/front/Driving'
 import FrontCompany   from './pages/front/Company'
 
 import FrontBuildingDetail  from './pages/front/BuildingDetail'
@@ -60,33 +57,37 @@ const routes = (
 
       <Route path={root.documentRoot + '/cleaning'}
         global={root}
+        page={'cleaning'}
         components={{
           header: FrontHeader,
-          main: FrontCleaning,
+          main: Cover,
           footer: FrontFooter
         }} />
 
       <Route path={root.documentRoot + '/building'}
         global={root}
+        page={'building'}
         components={{
           header: FrontHeader,
-          main: FrontBuilding,
+          main: Cover,
           footer: FrontFooter
         }} />
 
       <Route path={root.documentRoot + '/mansion'}
         global={root}
+        page={'mansion'}
         components={{
           header: FrontHeader,
-          main: FrontMansion,
+          main: Cover,
           footer: FrontFooter
         }} />
 
       <Route path={root.documentRoot + '/driving'}
         global={root}
+        page={'driving'}
         components={{
           header: FrontHeader,
-          main: FrontDriving,
+          main: Cover,
           footer: FrontFooter
         }} />
 
