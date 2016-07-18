@@ -12,228 +12,229 @@ export default class Footer extends React.Component {
 
     return (
       <footer id="Footer">
-        <nav className="lf-contents">
-          <div>
-            <p>
-              <i className="fa fa-plus-square" />
-              清掃
-            </p>
-            <ul>
-              <li>サービス案内</li>
-              <li>清掃業務管理</li>
-              <li>特徴</li>
-              <li>サポート</li>
-            </ul>
-          </div>
+        <div id="footerLink">
+          <nav className="lf-contents">
+            <div>
+              <p>
+                <i className="fa fa-plus-square" />
+                清掃
+              </p>
+              <ul>
+                <li>サービス案内</li>
+                <li>清掃業務管理</li>
+                <li>特徴</li>
+                <li>サポート</li>
+              </ul>
+            </div>
 
-          <div>
-            <p>
-              <i className="fa fa-plus-square" />
-              ビル管理
-            </p>
-            <ul>
-              <li>サービス案内</li>
-              <li>取り組み</li>
-              <li>特徴</li>
-              <li>サポート</li>
-            </ul>
-          </div>
+            <div>
+              <p>
+                <i className="fa fa-plus-square" />
+                ビル管理
+              </p>
+              <ul>
+                <li>サービス案内</li>
+                <li>取り組み</li>
+                <li>特徴</li>
+                <li>サポート</li>
+              </ul>
+            </div>
 
-          <div>
-            <p>
-              <i className="fa fa-plus-square" />
-              マンション管理
-            </p>
-            <ul>
-              <li>サービス案内</li>
-              <li>取り組み</li>
-              <li>特徴</li>
-              <li>サポート</li>
-            </ul>
-          </div>
+            <div>
+              <p>
+                <i className="fa fa-plus-square" />
+                マンション管理
+              </p>
+              <ul>
+                <li>サービス案内</li>
+                <li>取り組み</li>
+                <li>特徴</li>
+                <li>サポート</li>
+              </ul>
+            </div>
 
-          <div>
-            <p>
-              <i className="fa fa-plus-square" />
-              運行管理
-            </p>
-            <ul>
-              <li>サービス案内</li>
-              <li>導入事例</li>
-              <li>特徴</li>
-              <li>安全・安心・快適への取組</li>
-            </ul>
-          </div>
+            <div>
+              <p>
+                <i className="fa fa-plus-square" />
+                運行管理
+              </p>
+              <ul>
+                <li>サービス案内</li>
+                <li>導入事例</li>
+                <li>特徴</li>
+                <li>安全・安心・快適への取組</li>
+              </ul>
+            </div>
 
-          <div>
-            <p>
-              <i className="fa fa-plus-square" />
-              会社案内
-            </p>
-            <ul>
-              <li>遠鉄アシストについて</li>
-              <li>社長メッセージ</li>
-              <li>会社概要</li>
-              <li>戦略事業</li>
-            </ul>
-          </div>
+            <div>
+              <p>
+                <i className="fa fa-plus-square" />
+                会社案内
+              </p>
+              <ul>
+                <li>遠鉄アシストについて</li>
+                <li>社長メッセージ</li>
+                <li>会社概要</li>
+                <li>戦略事業</li>
+              </ul>
+            </div>
 
-          <div>
-            <p>
-              <i className="fa fa-plus-square" />
-              その他
-            </p>
-            <ul>
-              <li>お仕事を探す</li>
-            </ul>
-          </div>
+            <div>
+              <p>
+                <i className="fa fa-plus-square" />
+                その他
+              </p>
+              <ul>
+                <li>お仕事を探す</li>
+              </ul>
+            </div>
+          </nav>
 
-        </nav>
+          <div className="lf-external">
+            <div>
+              <span>公共事業リンク</span>
+              <p>
+                <a
+                  target="_blank"
+                  href="http://www.entetsuassist-dms.com/hamamatsu-jyo/"
+                  >
+                  <img
+                    src="imgs/banners/01.jpg"
+                    width="140"
+                    height="35"
+                    alt="浜松城公園"
+                    />
+                </a>
 
-        <div className="lf-external">
-          <div>
-            <span>公共事業リンク</span>
-            <p>
-              <a
-                target="_blank"
-                href="http://www.entetsuassist-dms.com/hamamatsu-jyo/"
-                >
+                <a
+                  target="_blank"
+                  href="http://www.hamamatsu-navi.jp/matsuri/"
+                  >
+                  <img
+                    src="imgs/banners/02.jpg"
+                    width="140"
+                    height="35"
+                    alt="浜松まつり会館"
+                    />
+                </a>
+
+                <a
+                  target="_blank"
+                  href="http://www.ryuyo-kaiyopark.jp/"
+                  >
+                  <img
+                    src="imgs/banners/04.jpg"
+                    width="140"
+                    height="35"
+                    alt="竜洋海洋公園"
+                    />
+                </a>
+              </p>
+
+              <p>
+                <a
+                  target="_blank"
+                  href="http://www.h-seisyounen-ie.com/"
+                  >
+                  <img
+                    src="imgs/banners/05.jpg"
+                    width="140"
+                    height="35"
+                    alt="青少年の家"
+                    />
+                </a>
+
+                <a
+                  target="_blank"
+                  href="http://www.entetsuassist-dms.com/busparking/"
+                  >
+                  <img
+                    src="imgs/banners/06.jpg"
+                    width="140"
+                    height="35"
+                    alt="観光バス駐車場"
+                    />
+                </a>
+
+                <a
+                  target="_blank"
+                  href="http://www.hamamatsu-navi.jp/parking/"
+                  >
+                  <img
+                    src="imgs/banners/07.jpg"
+                    width="140"
+                    height="35"
+                    alt="浜松市営駐車場"
+                    />
+                </a>
+   
+                <a
+                  target="_blank"
+                  href="http://www.entetsuassist-dms.com/sanaru-park/"
+                  >
+                  <img
+                    src="imgs/banners/08.jpg"
+                    width="140"
+                    height="35"
+                    alt="佐鳴湖公園"
+                    />
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <span>関連リンク</span>
+              <p>
+                <a
+                  target="_blank"
+                  href="https://netsuper.entstore.co.jp/"
+                  >
+                  <img
+                    src="imgs/links/01.jpg"
+                    width="140"
+                    height="35"
+                    alt="ネットスーパー"
+                    />
+                </a>
+
+                <a
+                  target="_blank"
+                  href="https://cards.entetsu.co.jp/"
+                  >
+                  <img
+                    src="imgs/links/02.jpg"
+                    width="140"
+                    height="35"
+                    alt="えんてつカード"
+                    />
+                </a>
+              </p>
+
+              <p>
                 <img
-                  src="imgs/banners/01.jpg"
+                  src="imgs/links/03.jpg"
                   width="140"
                   height="35"
-                  alt="浜松城公園"
+                  alt="子育て中"
                   />
-              </a>
 
-              <a
-                target="_blank"
-                href="http://www.hamamatsu-navi.jp/matsuri/"
-                >
-                <img
-                  src="imgs/banners/02.jpg"
-                  width="140"
-                  height="35"
-                  alt="浜松まつり会館"
-                  />
-              </a>
-
-              <a
-                target="_blank"
-                href="http://www.ryuyo-kaiyopark.jp/"
-                >
-                <img
-                  src="imgs/banners/04.jpg"
-                  width="140"
-                  height="35"
-                  alt="竜洋海洋公園"
-                  />
-              </a>
-            </p>
-
-            <p>
-              <a
-                target="_blank"
-                href="http://www.h-seisyounen-ie.com/"
-                >
-                <img
-                  src="imgs/banners/05.jpg"
-                  width="140"
-                  height="35"
-                  alt="青少年の家"
-                  />
-              </a>
-
-              <a
-                target="_blank"
-                href="http://www.entetsuassist-dms.com/busparking/"
-                >
-                <img
-                  src="imgs/banners/06.jpg"
-                  width="140"
-                  height="35"
-                  alt="観光バス駐車場"
-                  />
-              </a>
-
-              <a
-                target="_blank"
-                href="http://www.hamamatsu-navi.jp/parking/"
-                >
-                <img
-                  src="imgs/banners/07.jpg"
-                  width="140"
-                  height="35"
-                  alt="浜松市営駐車場"
-                  />
-              </a>
- 
-              <a
-                target="_blank"
-                href="http://www.entetsuassist-dms.com/sanaru-park/"
-                >
-                <img
-                  src="imgs/banners/08.jpg"
-                  width="140"
-                  height="35"
-                  alt="佐鳴湖公園"
-                  />
-              </a>
-            </p>
-          </div>
-
-          <div>
-            <span>関連リンク</span>
-            <p>
-              <a
-                target="_blank"
-                href="https://netsuper.entstore.co.jp/"
-                >
-                <img
-                  src="imgs/links/01.jpg"
-                  width="140"
-                  height="35"
-                  alt="ネットスーパー"
-                  />
-              </a>
-
-              <a
-                target="_blank"
-                href="https://cards.entetsu.co.jp/"
-                >
-                <img
-                  src="imgs/links/02.jpg"
-                  width="140"
-                  height="35"
-                  alt="えんてつカード"
-                  />
-              </a>
-            </p>
-
-            <p>
-              <img
-                src="imgs/links/03.jpg"
-                width="140"
-                height="35"
-                alt="子育て中"
-                />
-
-              <a
-                target="_blank"
-                href="https://cards.entetsu.co.jp/kidsclub/"
-                >
-                <img
-                  src="imgs/links/04.jpg"
-                  width="140"
-                  height="35"
-                  alt="えんてつカード キッズクラブ"
-                  />
-              </a>
-            </p>
+                <a
+                  target="_blank"
+                  href="https://cards.entetsu.co.jp/kidsclub/"
+                  >
+                  <img
+                    src="imgs/links/04.jpg"
+                    width="140"
+                    height="35"
+                    alt="えんてつカード キッズクラブ"
+                    />
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="lf-credit">
+        <div id="credit" className="lf-credit">
           <div>
             <div>
               <a href="/">

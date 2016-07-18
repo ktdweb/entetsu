@@ -16,8 +16,13 @@
     padding: $base-spacing
 
 & > footer
+  #footerLink
+    min-width: 960px 
+    max-width: 1040px 
+    margin: $base-spacing auto
+
+& > footer
   .lf-contents
-    +outer-container()
     div
       +span-columns(2)
       i
@@ -37,9 +42,8 @@
 
 & > footer
   .lf-external
-    +outer-container()
-    border-top: 1px solid #EEEEEE
     div
+      padding: $base-spacing 0
       p
         margin-bottom: $small-spacing
       img

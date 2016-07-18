@@ -15,8 +15,18 @@ class React extends DefaultRegistry {
     let docs = './docs/src';
     let watch = './src/**/*.*';
 
+    let ignore = './src/components,./src/movies';
+    let thisfile = 'gulp/tasks/react.es6';
+
     gulp.task('babel', shell.task([`
-      babel ${src} --out-dir ${js}
+
+      # 無視するディレクトリのアラート用
+      tput setaf 33 && echo "---\n" \
+      "ignore files: ${ignore}" \
+      "by ${thisfile} \n---" &&
+      tput setaf 255 &&
+
+      babel ${src} --out-dir ${js} --ignore ${ignore}
     `]));
 
     gulp.task('browserify', shell.task([`
