@@ -6502,8 +6502,10 @@ article {
   margin-left: auto;
   margin-right: auto;
   min-width: 960px;
+  max-width: 1040px;
   margin-bottom: 0;
   padding-bottom: 0;
+  margin: 0 auto;
   text-align: center; }
   article::after {
     clear: both;
@@ -6702,7 +6704,7 @@ article {
   すべてのページに共通する設定
   */
 #Front > article[id] {
-  text-align: center;
+  text-align: left;
   z-index: 0; }
 
 /*
@@ -7424,8 +7426,6 @@ article {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
     background-image: url("../imgs/pages/covers/driving_l.png"), url("../imgs/pages/covers/driving_r.png"); }
-  #Front article.pf-Detail {
-    margin-top: 20rem; }
   #Front article.pf-Detail section {
     margin: 0 6rem; }
   #Front article.pf-Detail h1 {
@@ -7517,7 +7517,6 @@ article {
       border: 1px solid white; }
   #Front article#BuildingDetail {
     position: relative;
-    margin-top: 14rem;
     transform-style: preserve-3d;
     perspective: 10px;
     height: 100vh;
@@ -7635,7 +7634,6 @@ article {
     right: 0px; }
   #Front article#MansionDetail {
     position: relative;
-    margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail_mansion.png"), url("../imgs/detail/bg_mansion.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
     background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
@@ -7663,7 +7661,6 @@ article {
     right: 0px; }
   #Front article#SeisouDetail {
     position: relative;
-    margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail_seisou.png"), url("../imgs/detail/bg_seisou.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
     background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
@@ -7691,7 +7688,6 @@ article {
     right: 0px; }
   #Front article#UnkouDetail {
     position: relative;
-    margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail_unkou.png"), url("../imgs/detail/bg_unkou.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
     background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
     background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
