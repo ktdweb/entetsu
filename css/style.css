@@ -6847,11 +6847,9 @@ article {
   #Front > footer {
     font-size: 1.2rem;
     margin-bottom: 0; }
-    #Front > footer > div, #Front > footer > nav {
-      padding: 2rem; }
   #Front > footer #footerLink {
     min-width: 960px;
-    max-width: 1040px;
+    max-width: 960px;
     margin: 2rem auto; }
   #Front > footer .lf-contents div {
     float: left;
@@ -6885,6 +6883,7 @@ article {
   #Front > footer .lf-credit {
     width: 100%;
     margin: 0;
+    padding: 2rem;
     line-height: 2rem;
     text-align: left;
     background-color: #F5F5F5;
@@ -7239,6 +7238,11 @@ article {
   */
 #Front {
   /*
+  # pages/front/Top.sass
+  front/Top.jsxに関するクラスを定義
+  prefixには`pf-Top`を付与
+  */
+  /*
   # pages/front/Home.sass
   front/Home.jsxに関するクラスを定義
   prefixには`pf-Home`を付与
@@ -7282,6 +7286,64 @@ article {
   front/UnkouDetail.jsxに関するクラスを定義
   prefixには`pf-UnkouDetail`を付与
   */ }
+  #Front .pf-Top {
+    min-width: 960px;
+    max-width: 960px;
+    margin-top: 4rem; }
+    #Front .pf-Top nav {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      #Front .pf-Top nav:last-child {
+        margin-right: 0; }
+    #Front .pf-Top section {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-right: 0; }
+      #Front .pf-Top section:last-child {
+        margin-right: 0; }
+  #Front .pf-Top nav {
+    font-size: 1.6rem; }
+    #Front .pf-Top nav ul {
+      border: 2px solid black;
+      border-radius: 3px;
+      background-color: rgba(255, 255, 255, 0.85); }
+      #Front .pf-Top nav ul li {
+        padding: 1rem;
+        border-top: 1px solid #cdcdcd;
+        margin: 0 1rem; }
+        #Front .pf-Top nav ul li:first-child {
+          margin: 0;
+          padding: 1rem 2rem;
+          border-top: none;
+          background-color: #f9f9f9; }
+        #Front .pf-Top nav ul li a {
+          color: #000; }
+  #Front .pf-Top section div {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%; }
+    #Front .pf-Top section div:last-child {
+      margin-right: 0; }
+    #Front .pf-Top section div:nth-child(2n) {
+      margin-right: 0; }
+    #Front .pf-Top section div:nth-child(2n+1) {
+      clear: left; }
+    #Front .pf-Top section div h2 {
+      margin-bottom: 1rem;
+      font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
+      font-size: 1.84rem;
+      font-weight: bold;
+      line-height: 4rem;
+      border-bottom: 1px dotted black; }
+    #Front .pf-Top section div p {
+      font-size: 1.44rem;
+      line-height: 2.1rem;
+      text-align: justify; }
   #Front .menuTop {
     margin-top: 2rem; }
     #Front .menuTop td {
