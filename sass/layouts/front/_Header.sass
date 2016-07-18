@@ -12,9 +12,14 @@
 
 & > header
   position: fixed
+  left: 0
+  right: 0
+  margin: 0 auto
   padding: $base-spacing
+  min-width: 960px
+  max-width: 1040px 
   font-size: $small-font-size
-  width: 100%
+  text-align: center
   z-index: 1000
 
 /*
@@ -28,6 +33,7 @@
     +outer-container()
     margin-bottom: $small-spacing / 2
     div:nth-child(1)
+      text-align: left
       padding-left: $small-spacing
       +span-columns(4)
     div:nth-child(2)
@@ -65,7 +71,7 @@
     text-align: center
     li
       display: inline-block
-      padding: 0 ($small-spacing * 1.5)
+      padding: 0 ($small-spacing * 1.0)
       border-right: 1px solid black
       &:last-child
         border-right: none

@@ -47,44 +47,44 @@ export default class Header extends React.Component {
         <nav>
           <ul>
             <li>
-              <a href="/">
+              <Link to="/">
                 HOME
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/works">
+              <Link to="/works">
                 仕事を探す
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/cleaning">
+              <Link to="/cleaning">
                 清掃でお困りの方
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/building">
+              <Link to="/building">
                 ビル管理でお困りの方
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/mansion">
+              <Link to="/mansion">
                 マンション管理でお困りの方
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/driving">
+              <Link to="/driving">
                 運転・送迎でお困りの方
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/company#company05">
+              <Link to="/company#company05">
                 戦略事業
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/company">
+              <Link to="/company">
                 会社案内
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

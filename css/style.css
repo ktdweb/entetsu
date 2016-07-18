@@ -6695,7 +6695,6 @@ article {
   color: #000;
   line-height: 3rem;
   letter-spacing: normal;
-  text-align: left;
   margin: 0 auto; }
 
 /*
@@ -6703,6 +6702,7 @@ article {
   すべてのページに共通する設定
   */
 #Front > article[id] {
+  text-align: center;
   z-index: 0; }
 
 /*
@@ -6778,9 +6778,14 @@ article {
   */ }
   #Front > header {
     position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     padding: 2rem;
+    min-width: 960px;
+    max-width: 1040px;
     font-size: 1.2rem;
-    width: 100%;
+    text-align: center;
     z-index: 1000; }
   #Front > header div {
     max-width: 100%;
@@ -6792,6 +6797,7 @@ article {
       content: "";
       display: table; }
     #Front > header div div:nth-child(1) {
+      text-align: left;
       padding-left: 1rem;
       float: left;
       display: block;
@@ -6830,7 +6836,7 @@ article {
       display: table; }
     #Front > header nav li {
       display: inline-block;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
       border-right: 1px solid black; }
       #Front > header nav li:last-child {
         border-right: none; }
@@ -6841,50 +6847,39 @@ article {
     margin-bottom: 0; }
     #Front > footer > div, #Front > footer > nav {
       padding: 2rem; }
-  #Front > footer .lf-contents {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto; }
-    #Front > footer .lf-contents::after {
-      clear: both;
-      content: "";
-      display: table; }
-    #Front > footer .lf-contents div {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 14.70196%; }
-      #Front > footer .lf-contents div:last-child {
-        margin-right: 0; }
-      #Front > footer .lf-contents div i {
-        margin-right: 0.5rem; }
-      #Front > footer .lf-contents div p {
-        line-height: 3rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #EEE; }
-      #Front > footer .lf-contents div ul li {
-        line-height: 2rem; }
-  #Front > footer .lf-external {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 1px solid #EEEEEE; }
-    #Front > footer .lf-external::after {
-      clear: both;
-      content: "";
-      display: table; }
+  #Front > footer #footerLink {
+    min-width: 960px;
+    max-width: 1040px;
+    margin: 2rem auto; }
+  #Front > footer .lf-contents div {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%; }
+    #Front > footer .lf-contents div:last-child {
+      margin-right: 0; }
+    #Front > footer .lf-contents div i {
+      margin-right: 0.5rem; }
+    #Front > footer .lf-contents div p {
+      line-height: 3rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #EEE; }
+    #Front > footer .lf-contents div ul li {
+      line-height: 2rem; }
+  #Front > footer .lf-external div {
+    padding: 2rem 0; }
     #Front > footer .lf-external div p {
       margin-bottom: 1rem; }
     #Front > footer .lf-external div img {
       border: 1px solid black; }
-    #Front > footer .lf-external div:first-child {
-      float: left; }
-      #Front > footer .lf-external div:first-child a img {
-        margin-right: 1rem; }
-    #Front > footer .lf-external div:last-child {
-      float: right; }
-      #Front > footer .lf-external div:last-child a:nth-child(even) img {
-        margin-left: 1rem; }
+  #Front > footer .lf-external div:first-child {
+    float: left; }
+    #Front > footer .lf-external div:first-child a img {
+      margin-right: 1rem; }
+  #Front > footer .lf-external div:last-child {
+    float: right; }
+    #Front > footer .lf-external div:last-child a:nth-child(even) img {
+      margin-left: 1rem; }
   #Front > footer .lf-credit {
     width: 100%;
     margin: 0;
@@ -7291,12 +7286,144 @@ article {
       vertical-align: top; }
       #Front .menuTop td p {
         margin-bottom: 1.2rem; }
-  #Front #mainImage {
+  #Front #cover {
     background-color: #ffffff;
-    background-image: url("../imgs/pages/top/cleaning_bg_l.png"), url("../imgs/pages/top/cleaning_bg_r.png");
+    width: 100%;
+    height: 630px;
+    text-align: center;
     background-position: left 0px top 0, right 0px top 0;
     background-size: contain, contain;
     background-repeat: no-repeat, no-repeat; }
+  #Front #canvas {
+    margin: 0 auto; }
+  #Front .bg-cleaning {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-image: url("../imgs/pages/covers/cleaning_l.png"), url("../imgs/pages/covers/cleaning_r.png"); }
+  #Front .bg-building {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-image: url("../imgs/pages/covers/building_l.png"), url("../imgs/pages/covers/building_r.png"); }
+  #Front .bg-mansion {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-image: url("../imgs/pages/covers/mansion_l.png"), url("../imgs/pages/covers/mansion_r.png"); }
+  #Front .bg-driving {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-image: url("../imgs/pages/covers/driving_l.png"), url("../imgs/pages/covers/driving_r.png"); }
   #Front article.pf-Detail {
     margin-top: 20rem; }
   #Front article.pf-Detail section {

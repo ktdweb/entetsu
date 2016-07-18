@@ -9,6 +9,7 @@ export default class Header extends React.Component {
 
   render() {
     let root = this.props.route.global.documentRoot;
+    console.log(root);
 
     return (
       <header id="Header">

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import Cover from './Cover'
+
 export default class Front extends React.Component {
 
   constructor(props) {
