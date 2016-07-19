@@ -1,0 +1,49 @@
+/*
+  # pages/front/Top.sass
+  front/Top.jsxに関するクラスを定義  
+  prefixには`pf-Top`を付与
+  */
+
+.pf-Top
+  min-width: 960px
+  max-width: 960px 
+  margin-top: $base-spacing * 2
+  nav
+    +span-columns(4)
+  section
+    +span-columns(8)
+    +omega()
+
+.pf-Top nav
+  font-size: $base-font-size
+  ul
+    border: 2px solid black
+    border-radius: $base-border-radius
+    background-color: rgba(255,255,255, 0.85)
+    li
+      padding: $small-spacing
+      border-top: 1px solid $gray
+      margin: 0 $small-spacing
+      &:first-child
+        margin: 0
+        padding: $small-spacing $base-spacing
+        border-top: none
+        background-color: $gray-lighter
+      & a
+        color: $color-black
+
+.pf-Top section
+  div
+    +span-columns(4 of 8)
+    +omega(2n)
+    h2
+      margin-bottom: $small-spacing
+      font-family: $base-serif
+      font-size: $base-font-size * 1.15
+      font-weight: bold
+      line-height: $base-spacing * 2
+      border-bottom: 1px dotted black
+    p
+      font-size: $base-font-size * 0.90
+      line-height: $small-line-height * 1.05
+      text-align: justify
