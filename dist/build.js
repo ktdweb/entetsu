@@ -1095,8 +1095,8 @@ var Cover = function (_React$Component) {
 
     _this.state = {
       page: props.route.page,
-      width: 1040,
-      height: 630
+      width: 960,
+      height: 580
     };
     return _this;
   }

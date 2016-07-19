@@ -25,8 +25,8 @@ export default class Cover extends React.Component {
     
     this.state = {
       page: props.route.page,
-      width: 1040,
-      height: 630
+      width: 960,
+      height: 580
     };
   }
 

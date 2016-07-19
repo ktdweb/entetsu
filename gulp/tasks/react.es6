@@ -15,7 +15,7 @@ class React extends DefaultRegistry {
     let docs = './docs/src';
     let watch = './src/**/*.*';
 
-    let ignore = './src/components,./src/movies';
+    let ignore = './src/components';
     let thisfile = 'gulp/tasks/react.es6';
 
     gulp.task('babel', shell.task([`
