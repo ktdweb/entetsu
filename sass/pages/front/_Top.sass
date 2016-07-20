@@ -16,14 +16,16 @@
 
 .pf-Top nav
   font-size: $base-font-size
+  padding-right: $base-spacing * 1.5
   ul
-    border: 2px solid black
-    border-radius: $base-border-radius
+    font-size: $base-font-size * 0.90
+    border: 3px solid black
+    border-radius: 4px
     background-color: rgba(255,255,255, 0.85)
     li
+      margin: 0 $small-spacing
       padding: $small-spacing
       border-top: 1px solid $gray
-      margin: 0 $small-spacing
       &:first-child
         margin: 0
         padding: $small-spacing $base-spacing
@@ -36,14 +38,20 @@
   div
     +span-columns(4 of 8)
     +omega(2n)
+    &:nth-child(odd)
+      padding-right: $base-spacing
     h2
       margin-bottom: $small-spacing
       font-family: $base-serif
       font-size: $base-font-size * 1.15
-      font-weight: bold
       line-height: $base-spacing * 2
-      border-bottom: 1px dotted black
+      +border-image(url(../imgs/border_line.png) 10 repeat)
+      border-style: solid
+      border-width: 4px
+      border-top: 0
+      border-left: 0
+      border-right: 0
     p
-      font-size: $base-font-size * 0.90
+      font-size: $base-font-size * 0.85
       line-height: $small-line-height * 1.05
       text-align: justify

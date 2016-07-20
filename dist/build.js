@@ -869,6 +869,75 @@ function _inherits(subClass, superClass) {
 
 var page, data;
 
+var Article = function (_React$Component) {
+  _inherits(Article, _React$Component);
+
+  function Article(props) {
+    _classCallCheck(this, Article);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Article).call(this, props));
+
+    _this.state = {
+      page: props.route.page
+    };
+    return _this;
+  }
+
+  _createClass(Article, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      this.updateState(props);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.updateState();
+    }
+  }, {
+    key: 'updateState',
+    value: function updateState() {
+      var props = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (props) {
+        page = props.route.page;
+      } else {
+        page = this.props.route.page;
+      }
+      var src = 'imgs/pages/' + page + '.jpg';
+
+      this.setState({
+        src: src,
+        page: page
+      });
+
+      data = contents[page];
+    }
+  }, {
+    key: 'toId',
+    value: function toId(str) {
+      var first = str.charAt(0).toUpperCase();
+      return first + str.slice(1);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement('article', {
+        id: this.toId(page),
+        className: 'pf-Top'
+      }, _react2.default.createElement(_reactDocumentTitle2.default, {
+        title: data.h1 + ' | 遠鉄アシスト'
+      }), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.h1)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[0].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[1].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[2].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[3].title)))), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[0].title), _react2.default.createElement('p', null, data.column[0].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[1].title), _react2.default.createElement('p', null, data.column[1].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[2].title), _react2.default.createElement('p', null, data.column[2].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[3].title), _react2.default.createElement('p', null, data.column[3].desc))));
+    }
+  }]);
+
+  return Article;
+}(_react2.default.Component);
+
+exports.default = Article;
+
 var contents = {
   cleaning: {
     h1: '清掃でお困りの方',
@@ -938,75 +1007,6 @@ var contents = {
     }]
   }
 };
-
-var Article = function (_React$Component) {
-  _inherits(Article, _React$Component);
-
-  function Article(props) {
-    _classCallCheck(this, Article);
-
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Article).call(this, props));
-
-    _this.state = {
-      page: props.route.page
-    };
-    return _this;
-  }
-
-  _createClass(Article, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(props) {
-      this.updateState(props);
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {}
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.updateState();
-    }
-  }, {
-    key: 'updateState',
-    value: function updateState() {
-      var props = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
-
-      if (props) {
-        page = props.route.page;
-      } else {
-        page = this.props.route.page;
-      }
-      var src = 'imgs/pages/' + page + '.jpg';
-
-      this.setState({
-        src: src,
-        page: page
-      });
-
-      data = contents[page];
-    }
-  }, {
-    key: 'toId',
-    value: function toId(str) {
-      var first = str.charAt(0).toUpperCase();
-      return first + str.slice(1);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('article', {
-        id: this.toId(page),
-        className: 'pf-Top'
-      }, _react2.default.createElement(_reactDocumentTitle2.default, {
-        title: data.h1 + ' | 遠鉄アシスト'
-      }), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.h1 + 'トップ')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[0].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[1].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[2].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[3].title)))), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[0].title), _react2.default.createElement('p', null, data.column[0].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[1].title), _react2.default.createElement('p', null, data.column[1].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[2].title), _react2.default.createElement('p', null, data.column[2].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[3].title), _react2.default.createElement('p', null, data.column[3].desc))));
-    }
-  }]);
-
-  return Article;
-}(_react2.default.Component);
-
-exports.default = Article;
 
 },{"react":267,"react-document-title":40,"react-router":71}],13:[function(require,module,exports){
 'use strict';

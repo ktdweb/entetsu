@@ -4,6 +4,114 @@ import DocumentTitle from 'react-document-title'
 
 var page, data;
 
+export default class Article extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: props.route.page
+    };
+  }
+
+  componentWillReceiveProps(props) {
+    this.updateState(props);
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillMount() {
+    this.updateState();
+  }
+
+  updateState(props = null) {
+    if (props) {
+      page = props.route.page;
+    } else {
+      page = this.props.route.page;
+    }
+    let src = 'imgs/pages/' + page + '.jpg';
+
+    this.setState({
+      src: src,
+      page: page
+    });
+
+    data = contents[page];
+  }
+
+  toId(str) {
+    let first = str.charAt(0).toUpperCase();
+    return first + str.slice(1);
+  }
+
+  render() {
+    return (
+        <article
+          id={this.toId(page)}
+          className="pf-Top"
+          >
+        <DocumentTitle
+          title={data.h1 + ' | 遠鉄アシスト'}
+          />
+
+        <nav>
+          <ul>
+            <li>
+              <Link to={this.state.page + '_detail'}>
+                {data.h1}
+              </Link>
+            </li>
+            <li>
+              <Link to={this.state.page + '_detail'}>
+                {data.column[0].title}
+              </Link>
+            </li>
+            <li>
+              <Link to={this.state.page + '_detail'}>
+                {data.column[1].title}
+              </Link>
+            </li>
+            <li>
+              <Link to={this.state.page + '_detail'}>
+                {data.column[2].title}
+              </Link>
+            </li>
+            <li>
+              <Link to={this.state.page + '_detail'}>
+                {data.column[3].title}
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <section>
+          <div>
+            <h2>{data.column[0].title}</h2>
+            <p>{data.column[0].desc}</p>
+          </div>
+
+          <div>
+            <h2>{data.column[1].title}</h2>
+            <p>{data.column[1].desc}</p>
+          </div>
+
+          <div>
+            <h2>{data.column[2].title}</h2>
+            <p>{data.column[2].desc}</p>
+          </div>
+
+          <div>
+            <h2>{data.column[3].title}</h2>
+            <p>{data.column[3].desc}</p>
+          </div>
+        </section>
+      </article>
+    );
+  }
+}
+
 var contents = {
   cleaning: {
     h1: '清掃でお困りの方',
@@ -93,112 +201,3 @@ var contents = {
     ]
   }
 };
-
-export default class Article extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      page: props.route.page
-    };
-  }
-
-  componentWillReceiveProps(props) {
-    this.updateState(props);
-  }
-
-  componentDidMount() {
-  }
-
-  componentWillMount() {
-    this.updateState();
-  }
-
-  updateState(props = null) {
-    if (props) {
-      page = props.route.page;
-    } else {
-      page = this.props.route.page;
-    }
-    let src = 'imgs/pages/' + page + '.jpg';
-
-    this.setState({
-      src: src,
-      page: page
-    });
-
-    data = contents[page];
-  }
-
-  toId(str) {
-    let first = str.charAt(0).toUpperCase();
-    return first + str.slice(1);
-  }
-
-  render() {
-    return (
-        <article
-          id={this.toId(page)}
-          className="pf-Top"
-          >
-        <DocumentTitle
-          title={data.h1 + ' | 遠鉄アシスト'}
-          />
-
-        <nav>
-          <ul>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.h1 + 'トップ'}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[0].title}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[1].title}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[2].title}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[3].title}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <section>
-          <div>
-            <h2>{data.column[0].title}</h2>
-            <p>{data.column[0].desc}</p>
-          </div>
-
-          <div>
-            <h2>{data.column[1].title}</h2>
-            <p>{data.column[1].desc}</p>
-          </div>
-
-          <div>
-            <h2>{data.column[2].title}</h2>
-            <p>{data.column[2].desc}</p>
-          </div>
-
-          <div>
-            <h2>{data.column[3].title}</h2>
-            <p>{data.column[3].desc}</p>
-          </div>
-        </section>
-      </article>
-    );
-  }
-}
-
