@@ -7306,15 +7306,17 @@ article {
       #Front .pf-Top section:last-child {
         margin-right: 0; }
   #Front .pf-Top nav {
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    padding-right: 3rem; }
     #Front .pf-Top nav ul {
-      border: 2px solid black;
-      border-radius: 3px;
+      font-size: 1.44rem;
+      border: 3px solid black;
+      border-radius: 4px;
       background-color: rgba(255, 255, 255, 0.85); }
       #Front .pf-Top nav ul li {
+        margin: 0 1rem;
         padding: 1rem;
-        border-top: 1px solid #cdcdcd;
-        margin: 0 1rem; }
+        border-top: 1px solid #cdcdcd; }
         #Front .pf-Top nav ul li:first-child {
           margin: 0;
           padding: 1rem 2rem;
@@ -7333,15 +7335,23 @@ article {
       margin-right: 0; }
     #Front .pf-Top section div:nth-child(2n+1) {
       clear: left; }
+    #Front .pf-Top section div:nth-child(odd) {
+      padding-right: 2rem; }
     #Front .pf-Top section div h2 {
       margin-bottom: 1rem;
       font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
       font-size: 1.84rem;
-      font-weight: bold;
       line-height: 4rem;
-      border-bottom: 1px dotted black; }
+      -webkit-border-image: url(../imgs/border_line.png) 10 repeat;
+      border-image: url(../imgs/border_line.png) 10 repeat;
+      border-style: solid;
+      border-style: solid;
+      border-width: 4px;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0; }
     #Front .pf-Top section div p {
-      font-size: 1.44rem;
+      font-size: 1.36rem;
       line-height: 2.1rem;
       text-align: justify; }
   #Front .menuTop {
