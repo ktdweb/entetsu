@@ -1151,7 +1151,6 @@ var Cover = function (_React$Component) {
       body = document.getElementById("Home");
 
       var cls = cover.className;
-      console.log(cls);
       if (cls) {
         cover.classList.remove(cls);
       }
@@ -1257,7 +1256,7 @@ var Cover = function (_React$Component) {
           stage.scaleY = pRatio * sRatio;
           lastW = iw;lastH = ih;lastS = sRatio;
         }
-      })(false, 'both', false, 1);
+      })(true, 'both', false, 1);
     }
   }]);
 
