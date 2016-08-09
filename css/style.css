@@ -7512,7 +7512,8 @@ article {
     #Front article#Company div.ceo img {
       border: 1px solid white; }
   #Front article#BuildingDetail {
-    overflow: hidden; }
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; }
     #Front article#BuildingDetail section {
       position: relative;
       padding: 0 5rem;
