@@ -7519,20 +7519,21 @@ article {
       text-align: left; }
       #Front article#BuildingDetail section h1 {
         font-size: 2.56rem;
-          font-size-font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+        font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
       #Front article#BuildingDetail section p {
         color: #555;
         font-size: 1.44rem;
         line-height: 2.5rem; }
       #Front article#BuildingDetail section div {
-        width: 60%; }
+        width: 55%; }
       #Front article#BuildingDetail section.odd div {
         margin-left: 44rem; }
       #Front article#BuildingDetail section.odd-white {
         text-align: right;
         color: white; }
         #Front article#BuildingDetail section.odd-white div {
-          margin-left: 36rem; }
+          margin-left: 34rem;
+          width: 60rem; }
         #Front article#BuildingDetail section.odd-white p {
           color: white; }
     #Front article#BuildingDetail #parallax01 {
@@ -7559,7 +7560,7 @@ article {
     #Front article#BuildingDetail #fir {
       margin-top: 180px; }
     #Front article#BuildingDetail #ser {
-      margin-top: 0px; }
+      margin-top: 20px; }
     #Front article#BuildingDetail #tokucho {
       margin-top: 160px; }
     #Front article#BuildingDetail #supports {
@@ -7568,7 +7569,7 @@ article {
       margin-top: 160px; }
   #Front div#service {
     width: 60rem;
-    margin-left: 33rem; }
+    margin-left: 23rem; }
     #Front div#service p {
       position: relative;
       width: 10rem;
