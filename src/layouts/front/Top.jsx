@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
 var page, data;
 
-export default class Article extends React.Component {
+export default class Top extends React.Component {
 
   constructor(props) {
     super(props);
@@ -50,65 +51,64 @@ export default class Article extends React.Component {
     return (
         <article
           id={this.toId(page)}
-          className="pf-Top"
+          className="lf-Top"
           >
         <DocumentTitle
           title={data.h1 + ' | 遠鉄アシスト'}
           />
 
-        <nav>
-          <ul>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.h1}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[0].title}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[1].title}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[2].title}
-              </Link>
-            </li>
-            <li>
-              <Link to={this.state.page + '_detail'}>
-                {data.column[3].title}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <section>
-          <div>
-            <h2>{data.column[0].title}</h2>
-            <p>{data.column[0].desc}</p>
+          <div
+            className="lf-Top-linkArea"
+            onClick={this.onLinkArea.bind(this)}
+            >
+            <nav>
+              <ul>
+                <li>
+                    {data.h1}
+                </li>
+                <li>
+                    {data.column[0].title}
+                </li>
+                <li>
+                    {data.column[1].title}
+                </li>
+                <li>
+                    {data.column[2].title}
+                </li>
+                <li>
+                    {data.column[3].title}
+                </li>
+              </ul>
+            </nav>
+            
+            <section>
+              <div>
+                <h2>{data.column[0].title}</h2>
+                <p>{data.column[0].desc}</p>
+              </div>
+            
+              <div>
+                <h2>{data.column[1].title}</h2>
+                <p>{data.column[1].desc}</p>
+              </div>
+            
+              <div>
+                <h2>{data.column[2].title}</h2>
+                <p>{data.column[2].desc}</p>
+              </div>
+            
+              <div>
+                <h2>{data.column[3].title}</h2>
+                <p>{data.column[3].desc}</p>
+              </div>
+            </section>
           </div>
-
-          <div>
-            <h2>{data.column[1].title}</h2>
-            <p>{data.column[1].desc}</p>
-          </div>
-
-          <div>
-            <h2>{data.column[2].title}</h2>
-            <p>{data.column[2].desc}</p>
-          </div>
-
-          <div>
-            <h2>{data.column[3].title}</h2>
-            <p>{data.column[3].desc}</p>
-          </div>
-        </section>
-      </article>
+        </article>
     );
+  }
+
+  onLinkArea(e) {
+    browserHistory.push(page + '_detail');
   }
 }
 
@@ -195,7 +195,7 @@ var contents = {
         desc:  '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'
       },
       {
-        title: '安全・安心・快適への取り組み',
+        title: '安全・安心・快適への取組',
         desc:  'お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。経験と実績に甘んじることなく、技術と知識の強化を図っています。'
       }
     ]

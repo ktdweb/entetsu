@@ -6,143 +6,106 @@
 
 $bg: 123, 456, 789
 
-/*
-    background-image: , url('../imgs/detail/bg_building.jpg'), url('../imgs/detail/bg_company02.jpg'), url('../imgs/detail/bg_company03.jpg')
-
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px
-
-    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto
-
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
-  */
-
 article#BuildingDetail
-  position: relative
-  transform-style: preserve-3d
-  perspective: 10px
-  height: 100vh
-  overflow-x: hidden
-  overflow-y: scroll
-  -webkit-overflow-scrolling: touch
+  overflow: hidden
 
   section
-    position: absolute
-    width: 100%
-    margin: 0
+    position: relative
     padding: 0 5rem
-    overflow-y: auto  
+    text-align: left
+
     h1
-      font-size: $base-font-size * 1.6
+     font-size: $base-font-size * 1.6
       font-family: $YuMincho-font-family
     p
       color: #555
       font-size: $base-font-size * 0.9
       line-height: $base-spacing * 1.25
-  
-  section#building01
-    top: 40px
-    padding-top: 0rem
-    height: 640px
-    background-image: url('../imgs/detail/bg_building.jpg')
-    background-position:  left 0px top 160px
-    background-size: 800px auto
-    background-repeat: no-repeat
-    z-index: -2
-    transform: translateZ(-4px) scale(1.4)
-
-  section#building02
-    top: 40px
-    padding-top: 26rem
-    height: 840px
-    background-image: url('../imgs/detail/bg_detail.png')
-    background-position:  left 0px top 0px
-    background-size: 1040px auto
-    background-repeat: no-repeat
-    text-align: right
-    color: white
-    z-index: 0
-    transform: translateZ(0px) scale(1)
-    p
-      color: white
-      font-size: $small-font-size
-      line-height: $small-line-height
-
-  section#building03
-    top: 640px
-    padding-top: 26rem
-    height: 980px
-    background-image: url('../imgs/detail/bg_company02.jpg')
-    background-position:  left 0px top 0px
-    background-size: 1040px auto
-    background-repeat: no-repeat
-    z-index: -1
-    transform: translateZ(-1px) scale(1.1)
     div
-      width: 50%
-      text-align: justify
+      width: 60%
 
-section#building04
-    top: 1620px
-    padding-top: 26rem
-    height: 440px
-    z-index: 1
-    div
-      width: 55%
+    &.odd
+      div
+        margin-left: 44rem 
+
+    &.odd-white
       text-align: right
-      margin-left: 40rem
+      color: white
+      div
+        margin-left: 36rem 
+      p
+        color: white
 
-section#building05
-    top: 2220px
-    padding-top: 440px 
-    height: 1180px
-    background-image: url('../imgs/detail/bg_company03.jpg')
-    background-position:  left 0px bottom 0px
-    background-size: 1040px auto
-    background-repeat: no-repeat
-    z-index: -1
-    transform: translateZ(-1px) scale(1.1)
-    div
-      width: 59%
+  #parallax01
+    top: 220px
+    z-index: -100
 
-article#BuildingDetail
-  div.pf-BuildingDetail-hex-left
-    img:first-child
-      position: absolute
-      top: 50px
-      left: -82px
-      z-index: -1
-      transform: translateZ(-2px) scale(1.2)
-    img:last-child
-      position: absolute
-      top: 0px
-      left: 120px
-      z-index: 1
+  #parallax02
+    top: 120px
+    right: 0
+    z-index: -50
 
-  div.pf-BuildingDetail-hex-right
+  #parallax03
+    top: 1100px
+    right: 0
+
+  #parallax04
+    top: 1500px
+
+  #parallax05
+    top: 2200px
+    right: 0
+
+  #parallax06
+    top: 700px
+    z-index: -300
+
+  #parallax07
+    top: 2200px
+    z-index: -300
+
+  #fir
+    margin-top: 180px
+
+  #ser
+    margin-top: 0px
+
+  #tokucho
+    margin-top: 160px
+
+  #supports
+    margin-top: 160px
+
+  #torikumi
+    margin-top: 160px
+
+div#service
+  width: 60rem
+  margin-left: 33rem
+  p
     position: relative
-    img:first-child
-      position: absolute
-      top: 0px
-      right: 240px
-      z-index: 0 
-    img:last-child
-      position: absolute
-      top: 50px 
-      right: -82px
-      z-index: -1
-      transform: translateZ(-2px) scale(1.2)
- 
-  div#hex01
-    position: absolute
-    top: 1000px
-    right: 0px
+    width: 10rem
+    height: 10rem
+    padding-top: 3rem
+    float: right
+    border: 1px solid white
+    margin-right: 1rem
+    text-align: center
+    border-radius: 5px
+    font-size: $small-font-size * 0.85
+    line-height: 1.5rem
+    cursor: pointer
+  p:hover
+    background-color:  rgba(0,0,0,0.1)
 
-  div#hex02
-    position: absolute
-    top: 1700px
-    left: 0px
+div#desc
+  clear: both
+  width: 400px
+  height: 60px
+  margin-left: 38rem
+  text-align: left
+  p:first-child
+    margin-bottom: 0.5rem
 
-  div#hex03
-    position: absolute
-    top: 2600px
-    right: 0px
+#temp
+  position: relative

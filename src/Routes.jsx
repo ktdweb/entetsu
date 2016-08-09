@@ -19,7 +19,7 @@ import Front        from './layouts/front/Front'
 import FrontHeader  from './layouts/front/Header'
 import FrontFooter  from './layouts/front/Footer'
 import Cover        from './layouts/front/Cover'
-import Article      from './layouts/front/Article'
+import Top          from './layouts/front/Top'
 
 // pages/admin
 import AdminHome    from './pages/admin/Home'
@@ -62,7 +62,7 @@ const routes = (
         components={{
           header: FrontHeader,
           main: Cover,
-          article: Article,
+          top: Top,
           footer: FrontFooter
         }} />
 
@@ -72,7 +72,7 @@ const routes = (
         components={{
           header: FrontHeader,
           main: Cover,
-          article: Article,
+          top: Top,
           footer: FrontFooter
         }} />
 
@@ -82,7 +82,7 @@ const routes = (
         components={{
           header: FrontHeader,
           main: Cover,
-          article: Article,
+          top: Top,
           footer: FrontFooter
         }} />
 
@@ -92,7 +92,7 @@ const routes = (
         components={{
           header: FrontHeader,
           main: Cover,
-          article: Article,
+          top: Top,
           footer: FrontFooter
         }} />
 

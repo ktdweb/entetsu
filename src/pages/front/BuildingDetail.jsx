@@ -11,42 +11,100 @@ export default class BuildingDetail extends React.Component {
   }
 
   componentDidMount() {
-    let el = document.getElementById('BuildingDetail');
-    let target1 = document.getElementById('hex01').firstChild;
-    let target2 = document.getElementById('hex02').lastChild;
-    let target3 = document.getElementById('hex03').firstChild;
-    el.addEventListener("scroll", function() {
-      let x = this.scrollTop;
-      let rx = String(180 + parseInt(x / 50)) + 'px';
-      let lx = String(180 + parseInt(x / 50)) + 'px';
-      console.log(x);
+    let getScrollTop = function (window) {
+      let document;
+      let body;
 
-      if (x > 200 && x < 1500) {
-        target1.style.right = rx;
-      } else {
-        target1.style.right = rx;
-      }
+      return (
+        'pageYOffset' in window ?
+        window.pageYOffset :
+        (
+          (document = window.document).documentElement ||
+          (body = document.body).parentNode ||
+          body
+        ).scrollTop
+      );
+    }
 
-      if (x > 1801 && x < 2200) {
-        target2.style.left = lx;
-      } else {
-        target2.style.left = lx;
-      }
+    let layers = document.getElementsByClassName('layer');
+    let tops = Array();
+    let depths = Array();
 
-      if (x > 2201 && x < 2600) {
-        target3.style.right = rx;
-      } else {
-        target3.style.right = rx;
+    for (let i = 0; i < layers.length; i++) {
+      layers[i].style.position = 'absolute';
+      depths[i] = layers[i].getAttribute('data-depth') + 1;
+      tops[i] = layers[i].offsetTop;
+    }
+
+    window.onscroll = function() {
+      let y = getScrollTop(window);
+      for (let i = 0; i < layers.length; i++) {
+        if (depths[i] != 0) {
+          layers[i].style.top = tops[i] + y / depths[i] * 4 + 'px';
+        }
       }
-    });
+    }
   }
 
   render() {
     return (
       <article id="BuildingDetail">
-        <DocumentTitle title="遠鉄アシスト | 会社概要" />
+        <DocumentTitle title="遠鉄アシスト | ビル管理" />
 
-        <section id="building01">
+        <div id="temp">
+          <div
+            id="parallax01"
+            className="layer"
+            data-depth="1">
+            <img src="imgs/detail/building/bg_building.jpg" width="100%" />
+          </div>
+          
+          <div
+            id="parallax02"
+            className="layer"
+            data-depth="2">
+            <img src="imgs/detail/bg_detail.png" width="100%" />
+          </div>
+          
+          <div
+            id="parallax03"
+            className="layer"
+            data-depth="2">
+            <img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" />
+            <img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" />
+          </div>
+          <div
+            id="parallax04"
+            className="layer"
+            data-depth="2">
+            <img src="imgs/detail/building/hex02l.png" width="210" height="340" alt="01" />
+            <img src="imgs/detail/building/hex02r.png" width="210" height="340" alt="02" />
+          </div>
+          
+          <div
+            id="parallax05"
+            className="layer"
+            data-depth="2">
+            <img src="imgs/detail/building/hex03l.png" width="210" height="340" alt="01" />
+            <img src="imgs/detail/building/hex03r.png" width="210" height="340" alt="02" />
+          </div>
+          
+          <div
+            id="parallax06"
+            className="layer"
+            data-depth="3">
+            <img src="imgs/detail/bg_company02.jpg" width="1040" />
+          </div>
+          
+          <div
+            id="parallax07"
+            className="layer"
+            data-depth="3">
+            <img src="imgs/detail/bg_company03.jpg" width="1040" />
+          </div>
+        </div>
+
+        <section id="fir">
           <h1>機能するビルディング</h1>
           <p>
             仕事に集中できる環境。<br />
@@ -55,9 +113,10 @@ export default class BuildingDetail extends React.Component {
             オフィスとして求められるもの全てを<br />
             遠鉄アシストはサポートします。
           </p>
+
         </section>
 
-        <section id="building02">
+        <section id="ser" className="odd-white">
           <h1>遠鉄アシストのサービス</h1>
           <p>
             遠鉄アシストならではのきめ細かいサービスと、<br /> 
@@ -86,7 +145,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section id="building03" className="pf-Column">
+        <section id="torikumi">
           <div>
             <h1>遠鉄アシストの取り組み</h1>
             
@@ -110,8 +169,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-
-        <section id="building04" className="pf-Column odd">
+        <section id="tokucho" className="odd">
           <div>
             <h1 className="text-right">遠鉄アシストの特徴</h1>
             
@@ -130,7 +188,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section id="building05" className="pf-Column">
+        <section id="supports">
           <div>
             <h1>遠鉄アシストのサポート</h1>
             
@@ -183,25 +241,8 @@ export default class BuildingDetail extends React.Component {
             </p>
           </div>
         </section>
-        
-        <div id="hex01" className="pf-BuildingDetail-hex-right">
-          <img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" />
-          <img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" />
-        </div>
-        <div id="hex02" className="pf-BuildingDetail-hex-left">
-          <img src="imgs/detail/building/hex02l.png" width="210" height="340" alt="01" />
-          <img src="imgs/detail/building/hex02r.png" width="210" height="340" alt="02" />
-        </div>
-        <div id="hex03" className="pf-BuildingDetail-hex-right">
-          <img src="imgs/detail/building/hex03l.png" width="210" height="340" alt="01" />
-          <img src="imgs/detail/building/hex03r.png" width="210" height="340" alt="02" />
-        </div>
       </article>
     );
-  }
-
-  parallaxY() {
-    console.log('test');
   }
 
   onService(e) {
@@ -256,6 +297,6 @@ text: 'ホスピタリティーを重視し、常に快適な環境でお客様�
 },
 ]
 
-      this.setState({service: txt[e.target.value]});
+      this.setState({service: txt[e.target.getAttribute('value')]});
   }
 }

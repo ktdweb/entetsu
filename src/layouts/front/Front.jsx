@@ -20,7 +20,7 @@ export default class Front extends React.Component {
       <div id="Front">
         {this.props.header}
         {this.props.main}
-        {this.props.article}
+        {this.props.top}
         {this.props.footer}
       </div>
     );
