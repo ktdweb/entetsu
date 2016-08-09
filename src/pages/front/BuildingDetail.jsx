@@ -43,7 +43,16 @@ export default class BuildingDetail extends React.Component {
           layers[i].style.top = tops[i] + y / depths[i] * 4 + 'px';
         }
       }
-    }
+    };
+
+    window.requestAnimationFrame = (function() {
+      return  window.requestAnimationFrame       ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame    ||
+      function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    })();
   }
 
   render() {
