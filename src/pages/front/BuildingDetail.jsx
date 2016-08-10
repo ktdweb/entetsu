@@ -38,17 +38,19 @@ export default class BuildingDetail extends React.Component {
     let depths = Array();
 
     for (let i = 0; i < layers.length; i++) {
-      layers[i].style.position = 'absolute';
-      depths[i] = layers[i].getAttribute('data-depth') + 1;
-      tops[i] = layers[i].offsetTop;
+      let depth = layers[i].getAttribute('data-depth');
+      if (depth != 0) {
+        layers[i].style.position = 'absolute';
+        depths[i] = depth * 3;
+        tops[i] = layers[i].offsetTop;
+      }
     }
 
+    //let y = getScrollTop(window);
     function loop() {
-      let y = getScrollTop(window);
+      let y = window.pageYOffset;
       for (let i = 0; i < layers.length; i++) {
-        if (depths[i] != 0) {
-          layers[i].style.top = tops[i] + y / depths[i] * 4 + 'px';
-        }
+        layers[i].style.top = tops[i] + y / depths[i] + 'px';
       }
     };
 

@@ -5416,17 +5416,19 @@ var BuildingDetail = function (_React$Component) {
       var depths = Array();
 
       for (var i = 0; i < layers.length; i++) {
-        layers[i].style.position = 'absolute';
-        depths[i] = layers[i].getAttribute('data-depth') + 1;
-        tops[i] = layers[i].offsetTop;
+        var depth = layers[i].getAttribute('data-depth');
+        if (depth != 0) {
+          layers[i].style.position = 'absolute';
+          depths[i] = depth * 3;
+          tops[i] = layers[i].offsetTop;
+        }
       }
 
+      //let y = getScrollTop(window);
       function loop() {
-        var y = getScrollTop(window);
+        var y = window.pageYOffset;
         for (var _i = 0; _i < layers.length; _i++) {
-          if (depths[_i] != 0) {
-            layers[_i].style.top = tops[_i] + y / depths[_i] * 4 + 'px';
-          }
+          layers[_i].style.top = tops[_i] + y / depths[_i] + 'px';
         }
       };
 
