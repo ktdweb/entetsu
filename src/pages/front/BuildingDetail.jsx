@@ -11,6 +11,13 @@ export default class BuildingDetail extends React.Component {
   }
 
   componentDidMount() {
+    window.requestAnimationFrame = (function() {
+      return  window.requestAnimationFrame       ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame    ||
+              window.msRequestAnimationFrame;
+    })();
+
     let getScrollTop = function (window) {
       let document;
       let body;
@@ -36,7 +43,7 @@ export default class BuildingDetail extends React.Component {
       tops[i] = layers[i].offsetTop;
     }
 
-    window.onscroll = function() {
+    function loop() {
       let y = getScrollTop(window);
       for (let i = 0; i < layers.length; i++) {
         if (depths[i] != 0) {
@@ -45,14 +52,9 @@ export default class BuildingDetail extends React.Component {
       }
     };
 
-    window.requestAnimationFrame = (function() {
-      return  window.requestAnimationFrame       ||
-              window.webkitRequestAnimationFrame ||
-              window.mozRequestAnimationFrame    ||
-      function(callback) {
-        window.setTimeout(callback, 1000 / 60);
-      }
-    })();
+    window.onscroll = function() {
+      window.requestAnimationFrame(loop);
+    }
   }
 
   render() {

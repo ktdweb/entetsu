@@ -5400,6 +5400,10 @@ var BuildingDetail = function (_React$Component) {
   _createClass(BuildingDetail, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.requestAnimationFrame = function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame;
+      }();
+
       var getScrollTop = function getScrollTop(window) {
         var document = void 0;
         var body = void 0;
@@ -5417,7 +5421,7 @@ var BuildingDetail = function (_React$Component) {
         tops[i] = layers[i].offsetTop;
       }
 
-      window.onscroll = function () {
+      function loop() {
         var y = getScrollTop(window);
         for (var _i = 0; _i < layers.length; _i++) {
           if (depths[_i] != 0) {
@@ -5426,11 +5430,9 @@ var BuildingDetail = function (_React$Component) {
         }
       };
 
-      window.requestAnimationFrame = function () {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
-          window.setTimeout(callback, 1000 / 60);
-        };
-      }();
+      window.onscroll = function () {
+        window.requestAnimationFrame(loop);
+      };
     }
   }, {
     key: 'render',
