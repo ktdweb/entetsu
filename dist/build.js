@@ -5444,13 +5444,22 @@ var BuildingDetail = function (_React$Component) {
         'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/bg_detail.png', width: '100%' })), _react2.default.createElement('div', {
         id: 'parallax03',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex01l.png', width: '210', height: '340', alt: '01' }), _react2.default.createElement('img', { src: 'imgs/detail/building/hex01r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', {
+        'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex01l.png', width: '210', height: '340', alt: '01' })), _react2.default.createElement('div', {
+        id: 'parallax03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex01r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', {
         id: 'parallax04',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex02l.png', width: '210', height: '340', alt: '01' }), _react2.default.createElement('img', { src: 'imgs/detail/building/hex02r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', {
+        'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex02l.png', width: '210', height: '340', alt: '01' })), _react2.default.createElement('div', {
+        id: 'parallax04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex02r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', {
         id: 'parallax05',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex03l.png', width: '210', height: '340', alt: '01' }), _react2.default.createElement('img', { src: 'imgs/detail/building/hex03r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', {
+        'data-depth': '2' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex03l.png', width: '210', height: '340', alt: '01' })), _react2.default.createElement('div', {
+        id: 'parallax05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex03r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', {
         id: 'parallax06',
         className: 'layer',
         'data-depth': '3' }, _react2.default.createElement('img', { src: 'imgs/detail/bg_company02.jpg', width: '1040' })), _react2.default.createElement('div', {

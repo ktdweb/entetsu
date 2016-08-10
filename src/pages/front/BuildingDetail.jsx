@@ -67,34 +67,53 @@ export default class BuildingDetail extends React.Component {
             data-depth="1">
             <img src="imgs/detail/building/bg_building.jpg" width="100%" />
           </div>
-          
+
           <div
             id="parallax02"
             className="layer"
             data-depth="2">
             <img src="imgs/detail/bg_detail.png" width="100%" />
           </div>
-          
+
           <div
             id="parallax03"
             className="layer"
             data-depth="2">
             <img src="imgs/detail/building/hex01l.png" width="210" height="340" alt="01" />
+          </div>
+
+          <div
+            id="parallax03b"
+            className="layer"
+            data-depth="3">
             <img src="imgs/detail/building/hex01r.png" width="210" height="340" alt="02" />
           </div>
+
           <div
             id="parallax04"
             className="layer"
             data-depth="2">
             <img src="imgs/detail/building/hex02l.png" width="210" height="340" alt="01" />
+          </div>
+
+          <div
+            id="parallax04b"
+            className="layer"
+            data-depth="3">
             <img src="imgs/detail/building/hex02r.png" width="210" height="340" alt="02" />
           </div>
-          
+
           <div
             id="parallax05"
             className="layer"
             data-depth="2">
             <img src="imgs/detail/building/hex03l.png" width="210" height="340" alt="01" />
+          </div>
+
+          <div
+            id="parallax05b"
+            className="layer"
+            data-depth="3">
             <img src="imgs/detail/building/hex03r.png" width="210" height="340" alt="02" />
           </div>
           
