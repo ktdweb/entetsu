@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+import Parallax from '../../components/Parallax'
+
 export default class BuildingDetail extends React.Component {
 
   constructor(props) {
@@ -11,52 +13,13 @@ export default class BuildingDetail extends React.Component {
   }
 
   componentDidMount() {
-    window.requestAnimationFrame = (function() {
-      return  window.requestAnimationFrame       ||
-              window.webkitRequestAnimationFrame ||
-              window.mozRequestAnimationFrame    ||
-              window.msRequestAnimationFrame;
-    })();
+    this.parallax = new Parallax();
+    this.parallax.start();
+    console.log(layers);
+  }
 
-    let getScrollTop = function (window) {
-      let document;
-      let body;
-
-      return (
-        'pageYOffset' in window ?
-        window.pageYOffset :
-        (
-          (document = window.document).documentElement ||
-          (body = document.body).parentNode ||
-          body
-        ).scrollTop
-      );
-    }
-
-    let layers = document.getElementsByClassName('layer');
-    let tops = Array();
-    let depths = Array();
-
-    for (let i = 0; i < layers.length; i++) {
-      let depth = layers[i].getAttribute('data-depth');
-      if (depth != 0) {
-        layers[i].style.position = 'absolute';
-        depths[i] = depth * 3;
-        tops[i] = layers[i].offsetTop;
-      }
-    }
-
-    //let y = getScrollTop(window);
-    function loop() {
-      let y = window.pageYOffset;
-      for (let i = 0; i < layers.length; i++) {
-        layers[i].style.top = tops[i] + y / depths[i] + 'px';
-      }
-    };
-
-    window.onscroll = function() {
-      window.requestAnimationFrame(loop);
-    }
+  componentWillUnmount() {
+    this.parallax.destroy();
   }
 
   render() {
@@ -75,7 +38,7 @@ export default class BuildingDetail extends React.Component {
           <div
             id="parallax02"
             className="layer"
-            data-depth="2">
+            data-depth="0">
             <img src="imgs/detail/bg_detail.png" width="100%" />
           </div>
 
@@ -124,14 +87,14 @@ export default class BuildingDetail extends React.Component {
           <div
             id="parallax06"
             className="layer"
-            data-depth="3">
+            data-depth="0">
             <img src="imgs/detail/bg_company02.jpg" width="1040" />
           </div>
           
           <div
             id="parallax07"
             className="layer"
-            data-depth="3">
+            data-depth="0">
             <img src="imgs/detail/bg_company03.jpg" width="1040" />
           </div>
         </div>
