@@ -7320,6 +7320,20 @@ article {
   prefixには`pf-Detail`を付与
   */
   /*
+  # pages/front/Detail.sass
+  詳細ページに関するクラスを定義
+  prefixには`pf-Detail`を付与
+  */
+  /*
+  # html, body
+  基準値を指定しない
+  */
+  /*
+  # article .pf-Detail
+  下層ページ共通
+  iOSのcss animationをスムースに
+  */
+  /*
   # pages/front/BuildingDetail.sass
   front/BuildingDetail.jsxに関するクラスを定義
   prefixには`pf-BuildingDetail`を付与
@@ -7511,107 +7525,154 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
+  #Front html, #Front body {
+    position: static; }
+  #Front article.pf-Detail {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /*
+    # h1
+    明朝体にする
+   */
+    /*
+    # p
+    サイズを小さめに、色を若干薄めとする
+   */
+    /*
+    # div.pf-Detail-services
+    サービスの各カテゴリ用
+   */
+    /*
+    # div.pf-Detail-services-desc
+    サービスの各カテゴリの説明用
+   */
+    /*
+    # section
+    コンテンツ全般の設定
+   */ }
+    #Front article.pf-Detail h1 {
+      font-size: 2.56rem;
+      font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+    #Front article.pf-Detail p {
+      font-size: 1.44rem;
+      line-height: 2.5rem; }
+    #Front article.pf-Detail div.pf-Detail-services p {
+      position: relative;
+      float: left;
+      width: 9rem;
+      height: 9rem;
+      padding-top: 3.5rem;
+      margin-right: 1rem;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      border: 1px solid white;
+      border-radius: 5px;
+      line-height: 1.5rem;
+      cursor: pointer; }
+      #Front article.pf-Detail div.pf-Detail-services p:hover {
+        background-color: rgba(0, 0, 0, 0.1); }
+    #Front article.pf-Detail div.pf-Detail-services-desc {
+      clear: both;
+      height: 100px; }
+      #Front article.pf-Detail div.pf-Detail-services-desc p {
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        -ms-animation-name: fadeIn;
+        -o-animation-name: fadeIn;
+        animation-name: fadeIn;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        -ms-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay: 0s;
+        -moz-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+        -o-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-timing-function: ease;
+        -moz-animation-timing-function: ease;
+        -ms-animation-timing-function: ease;
+        -o-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        color: white; }
+      #Front article.pf-Detail div.pf-Detail-services-desc p:first-child {
+        font-size: 1.5rem;
+        margin-bottom: 1rem; }
+    #Front article.pf-Detail section {
+      position: relative;
+      margin: 0;
+      padding: 0 5rem;
+      text-align: justify;
+      overflow: hidden;
+      clear: both;
+      width: 60%;
+      /*
+      # section.odd
+      右寄せのコンテンツ
+     */
+      /*
+      # section.odd.reverse
+      サービス内の文字を白くする
+     */ }
+      #Front article.pf-Detail section.odd {
+        margin-left: auto; }
+      #Front article.pf-Detail section.odd.reverse {
+        color: white; }
   #Front article#BuildingDetail {
+    position: relative;
     overflow: hidden;
     -webkit-overflow-scrolling: touch; }
-    #Front article#BuildingDetail section {
-      position: relative;
-      padding: 0 5rem;
-      text-align: left; }
-      #Front article#BuildingDetail section h1 {
-        font-size: 2.56rem;
-        font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
-      #Front article#BuildingDetail section p {
-        color: #555;
-        font-size: 1.44rem;
-        line-height: 2.5rem; }
-      #Front article#BuildingDetail section div {
-        width: 55%; }
-      #Front article#BuildingDetail section.odd div {
-        margin-left: 44rem; }
-      #Front article#BuildingDetail section.odd-white {
-        text-align: right;
-        color: white; }
-        #Front article#BuildingDetail section.odd-white div {
-          margin-left: 34rem;
-          width: 60rem; }
-        #Front article#BuildingDetail section.odd-white p {
-          color: white; }
-    #Front article#BuildingDetail #parallax01 {
-      position: absolute;
+    #Front article#BuildingDetail section:nth-of-type(1) {
+      margin-top: 160px; }
+    #Front article#BuildingDetail section:nth-of-type(2) {
+      margin-top: 0px; }
+    #Front article#BuildingDetail section:nth-of-type(3) {
+      margin-top: 140px; }
+    #Front article#BuildingDetail section:nth-of-type(4) {
+      margin-top: 160px; }
+    #Front article#BuildingDetail section:nth-of-type(5) {
+      margin-top: 120px; }
+    #Front article#BuildingDetail #plx01 {
       top: 220px;
       z-index: -100; }
-    #Front article#BuildingDetail #parallax02 {
-      position: absolute;
+    #Front article#BuildingDetail #plx02 {
       top: 120px;
       right: 0;
       z-index: -50; }
-    #Front article#BuildingDetail #parallax03 {
-      position: absolute;
-      top: 1100px;
+    #Front article#BuildingDetail #plx03 {
+      top: 900px;
       right: 0; }
-    #Front article#BuildingDetail #parallax03b {
-      position: absolute;
-      top: 1180px;
+    #Front article#BuildingDetail #plx03b {
+      top: 980px;
       right: 210px; }
-    #Front article#BuildingDetail #parallax04 {
-      position: absolute;
-      top: 1500px; }
-    #Front article#BuildingDetail #parallax04b {
-      position: absolute;
-      top: 1580px;
+    #Front article#BuildingDetail #plx04 {
+      top: 1600px; }
+    #Front article#BuildingDetail #plx04b {
+      top: 1680px;
       left: 210px; }
-    #Front article#BuildingDetail #parallax05 {
-      position: absolute;
-      top: 2200px;
+    #Front article#BuildingDetail #plx05 {
+      top: 2100px;
       right: 0; }
-    #Front article#BuildingDetail #parallax05b {
-      position: absolute;
-      top: 2280px;
+    #Front article#BuildingDetail #plx05b {
+      top: 2180px;
       right: 210px; }
-    #Front article#BuildingDetail #parallax06 {
-      position: absolute;
+    #Front article#BuildingDetail #plx06 {
       top: 700px;
       z-index: -100; }
-    #Front article#BuildingDetail #parallax07 {
-      position: absolute;
-      top: 2600px;
+    #Front article#BuildingDetail #plx07 {
+      top: 2460px;
       z-index: -100; }
-    #Front article#BuildingDetail #fir {
-      margin-top: 180px; }
-    #Front article#BuildingDetail #ser {
-      margin-top: 20px; }
-    #Front article#BuildingDetail #tokucho {
-      margin-top: 160px; }
-    #Front article#BuildingDetail #supports {
-      margin-top: 160px; }
-    #Front article#BuildingDetail #torikumi {
-      margin-top: 160px; }
-  #Front div#service {
-    width: 60rem;
-    margin-left: 23rem; }
-    #Front div#service p {
-      position: relative;
-      width: 10rem;
-      height: 10rem;
-      padding-top: 3rem;
-      float: right;
-      border: 1px solid white;
-      margin-right: 1rem;
-      text-align: center;
-      border-radius: 5px;
-      font-size: 1.02rem;
-      line-height: 1.5rem;
-      cursor: pointer; }
-    #Front div#service p:hover {
-      background-color: rgba(0, 0, 0, 0.1); }
-  #Front div#desc {
-    clear: both;
-    width: 400px;
-    height: 60px;
-    margin-left: 38rem;
-    text-align: left; }
-    #Front div#desc p:first-child {
-      margin-bottom: 0.5rem; }
-  #Front #temp {
-    position: relative; }
