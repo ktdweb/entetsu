@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+import Parallax from '../../components/Parallax'
+
 export default class MansionDetail extends React.Component {
 
   constructor(props) {
@@ -10,12 +12,139 @@ export default class MansionDetail extends React.Component {
     this.state = { service: { title: '', text: '' } };
   }
 
-  render() {
-    return (
-      <article id="MansionDetail" className="pf-Detail">
-        <DocumentTitle title="遠鉄アシスト | 会社概要" />
+  componentDidMount() {
+    this.parallax = new Parallax();
+    this.parallax.start();
+  }
 
-        <section id="mansion01">
+  componentWillUnmount() {
+    this.parallax.destroy();
+  }
+
+  render() {
+    let IMG = 'imgs/detail/mansion/';
+
+    return (
+      <article id="Mansion" className="pf-Detail">
+        <DocumentTitle title="マンション管理でお困りの方 | 遠鉄アシスト" />
+
+        <div
+          id="plx01"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'bg.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx02"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_detail.png'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx03"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex01l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx03b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex01r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx04"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex02l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx04b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex02r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx05"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex03l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx05b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex03r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx06"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_header.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx07"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_footer.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <section>
           <h1>地域に溶け込む住まい</h1>
           <p>
             周辺環境に違和感なく溶け込み、人の住まいとしてあり続ける建物。<br />
@@ -24,29 +153,28 @@ export default class MansionDetail extends React.Component {
           </p>
         </section>
 
-        <section id="mansion02" className="odd odd-white">
+        <section className="odd reverse">
           <h1>遠鉄アシストのサービス</h1>
           <p>
             遠鉄アシストならではのきめ細かいサービスと、<br /> 
             まかせて安心のトータルサポートでお応えします。
           </p>
 
-          <div id="service">
-            <p value="5" onClick={this.onService.bind(this)} >その他</p>
-            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
-            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
-            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
+          <div className="pf-Detail-services">
             <p value="1" onClick={this.onService.bind(this)} >事務管理</p>
+            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
+            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
+            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
+            <p value="5" onClick={this.onService.bind(this)} >その他</p>
           </div>
 
-          <div id="desc">
-            
+          <div className="pf-Detail-services-desc">
             <p className="mgnBtm0"><strong>{this.state.service.title}</strong></p>
             <p>{this.state.service.text}</p>
           </div>
         </section>
 
-        <section id="mansion03" className="pf-Column">
+        <section>
           <h1>遠鉄アシストの取り組み</h1>
 
           <h3>地域を幅広くサポートする遠鉄グループだからできること。<br /> 
@@ -84,10 +212,10 @@ export default class MansionDetail extends React.Component {
         </section>
 
 
-        <section id="mansion04" className="pf-Column odd">
+        <section className="odd">
           <h1 className="text-right">遠鉄アシストの特徴</h1>
 
-          <h3>アフターまで見据えた三位一体の遠鉄クオリティ</h3>
+          <h3 className="text-right">アフターまで見据えた三位一体の遠鉄クオリティ</h3>
 
           <p>
             遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。
@@ -100,7 +228,7 @@ export default class MansionDetail extends React.Component {
           </p>
         </section>
 
-        <section id="building05" className="pf-Column">
+        <section>
           <h1>遠鉄アシストのサポート</h1>
 
           <p>専門の資格を持ったスタッフが、 迅速に対応しているため、安心してご利用頂けます。</p>
@@ -151,10 +279,6 @@ export default class MansionDetail extends React.Component {
             マンションの保守・管理に努めています。
           </p>
         </section>
-
-        <div id="add01"><img src="imgs/detail/mansion/add01.png" width="353" height="400" alt="add01" /></div>
-        <div id="add02"><img src="imgs/detail/mansion/add02.png" width="353" height="400" alt="add02" /></div>
-        <div id="add03"><img src="imgs/detail/mansion/add03.png" width="353" height="400" alt="add03" /></div>
       </article>
     );
   }
@@ -192,6 +316,6 @@ text: 'お客様のニーズに合わせてお部屋の修繕、リフォーム�
 },
 ]
 
-      this.setState({service: txt[e.target.value]});
+    this.setState({service: txt[e.target.getAttribute('value')]});
   }
 }

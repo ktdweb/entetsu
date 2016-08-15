@@ -7318,25 +7318,6 @@ article {
   # pages/front/Comapny.sass
   front/Company.jsxに関するクラスを定義
   prefixには`pf-Detail`を付与
-  */
-  /*
-  # pages/front/Detail.sass
-  詳細ページに関するクラスを定義
-  prefixには`pf-Detail`を付与
-  */
-  /*
-  # html, body
-  基準値を指定しない
-  */
-  /*
-  # article .pf-Detail
-  下層ページ共通
-  iOSのcss animationをスムースに
-  */
-  /*
-  # pages/front/BuildingDetail.sass
-  front/BuildingDetail.jsxに関するクラスを定義
-  prefixには`pf-BuildingDetail`を付与
   */ }
   #Front .menuTop {
     margin-top: 2rem; }
@@ -7525,154 +7506,331 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
-  #Front html, #Front body {
-    position: static; }
-  #Front article.pf-Detail {
+
+/*
+  # pages/front/detail/index.sass
+  pages/front/detailディレクトリ内で利用するファイルをリストアップ
+  このファイルを経由しpages/front/index.sassに読込
+
+  pages/frontディレクトリ下はprefixに`pf-Detail`を付与
+  */
+article.pf-Detail {
+  /*
+  # pages/front/Detail.sass
+  詳細ページに関するクラスを定義
+  prefixには`pf-Detail`を付与
+  */
+  /*
+  # article .pf-Detail
+  下層ページ共通
+  iOSのcss animationをスムースに
+  */
+  /*
+  # h1
+  明朝体にする
+ */
+  /*
+  # p
+  サイズを小さめに、色を若干薄めとする
+ */
+  /*
+  # div.pf-Detail-services
+  サービスの各カテゴリ用
+ */
+  /*
+  # div.pf-Detail-services-desc
+  サービスの各カテゴリの説明用
+ */
+  /*
+  # section
+  コンテンツ全般の設定
+ */ }
+  article.pf-Detail {
     overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    /*
-    # h1
-    明朝体にする
-   */
-    /*
-    # p
-    サイズを小さめに、色を若干薄めとする
-   */
-    /*
-    # div.pf-Detail-services
-    サービスの各カテゴリ用
-   */
-    /*
-    # div.pf-Detail-services-desc
-    サービスの各カテゴリの説明用
-   */
-    /*
-    # section
-    コンテンツ全般の設定
-   */ }
-    #Front article.pf-Detail h1 {
-      font-size: 2.56rem;
-      font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
-    #Front article.pf-Detail p {
-      font-size: 1.44rem;
-      line-height: 2.5rem; }
-    #Front article.pf-Detail div.pf-Detail-services p {
-      position: relative;
-      float: left;
-      width: 9rem;
-      height: 9rem;
-      padding-top: 3.5rem;
-      margin-right: 1rem;
-      color: white;
+    -webkit-overflow-scrolling: touch; }
+  article.pf-Detail h1 {
+    font-size: 2.56rem;
+    font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+  article.pf-Detail p {
+    font-size: 1.44rem;
+    line-height: 2.5rem; }
+  article.pf-Detail div.pf-Detail-services p {
+    position: relative;
+    float: left;
+    width: 9rem;
+    height: 9rem;
+    padding-top: 3.5rem;
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    line-height: 1.5rem;
+    cursor: pointer; }
+    article.pf-Detail div.pf-Detail-services p:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+  article.pf-Detail div.pf-Detail-services-desc {
+    clear: both;
+    height: 100px; }
+    article.pf-Detail div.pf-Detail-services-desc p {
+      -webkit-animation-name: fadeIn;
+      -moz-animation-name: fadeIn;
+      -ms-animation-name: fadeIn;
+      -o-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      -ms-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      -ms-animation-timing-function: ease;
+      -o-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
       font-size: 1.2rem;
-      text-align: center;
-      border: 1px solid white;
-      border-radius: 5px;
-      line-height: 1.5rem;
-      cursor: pointer; }
-      #Front article.pf-Detail div.pf-Detail-services p:hover {
-        background-color: rgba(0, 0, 0, 0.1); }
-    #Front article.pf-Detail div.pf-Detail-services-desc {
-      clear: both;
-      height: 100px; }
-      #Front article.pf-Detail div.pf-Detail-services-desc p {
-        -webkit-animation-name: fadeIn;
-        -moz-animation-name: fadeIn;
-        -ms-animation-name: fadeIn;
-        -o-animation-name: fadeIn;
-        animation-name: fadeIn;
-        -webkit-animation-duration: 1s;
-        -moz-animation-duration: 1s;
-        -ms-animation-duration: 1s;
-        -o-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-delay: 0s;
-        -moz-animation-delay: 0s;
-        -ms-animation-delay: 0s;
-        -o-animation-delay: 0s;
-        animation-delay: 0s;
-        -webkit-animation-timing-function: ease;
-        -moz-animation-timing-function: ease;
-        -ms-animation-timing-function: ease;
-        -o-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-fill-mode: both;
-        -moz-animation-fill-mode: both;
-        -ms-animation-fill-mode: both;
-        -o-animation-fill-mode: both;
-        animation-fill-mode: both;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        -ms-backface-visibility: hidden;
-        -o-backface-visibility: hidden;
-        backface-visibility: hidden;
-        font-size: 1.2rem;
-        line-height: 2rem;
-        color: white; }
-      #Front article.pf-Detail div.pf-Detail-services-desc p:first-child {
-        font-size: 1.5rem;
-        margin-bottom: 1rem; }
-    #Front article.pf-Detail section {
-      position: relative;
-      margin: 0;
-      padding: 0 5rem;
-      text-align: justify;
-      overflow: hidden;
-      clear: both;
-      width: 60%;
-      /*
-      # section.odd
-      右寄せのコンテンツ
-     */
-      /*
-      # section.odd.reverse
-      サービス内の文字を白くする
-     */ }
-      #Front article.pf-Detail section.odd {
-        margin-left: auto; }
-      #Front article.pf-Detail section.odd.reverse {
-        color: white; }
-  #Front article#BuildingDetail {
+      line-height: 2rem;
+      color: white; }
+    article.pf-Detail div.pf-Detail-services-desc p:first-child {
+      font-size: 1.5rem;
+      margin-bottom: 1rem; }
+  article.pf-Detail section {
+    position: relative;
+    margin: 0;
+    padding: 0 5rem;
+    text-align: justify;
+    overflow: hidden;
+    clear: both;
+    width: 60%;
+    /*
+    # section.odd
+    右寄せのコンテンツ
+   */
+    /*
+    # section.odd.reverse
+    サービス内の文字を白くする
+   */ }
+    article.pf-Detail section.odd {
+      margin-left: auto; }
+    article.pf-Detail section.odd.reverse {
+      color: white; }
+
+article#Cleaning {
+  /*
+  # pages/front/Cleaning.sass
+  front/Cleaning.jsxに関するクラスを定義
+  prefixには`pf-Cleaning`を付与
+  */ }
+  article#Cleaning {
     position: relative;
     overflow: hidden;
     -webkit-overflow-scrolling: touch; }
-    #Front article#BuildingDetail section:nth-of-type(1) {
-      margin-top: 160px; }
-    #Front article#BuildingDetail section:nth-of-type(2) {
-      margin-top: 0px; }
-    #Front article#BuildingDetail section:nth-of-type(3) {
-      margin-top: 140px; }
-    #Front article#BuildingDetail section:nth-of-type(4) {
-      margin-top: 160px; }
-    #Front article#BuildingDetail section:nth-of-type(5) {
-      margin-top: 120px; }
-    #Front article#BuildingDetail #plx01 {
-      top: 220px;
-      z-index: -100; }
-    #Front article#BuildingDetail #plx02 {
-      top: 120px;
-      right: 0;
-      z-index: -50; }
-    #Front article#BuildingDetail #plx03 {
-      top: 900px;
-      right: 0; }
-    #Front article#BuildingDetail #plx03b {
-      top: 980px;
-      right: 210px; }
-    #Front article#BuildingDetail #plx04 {
-      top: 1600px; }
-    #Front article#BuildingDetail #plx04b {
-      top: 1680px;
-      left: 210px; }
-    #Front article#BuildingDetail #plx05 {
-      top: 2100px;
-      right: 0; }
-    #Front article#BuildingDetail #plx05b {
-      top: 2180px;
-      right: 210px; }
-    #Front article#BuildingDetail #plx06 {
-      top: 700px;
-      z-index: -100; }
-    #Front article#BuildingDetail #plx07 {
-      top: 2460px;
-      z-index: -100; }
+  article#Cleaning section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#Cleaning section:nth-of-type(2) {
+    margin-top: 0px; }
+  article#Cleaning section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#Cleaning section:nth-of-type(4) {
+    margin-top: 160px; }
+  article#Cleaning section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#Cleaning #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#Cleaning #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#Cleaning #plx03 {
+    top: 900px;
+    right: 0; }
+  article#Cleaning #plx03b {
+    top: 980px;
+    right: 210px; }
+  article#Cleaning #plx04 {
+    top: 1600px; }
+  article#Cleaning #plx04b {
+    top: 1680px;
+    left: 210px; }
+  article#Cleaning #plx05 {
+    top: 2100px;
+    right: 0; }
+  article#Cleaning #plx05b {
+    top: 2180px;
+    right: 210px; }
+  article#Cleaning #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#Cleaning #plx07 {
+    top: 2660px;
+    z-index: -100; }
+
+article#Building {
+  /*
+  # pages/front/Building.sass
+  front/Building.jsxに関するクラスを定義
+  prefixには`pf-Building`を付与
+  */ }
+  article#Building {
+    position: relative;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; }
+  article#Building section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#Building section:nth-of-type(2) {
+    margin-top: 0px; }
+  article#Building section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#Building section:nth-of-type(4) {
+    margin-top: 160px; }
+  article#Building section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#Building #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#Building #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#Building #plx03 {
+    top: 900px;
+    right: 0; }
+  article#Building #plx03b {
+    top: 980px;
+    right: 210px; }
+  article#Building #plx04 {
+    top: 1600px; }
+  article#Building #plx04b {
+    top: 1680px;
+    left: 210px; }
+  article#Building #plx05 {
+    top: 2100px;
+    right: 0; }
+  article#Building #plx05b {
+    top: 2180px;
+    right: 210px; }
+  article#Building #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#Building #plx07 {
+    top: 2660px;
+    z-index: -100; }
+
+article#Mansion {
+  /*
+  # pages/front/Mansion.sass
+  front/Mansion.jsxに関するクラスを定義
+  prefixには`pf-Mansion`を付与
+  */ }
+  article#Mansion {
+    position: relative;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; }
+  article#Mansion section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#Mansion section:nth-of-type(2) {
+    margin-top: 140px; }
+  article#Mansion section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#Mansion section:nth-of-type(4) {
+    margin-top: 160px; }
+  article#Mansion section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#Mansion #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#Mansion #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#Mansion #plx03 {
+    top: 1100px;
+    right: 0; }
+  article#Mansion #plx03b {
+    top: 1180px;
+    right: 210px; }
+  article#Mansion #plx04 {
+    top: 1920px; }
+  article#Mansion #plx04b {
+    top: 2000px;
+    left: 210px; }
+  article#Mansion #plx05 {
+    top: 2600px;
+    right: 0; }
+  article#Mansion #plx05b {
+    top: 2680px;
+    right: 210px; }
+  article#Mansion #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#Mansion #plx07 {
+    top: 2900px;
+    z-index: -100; }
+
+article#Driving {
+  /*
+  # pages/front/Driving.sass
+  front/Driving.jsxに関するクラスを定義
+  prefixには`pf-Driving`を付与
+  */ }
+  article#Driving {
+    position: relative;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; }
+  article#Driving section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#Driving section:nth-of-type(2) {
+    margin-top: 0px; }
+  article#Driving section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#Driving section:nth-of-type(4) {
+    margin-top: 160px; }
+  article#Driving section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#Driving #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#Driving #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#Driving #plx03 {
+    top: 900px;
+    right: 0; }
+  article#Driving #plx03b {
+    top: 980px;
+    right: 210px; }
+  article#Driving #plx04 {
+    top: 1600px; }
+  article#Driving #plx04b {
+    top: 1680px;
+    left: 210px; }
+  article#Driving #plx05 {
+    top: 2100px;
+    right: 0; }
+  article#Driving #plx05b {
+    top: 2180px;
+    right: 210px; }
+  article#Driving #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#Driving #plx07 {
+    top: 2660px;
+    z-index: -100; }

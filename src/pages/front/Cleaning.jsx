@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+import Parallax from '../../components/Parallax'
+
 export default class SeisougDetail extends React.Component {
 
   constructor(props) {
@@ -10,12 +12,139 @@ export default class SeisougDetail extends React.Component {
     this.state = { service: { title: '', text: '' } };
   }
 
-  render() {
-    return (
-      <article id="SeisouDetail" className="pf-Detail">
-        <DocumentTitle title="遠鉄アシスト | 会社概要" />
+  componentDidMount() {
+    this.parallax = new Parallax();
+    this.parallax.start();
+  }
 
-        <section id="seisou01">
+  componentWillUnmount() {
+    this.parallax.destroy();
+  }
+
+  render() {
+    let IMG = 'imgs/detail/cleaning/';
+
+    return (
+      <article id="Cleaning" className="pf-Detail">
+        <DocumentTitle title="清掃でお困りの方 | 遠鉄アシスト" />
+
+        <div
+          id="plx01"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'bg.png'}
+            width="75%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx02"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_detail.png'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx03"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex01l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx03b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex01r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx04"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex02l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx04b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex02r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx05"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex03l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx05b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex03r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx06"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_header.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx07"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_footer.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <section>
           <h1>「キレイ」ってなんだろう？</h1>
           <p>
             日本ではありふれている「美」を<br />
@@ -27,35 +156,33 @@ export default class SeisougDetail extends React.Component {
           </p>
         </section>
 
-        <section id="seisou02" className="odd odd-white">
-          <h1>遠鉄アシストのサービス</h1>
-          <p>
+        <section className="odd reverse">
+          <h1 className="text-right">遠鉄アシストのサービス</h1>
+          <p className="text-right">
             遠鉄アシストならではのきめ細かいサービスと、<br />
             まかせて安心のトータルサポートでお応えします。
           </p>
 
-          <div id="service">
-            <p value="4" onClick={this.onService.bind(this)} >ハウス<br />クリーニング<br />リフォーム</p>
-            <p value="3" onClick={this.onService.bind(this)} >ベッド<br />メイキング</p>
-            <p value="2" onClick={this.onService.bind(this)} >植栽管理</p>
+          <div className="pf-Detail-services">
             <p value="1" onClick={this.onService.bind(this)} >清掃業務</p>
+            <p value="2" onClick={this.onService.bind(this)} >植栽管理</p>
+            <p value="3" onClick={this.onService.bind(this)} >ベッド<br />メイキング</p>
+            <p value="4" onClick={this.onService.bind(this)} >ハウス<br />クリーニング<br />リフォーム</p>
           </div>
 
-          <div id="desc">
-            
+          <div className="pf-Detail-services-desc">
             <p className="mgnBtm0"><strong>{this.state.service.title}</strong></p>
             <p>{this.state.service.text}</p>
           </div>
         </section>
 
-        <section id="seisou03" className="pf-Column">
+        <section>
           <h1>遠鉄アシストの清掃業務管理</h1>
 
           <h3>高い清掃品質で、美観の維持，清潔な環境を保ちます。</h3>
         </section>
 
-
-        <section id="seisou04" className="pf-Column odd">
+        <section className="odd">
           <h1 className="text-right">遠鉄アシストの特徴</h1>
 
           <p className="text-right">遠鉄アシストの組織力が、清掃業務を 円滑にバックアップします。</p>
@@ -96,7 +223,7 @@ export default class SeisougDetail extends React.Component {
           </p>
         </section>
 
-        <section id="seisou05" className="pf-Column">
+        <section>
           <h1>遠鉄アシストのサポート</h1>
 
           <p>専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。</p>
@@ -119,10 +246,6 @@ export default class SeisougDetail extends React.Component {
             清掃業務の保守・管理に努めています。
           </p>
         </section>
-
-        <div id="add01"><img src="imgs/detail/seisou/add01.png" width="353" height="400" alt="add01" /></div>
-        <div id="add02"><img src="imgs/detail/seisou/add02.png" width="353" height="400" alt="add02" /></div>
-        <div id="add03"><img src="imgs/detail/seisou/add03.png" width="353" height="400" alt="add03" /></div>
       </article>
     );
   }
@@ -155,6 +278,6 @@ text: '分譲マンション・賃貸アパート・戸建住宅と、建物の�
 },
 ]
 
-      this.setState({service: txt[e.target.value]});
+    this.setState({service: txt[e.target.getAttribute('value')]});
   }
 }

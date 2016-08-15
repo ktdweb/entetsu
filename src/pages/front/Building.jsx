@@ -25,15 +25,15 @@ export default class BuildingDetail extends React.Component {
     let IMG = 'imgs/detail/building/';
 
     return (
-      <article id="BuildingDetail" className="pf-Detail">
-        <DocumentTitle title="遠鉄アシスト | ビル管理" />
+      <article id="Building" className="pf-Detail">
+        <DocumentTitle title="ビル管理でお困りの方 | 遠鉄アシスト" />
 
         <div
           id="plx01"
           className="layer"
           data-depth="2">
           <img
-            src={IMG + 'bg_building.jpg'}
+            src={IMG + 'bg.jpg'}
             width="100%"
             alt="img"
             />
@@ -127,7 +127,7 @@ export default class BuildingDetail extends React.Component {
           className="layer"
           data-depth="0">
           <img
-            src={IMG + 'bg_company02.jpg'}
+            src={IMG + 'bg_header.jpg'}
             width="100%"
             alt="img"
             />
@@ -138,7 +138,7 @@ export default class BuildingDetail extends React.Component {
           className="layer"
           data-depth="0">
           <img
-            src={IMG + 'bg_company03.jpg'}
+            src={IMG + 'bg_footer.jpg'}
             width="100%"
             alt="img"
             />

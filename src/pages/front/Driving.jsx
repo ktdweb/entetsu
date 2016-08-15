@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+import Parallax from '../../components/Parallax'
+
 export default class UnkouDetail extends React.Component {
 
   constructor(props) {
@@ -10,12 +12,139 @@ export default class UnkouDetail extends React.Component {
     this.state = { service: { title: '', text: '' } };
   }
 
+  componentDidMount() {
+    this.parallax = new Parallax();
+    this.parallax.start();
+  }
+
+  componentWillUnmount() {
+    this.parallax.destroy();
+  }
+
   render() {
+    let IMG = 'imgs/detail/driving/';
+
     return (
-      <article id="UnkouDetail" className="pf-Detail">
+      <article id="Driving" className="pf-Detail">
         <DocumentTitle title="遠鉄アシスト | 会社概要" />
 
-        <section id="unkou01">
+        <div
+          id="plx01"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'bg.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx02"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_detail.png'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx03"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex01l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx03b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex01r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx04"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex02l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx04b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex02r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx05"
+          className="layer"
+          data-depth="2">
+          <img
+            src={IMG + 'hex03l.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx05b"
+          className="layer"
+          data-depth="3">
+          <img
+            src={IMG + 'hex03r.png'}
+            width="210"
+            height="340"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx06"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_header.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <div
+          id="plx07"
+          className="layer"
+          data-depth="0">
+          <img
+            src={IMG + 'bg_footer.jpg'}
+            width="100%"
+            alt="img"
+            />
+        </div>
+
+        <section>
           <h1>子どもたちのヒーローは、私でした。</h1>
           <p>
             ドライバー歴30年。転職したのは5年前だった。<br />
@@ -31,35 +160,33 @@ export default class UnkouDetail extends React.Component {
           </p>
         </section>
 
-        <section id="unkou02" className="odd odd-white">
+        <section className="odd reverse">
           <h1>遠鉄アシストのサービス</h1>
           <p>
             遠鉄アシストならではのきめ細かいサービスと、<br />
             まかせて安心のトータルサポートでお応えします。
           </p>
 
-          <div id="service">
-
-            <p value="5" onClick={this.onService.bind(this)} >企業・工場</p>
-            <p value="4" onClick={this.onService.bind(this)} >病院・介護</p>
-            <p value="3" onClick={this.onService.bind(this)} >幼稚園</p>
-            <p value="2" onClick={this.onService.bind(this)} >スクールバス<br />部活</p>
+          <div id="pf-Detail-services">
             <p value="1" onClick={this.onService.bind(this)} >役員車</p>
+            <p value="2" onClick={this.onService.bind(this)} >スクールバス<br />部活</p>
+            <p value="3" onClick={this.onService.bind(this)} >幼稚園</p>
+            <p value="4" onClick={this.onService.bind(this)} >病院・介護</p>
+            <p value="5" onClick={this.onService.bind(this)} >企業・工場</p>
           </div>
 
-          <div id="service">
-            <p value="7" onClick={this.onService.bind(this)} >官公庁</p>
+          <div id="pf-Detail-services">
             <p value="6" onClick={this.onService.bind(this)} >ホテル<br />レストラン</p>
+            <p value="7" onClick={this.onService.bind(this)} >官公庁</p>
           </div>
 
-          <div id="desc">
-            
+          <div id="pf-Detail-services-desc">
             <p className="mgnBtm0"><strong>{this.state.service.title}</strong></p>
             <p>{this.state.service.text}</p>
           </div>
         </section>
 
-        <section id="unkou03" className="pf-Column">
+        <section>
           <h1>遠鉄アシストの特徴</h1>
 
           <h3>遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、<br />
@@ -71,14 +198,13 @@ export default class UnkouDetail extends React.Component {
           </p>
         </section>
 
-
-        <section id="unkou04" className="pf-Column odd">
+        <section className="odd">
           <h1 className="text-right">導入事例</h1>
 
           <p className="text-right">運行管理事業の導入事例です。 <br />お客様のニーズに合わせて、臨機応変に問題を解決いたします。</p>
         </section>
 
-        <section id="unkou05" className="pf-Column">
+        <section>
           <h1>安心・安全・快適への取り組み</h1>
 
           <h3>お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。<br />
@@ -101,10 +227,6 @@ export default class UnkouDetail extends React.Component {
             遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。
           </p>
         </section>
-
-        <div id="add01"><img src="imgs/detail/unkou/add01.png" width="353" height="400" alt="add01" /></div>
-        <div id="add02"><img src="imgs/detail/unkou/add02.png" width="353" height="400" alt="add02" /></div>
-        <div id="add03"><img src="imgs/detail/unkou/add03.png" width="353" height="400" alt="add03" /></div>
       </article>
     );
   }
@@ -152,6 +274,6 @@ text: '首長の専用車の運行から、地域のコミュニティーバス�
 },
 ]
 
-      this.setState({service: txt[e.target.value]});
+    this.setState({service: txt[e.target.getAttribute('value')]});
   }
 }

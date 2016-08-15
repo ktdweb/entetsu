@@ -81,21 +81,21 @@ var _Company = require('./pages/front/Company');
 
 var _Company2 = _interopRequireDefault(_Company);
 
-var _BuildingDetail = require('./pages/front/BuildingDetail');
+var _Cleaning = require('./pages/front/Cleaning');
 
-var _BuildingDetail2 = _interopRequireDefault(_BuildingDetail);
+var _Cleaning2 = _interopRequireDefault(_Cleaning);
 
-var _SeisouDetail = require('./pages/front/SeisouDetail');
+var _Building = require('./pages/front/Building');
 
-var _SeisouDetail2 = _interopRequireDefault(_SeisouDetail);
+var _Building2 = _interopRequireDefault(_Building);
 
-var _MansionDetail = require('./pages/front/MansionDetail');
+var _Mansion = require('./pages/front/Mansion');
 
-var _MansionDetail2 = _interopRequireDefault(_MansionDetail);
+var _Mansion2 = _interopRequireDefault(_Mansion);
 
-var _UnkouDetail = require('./pages/front/UnkouDetail');
+var _Driving = require('./pages/front/Driving');
 
-var _UnkouDetail2 = _interopRequireDefault(_UnkouDetail);
+var _Driving2 = _interopRequireDefault(_Driving);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -174,35 +174,29 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     header: _Header4.default,
     main: _Company2.default,
     footer: _Footer2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/building_detail',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/cleaning_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _BuildingDetail2.default,
-    footer: _Footer2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/seisou_detail',
-  global: root,
-  components: {
-    header: _Header4.default,
-    main: _SeisouDetail2.default,
+    main: _Cleaning2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/building_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _BuildingDetail2.default,
+    main: _Building2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/mansion_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _MansionDetail2.default,
+    main: _Mansion2.default,
     footer: _Footer2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/unkou_detail',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/driving_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _UnkouDetail2.default,
+    main: _Driving2.default,
     footer: _Footer2.default
   } })), _react2.default.createElement(_reactRouter.Route, {
   global: root,
@@ -221,7 +215,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
 
 module.exports = routes;
 
-},{"./components/Count":4,"./layouts/NoMatch":10,"./layouts/admin/Admin":11,"./layouts/admin/Header":12,"./layouts/front/Cover":13,"./layouts/front/Footer":14,"./layouts/front/Front":15,"./layouts/front/Header":16,"./layouts/front/Top":17,"./pages/admin/Home":22,"./pages/front/BuildingDetail":23,"./pages/front/Company":24,"./pages/front/Home":25,"./pages/front/MansionDetail":26,"./pages/front/SeisouDetail":27,"./pages/front/UnkouDetail":28,"./pages/front/Works":29,"react":273,"react-router":72}],3:[function(require,module,exports){
+},{"./components/Count":4,"./layouts/NoMatch":10,"./layouts/admin/Admin":11,"./layouts/admin/Header":12,"./layouts/front/Cover":13,"./layouts/front/Footer":14,"./layouts/front/Front":15,"./layouts/front/Header":16,"./layouts/front/Top":17,"./pages/admin/Home":22,"./pages/front/Building":23,"./pages/front/Cleaning":24,"./pages/front/Company":25,"./pages/front/Driving":26,"./pages/front/Home":27,"./pages/front/Mansion":28,"./pages/front/Works":29,"react":273,"react-router":72}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5662,11 +5656,11 @@ var BuildingDetail = function (_React$Component) {
     value: function render() {
       var IMG = 'imgs/detail/building/';
 
-      return _react2.default.createElement('article', { id: 'BuildingDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | ビル管理' }), _react2.default.createElement('div', {
+      return _react2.default.createElement('article', { id: 'Building', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'ビル管理でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
         id: 'plx01',
         className: 'layer',
         'data-depth': '2' }, _react2.default.createElement('img', {
-        src: IMG + 'bg_building.jpg',
+        src: IMG + 'bg.jpg',
         width: '100%',
         alt: 'img'
       })), _react2.default.createElement('div', {
@@ -5728,14 +5722,14 @@ var BuildingDetail = function (_React$Component) {
         id: 'plx06',
         className: 'layer',
         'data-depth': '0' }, _react2.default.createElement('img', {
-        src: IMG + 'bg_company02.jpg',
+        src: IMG + 'bg_header.jpg',
         width: '100%',
         alt: 'img'
       })), _react2.default.createElement('div', {
         id: 'plx07',
         className: 'layer',
         'data-depth': '0' }, _react2.default.createElement('img', {
-        src: IMG + 'bg_company03.jpg',
+        src: IMG + 'bg_footer.jpg',
         width: '100%',
         alt: 'img'
       })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '機能するビルディング'), _react2.default.createElement('p', null, '仕事に集中できる環境。', _react2.default.createElement('br', null), '始業ベルとともに、一斉にスタートする職場には、', _react2.default.createElement('br', null), 'なにが求められているか?', _react2.default.createElement('br', null), 'オフィスとして求められるもの全てを', _react2.default.createElement('br', null), '遠鉄アシストはサポートします。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '設備管理'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '諸設備', _react2.default.createElement('br', null), 'メンテナンス'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '環境衛生管理'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '駐車場管理'), _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '保安警備')), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, '事務管理業務'), _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '管理員業務'), _react2.default.createElement('p', { value: '8', onClick: this.onService.bind(this) }, '設備管理業務'), _react2.default.createElement('p', { value: '9', onClick: this.onService.bind(this) }, 'その他')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのビル管理事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、徹底した教育研修を受けた専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、環境衛生管理、メンテナンス、特殊作業、警備など、ビル管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('strong', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。ビル管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社は経営方針に「顧客満足」を掲げ、お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたいと願っています。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、“しっかり造り、きちんと守る”体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるビル・マンションは、いざという時も待ったなし。日頃から防犯、防災を徹底し、もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業 ', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業 ', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業 ', _react2.default.createElement('br', null), '・マンション管理業 ', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が ビルの保守・管理に努めています。')));
@@ -5813,6 +5807,196 @@ var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
 
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var SeisougDetail = function (_React$Component) {
+  _inherits(SeisougDetail, _React$Component);
+
+  function SeisougDetail(props) {
+    _classCallCheck(this, SeisougDetail);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SeisougDetail).call(this, props));
+
+    _this.state = { service: { title: '', text: '' } };
+    return _this;
+  }
+
+  _createClass(SeisougDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var IMG = 'imgs/detail/cleaning/';
+
+      return _react2.default.createElement('article', { id: 'Cleaning', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '清掃でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.png',
+        width: '75%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '「キレイ」ってなんだろう？'), _react2.default.createElement('p', null, '日本ではありふれている「美」を', _react2.default.createElement('br', null), '遠鉄アシストでは今一度考え直し、', _react2.default.createElement('br', null), '「感じ取れる美」をテーマに', _react2.default.createElement('br', null), '視える/香る/空気が美味しい/清々しさが聴こえる、', _react2.default.createElement('br', null), 'そして最後に美を肌で感じて頂ける事を', _react2.default.createElement('br', null), '理想とさせていただいております')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '清掃業務'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '植栽管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, 'ベッド', _react2.default.createElement('br', null), 'メイキング'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, 'ハウス', _react2.default.createElement('br', null), 'クリーニング', _react2.default.createElement('br', null), 'リフォーム')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの清掃業務管理'), _react2.default.createElement('h3', null, '高い清掃品質で、美観の維持，清潔な環境を保ちます。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、清掃業務を 円滑にバックアップします。'), _react2.default.createElement('strong', null, '日常清掃'), _react2.default.createElement('p', null, '店舗，事務所内，共用スペース，トイレなど日常的に使用する場所を継続して清掃をすることにより 美観や清潔さを維持することを目的としております。'), _react2.default.createElement('strong', null, '定期清掃'), _react2.default.createElement('p', null, '日常清掃では、落としきれない汚れを除去することを目的としております。', _react2.default.createElement('br', null), '例えば、定期的に床面洗浄及びワックスを塗布することで、床を保護して汚れをつきにくくするなどのメリットなどがあります。他にもガラス清掃，カーペットクリーニングなど建物の状態、お客様のご要望にあわせ、最適なプランをご提案させていただきます。'), _react2.default.createElement('strong', null, '人材育成'), _react2.default.createElement('p', null, '弊社では、2016年6月よりお客様に「美」を感じていただけるよう、 個々の清掃技術，知識の向上を図る目的として、トレーニングセンターを開設いたしました。', _react2.default.createElement('br', null), '清掃未経験の方でも、当社の指導員がベットメイク，トイレや水廻りの清掃等を基礎から丁寧に指導していきます。'), _react2.default.createElement('strong', null, 'サービスの標準化'), _react2.default.createElement('p', null, '弊社は、高い清掃品質を全てのお客様に提供できるよう作業方法， 作業手順，使用する清掃資機材のマニュアルを作成し、清掃品質が一様になるようにつとめています。 トイレ，洗面台，床等、適切な作業道具またはクロス， モップなどの清掃道具を色分けすることで、衛生面に配慮し、清潔な清掃をいたします。'), _react2.default.createElement('strong', null, 'より良いサービスの提供'), _react2.default.createElement('p', null, '弊社は、清掃品質がより良くなるように、作業方法， 作業手順の改善点やより良い清掃資機材がないか見直しをする為、 定期的にミーティングを実施しております。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が 清掃業務の保守・管理に努めています。')));
+    }
+  }, {
+    key: 'onService',
+    value: function onService(e) {
+      var txt = [{
+        title: '',
+        text: ''
+      }, {
+        title: '美しく衛生的な居住環境を実現',
+        text: '美観を維持し、清潔で快適な環境を整えるために、敷地内外や建物、設備などの共用部分の清掃を日常的または定期的に行います。'
+      }, {
+        title: '美しく、心が潤う植栽環境を維持します',
+        text: '植栽は建物の価値とイメージを向上させる重要な要素です。周囲の景観との調和を考え、見た目に美しく、心身をリラックスさせる植栽管理で建物の印象アップに貢献します。'
+      }, {
+        title: 'いつも清潔な客室をスピーディーに整えます',
+        text: 'ネット検索サイトの「清潔項目」で高評価をいただき、ホテルから表彰されるなど、ベッドメイキングの実績は豊富。お客様の満足を第一に、清潔な客室をスピーディーに整えます。'
+      }, {
+        title: 'ニーズに合わせてフレキシブルに対応します',
+        text: '分譲マンション・賃貸アパート・戸建住宅と、建物の構造に精通したスタッフが、隅々まで配慮した安心のハウスクリーニング・リフォーム・リノベーションを提供いたします。'
+      }];
+
+      this.setState({ service: txt[e.target.getAttribute('value')] });
+    }
+  }]);
+
+  return SeisougDetail;
+}(_react2.default.Component);
+
+exports.default = SeisougDetail;
+
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],25:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _reactDocumentTitle = require('react-document-title');
+
+var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -5856,7 +6040,207 @@ var Company = function (_React$Component) {
 
 exports.default = Company;
 
-},{"react":273,"react-document-title":41,"react-router":72}],25:[function(require,module,exports){
+},{"react":273,"react-document-title":41,"react-router":72}],26:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _reactDocumentTitle = require('react-document-title');
+
+var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var UnkouDetail = function (_React$Component) {
+  _inherits(UnkouDetail, _React$Component);
+
+  function UnkouDetail(props) {
+    _classCallCheck(this, UnkouDetail);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(UnkouDetail).call(this, props));
+
+    _this.state = { service: { title: '', text: '' } };
+    return _this;
+  }
+
+  _createClass(UnkouDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var IMG = 'imgs/detail/driving/';
+
+      return _react2.default.createElement('article', { id: 'Driving', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '子どもたちのヒーローは、私でした。'), _react2.default.createElement('p', null, 'ドライバー歴30年。転職したのは5年前だった。', _react2.default.createElement('br', null), '長距離ドライバーから、学校の送迎ドライバーへ。 孤独な仕事は、人とふれ合う仕事になった。', _react2.default.createElement('br', null), _react2.default.createElement('br', null), '子どもたちの笑顔と成長。すぐに天職だと気付いた。', _react2.default.createElement('br', null), '子どもの憧れは身近にある。', _react2.default.createElement('br', null), '大きなバスを運転する私は、 いつの間にか子どもたちのヒーローになった。', _react2.default.createElement('br', null), '活き方で生き方は、変わる。 新しい自分を探そう、スタートを切ろう。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '役員車'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, 'スクールバス', _react2.default.createElement('br', null), '部活'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '幼稚園'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '病院・介護'), _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '企業・工場')), _react2.default.createElement('div', { id: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, 'ホテル', _react2.default.createElement('br', null), 'レストラン'), _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '官公庁')), _react2.default.createElement('div', { id: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの特徴'), _react2.default.createElement('h3', null, '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、', _react2.default.createElement('br', null), '笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'), _react2.default.createElement('strong', null, '地元に根付いた遠鉄グループだから出来ること'), _react2.default.createElement('p', null, '母体が遠州鉄道株式会社だからこそ、70年以上の旅客運送のノウハウの蓄積を生かし、安全運転のための運転士研修、健康管理体制を取っており、サービス向上のための接客接遇教育を欠かしておりません。 また、グループ各社の総合力を結集し、給油・整備・自動車保険・万が一の事故対応から代車の手配まで、お客様へ安心と満足をお届けする体制をとっております。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '導入事例'), _react2.default.createElement('p', { className: 'text-right' }, '運行管理事業の導入事例です。 ', _react2.default.createElement('br', null), 'お客様のニーズに合わせて、臨機応変に問題を解決いたします。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '安心・安全・快適への取り組み'), _react2.default.createElement('h3', null, 'お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。', _react2.default.createElement('br', null), '経験と実績に甘んじることなく、 技術と知識の強化を図っています。'), _react2.default.createElement('strong', null, '定期的な研修会を行い、常に高いクオリティを提供します。'), _react2.default.createElement('p', null, '安全運行の実施と接客サービスの向上を目的として、定期的に年２回の運転士の研修会を実施しております。 もしも事故やクレームがあった場合には、運転士全員で情報を共有し、意識を共有し、技術･マナー･意識の見直しをさせています。'), _react2.default.createElement('strong', null, '研修会の内容'), _react2.default.createElement('p', null, '・運転技術向上のためのケーススタディ', _react2.default.createElement('br', null), '・サービス向上のための接客・接遇教育', _react2.default.createElement('br', null), '・実際にあった事故をもとにしたグループディスカッション'), _react2.default.createElement('strong', null, '安全・安心・快適を生む管理の徹底'), _react2.default.createElement('p', null, '遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。')));
+    }
+  }, {
+    key: 'onService',
+    value: function onService(e) {
+      var txt = [{
+        title: '',
+        text: ''
+      }, {
+        title: '大切な役員の方を安全･安心にお迎えいたします。',
+        text: '企業の役員様に安全で快適な運行をお届けいたします。運転士にはもちろん運転技術だけでなく、お客様へのマナー、守秘義務の徹底等、ハイレベルな教育を施して運行を行います。'
+      }, {
+
+        title: '通学の送迎だけでなく、部活動の遠征などにも幅広く対応いたします',
+        text: '貴校の大切な生徒様を、安全･確実に学校までお送りいたします。通学も学校生活の一部です。快適に学校に通うためには、安全･確実な運行だけでなく、運転士の人柄や決め細やかなサービスも大切な要素だと考え、たくさんの思い出を一緒に作りあげていきたいと思います。'
+      }, {
+        title: '園児も先生も保護者様も、みなさま笑顔の安全運行',
+        text: '元気いっぱいの園児の皆さんは、明るい未来の象徴です。大切な命をお預かりするためにも、運転士に対して徹底した技術指導・健康管理を指導。明るい笑顔と挨拶で、安心安全な運行はもちろんの事保護者様にも地域の皆様にも配慮したサービスを提供いたします。'
+      }, {
+        title: '笑顔のお出迎え。足が悪い方にも配慮した運転',
+        text: '患者様に負担をかけないように、真心を込めて業務を行います。患者様の必要不可欠な移動手段です。車に乗車することが負担に感じたりや不安にならない、快適な乗車時間のご提供に務めます。'
+      }, {
+        title: 'お客様の利便性の向上に尽力いたします',
+        text: 'これからお仕事に向かわれるお客様のモチベーションを保つように安全・快適な運転をご提供いたします。従業員様用の駐車スペースを確保しなくても済み、時間に沿った運行を行いますので、御社の効率化・コストダウンに効果的な業務を行います。また、御社のお車で社員旅行や研修などのご要望にも対応可能です。'
+      }, {
+        title: '時間を守り、お店までしっかり運転します',
+        text: '冠婚葬祭、さまざまなシーンに対応した運行を、お客様にご提供いたします。お客様を安心・安全な運行で御社までお届けする事が、更なる付加価値を高める重要な要素だと考えます。'
+      }, {
+        title: 'どんなときでも安定した運行業務を提供いたします',
+        text: '首長の専用車の運行から、地域のコミュニティーバスの運行まで。地域に根ざした遠鉄グループの弊社だからこそ、地域のお客様のために。地域密着の運行に携わらせていただきます。'
+      }];
+
+      this.setState({ service: txt[e.target.getAttribute('value')] });
+    }
+  }]);
+
+  return UnkouDetail;
+}(_react2.default.Component);
+
+exports.default = UnkouDetail;
+
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],27:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -6082,7 +6466,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"../../../src/movies/top/top":275,"react":273,"react-document-title":41,"react-router":72}],26:[function(require,module,exports){
+},{"../../../src/movies/top/top":275,"react":273,"react-document-title":41,"react-router":72}],28:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -6110,6 +6494,10 @@ var _reactRouter = require('react-router');
 var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -6146,9 +6534,98 @@ var MansionDetail = function (_React$Component) {
   }
 
   _createClass(MansionDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'MansionDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'mansion01' }, _react2.default.createElement('h1', null, '地域に溶け込む住まい'), _react2.default.createElement('p', null, '周辺環境に違和感なく溶け込み、人の住まいとしてあり続ける建物。', _react2.default.createElement('br', null), 'そんな中で気持ちよく過ごせる空間。周りとの共存・共栄。', _react2.default.createElement('br', null), 'そんなノウハウを遠鉄アシストはご提供します。')), _react2.default.createElement('section', { id: 'mansion02', className: 'odd odd-white' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '設備管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '清掃'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '管理員'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '事務管理')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'mansion03', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '地域を幅広くサポートする遠鉄グループだからできること。', _react2.default.createElement('br', null), 'マンションが担う役割を最大限まで高めます。'), _react2.default.createElement('strong', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのホームサービス事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、メンテナンス、機械整備など、マンション管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('h3', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。マンション管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社の経営方針は「顧客本位」。お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたい、そんな気持ちで取り組んでいます。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に務めています。'), _react2.default.createElement('strong', null, '国交省登録・協会正会員'), _react2.default.createElement('p', null, '遠鉄アシストは、国土交通省から委託を受けて国家資格の試験実施や、業界の基準となっている標準管理規約等を作成している「一般社団法人マンション管理業協会」の正会員です。'), _react2.default.createElement('strong', null, 'いざという時の「保証体制」'), _react2.default.createElement('p', null, '遠鉄アシストが正会員となっている一般社団法人マンション管理業協会は、平成13年8月、国土交通大臣より「マンションの管理の適正化の推進に関する法律」第95条に規定するマンション管理会社の団体（指定法人）に指定されました。協会への加入条件として、直近の決算において自己資本額が資本金額以上であること、営業損失、経常損失、当期損失を計上していないことなど、財務状況の監査を受けると同時に、マンション管理業務実績の有無や、「マン管法（マンションの管理の適正化の推進に関する法律）」を遵守した管理を行っているかどうかなど、一定基準を満たすことが条件となっています。このほか、弊社ではさらに厳格な基準をクリアした保証制度にも加入しており、管理会社の経営破綻による管理組合の金銭的被害の保証、次期管理会社の紹介にも速やかに対応いたします。')), _react2.default.createElement('section', { id: 'mansion04', className: 'pf-Column odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', { id: 'building05', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応しているため、安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるマンションは、いざという時も待ったなし。もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業', _react2.default.createElement('br', null), '・マンション管理業', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が マンションの保守・管理に努めています。')), _react2.default.createElement('div', { id: 'add01' }, _react2.default.createElement('img', { src: 'imgs/detail/mansion/add01.png', width: '353', height: '400', alt: 'add01' })), _react2.default.createElement('div', { id: 'add02' }, _react2.default.createElement('img', { src: 'imgs/detail/mansion/add02.png', width: '353', height: '400', alt: 'add02' })), _react2.default.createElement('div', { id: 'add03' }, _react2.default.createElement('img', { src: 'imgs/detail/mansion/add03.png', width: '353', height: '400', alt: 'add03' })));
+      var IMG = 'imgs/detail/mansion/';
+
+      return _react2.default.createElement('article', { id: 'Mansion', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'マンション管理でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '地域に溶け込む住まい'), _react2.default.createElement('p', null, '周辺環境に違和感なく溶け込み、人の住まいとしてあり続ける建物。', _react2.default.createElement('br', null), 'そんな中で気持ちよく過ごせる空間。周りとの共存・共栄。', _react2.default.createElement('br', null), 'そんなノウハウを遠鉄アシストはご提供します。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '事務管理'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '管理員'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '清掃'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '設備管理'), _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, 'その他')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '地域を幅広くサポートする遠鉄グループだからできること。', _react2.default.createElement('br', null), 'マンションが担う役割を最大限まで高めます。'), _react2.default.createElement('strong', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのホームサービス事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、メンテナンス、機械整備など、マンション管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('h3', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。マンション管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社の経営方針は「顧客本位」。お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたい、そんな気持ちで取り組んでいます。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に務めています。'), _react2.default.createElement('strong', null, '国交省登録・協会正会員'), _react2.default.createElement('p', null, '遠鉄アシストは、国土交通省から委託を受けて国家資格の試験実施や、業界の基準となっている標準管理規約等を作成している「一般社団法人マンション管理業協会」の正会員です。'), _react2.default.createElement('strong', null, 'いざという時の「保証体制」'), _react2.default.createElement('p', null, '遠鉄アシストが正会員となっている一般社団法人マンション管理業協会は、平成13年8月、国土交通大臣より「マンションの管理の適正化の推進に関する法律」第95条に規定するマンション管理会社の団体（指定法人）に指定されました。協会への加入条件として、直近の決算において自己資本額が資本金額以上であること、営業損失、経常損失、当期損失を計上していないことなど、財務状況の監査を受けると同時に、マンション管理業務実績の有無や、「マン管法（マンションの管理の適正化の推進に関する法律）」を遵守した管理を行っているかどうかなど、一定基準を満たすことが条件となっています。このほか、弊社ではさらに厳格な基準をクリアした保証制度にも加入しており、管理会社の経営破綻による管理組合の金銭的被害の保証、次期管理会社の紹介にも速やかに対応いたします。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('h3', { className: 'text-right' }, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応しているため、安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるマンションは、いざという時も待ったなし。もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業', _react2.default.createElement('br', null), '・マンション管理業', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が マンションの保守・管理に努めています。')));
     }
   }, {
     key: 'onService',
@@ -6173,7 +6650,7 @@ var MansionDetail = function (_React$Component) {
         text: 'お客様のニーズに合わせてお部屋の修繕、リフォーム、ハウスクリーニングを行います。また、お部屋を売却（買取含む）又は賃貸されたい方のご相談を遠鉄の不動産で承ります。'
       }];
 
-      this.setState({ service: txt[e.target.value] });
+      this.setState({ service: txt[e.target.getAttribute('value')] });
     }
   }]);
 
@@ -6182,211 +6659,7 @@ var MansionDetail = function (_React$Component) {
 
 exports.default = MansionDetail;
 
-},{"react":273,"react-document-title":41,"react-router":72}],27:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _reactDocumentTitle = require('react-document-title');
-
-var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var SeisougDetail = function (_React$Component) {
-  _inherits(SeisougDetail, _React$Component);
-
-  function SeisougDetail(props) {
-    _classCallCheck(this, SeisougDetail);
-
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SeisougDetail).call(this, props));
-
-    _this.state = { service: { title: '', text: '' } };
-    return _this;
-  }
-
-  _createClass(SeisougDetail, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('article', { id: 'SeisouDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'seisou01' }, _react2.default.createElement('h1', null, '「キレイ」ってなんだろう？'), _react2.default.createElement('p', null, '日本ではありふれている「美」を', _react2.default.createElement('br', null), '遠鉄アシストでは今一度考え直し、', _react2.default.createElement('br', null), '「感じ取れる美」をテーマに', _react2.default.createElement('br', null), '視える/香る/空気が美味しい/清々しさが聴こえる、', _react2.default.createElement('br', null), 'そして最後に美を肌で感じて頂ける事を', _react2.default.createElement('br', null), '理想とさせていただいております')), _react2.default.createElement('section', { id: 'seisou02', className: 'odd odd-white' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, 'ハウス', _react2.default.createElement('br', null), 'クリーニング', _react2.default.createElement('br', null), 'リフォーム'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, 'ベッド', _react2.default.createElement('br', null), 'メイキング'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '植栽管理'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '清掃業務')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'seisou03', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストの清掃業務管理'), _react2.default.createElement('h3', null, '高い清掃品質で、美観の維持，清潔な環境を保ちます。')), _react2.default.createElement('section', { id: 'seisou04', className: 'pf-Column odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、清掃業務を 円滑にバックアップします。'), _react2.default.createElement('strong', null, '日常清掃'), _react2.default.createElement('p', null, '店舗，事務所内，共用スペース，トイレなど日常的に使用する場所を継続して清掃をすることにより 美観や清潔さを維持することを目的としております。'), _react2.default.createElement('strong', null, '定期清掃'), _react2.default.createElement('p', null, '日常清掃では、落としきれない汚れを除去することを目的としております。', _react2.default.createElement('br', null), '例えば、定期的に床面洗浄及びワックスを塗布することで、床を保護して汚れをつきにくくするなどのメリットなどがあります。他にもガラス清掃，カーペットクリーニングなど建物の状態、お客様のご要望にあわせ、最適なプランをご提案させていただきます。'), _react2.default.createElement('strong', null, '人材育成'), _react2.default.createElement('p', null, '弊社では、2016年6月よりお客様に「美」を感じていただけるよう、 個々の清掃技術，知識の向上を図る目的として、トレーニングセンターを開設いたしました。', _react2.default.createElement('br', null), '清掃未経験の方でも、当社の指導員がベットメイク，トイレや水廻りの清掃等を基礎から丁寧に指導していきます。'), _react2.default.createElement('strong', null, 'サービスの標準化'), _react2.default.createElement('p', null, '弊社は、高い清掃品質を全てのお客様に提供できるよう作業方法， 作業手順，使用する清掃資機材のマニュアルを作成し、清掃品質が一様になるようにつとめています。 トイレ，洗面台，床等、適切な作業道具またはクロス， モップなどの清掃道具を色分けすることで、衛生面に配慮し、清潔な清掃をいたします。'), _react2.default.createElement('strong', null, 'より良いサービスの提供'), _react2.default.createElement('p', null, '弊社は、清掃品質がより良くなるように、作業方法， 作業手順の改善点やより良い清掃資機材がないか見直しをする為、 定期的にミーティングを実施しております。')), _react2.default.createElement('section', { id: 'seisou05', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が 清掃業務の保守・管理に努めています。')), _react2.default.createElement('div', { id: 'add01' }, _react2.default.createElement('img', { src: 'imgs/detail/seisou/add01.png', width: '353', height: '400', alt: 'add01' })), _react2.default.createElement('div', { id: 'add02' }, _react2.default.createElement('img', { src: 'imgs/detail/seisou/add02.png', width: '353', height: '400', alt: 'add02' })), _react2.default.createElement('div', { id: 'add03' }, _react2.default.createElement('img', { src: 'imgs/detail/seisou/add03.png', width: '353', height: '400', alt: 'add03' })));
-    }
-  }, {
-    key: 'onService',
-    value: function onService(e) {
-      var txt = [{
-        title: '',
-        text: ''
-      }, {
-        title: '美しく衛生的な居住環境を実現',
-        text: '美観を維持し、清潔で快適な環境を整えるために、敷地内外や建物、設備などの共用部分の清掃を日常的または定期的に行います。'
-      }, {
-        title: '美しく、心が潤う植栽環境を維持します',
-        text: '植栽は建物の価値とイメージを向上させる重要な要素です。周囲の景観との調和を考え、見た目に美しく、心身をリラックスさせる植栽管理で建物の印象アップに貢献します。'
-      }, {
-        title: 'いつも清潔な客室をスピーディーに整えます',
-        text: 'ネット検索サイトの「清潔項目」で高評価をいただき、ホテルから表彰されるなど、ベッドメイキングの実績は豊富。お客様の満足を第一に、清潔な客室をスピーディーに整えます。'
-      }, {
-        title: 'ニーズに合わせてフレキシブルに対応します',
-        text: '分譲マンション・賃貸アパート・戸建住宅と、建物の構造に精通したスタッフが、隅々まで配慮した安心のハウスクリーニング・リフォーム・リノベーションを提供いたします。'
-      }];
-
-      this.setState({ service: txt[e.target.value] });
-    }
-  }]);
-
-  return SeisougDetail;
-}(_react2.default.Component);
-
-exports.default = SeisougDetail;
-
-},{"react":273,"react-document-title":41,"react-router":72}],28:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _reactDocumentTitle = require('react-document-title');
-
-var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var UnkouDetail = function (_React$Component) {
-  _inherits(UnkouDetail, _React$Component);
-
-  function UnkouDetail(props) {
-    _classCallCheck(this, UnkouDetail);
-
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(UnkouDetail).call(this, props));
-
-    _this.state = { service: { title: '', text: '' } };
-    return _this;
-  }
-
-  _createClass(UnkouDetail, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('article', { id: 'UnkouDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'unkou01' }, _react2.default.createElement('h1', null, '子どもたちのヒーローは、私でした。'), _react2.default.createElement('p', null, 'ドライバー歴30年。転職したのは5年前だった。', _react2.default.createElement('br', null), '長距離ドライバーから、学校の送迎ドライバーへ。 孤独な仕事は、人とふれ合う仕事になった。', _react2.default.createElement('br', null), _react2.default.createElement('br', null), '子どもたちの笑顔と成長。すぐに天職だと気付いた。', _react2.default.createElement('br', null), '子どもの憧れは身近にある。', _react2.default.createElement('br', null), '大きなバスを運転する私は、 いつの間にか子どもたちのヒーローになった。', _react2.default.createElement('br', null), '活き方で生き方は、変わる。 新しい自分を探そう、スタートを切ろう。')), _react2.default.createElement('section', { id: 'unkou02', className: 'odd odd-white' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '企業・工場'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '病院・介護'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '幼稚園'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, 'スクールバス', _react2.default.createElement('br', null), '部活'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '役員車')), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '官公庁'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, 'ホテル', _react2.default.createElement('br', null), 'レストラン')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'unkou03', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストの特徴'), _react2.default.createElement('h3', null, '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、', _react2.default.createElement('br', null), '笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'), _react2.default.createElement('strong', null, '地元に根付いた遠鉄グループだから出来ること'), _react2.default.createElement('p', null, '母体が遠州鉄道株式会社だからこそ、70年以上の旅客運送のノウハウの蓄積を生かし、安全運転のための運転士研修、健康管理体制を取っており、サービス向上のための接客接遇教育を欠かしておりません。 また、グループ各社の総合力を結集し、給油・整備・自動車保険・万が一の事故対応から代車の手配まで、お客様へ安心と満足をお届けする体制をとっております。')), _react2.default.createElement('section', { id: 'unkou04', className: 'pf-Column odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '導入事例'), _react2.default.createElement('p', { className: 'text-right' }, '運行管理事業の導入事例です。 ', _react2.default.createElement('br', null), 'お客様のニーズに合わせて、臨機応変に問題を解決いたします。')), _react2.default.createElement('section', { id: 'unkou05', className: 'pf-Column' }, _react2.default.createElement('h1', null, '安心・安全・快適への取り組み'), _react2.default.createElement('h3', null, 'お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。', _react2.default.createElement('br', null), '経験と実績に甘んじることなく、 技術と知識の強化を図っています。'), _react2.default.createElement('strong', null, '定期的な研修会を行い、常に高いクオリティを提供します。'), _react2.default.createElement('p', null, '安全運行の実施と接客サービスの向上を目的として、定期的に年２回の運転士の研修会を実施しております。 もしも事故やクレームがあった場合には、運転士全員で情報を共有し、意識を共有し、技術･マナー･意識の見直しをさせています。'), _react2.default.createElement('strong', null, '研修会の内容'), _react2.default.createElement('p', null, '・運転技術向上のためのケーススタディ', _react2.default.createElement('br', null), '・サービス向上のための接客・接遇教育', _react2.default.createElement('br', null), '・実際にあった事故をもとにしたグループディスカッション'), _react2.default.createElement('strong', null, '安全・安心・快適を生む管理の徹底'), _react2.default.createElement('p', null, '遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。')), _react2.default.createElement('div', { id: 'add01' }, _react2.default.createElement('img', { src: 'imgs/detail/unkou/add01.png', width: '353', height: '400', alt: 'add01' })), _react2.default.createElement('div', { id: 'add02' }, _react2.default.createElement('img', { src: 'imgs/detail/unkou/add02.png', width: '353', height: '400', alt: 'add02' })), _react2.default.createElement('div', { id: 'add03' }, _react2.default.createElement('img', { src: 'imgs/detail/unkou/add03.png', width: '353', height: '400', alt: 'add03' })));
-    }
-  }, {
-    key: 'onService',
-    value: function onService(e) {
-      var txt = [{
-        title: '',
-        text: ''
-      }, {
-        title: '大切な役員の方を安全･安心にお迎えいたします。',
-        text: '企業の役員様に安全で快適な運行をお届けいたします。運転士にはもちろん運転技術だけでなく、お客様へのマナー、守秘義務の徹底等、ハイレベルな教育を施して運行を行います。'
-      }, {
-
-        title: '通学の送迎だけでなく、部活動の遠征などにも幅広く対応いたします',
-        text: '貴校の大切な生徒様を、安全･確実に学校までお送りいたします。通学も学校生活の一部です。快適に学校に通うためには、安全･確実な運行だけでなく、運転士の人柄や決め細やかなサービスも大切な要素だと考え、たくさんの思い出を一緒に作りあげていきたいと思います。'
-      }, {
-        title: '園児も先生も保護者様も、みなさま笑顔の安全運行',
-        text: '元気いっぱいの園児の皆さんは、明るい未来の象徴です。大切な命をお預かりするためにも、運転士に対して徹底した技術指導・健康管理を指導。明るい笑顔と挨拶で、安心安全な運行はもちろんの事保護者様にも地域の皆様にも配慮したサービスを提供いたします。'
-      }, {
-        title: '笑顔のお出迎え。足が悪い方にも配慮した運転',
-        text: '患者様に負担をかけないように、真心を込めて業務を行います。患者様の必要不可欠な移動手段です。車に乗車することが負担に感じたりや不安にならない、快適な乗車時間のご提供に務めます。'
-      }, {
-        title: 'お客様の利便性の向上に尽力いたします',
-        text: 'これからお仕事に向かわれるお客様のモチベーションを保つように安全・快適な運転をご提供いたします。従業員様用の駐車スペースを確保しなくても済み、時間に沿った運行を行いますので、御社の効率化・コストダウンに効果的な業務を行います。また、御社のお車で社員旅行や研修などのご要望にも対応可能です。'
-      }, {
-        title: '時間を守り、お店までしっかり運転します',
-        text: '冠婚葬祭、さまざまなシーンに対応した運行を、お客様にご提供いたします。お客様を安心・安全な運行で御社までお届けする事が、更なる付加価値を高める重要な要素だと考えます。'
-      }, {
-        title: 'どんなときでも安定した運行業務を提供いたします',
-        text: '首長の専用車の運行から、地域のコミュニティーバスの運行まで。地域に根ざした遠鉄グループの弊社だからこそ、地域のお客様のために。地域密着の運行に携わらせていただきます。'
-      }];
-
-      this.setState({ service: txt[e.target.value] });
-    }
-  }]);
-
-  return UnkouDetail;
-}(_react2.default.Component);
-
-exports.default = UnkouDetail;
-
-},{"react":273,"react-document-title":41,"react-router":72}],29:[function(require,module,exports){
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],29:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };

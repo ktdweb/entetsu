@@ -29,10 +29,10 @@ import FrontHome      from './pages/front/Home'
 import FrontWorks     from './pages/front/Works'
 import FrontCompany   from './pages/front/Company'
 
-import FrontBuildingDetail  from './pages/front/BuildingDetail'
-import FrontSeisouDetail  from './pages/front/SeisouDetail'
-import FrontMansionDetail  from './pages/front/MansionDetail'
-import FrontUnkouDetail  from './pages/front/UnkouDetail'
+import FrontCleaning  from './pages/front/Cleaning'
+import FrontBuilding  from './pages/front/Building'
+import FrontMansion   from './pages/front/Mansion'
+import FrontDriving   from './pages/front/Driving'
 
 const routes = (
   <Router history={browserHistory}>
@@ -104,19 +104,11 @@ const routes = (
           footer: FrontFooter
         }} />
 
-      <Route path={root.documentRoot + '/building_detail'}
+      <Route path={root.documentRoot + '/cleaning_detail'}
         global={root}
         components={{
           header: FrontHeader,
-          main: FrontBuildingDetail,
-          footer: FrontFooter
-        }} />
-
-      <Route path={root.documentRoot + '/seisou_detail'}
-        global={root}
-        components={{
-          header: FrontHeader,
-          main: FrontSeisouDetail,
+          main: FrontCleaning,
           footer: FrontFooter
         }} />
 
@@ -124,7 +116,7 @@ const routes = (
         global={root}
         components={{
           header: FrontHeader,
-          main: FrontBuildingDetail,
+          main: FrontBuilding,
           footer: FrontFooter
         }} />
 
@@ -132,15 +124,15 @@ const routes = (
         global={root}
         components={{
           header: FrontHeader,
-          main: FrontMansionDetail,
+          main: FrontMansion,
           footer: FrontFooter
         }} />
 
-      <Route path={root.documentRoot + '/unkou_detail'}
+      <Route path={root.documentRoot + '/driving_detail'}
         global={root}
         components={{
           header: FrontHeader,
-          main: FrontUnkouDetail,
+          main: FrontDriving,
           footer: FrontFooter
         }} />
     </Route>
