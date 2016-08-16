@@ -25,7 +25,7 @@ export default class SeisougDetail extends React.Component {
     let IMG = 'imgs/detail/cleaning/';
 
     return (
-      <article id="Cleaning" className="pf-Detail">
+      <article id="CleaningDetail" className="pf-Detail">
         <DocumentTitle title="清掃でお困りの方 | 遠鉄アシスト" />
 
         <div
@@ -164,10 +164,10 @@ export default class SeisougDetail extends React.Component {
           </p>
 
           <div className="pf-Detail-services">
-            <p value="1" onClick={this.onService.bind(this)} >清掃業務</p>
-            <p value="2" onClick={this.onService.bind(this)} >植栽管理</p>
-            <p value="3" onClick={this.onService.bind(this)} >ベッド<br />メイキング</p>
             <p value="4" onClick={this.onService.bind(this)} >ハウス<br />クリーニング<br />リフォーム</p>
+            <p value="3" onClick={this.onService.bind(this)} >ベッド<br />メイキング</p>
+            <p value="2" onClick={this.onService.bind(this)} >植栽管理</p>
+            <p value="1" onClick={this.onService.bind(this)} >清掃業務</p>
           </div>
 
           <div className="pf-Detail-services-desc">

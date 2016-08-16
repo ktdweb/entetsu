@@ -74,11 +74,6 @@ export default class Parallax {
   constructor(className = 'layer') {
     window.requestAnimationFrame = this.setPrefixRaf();
     window.cancelAnimationFrame = this.setPrefixCaf();
-
-    this.layers = Array();
-    this.tops = Array();
-    this.depths = Array();
-
     this.className = className;
   }
 
@@ -130,6 +125,10 @@ export default class Parallax {
    * @return void
    */
   init() {
+    this.layers = Array();
+    this.tops = Array();
+    this.depths = Array();
+
     this.layers = document.getElementsByClassName(
       this.className
     );

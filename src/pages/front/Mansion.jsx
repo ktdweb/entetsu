@@ -25,7 +25,7 @@ export default class MansionDetail extends React.Component {
     let IMG = 'imgs/detail/mansion/';
 
     return (
-      <article id="Mansion" className="pf-Detail">
+      <article id="MansionDetail" className="pf-Detail">
         <DocumentTitle title="マンション管理でお困りの方 | 遠鉄アシスト" />
 
         <div
@@ -154,18 +154,18 @@ export default class MansionDetail extends React.Component {
         </section>
 
         <section className="odd reverse">
-          <h1>遠鉄アシストのサービス</h1>
-          <p>
+          <h1 className="text-right">遠鉄アシストのサービス</h1>
+          <p className="text-right">
             遠鉄アシストならではのきめ細かいサービスと、<br /> 
             まかせて安心のトータルサポートでお応えします。
           </p>
 
           <div className="pf-Detail-services">
-            <p value="1" onClick={this.onService.bind(this)} >事務管理</p>
-            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
-            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
-            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
             <p value="5" onClick={this.onService.bind(this)} >その他</p>
+            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
+            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
+            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
+            <p value="1" onClick={this.onService.bind(this)} >事務管理</p>
           </div>
 
           <div className="pf-Detail-services-desc">

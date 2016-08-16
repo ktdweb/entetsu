@@ -25,7 +25,7 @@ export default class BuildingDetail extends React.Component {
     let IMG = 'imgs/detail/building/';
 
     return (
-      <article id="Building" className="pf-Detail">
+      <article id="BuildingDetail" className="pf-Detail">
         <DocumentTitle title="ビル管理でお困りの方 | 遠鉄アシスト" />
 
         <div
@@ -163,18 +163,18 @@ export default class BuildingDetail extends React.Component {
           </p>
 
           <div className="pf-Detail-services">
-            <p value="1" onClick={this.onService.bind(this)} >設備管理</p>
-            <p value="2" onClick={this.onService.bind(this)} >諸設備<br />メンテナンス</p>
-            <p value="3" onClick={this.onService.bind(this)} >環境衛生管理</p>
-            <p value="4" onClick={this.onService.bind(this)} >駐車場管理</p>
             <p value="5" onClick={this.onService.bind(this)} >保安警備</p>
+            <p value="4" onClick={this.onService.bind(this)} >駐車場管理</p>
+            <p value="3" onClick={this.onService.bind(this)} >環境衛生管理</p>
+            <p value="2" onClick={this.onService.bind(this)} >諸設備<br />メンテナンス</p>
+            <p value="1" onClick={this.onService.bind(this)} >設備管理</p>
           </div>
 
           <div className="pf-Detail-services">
-            <p value="6" onClick={this.onService.bind(this)} >事務管理業務</p>
-            <p value="7" onClick={this.onService.bind(this)} >管理員業務</p>
-            <p value="8" onClick={this.onService.bind(this)} >設備管理業務</p>
             <p value="9" onClick={this.onService.bind(this)} >その他</p>
+            <p value="8" onClick={this.onService.bind(this)} >設備管理業務</p>
+            <p value="7" onClick={this.onService.bind(this)} >管理員業務</p>
+            <p value="6" onClick={this.onService.bind(this)} >事務管理業務</p>
           </div>
 
           <div className="pf-Detail-services-desc">

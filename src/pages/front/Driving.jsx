@@ -25,8 +25,8 @@ export default class UnkouDetail extends React.Component {
     let IMG = 'imgs/detail/driving/';
 
     return (
-      <article id="Driving" className="pf-Detail">
-        <DocumentTitle title="遠鉄アシスト | 会社概要" />
+      <article id="DrivingDetail" className="pf-Detail">
+        <DocumentTitle title="運転・送迎でお困りの方 | 遠鉄アシスト" />
 
         <div
           id="plx01"
@@ -148,7 +148,7 @@ export default class UnkouDetail extends React.Component {
           <h1>子どもたちのヒーローは、私でした。</h1>
           <p>
             ドライバー歴30年。転職したのは5年前だった。<br />
-            長距離ドライバーから、学校の送迎ドライバーへ。
+            長距離ドライバーから、学校の送迎ドライバーへ。<br />
             孤独な仕事は、人とふれ合う仕事になった。<br />
 <br />
             子どもたちの笑顔と成長。すぐに天職だと気付いた。<br />
@@ -161,26 +161,26 @@ export default class UnkouDetail extends React.Component {
         </section>
 
         <section className="odd reverse">
-          <h1>遠鉄アシストのサービス</h1>
-          <p>
+          <h1 className="text-right">遠鉄アシストのサービス</h1>
+          <p className="text-right">
             遠鉄アシストならではのきめ細かいサービスと、<br />
             まかせて安心のトータルサポートでお応えします。
           </p>
 
-          <div id="pf-Detail-services">
-            <p value="1" onClick={this.onService.bind(this)} >役員車</p>
-            <p value="2" onClick={this.onService.bind(this)} >スクールバス<br />部活</p>
-            <p value="3" onClick={this.onService.bind(this)} >幼稚園</p>
-            <p value="4" onClick={this.onService.bind(this)} >病院・介護</p>
+          <div className="pf-Detail-services">
             <p value="5" onClick={this.onService.bind(this)} >企業・工場</p>
+            <p value="4" onClick={this.onService.bind(this)} >病院・介護</p>
+            <p value="3" onClick={this.onService.bind(this)} >幼稚園</p>
+            <p value="2" onClick={this.onService.bind(this)} >スクールバス<br />部活</p>
+            <p value="1" onClick={this.onService.bind(this)} >役員車</p>
           </div>
 
-          <div id="pf-Detail-services">
-            <p value="6" onClick={this.onService.bind(this)} >ホテル<br />レストラン</p>
+          <div className="pf-Detail-services">
             <p value="7" onClick={this.onService.bind(this)} >官公庁</p>
+            <p value="6" onClick={this.onService.bind(this)} >ホテル<br />レストラン</p>
           </div>
 
-          <div id="pf-Detail-services-desc">
+          <div className="pf-Detail-services-desc">
             <p className="mgnBtm0"><strong>{this.state.service.title}</strong></p>
             <p>{this.state.service.text}</p>
           </div>
@@ -190,7 +190,7 @@ export default class UnkouDetail extends React.Component {
           <h1>遠鉄アシストの特徴</h1>
 
           <h3>遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、<br />
-笑顔の接客・接遇で、多くのお客様から信頼をいただいております。</h3>
+            笑顔の接客・接遇で、多くのお客様から信頼をいただいております。</h3>
 
           <strong>地元に根付いた遠鉄グループだから出来ること</strong>
           <p>
@@ -207,8 +207,9 @@ export default class UnkouDetail extends React.Component {
         <section>
           <h1>安心・安全・快適への取り組み</h1>
 
-          <h3>お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。<br />
-             経験と実績に甘んじることなく、 技術と知識の強化を図っています。</h3>
+          <h3>お客様の安全・安心・快適をモットーに、<br />
+            遠鉄アシストでは 運転士の安全教育を徹底。<br />
+            経験と実績に甘んじることなく、 技術と知識の強化を図っています。</h3>
 
           <strong>定期的な研修会を行い、常に高いクオリティを提供します。</strong>
           <p>

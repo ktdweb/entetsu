@@ -22,6 +22,14 @@ h1
   font-family: $YuMincho-font-family
 
 /*
+  # h3
+  明朝体にする
+ */
+h3
+  font-size: $base-font-size
+  line-height: $small-line-height * 1.1
+
+/*
   # p 
   サイズを小さめに、色を若干薄めとする
  */
@@ -36,11 +44,11 @@ p
 div.pf-Detail-services
   p
     position: relative
-    float: left
+    float: right
     width: 9rem
     height: 9rem
-    padding-top: 3.5rem
-    margin-right: 1rem
+    padding-top: 2rem
+    margin-left: 1rem
     color: white
     font-size: $small-font-size
     text-align: center
@@ -57,7 +65,7 @@ div.pf-Detail-services
  */
 div.pf-Detail-services-desc
   clear: both
-  height: 100px
+  height: 120px
   p 
     +fadeIn()
     font-size: $small-font-size
