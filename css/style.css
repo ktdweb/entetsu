@@ -6087,8 +6087,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100% !important; }
 
 /*
-  # modules/hover.sass
-  anchorタグのhoverを定義
+  # modules/anchor.sass
+  anchorタグのanchorを定義
   prefixはなし
   */
 /*
@@ -6777,6 +6777,11 @@ article {
   /*
   # #Front > footer .lf-credit div:first-child
   部署電話番号
+  */
+  /*
+  # layouts/front/Top.sass
+  front/Top.jsxに関するクラスを定義
+  prefixには`lf-Top`を付与
   */ }
   #Front > header {
     position: fixed;
@@ -6784,8 +6789,7 @@ article {
     right: 0;
     margin: 0 auto;
     padding: 2rem 0;
-    min-width: 960px;
-    max-width: 1040px;
+    width: 960px;
     font-size: 1.2rem;
     text-align: center;
     z-index: 1000; }
@@ -6920,6 +6924,74 @@ article {
     text-align: right; }
     #Front > footer .lf-credit div div:last-child:last-child {
       margin-right: 0; }
+  #Front .lf-Top {
+    min-width: 960px;
+    max-width: 960px;
+    margin-top: 4rem; }
+    #Front .lf-Top nav {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%; }
+      #Front .lf-Top nav:last-child {
+        margin-right: 0; }
+    #Front .lf-Top section {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      margin-right: 0; }
+      #Front .lf-Top section:last-child {
+        margin-right: 0; }
+  #Front .lf-Top-linkArea {
+    transition: opacity 300ms;
+    cursor: pointer; }
+    #Front .lf-Top-linkArea:hover {
+      opacity: .5; }
+  #Front .lf-Top nav {
+    font-size: 1.6rem; }
+    #Front .lf-Top nav ul {
+      font-size: 1.44rem;
+      border: 3px solid black;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.85); }
+      #Front .lf-Top nav ul li {
+        margin: 0 1rem;
+        padding: 1rem;
+        border-top: 1px solid #cdcdcd;
+        letter-spacing: -0.1rem; }
+        #Front .lf-Top nav ul li:first-child {
+          margin: 0;
+          padding: 1rem 2rem;
+          border-top: none;
+          background-color: #f9f9f9; }
+  #Front .lf-Top section div {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+    padding-left: 3.2rem; }
+    #Front .lf-Top section div:last-child {
+      margin-right: 0; }
+    #Front .lf-Top section div:nth-child(2n) {
+      margin-right: 0; }
+    #Front .lf-Top section div:nth-child(2n+1) {
+      clear: left; }
+    #Front .lf-Top section div h2 {
+      font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
+      font-size: 2rem;
+      line-height: 5rem;
+      margin-bottom: 1.5rem;
+      -webkit-border-image: url(../imgs/border_line.png) 15 repeat;
+      border-image: url(../imgs/border_line.png) 15 repeat;
+      border-style: solid;
+      border-width: 0 0 5px 0;
+      border-style: solid; }
+    #Front .lf-Top section div p {
+      font-size: 1.376rem;
+      line-height: 2.2rem;
+      letter-spacing: -0.01rem;
+      text-align: justify; }
 
 /*
   # pages/index.sass
@@ -6956,404 +7028,20 @@ article {
   pages/frontディレクトリ下はprefixに`pf-`を付与
   */
 /*
-  # pages/front/Sample.sass
-  sass/sample/index.htmlに関するクラスを定義
-  prefixには`pf-Sample`を付与
-  */
-#Sample {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto; }
-  #Sample::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-/*
-  # header, footer, section
-  margin-bottomに1行分のスペースを追加
-  */
-#Sample header, #Sample footer, #Sample section {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4rem; }
-  #Sample header::after, #Sample footer::after, #Sample section::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-/*
-  # header
-  ヘッダの先頭に一行分のスペースを加える
-  2:10のカラム navは右揃え
-  navの右にパディングを追加
-  */
-#Sample header {
-  padding-top: 2rem; }
-  #Sample header h1 {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%; }
-    #Sample header h1:last-child {
-      margin-right: 0; }
-  #Sample header nav {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    text-align: right; }
-    #Sample header nav:last-child {
-      margin-right: 0; }
-    #Sample header nav a {
-      padding-right: 2rem; }
-      #Sample header nav a:last-child {
-        padding-right: 0; }
-
-/*
-  # section, footer
-  section, footerはデフォルトで中央揃え
-  */
-#Sample section, #Sample footer {
-  text-align: center; }
-
-/*
-  # #bootstrap
-  Alignment Class用にdivを3で横並び
-  */
-#Sample #bootstrap div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%; }
-  #Sample #bootstrap div:last-child {
-    margin-right: 0; }
-
-/*
-  # #animate
-  animate.cssサンプル用にdivを4で横並び
-  width, heightを指定しboxをつける
-  */
-#Sample #animate div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
-  #Sample #animate div:last-child {
-    margin-right: 0; }
-  #Sample #animate div p {
-    margin: 0 auto 2rem;
-    width: 8rem;
-    height: 8rem;
-    line-height: 8rem; }
-
-/*
-  # #fontawesome
-  fa-stackがgridにあわないためaにheightを指定
-  */
-#Sample #fontawesome div {
-  margin-bottom: 4rem; }
-
-#Sample #fontawesome a {
-  display: inline-block;
-  height: 4rem;
-  margin: 0 4rem; }
-
-/*
-  # #utils
-  onlypc, onlyspのためにdivを4で用意
-  widthのためにpをbox化
-  */
-#Sample #utils #responsive div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
-  margin-left: 34.11922%; }
-  #Sample #utils #responsive div:last-child {
-    margin-right: 0; }
-
-#Sample #utils #widths {
-  text-align: center; }
-  #Sample #utils #widths div span {
-    display: block;
-    text-align: left; }
-  #Sample #utils #widths div p {
-    font-size: 1.2rem;
-    height: 2rem;
-    background-color: #cdcdcd; }
-
-/*
-  # #colors
-  カラー用にboxを用意
-  neatのautomatic rowで構成
-  */
-#Sample #colors div {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4rem; }
-  #Sample #colors div::after {
-    clear: both;
-    content: "";
-    display: table; }
-  #Sample #colors div p {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%;
-    height: 8rem;
-    line-height: 8rem; }
-    #Sample #colors div p:last-child {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(6n) {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(6n+1) {
-      clear: left; }
-
-#Sample #colors a {
-  display: inline-block;
-  height: 4rem;
-  margin: 0 4rem; }
-
-/*
-  # #shadows
-  shadows用にboxを用意
-  neatのautomatic rowで構成
-  */
-#Sample #shadows div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
-  #Sample #shadows div:last-child {
-    margin-right: 0; }
-  #Sample #shadows div p {
-    margin: 0 auto 2rem;
-    width: 8rem;
-    height: 8rem;
-    line-height: 8rem; }
-
-/*
-  # pages/front/Sample.sass
-  sass/sample/index.htmlのspに関するクラスを定義
-  prefixには`pf-Sample`を付与
-  */
-/*
-  # header
-  spは4:4のカラムで中央揃え
-  各リンクは縦並び
-  */
-@media screen and (max-width: 500px) {
-  #Sample header h1 {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 100%;
-    text-align: center; }
-    #Sample header h1:last-child {
-      margin-right: 0; }
-  #Sample header nav {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 100%;
-    text-align: center; }
-    #Sample header nav:last-child {
-      margin-right: 0; }
-    #Sample header nav a {
-      display: block;
-      padding-right: 0; } }
-
-/*
-  # #bootstrap
-  2カラムとなるように設定
-  bottomに一行分追加
-  */
-@media screen and (max-width: 500px) {
-  #Sample #bootstrap div {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 46.28851%;
-    margin-left: 26.85574%;
-    margin-bottom: 2rem; }
-    #Sample #bootstrap div:last-child {
-      margin-right: 0; } }
-
-/*
-  # #animate
-  2カラムとなるように設定
-  縦並びに変更
-  bottomに一行分追加
-  */
-@media screen and (max-width: 500px) {
-  #Sample #fontawesome div pre {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 46.28851%;
-    margin-left: 26.85574%; }
-    #Sample #fontawesome div pre:last-child {
-      margin-right: 0; }
-  #Sample #fontawesome a {
-    display: block;
-    margin: 4rem; } }
-
-/*
-  # #utils
-  2カラムとなるように設定
-  */
-@media screen and (max-width: 500px) {
-  #Sample #utils #responsive div {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 46.28851%;
-    margin-left: 26.85574%; }
-    #Sample #utils #responsive div:last-child {
-      margin-right: 0; } }
-
-/*
-  # #colors
-  1の4並びとなるように設定
-  */
-@media screen and (max-width: 500px) {
-  #Sample #colors div p {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 19.43277%; }
-    #Sample #colors div p:last-child {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(4n) {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(4n+1) {
-      clear: left; } }
-
-/*
   # pages/front
   pages/front/以下は#frontがすべてつく
   */
 #Front {
-  /*
-  # pages/front/Top.sass
-  front/Top.jsxに関するクラスを定義
-  prefixには`pf-Top`を付与
-  */
   /*
   # pages/front/Home.sass
   front/Home.jsxに関するクラスを定義
   prefixには`pf-Home`を付与
   */
   /*
-  # pages/front/Detail.sass
-  詳細ページに関するクラスを定義
-  prefixには`pf-Detail`を付与
-  */
-  /*
   # pages/front/Comapny.sass
   front/Company.jsxに関するクラスを定義
   prefixには`pf-Detail`を付与
-  */
-  /*
-  # pages/front/BuildingDetail.sass
-  front/BuildingDetail.jsxに関するクラスを定義
-  prefixには`pf-BuildingDetail`を付与
-  */
-  /*
-    background-image: , url('../imgs/detail/bg_building.jpg'), url('../imgs/detail/bg_company02.jpg'), url('../imgs/detail/bg_company03.jpg')
-
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px
-
-    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto
-
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
-  */
-  /*
-  # pages/front/MansionDetail.sass
-  front/MansionDetail.jsxに関するクラスを定義
-  prefixには`pf-MansionDetail`を付与
-  */
-  /*
-  # pages/front/SeisouDetail.sass
-  front/SeisouDetail.jsxに関するクラスを定義
-  prefixには`pf-SeisouDetail`を付与
-  */
-  /*
-  # pages/front/UnkouDetail.sass
-  front/UnkouDetail.jsxに関するクラスを定義
-  prefixには`pf-UnkouDetail`を付与
   */ }
-  #Front .pf-Top {
-    min-width: 960px;
-    max-width: 960px;
-    margin-top: 4rem; }
-    #Front .pf-Top nav {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%; }
-      #Front .pf-Top nav:last-child {
-        margin-right: 0; }
-    #Front .pf-Top section {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 65.88078%;
-      margin-right: 0; }
-      #Front .pf-Top section:last-child {
-        margin-right: 0; }
-  #Front .pf-Top nav {
-    font-size: 1.6rem;
-    padding-right: 3rem; }
-    #Front .pf-Top nav ul {
-      font-size: 1.44rem;
-      border: 3px solid black;
-      border-radius: 4px;
-      background-color: rgba(255, 255, 255, 0.85); }
-      #Front .pf-Top nav ul li {
-        margin: 0 1rem;
-        padding: 1rem;
-        border-top: 1px solid #cdcdcd; }
-        #Front .pf-Top nav ul li:first-child {
-          margin: 0;
-          padding: 1rem 2rem;
-          border-top: none;
-          background-color: #f9f9f9; }
-        #Front .pf-Top nav ul li a {
-          color: #000; }
-  #Front .pf-Top section div {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%; }
-    #Front .pf-Top section div:last-child {
-      margin-right: 0; }
-    #Front .pf-Top section div:nth-child(2n) {
-      margin-right: 0; }
-    #Front .pf-Top section div:nth-child(2n+1) {
-      clear: left; }
-    #Front .pf-Top section div:nth-child(odd) {
-      padding-right: 2rem; }
-    #Front .pf-Top section div h2 {
-      margin-bottom: 1rem;
-      font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
-      font-size: 1.84rem;
-      line-height: 4rem;
-      -webkit-border-image: url(../imgs/border_line.png) 10 repeat;
-      border-image: url(../imgs/border_line.png) 10 repeat;
-      border-style: solid;
-      border-style: solid;
-      border-width: 4px;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0; }
-    #Front .pf-Top section div p {
-      font-size: 1.36rem;
-      line-height: 2.1rem;
-      text-align: justify; }
   #Front .menuTop {
     margin-top: 2rem; }
     #Front .menuTop td {
@@ -7365,8 +7053,9 @@ article {
     width: 100%;
     height: 630px;
     text-align: center;
-    background-position: left -200px top 0, right 200px top 0;
-    background-size: contain, contain;
+    background-position: left 0px top 0, right 0 top 0;
+    background-attachment: fixed;
+    background-size: 35%, 35%;
     background-repeat: no-repeat, no-repeat; }
   #Front #canvas {
     max-width: 1040px;
@@ -7501,56 +7190,6 @@ article {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
     background-image: url("../imgs/pages/covers/driving_l.png"), url("../imgs/pages/covers/driving_r.png"); }
-  #Front article.pf-Detail section {
-    margin: 0 6rem; }
-  #Front article.pf-Detail h1 {
-    font-size: 2.56rem;
-    font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
-  #Front article.pf-Detail p {
-    color: #555;
-    font-size: 1.44rem;
-    line-height: 2.5rem; }
-  #Front article.pf-Detail .odd {
-    text-align: right; }
-  #Front article.pf-Detail .odd-white {
-    color: white; }
-    #Front article.pf-Detail .odd-white p {
-      color: white; }
-  #Front section.pf-Column {
-    width: 50%;
-    text-align: left;
-    margin-bottom: 10rem; }
-    #Front section.pf-Column h1 {
-      margin-bottom: 1rem; }
-  #Front section.pf-Column.odd {
-    width: 50%;
-    text-align: left;
-    margin-left: 46rem; }
-  #Front div#service {
-    width: 60rem;
-    margin-left: 33rem; }
-    #Front div#service p {
-      position: relative;
-      width: 10rem;
-      height: 10rem;
-      padding-top: 3rem;
-      float: right;
-      border: 1px solid white;
-      margin-right: 1rem;
-      text-align: center;
-      border-radius: 5px;
-      font-size: 1.2rem;
-      line-height: 1.5rem;
-      cursor: pointer; }
-    #Front div#service p:hover {
-      background-color: rgba(0, 0, 0, 0.1); }
-  #Front div#desc {
-    clear: both;
-    width: 400px;
-    margin-left: 38rem;
-    text-align: left; }
-    #Front div#desc p:first-child {
-      margin-bottom: 0.5rem; }
   #Front article#Company {
     margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail_company.png"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
@@ -7590,201 +7229,334 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
-  #Front article#BuildingDetail {
-    position: relative;
-    transform-style: preserve-3d;
-    perspective: 10px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+
+/*
+  # pages/front/detail/index.sass
+  pages/front/detailディレクトリ内で利用するファイルをリストアップ
+  このファイルを経由しpages/front/index.sassに読込
+
+  pages/frontディレクトリ下はprefixに`pf-Detail`を付与
+  */
+article.pf-Detail {
+  /*
+  # pages/front/Detail.sass
+  詳細ページに関するクラスを定義
+  prefixには`pf-Detail`を付与
+  */
+  /*
+  # article .pf-Detail
+  下層ページ共通
+  iOSのcss animationをスムースに
+  */
+  /*
+  # h1
+  明朝体にする
+ */
+  /*
+  # h3
+  明朝体にする
+ */
+  /*
+  # p
+  サイズを小さめに、色を若干薄めとする
+ */
+  /*
+  # div.pf-Detail-services
+  サービスの各カテゴリ用
+ */
+  /*
+  # div.pf-Detail-services-desc
+  サービスの各カテゴリの説明用
+ */
+  /*
+  # section
+  コンテンツ全般の設定
+ */ }
+  article.pf-Detail {
+    overflow: hidden;
     -webkit-overflow-scrolling: touch; }
-    #Front article#BuildingDetail section {
-      position: absolute;
-      width: 100%;
-      margin: 0;
-      padding: 0 5rem;
-      overflow-y: auto; }
-      #Front article#BuildingDetail section h1 {
-        font-size: 2.56rem;
-        font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
-      #Front article#BuildingDetail section p {
-        color: #555;
-        font-size: 1.44rem;
-        line-height: 2.5rem; }
-    #Front article#BuildingDetail section#building01 {
-      top: 40px;
-      padding-top: 0rem;
-      height: 640px;
-      background-image: url("../imgs/detail/bg_building.jpg");
-      background-position: left 0px top 160px;
-      background-size: 800px auto;
-      background-repeat: no-repeat;
-      z-index: -2;
-      transform: translateZ(-4px) scale(1.4); }
-    #Front article#BuildingDetail section#building02 {
-      top: 40px;
-      padding-top: 26rem;
-      height: 840px;
-      background-image: url("../imgs/detail/bg_detail.png");
-      background-position: left 0px top 0px;
-      background-size: 1040px auto;
-      background-repeat: no-repeat;
-      text-align: right;
-      color: white;
-      z-index: 0;
-      transform: translateZ(0px) scale(1); }
-      #Front article#BuildingDetail section#building02 p {
-        color: white;
-        font-size: 1.2rem;
-        line-height: 2rem; }
-    #Front article#BuildingDetail section#building03 {
-      top: 640px;
-      padding-top: 26rem;
-      height: 980px;
-      background-image: url("../imgs/detail/bg_company02.jpg");
-      background-position: left 0px top 0px;
-      background-size: 1040px auto;
-      background-repeat: no-repeat;
-      z-index: -1;
-      transform: translateZ(-1px) scale(1.1); }
-      #Front article#BuildingDetail section#building03 div {
-        width: 50%;
-        text-align: justify; }
-  #Front section#building04 {
-    top: 1620px;
-    padding-top: 26rem;
-    height: 440px;
-    z-index: 1; }
-    #Front section#building04 div {
-      width: 55%;
-      text-align: right;
-      margin-left: 40rem; }
-  #Front section#building05 {
-    top: 2220px;
-    padding-top: 440px;
-    height: 1180px;
-    background-image: url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px bottom 0px;
-    background-size: 1040px auto;
-    background-repeat: no-repeat;
-    z-index: -1;
-    transform: translateZ(-1px) scale(1.1); }
-    #Front section#building05 div {
-      width: 59%; }
-  #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:first-child {
-    position: absolute;
-    top: 50px;
-    left: -82px;
-    z-index: -1;
-    transform: translateZ(-2px) scale(1.2); }
-  #Front article#BuildingDetail div.pf-BuildingDetail-hex-left img:last-child {
-    position: absolute;
-    top: 0px;
-    left: 120px;
-    z-index: 1; }
-  #Front article#BuildingDetail div.pf-BuildingDetail-hex-right {
-    position: relative; }
-    #Front article#BuildingDetail div.pf-BuildingDetail-hex-right img:first-child {
-      position: absolute;
-      top: 0px;
-      right: 240px;
-      z-index: 0; }
-    #Front article#BuildingDetail div.pf-BuildingDetail-hex-right img:last-child {
-      position: absolute;
-      top: 50px;
-      right: -82px;
-      z-index: -1;
-      transform: translateZ(-2px) scale(1.2); }
-  #Front article#BuildingDetail div#hex01 {
-    position: absolute;
+  article.pf-Detail h1 {
+    font-size: 2.56rem;
+    font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+  article.pf-Detail h3 {
+    font-size: 1.6rem;
+    line-height: 2.2rem; }
+  article.pf-Detail p {
+    font-size: 1.44rem;
+    line-height: 2.5rem; }
+  article.pf-Detail div.pf-Detail-services p {
+    position: relative;
+    float: right;
+    width: 9rem;
+    height: 9rem;
+    padding-top: 2rem;
+    margin-left: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    line-height: 1.5rem;
+    cursor: pointer; }
+    article.pf-Detail div.pf-Detail-services p:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+  article.pf-Detail div.pf-Detail-services-desc {
+    clear: both;
+    height: 120px; }
+    article.pf-Detail div.pf-Detail-services-desc p {
+      -webkit-animation-name: fadeIn;
+      -moz-animation-name: fadeIn;
+      -ms-animation-name: fadeIn;
+      -o-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      -ms-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      -ms-animation-timing-function: ease;
+      -o-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      color: white; }
+    article.pf-Detail div.pf-Detail-services-desc p:first-child {
+      font-size: 1.5rem;
+      margin-bottom: 1rem; }
+  article.pf-Detail section {
+    position: relative;
+    margin: 0;
+    padding: 0 5rem;
+    text-align: justify;
+    overflow: hidden;
+    clear: both;
+    width: 60%;
+    /*
+    # section.odd
+    右寄せのコンテンツ
+   */
+    /*
+    # section.odd.reverse
+    サービス内の文字を白くする
+   */ }
+    article.pf-Detail section.odd {
+      margin-left: auto; }
+    article.pf-Detail section.odd.reverse {
+      color: white; }
+
+/*
+  # pages/front/Cleaning.sass
+  front/Cleaning.jsxに関するクラスを定義
+  prefixには`pf-Cleaning`を付与
+  */
+article#CleaningDetail {
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
+  article#CleaningDetail section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#CleaningDetail section:nth-of-type(2) {
+    margin-top: 90px; }
+  article#CleaningDetail section:nth-of-type(3) {
+    margin-top: 160px; }
+  article#CleaningDetail section:nth-of-type(4) {
+    margin-top: 480px; }
+  article#CleaningDetail section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#CleaningDetail #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#CleaningDetail #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#CleaningDetail #plx03 {
+    top: 900px;
+    right: 0; }
+  article#CleaningDetail #plx03b {
+    top: 980px;
+    right: 210px; }
+  article#CleaningDetail #plx04 {
+    top: 1500px; }
+  article#CleaningDetail #plx04b {
+    top: 1580px;
+    left: 210px; }
+  article#CleaningDetail #plx05 {
+    top: 2200px;
+    right: 0; }
+  article#CleaningDetail #plx05b {
+    top: 2280px;
+    right: 210px; }
+  article#CleaningDetail #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#CleaningDetail #plx07 {
+    top: 2160px;
+    z-index: -100; }
+
+/*
+  # pages/front/Building.sass
+  front/Building.jsxに関するクラスを定義
+  prefixには`pf-Building`を付与
+  */
+article#BuildingDetail {
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
+  article#BuildingDetail section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#BuildingDetail section:nth-of-type(2) {
+    margin-top: 0px; }
+  article#BuildingDetail section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#BuildingDetail section:nth-of-type(4) {
+    margin-top: 160px; }
+  article#BuildingDetail section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#BuildingDetail #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#BuildingDetail #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#BuildingDetail #plx03 {
+    top: 900px;
+    right: 0; }
+  article#BuildingDetail #plx03b {
+    top: 980px;
+    right: 210px; }
+  article#BuildingDetail #plx04 {
+    top: 1600px; }
+  article#BuildingDetail #plx04b {
+    top: 1680px;
+    left: 210px; }
+  article#BuildingDetail #plx05 {
+    top: 2100px;
+    right: 0; }
+  article#BuildingDetail #plx05b {
+    top: 2180px;
+    right: 210px; }
+  article#BuildingDetail #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#BuildingDetail #plx07 {
+    top: 2660px;
+    z-index: -100; }
+
+/*
+  # pages/front/Mansion.sass
+  front/Mansion.jsxに関するクラスを定義
+  prefixには`pf-Mansion`を付与
+  */
+article#MansionDetail {
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
+  article#MansionDetail section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#MansionDetail section:nth-of-type(2) {
+    margin-top: 140px; }
+  article#MansionDetail section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#MansionDetail section:nth-of-type(4) {
+    margin-top: 160px; }
+  article#MansionDetail section:nth-of-type(5) {
+    margin-top: 120px; }
+  article#MansionDetail #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#MansionDetail #plx02 {
+    top: 120px;
+    right: 0;
+    z-index: -50; }
+  article#MansionDetail #plx03 {
     top: 1000px;
-    right: 0px; }
-  #Front article#BuildingDetail div#hex02 {
-    position: absolute;
-    top: 1700px;
-    left: 0px; }
-  #Front article#BuildingDetail div#hex03 {
-    position: absolute;
-    top: 2600px;
-    right: 0px; }
-  #Front article#MansionDetail {
-    position: relative;
-    background-image: url("../imgs/detail/bg_detail_mansion.png"), url("../imgs/detail/bg_mansion.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
-    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front section#mansion02 {
-    padding-top: 20rem; }
-  #Front section#mansion03 {
-    padding-top: 30rem; }
-  #Front section#mansion04 {
-    padding-top: 16rem; }
-  #Front section#mansion05 {
-    padding-top: 20rem;
-    padding-bottom: 10rem; }
-  #Front article#MansionDetail div#add01 {
-    position: absolute;
-    top: 900px;
-    right: 0px; }
-  #Front article#MansionDetail div#add02 {
-    position: absolute;
-    top: 2200px;
-    left: 0px; }
-  #Front article#MansionDetail div#add03 {
-    position: absolute;
-    top: 2700px;
-    right: 0px; }
-  #Front article#SeisouDetail {
-    position: relative;
-    background-image: url("../imgs/detail/bg_detail_seisou.png"), url("../imgs/detail/bg_seisou.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
-    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front section#seisou02 {
-    padding-top: 10rem; }
-  #Front section#seisou03 {
-    padding-top: 40rem; }
-  #Front section#seisou04 {
-    padding-top: 16rem; }
-  #Front section#seisou05 {
-    padding-top: 20rem;
-    padding-bottom: 10rem; }
-  #Front article#SeisouDetail div#add01 {
-    position: absolute;
-    top: 800px;
-    right: 0px; }
-  #Front article#SeisouDetail div#add02 {
-    position: absolute;
-    top: 1200px;
-    left: 0px; }
-  #Front article#SeisouDetail div#add03 {
-    position: absolute;
-    top: 2200px;
-    right: 0px; }
-  #Front article#UnkouDetail {
-    position: relative;
-    background-image: url("../imgs/detail/bg_detail_unkou.png"), url("../imgs/detail/bg_unkou.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 620px, left 0 bottom 0px;
-    background-size: 1040px auto, 800px auto, 1040px auto, 1040px auto;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front section#unkou02 {
-    padding-top: 4rem; }
-  #Front section#unkou03 {
-    padding-top: 28rem; }
-  #Front section#unkou04 {
-    padding-top: 16rem; }
-  #Front section#unkou05 {
-    padding-top: 20rem;
-    padding-bottom: 10rem; }
-  #Front article#UnkouDetail div#add01 {
-    position: absolute;
-    top: 900px;
-    right: 0px; }
-  #Front article#UnkouDetail div#add02 {
-    position: absolute;
-    top: 1300px;
-    left: 0px; }
-  #Front article#UnkouDetail div#add03 {
-    position: absolute;
-    top: 1600px;
-    right: 0px; }
+    right: 0; }
+  article#MansionDetail #plx03b {
+    top: 1080px;
+    right: 210px; }
+  article#MansionDetail #plx04 {
+    top: 1920px; }
+  article#MansionDetail #plx04b {
+    top: 2000px;
+    left: 210px; }
+  article#MansionDetail #plx05 {
+    top: 2500px;
+    right: 0; }
+  article#MansionDetail #plx05b {
+    top: 2580px;
+    right: 210px; }
+  article#MansionDetail #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#MansionDetail #plx07 {
+    top: 2900px;
+    z-index: -100; }
+
+/*
+  # pages/front/Driving.sass
+  front/Driving.jsxに関するクラスを定義
+  prefixには`pf-Driving`を付与
+  */
+article#DrivingDetail {
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
+  article#DrivingDetail section:nth-of-type(1) {
+    margin-top: 160px; }
+  article#DrivingDetail section:nth-of-type(2) {
+    margin-top: 0px; }
+  article#DrivingDetail section:nth-of-type(3) {
+    margin-top: 140px; }
+  article#DrivingDetail section:nth-of-type(4) {
+    margin-top: 260px; }
+  article#DrivingDetail section:nth-of-type(5) {
+    margin-top: 240px; }
+  article#DrivingDetail #plx01 {
+    top: 220px;
+    z-index: -100; }
+  article#DrivingDetail #plx02 {
+    top: 180px;
+    right: 0;
+    z-index: -50; }
+  article#DrivingDetail #plx03 {
+    top: 1000px;
+    right: 0; }
+  article#DrivingDetail #plx03b {
+    top: 1080px;
+    right: 210px; }
+  article#DrivingDetail #plx04 {
+    top: 1300px; }
+  article#DrivingDetail #plx04b {
+    top: 1380px;
+    left: 210px; }
+  article#DrivingDetail #plx05 {
+    top: 1800px;
+    right: 0; }
+  article#DrivingDetail #plx05b {
+    top: 1880px;
+    right: 210px; }
+  article#DrivingDetail #plx06 {
+    top: 700px;
+    z-index: -100; }
+  article#DrivingDetail #plx07 {
+    top: 1860px;
+    z-index: -100; }

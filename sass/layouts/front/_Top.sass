@@ -1,10 +1,10 @@
 /*
-  # pages/front/Top.sass
+  # layouts/front/Top.sass
   front/Top.jsxに関するクラスを定義  
-  prefixには`pf-Top`を付与
+  prefixには`lf-Top`を付与
   */
 
-.pf-Top
+.lf-Top
   min-width: 960px
   max-width: 960px 
   margin-top: $base-spacing * 2
@@ -14,9 +14,14 @@
     +span-columns(9)
     +omega()
 
-.pf-Top nav
+.lf-Top-linkArea
+  transition: opacity $base-duration * 2
+  cursor: pointer
+  &:hover
+    opacity: .5
+
+.lf-Top nav
   font-size: $base-font-size
-  padding-right: $base-spacing * 1.5
   ul
     font-size: $base-font-size * 0.90
     border: 3px solid black
@@ -26,32 +31,28 @@
       margin: 0 $small-spacing
       padding: $small-spacing
       border-top: 1px solid $gray
+      letter-spacing: -0.1rem
       &:first-child
         margin: 0
         padding: $small-spacing $base-spacing
         border-top: none
         background-color: $gray-lighter
-      & a
-        color: $color-black
 
-.pf-Top section
+.lf-Top section
   div
     +span-columns(4 of 8)
     +omega(2n)
-    &:nth-child(odd)
-      padding-right: $base-spacing
+    padding-left: $base-spacing * 1.6
     h2
-      margin-bottom: $small-spacing
       font-family: $base-serif
-      font-size: $base-font-size * 1.15
-      line-height: $base-spacing * 2
-      +border-image(url(../imgs/border_line.png) 10 repeat)
+      font-size: $base-font-size * 1.25
+      line-height: $base-spacing * 2.5
+      margin-bottom: $small-spacing * 1.5
+      +border-image(url(../imgs/border_line.png) 15 repeat)
+      border-width: 0 0 5px 0
       border-style: solid
-      border-width: 4px
-      border-top: 0
-      border-left: 0
-      border-right: 0
     p
-      font-size: $base-font-size * 0.85
-      line-height: $small-line-height * 1.05
+      font-size: $base-font-size * 0.86
+      line-height: $small-line-height * 1.10
+      letter-spacing: -0.01rem
       text-align: justify

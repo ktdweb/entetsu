@@ -1,0 +1,103 @@
+/*
+  # pages/front/Detail.sass
+  詳細ページに関するクラスを定義  
+  prefixには`pf-Detail`を付与
+  */
+
+/*
+  # article .pf-Detail
+  下層ページ共通
+  iOSのcss animationをスムースに
+  */
+&
+  overflow: hidden
+  -webkit-overflow-scrolling: touch
+
+/*
+  # h1
+  明朝体にする
+ */
+h1
+  font-size: $base-font-size * 1.6
+  font-family: $YuMincho-font-family
+
+/*
+  # h3
+  明朝体にする
+ */
+h3
+  font-size: $base-font-size
+  line-height: $small-line-height * 1.1
+
+/*
+  # p 
+  サイズを小さめに、色を若干薄めとする
+ */
+p
+  font-size: $base-font-size * 0.9
+  line-height: $base-spacing * 1.25
+
+/*
+  # div.pf-Detail-services 
+  サービスの各カテゴリ用
+ */
+div.pf-Detail-services
+  p
+    position: relative
+    float: right
+    width: 9rem
+    height: 9rem
+    padding-top: 2rem
+    margin-left: 1rem
+    color: white
+    font-size: $small-font-size
+    text-align: center
+    border: 1px solid white
+    border-radius: 5px
+    line-height: 1.5rem
+    cursor: pointer
+    &:hover
+      background-color:  rgba(0,0,0,0.1)
+
+/*
+  # div.pf-Detail-services-desc
+  サービスの各カテゴリの説明用
+ */
+div.pf-Detail-services-desc
+  clear: both
+  height: 120px
+  p 
+    +fadeIn()
+    font-size: $small-font-size
+    line-height: $base-spacing
+    color: white
+  p:first-child
+    font-size: $small-font-size * 1.25
+    margin-bottom: $small-spacing
+
+/*
+  # section 
+  コンテンツ全般の設定
+ */
+section
+  position: relative
+  margin: 0
+  padding: 0 5rem
+  text-align: justify
+  overflow: hidden
+  clear: both
+  width: 60%
+
+  /*
+    # section.odd
+    右寄せのコンテンツ
+   */
+  &.odd
+    margin-left: auto
+
+  /*
+    # section.odd.reverse
+    サービス内の文字を白くする
+   */
+  &.odd.reverse
+    color: white

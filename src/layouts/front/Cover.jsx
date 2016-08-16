@@ -75,7 +75,6 @@ export default class Cover extends React.Component {
     body = document.getElementById("Home");
 
     let cls = cover.className;
-    console.log(cls);
     if (cls) {
       cover.classList.remove(cls);
     }
@@ -182,6 +181,6 @@ export default class Cover extends React.Component {
         stage.scaleY = pRatio*sRatio;
         lastW = iw; lastH = ih; lastS = sRatio;
       }
-    })(false,'both',false,1);
+    })(true,'both',false,1);
   }
 }

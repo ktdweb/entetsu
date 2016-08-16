@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) {
 var el = document.getElementById('root');
 _reactDom2.default.render(_Routes2.default, el);
 
-},{"./Routes":2,"react":267,"react-dom":41}],2:[function(require,module,exports){
+},{"./Routes":2,"react":273,"react-dom":42}],2:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -61,9 +61,9 @@ var _Cover = require('./layouts/front/Cover');
 
 var _Cover2 = _interopRequireDefault(_Cover);
 
-var _Article = require('./layouts/front/Article');
+var _Top = require('./layouts/front/Top');
 
-var _Article2 = _interopRequireDefault(_Article);
+var _Top2 = _interopRequireDefault(_Top);
 
 var _Home = require('./pages/admin/Home');
 
@@ -81,21 +81,21 @@ var _Company = require('./pages/front/Company');
 
 var _Company2 = _interopRequireDefault(_Company);
 
-var _BuildingDetail = require('./pages/front/BuildingDetail');
+var _Cleaning = require('./pages/front/Cleaning');
 
-var _BuildingDetail2 = _interopRequireDefault(_BuildingDetail);
+var _Cleaning2 = _interopRequireDefault(_Cleaning);
 
-var _SeisouDetail = require('./pages/front/SeisouDetail');
+var _Building = require('./pages/front/Building');
 
-var _SeisouDetail2 = _interopRequireDefault(_SeisouDetail);
+var _Building2 = _interopRequireDefault(_Building);
 
-var _MansionDetail = require('./pages/front/MansionDetail');
+var _Mansion = require('./pages/front/Mansion');
 
-var _MansionDetail2 = _interopRequireDefault(_MansionDetail);
+var _Mansion2 = _interopRequireDefault(_Mansion);
 
-var _UnkouDetail = require('./pages/front/UnkouDetail');
+var _Driving = require('./pages/front/Driving');
 
-var _UnkouDetail2 = _interopRequireDefault(_UnkouDetail);
+var _Driving2 = _interopRequireDefault(_Driving);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -105,15 +105,21 @@ var root = { documentRoot: '' };
 
 // components
 
+
 // layouts
+
 
 // layouts/admin
 
+
 // layouts/front
+
 
 // pages/admin
 
+
 // pages/front
+
 
 var routes = _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory }, _react2.default.createElement(_reactRouter.Route, {
   global: root,
@@ -136,7 +142,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
   components: {
     header: _Header4.default,
     main: _Cover2.default,
-    article: _Article2.default,
+    top: _Top2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/building',
   global: root,
@@ -144,7 +150,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
   components: {
     header: _Header4.default,
     main: _Cover2.default,
-    article: _Article2.default,
+    top: _Top2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/mansion',
   global: root,
@@ -152,7 +158,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
   components: {
     header: _Header4.default,
     main: _Cover2.default,
-    article: _Article2.default,
+    top: _Top2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/driving',
   global: root,
@@ -160,7 +166,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
   components: {
     header: _Header4.default,
     main: _Cover2.default,
-    article: _Article2.default,
+    top: _Top2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/company',
   global: root,
@@ -168,35 +174,29 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     header: _Header4.default,
     main: _Company2.default,
     footer: _Footer2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/building_detail',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/cleaning_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _BuildingDetail2.default,
-    footer: _Footer2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/seisou_detail',
-  global: root,
-  components: {
-    header: _Header4.default,
-    main: _SeisouDetail2.default,
+    main: _Cleaning2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/building_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _BuildingDetail2.default,
+    main: _Building2.default,
     footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/mansion_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _MansionDetail2.default,
+    main: _Mansion2.default,
     footer: _Footer2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/unkou_detail',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/driving_detail',
   global: root,
   components: {
     header: _Header4.default,
-    main: _UnkouDetail2.default,
+    main: _Driving2.default,
     footer: _Footer2.default
   } })), _react2.default.createElement(_reactRouter.Route, {
   global: root,
@@ -215,7 +215,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
 
 module.exports = routes;
 
-},{"./components/Count":4,"./layouts/NoMatch":9,"./layouts/admin/Admin":10,"./layouts/admin/Header":11,"./layouts/front/Article":12,"./layouts/front/Cover":13,"./layouts/front/Footer":14,"./layouts/front/Front":15,"./layouts/front/Header":16,"./pages/admin/Home":21,"./pages/front/BuildingDetail":22,"./pages/front/Company":23,"./pages/front/Home":24,"./pages/front/MansionDetail":25,"./pages/front/SeisouDetail":26,"./pages/front/UnkouDetail":27,"./pages/front/Works":28,"react":267,"react-router":71}],3:[function(require,module,exports){
+},{"./components/Count":4,"./layouts/NoMatch":10,"./layouts/admin/Admin":11,"./layouts/admin/Header":12,"./layouts/front/Cover":13,"./layouts/front/Footer":14,"./layouts/front/Front":15,"./layouts/front/Header":16,"./layouts/front/Top":17,"./pages/admin/Home":22,"./pages/front/Building":23,"./pages/front/Cleaning":24,"./pages/front/Company":25,"./pages/front/Driving":26,"./pages/front/Home":27,"./pages/front/Mansion":28,"./pages/front/Works":29,"react":273,"react-router":72}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -256,7 +256,7 @@ exports.default = {
   }
 };
 
-},{"../constants/CountConstants":7,"../dispathcer/CountDispatcher":8}],4:[function(require,module,exports){
+},{"../constants/CountConstants":8,"../dispathcer/CountDispatcher":9}],4:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -359,7 +359,7 @@ var Count = function (_React$Component) {
 
 exports.default = Count;
 
-},{"../actions/CountActions":3,"../stores/CountStore":29,"react":267}],5:[function(require,module,exports){
+},{"../actions/CountActions":3,"../stores/CountStore":30,"react":273}],5:[function(require,module,exports){
 'use strict';
 
 /*
@@ -487,6 +487,250 @@ var Http = {
 module.exports = Http;
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+/*
+ * - パララックススクロールクラス
+ * パララックススクロール効果をつける
+ *
+ * 使用例 (react.js)
+ * cssは特に指定する必要はない
+ * ただし画像はabsoluteで配置する
+ * cssのクラスはlayerを指定する
+ * data-depthは0は動かさない
+ * 数字が大きくなるほど移動量大
+ *
+ * import Parallax from 'components/Parallax'
+ *
+ * DOMを読み込んだ後にstartするためdidMountで実行
+ * componentDidMount() {
+ *   this.parallax = new Parallax();
+ *   this.parallax.start();
+ * }
+ *
+ * componentWillUnmount() {
+ *   this.parallax.destroy();
+ * }
+ *
+ * <div
+ *   id="plx01"
+ *   className="layer"
+ *   data-depth="2">
+ *   <img
+ *     src="bg_building.jpg"
+ *     width="100%"
+ *     alt="img"
+ *     />
+ * </div>
+ *
+ * @class Parallax
+ * @constructor
+ */
+
+/*
+ * 実行中かどうかのフラグ
+ * onScroll()で使用
+ *
+ * @property tick
+ * @public
+ * @type {Boolean}
+ * @default false
+ */
+var tick = false;
+
+/*
+ * requestAnimationFrameの返り値
+ * cancelAnimationFrameで使用
+ *
+ * @property raf
+ * @public
+ * @type {Number}
+ * @default 0
+ */
+var raf = 0;
+
+/*
+ * IE11以下であるかを判定
+ * onScrollで使用
+ *
+ * @property uaIE
+ * @public
+ * @type {String}
+ * @default undefined
+ */
+var uaIE = undefined;
+
+var Parallax = function () {
+  function Parallax() {
+    var className = arguments.length <= 0 || arguments[0] === undefined ? 'layer' : arguments[0];
+
+    _classCallCheck(this, Parallax);
+
+    window.requestAnimationFrame = this.setPrefixRaf();
+    window.cancelAnimationFrame = this.setPrefixCaf();
+    this.className = className;
+  }
+
+  /*
+   * パララックスをスタート
+   *
+   * @method start
+   * @public
+   * @return void
+   */
+
+  _createClass(Parallax, [{
+    key: 'start',
+    value: function start() {
+      this.init();
+      uaIE = document.documentMode;
+
+      window.addEventListener('scroll', this.onScroll.bind(this), false);
+    }
+
+    /*
+     * パララックスを終了
+     * rafと止め、eventListenerを削除
+     *
+     * @method destroy
+     * @public
+     * @return void
+     */
+
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      window.cancelAnimationFrame(raf);
+
+      window.removeEventListener('scroll', this.onScroll.bind(this), false);
+    }
+
+    /*
+     * 変数に値をセット
+     * layersはタグ
+     * depthsはタグのdata-depthの値
+     * topsはcssで設定されたtopの値
+     * layersのタグは強制的にabsoluteとなる
+     *
+     * @method init
+     * @public
+     * @return void
+     */
+
+  }, {
+    key: 'init',
+    value: function init() {
+      this.layers = Array();
+      this.tops = Array();
+      this.depths = Array();
+
+      this.layers = document.getElementsByClassName(this.className);
+
+      for (var i = 0; i < this.layers.length; i++) {
+        var dep = this.layers[i].getAttribute('data-depth');
+        this.layers[i].style.position = 'absolute';
+        this.depths[i] = dep;
+        this.tops[i] = this.layers[i].offsetTop;
+      }
+    }
+
+    /*
+     * 移動させる
+     * onScrollから使用
+     *
+     * @method update
+     * @public
+     * @return void
+     */
+
+  }, {
+    key: 'update',
+    value: function update() {
+      var y = window.pageYOffset;
+      var val = void 0;
+      for (var i = 0; i < this.layers.length; i++) {
+        // 移動量
+        if (this.depths[i] != 0) {
+          val = this.tops[i] + y / (this.depths[i] * 4);
+          this.layers[i].style.top = val + 'px';
+        }
+      }
+      tick = false;
+    }
+  }, {
+    key: 'onScroll',
+
+    /*
+     * スクロールにあわせupdateを実行
+     * eventHandlerから使用
+     *
+     * @method onScroll
+     * @public
+     * @return void
+     */
+    value: function onScroll(e) {
+      if (!tick && uaIE == undefined) {
+        window.cancelAnimationFrame(raf);
+        raf = window.requestAnimationFrame(this.update.bind(this));
+        tick = true;
+      }
+    }
+
+    /*
+     * requestAnimationFrameにprefix
+     *
+     * @method setPrefixRaf
+     * @public
+     * @return void
+     */
+
+  }, {
+    key: 'setPrefixRaf',
+    value: function setPrefixRaf() {
+      return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame;
+    }
+
+    /*
+     * cancelAnimationFrameにprefix
+     *
+     * @method setPrefixCaf
+     * @public
+     * @return void
+     */
+
+  }, {
+    key: 'setPrefixCaf',
+    value: function setPrefixCaf() {
+      return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || window.msCancelAnimationFrame;
+    }
+  }]);
+
+  return Parallax;
+}();
+
+exports.default = Parallax;
+
+},{}],7:[function(require,module,exports){
 "use strict";
 
 var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -556,7 +800,7 @@ function UserAgent() {
 
 exports.default = UserAgent;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -579,7 +823,7 @@ var CountConstants = (0, _keymirror2.default)({
 
 exports.default = CountConstants;
 
-},{"keymirror":38}],8:[function(require,module,exports){
+},{"keymirror":39}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -596,7 +840,7 @@ function _interopRequireDefault(obj) {
 
 exports.default = new _flux2.default.Dispatcher();
 
-},{"flux":34}],9:[function(require,module,exports){
+},{"flux":35}],10:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -664,7 +908,7 @@ var NoMatch = function (_React$Component) {
 
 exports.default = NoMatch;
 
-},{"react":267,"react-router":71}],10:[function(require,module,exports){
+},{"react":273,"react-router":72}],11:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -741,7 +985,7 @@ var Admin = function (_React$Component) {
 
 exports.default = Admin;
 
-},{"react":267,"react-router":71}],11:[function(require,module,exports){
+},{"react":273,"react-router":72}],12:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -816,199 +1060,7 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"react":267,"react-router":71}],12:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _reactDocumentTitle = require('react-document-title');
-
-var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var page, data;
-
-var Article = function (_React$Component) {
-  _inherits(Article, _React$Component);
-
-  function Article(props) {
-    _classCallCheck(this, Article);
-
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Article).call(this, props));
-
-    _this.state = {
-      page: props.route.page
-    };
-    return _this;
-  }
-
-  _createClass(Article, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(props) {
-      this.updateState(props);
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {}
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.updateState();
-    }
-  }, {
-    key: 'updateState',
-    value: function updateState() {
-      var props = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
-
-      if (props) {
-        page = props.route.page;
-      } else {
-        page = this.props.route.page;
-      }
-      var src = 'imgs/pages/' + page + '.jpg';
-
-      this.setState({
-        src: src,
-        page: page
-      });
-
-      data = contents[page];
-    }
-  }, {
-    key: 'toId',
-    value: function toId(str) {
-      var first = str.charAt(0).toUpperCase();
-      return first + str.slice(1);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('article', {
-        id: this.toId(page),
-        className: 'pf-Top'
-      }, _react2.default.createElement(_reactDocumentTitle2.default, {
-        title: data.h1 + ' | 遠鉄アシスト'
-      }), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.h1)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[0].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[1].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[2].title)), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: this.state.page + '_detail' }, data.column[3].title)))), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[0].title), _react2.default.createElement('p', null, data.column[0].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[1].title), _react2.default.createElement('p', null, data.column[1].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[2].title), _react2.default.createElement('p', null, data.column[2].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[3].title), _react2.default.createElement('p', null, data.column[3].desc))));
-    }
-  }]);
-
-  return Article;
-}(_react2.default.Component);
-
-exports.default = Article;
-
-var contents = {
-  cleaning: {
-    h1: '清掃でお困りの方',
-    column: [{
-      title: 'サービス案内',
-      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
-    }, {
-      title: '遠鉄アシストの清掃業務管理',
-      desc: '遠鉄アシストの組織力が、清掃業務を円滑にバックアップします。'
-    }, {
-      title: '遠鉄アシストの特徴',
-      desc: '遠鉄アシストの組織力が、清掃業務を円滑にバックアップします。'
-    }, {
-      title: '遠鉄アシストのサポート',
-      desc: '専門の資格を持ったスタッフが、迅速に対応。安心してご利用頂けます。'
-    }]
-  },
-
-  building: {
-    h1: 'ビル管理でお困りの方',
-    column: [{
-      title: 'サービス案内',
-      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
-    }, {
-      title: '遠鉄アシストの取り組み',
-      desc: '地域を幅広くサポートする遠鉄グループだからできること。ビルが担う役割を最大限まで高めます。遠鉄アシストの組織力が、清掃業務を円滑にバックアップします。'
-    }, {
-      title: '遠鉄アシストの特徴',
-      desc: '多種多様な有資格者による高度な技術力と、常にエンドユーザーの視点に立ったきめ細かいサービスで、お客様の満足度アップに貢献します。'
-    }, {
-      title: '遠鉄アシストのサポート',
-      desc: '専門の資格を持ったスタッフが、迅速に対応。安心してご利用頂けます。'
-    }]
-  },
-
-  mansion: {
-    h1: 'マンション管理でお困りの方',
-    column: [{
-      title: 'サービス案内',
-      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
-    }, {
-      title: '遠鉄アシストの取り組み',
-      desc: '大切な資産を守り、入居者の皆様の期待に応えるために、遠鉄アシストでは安心への取り組みに力を注いでいます。信頼の業務で皆様の豊かな暮らしに貢献します。'
-    }, {
-      title: '遠鉄アシストの特徴',
-      desc: 'マンションライフを熟知した遠鉄グループの総合力を活かし、入居者の皆様の立場に立ってきめ細かくサポート。ハードとソフトの両面から管理業務を担います。'
-    }, {
-      title: '遠鉄アシストのサポート',
-      desc: '専門の資格を持ったスタッフが、迅速に対応。安心してご利用頂けます。'
-    }]
-  },
-
-  driving: {
-    h1: '運転・送迎でお困りの方',
-    column: [{
-      title: 'サービス案内',
-      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
-    }, {
-      title: '導入事例',
-      desc: '運行管理事業の導入事例です。お客様のニーズに合わせて、臨機応変に問題を解決いたします。'
-    }, {
-      title: '遠鉄アシストの特徴',
-      desc: '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'
-    }, {
-      title: '安全・安心・快適への取り組み',
-      desc: 'お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。経験と実績に甘んじることなく、技術と知識の強化を図っています。'
-    }]
-  }
-};
-
-},{"react":267,"react-document-title":40,"react-router":71}],13:[function(require,module,exports){
+},{"react":273,"react-router":72}],13:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -1151,7 +1203,6 @@ var Cover = function (_React$Component) {
       body = document.getElementById("Home");
 
       var cls = cover.className;
-      console.log(cls);
       if (cls) {
         cover.classList.remove(cls);
       }
@@ -1257,7 +1308,7 @@ var Cover = function (_React$Component) {
           stage.scaleY = pRatio * sRatio;
           lastW = iw;lastH = ih;lastS = sRatio;
         }
-      })(false, 'both', false, 1);
+      })(true, 'both', false, 1);
     }
   }]);
 
@@ -1266,7 +1317,7 @@ var Cover = function (_React$Component) {
 
 exports.default = Cover;
 
-},{"../../components/UserAgent":6,"../../movies/building/building":17,"../../movies/cleaning/cleaning":18,"../../movies/driving/driving":19,"../../movies/mansion/mansion":20,"react":267}],14:[function(require,module,exports){
+},{"../../components/UserAgent":7,"../../movies/building/building":18,"../../movies/cleaning/cleaning":19,"../../movies/driving/driving":20,"../../movies/mansion/mansion":21,"react":273}],14:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -1426,7 +1477,7 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"react":267,"react-router":71}],15:[function(require,module,exports){
+},{"react":273,"react-router":72}],15:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -1498,7 +1549,7 @@ var Front = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', { id: 'Front' }, this.props.header, this.props.main, this.props.article, this.props.footer);
+      return _react2.default.createElement('div', { id: 'Front' }, this.props.header, this.props.main, this.props.top, this.props.footer);
     }
   }]);
 
@@ -1507,7 +1558,7 @@ var Front = function (_React$Component) {
 
 exports.default = Front;
 
-},{"./Cover":13,"react":267,"react-router":71}],16:[function(require,module,exports){
+},{"./Cover":13,"react":273,"react-router":72}],16:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -1597,7 +1648,207 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"react":267,"react-router":71}],17:[function(require,module,exports){
+},{"react":273,"react-router":72}],17:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _reactDocumentTitle = require('react-document-title');
+
+var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var page, data;
+
+var Top = function (_React$Component) {
+  _inherits(Top, _React$Component);
+
+  function Top(props) {
+    _classCallCheck(this, Top);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Top).call(this, props));
+
+    _this.state = {
+      page: props.route.page
+    };
+    return _this;
+  }
+
+  _createClass(Top, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      this.updateState(props);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.updateState();
+    }
+  }, {
+    key: 'updateState',
+    value: function updateState() {
+      var props = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (props) {
+        page = props.route.page;
+      } else {
+        page = this.props.route.page;
+      }
+      var src = 'imgs/pages/' + page + '.jpg';
+
+      this.setState({
+        src: src,
+        page: page
+      });
+
+      data = contents[page];
+    }
+  }, {
+    key: 'toId',
+    value: function toId(str) {
+      var first = str.charAt(0).toUpperCase();
+      return first + str.slice(1);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement('article', {
+        id: this.toId(page),
+        className: 'lf-Top'
+      }, _react2.default.createElement(_reactDocumentTitle2.default, {
+        title: data.h1 + ' | 遠鉄アシスト'
+      }), _react2.default.createElement('div', {
+        className: 'lf-Top-linkArea',
+        onClick: this.onLinkArea.bind(this)
+      }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, data.h1), _react2.default.createElement('li', null, data.column[0].title), _react2.default.createElement('li', null, data.column[1].title), _react2.default.createElement('li', null, data.column[2].title), _react2.default.createElement('li', null, data.column[3].title))), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[0].title), _react2.default.createElement('p', null, data.column[0].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[1].title), _react2.default.createElement('p', null, data.column[1].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[2].title), _react2.default.createElement('p', null, data.column[2].desc)), _react2.default.createElement('div', null, _react2.default.createElement('h2', null, data.column[3].title), _react2.default.createElement('p', null, data.column[3].desc)))));
+    }
+  }, {
+    key: 'onLinkArea',
+    value: function onLinkArea(e) {
+      _reactRouter.browserHistory.push(page + '_detail');
+    }
+  }]);
+
+  return Top;
+}(_react2.default.Component);
+
+exports.default = Top;
+
+var contents = {
+  cleaning: {
+    h1: '清掃でお困りの方',
+    column: [{
+      title: 'サービス案内',
+      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
+    }, {
+      title: '遠鉄アシストの清掃業務管理',
+      desc: '遠鉄アシストの組織力が、清掃業務を円滑にバックアップします。'
+    }, {
+      title: '遠鉄アシストの特徴',
+      desc: '遠鉄アシストの組織力が、清掃業務を円滑にバックアップします。'
+    }, {
+      title: '遠鉄アシストのサポート',
+      desc: '専門の資格を持ったスタッフが、迅速に対応。安心してご利用頂けます。'
+    }]
+  },
+
+  building: {
+    h1: 'ビル管理でお困りの方',
+    column: [{
+      title: 'サービス案内',
+      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
+    }, {
+      title: '遠鉄アシストの取り組み',
+      desc: '地域を幅広くサポートする遠鉄グループだからできること。ビルが担う役割を最大限まで高めます。遠鉄アシストの組織力が、清掃業務を円滑にバックアップします。'
+    }, {
+      title: '遠鉄アシストの特徴',
+      desc: '多種多様な有資格者による高度な技術力と、常にエンドユーザーの視点に立ったきめ細かいサービスで、お客様の満足度アップに貢献します。'
+    }, {
+      title: '遠鉄アシストのサポート',
+      desc: '専門の資格を持ったスタッフが、迅速に対応。安心してご利用頂けます。'
+    }]
+  },
+
+  mansion: {
+    h1: 'マンション管理でお困りの方',
+    column: [{
+      title: 'サービス案内',
+      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
+    }, {
+      title: '遠鉄アシストの取り組み',
+      desc: '大切な資産を守り、入居者の皆様の期待に応えるために、遠鉄アシストでは安心への取り組みに力を注いでいます。信頼の業務で皆様の豊かな暮らしに貢献します。'
+    }, {
+      title: '遠鉄アシストの特徴',
+      desc: 'マンションライフを熟知した遠鉄グループの総合力を活かし、入居者の皆様の立場に立ってきめ細かくサポート。ハードとソフトの両面から管理業務を担います。'
+    }, {
+      title: '遠鉄アシストのサポート',
+      desc: '専門の資格を持ったスタッフが、迅速に対応。安心してご利用頂けます。'
+    }]
+  },
+
+  driving: {
+    h1: '運転・送迎でお困りの方',
+    column: [{
+      title: 'サービス案内',
+      desc: '遠鉄アシストならではのきめ細かいサービスと、まかせて安心のトータルサポートでお応えします。'
+    }, {
+      title: '導入事例',
+      desc: '運行管理事業の導入事例です。お客様のニーズに合わせて、臨機応変に問題を解決いたします。'
+    }, {
+      title: '遠鉄アシストの特徴',
+      desc: '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'
+    }, {
+      title: '安全・安心・快適への取組',
+      desc: 'お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。経験と実績に甘んじることなく、技術と知識の強化を図っています。'
+    }]
+  }
+};
+
+},{"react":273,"react-document-title":41,"react-router":72}],18:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1630,6 +1881,7 @@ exports.default = function (lib, img, cjs, ss) {
 		}
 	};
 	// symbols:
+
 
 	(lib.cover = function () {
 		this.initialize(img.cover);
@@ -2358,6 +2610,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 	// stage content:
 
+
 	(lib.building = function (mode, startPosition, loop) {
 		if (loop == null) {
 			loop = false;
@@ -2401,7 +2654,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 var lib, images, createjs, ss;
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2434,6 +2687,7 @@ exports.default = function (lib, img, cjs, ss) {
 		}
 	};
 	// symbols:
+
 
 	(lib.cover = function () {
 		this.initialize(img.cover);
@@ -3150,6 +3404,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 	// stage content:
 
+
 	(lib.cleaning = function (mode, startPosition, loop) {
 		if (loop == null) {
 			loop = false;
@@ -3193,7 +3448,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 var lib, images, createjs, ss;
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3226,6 +3481,7 @@ exports.default = function (lib, img, cjs, ss) {
 		}
 	};
 	// symbols:
+
 
 	(lib.cover = function () {
 		this.initialize(img.cover);
@@ -4342,6 +4598,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 	// stage content:
 
+
 	(lib.driving = function (mode, startPosition, loop) {
 		if (loop == null) {
 			loop = false;
@@ -4385,7 +4642,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 var lib, images, createjs, ss;
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4418,6 +4675,7 @@ exports.default = function (lib, img, cjs, ss) {
 		}
 	};
 	// symbols:
+
 
 	(lib.cover = function () {
 		this.initialize(img.cover);
@@ -5198,6 +5456,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 	// stage content:
 
+
 	(lib.mansion = function (mode, startPosition, loop) {
 		if (loop == null) {
 			loop = false;
@@ -5241,7 +5500,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 var lib, images, createjs, ss;
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -5313,7 +5572,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":267,"react-document-title":40,"react-router":71}],22:[function(require,module,exports){
+},{"react":273,"react-document-title":41,"react-router":72}],23:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -5341,6 +5600,10 @@ var _reactRouter = require('react-router');
 var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -5379,44 +5642,96 @@ var BuildingDetail = function (_React$Component) {
   _createClass(BuildingDetail, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var el = document.getElementById('BuildingDetail');
-      var target1 = document.getElementById('hex01').firstChild;
-      var target2 = document.getElementById('hex02').lastChild;
-      var target3 = document.getElementById('hex03').firstChild;
-      el.addEventListener("scroll", function () {
-        var x = this.scrollTop;
-        var rx = String(180 + parseInt(x / 50)) + 'px';
-        var lx = String(180 + parseInt(x / 50)) + 'px';
-        console.log(x);
-
-        if (x > 200 && x < 1500) {
-          target1.style.right = rx;
-        } else {
-          target1.style.right = rx;
-        }
-
-        if (x > 1801 && x < 2200) {
-          target2.style.left = lx;
-        } else {
-          target2.style.left = lx;
-        }
-
-        if (x > 2201 && x < 2600) {
-          target3.style.right = rx;
-        } else {
-          target3.style.right = rx;
-        }
-      });
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'BuildingDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'building01' }, _react2.default.createElement('h1', null, '機能するビルディング'), _react2.default.createElement('p', null, '仕事に集中できる環境。', _react2.default.createElement('br', null), '始業ベルとともに、一斉にスタートする職場には、', _react2.default.createElement('br', null), 'なにが求められているか?', _react2.default.createElement('br', null), 'オフィスとして求められるもの全てを', _react2.default.createElement('br', null), '遠鉄アシストはサポートします。')), _react2.default.createElement('section', { id: 'building02' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '保安警備'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '駐車場管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '環境衛生管理'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '諸設備', _react2.default.createElement('br', null), 'メンテナンス'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '設備管理')), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '9', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '8', onClick: this.onService.bind(this) }, '設備管理業務'), _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '管理員業務'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, '事務管理業務')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'building03', className: 'pf-Column' }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのビル管理事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、徹底した教育研修を受けた専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、環境衛生管理、メンテナンス、特殊作業、警備など、ビル管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('strong', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。ビル管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社は経営方針に「顧客満足」を掲げ、お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたいと願っています。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。'))), _react2.default.createElement('section', { id: 'building04', className: 'pf-Column odd' }, _react2.default.createElement('div', null, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、“しっかり造り、きちんと守る”体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。'))), _react2.default.createElement('section', { id: 'building05', className: 'pf-Column' }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるビル・マンションは、いざという時も待ったなし。日頃から防犯、防災を徹底し、もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業 ', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業 ', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業 ', _react2.default.createElement('br', null), '・マンション管理業 ', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が ビルの保守・管理に努めています。'))), _react2.default.createElement('div', { id: 'hex01', className: 'pf-BuildingDetail-hex-right' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex01l.png', width: '210', height: '340', alt: '01' }), _react2.default.createElement('img', { src: 'imgs/detail/building/hex01r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', { id: 'hex02', className: 'pf-BuildingDetail-hex-left' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex02l.png', width: '210', height: '340', alt: '01' }), _react2.default.createElement('img', { src: 'imgs/detail/building/hex02r.png', width: '210', height: '340', alt: '02' })), _react2.default.createElement('div', { id: 'hex03', className: 'pf-BuildingDetail-hex-right' }, _react2.default.createElement('img', { src: 'imgs/detail/building/hex03l.png', width: '210', height: '340', alt: '01' }), _react2.default.createElement('img', { src: 'imgs/detail/building/hex03r.png', width: '210', height: '340', alt: '02' })));
-    }
-  }, {
-    key: 'parallaxY',
-    value: function parallaxY() {
-      console.log('test');
+      var IMG = 'imgs/detail/building/';
+
+      return _react2.default.createElement('article', { id: 'BuildingDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'ビル管理でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '機能するビルディング'), _react2.default.createElement('p', null, '仕事に集中できる環境。', _react2.default.createElement('br', null), '始業ベルとともに、一斉にスタートする職場には、', _react2.default.createElement('br', null), 'なにが求められているか?', _react2.default.createElement('br', null), 'オフィスとして求められるもの全てを', _react2.default.createElement('br', null), '遠鉄アシストはサポートします。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '保安警備'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '駐車場管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '環境衛生管理'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '諸設備', _react2.default.createElement('br', null), 'メンテナンス'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '設備管理')), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '9', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '8', onClick: this.onService.bind(this) }, '設備管理業務'), _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '管理員業務'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, '事務管理業務')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのビル管理事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、徹底した教育研修を受けた専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、環境衛生管理、メンテナンス、特殊作業、警備など、ビル管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('strong', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。ビル管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社は経営方針に「顧客満足」を掲げ、お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたいと願っています。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、“しっかり造り、きちんと守る”体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるビル・マンションは、いざという時も待ったなし。日頃から防犯、防災を徹底し、もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業 ', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業 ', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業 ', _react2.default.createElement('br', null), '・マンション管理業 ', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が ビルの保守・管理に努めています。')));
     }
   }, {
     key: 'onService',
@@ -5453,7 +5768,7 @@ var BuildingDetail = function (_React$Component) {
         text: 'ホスピタリティーを重視し、常に快適な環境でお客様を迎えるため、マット、リース、清掃用洗剤などを提供。使用環境や使用頻度などに応じて最適な物品をご提案いたします。お気軽にご相談ください。'
       }];
 
-      this.setState({ service: txt[e.target.value] });
+      this.setState({ service: txt[e.target.getAttribute('value')] });
     }
   }]);
 
@@ -5462,7 +5777,197 @@ var BuildingDetail = function (_React$Component) {
 
 exports.default = BuildingDetail;
 
-},{"react":267,"react-document-title":40,"react-router":71}],23:[function(require,module,exports){
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],24:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _reactDocumentTitle = require('react-document-title');
+
+var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var SeisougDetail = function (_React$Component) {
+  _inherits(SeisougDetail, _React$Component);
+
+  function SeisougDetail(props) {
+    _classCallCheck(this, SeisougDetail);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SeisougDetail).call(this, props));
+
+    _this.state = { service: { title: '', text: '' } };
+    return _this;
+  }
+
+  _createClass(SeisougDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var IMG = 'imgs/detail/cleaning/';
+
+      return _react2.default.createElement('article', { id: 'CleaningDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '清掃でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.png',
+        width: '75%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '「キレイ」ってなんだろう？'), _react2.default.createElement('p', null, '日本ではありふれている「美」を', _react2.default.createElement('br', null), '遠鉄アシストでは今一度考え直し、', _react2.default.createElement('br', null), '「感じ取れる美」をテーマに', _react2.default.createElement('br', null), '視える/香る/空気が美味しい/清々しさが聴こえる、', _react2.default.createElement('br', null), 'そして最後に美を肌で感じて頂ける事を', _react2.default.createElement('br', null), '理想とさせていただいております')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, 'ハウス', _react2.default.createElement('br', null), 'クリーニング', _react2.default.createElement('br', null), 'リフォーム'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, 'ベッド', _react2.default.createElement('br', null), 'メイキング'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '植栽管理'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '清掃業務')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの清掃業務管理'), _react2.default.createElement('h3', null, '高い清掃品質で、美観の維持，清潔な環境を保ちます。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、清掃業務を 円滑にバックアップします。'), _react2.default.createElement('strong', null, '日常清掃'), _react2.default.createElement('p', null, '店舗，事務所内，共用スペース，トイレなど日常的に使用する場所を継続して清掃をすることにより 美観や清潔さを維持することを目的としております。'), _react2.default.createElement('strong', null, '定期清掃'), _react2.default.createElement('p', null, '日常清掃では、落としきれない汚れを除去することを目的としております。', _react2.default.createElement('br', null), '例えば、定期的に床面洗浄及びワックスを塗布することで、床を保護して汚れをつきにくくするなどのメリットなどがあります。他にもガラス清掃，カーペットクリーニングなど建物の状態、お客様のご要望にあわせ、最適なプランをご提案させていただきます。'), _react2.default.createElement('strong', null, '人材育成'), _react2.default.createElement('p', null, '弊社では、2016年6月よりお客様に「美」を感じていただけるよう、 個々の清掃技術，知識の向上を図る目的として、トレーニングセンターを開設いたしました。', _react2.default.createElement('br', null), '清掃未経験の方でも、当社の指導員がベットメイク，トイレや水廻りの清掃等を基礎から丁寧に指導していきます。'), _react2.default.createElement('strong', null, 'サービスの標準化'), _react2.default.createElement('p', null, '弊社は、高い清掃品質を全てのお客様に提供できるよう作業方法， 作業手順，使用する清掃資機材のマニュアルを作成し、清掃品質が一様になるようにつとめています。 トイレ，洗面台，床等、適切な作業道具またはクロス， モップなどの清掃道具を色分けすることで、衛生面に配慮し、清潔な清掃をいたします。'), _react2.default.createElement('strong', null, 'より良いサービスの提供'), _react2.default.createElement('p', null, '弊社は、清掃品質がより良くなるように、作業方法， 作業手順の改善点やより良い清掃資機材がないか見直しをする為、 定期的にミーティングを実施しております。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が 清掃業務の保守・管理に努めています。')));
+    }
+  }, {
+    key: 'onService',
+    value: function onService(e) {
+      var txt = [{
+        title: '',
+        text: ''
+      }, {
+        title: '美しく衛生的な居住環境を実現',
+        text: '美観を維持し、清潔で快適な環境を整えるために、敷地内外や建物、設備などの共用部分の清掃を日常的または定期的に行います。'
+      }, {
+        title: '美しく、心が潤う植栽環境を維持します',
+        text: '植栽は建物の価値とイメージを向上させる重要な要素です。周囲の景観との調和を考え、見た目に美しく、心身をリラックスさせる植栽管理で建物の印象アップに貢献します。'
+      }, {
+        title: 'いつも清潔な客室をスピーディーに整えます',
+        text: 'ネット検索サイトの「清潔項目」で高評価をいただき、ホテルから表彰されるなど、ベッドメイキングの実績は豊富。お客様の満足を第一に、清潔な客室をスピーディーに整えます。'
+      }, {
+        title: 'ニーズに合わせてフレキシブルに対応します',
+        text: '分譲マンション・賃貸アパート・戸建住宅と、建物の構造に精通したスタッフが、隅々まで配慮した安心のハウスクリーニング・リフォーム・リノベーションを提供いたします。'
+      }];
+
+      this.setState({ service: txt[e.target.getAttribute('value')] });
+    }
+  }]);
+
+  return SeisougDetail;
+}(_react2.default.Component);
+
+exports.default = SeisougDetail;
+
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],25:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -5534,7 +6039,207 @@ var Company = function (_React$Component) {
 
 exports.default = Company;
 
-},{"react":267,"react-document-title":40,"react-router":71}],24:[function(require,module,exports){
+},{"react":273,"react-document-title":41,"react-router":72}],26:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _reactDocumentTitle = require('react-document-title');
+
+var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var UnkouDetail = function (_React$Component) {
+  _inherits(UnkouDetail, _React$Component);
+
+  function UnkouDetail(props) {
+    _classCallCheck(this, UnkouDetail);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(UnkouDetail).call(this, props));
+
+    _this.state = { service: { title: '', text: '' } };
+    return _this;
+  }
+
+  _createClass(UnkouDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var IMG = 'imgs/detail/driving/';
+
+      return _react2.default.createElement('article', { id: 'DrivingDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '運転・送迎でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '子どもたちのヒーローは、私でした。'), _react2.default.createElement('p', null, 'ドライバー歴30年。転職したのは5年前だった。', _react2.default.createElement('br', null), '長距離ドライバーから、学校の送迎ドライバーへ。', _react2.default.createElement('br', null), '孤独な仕事は、人とふれ合う仕事になった。', _react2.default.createElement('br', null), _react2.default.createElement('br', null), '子どもたちの笑顔と成長。すぐに天職だと気付いた。', _react2.default.createElement('br', null), '子どもの憧れは身近にある。', _react2.default.createElement('br', null), '大きなバスを運転する私は、 いつの間にか子どもたちのヒーローになった。', _react2.default.createElement('br', null), '活き方で生き方は、変わる。 新しい自分を探そう、スタートを切ろう。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '企業・工場'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '病院・介護'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '幼稚園'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, 'スクールバス', _react2.default.createElement('br', null), '部活'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '役員車')), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '官公庁'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, 'ホテル', _react2.default.createElement('br', null), 'レストラン')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの特徴'), _react2.default.createElement('h3', null, '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、', _react2.default.createElement('br', null), '笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'), _react2.default.createElement('strong', null, '地元に根付いた遠鉄グループだから出来ること'), _react2.default.createElement('p', null, '母体が遠州鉄道株式会社だからこそ、70年以上の旅客運送のノウハウの蓄積を生かし、安全運転のための運転士研修、健康管理体制を取っており、サービス向上のための接客接遇教育を欠かしておりません。 また、グループ各社の総合力を結集し、給油・整備・自動車保険・万が一の事故対応から代車の手配まで、お客様へ安心と満足をお届けする体制をとっております。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '導入事例'), _react2.default.createElement('p', { className: 'text-right' }, '運行管理事業の導入事例です。 ', _react2.default.createElement('br', null), 'お客様のニーズに合わせて、臨機応変に問題を解決いたします。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '安心・安全・快適への取り組み'), _react2.default.createElement('h3', null, 'お客様の安全・安心・快適をモットーに、', _react2.default.createElement('br', null), '遠鉄アシストでは 運転士の安全教育を徹底。', _react2.default.createElement('br', null), '経験と実績に甘んじることなく、 技術と知識の強化を図っています。'), _react2.default.createElement('strong', null, '定期的な研修会を行い、常に高いクオリティを提供します。'), _react2.default.createElement('p', null, '安全運行の実施と接客サービスの向上を目的として、定期的に年２回の運転士の研修会を実施しております。 もしも事故やクレームがあった場合には、運転士全員で情報を共有し、意識を共有し、技術･マナー･意識の見直しをさせています。'), _react2.default.createElement('strong', null, '研修会の内容'), _react2.default.createElement('p', null, '・運転技術向上のためのケーススタディ', _react2.default.createElement('br', null), '・サービス向上のための接客・接遇教育', _react2.default.createElement('br', null), '・実際にあった事故をもとにしたグループディスカッション'), _react2.default.createElement('strong', null, '安全・安心・快適を生む管理の徹底'), _react2.default.createElement('p', null, '遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。')));
+    }
+  }, {
+    key: 'onService',
+    value: function onService(e) {
+      var txt = [{
+        title: '',
+        text: ''
+      }, {
+        title: '大切な役員の方を安全･安心にお迎えいたします。',
+        text: '企業の役員様に安全で快適な運行をお届けいたします。運転士にはもちろん運転技術だけでなく、お客様へのマナー、守秘義務の徹底等、ハイレベルな教育を施して運行を行います。'
+      }, {
+
+        title: '通学の送迎だけでなく、部活動の遠征などにも幅広く対応いたします',
+        text: '貴校の大切な生徒様を、安全･確実に学校までお送りいたします。通学も学校生活の一部です。快適に学校に通うためには、安全･確実な運行だけでなく、運転士の人柄や決め細やかなサービスも大切な要素だと考え、たくさんの思い出を一緒に作りあげていきたいと思います。'
+      }, {
+        title: '園児も先生も保護者様も、みなさま笑顔の安全運行',
+        text: '元気いっぱいの園児の皆さんは、明るい未来の象徴です。大切な命をお預かりするためにも、運転士に対して徹底した技術指導・健康管理を指導。明るい笑顔と挨拶で、安心安全な運行はもちろんの事保護者様にも地域の皆様にも配慮したサービスを提供いたします。'
+      }, {
+        title: '笑顔のお出迎え。足が悪い方にも配慮した運転',
+        text: '患者様に負担をかけないように、真心を込めて業務を行います。患者様の必要不可欠な移動手段です。車に乗車することが負担に感じたりや不安にならない、快適な乗車時間のご提供に務めます。'
+      }, {
+        title: 'お客様の利便性の向上に尽力いたします',
+        text: 'これからお仕事に向かわれるお客様のモチベーションを保つように安全・快適な運転をご提供いたします。従業員様用の駐車スペースを確保しなくても済み、時間に沿った運行を行いますので、御社の効率化・コストダウンに効果的な業務を行います。また、御社のお車で社員旅行や研修などのご要望にも対応可能です。'
+      }, {
+        title: '時間を守り、お店までしっかり運転します',
+        text: '冠婚葬祭、さまざまなシーンに対応した運行を、お客様にご提供いたします。お客様を安心・安全な運行で御社までお届けする事が、更なる付加価値を高める重要な要素だと考えます。'
+      }, {
+        title: 'どんなときでも安定した運行業務を提供いたします',
+        text: '首長の専用車の運行から、地域のコミュニティーバスの運行まで。地域に根ざした遠鉄グループの弊社だからこそ、地域のお客様のために。地域密着の運行に携わらせていただきます。'
+      }];
+
+      this.setState({ service: txt[e.target.getAttribute('value')] });
+    }
+  }]);
+
+  return UnkouDetail;
+}(_react2.default.Component);
+
+exports.default = UnkouDetail;
+
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],27:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -5760,7 +6465,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"../../../src/movies/top/top":270,"react":267,"react-document-title":40,"react-router":71}],25:[function(require,module,exports){
+},{"../../../src/movies/top/top":275,"react":273,"react-document-title":41,"react-router":72}],28:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -5788,6 +6493,10 @@ var _reactRouter = require('react-router');
 var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
+
+var _Parallax = require('../../components/Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -5824,9 +6533,98 @@ var MansionDetail = function (_React$Component) {
   }
 
   _createClass(MansionDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.parallax = new _Parallax2.default();
+      this.parallax.start();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.parallax.destroy();
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'MansionDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'mansion01' }, _react2.default.createElement('h1', null, '地域に溶け込む住まい'), _react2.default.createElement('p', null, '周辺環境に違和感なく溶け込み、人の住まいとしてあり続ける建物。', _react2.default.createElement('br', null), 'そんな中で気持ちよく過ごせる空間。周りとの共存・共栄。', _react2.default.createElement('br', null), 'そんなノウハウを遠鉄アシストはご提供します。')), _react2.default.createElement('section', { id: 'mansion02', className: 'odd odd-white' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '設備管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '清掃'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '管理員'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '事務管理')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'mansion03', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '地域を幅広くサポートする遠鉄グループだからできること。', _react2.default.createElement('br', null), 'マンションが担う役割を最大限まで高めます。'), _react2.default.createElement('strong', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのホームサービス事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、メンテナンス、機械整備など、マンション管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('h3', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。マンション管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社の経営方針は「顧客本位」。お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたい、そんな気持ちで取り組んでいます。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に務めています。'), _react2.default.createElement('strong', null, '国交省登録・協会正会員'), _react2.default.createElement('p', null, '遠鉄アシストは、国土交通省から委託を受けて国家資格の試験実施や、業界の基準となっている標準管理規約等を作成している「一般社団法人マンション管理業協会」の正会員です。'), _react2.default.createElement('strong', null, 'いざという時の「保証体制」'), _react2.default.createElement('p', null, '遠鉄アシストが正会員となっている一般社団法人マンション管理業協会は、平成13年8月、国土交通大臣より「マンションの管理の適正化の推進に関する法律」第95条に規定するマンション管理会社の団体（指定法人）に指定されました。協会への加入条件として、直近の決算において自己資本額が資本金額以上であること、営業損失、経常損失、当期損失を計上していないことなど、財務状況の監査を受けると同時に、マンション管理業務実績の有無や、「マン管法（マンションの管理の適正化の推進に関する法律）」を遵守した管理を行っているかどうかなど、一定基準を満たすことが条件となっています。このほか、弊社ではさらに厳格な基準をクリアした保証制度にも加入しており、管理会社の経営破綻による管理組合の金銭的被害の保証、次期管理会社の紹介にも速やかに対応いたします。')), _react2.default.createElement('section', { id: 'mansion04', className: 'pf-Column odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', { id: 'building05', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応しているため、安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるマンションは、いざという時も待ったなし。もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業', _react2.default.createElement('br', null), '・マンション管理業', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が マンションの保守・管理に努めています。')), _react2.default.createElement('div', { id: 'add01' }, _react2.default.createElement('img', { src: 'imgs/detail/mansion/add01.png', width: '353', height: '400', alt: 'add01' })), _react2.default.createElement('div', { id: 'add02' }, _react2.default.createElement('img', { src: 'imgs/detail/mansion/add02.png', width: '353', height: '400', alt: 'add02' })), _react2.default.createElement('div', { id: 'add03' }, _react2.default.createElement('img', { src: 'imgs/detail/mansion/add03.png', width: '353', height: '400', alt: 'add03' })));
+      var IMG = 'imgs/detail/mansion/';
+
+      return _react2.default.createElement('article', { id: 'MansionDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'マンション管理でお困りの方 | 遠鉄アシスト' }), _react2.default.createElement('div', {
+        id: 'plx01',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'bg.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx02',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_detail.png',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx03b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex01r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx04b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex02r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05',
+        className: 'layer',
+        'data-depth': '2' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03l.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx05b',
+        className: 'layer',
+        'data-depth': '3' }, _react2.default.createElement('img', {
+        src: IMG + 'hex03r.png',
+        width: '210',
+        height: '340',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx06',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_header.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('div', {
+        id: 'plx07',
+        className: 'layer',
+        'data-depth': '0' }, _react2.default.createElement('img', {
+        src: IMG + 'bg_footer.jpg',
+        width: '100%',
+        alt: 'img'
+      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '地域に溶け込む住まい'), _react2.default.createElement('p', null, '周辺環境に違和感なく溶け込み、人の住まいとしてあり続ける建物。', _react2.default.createElement('br', null), 'そんな中で気持ちよく過ごせる空間。周りとの共存・共栄。', _react2.default.createElement('br', null), 'そんなノウハウを遠鉄アシストはご提供します。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '設備管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '清掃'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '管理員'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '事務管理')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '地域を幅広くサポートする遠鉄グループだからできること。', _react2.default.createElement('br', null), 'マンションが担う役割を最大限まで高めます。'), _react2.default.createElement('strong', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのホームサービス事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、メンテナンス、機械整備など、マンション管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('h3', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。マンション管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社の経営方針は「顧客本位」。お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたい、そんな気持ちで取り組んでいます。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に務めています。'), _react2.default.createElement('strong', null, '国交省登録・協会正会員'), _react2.default.createElement('p', null, '遠鉄アシストは、国土交通省から委託を受けて国家資格の試験実施や、業界の基準となっている標準管理規約等を作成している「一般社団法人マンション管理業協会」の正会員です。'), _react2.default.createElement('strong', null, 'いざという時の「保証体制」'), _react2.default.createElement('p', null, '遠鉄アシストが正会員となっている一般社団法人マンション管理業協会は、平成13年8月、国土交通大臣より「マンションの管理の適正化の推進に関する法律」第95条に規定するマンション管理会社の団体（指定法人）に指定されました。協会への加入条件として、直近の決算において自己資本額が資本金額以上であること、営業損失、経常損失、当期損失を計上していないことなど、財務状況の監査を受けると同時に、マンション管理業務実績の有無や、「マン管法（マンションの管理の適正化の推進に関する法律）」を遵守した管理を行っているかどうかなど、一定基準を満たすことが条件となっています。このほか、弊社ではさらに厳格な基準をクリアした保証制度にも加入しており、管理会社の経営破綻による管理組合の金銭的被害の保証、次期管理会社の紹介にも速やかに対応いたします。')), _react2.default.createElement('section', { className: 'odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('h3', { className: 'text-right' }, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', null, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応しているため、安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるマンションは、いざという時も待ったなし。もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業', _react2.default.createElement('br', null), '・マンション管理業', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が マンションの保守・管理に努めています。')));
     }
   }, {
     key: 'onService',
@@ -5851,7 +6649,7 @@ var MansionDetail = function (_React$Component) {
         text: 'お客様のニーズに合わせてお部屋の修繕、リフォーム、ハウスクリーニングを行います。また、お部屋を売却（買取含む）又は賃貸されたい方のご相談を遠鉄の不動産で承ります。'
       }];
 
-      this.setState({ service: txt[e.target.value] });
+      this.setState({ service: txt[e.target.getAttribute('value')] });
     }
   }]);
 
@@ -5860,211 +6658,7 @@ var MansionDetail = function (_React$Component) {
 
 exports.default = MansionDetail;
 
-},{"react":267,"react-document-title":40,"react-router":71}],26:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _reactDocumentTitle = require('react-document-title');
-
-var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var SeisougDetail = function (_React$Component) {
-  _inherits(SeisougDetail, _React$Component);
-
-  function SeisougDetail(props) {
-    _classCallCheck(this, SeisougDetail);
-
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SeisougDetail).call(this, props));
-
-    _this.state = { service: { title: '', text: '' } };
-    return _this;
-  }
-
-  _createClass(SeisougDetail, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('article', { id: 'SeisouDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'seisou01' }, _react2.default.createElement('h1', null, '「キレイ」ってなんだろう？'), _react2.default.createElement('p', null, '日本ではありふれている「美」を', _react2.default.createElement('br', null), '遠鉄アシストでは今一度考え直し、', _react2.default.createElement('br', null), '「感じ取れる美」をテーマに', _react2.default.createElement('br', null), '視える/香る/空気が美味しい/清々しさが聴こえる、', _react2.default.createElement('br', null), 'そして最後に美を肌で感じて頂ける事を', _react2.default.createElement('br', null), '理想とさせていただいております')), _react2.default.createElement('section', { id: 'seisou02', className: 'odd odd-white' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, 'ハウス', _react2.default.createElement('br', null), 'クリーニング', _react2.default.createElement('br', null), 'リフォーム'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, 'ベッド', _react2.default.createElement('br', null), 'メイキング'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '植栽管理'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '清掃業務')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'seisou03', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストの清掃業務管理'), _react2.default.createElement('h3', null, '高い清掃品質で、美観の維持，清潔な環境を保ちます。')), _react2.default.createElement('section', { id: 'seisou04', className: 'pf-Column odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、清掃業務を 円滑にバックアップします。'), _react2.default.createElement('strong', null, '日常清掃'), _react2.default.createElement('p', null, '店舗，事務所内，共用スペース，トイレなど日常的に使用する場所を継続して清掃をすることにより 美観や清潔さを維持することを目的としております。'), _react2.default.createElement('strong', null, '定期清掃'), _react2.default.createElement('p', null, '日常清掃では、落としきれない汚れを除去することを目的としております。', _react2.default.createElement('br', null), '例えば、定期的に床面洗浄及びワックスを塗布することで、床を保護して汚れをつきにくくするなどのメリットなどがあります。他にもガラス清掃，カーペットクリーニングなど建物の状態、お客様のご要望にあわせ、最適なプランをご提案させていただきます。'), _react2.default.createElement('strong', null, '人材育成'), _react2.default.createElement('p', null, '弊社では、2016年6月よりお客様に「美」を感じていただけるよう、 個々の清掃技術，知識の向上を図る目的として、トレーニングセンターを開設いたしました。', _react2.default.createElement('br', null), '清掃未経験の方でも、当社の指導員がベットメイク，トイレや水廻りの清掃等を基礎から丁寧に指導していきます。'), _react2.default.createElement('strong', null, 'サービスの標準化'), _react2.default.createElement('p', null, '弊社は、高い清掃品質を全てのお客様に提供できるよう作業方法， 作業手順，使用する清掃資機材のマニュアルを作成し、清掃品質が一様になるようにつとめています。 トイレ，洗面台，床等、適切な作業道具またはクロス， モップなどの清掃道具を色分けすることで、衛生面に配慮し、清潔な清掃をいたします。'), _react2.default.createElement('strong', null, 'より良いサービスの提供'), _react2.default.createElement('p', null, '弊社は、清掃品質がより良くなるように、作業方法， 作業手順の改善点やより良い清掃資機材がないか見直しをする為、 定期的にミーティングを実施しております。')), _react2.default.createElement('section', { id: 'seisou05', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が 清掃業務の保守・管理に努めています。')), _react2.default.createElement('div', { id: 'add01' }, _react2.default.createElement('img', { src: 'imgs/detail/seisou/add01.png', width: '353', height: '400', alt: 'add01' })), _react2.default.createElement('div', { id: 'add02' }, _react2.default.createElement('img', { src: 'imgs/detail/seisou/add02.png', width: '353', height: '400', alt: 'add02' })), _react2.default.createElement('div', { id: 'add03' }, _react2.default.createElement('img', { src: 'imgs/detail/seisou/add03.png', width: '353', height: '400', alt: 'add03' })));
-    }
-  }, {
-    key: 'onService',
-    value: function onService(e) {
-      var txt = [{
-        title: '',
-        text: ''
-      }, {
-        title: '美しく衛生的な居住環境を実現',
-        text: '美観を維持し、清潔で快適な環境を整えるために、敷地内外や建物、設備などの共用部分の清掃を日常的または定期的に行います。'
-      }, {
-        title: '美しく、心が潤う植栽環境を維持します',
-        text: '植栽は建物の価値とイメージを向上させる重要な要素です。周囲の景観との調和を考え、見た目に美しく、心身をリラックスさせる植栽管理で建物の印象アップに貢献します。'
-      }, {
-        title: 'いつも清潔な客室をスピーディーに整えます',
-        text: 'ネット検索サイトの「清潔項目」で高評価をいただき、ホテルから表彰されるなど、ベッドメイキングの実績は豊富。お客様の満足を第一に、清潔な客室をスピーディーに整えます。'
-      }, {
-        title: 'ニーズに合わせてフレキシブルに対応します',
-        text: '分譲マンション・賃貸アパート・戸建住宅と、建物の構造に精通したスタッフが、隅々まで配慮した安心のハウスクリーニング・リフォーム・リノベーションを提供いたします。'
-      }];
-
-      this.setState({ service: txt[e.target.value] });
-    }
-  }]);
-
-  return SeisougDetail;
-}(_react2.default.Component);
-
-exports.default = SeisougDetail;
-
-},{"react":267,"react-document-title":40,"react-router":71}],27:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _reactDocumentTitle = require('react-document-title');
-
-var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var UnkouDetail = function (_React$Component) {
-  _inherits(UnkouDetail, _React$Component);
-
-  function UnkouDetail(props) {
-    _classCallCheck(this, UnkouDetail);
-
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(UnkouDetail).call(this, props));
-
-    _this.state = { service: { title: '', text: '' } };
-    return _this;
-  }
-
-  _createClass(UnkouDetail, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('article', { id: 'UnkouDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('section', { id: 'unkou01' }, _react2.default.createElement('h1', null, '子どもたちのヒーローは、私でした。'), _react2.default.createElement('p', null, 'ドライバー歴30年。転職したのは5年前だった。', _react2.default.createElement('br', null), '長距離ドライバーから、学校の送迎ドライバーへ。 孤独な仕事は、人とふれ合う仕事になった。', _react2.default.createElement('br', null), _react2.default.createElement('br', null), '子どもたちの笑顔と成長。すぐに天職だと気付いた。', _react2.default.createElement('br', null), '子どもの憧れは身近にある。', _react2.default.createElement('br', null), '大きなバスを運転する私は、 いつの間にか子どもたちのヒーローになった。', _react2.default.createElement('br', null), '活き方で生き方は、変わる。 新しい自分を探そう、スタートを切ろう。')), _react2.default.createElement('section', { id: 'unkou02', className: 'odd odd-white' }, _react2.default.createElement('h1', null, '遠鉄アシストのサービス'), _react2.default.createElement('p', null, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '企業・工場'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '病院・介護'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '幼稚園'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, 'スクールバス', _react2.default.createElement('br', null), '部活'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '役員車')), _react2.default.createElement('div', { id: 'service' }, _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '官公庁'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, 'ホテル', _react2.default.createElement('br', null), 'レストラン')), _react2.default.createElement('div', { id: 'desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'unkou03', className: 'pf-Column' }, _react2.default.createElement('h1', null, '遠鉄アシストの特徴'), _react2.default.createElement('h3', null, '遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、', _react2.default.createElement('br', null), '笑顔の接客・接遇で、多くのお客様から信頼をいただいております。'), _react2.default.createElement('strong', null, '地元に根付いた遠鉄グループだから出来ること'), _react2.default.createElement('p', null, '母体が遠州鉄道株式会社だからこそ、70年以上の旅客運送のノウハウの蓄積を生かし、安全運転のための運転士研修、健康管理体制を取っており、サービス向上のための接客接遇教育を欠かしておりません。 また、グループ各社の総合力を結集し、給油・整備・自動車保険・万が一の事故対応から代車の手配まで、お客様へ安心と満足をお届けする体制をとっております。')), _react2.default.createElement('section', { id: 'unkou04', className: 'pf-Column odd' }, _react2.default.createElement('h1', { className: 'text-right' }, '導入事例'), _react2.default.createElement('p', { className: 'text-right' }, '運行管理事業の導入事例です。 ', _react2.default.createElement('br', null), 'お客様のニーズに合わせて、臨機応変に問題を解決いたします。')), _react2.default.createElement('section', { id: 'unkou05', className: 'pf-Column' }, _react2.default.createElement('h1', null, '安心・安全・快適への取り組み'), _react2.default.createElement('h3', null, 'お客様の安全・安心・快適をモットーに、遠鉄アシストでは 運転士の安全教育を徹底。', _react2.default.createElement('br', null), '経験と実績に甘んじることなく、 技術と知識の強化を図っています。'), _react2.default.createElement('strong', null, '定期的な研修会を行い、常に高いクオリティを提供します。'), _react2.default.createElement('p', null, '安全運行の実施と接客サービスの向上を目的として、定期的に年２回の運転士の研修会を実施しております。 もしも事故やクレームがあった場合には、運転士全員で情報を共有し、意識を共有し、技術･マナー･意識の見直しをさせています。'), _react2.default.createElement('strong', null, '研修会の内容'), _react2.default.createElement('p', null, '・運転技術向上のためのケーススタディ', _react2.default.createElement('br', null), '・サービス向上のための接客・接遇教育', _react2.default.createElement('br', null), '・実際にあった事故をもとにしたグループディスカッション'), _react2.default.createElement('strong', null, '安全・安心・快適を生む管理の徹底'), _react2.default.createElement('p', null, '遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。')), _react2.default.createElement('div', { id: 'add01' }, _react2.default.createElement('img', { src: 'imgs/detail/unkou/add01.png', width: '353', height: '400', alt: 'add01' })), _react2.default.createElement('div', { id: 'add02' }, _react2.default.createElement('img', { src: 'imgs/detail/unkou/add02.png', width: '353', height: '400', alt: 'add02' })), _react2.default.createElement('div', { id: 'add03' }, _react2.default.createElement('img', { src: 'imgs/detail/unkou/add03.png', width: '353', height: '400', alt: 'add03' })));
-    }
-  }, {
-    key: 'onService',
-    value: function onService(e) {
-      var txt = [{
-        title: '',
-        text: ''
-      }, {
-        title: '大切な役員の方を安全･安心にお迎えいたします。',
-        text: '企業の役員様に安全で快適な運行をお届けいたします。運転士にはもちろん運転技術だけでなく、お客様へのマナー、守秘義務の徹底等、ハイレベルな教育を施して運行を行います。'
-      }, {
-
-        title: '通学の送迎だけでなく、部活動の遠征などにも幅広く対応いたします',
-        text: '貴校の大切な生徒様を、安全･確実に学校までお送りいたします。通学も学校生活の一部です。快適に学校に通うためには、安全･確実な運行だけでなく、運転士の人柄や決め細やかなサービスも大切な要素だと考え、たくさんの思い出を一緒に作りあげていきたいと思います。'
-      }, {
-        title: '園児も先生も保護者様も、みなさま笑顔の安全運行',
-        text: '元気いっぱいの園児の皆さんは、明るい未来の象徴です。大切な命をお預かりするためにも、運転士に対して徹底した技術指導・健康管理を指導。明るい笑顔と挨拶で、安心安全な運行はもちろんの事保護者様にも地域の皆様にも配慮したサービスを提供いたします。'
-      }, {
-        title: '笑顔のお出迎え。足が悪い方にも配慮した運転',
-        text: '患者様に負担をかけないように、真心を込めて業務を行います。患者様の必要不可欠な移動手段です。車に乗車することが負担に感じたりや不安にならない、快適な乗車時間のご提供に務めます。'
-      }, {
-        title: 'お客様の利便性の向上に尽力いたします',
-        text: 'これからお仕事に向かわれるお客様のモチベーションを保つように安全・快適な運転をご提供いたします。従業員様用の駐車スペースを確保しなくても済み、時間に沿った運行を行いますので、御社の効率化・コストダウンに効果的な業務を行います。また、御社のお車で社員旅行や研修などのご要望にも対応可能です。'
-      }, {
-        title: '時間を守り、お店までしっかり運転します',
-        text: '冠婚葬祭、さまざまなシーンに対応した運行を、お客様にご提供いたします。お客様を安心・安全な運行で御社までお届けする事が、更なる付加価値を高める重要な要素だと考えます。'
-      }, {
-        title: 'どんなときでも安定した運行業務を提供いたします',
-        text: '首長の専用車の運行から、地域のコミュニティーバスの運行まで。地域に根ざした遠鉄グループの弊社だからこそ、地域のお客様のために。地域密着の運行に携わらせていただきます。'
-      }];
-
-      this.setState({ service: txt[e.target.value] });
-    }
-  }]);
-
-  return UnkouDetail;
-}(_react2.default.Component);
-
-exports.default = UnkouDetail;
-
-},{"react":267,"react-document-title":40,"react-router":71}],28:[function(require,module,exports){
+},{"../../components/Parallax":6,"react":273,"react-document-title":41,"react-router":72}],29:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -6141,7 +6735,7 @@ var Works = function (_React$Component) {
 
 exports.default = Works;
 
-},{"react":267,"react-document-title":40,"react-router":71}],29:[function(require,module,exports){
+},{"react":273,"react-document-title":41,"react-router":72}],30:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -6270,7 +6864,7 @@ _CountDispatcher2.default.register(function (action) {
 var countStore = new CountStore();
 exports.default = countStore;
 
-},{"../components/Http":5,"../constants/CountConstants":7,"../dispathcer/CountDispatcher":8,"events":271}],30:[function(require,module,exports){
+},{"../components/Http":5,"../constants/CountConstants":8,"../dispathcer/CountDispatcher":9,"events":276}],31:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
 var isArguments = require('./lib/is_arguments.js');
@@ -6366,7 +6960,7 @@ function objEquiv(a, b, opts) {
   return typeof a === typeof b;
 }
 
-},{"./lib/is_arguments.js":31,"./lib/keys.js":32}],31:[function(require,module,exports){
+},{"./lib/is_arguments.js":32,"./lib/keys.js":33}],32:[function(require,module,exports){
 var supportsArgumentsClass = (function(){
   return Object.prototype.toString.call(arguments)
 })() == '[object Arguments]';
@@ -6388,7 +6982,7 @@ function unsupported(object){
     false;
 };
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 exports = module.exports = typeof Object.keys === 'function'
   ? Object.keys : shim;
 
@@ -6399,7 +6993,7 @@ function shim (obj) {
   return keys;
 }
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -6451,7 +7045,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":272}],34:[function(require,module,exports){
+},{"_process":277}],35:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -6463,7 +7057,7 @@ module.exports = invariant;
 
 module.exports.Dispatcher = require('./lib/Dispatcher');
 
-},{"./lib/Dispatcher":35}],35:[function(require,module,exports){
+},{"./lib/Dispatcher":36}],36:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
@@ -6697,7 +7291,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":272,"fbjs/lib/invariant":33}],36:[function(require,module,exports){
+},{"_process":277,"fbjs/lib/invariant":34}],37:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -6749,7 +7343,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],37:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -6804,7 +7398,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":272}],38:[function(require,module,exports){
+},{"_process":277}],39:[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -6859,7 +7453,7 @@ var keyMirror = function(obj) {
 
 module.exports = keyMirror;
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -6944,7 +7538,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 'use strict';
 
 var React = require('react'),
@@ -6985,12 +7579,12 @@ module.exports = withSideEffect(
   handleStateChangeOnClient
 )(DocumentTitle);
 
-},{"react":267,"react-side-effect":97}],41:[function(require,module,exports){
+},{"react":273,"react-side-effect":100}],42:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":136}],42:[function(require,module,exports){
+},{"react/lib/ReactDOM":140}],43:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -7079,7 +7673,7 @@ function mapAsync(array, work, callback) {
     });
   });
 }
-},{}],43:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7111,7 +7705,7 @@ var History = {
 exports.default = History;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./routerWarning":76,"_process":272}],44:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./routerWarning":77,"_process":277}],45:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7140,7 +7734,7 @@ var IndexLink = _react2.default.createClass({
 
 exports.default = IndexLink;
 module.exports = exports['default'];
-},{"./Link":49,"react":267}],45:[function(require,module,exports){
+},{"./Link":50,"react":273}],46:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7206,7 +7800,7 @@ var IndexRedirect = _react2.default.createClass({
 exports.default = IndexRedirect;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./Redirect":52,"./routerWarning":76,"_process":272,"invariant":37,"react":267}],46:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./Redirect":53,"./routerWarning":77,"_process":277,"invariant":38,"react":273}],47:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7269,7 +7863,7 @@ var IndexRoute = _react2.default.createClass({
 exports.default = IndexRoute;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./RouteUtils":55,"./routerWarning":76,"_process":272,"invariant":37,"react":267}],47:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./RouteUtils":56,"./routerWarning":77,"_process":277,"invariant":38,"react":273}],48:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -7302,7 +7896,7 @@ var component = exports.component = oneOfType([func, string]);
 var components = exports.components = oneOfType([component, object]);
 var route = exports.route = oneOfType([object, element]);
 var routes = exports.routes = oneOfType([route, arrayOf(route)]);
-},{"react":267}],48:[function(require,module,exports){
+},{"react":273}],49:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7373,7 +7967,7 @@ var Lifecycle = {
 exports.default = Lifecycle;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./routerWarning":76,"_process":272,"invariant":37,"react":267}],49:[function(require,module,exports){
+},{"./routerWarning":77,"_process":277,"invariant":38,"react":273}],50:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7479,37 +8073,29 @@ var Link = _react2.default.createClass({
     };
   },
   handleClick: function handleClick(event) {
-    !this.context.router ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Link>s rendered outside of a router context cannot handle clicks.') : (0, _invariant2.default)(false) : void 0;
-
-    var allowTransition = true;
-
     if (this.props.onClick) this.props.onClick(event);
+
+    if (event.defaultPrevented) return;
+
+    !this.context.router ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Link>s rendered outside of a router context cannot navigate.') : (0, _invariant2.default)(false) : void 0;
 
     if (isModifiedEvent(event) || !isLeftClickEvent(event)) return;
 
-    if (event.defaultPrevented === true) allowTransition = false;
-
-    // If target prop is set (e.g. to "_blank") let browser handle link.
+    // If target prop is set (e.g. to "_blank"), let browser handle link.
     /* istanbul ignore if: untestable with Karma */
-    if (this.props.target) {
-      if (!allowTransition) event.preventDefault();
-
-      return;
-    }
+    if (this.props.target) return;
 
     event.preventDefault();
 
-    if (allowTransition) {
-      var _props = this.props;
-      var to = _props.to;
-      var query = _props.query;
-      var hash = _props.hash;
-      var state = _props.state;
+    var _props = this.props;
+    var to = _props.to;
+    var query = _props.query;
+    var hash = _props.hash;
+    var state = _props.state;
 
-      var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
+    var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
 
-      this.context.router.push(location);
-    }
+    this.context.router.push(location);
   },
   render: function render() {
     var _props2 = this.props;
@@ -7555,7 +8141,7 @@ var Link = _react2.default.createClass({
 exports.default = Link;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./PropTypes":51,"./routerWarning":76,"_process":272,"invariant":37,"react":267}],50:[function(require,module,exports){
+},{"./PropTypes":52,"./routerWarning":77,"_process":277,"invariant":38,"react":273}],51:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7623,10 +8209,10 @@ function _compilePattern(pattern) {
   };
 }
 
-var CompiledPatternsCache = {};
+var CompiledPatternsCache = Object.create(null);
 
 function compilePattern(pattern) {
-  if (!(pattern in CompiledPatternsCache)) CompiledPatternsCache[pattern] = _compilePattern(pattern);
+  if (!CompiledPatternsCache[pattern]) CompiledPatternsCache[pattern] = _compilePattern(pattern);
 
   return CompiledPatternsCache[pattern];
 }
@@ -7770,7 +8356,7 @@ function formatPattern(pattern, params) {
   return pathname.replace(/\/+/g, '/');
 }
 }).call(this,require('_process'))
-},{"_process":272,"invariant":37}],51:[function(require,module,exports){
+},{"_process":277,"invariant":38}],52:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7874,7 +8460,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 exports.default = defaultExport;
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./deprecateObjectProperties":67,"./routerWarning":76,"_process":272,"react":267}],52:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./deprecateObjectProperties":68,"./routerWarning":77,"_process":277,"react":273}],53:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7979,7 +8565,7 @@ var Redirect = _react2.default.createClass({
 exports.default = Redirect;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./PatternUtils":50,"./RouteUtils":55,"_process":272,"invariant":37,"react":267}],53:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./PatternUtils":51,"./RouteUtils":56,"_process":277,"invariant":38,"react":273}],54:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8039,7 +8625,7 @@ var Route = _react2.default.createClass({
 exports.default = Route;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./RouteUtils":55,"_process":272,"invariant":37,"react":267}],54:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./RouteUtils":56,"_process":277,"invariant":38,"react":273}],55:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8087,7 +8673,7 @@ var RouteContext = {
 exports.default = RouteContext;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./routerWarning":76,"_process":272,"react":267}],55:[function(require,module,exports){
+},{"./routerWarning":77,"_process":277,"react":273}],56:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8181,7 +8767,7 @@ function createRoutes(routes) {
 
   return routes;
 }
-},{"react":267}],56:[function(require,module,exports){
+},{"react":273}],57:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8259,6 +8845,10 @@ var Router = _react2.default.createClass({
     createElement: func,
     onError: func,
     onUpdate: func,
+
+    // Deprecated:
+    parseQueryString: func,
+    stringifyQuery: func,
 
     // PRIVATE: For client-side rehydration of server match.
     matchContext: object
@@ -8404,7 +8994,7 @@ var Router = _react2.default.createClass({
 exports.default = Router;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":47,"./RouteUtils":55,"./RouterContext":57,"./RouterUtils":58,"./createTransitionManager":66,"./routerWarning":76,"_process":272,"history/lib/createHashHistory":88,"history/lib/useQueries":95,"invariant":37,"react":267}],57:[function(require,module,exports){
+},{"./InternalPropTypes":48,"./RouteUtils":56,"./RouterContext":58,"./RouterUtils":59,"./createTransitionManager":67,"./routerWarning":77,"_process":277,"history/lib/createHashHistory":89,"history/lib/useQueries":96,"invariant":38,"react":273}],58:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8563,7 +9153,7 @@ var RouterContext = _react2.default.createClass({
 exports.default = RouterContext;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouteUtils":55,"./deprecateObjectProperties":67,"./getRouteParams":69,"./routerWarning":76,"_process":272,"invariant":37,"react":267}],58:[function(require,module,exports){
+},{"./RouteUtils":56,"./deprecateObjectProperties":68,"./getRouteParams":70,"./routerWarning":77,"_process":277,"invariant":38,"react":273}],59:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8598,7 +9188,7 @@ function createRoutingHistory(history, transitionManager) {
   return history;
 }
 }).call(this,require('_process'))
-},{"./deprecateObjectProperties":67,"_process":272}],59:[function(require,module,exports){
+},{"./deprecateObjectProperties":68,"_process":277}],60:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8631,7 +9221,7 @@ var RoutingContext = _react2.default.createClass({
 exports.default = RoutingContext;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouterContext":57,"./routerWarning":76,"_process":272,"react":267}],60:[function(require,module,exports){
+},{"./RouterContext":58,"./routerWarning":77,"_process":277,"react":273}],61:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8707,8 +9297,8 @@ function runTransitionHooks(length, iter, callback) {
       if (error || redirectInfo) {
         done(error, redirectInfo); // No need to continue.
       } else {
-          next();
-        }
+        next();
+      }
     });
   }, callback);
 }
@@ -8750,13 +9340,13 @@ function runChangeHooks(routes, state, nextState, callback) {
 /**
  * Runs all onLeave hooks in the given array of routes in order.
  */
-function runLeaveHooks(routes) {
+function runLeaveHooks(routes, prevState) {
   for (var i = 0, len = routes.length; i < len; ++i) {
-    if (routes[i].onLeave) routes[i].onLeave.call(routes[i]);
+    if (routes[i].onLeave) routes[i].onLeave.call(routes[i], prevState);
   }
 }
 }).call(this,require('_process'))
-},{"./AsyncUtils":42,"./routerWarning":76,"_process":272}],61:[function(require,module,exports){
+},{"./AsyncUtils":43,"./routerWarning":77,"_process":277}],62:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8807,7 +9397,7 @@ exports.default = function () {
 };
 
 module.exports = exports['default'];
-},{"./RouterContext":57,"react":267}],62:[function(require,module,exports){
+},{"./RouterContext":58,"react":273}],63:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8824,7 +9414,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createBrowserHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":65,"history/lib/createBrowserHistory":86}],63:[function(require,module,exports){
+},{"./createRouterHistory":66,"history/lib/createBrowserHistory":87}],64:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8902,7 +9492,7 @@ function computeChangedRoutes(prevState, nextState) {
 
 exports.default = computeChangedRoutes;
 module.exports = exports['default'];
-},{"./PatternUtils":50}],64:[function(require,module,exports){
+},{"./PatternUtils":51}],65:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8935,7 +9525,7 @@ function createMemoryHistory(options) {
   return history;
 }
 module.exports = exports['default'];
-},{"history/lib/createMemoryHistory":91,"history/lib/useBasename":94,"history/lib/useQueries":95}],65:[function(require,module,exports){
+},{"history/lib/createMemoryHistory":92,"history/lib/useBasename":95,"history/lib/useQueries":96}],66:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -8955,7 +9545,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 module.exports = exports['default'];
-},{"./useRouterHistory":77}],66:[function(require,module,exports){
+},{"./useRouterHistory":78}],67:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9050,7 +9640,7 @@ function createTransitionManager(history, routes) {
     var enterRoutes = _computeChangedRoutes.enterRoutes;
 
 
-    (0, _TransitionUtils.runLeaveHooks)(leaveRoutes);
+    (0, _TransitionUtils.runLeaveHooks)(leaveRoutes, state);
 
     // Tear down confirmation hooks for left routes
     leaveRoutes.filter(function (route) {
@@ -9263,9 +9853,10 @@ function createTransitionManager(history, routes) {
 }
 
 //export default useRoutes
+
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./TransitionUtils":60,"./computeChangedRoutes":63,"./getComponents":68,"./isActive":72,"./matchRoutes":75,"./routerWarning":76,"_process":272,"history/lib/Actions":80}],67:[function(require,module,exports){
+},{"./TransitionUtils":61,"./computeChangedRoutes":64,"./getComponents":69,"./isActive":73,"./matchRoutes":76,"./routerWarning":77,"_process":277,"history/lib/Actions":81}],68:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9343,7 +9934,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 exports.default = deprecateObjectProperties;
 }).call(this,require('_process'))
-},{"./routerWarning":76,"_process":272}],68:[function(require,module,exports){
+},{"./routerWarning":77,"_process":277}],69:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9390,7 +9981,7 @@ function getComponents(nextState, callback) {
 
 exports.default = getComponents;
 module.exports = exports['default'];
-},{"./AsyncUtils":42,"./makeStateWithLocation":73}],69:[function(require,module,exports){
+},{"./AsyncUtils":43,"./makeStateWithLocation":74}],70:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9417,7 +10008,7 @@ function getRouteParams(route, params) {
 
 exports.default = getRouteParams;
 module.exports = exports['default'];
-},{"./PatternUtils":50}],70:[function(require,module,exports){
+},{"./PatternUtils":51}],71:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9434,7 +10025,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":65,"history/lib/createHashHistory":88}],71:[function(require,module,exports){
+},{"./createRouterHistory":66,"history/lib/createHashHistory":89}],72:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9591,7 +10182,7 @@ exports.applyRouterMiddleware = _applyRouterMiddleware3.default;
 exports.browserHistory = _browserHistory3.default;
 exports.hashHistory = _hashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./History":43,"./IndexLink":44,"./IndexRedirect":45,"./IndexRoute":46,"./Lifecycle":48,"./Link":49,"./PatternUtils":50,"./PropTypes":51,"./Redirect":52,"./Route":53,"./RouteContext":54,"./RouteUtils":55,"./Router":56,"./RouterContext":57,"./RoutingContext":59,"./applyRouterMiddleware":61,"./browserHistory":62,"./createMemoryHistory":64,"./hashHistory":70,"./match":74,"./useRouterHistory":77,"./useRoutes":78,"./withRouter":79}],72:[function(require,module,exports){
+},{"./History":44,"./IndexLink":45,"./IndexRedirect":46,"./IndexRoute":47,"./Lifecycle":49,"./Link":50,"./PatternUtils":51,"./PropTypes":52,"./Redirect":53,"./Route":54,"./RouteContext":55,"./RouteUtils":56,"./Router":57,"./RouterContext":58,"./RoutingContext":60,"./applyRouterMiddleware":62,"./browserHistory":63,"./createMemoryHistory":65,"./hashHistory":71,"./match":75,"./useRouterHistory":78,"./useRoutes":79,"./withRouter":80}],73:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9744,7 +10335,7 @@ function isActive(_ref, indexOnly, currentLocation, routes, params) {
   return queryIsActive(query, currentLocation.query);
 }
 module.exports = exports['default'];
-},{"./PatternUtils":50}],73:[function(require,module,exports){
+},{"./PatternUtils":51}],74:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9796,7 +10387,7 @@ function makeStateWithLocation(state, location) {
 }
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./deprecateObjectProperties":67,"./routerWarning":76,"_process":272}],74:[function(require,module,exports){
+},{"./deprecateObjectProperties":68,"./routerWarning":77,"_process":277}],75:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9880,7 +10471,7 @@ function match(_ref, callback) {
 exports.default = match;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouteUtils":55,"./RouterUtils":58,"./createMemoryHistory":64,"./createTransitionManager":66,"_process":272,"invariant":37}],75:[function(require,module,exports){
+},{"./RouteUtils":56,"./RouterUtils":59,"./createMemoryHistory":65,"./createTransitionManager":67,"_process":277,"invariant":38}],76:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10134,7 +10725,7 @@ function matchRoutes(routes, location, callback, remainingPathname) {
 }
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./AsyncUtils":42,"./PatternUtils":50,"./RouteUtils":55,"./makeStateWithLocation":73,"./routerWarning":76,"_process":272}],76:[function(require,module,exports){
+},{"./AsyncUtils":43,"./PatternUtils":51,"./RouteUtils":56,"./makeStateWithLocation":74,"./routerWarning":77,"_process":277}],77:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10171,7 +10762,7 @@ function routerWarning(falseToWarn, message) {
 function _resetWarned() {
   warned = {};
 }
-},{"warning":269}],77:[function(require,module,exports){
+},{"warning":99}],78:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10195,7 +10786,7 @@ function useRouterHistory(createHistory) {
   };
 }
 module.exports = exports['default'];
-},{"history/lib/useBasename":94,"history/lib/useQueries":95}],78:[function(require,module,exports){
+},{"history/lib/useBasename":95,"history/lib/useQueries":96}],79:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10249,7 +10840,7 @@ function useRoutes(createHistory) {
 exports.default = useRoutes;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./createTransitionManager":66,"./routerWarning":76,"_process":272,"history/lib/useQueries":95}],79:[function(require,module,exports){
+},{"./createTransitionManager":67,"./routerWarning":77,"_process":277,"history/lib/useQueries":96}],80:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10290,7 +10881,7 @@ function withRouter(WrappedComponent) {
   return (0, _hoistNonReactStatics2.default)(WithRouter, WrappedComponent);
 }
 module.exports = exports['default'];
-},{"./PropTypes":51,"hoist-non-react-statics":36,"react":267}],80:[function(require,module,exports){
+},{"./PropTypes":52,"hoist-non-react-statics":37,"react":273}],81:[function(require,module,exports){
 /**
  * Indicates that navigation was caused by a call to history.push.
  */
@@ -10322,7 +10913,7 @@ exports['default'] = {
   REPLACE: REPLACE,
   POP: POP
 };
-},{}],81:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -10381,7 +10972,7 @@ function loopAsync(turns, work, callback) {
 
   next();
 }
-},{}],82:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 (function (process){
 /*eslint-disable no-empty */
 'use strict';
@@ -10457,7 +11048,7 @@ function readState(key) {
   return null;
 }
 }).call(this,require('_process'))
-},{"_process":272,"warning":269}],83:[function(require,module,exports){
+},{"_process":277,"warning":97}],84:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -10533,13 +11124,13 @@ function supportsGoWithoutReloadUsingHash() {
   var ua = navigator.userAgent;
   return ua.indexOf('Firefox') === -1;
 }
-},{}],84:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 exports.canUseDOM = canUseDOM;
-},{}],85:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10589,7 +11180,7 @@ function parsePath(path) {
   };
 }
 }).call(this,require('_process'))
-},{"_process":272,"warning":269}],86:[function(require,module,exports){
+},{"_process":277,"warning":97}],87:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10772,7 +11363,7 @@ function createBrowserHistory() {
 exports['default'] = createBrowserHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":80,"./DOMStateStorage":82,"./DOMUtils":83,"./ExecutionEnvironment":84,"./PathUtils":85,"./createDOMHistory":87,"_process":272,"invariant":37}],87:[function(require,module,exports){
+},{"./Actions":81,"./DOMStateStorage":83,"./DOMUtils":84,"./ExecutionEnvironment":85,"./PathUtils":86,"./createDOMHistory":88,"_process":277,"invariant":38}],88:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10815,7 +11406,7 @@ function createDOMHistory(options) {
 exports['default'] = createDOMHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./DOMUtils":83,"./ExecutionEnvironment":84,"./createHistory":89,"_process":272,"invariant":37}],88:[function(require,module,exports){
+},{"./DOMUtils":84,"./ExecutionEnvironment":85,"./createHistory":90,"_process":277,"invariant":38}],89:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11064,7 +11655,7 @@ function createHashHistory() {
 exports['default'] = createHashHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":80,"./DOMStateStorage":82,"./DOMUtils":83,"./ExecutionEnvironment":84,"./PathUtils":85,"./createDOMHistory":87,"_process":272,"invariant":37,"warning":269}],89:[function(require,module,exports){
+},{"./Actions":81,"./DOMStateStorage":83,"./DOMUtils":84,"./ExecutionEnvironment":85,"./PathUtils":86,"./createDOMHistory":88,"_process":277,"invariant":38,"warning":97}],90:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11355,7 +11946,7 @@ function createHistory() {
 exports['default'] = createHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":80,"./AsyncUtils":81,"./PathUtils":85,"./createLocation":90,"./deprecate":92,"./runTransitionHook":93,"_process":272,"deep-equal":30,"warning":269}],90:[function(require,module,exports){
+},{"./Actions":81,"./AsyncUtils":82,"./PathUtils":86,"./createLocation":91,"./deprecate":93,"./runTransitionHook":94,"_process":277,"deep-equal":31,"warning":97}],91:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11409,7 +12000,7 @@ function createLocation() {
 exports['default'] = createLocation;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":80,"./PathUtils":85,"_process":272,"warning":269}],91:[function(require,module,exports){
+},{"./Actions":81,"./PathUtils":86,"_process":277,"warning":97}],92:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11566,7 +12157,7 @@ function createMemoryHistory() {
 exports['default'] = createMemoryHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":80,"./PathUtils":85,"./createHistory":89,"_process":272,"invariant":37,"warning":269}],92:[function(require,module,exports){
+},{"./Actions":81,"./PathUtils":86,"./createHistory":90,"_process":277,"invariant":38,"warning":97}],93:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11588,7 +12179,7 @@ function deprecate(fn, message) {
 exports['default'] = deprecate;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"_process":272,"warning":269}],93:[function(require,module,exports){
+},{"_process":277,"warning":97}],94:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11615,7 +12206,7 @@ function runTransitionHook(hook, location, callback) {
 exports['default'] = runTransitionHook;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"_process":272,"warning":269}],94:[function(require,module,exports){
+},{"_process":277,"warning":97}],95:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11776,7 +12367,7 @@ function useBasename(createHistory) {
 exports['default'] = useBasename;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":84,"./PathUtils":85,"./deprecate":92,"./runTransitionHook":93,"_process":272,"warning":269}],95:[function(require,module,exports){
+},{"./ExecutionEnvironment":85,"./PathUtils":86,"./deprecate":93,"./runTransitionHook":94,"_process":277,"warning":97}],96:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11955,7 +12546,71 @@ function useQueries(createHistory) {
 exports['default'] = useQueries;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./PathUtils":85,"./deprecate":92,"./runTransitionHook":93,"_process":272,"query-string":96,"warning":269}],96:[function(require,module,exports){
+},{"./PathUtils":86,"./deprecate":93,"./runTransitionHook":94,"_process":277,"query-string":98,"warning":97}],97:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2014-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+'use strict';
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  warning = function(condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error(
+        '`warning(condition, format, ...args)` requires a warning ' +
+        'message argument'
+      );
+    }
+
+    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+      throw new Error(
+        'The warning format should be able to uniquely identify this ' +
+        'warning. Please, use a more descriptive format than: ' + format
+      );
+    }
+
+    if (!condition) {
+      var argIndex = 0;
+      var message = 'Warning: ' +
+        format.replace(/%s/g, function() {
+          return args[argIndex++];
+        });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch(x) {}
+    }
+  };
+}
+
+module.exports = warning;
+
+}).call(this,require('_process'))
+},{"_process":277}],98:[function(require,module,exports){
 'use strict';
 var strictUriEncode = require('strict-uri-encode');
 
@@ -12023,7 +12678,9 @@ exports.stringify = function (obj) {
 	}).join('&') : '';
 };
 
-},{"strict-uri-encode":268}],97:[function(require,module,exports){
+},{"strict-uri-encode":274}],99:[function(require,module,exports){
+arguments[4][97][0].apply(exports,arguments)
+},{"_process":277,"dup":97}],100:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12148,7 +12805,7 @@ module.exports = function withSideEffect(reducePropsToState, handleStateChangeOn
     return SideEffect;
   };
 };
-},{"fbjs/lib/ExecutionEnvironment":98,"fbjs/lib/shallowEqual":99,"react":267}],98:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":101,"fbjs/lib/shallowEqual":102,"react":273}],101:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -12185,7 +12842,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],99:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -12236,7 +12893,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],100:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12261,7 +12918,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":140,"fbjs/lib/focusNode":250}],101:[function(require,module,exports){
+},{"./ReactDOMComponentTree":144,"fbjs/lib/focusNode":256}],104:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -12650,7 +13307,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventConstants":115,"./EventPropagators":119,"./FallbackCompositionState":120,"./SyntheticCompositionEvent":197,"./SyntheticInputEvent":201,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/keyOf":260}],102:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPropagators":122,"./FallbackCompositionState":123,"./SyntheticCompositionEvent":203,"./SyntheticInputEvent":207,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/keyOf":266}],105:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12799,7 +13456,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],103:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13007,7 +13664,7 @@ var CSSPropertyOperations = {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":102,"./ReactInstrumentation":172,"./dangerousStyleValue":215,"_process":272,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/camelizeStyleName":244,"fbjs/lib/hyphenateStyleName":255,"fbjs/lib/memoizeStringOnly":262,"fbjs/lib/warning":266}],104:[function(require,module,exports){
+},{"./CSSProperty":105,"./ReactInstrumentation":176,"./dangerousStyleValue":221,"_process":277,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/camelizeStyleName":250,"fbjs/lib/hyphenateStyleName":261,"fbjs/lib/memoizeStringOnly":268,"fbjs/lib/warning":272}],107:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13116,7 +13773,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-},{"./PooledClass":124,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"object-assign":39}],105:[function(require,module,exports){
+},{"./PooledClass":127,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"object-assign":40}],108:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13442,7 +14099,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventConstants":115,"./EventPluginHub":116,"./EventPropagators":119,"./ReactDOMComponentTree":140,"./ReactUpdates":190,"./SyntheticEvent":199,"./getEventTarget":223,"./isEventSupported":230,"./isTextInputElement":231,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/keyOf":260}],106:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPluginHub":119,"./EventPropagators":122,"./ReactDOMComponentTree":144,"./ReactUpdates":196,"./SyntheticEvent":205,"./getEventTarget":229,"./isEventSupported":236,"./isTextInputElement":237,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/keyOf":266}],109:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13639,7 +14296,7 @@ var DOMChildrenOperations = {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":107,"./Danger":111,"./ReactDOMComponentTree":140,"./ReactInstrumentation":172,"./ReactMultiChildUpdateTypes":177,"./createMicrosoftUnsafeLocalFunction":214,"./setInnerHTML":236,"./setTextContent":237,"_process":272}],107:[function(require,module,exports){
+},{"./DOMLazyTree":110,"./Danger":114,"./ReactDOMComponentTree":144,"./ReactInstrumentation":176,"./ReactMultiChildUpdateTypes":181,"./createMicrosoftUnsafeLocalFunction":220,"./setInnerHTML":242,"./setTextContent":243,"_process":277}],110:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -13758,7 +14415,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":108,"./createMicrosoftUnsafeLocalFunction":214,"./setInnerHTML":236,"./setTextContent":237}],108:[function(require,module,exports){
+},{"./DOMNamespaces":111,"./createMicrosoftUnsafeLocalFunction":220,"./setInnerHTML":242,"./setTextContent":243}],111:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13779,7 +14436,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],109:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13988,7 +14645,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],110:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],113:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14219,7 +14876,7 @@ var DOMPropertyOperations = {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":109,"./ReactDOMComponentTree":140,"./ReactDOMInstrumentation":148,"./ReactInstrumentation":172,"./quoteAttributeValueForBrowser":233,"_process":272,"fbjs/lib/warning":266}],111:[function(require,module,exports){
+},{"./DOMProperty":112,"./ReactDOMComponentTree":144,"./ReactDOMInstrumentation":152,"./ReactInstrumentation":176,"./quoteAttributeValueForBrowser":239,"_process":277,"fbjs/lib/warning":272}],114:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14270,7 +14927,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":107,"./reactProdInvariant":234,"_process":272,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/createNodesFromMarkup":247,"fbjs/lib/emptyFunction":248,"fbjs/lib/invariant":256}],112:[function(require,module,exports){
+},{"./DOMLazyTree":110,"./reactProdInvariant":240,"_process":277,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/createNodesFromMarkup":253,"fbjs/lib/emptyFunction":254,"fbjs/lib/invariant":262}],115:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14298,7 +14955,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-},{"fbjs/lib/keyOf":260}],113:[function(require,module,exports){
+},{"fbjs/lib/keyOf":266}],116:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14349,7 +15006,7 @@ var DisabledInputUtils = {
 };
 
 module.exports = DisabledInputUtils;
-},{}],114:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14455,7 +15112,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventConstants":115,"./EventPropagators":119,"./ReactDOMComponentTree":140,"./SyntheticMouseEvent":203,"fbjs/lib/keyOf":260}],115:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPropagators":122,"./ReactDOMComponentTree":144,"./SyntheticMouseEvent":209,"fbjs/lib/keyOf":266}],118:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14553,7 +15210,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{"fbjs/lib/keyMirror":259}],116:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":265}],119:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14612,6 +15269,10 @@ var executeDispatchesAndReleaseTopLevel = function (e) {
   return executeDispatchesAndRelease(e, false);
 };
 
+var getDictionaryKey = function (inst) {
+  return '.' + inst._rootNodeID;
+};
+
 /**
  * This is a unified interface for event plugins to be installed and configured.
  *
@@ -14655,7 +15316,7 @@ var EventPluginHub = {
   },
 
   /**
-   * Stores `listener` at `listenerBank[registrationName][id]`. Is idempotent.
+   * Stores `listener` at `listenerBank[registrationName][key]`. Is idempotent.
    *
    * @param {object} inst The instance, which is the source of events.
    * @param {string} registrationName Name of listener (e.g. `onClick`).
@@ -14664,8 +15325,9 @@ var EventPluginHub = {
   putListener: function (inst, registrationName, listener) {
     !(typeof listener === 'function') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Expected %s listener to be a function, instead got type %s', registrationName, typeof listener) : _prodInvariant('94', registrationName, typeof listener) : void 0;
 
+    var key = getDictionaryKey(inst);
     var bankForRegistrationName = listenerBank[registrationName] || (listenerBank[registrationName] = {});
-    bankForRegistrationName[inst._rootNodeID] = listener;
+    bankForRegistrationName[key] = listener;
 
     var PluginModule = EventPluginRegistry.registrationNameModules[registrationName];
     if (PluginModule && PluginModule.didPutListener) {
@@ -14680,7 +15342,8 @@ var EventPluginHub = {
    */
   getListener: function (inst, registrationName) {
     var bankForRegistrationName = listenerBank[registrationName];
-    return bankForRegistrationName && bankForRegistrationName[inst._rootNodeID];
+    var key = getDictionaryKey(inst);
+    return bankForRegistrationName && bankForRegistrationName[key];
   },
 
   /**
@@ -14698,7 +15361,8 @@ var EventPluginHub = {
     var bankForRegistrationName = listenerBank[registrationName];
     // TODO: This should never be null -- when is it?
     if (bankForRegistrationName) {
-      delete bankForRegistrationName[inst._rootNodeID];
+      var key = getDictionaryKey(inst);
+      delete bankForRegistrationName[key];
     }
   },
 
@@ -14708,12 +15372,13 @@ var EventPluginHub = {
    * @param {object} inst The instance, which is the source of events.
    */
   deleteAllListeners: function (inst) {
+    var key = getDictionaryKey(inst);
     for (var registrationName in listenerBank) {
       if (!listenerBank.hasOwnProperty(registrationName)) {
         continue;
       }
 
-      if (!listenerBank[registrationName][inst._rootNodeID]) {
+      if (!listenerBank[registrationName][key]) {
         continue;
       }
 
@@ -14722,7 +15387,7 @@ var EventPluginHub = {
         PluginModule.willDeleteListener(inst, registrationName);
       }
 
-      delete listenerBank[registrationName][inst._rootNodeID];
+      delete listenerBank[registrationName][key];
     }
   },
 
@@ -14797,7 +15462,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":117,"./EventPluginUtils":118,"./ReactErrorUtils":163,"./accumulateInto":210,"./forEachAccumulated":219,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],117:[function(require,module,exports){
+},{"./EventPluginRegistry":120,"./EventPluginUtils":121,"./ReactErrorUtils":167,"./accumulateInto":216,"./forEachAccumulated":225,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],120:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15047,7 +15712,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],118:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],121:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15279,7 +15944,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./EventConstants":115,"./ReactErrorUtils":163,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],119:[function(require,module,exports){
+},{"./EventConstants":118,"./ReactErrorUtils":167,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],122:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15419,7 +16084,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventConstants":115,"./EventPluginHub":116,"./EventPluginUtils":118,"./accumulateInto":210,"./forEachAccumulated":219,"_process":272,"fbjs/lib/warning":266}],120:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPluginHub":119,"./EventPluginUtils":121,"./accumulateInto":216,"./forEachAccumulated":225,"_process":277,"fbjs/lib/warning":272}],123:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15515,7 +16180,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":124,"./getTextContentAccessor":227,"object-assign":39}],121:[function(require,module,exports){
+},{"./PooledClass":127,"./getTextContentAccessor":233,"object-assign":40}],124:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15635,6 +16300,7 @@ var HTMLDOMPropertyConfig = {
     profile: 0,
     radioGroup: 0,
     readOnly: HAS_BOOLEAN_VALUE,
+    referrerPolicy: 0,
     rel: 0,
     required: HAS_BOOLEAN_VALUE,
     reversed: HAS_BOOLEAN_VALUE,
@@ -15724,7 +16390,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":109}],122:[function(require,module,exports){
+},{"./DOMProperty":112}],125:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15784,7 +16450,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],123:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15803,6 +16469,7 @@ var _prodInvariant = require('./reactProdInvariant');
 
 var ReactPropTypes = require('./ReactPropTypes');
 var ReactPropTypeLocations = require('./ReactPropTypeLocations');
+var ReactPropTypesSecret = require('./ReactPropTypesSecret');
 
 var invariant = require('fbjs/lib/invariant');
 var warning = require('fbjs/lib/warning');
@@ -15865,7 +16532,7 @@ var LinkedValueUtils = {
   checkPropTypes: function (tagName, props, owner) {
     for (var propName in propTypes) {
       if (propTypes.hasOwnProperty(propName)) {
-        var error = propTypes[propName](props, propName, tagName, ReactPropTypeLocations.prop);
+        var error = propTypes[propName](props, propName, tagName, ReactPropTypeLocations.prop, null, ReactPropTypesSecret);
       }
       if (error instanceof Error && !(error.message in loggedTypeFailures)) {
         // Only monitor this failure once because there tends to be a lot of the
@@ -15922,7 +16589,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocations":182,"./ReactPropTypes":183,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],124:[function(require,module,exports){
+},{"./ReactPropTypeLocations":186,"./ReactPropTypes":187,"./ReactPropTypesSecret":188,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],127:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16046,7 +16713,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],125:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],128:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16065,6 +16732,7 @@ var _assign = require('object-assign');
 
 var ReactChildren = require('./ReactChildren');
 var ReactComponent = require('./ReactComponent');
+var ReactPureComponent = require('./ReactPureComponent');
 var ReactClass = require('./ReactClass');
 var ReactDOMFactories = require('./ReactDOMFactories');
 var ReactElement = require('./ReactElement');
@@ -16109,6 +16777,7 @@ var React = {
   },
 
   Component: ReactComponent,
+  PureComponent: ReactPureComponent,
 
   createElement: createElement,
   cloneElement: cloneElement,
@@ -16136,7 +16805,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":128,"./ReactClass":129,"./ReactComponent":130,"./ReactDOMFactories":144,"./ReactElement":160,"./ReactElementValidator":161,"./ReactPropTypes":183,"./ReactVersion":191,"./onlyChild":232,"_process":272,"fbjs/lib/warning":266,"object-assign":39}],126:[function(require,module,exports){
+},{"./ReactChildren":131,"./ReactClass":133,"./ReactComponent":134,"./ReactDOMFactories":148,"./ReactElement":164,"./ReactElementValidator":165,"./ReactPropTypes":187,"./ReactPureComponent":189,"./ReactVersion":197,"./onlyChild":238,"_process":277,"fbjs/lib/warning":272,"object-assign":40}],129:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16454,7 +17123,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventConstants":115,"./EventPluginRegistry":117,"./ReactEventEmitterMixin":164,"./ViewportMetrics":209,"./getVendorPrefixedEventName":228,"./isEventSupported":230,"object-assign":39}],127:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPluginRegistry":120,"./ReactEventEmitterMixin":168,"./ViewportMetrics":215,"./getVendorPrefixedEventName":234,"./isEventSupported":236,"object-assign":40}],130:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -16477,11 +17146,24 @@ var shouldUpdateReactComponent = require('./shouldUpdateReactComponent');
 var traverseAllChildren = require('./traverseAllChildren');
 var warning = require('fbjs/lib/warning');
 
+var ReactComponentTreeDevtool;
+
+if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'test') {
+  // Temporary hack.
+  // Inline requires don't work well with Jest:
+  // https://github.com/facebook/react/issues/7240
+  // Remove the inline requires when we don't need them anymore:
+  // https://github.com/facebook/react/pull/7178
+  ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+}
+
 function instantiateChild(childInstances, child, name, selfDebugID) {
   // We found a component instance.
   var keyUnique = childInstances[name] === undefined;
   if (process.env.NODE_ENV !== 'production') {
-    var ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+    if (!ReactComponentTreeDevtool) {
+      ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+    }
     process.env.NODE_ENV !== 'production' ? warning(keyUnique, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeDevtool.getStackAddendumByID(selfDebugID)) : void 0;
   }
   if (child != null && keyUnique) {
@@ -16530,7 +17212,7 @@ var ReactChildReconciler = {
    * @return {?object} A new set of child instances.
    * @internal
    */
-  updateChildren: function (prevChildren, nextChildren, removedNodes, transaction, context) {
+  updateChildren: function (prevChildren, nextChildren, mountImages, removedNodes, transaction, hostParent, hostContainerInfo, context) {
     // We currently don't have a way to track moves here but if we use iterators
     // instead of for..in we can zip the iterators and check if an item has
     // moved.
@@ -16559,6 +17241,10 @@ var ReactChildReconciler = {
         // The child must be instantiated before it's mounted.
         var nextChildInstance = instantiateReactComponent(nextElement, true);
         nextChildren[name] = nextChildInstance;
+        // Creating mount image now ensures refs are resolved in right order
+        // (see https://github.com/facebook/react/pull/7101 for explanation).
+        var nextChildMountImage = ReactReconciler.mountComponent(nextChildInstance, transaction, hostParent, hostContainerInfo, context);
+        mountImages.push(nextChildMountImage);
       }
     }
     // Unmount children that are no longer present.
@@ -16591,7 +17277,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":122,"./ReactComponentTreeDevtool":133,"./ReactReconciler":185,"./instantiateReactComponent":229,"./shouldUpdateReactComponent":238,"./traverseAllChildren":239,"_process":272,"fbjs/lib/warning":266}],128:[function(require,module,exports){
+},{"./KeyEscapeUtils":125,"./ReactComponentTreeDevtool":137,"./ReactReconciler":191,"./instantiateReactComponent":235,"./shouldUpdateReactComponent":244,"./traverseAllChildren":245,"_process":277,"fbjs/lib/warning":272}],131:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16783,7 +17469,72 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":124,"./ReactElement":160,"./traverseAllChildren":239,"fbjs/lib/emptyFunction":248}],129:[function(require,module,exports){
+},{"./PooledClass":127,"./ReactElement":164,"./traverseAllChildren":245,"fbjs/lib/emptyFunction":254}],132:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ReactChildrenMutationWarningDevtool
+ */
+
+'use strict';
+
+var ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+
+var warning = require('fbjs/lib/warning');
+
+var elements = {};
+
+function handleElement(debugID, element) {
+  if (element == null) {
+    return;
+  }
+  if (element._shadowChildren === undefined) {
+    return;
+  }
+  if (element._shadowChildren === element.props.children) {
+    return;
+  }
+  var isMutated = false;
+  if (Array.isArray(element._shadowChildren)) {
+    if (element._shadowChildren.length === element.props.children.length) {
+      for (var i = 0; i < element._shadowChildren.length; i++) {
+        if (element._shadowChildren[i] !== element.props.children[i]) {
+          isMutated = true;
+        }
+      }
+    } else {
+      isMutated = true;
+    }
+  }
+  process.env.NODE_ENV !== 'production' ? warning(Array.isArray(element._shadowChildren) && !isMutated, 'Component\'s children should not be mutated.%s', ReactComponentTreeDevtool.getStackAddendumByID(debugID)) : void 0;
+}
+
+var ReactDOMUnknownPropertyDevtool = {
+  onBeforeMountComponent: function (debugID, element) {
+    elements[debugID] = element;
+  },
+  onBeforeUpdateComponent: function (debugID, element) {
+    elements[debugID] = element;
+  },
+  onComponentHasMounted: function (debugID) {
+    handleElement(debugID, elements[debugID]);
+    delete elements[debugID];
+  },
+  onComponentHasUpdated: function (debugID) {
+    handleElement(debugID, elements[debugID]);
+    delete elements[debugID];
+  }
+};
+
+module.exports = ReactDOMUnknownPropertyDevtool;
+}).call(this,require('_process'))
+},{"./ReactComponentTreeDevtool":137,"_process":277,"fbjs/lib/warning":272}],133:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17172,6 +17923,13 @@ function validateMethodOverride(isAlreadyDefined, name) {
  */
 function mixSpecIntoComponent(Constructor, spec) {
   if (!spec) {
+    if (process.env.NODE_ENV !== 'production') {
+      var typeofSpec = typeof spec;
+      var isMixinValid = typeofSpec === 'object' && spec !== null;
+
+      process.env.NODE_ENV !== 'production' ? warning(isMixinValid, '%s: You\'re attempting to include a mixin that is either null ' + 'or not an object. Check the mixins included by the component, ' + 'as well as any mixins they include themselves. ' + 'Expected object but got %s.', Constructor.displayName || 'ReactClass', spec === null ? null : typeofSpec) : void 0;
+    }
+
     return;
   }
 
@@ -17511,7 +18269,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":130,"./ReactElement":160,"./ReactNoopUpdateQueue":179,"./ReactPropTypeLocationNames":181,"./ReactPropTypeLocations":182,"./reactProdInvariant":234,"_process":272,"fbjs/lib/emptyObject":249,"fbjs/lib/invariant":256,"fbjs/lib/keyMirror":259,"fbjs/lib/keyOf":260,"fbjs/lib/warning":266,"object-assign":39}],130:[function(require,module,exports){
+},{"./ReactComponent":134,"./ReactElement":164,"./ReactNoopUpdateQueue":183,"./ReactPropTypeLocationNames":185,"./ReactPropTypeLocations":186,"./reactProdInvariant":240,"_process":277,"fbjs/lib/emptyObject":255,"fbjs/lib/invariant":262,"fbjs/lib/keyMirror":265,"fbjs/lib/keyOf":266,"fbjs/lib/warning":272,"object-assign":40}],134:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17632,7 +18390,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":179,"./canDefineProperty":212,"./reactProdInvariant":234,"_process":272,"fbjs/lib/emptyObject":249,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],131:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":183,"./canDefineProperty":218,"./reactProdInvariant":240,"_process":277,"fbjs/lib/emptyObject":255,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],135:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17672,7 +18430,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":106,"./ReactDOMIDOperations":146}],132:[function(require,module,exports){
+},{"./DOMChildrenOperations":109,"./ReactDOMIDOperations":150}],136:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -17728,7 +18486,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],133:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],137:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -17949,7 +18707,7 @@ var ReactComponentTreeDevtool = {
 
 module.exports = ReactComponentTreeDevtool;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":135,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],134:[function(require,module,exports){
+},{"./ReactCurrentOwner":139,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],138:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17978,11 +18736,17 @@ var ReactPropTypeLocations = require('./ReactPropTypeLocations');
 var ReactReconciler = require('./ReactReconciler');
 
 var checkReactTypeSpec = require('./checkReactTypeSpec');
-
 var emptyObject = require('fbjs/lib/emptyObject');
 var invariant = require('fbjs/lib/invariant');
+var shallowEqual = require('fbjs/lib/shallowEqual');
 var shouldUpdateReactComponent = require('./shouldUpdateReactComponent');
 var warning = require('fbjs/lib/warning');
+
+var CompositeTypes = {
+  ImpureClass: 0,
+  PureClass: 1,
+  StatelessFunctional: 2
+};
 
 function StatelessComponent(Component) {}
 StatelessComponent.prototype.render = function () {
@@ -18022,7 +18786,11 @@ function invokeComponentDidUpdateWithTimer(prevProps, prevState, prevContext) {
 }
 
 function shouldConstruct(Component) {
-  return Component.prototype && Component.prototype.isReactComponent;
+  return !!(Component.prototype && Component.prototype.isReactComponent);
+}
+
+function isPureComponent(Component) {
+  return !!(Component.prototype && Component.prototype.isPureReactComponent);
 }
 
 /**
@@ -18075,6 +18843,7 @@ var ReactCompositeComponentMixin = {
   construct: function (element) {
     this._currentElement = element;
     this._rootNodeID = null;
+    this._compositeType = null;
     this._instance = null;
     this._hostParent = null;
     this._hostContainerInfo = null;
@@ -18115,6 +18884,8 @@ var ReactCompositeComponentMixin = {
    * @internal
    */
   mountComponent: function (transaction, hostParent, hostContainerInfo, context) {
+    var _this = this;
+
     this._context = context;
     this._mountOrder = nextMountID++;
     this._hostParent = hostParent;
@@ -18128,15 +18899,23 @@ var ReactCompositeComponentMixin = {
     var updateQueue = transaction.getUpdateQueue();
 
     // Initialize the public class
-    var inst = this._constructComponent(publicProps, publicContext, updateQueue);
+    var doConstruct = shouldConstruct(Component);
+    var inst = this._constructComponent(doConstruct, publicProps, publicContext, updateQueue);
     var renderedElement;
 
     // Support functional components
-    if (!shouldConstruct(Component) && (inst == null || inst.render == null)) {
+    if (!doConstruct && (inst == null || inst.render == null)) {
       renderedElement = inst;
       warnIfInvalidElement(Component, renderedElement);
       !(inst === null || inst === false || ReactElement.isValidElement(inst)) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s(...): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', Component.displayName || Component.name || 'Component') : _prodInvariant('105', Component.displayName || Component.name || 'Component') : void 0;
       inst = new StatelessComponent(Component);
+      this._compositeType = CompositeTypes.StatelessFunctional;
+    } else {
+      if (isPureComponent(Component)) {
+        this._compositeType = CompositeTypes.PureClass;
+      } else {
+        this._compositeType = CompositeTypes.ImpureClass;
+      }
     }
 
     if (process.env.NODE_ENV !== 'production') {
@@ -18202,26 +18981,35 @@ var ReactCompositeComponentMixin = {
       }
     }
 
+    if (process.env.NODE_ENV !== 'production') {
+      if (this._debugID) {
+        var callback = function (component) {
+          return ReactInstrumentation.debugTool.onComponentHasMounted(_this._debugID);
+        };
+        transaction.getReactMountReady().enqueue(callback, this);
+      }
+    }
+
     return markup;
   },
 
-  _constructComponent: function (publicProps, publicContext, updateQueue) {
+  _constructComponent: function (doConstruct, publicProps, publicContext, updateQueue) {
     if (process.env.NODE_ENV !== 'production') {
       ReactCurrentOwner.current = this;
       try {
-        return this._constructComponentWithoutOwner(publicProps, publicContext, updateQueue);
+        return this._constructComponentWithoutOwner(doConstruct, publicProps, publicContext, updateQueue);
       } finally {
         ReactCurrentOwner.current = null;
       }
     } else {
-      return this._constructComponentWithoutOwner(publicProps, publicContext, updateQueue);
+      return this._constructComponentWithoutOwner(doConstruct, publicProps, publicContext, updateQueue);
     }
   },
 
-  _constructComponentWithoutOwner: function (publicProps, publicContext, updateQueue) {
+  _constructComponentWithoutOwner: function (doConstruct, publicProps, publicContext, updateQueue) {
     var Component = this._currentElement.type;
     var instanceOrElement;
-    if (shouldConstruct(Component)) {
+    if (doConstruct) {
       if (process.env.NODE_ENV !== 'production') {
         if (this._debugID !== 0) {
           ReactInstrumentation.debugTool.onBeginLifeCycleTimer(this._debugID, 'ctor');
@@ -18525,7 +19313,6 @@ var ReactCompositeComponentMixin = {
 
     var willReceive = false;
     var nextContext;
-    var nextProps;
 
     // Determine if the context has changed or not
     if (this._context === nextUnmaskedContext) {
@@ -18535,7 +19322,8 @@ var ReactCompositeComponentMixin = {
       willReceive = true;
     }
 
-    nextProps = nextParentElement.props;
+    var prevProps = prevParentElement.props;
+    var nextProps = nextParentElement.props;
 
     // Not a simple state update but a props update
     if (prevParentElement !== nextParentElement) {
@@ -18562,16 +19350,22 @@ var ReactCompositeComponentMixin = {
     var nextState = this._processPendingState(nextProps, nextContext);
     var shouldUpdate = true;
 
-    if (!this._pendingForceUpdate && inst.shouldComponentUpdate) {
-      if (process.env.NODE_ENV !== 'production') {
-        if (this._debugID !== 0) {
-          ReactInstrumentation.debugTool.onBeginLifeCycleTimer(this._debugID, 'shouldComponentUpdate');
+    if (!this._pendingForceUpdate) {
+      if (inst.shouldComponentUpdate) {
+        if (process.env.NODE_ENV !== 'production') {
+          if (this._debugID !== 0) {
+            ReactInstrumentation.debugTool.onBeginLifeCycleTimer(this._debugID, 'shouldComponentUpdate');
+          }
         }
-      }
-      shouldUpdate = inst.shouldComponentUpdate(nextProps, nextState, nextContext);
-      if (process.env.NODE_ENV !== 'production') {
-        if (this._debugID !== 0) {
-          ReactInstrumentation.debugTool.onEndLifeCycleTimer(this._debugID, 'shouldComponentUpdate');
+        shouldUpdate = inst.shouldComponentUpdate(nextProps, nextState, nextContext);
+        if (process.env.NODE_ENV !== 'production') {
+          if (this._debugID !== 0) {
+            ReactInstrumentation.debugTool.onEndLifeCycleTimer(this._debugID, 'shouldComponentUpdate');
+          }
+        }
+      } else {
+        if (this._compositeType === CompositeTypes.PureClass) {
+          shouldUpdate = !shallowEqual(prevProps, nextProps) || !shallowEqual(inst.state, nextState);
         }
       }
     }
@@ -18633,6 +19427,8 @@ var ReactCompositeComponentMixin = {
    * @private
    */
   _performComponentUpdate: function (nextElement, nextProps, nextState, nextContext, transaction, unmaskedContext) {
+    var _this2 = this;
+
     var inst = this._instance;
 
     var hasComponentDidUpdate = Boolean(inst.componentDidUpdate);
@@ -18672,6 +19468,15 @@ var ReactCompositeComponentMixin = {
         transaction.getReactMountReady().enqueue(invokeComponentDidUpdateWithTimer.bind(this, prevProps, prevState, prevContext), this);
       } else {
         transaction.getReactMountReady().enqueue(inst.componentDidUpdate.bind(inst, prevProps, prevState, prevContext), inst);
+      }
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (this._debugID) {
+        var callback = function () {
+          return ReactInstrumentation.debugTool.onComponentHasUpdated(_this2._debugID);
+        };
+        transaction.getReactMountReady().enqueue(callback, this);
       }
     }
   },
@@ -18759,11 +19564,15 @@ var ReactCompositeComponentMixin = {
    */
   _renderValidatedComponent: function () {
     var renderedComponent;
-    ReactCurrentOwner.current = this;
-    try {
+    if (process.env.NODE_ENV !== 'production' || this._compositeType !== CompositeTypes.StatelessFunctional) {
+      ReactCurrentOwner.current = this;
+      try {
+        renderedComponent = this._renderValidatedComponentWithoutOwnerOrContext();
+      } finally {
+        ReactCurrentOwner.current = null;
+      }
+    } else {
       renderedComponent = this._renderValidatedComponentWithoutOwnerOrContext();
-    } finally {
-      ReactCurrentOwner.current = null;
     }
     !(
     // TODO: An `isValidNode` function would probably be more appropriate
@@ -18826,7 +19635,7 @@ var ReactCompositeComponentMixin = {
    */
   getPublicInstance: function () {
     var inst = this._instance;
-    if (inst instanceof StatelessComponent) {
+    if (this._compositeType === CompositeTypes.StatelessFunctional) {
       return null;
     }
     return inst;
@@ -18845,7 +19654,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":132,"./ReactCurrentOwner":135,"./ReactElement":160,"./ReactErrorUtils":163,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactNodeTypes":178,"./ReactPropTypeLocations":182,"./ReactReconciler":185,"./checkReactTypeSpec":213,"./reactProdInvariant":234,"./shouldUpdateReactComponent":238,"_process":272,"fbjs/lib/emptyObject":249,"fbjs/lib/invariant":256,"fbjs/lib/warning":266,"object-assign":39}],135:[function(require,module,exports){
+},{"./ReactComponentEnvironment":136,"./ReactCurrentOwner":139,"./ReactElement":164,"./ReactErrorUtils":167,"./ReactInstanceMap":175,"./ReactInstrumentation":176,"./ReactNodeTypes":182,"./ReactPropTypeLocations":186,"./ReactReconciler":191,"./checkReactTypeSpec":219,"./reactProdInvariant":240,"./shouldUpdateReactComponent":244,"_process":277,"fbjs/lib/emptyObject":255,"fbjs/lib/invariant":262,"fbjs/lib/shallowEqual":271,"fbjs/lib/warning":272,"object-assign":40}],139:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18877,7 +19686,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],136:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18908,7 +19717,7 @@ var warning = require('fbjs/lib/warning');
 
 ReactDefaultInjection.inject();
 
-var React = {
+var ReactDOM = {
   findDOMNode: findDOMNode,
   render: ReactMount.render,
   unmountComponentAtNode: ReactMount.unmountComponentAtNode,
@@ -18979,9 +19788,9 @@ if (process.env.NODE_ENV !== 'production') {
   }
 }
 
-module.exports = React;
+module.exports = ReactDOM;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":140,"./ReactDefaultInjection":159,"./ReactMount":175,"./ReactReconciler":185,"./ReactUpdates":190,"./ReactVersion":191,"./findDOMNode":217,"./getHostComponentFromComposite":224,"./renderSubtreeIntoContainer":235,"_process":272,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/warning":266}],137:[function(require,module,exports){
+},{"./ReactDOMComponentTree":144,"./ReactDefaultInjection":163,"./ReactMount":179,"./ReactReconciler":191,"./ReactUpdates":196,"./ReactVersion":197,"./findDOMNode":223,"./getHostComponentFromComposite":230,"./renderSubtreeIntoContainer":241,"_process":277,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/warning":272}],141:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19006,7 +19815,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-},{"./DisabledInputUtils":113}],138:[function(require,module,exports){
+},{"./DisabledInputUtils":116}],142:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -19421,6 +20230,8 @@ ReactDOMComponent.Mixin = {
    * @return {string} The computed markup.
    */
   mountComponent: function (transaction, hostParent, hostContainerInfo, context) {
+    var _this = this;
+
     this._rootNodeID = globalIdCounter++;
     this._domID = hostContainerInfo._idCounter++;
     this._hostParent = hostParent;
@@ -19574,6 +20385,15 @@ ReactDOMComponent.Mixin = {
       case 'option':
         transaction.getReactMountReady().enqueue(optionPostMount, this);
         break;
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (this._debugID) {
+        var callback = function () {
+          return ReactInstrumentation.debugTool.onComponentHasMounted(_this._debugID);
+        };
+        transaction.getReactMountReady().enqueue(callback, this);
+      }
     }
 
     return mountImage;
@@ -19744,6 +20564,8 @@ ReactDOMComponent.Mixin = {
    * @overridable
    */
   updateComponent: function (transaction, prevElement, nextElement, context) {
+    var _this2 = this;
+
     var lastProps = prevElement.props;
     var nextProps = this._currentElement.props;
 
@@ -19780,6 +20602,15 @@ ReactDOMComponent.Mixin = {
       // <select> value update needs to occur after <option> children
       // reconciliation
       transaction.getReactMountReady().enqueue(postUpdateSelectWrapper, this);
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (this._debugID) {
+        var callback = function () {
+          return ReactInstrumentation.debugTool.onComponentHasUpdated(_this2._debugID);
+        };
+        transaction.getReactMountReady().enqueue(callback, this);
+      }
     }
   },
 
@@ -20012,7 +20843,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":100,"./CSSPropertyOperations":103,"./DOMLazyTree":107,"./DOMNamespaces":108,"./DOMProperty":109,"./DOMPropertyOperations":110,"./EventConstants":115,"./EventPluginHub":116,"./EventPluginRegistry":117,"./ReactBrowserEventEmitter":126,"./ReactComponentBrowserEnvironment":131,"./ReactDOMButton":137,"./ReactDOMComponentFlags":139,"./ReactDOMComponentTree":140,"./ReactDOMInput":147,"./ReactDOMOption":150,"./ReactDOMSelect":151,"./ReactDOMTextarea":154,"./ReactInstrumentation":172,"./ReactMultiChild":176,"./ReactServerRenderingTransaction":187,"./escapeTextContentForBrowser":216,"./isEventSupported":230,"./reactProdInvariant":234,"./validateDOMNesting":240,"_process":272,"fbjs/lib/emptyFunction":248,"fbjs/lib/invariant":256,"fbjs/lib/keyOf":260,"fbjs/lib/shallowEqual":265,"fbjs/lib/warning":266,"object-assign":39}],139:[function(require,module,exports){
+},{"./AutoFocusUtils":103,"./CSSPropertyOperations":106,"./DOMLazyTree":110,"./DOMNamespaces":111,"./DOMProperty":112,"./DOMPropertyOperations":113,"./EventConstants":118,"./EventPluginHub":119,"./EventPluginRegistry":120,"./ReactBrowserEventEmitter":129,"./ReactComponentBrowserEnvironment":135,"./ReactDOMButton":141,"./ReactDOMComponentFlags":143,"./ReactDOMComponentTree":144,"./ReactDOMInput":151,"./ReactDOMOption":154,"./ReactDOMSelect":155,"./ReactDOMTextarea":158,"./ReactInstrumentation":176,"./ReactMultiChild":180,"./ReactServerRenderingTransaction":193,"./escapeTextContentForBrowser":222,"./isEventSupported":236,"./reactProdInvariant":240,"./validateDOMNesting":246,"_process":277,"fbjs/lib/emptyFunction":254,"fbjs/lib/invariant":262,"fbjs/lib/keyOf":266,"fbjs/lib/shallowEqual":271,"fbjs/lib/warning":272,"object-assign":40}],143:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -20031,7 +20862,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],140:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20222,7 +21053,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":109,"./ReactDOMComponentFlags":139,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],141:[function(require,module,exports){
+},{"./DOMProperty":112,"./ReactDOMComponentFlags":143,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],145:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20258,7 +21089,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":240,"_process":272}],142:[function(require,module,exports){
+},{"./validateDOMNesting":246,"_process":277}],146:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20328,7 +21159,7 @@ ReactDOMDebugTool.addDevtool(ReactDOMNullInputValuePropDevtool);
 
 module.exports = ReactDOMDebugTool;
 }).call(this,require('_process'))
-},{"./ReactDOMNullInputValuePropDevtool":149,"./ReactDOMUnknownPropertyDevtool":156,"./ReactDebugTool":157,"_process":272,"fbjs/lib/warning":266}],143:[function(require,module,exports){
+},{"./ReactDOMNullInputValuePropDevtool":153,"./ReactDOMUnknownPropertyDevtool":160,"./ReactDebugTool":161,"_process":277,"fbjs/lib/warning":272}],147:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -20389,7 +21220,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":107,"./ReactDOMComponentTree":140,"object-assign":39}],144:[function(require,module,exports){
+},{"./DOMLazyTree":110,"./ReactDOMComponentTree":144,"object-assign":40}],148:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20568,7 +21399,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":160,"./ReactElementValidator":161,"_process":272,"fbjs/lib/mapObject":261}],145:[function(require,module,exports){
+},{"./ReactElement":164,"./ReactElementValidator":165,"_process":277,"fbjs/lib/mapObject":267}],149:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20587,7 +21418,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],146:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20622,7 +21453,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":106,"./ReactDOMComponentTree":140}],147:[function(require,module,exports){
+},{"./DOMChildrenOperations":109,"./ReactDOMComponentTree":144}],151:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20692,7 +21523,10 @@ var ReactDOMInput = {
     var hostProps = _assign({
       // Make sure we set .type before any other properties (setting .value
       // before .type means .value is lost in IE11 and below)
-      type: undefined
+      type: undefined,
+      // Make sure we set .step before .value (setting .value before .step
+      // means .value is rounded on mount, based upon step precision)
+      step: undefined
     }, DisabledInputUtils.getHostProps(inst, props), {
       defaultChecked: undefined,
       defaultValue: undefined,
@@ -20869,7 +21703,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":110,"./DisabledInputUtils":113,"./LinkedValueUtils":123,"./ReactDOMComponentTree":140,"./ReactUpdates":190,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266,"object-assign":39}],148:[function(require,module,exports){
+},{"./DOMPropertyOperations":113,"./DisabledInputUtils":116,"./LinkedValueUtils":126,"./ReactDOMComponentTree":144,"./ReactUpdates":196,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272,"object-assign":40}],152:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20893,7 +21727,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = { debugTool: debugTool };
 }).call(this,require('_process'))
-},{"./ReactDOMDebugTool":142,"_process":272}],149:[function(require,module,exports){
+},{"./ReactDOMDebugTool":146,"_process":277}],153:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20939,7 +21773,7 @@ var ReactDOMUnknownPropertyDevtool = {
 
 module.exports = ReactDOMUnknownPropertyDevtool;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":133,"_process":272,"fbjs/lib/warning":266}],150:[function(require,module,exports){
+},{"./ReactComponentTreeDevtool":137,"_process":277,"fbjs/lib/warning":272}],154:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21065,7 +21899,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactChildren":128,"./ReactDOMComponentTree":140,"./ReactDOMSelect":151,"_process":272,"fbjs/lib/warning":266,"object-assign":39}],151:[function(require,module,exports){
+},{"./ReactChildren":131,"./ReactDOMComponentTree":144,"./ReactDOMSelect":155,"_process":277,"fbjs/lib/warning":272,"object-assign":40}],155:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21268,7 +22102,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./DisabledInputUtils":113,"./LinkedValueUtils":123,"./ReactDOMComponentTree":140,"./ReactUpdates":190,"_process":272,"fbjs/lib/warning":266,"object-assign":39}],152:[function(require,module,exports){
+},{"./DisabledInputUtils":116,"./LinkedValueUtils":126,"./ReactDOMComponentTree":144,"./ReactUpdates":196,"_process":277,"fbjs/lib/warning":272,"object-assign":40}],156:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21481,7 +22315,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":226,"./getTextContentAccessor":227,"fbjs/lib/ExecutionEnvironment":242}],153:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":232,"./getTextContentAccessor":233,"fbjs/lib/ExecutionEnvironment":248}],157:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21655,7 +22489,7 @@ _assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":106,"./DOMLazyTree":107,"./ReactDOMComponentTree":140,"./ReactInstrumentation":172,"./escapeTextContentForBrowser":216,"./reactProdInvariant":234,"./validateDOMNesting":240,"_process":272,"fbjs/lib/invariant":256,"object-assign":39}],154:[function(require,module,exports){
+},{"./DOMChildrenOperations":109,"./DOMLazyTree":110,"./ReactDOMComponentTree":144,"./ReactInstrumentation":176,"./escapeTextContentForBrowser":222,"./reactProdInvariant":240,"./validateDOMNesting":246,"_process":277,"fbjs/lib/invariant":262,"object-assign":40}],158:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21813,7 +22647,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./DisabledInputUtils":113,"./LinkedValueUtils":123,"./ReactDOMComponentTree":140,"./ReactUpdates":190,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266,"object-assign":39}],155:[function(require,module,exports){
+},{"./DisabledInputUtils":116,"./LinkedValueUtils":126,"./ReactDOMComponentTree":144,"./ReactUpdates":196,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272,"object-assign":40}],159:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -21952,7 +22786,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],156:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],160:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -22067,7 +22901,7 @@ var ReactDOMUnknownPropertyDevtool = {
 
 module.exports = ReactDOMUnknownPropertyDevtool;
 }).call(this,require('_process'))
-},{"./DOMProperty":109,"./EventPluginRegistry":117,"./ReactComponentTreeDevtool":133,"_process":272,"fbjs/lib/warning":266}],157:[function(require,module,exports){
+},{"./DOMProperty":112,"./EventPluginRegistry":120,"./ReactComponentTreeDevtool":137,"_process":277,"fbjs/lib/warning":272}],161:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -22085,6 +22919,7 @@ module.exports = ReactDOMUnknownPropertyDevtool;
 var ReactInvalidSetStateWarningDevTool = require('./ReactInvalidSetStateWarningDevTool');
 var ReactHostOperationHistoryDevtool = require('./ReactHostOperationHistoryDevtool');
 var ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+var ReactChildrenMutationWarningDevtool = require('./ReactChildrenMutationWarningDevtool');
 var ExecutionEnvironment = require('fbjs/lib/ExecutionEnvironment');
 
 var performanceNow = require('fbjs/lib/performanceNow');
@@ -22116,6 +22951,8 @@ var currentTimerDebugID = null;
 var currentTimerStartTime = null;
 var currentTimerNestedFlushDuration = null;
 var currentTimerType = null;
+
+var lifeCycleTimerHasWarned = false;
 
 function clearHistory() {
   ReactComponentTreeDevtool.purgeUnmountedComponents();
@@ -22174,7 +23011,10 @@ function beginLifeCycleTimer(debugID, timerType) {
   if (currentFlushNesting === 0) {
     return;
   }
-  process.env.NODE_ENV !== 'production' ? warning(!currentTimerType, 'There is an internal error in the React performance measurement code. ' + 'Did not expect %s timer to start while %s timer is still in ' + 'progress for %s instance.', timerType, currentTimerType || 'no', debugID === currentTimerDebugID ? 'the same' : 'another') : void 0;
+  if (currentTimerType && !lifeCycleTimerHasWarned) {
+    process.env.NODE_ENV !== 'production' ? warning(false, 'There is an internal error in the React performance measurement code. ' + 'Did not expect %s timer to start while %s timer is still in ' + 'progress for %s instance.', timerType, currentTimerType || 'no', debugID === currentTimerDebugID ? 'the same' : 'another') : void 0;
+    lifeCycleTimerHasWarned = true;
+  }
   currentTimerStartTime = performanceNow();
   currentTimerNestedFlushDuration = 0;
   currentTimerDebugID = debugID;
@@ -22185,7 +23025,10 @@ function endLifeCycleTimer(debugID, timerType) {
   if (currentFlushNesting === 0) {
     return;
   }
-  process.env.NODE_ENV !== 'production' ? warning(currentTimerType === timerType, 'There is an internal error in the React performance measurement code. ' + 'We did not expect %s timer to stop while %s timer is still in ' + 'progress for %s instance. Please report this as a bug in React.', timerType, currentTimerType || 'no', debugID === currentTimerDebugID ? 'the same' : 'another') : void 0;
+  if (currentTimerType !== timerType && !lifeCycleTimerHasWarned) {
+    process.env.NODE_ENV !== 'production' ? warning(false, 'There is an internal error in the React performance measurement code. ' + 'We did not expect %s timer to stop while %s timer is still in ' + 'progress for %s instance. Please report this as a bug in React.', timerType, currentTimerType || 'no', debugID === currentTimerDebugID ? 'the same' : 'another') : void 0;
+    lifeCycleTimerHasWarned = true;
+  }
   if (isProfiling) {
     currentFlushMeasurements.push({
       timerType: timerType,
@@ -22311,6 +23154,14 @@ var ReactDebugTool = {
     checkDebugID(debugID);
     emitEvent('onHostOperation', debugID, type, payload);
   },
+  onComponentHasMounted: function (debugID) {
+    checkDebugID(debugID);
+    emitEvent('onComponentHasMounted', debugID);
+  },
+  onComponentHasUpdated: function (debugID) {
+    checkDebugID(debugID);
+    emitEvent('onComponentHasUpdated', debugID);
+  },
   onSetState: function () {
     emitEvent('onSetState');
   },
@@ -22366,6 +23217,7 @@ var ReactDebugTool = {
 
 ReactDebugTool.addDevtool(ReactInvalidSetStateWarningDevTool);
 ReactDebugTool.addDevtool(ReactComponentTreeDevtool);
+ReactDebugTool.addDevtool(ReactChildrenMutationWarningDevtool);
 var url = ExecutionEnvironment.canUseDOM && window.location.href || '';
 if (/[?&]react_perf\b/.test(url)) {
   ReactDebugTool.beginProfiling();
@@ -22373,7 +23225,7 @@ if (/[?&]react_perf\b/.test(url)) {
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":133,"./ReactHostOperationHistoryDevtool":168,"./ReactInvalidSetStateWarningDevTool":173,"_process":272,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/performanceNow":264,"fbjs/lib/warning":266}],158:[function(require,module,exports){
+},{"./ReactChildrenMutationWarningDevtool":132,"./ReactComponentTreeDevtool":137,"./ReactHostOperationHistoryDevtool":172,"./ReactInvalidSetStateWarningDevTool":177,"_process":277,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/performanceNow":270,"fbjs/lib/warning":272}],162:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22442,7 +23294,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":190,"./Transaction":208,"fbjs/lib/emptyFunction":248,"object-assign":39}],159:[function(require,module,exports){
+},{"./ReactUpdates":196,"./Transaction":214,"fbjs/lib/emptyFunction":254,"object-assign":40}],163:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22527,7 +23379,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./BeforeInputEventPlugin":101,"./ChangeEventPlugin":105,"./DefaultEventPluginOrder":112,"./EnterLeaveEventPlugin":114,"./HTMLDOMPropertyConfig":121,"./ReactComponentBrowserEnvironment":131,"./ReactDOMComponent":138,"./ReactDOMComponentTree":140,"./ReactDOMEmptyComponent":143,"./ReactDOMTextComponent":153,"./ReactDOMTreeTraversal":155,"./ReactDefaultBatchingStrategy":158,"./ReactEventListener":165,"./ReactInjection":169,"./ReactReconcileTransaction":184,"./SVGDOMPropertyConfig":192,"./SelectEventPlugin":193,"./SimpleEventPlugin":194}],160:[function(require,module,exports){
+},{"./BeforeInputEventPlugin":104,"./ChangeEventPlugin":108,"./DefaultEventPluginOrder":115,"./EnterLeaveEventPlugin":117,"./HTMLDOMPropertyConfig":124,"./ReactComponentBrowserEnvironment":135,"./ReactDOMComponent":142,"./ReactDOMComponentTree":144,"./ReactDOMEmptyComponent":147,"./ReactDOMTextComponent":157,"./ReactDOMTreeTraversal":159,"./ReactDefaultBatchingStrategy":162,"./ReactEventListener":169,"./ReactInjection":173,"./ReactReconcileTransaction":190,"./SVGDOMPropertyConfig":198,"./SelectEventPlugin":199,"./SimpleEventPlugin":200}],164:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -22628,6 +23480,7 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
     // This can be replaced with a WeakMap once they are implemented in
     // commonly used development environments.
     element._store = {};
+    var shadowChildren = Array.isArray(props.children) ? props.children.slice(0) : props.children;
 
     // To make comparing ReactElements easier for testing purposes, we make
     // the validation flag non-enumerable (where possible, which should
@@ -22647,6 +23500,12 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
         writable: false,
         value: self
       });
+      Object.defineProperty(element, '_shadowChildren', {
+        configurable: false,
+        enumerable: false,
+        writable: false,
+        value: shadowChildren
+      });
       // Two elements created in two different places should be considered
       // equal for testing purposes and therefore we hide it from enumeration.
       Object.defineProperty(element, '_source', {
@@ -22658,6 +23517,7 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
     } else {
       element._store.validated = false;
       element._self = self;
+      element._shadowChildren = shadowChildren;
       element._source = source;
     }
     if (Object.freeze) {
@@ -22882,7 +23742,7 @@ ReactElement.REACT_ELEMENT_TYPE = REACT_ELEMENT_TYPE;
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":135,"./canDefineProperty":212,"_process":272,"fbjs/lib/warning":266,"object-assign":39}],161:[function(require,module,exports){
+},{"./ReactCurrentOwner":139,"./canDefineProperty":218,"_process":277,"fbjs/lib/warning":272,"object-assign":40}],165:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -23111,7 +23971,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":133,"./ReactCurrentOwner":135,"./ReactElement":160,"./ReactPropTypeLocations":182,"./canDefineProperty":212,"./checkReactTypeSpec":213,"./getIteratorFn":225,"_process":272,"fbjs/lib/warning":266}],162:[function(require,module,exports){
+},{"./ReactComponentTreeDevtool":137,"./ReactCurrentOwner":139,"./ReactElement":164,"./ReactPropTypeLocations":186,"./canDefineProperty":218,"./checkReactTypeSpec":219,"./getIteratorFn":231,"_process":277,"fbjs/lib/warning":272}],166:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -23142,7 +24002,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],163:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -23221,7 +24081,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":272}],164:[function(require,module,exports){
+},{"_process":277}],168:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23255,7 +24115,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":116}],165:[function(require,module,exports){
+},{"./EventPluginHub":119}],169:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23413,7 +24273,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":124,"./ReactDOMComponentTree":140,"./ReactUpdates":190,"./getEventTarget":223,"fbjs/lib/EventListener":241,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/getUnboundedScrollPosition":253,"object-assign":39}],166:[function(require,module,exports){
+},{"./PooledClass":127,"./ReactDOMComponentTree":144,"./ReactUpdates":196,"./getEventTarget":229,"fbjs/lib/EventListener":247,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/getUnboundedScrollPosition":259,"object-assign":40}],170:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23436,7 +24296,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],167:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -23515,7 +24375,7 @@ var ReactHostComponent = {
 
 module.exports = ReactHostComponent;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"object-assign":39}],168:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"object-assign":40}],172:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -23553,7 +24413,7 @@ var ReactHostOperationHistoryDevtool = {
 };
 
 module.exports = ReactHostOperationHistoryDevtool;
-},{}],169:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23590,7 +24450,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":109,"./EventPluginHub":116,"./EventPluginUtils":118,"./ReactBrowserEventEmitter":126,"./ReactClass":129,"./ReactComponentEnvironment":132,"./ReactEmptyComponent":162,"./ReactHostComponent":167,"./ReactUpdates":190}],170:[function(require,module,exports){
+},{"./DOMProperty":112,"./EventPluginHub":119,"./EventPluginUtils":121,"./ReactBrowserEventEmitter":129,"./ReactClass":133,"./ReactComponentEnvironment":136,"./ReactEmptyComponent":166,"./ReactHostComponent":171,"./ReactUpdates":196}],174:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23715,7 +24575,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":152,"fbjs/lib/containsNode":245,"fbjs/lib/focusNode":250,"fbjs/lib/getActiveElement":251}],171:[function(require,module,exports){
+},{"./ReactDOMSelection":156,"fbjs/lib/containsNode":251,"fbjs/lib/focusNode":256,"fbjs/lib/getActiveElement":257}],175:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23764,7 +24624,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],172:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -23788,7 +24648,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = { debugTool: debugTool };
 }).call(this,require('_process'))
-},{"./ReactDebugTool":157,"_process":272}],173:[function(require,module,exports){
+},{"./ReactDebugTool":161,"_process":277}],177:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -23827,7 +24687,7 @@ var ReactInvalidSetStateWarningDevTool = {
 
 module.exports = ReactInvalidSetStateWarningDevTool;
 }).call(this,require('_process'))
-},{"_process":272,"fbjs/lib/warning":266}],174:[function(require,module,exports){
+},{"_process":277,"fbjs/lib/warning":272}],178:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23878,7 +24738,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":211}],175:[function(require,module,exports){
+},{"./adler32":217}],179:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -24380,7 +25240,7 @@ var ReactMount = {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":107,"./DOMProperty":109,"./ReactBrowserEventEmitter":126,"./ReactCurrentOwner":135,"./ReactDOMComponentTree":140,"./ReactDOMContainerInfo":141,"./ReactDOMFeatureFlags":145,"./ReactElement":160,"./ReactFeatureFlags":166,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactMarkupChecksum":174,"./ReactReconciler":185,"./ReactUpdateQueue":189,"./ReactUpdates":190,"./instantiateReactComponent":229,"./reactProdInvariant":234,"./setInnerHTML":236,"./shouldUpdateReactComponent":238,"_process":272,"fbjs/lib/emptyObject":249,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],176:[function(require,module,exports){
+},{"./DOMLazyTree":110,"./DOMProperty":112,"./ReactBrowserEventEmitter":129,"./ReactCurrentOwner":139,"./ReactDOMComponentTree":144,"./ReactDOMContainerInfo":145,"./ReactDOMFeatureFlags":149,"./ReactElement":164,"./ReactFeatureFlags":170,"./ReactInstanceMap":175,"./ReactInstrumentation":176,"./ReactMarkupChecksum":178,"./ReactReconciler":191,"./ReactUpdateQueue":195,"./ReactUpdates":196,"./instantiateReactComponent":235,"./reactProdInvariant":240,"./setInnerHTML":242,"./shouldUpdateReactComponent":244,"_process":277,"fbjs/lib/emptyObject":255,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],180:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -24584,7 +25444,7 @@ var ReactMultiChild = {
       return ReactChildReconciler.instantiateChildren(nestedChildren, transaction, context);
     },
 
-    _reconcilerUpdateChildren: function (prevChildren, nextNestedChildrenElements, removedNodes, transaction, context) {
+    _reconcilerUpdateChildren: function (prevChildren, nextNestedChildrenElements, mountImages, removedNodes, transaction, context) {
       var nextChildren;
       if (process.env.NODE_ENV !== 'production') {
         if (this._currentElement) {
@@ -24594,12 +25454,12 @@ var ReactMultiChild = {
           } finally {
             ReactCurrentOwner.current = null;
           }
-          ReactChildReconciler.updateChildren(prevChildren, nextChildren, removedNodes, transaction, context);
+          ReactChildReconciler.updateChildren(prevChildren, nextChildren, mountImages, removedNodes, transaction, this, this._hostContainerInfo, context);
           return nextChildren;
         }
       }
       nextChildren = flattenChildren(nextNestedChildrenElements);
-      ReactChildReconciler.updateChildren(prevChildren, nextChildren, removedNodes, transaction, context);
+      ReactChildReconciler.updateChildren(prevChildren, nextChildren, mountImages, removedNodes, transaction, this, this._hostContainerInfo, context);
       return nextChildren;
     },
 
@@ -24696,7 +25556,8 @@ var ReactMultiChild = {
     _updateChildren: function (nextNestedChildrenElements, transaction, context) {
       var prevChildren = this._renderedChildren;
       var removedNodes = {};
-      var nextChildren = this._reconcilerUpdateChildren(prevChildren, nextNestedChildrenElements, removedNodes, transaction, context);
+      var mountImages = [];
+      var nextChildren = this._reconcilerUpdateChildren(prevChildren, nextNestedChildrenElements, mountImages, removedNodes, transaction, context);
       if (!nextChildren && !prevChildren) {
         return;
       }
@@ -24704,8 +25565,10 @@ var ReactMultiChild = {
       var name;
       // `nextIndex` will increment for each child in `nextChildren`, but
       // `lastIndex` will be the last index visited in `prevChildren`.
-      var lastIndex = 0;
       var nextIndex = 0;
+      var lastIndex = 0;
+      // `nextMountIndex` will increment for each newly mounted child.
+      var nextMountIndex = 0;
       var lastPlacedNode = null;
       for (name in nextChildren) {
         if (!nextChildren.hasOwnProperty(name)) {
@@ -24724,7 +25587,8 @@ var ReactMultiChild = {
             // The `removedNodes` loop below will actually remove the child.
           }
           // The child must be instantiated before it's mounted.
-          updates = enqueue(updates, this._mountChildAtIndex(nextChild, lastPlacedNode, nextIndex, transaction, context));
+          updates = enqueue(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
+          nextMountIndex++;
         }
         nextIndex++;
         lastPlacedNode = ReactReconciler.getHostNode(nextChild);
@@ -24807,8 +25671,7 @@ var ReactMultiChild = {
      * @param {ReactReconcileTransaction} transaction
      * @private
      */
-    _mountChildAtIndex: function (child, afterNode, index, transaction, context) {
-      var mountImage = ReactReconciler.mountComponent(child, transaction, this, this._hostContainerInfo, context);
+    _mountChildAtIndex: function (child, mountImage, afterNode, index, transaction, context) {
       child._mountIndex = index;
       return this.createChild(child, afterNode, mountImage);
     },
@@ -24833,7 +25696,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":127,"./ReactComponentEnvironment":132,"./ReactCurrentOwner":135,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactMultiChildUpdateTypes":177,"./ReactReconciler":185,"./flattenChildren":218,"./reactProdInvariant":234,"_process":272,"fbjs/lib/emptyFunction":248,"fbjs/lib/invariant":256}],177:[function(require,module,exports){
+},{"./ReactChildReconciler":130,"./ReactComponentEnvironment":136,"./ReactCurrentOwner":139,"./ReactInstanceMap":175,"./ReactInstrumentation":176,"./ReactMultiChildUpdateTypes":181,"./ReactReconciler":191,"./flattenChildren":224,"./reactProdInvariant":240,"_process":277,"fbjs/lib/emptyFunction":254,"fbjs/lib/invariant":262}],181:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -24866,7 +25729,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-},{"fbjs/lib/keyMirror":259}],178:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":265}],182:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -24909,7 +25772,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./ReactElement":160,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],179:[function(require,module,exports){
+},{"./ReactElement":164,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],183:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -25008,7 +25871,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":272,"fbjs/lib/warning":266}],180:[function(require,module,exports){
+},{"_process":277,"fbjs/lib/warning":272}],184:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25105,7 +25968,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],181:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],185:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25132,7 +25995,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":272}],182:[function(require,module,exports){
+},{"_process":277}],186:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25155,7 +26018,8 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-},{"fbjs/lib/keyMirror":259}],183:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":265}],187:[function(require,module,exports){
+(function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25171,9 +26035,11 @@ module.exports = ReactPropTypeLocations;
 
 var ReactElement = require('./ReactElement');
 var ReactPropTypeLocationNames = require('./ReactPropTypeLocationNames');
+var ReactPropTypesSecret = require('./ReactPropTypesSecret');
 
 var emptyFunction = require('fbjs/lib/emptyFunction');
 var getIteratorFn = require('./getIteratorFn');
+var warning = require('fbjs/lib/warning');
 
 /**
  * Collection of methods that allow declaration and validation of props that are
@@ -25263,9 +26129,21 @@ function is(x, y) {
 /*eslint-enable no-self-compare*/
 
 function createChainableTypeChecker(validate) {
-  function checkType(isRequired, props, propName, componentName, location, propFullName) {
+  if (process.env.NODE_ENV !== 'production') {
+    var manualPropTypeCallCache = {};
+  }
+  function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
     componentName = componentName || ANONYMOUS;
     propFullName = propFullName || propName;
+    if (process.env.NODE_ENV !== 'production') {
+      if (secret !== ReactPropTypesSecret && typeof console !== 'undefined') {
+        var cacheKey = componentName + ':' + propName;
+        if (!manualPropTypeCallCache[cacheKey]) {
+          process.env.NODE_ENV !== 'production' ? warning(false, 'You are manually calling a React.PropTypes validation ' + 'function for the `%s` prop on `%s`. This is deprecated ' + 'and will not work in the next major version. You may be ' + 'seeing this warning due to a third-party PropTypes library. ' + 'See https://fb.me/react-warning-dont-call-proptypes for details.', propFullName, componentName) : void 0;
+          manualPropTypeCallCache[cacheKey] = true;
+        }
+      }
+    }
     if (props[propName] == null) {
       var locationName = ReactPropTypeLocationNames[location];
       if (isRequired) {
@@ -25284,7 +26162,7 @@ function createChainableTypeChecker(validate) {
 }
 
 function createPrimitiveTypeChecker(expectedType) {
-  function validate(props, propName, componentName, location, propFullName) {
+  function validate(props, propName, componentName, location, propFullName, secret) {
     var propValue = props[propName];
     var propType = getPropType(propValue);
     if (propType !== expectedType) {
@@ -25317,7 +26195,7 @@ function createArrayOfTypeChecker(typeChecker) {
       return new Error('Invalid ' + locationName + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
     }
     for (var i = 0; i < propValue.length; i++) {
-      var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']');
+      var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
       if (error instanceof Error) {
         return error;
       }
@@ -25329,9 +26207,11 @@ function createArrayOfTypeChecker(typeChecker) {
 
 function createElementTypeChecker() {
   function validate(props, propName, componentName, location, propFullName) {
-    if (!ReactElement.isValidElement(props[propName])) {
+    var propValue = props[propName];
+    if (!ReactElement.isValidElement(propValue)) {
       var locationName = ReactPropTypeLocationNames[location];
-      return new Error('Invalid ' + locationName + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a single ReactElement.'));
+      var propType = getPropType(propValue);
+      return new Error('Invalid ' + locationName + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
     }
     return null;
   }
@@ -25353,9 +26233,8 @@ function createInstanceTypeChecker(expectedClass) {
 
 function createEnumTypeChecker(expectedValues) {
   if (!Array.isArray(expectedValues)) {
-    return createChainableTypeChecker(function () {
-      return new Error('Invalid argument supplied to oneOf, expected an instance of array.');
-    });
+    process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+    return emptyFunction.thatReturnsNull;
   }
 
   function validate(props, propName, componentName, location, propFullName) {
@@ -25386,7 +26265,7 @@ function createObjectOfTypeChecker(typeChecker) {
     }
     for (var key in propValue) {
       if (propValue.hasOwnProperty(key)) {
-        var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key);
+        var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
         if (error instanceof Error) {
           return error;
         }
@@ -25399,15 +26278,14 @@ function createObjectOfTypeChecker(typeChecker) {
 
 function createUnionTypeChecker(arrayOfTypeCheckers) {
   if (!Array.isArray(arrayOfTypeCheckers)) {
-    return createChainableTypeChecker(function () {
-      return new Error('Invalid argument supplied to oneOfType, expected an instance of array.');
-    });
+    process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+    return emptyFunction.thatReturnsNull;
   }
 
   function validate(props, propName, componentName, location, propFullName) {
     for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
       var checker = arrayOfTypeCheckers[i];
-      if (checker(props, propName, componentName, location, propFullName) == null) {
+      if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
         return null;
       }
     }
@@ -25442,7 +26320,7 @@ function createShapeTypeChecker(shapeTypes) {
       if (!checker) {
         continue;
       }
-      var error = checker(propValue, key, componentName, location, propFullName + '.' + key);
+      var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
       if (error) {
         return error;
       }
@@ -25559,7 +26437,68 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":160,"./ReactPropTypeLocationNames":181,"./getIteratorFn":225,"fbjs/lib/emptyFunction":248}],184:[function(require,module,exports){
+}).call(this,require('_process'))
+},{"./ReactElement":164,"./ReactPropTypeLocationNames":185,"./ReactPropTypesSecret":188,"./getIteratorFn":231,"_process":277,"fbjs/lib/emptyFunction":254,"fbjs/lib/warning":272}],188:[function(require,module,exports){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ReactPropTypesSecret
+ */
+
+'use strict';
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+},{}],189:[function(require,module,exports){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ReactPureComponent
+ */
+
+'use strict';
+
+var _assign = require('object-assign');
+
+var ReactComponent = require('./ReactComponent');
+var ReactNoopUpdateQueue = require('./ReactNoopUpdateQueue');
+
+var emptyObject = require('fbjs/lib/emptyObject');
+
+/**
+ * Base class helpers for the updating state of a component.
+ */
+function ReactPureComponent(props, context, updater) {
+  // Duplicated from ReactComponent.
+  this.props = props;
+  this.context = context;
+  this.refs = emptyObject;
+  // We initialize the default updater but the real one gets injected by the
+  // renderer.
+  this.updater = updater || ReactNoopUpdateQueue;
+}
+
+function ComponentDummy() {}
+ComponentDummy.prototype = ReactComponent.prototype;
+ReactPureComponent.prototype = new ComponentDummy();
+ReactPureComponent.prototype.constructor = ReactPureComponent;
+// Avoid an extra prototype jump for these methods.
+_assign(ReactPureComponent.prototype, ReactComponent.prototype);
+ReactPureComponent.prototype.isPureReactComponent = true;
+
+module.exports = ReactPureComponent;
+},{"./ReactComponent":134,"./ReactNoopUpdateQueue":183,"fbjs/lib/emptyObject":255,"object-assign":40}],190:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25740,7 +26679,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 }).call(this,require('_process'))
-},{"./CallbackQueue":104,"./PooledClass":124,"./ReactBrowserEventEmitter":126,"./ReactInputSelection":170,"./ReactInstrumentation":172,"./ReactUpdateQueue":189,"./Transaction":208,"_process":272,"object-assign":39}],185:[function(require,module,exports){
+},{"./CallbackQueue":107,"./PooledClass":127,"./ReactBrowserEventEmitter":129,"./ReactInputSelection":174,"./ReactInstrumentation":176,"./ReactUpdateQueue":195,"./Transaction":214,"_process":277,"object-assign":40}],191:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25755,12 +26694,10 @@ module.exports = ReactReconcileTransaction;
 
 'use strict';
 
-var _prodInvariant = require('./reactProdInvariant');
-
 var ReactRef = require('./ReactRef');
 var ReactInstrumentation = require('./ReactInstrumentation');
 
-var invariant = require('fbjs/lib/invariant');
+var warning = require('fbjs/lib/warning');
 
 /**
  * Helper to call ReactRef.attachRefs with this composite component, split out
@@ -25897,7 +26834,7 @@ var ReactReconciler = {
     if (internalInstance._updateBatchNumber !== updateBatchNumber) {
       // The component's enqueued batch number should always be the current
       // batch or the following one.
-      !(internalInstance._updateBatchNumber == null || internalInstance._updateBatchNumber === updateBatchNumber + 1) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'performUpdateIfNecessary: Unexpected batch number (current %s, pending %s)', updateBatchNumber, internalInstance._updateBatchNumber) : _prodInvariant('121', updateBatchNumber, internalInstance._updateBatchNumber) : void 0;
+      process.env.NODE_ENV !== 'production' ? warning(internalInstance._updateBatchNumber == null || internalInstance._updateBatchNumber === updateBatchNumber + 1, 'performUpdateIfNecessary: Unexpected batch number (current %s, ' + 'pending %s)', updateBatchNumber, internalInstance._updateBatchNumber) : void 0;
       return;
     }
     if (process.env.NODE_ENV !== 'production') {
@@ -25919,7 +26856,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":172,"./ReactRef":186,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],186:[function(require,module,exports){
+},{"./ReactInstrumentation":176,"./ReactRef":192,"_process":277,"fbjs/lib/warning":272}],192:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25983,7 +26920,9 @@ ReactRef.shouldUpdateRefs = function (prevElement, nextElement) {
 
   return(
     // This has a few false positives w/r/t empty components.
-    prevEmpty || nextEmpty || nextElement._owner !== prevElement._owner || nextElement.ref !== prevElement.ref
+    prevEmpty || nextEmpty || nextElement.ref !== prevElement.ref ||
+    // If owner changes but we have an unchanged function ref, don't update refs
+    typeof nextElement.ref === 'string' && nextElement._owner !== prevElement._owner
   );
 };
 
@@ -25998,7 +26937,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":180}],187:[function(require,module,exports){
+},{"./ReactOwner":184}],193:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -26091,7 +27030,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 }).call(this,require('_process'))
-},{"./PooledClass":124,"./ReactInstrumentation":172,"./ReactServerUpdateQueue":188,"./Transaction":208,"_process":272,"object-assign":39}],188:[function(require,module,exports){
+},{"./PooledClass":127,"./ReactInstrumentation":176,"./ReactServerUpdateQueue":194,"./Transaction":214,"_process":277,"object-assign":40}],194:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -26235,7 +27174,7 @@ var ReactServerUpdateQueue = function () {
 
 module.exports = ReactServerUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactUpdateQueue":189,"./Transaction":208,"_process":272,"fbjs/lib/warning":266}],189:[function(require,module,exports){
+},{"./ReactUpdateQueue":195,"./Transaction":214,"_process":277,"fbjs/lib/warning":272}],195:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -26281,10 +27220,11 @@ function getInternalInstanceReadyForUpdate(publicInstance, callerName) {
   var internalInstance = ReactInstanceMap.get(publicInstance);
   if (!internalInstance) {
     if (process.env.NODE_ENV !== 'production') {
+      var ctor = publicInstance.constructor;
       // Only warn when we have a callerName. Otherwise we should be silent.
       // We're probably calling from enqueueCallback. We don't want to warn
       // there because we already warned for the corresponding lifecycle method.
-      process.env.NODE_ENV !== 'production' ? warning(!callerName, '%s(...): Can only update a mounted or mounting component. ' + 'This usually means you called %s() on an unmounted component. ' + 'This is a no-op. Please check the code for the %s component.', callerName, callerName, publicInstance.constructor.displayName) : void 0;
+      process.env.NODE_ENV !== 'production' ? warning(!callerName, '%s(...): Can only update a mounted or mounting component. ' + 'This usually means you called %s() on an unmounted component. ' + 'This is a no-op. Please check the code for the %s component.', callerName, callerName, ctor && (ctor.displayName || ctor.name) || 'ReactClass') : void 0;
     }
     return null;
   }
@@ -26463,7 +27403,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":135,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactUpdates":190,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],190:[function(require,module,exports){
+},{"./ReactCurrentOwner":139,"./ReactInstanceMap":175,"./ReactInstrumentation":176,"./ReactUpdates":196,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],196:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -26717,7 +27657,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":104,"./PooledClass":124,"./ReactFeatureFlags":166,"./ReactReconciler":185,"./Transaction":208,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"object-assign":39}],191:[function(require,module,exports){
+},{"./CallbackQueue":107,"./PooledClass":127,"./ReactFeatureFlags":170,"./ReactReconciler":191,"./Transaction":214,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"object-assign":40}],197:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26731,8 +27671,8 @@ module.exports = ReactUpdates;
 
 'use strict';
 
-module.exports = '15.2.1';
-},{}],192:[function(require,module,exports){
+module.exports = '15.3.0';
+},{}],198:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26998,6 +27938,8 @@ var ATTRS = {
   xlinkTitle: 'xlink:title',
   xlinkType: 'xlink:type',
   xmlBase: 'xml:base',
+  xmlns: 0,
+  xmlnsXlink: 'xmlns:xlink',
   xmlLang: 'xml:lang',
   xmlSpace: 'xml:space',
   y: 0,
@@ -27033,7 +27975,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],193:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27230,7 +28172,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventConstants":115,"./EventPropagators":119,"./ReactDOMComponentTree":140,"./ReactInputSelection":170,"./SyntheticEvent":199,"./isTextInputElement":231,"fbjs/lib/ExecutionEnvironment":242,"fbjs/lib/getActiveElement":251,"fbjs/lib/keyOf":260,"fbjs/lib/shallowEqual":265}],194:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPropagators":122,"./ReactDOMComponentTree":144,"./ReactInputSelection":174,"./SyntheticEvent":205,"./isTextInputElement":237,"fbjs/lib/ExecutionEnvironment":248,"fbjs/lib/getActiveElement":257,"fbjs/lib/keyOf":266,"fbjs/lib/shallowEqual":271}],200:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -27719,6 +28661,10 @@ for (var type in topLevelEventsToDispatchConfig) {
 var ON_CLICK_KEY = keyOf({ onClick: null });
 var onClickListeners = {};
 
+function getDictionaryKey(inst) {
+  return '.' + inst._rootNodeID;
+}
+
 var SimpleEventPlugin = {
 
   eventTypes: eventTypes,
@@ -27842,19 +28788,19 @@ var SimpleEventPlugin = {
     // fire. The workaround for this bug involves attaching an empty click
     // listener on the target node.
     if (registrationName === ON_CLICK_KEY) {
-      var id = inst._rootNodeID;
+      var key = getDictionaryKey(inst);
       var node = ReactDOMComponentTree.getNodeFromInstance(inst);
-      if (!onClickListeners[id]) {
-        onClickListeners[id] = EventListener.listen(node, 'click', emptyFunction);
+      if (!onClickListeners[key]) {
+        onClickListeners[key] = EventListener.listen(node, 'click', emptyFunction);
       }
     }
   },
 
   willDeleteListener: function (inst, registrationName) {
     if (registrationName === ON_CLICK_KEY) {
-      var id = inst._rootNodeID;
-      onClickListeners[id].remove();
-      delete onClickListeners[id];
+      var key = getDictionaryKey(inst);
+      onClickListeners[key].remove();
+      delete onClickListeners[key];
     }
   }
 
@@ -27862,7 +28808,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventConstants":115,"./EventPropagators":119,"./ReactDOMComponentTree":140,"./SyntheticAnimationEvent":195,"./SyntheticClipboardEvent":196,"./SyntheticDragEvent":198,"./SyntheticEvent":199,"./SyntheticFocusEvent":200,"./SyntheticKeyboardEvent":202,"./SyntheticMouseEvent":203,"./SyntheticTouchEvent":204,"./SyntheticTransitionEvent":205,"./SyntheticUIEvent":206,"./SyntheticWheelEvent":207,"./getEventCharCode":220,"./reactProdInvariant":234,"_process":272,"fbjs/lib/EventListener":241,"fbjs/lib/emptyFunction":248,"fbjs/lib/invariant":256,"fbjs/lib/keyOf":260}],195:[function(require,module,exports){
+},{"./EventConstants":118,"./EventPropagators":122,"./ReactDOMComponentTree":144,"./SyntheticAnimationEvent":201,"./SyntheticClipboardEvent":202,"./SyntheticDragEvent":204,"./SyntheticEvent":205,"./SyntheticFocusEvent":206,"./SyntheticKeyboardEvent":208,"./SyntheticMouseEvent":209,"./SyntheticTouchEvent":210,"./SyntheticTransitionEvent":211,"./SyntheticUIEvent":212,"./SyntheticWheelEvent":213,"./getEventCharCode":226,"./reactProdInvariant":240,"_process":277,"fbjs/lib/EventListener":247,"fbjs/lib/emptyFunction":254,"fbjs/lib/invariant":262,"fbjs/lib/keyOf":266}],201:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27902,7 +28848,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":199}],196:[function(require,module,exports){
+},{"./SyntheticEvent":205}],202:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27941,7 +28887,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":199}],197:[function(require,module,exports){
+},{"./SyntheticEvent":205}],203:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27978,7 +28924,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":199}],198:[function(require,module,exports){
+},{"./SyntheticEvent":205}],204:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28015,7 +28961,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":203}],199:[function(require,module,exports){
+},{"./SyntheticMouseEvent":209}],205:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -28278,7 +29224,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":124,"_process":272,"fbjs/lib/emptyFunction":248,"fbjs/lib/warning":266,"object-assign":39}],200:[function(require,module,exports){
+},{"./PooledClass":127,"_process":277,"fbjs/lib/emptyFunction":254,"fbjs/lib/warning":272,"object-assign":40}],206:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28315,7 +29261,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":206}],201:[function(require,module,exports){
+},{"./SyntheticUIEvent":212}],207:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28353,7 +29299,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":199}],202:[function(require,module,exports){
+},{"./SyntheticEvent":205}],208:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28438,7 +29384,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":206,"./getEventCharCode":220,"./getEventKey":221,"./getEventModifierState":222}],203:[function(require,module,exports){
+},{"./SyntheticUIEvent":212,"./getEventCharCode":226,"./getEventKey":227,"./getEventModifierState":228}],209:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28511,7 +29457,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":206,"./ViewportMetrics":209,"./getEventModifierState":222}],204:[function(require,module,exports){
+},{"./SyntheticUIEvent":212,"./ViewportMetrics":215,"./getEventModifierState":228}],210:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28557,7 +29503,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":206,"./getEventModifierState":222}],205:[function(require,module,exports){
+},{"./SyntheticUIEvent":212,"./getEventModifierState":228}],211:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28597,7 +29543,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":199}],206:[function(require,module,exports){
+},{"./SyntheticEvent":205}],212:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28657,7 +29603,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":199,"./getEventTarget":223}],207:[function(require,module,exports){
+},{"./SyntheticEvent":205,"./getEventTarget":229}],213:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28712,7 +29658,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":203}],208:[function(require,module,exports){
+},{"./SyntheticMouseEvent":209}],214:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -28948,7 +29894,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],209:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],215:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28976,7 +29922,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],210:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -29037,7 +29983,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],211:[function(require,module,exports){
+},{"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],217:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29082,7 +30028,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],212:[function(require,module,exports){
+},{}],218:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -29109,7 +30055,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":272}],213:[function(require,module,exports){
+},{"_process":277}],219:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -29127,9 +30073,21 @@ module.exports = canDefineProperty;
 var _prodInvariant = require('./reactProdInvariant');
 
 var ReactPropTypeLocationNames = require('./ReactPropTypeLocationNames');
+var ReactPropTypesSecret = require('./ReactPropTypesSecret');
 
 var invariant = require('fbjs/lib/invariant');
 var warning = require('fbjs/lib/warning');
+
+var ReactComponentTreeDevtool;
+
+if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'test') {
+  // Temporary hack.
+  // Inline requires don't work well with Jest:
+  // https://github.com/facebook/react/issues/7240
+  // Remove the inline requires when we don't need them anymore:
+  // https://github.com/facebook/react/pull/7178
+  ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+}
 
 var loggedTypeFailures = {};
 
@@ -29156,7 +30114,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
         // This is intentionally an invariant that gets caught. It's the same
         // behavior as without this statement except with a better message.
         !(typeof typeSpecs[typeSpecName] === 'function') ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s: %s type `%s` is invalid; it must be a function, usually from React.PropTypes.', componentName || 'React class', ReactPropTypeLocationNames[location], typeSpecName) : _prodInvariant('84', componentName || 'React class', ReactPropTypeLocationNames[location], typeSpecName) : void 0;
-        error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location);
+        error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
       } catch (ex) {
         error = ex;
       }
@@ -29169,7 +30127,9 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
         var componentStackInfo = '';
 
         if (process.env.NODE_ENV !== 'production') {
-          var ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+          if (!ReactComponentTreeDevtool) {
+            ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+          }
           if (debugID !== null) {
             componentStackInfo = ReactComponentTreeDevtool.getStackAddendumByID(debugID);
           } else if (element !== null) {
@@ -29185,7 +30145,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":133,"./ReactPropTypeLocationNames":181,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],214:[function(require,module,exports){
+},{"./ReactComponentTreeDevtool":137,"./ReactPropTypeLocationNames":185,"./ReactPropTypesSecret":188,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],220:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29218,7 +30178,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],215:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -29300,7 +30260,7 @@ function dangerousStyleValue(name, value, component) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":102,"_process":272,"fbjs/lib/warning":266}],216:[function(require,module,exports){
+},{"./CSSProperty":105,"_process":277,"fbjs/lib/warning":272}],222:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -29423,7 +30383,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],217:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -29486,7 +30446,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":135,"./ReactDOMComponentTree":140,"./ReactInstanceMap":171,"./getHostComponentFromComposite":224,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],218:[function(require,module,exports){
+},{"./ReactCurrentOwner":139,"./ReactDOMComponentTree":144,"./ReactInstanceMap":175,"./getHostComponentFromComposite":230,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],224:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -29506,6 +30466,17 @@ var KeyEscapeUtils = require('./KeyEscapeUtils');
 var traverseAllChildren = require('./traverseAllChildren');
 var warning = require('fbjs/lib/warning');
 
+var ReactComponentTreeDevtool;
+
+if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'test') {
+  // Temporary hack.
+  // Inline requires don't work well with Jest:
+  // https://github.com/facebook/react/issues/7240
+  // Remove the inline requires when we don't need them anymore:
+  // https://github.com/facebook/react/pull/7178
+  ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+}
+
 /**
  * @param {function} traverseContext Context passed through traversal.
  * @param {?ReactComponent} child React child component.
@@ -29518,7 +30489,9 @@ function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID
     var result = traverseContext;
     var keyUnique = result[name] === undefined;
     if (process.env.NODE_ENV !== 'production') {
-      var ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+      if (!ReactComponentTreeDevtool) {
+        ReactComponentTreeDevtool = require('./ReactComponentTreeDevtool');
+      }
       process.env.NODE_ENV !== 'production' ? warning(keyUnique, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeDevtool.getStackAddendumByID(selfDebugID)) : void 0;
     }
     if (keyUnique && child != null) {
@@ -29550,7 +30523,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":122,"./ReactComponentTreeDevtool":133,"./traverseAllChildren":239,"_process":272,"fbjs/lib/warning":266}],219:[function(require,module,exports){
+},{"./KeyEscapeUtils":125,"./ReactComponentTreeDevtool":137,"./traverseAllChildren":245,"_process":277,"fbjs/lib/warning":272}],225:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29582,7 +30555,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],220:[function(require,module,exports){
+},{}],226:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29633,7 +30606,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],221:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29736,7 +30709,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":220}],222:[function(require,module,exports){
+},{"./getEventCharCode":226}],228:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29780,7 +30753,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],223:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29816,7 +30789,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],224:[function(require,module,exports){
+},{}],230:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29847,7 +30820,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":178}],225:[function(require,module,exports){
+},{"./ReactNodeTypes":182}],231:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29889,7 +30862,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],226:[function(require,module,exports){
+},{}],232:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29964,7 +30937,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],227:[function(require,module,exports){
+},{}],233:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29998,7 +30971,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":242}],228:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":248}],234:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30100,7 +31073,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":242}],229:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":248}],235:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -30249,7 +31222,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":134,"./ReactEmptyComponent":162,"./ReactHostComponent":167,"./ReactInstrumentation":172,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266,"object-assign":39}],230:[function(require,module,exports){
+},{"./ReactCompositeComponent":138,"./ReactEmptyComponent":166,"./ReactHostComponent":171,"./ReactInstrumentation":176,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272,"object-assign":40}],236:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30310,7 +31283,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":242}],231:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":248}],237:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30362,7 +31335,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],232:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -30403,7 +31376,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":160,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256}],233:[function(require,module,exports){
+},{"./ReactElement":164,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262}],239:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30430,7 +31403,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":216}],234:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":222}],240:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30470,7 +31443,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],235:[function(require,module,exports){
+},{}],241:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30487,7 +31460,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":175}],236:[function(require,module,exports){
+},{"./ReactMount":179}],242:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30586,7 +31559,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":108,"./createMicrosoftUnsafeLocalFunction":214,"fbjs/lib/ExecutionEnvironment":242}],237:[function(require,module,exports){
+},{"./DOMNamespaces":111,"./createMicrosoftUnsafeLocalFunction":220,"fbjs/lib/ExecutionEnvironment":248}],243:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30635,7 +31608,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":216,"./setInnerHTML":236,"fbjs/lib/ExecutionEnvironment":242}],238:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":222,"./setInnerHTML":242,"fbjs/lib/ExecutionEnvironment":248}],244:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30678,7 +31651,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],239:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -30780,7 +31753,14 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
         }
       } else {
         if (process.env.NODE_ENV !== 'production') {
-          process.env.NODE_ENV !== 'production' ? warning(didWarnAboutMaps, 'Using Maps as children is not yet fully supported. It is an ' + 'experimental feature that might be removed. Convert it to a ' + 'sequence / iterable of keyed ReactElements instead.') : void 0;
+          var mapsAsChildrenAddendum = '';
+          if (ReactCurrentOwner.current) {
+            var mapsAsChildrenOwnerName = ReactCurrentOwner.current.getName();
+            if (mapsAsChildrenOwnerName) {
+              mapsAsChildrenAddendum = ' Check the render method of `' + mapsAsChildrenOwnerName + '`.';
+            }
+          }
+          process.env.NODE_ENV !== 'production' ? warning(didWarnAboutMaps, 'Using Maps as children is not yet fully supported. It is an ' + 'experimental feature that might be removed. Convert it to a ' + 'sequence / iterable of keyed ReactElements instead.%s', mapsAsChildrenAddendum) : void 0;
           didWarnAboutMaps = true;
         }
         // Iterator will provide entry [k,v] tuples rather than values.
@@ -30841,7 +31821,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":122,"./ReactCurrentOwner":135,"./ReactElement":160,"./getIteratorFn":225,"./reactProdInvariant":234,"_process":272,"fbjs/lib/invariant":256,"fbjs/lib/warning":266}],240:[function(require,module,exports){
+},{"./KeyEscapeUtils":125,"./ReactCurrentOwner":139,"./ReactElement":164,"./getIteratorFn":231,"./reactProdInvariant":240,"_process":277,"fbjs/lib/invariant":262,"fbjs/lib/warning":272}],246:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -31213,7 +32193,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":272,"fbjs/lib/emptyFunction":248,"fbjs/lib/warning":266,"object-assign":39}],241:[function(require,module,exports){
+},{"_process":277,"fbjs/lib/emptyFunction":254,"fbjs/lib/warning":272,"object-assign":40}],247:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31299,7 +32279,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":248,"_process":272}],242:[function(require,module,exports){
+},{"./emptyFunction":254,"_process":277}],248:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31335,7 +32315,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],243:[function(require,module,exports){
+},{}],249:[function(require,module,exports){
 "use strict";
 
 /**
@@ -31367,7 +32347,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],244:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31407,7 +32387,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":243}],245:[function(require,module,exports){
+},{"./camelize":249}],251:[function(require,module,exports){
 'use strict';
 
 /**
@@ -31447,7 +32427,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":258}],246:[function(require,module,exports){
+},{"./isTextNode":264}],252:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31576,7 +32556,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":256,"_process":272}],247:[function(require,module,exports){
+},{"./invariant":262,"_process":277}],253:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31662,7 +32642,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":242,"./createArrayFromMixed":246,"./getMarkupWrap":252,"./invariant":256,"_process":272}],248:[function(require,module,exports){
+},{"./ExecutionEnvironment":248,"./createArrayFromMixed":252,"./getMarkupWrap":258,"./invariant":262,"_process":277}],254:[function(require,module,exports){
 "use strict";
 
 /**
@@ -31701,7 +32681,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],249:[function(require,module,exports){
+},{}],255:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -31723,7 +32703,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":272}],250:[function(require,module,exports){
+},{"_process":277}],256:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31750,7 +32730,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],251:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 'use strict';
 
 /**
@@ -31785,7 +32765,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],252:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31882,7 +32862,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":242,"./invariant":256,"_process":272}],253:[function(require,module,exports){
+},{"./ExecutionEnvironment":248,"./invariant":262,"_process":277}],259:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31921,7 +32901,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],254:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 'use strict';
 
 /**
@@ -31954,7 +32934,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],255:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31993,7 +32973,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":254}],256:[function(require,module,exports){
+},{"./hyphenate":260}],262:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -32045,7 +33025,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":272}],257:[function(require,module,exports){
+},{"_process":277}],263:[function(require,module,exports){
 'use strict';
 
 /**
@@ -32068,7 +33048,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],258:[function(require,module,exports){
+},{}],264:[function(require,module,exports){
 'use strict';
 
 /**
@@ -32093,7 +33073,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":257}],259:[function(require,module,exports){
+},{"./isNode":263}],265:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -32143,7 +33123,7 @@ var keyMirror = function keyMirror(obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-},{"./invariant":256,"_process":272}],260:[function(require,module,exports){
+},{"./invariant":262,"_process":277}],266:[function(require,module,exports){
 "use strict";
 
 /**
@@ -32178,7 +33158,7 @@ var keyOf = function keyOf(oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],261:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32229,7 +33209,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-},{}],262:[function(require,module,exports){
+},{}],268:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32259,7 +33239,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],263:[function(require,module,exports){
+},{}],269:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32282,7 +33262,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":242}],264:[function(require,module,exports){
+},{"./ExecutionEnvironment":248}],270:[function(require,module,exports){
 'use strict';
 
 /**
@@ -32316,7 +33296,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":263}],265:[function(require,module,exports){
+},{"./performance":269}],271:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32383,7 +33363,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],266:[function(require,module,exports){
+},{}],272:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -32442,12 +33422,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":248,"_process":272}],267:[function(require,module,exports){
+},{"./emptyFunction":254,"_process":277}],273:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":125}],268:[function(require,module,exports){
+},{"./lib/React":128}],274:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -32455,71 +33435,7 @@ module.exports = function (str) {
 	});
 };
 
-},{}],269:[function(require,module,exports){
-(function (process){
-/**
- * Copyright 2014-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-'use strict';
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var warning = function() {};
-
-if (process.env.NODE_ENV !== 'production') {
-  warning = function(condition, format, args) {
-    var len = arguments.length;
-    args = new Array(len > 2 ? len - 2 : 0);
-    for (var key = 2; key < len; key++) {
-      args[key - 2] = arguments[key];
-    }
-    if (format === undefined) {
-      throw new Error(
-        '`warning(condition, format, ...args)` requires a warning ' +
-        'message argument'
-      );
-    }
-
-    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
-      throw new Error(
-        'The warning format should be able to uniquely identify this ' +
-        'warning. Please, use a more descriptive format than: ' + format
-      );
-    }
-
-    if (!condition) {
-      var argIndex = 0;
-      var message = 'Warning: ' +
-        format.replace(/%s/g, function() {
-          return args[argIndex++];
-        });
-      if (typeof console !== 'undefined') {
-        console.error(message);
-      }
-      try {
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-      } catch(x) {}
-    }
-  };
-}
-
-module.exports = warning;
-
-}).call(this,require('_process'))
-},{"_process":272}],270:[function(require,module,exports){
+},{}],275:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32552,6 +33468,7 @@ exports.default = function (lib, img, cjs, ss) {
 		}
 	};
 	// symbols:
+
 
 	(lib.bmpbase = function () {
 		this.spriteSheet = ss["top_atlas_"];
@@ -32867,7 +33784,7 @@ exports.default = function (lib, img, cjs, ss) {
 
 var lib, images, createjs, ss;
 
-},{}],271:[function(require,module,exports){
+},{}],276:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -33167,7 +34084,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],272:[function(require,module,exports){
+},{}],277:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
