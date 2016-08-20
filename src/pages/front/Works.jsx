@@ -100,7 +100,9 @@ export default class Works extends React.Component {
                 alt="img"
                 />
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'time/banner01.png'}
                   height="120"
@@ -108,7 +110,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'time/banner02.png'}
                   height="120"
@@ -116,7 +120,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'time/banner03.png'}
                   height="120"
@@ -126,7 +132,9 @@ export default class Works extends React.Component {
 
               <br />
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'time/banner04.png'}
                   height="120"
@@ -134,7 +142,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'time/banner05.png'}
                   height="120"
@@ -142,7 +152,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'time/banner06.png'}
                   height="120"
@@ -161,7 +173,9 @@ export default class Works extends React.Component {
                 alt="img"
                 />
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'cat/banner01.png'}
                   height="120"
@@ -169,7 +183,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'cat/banner02.png'}
                   height="120"
@@ -177,7 +193,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'cat/banner03.png'}
                   height="120"
@@ -185,7 +203,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'cat/banner04.png'}
                   height="120"
@@ -193,7 +213,9 @@ export default class Works extends React.Component {
                   />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'cat/banner05.png'}
                   height="120"
@@ -449,5 +471,18 @@ export default class Works extends React.Component {
       el.removeEventListener('animationend', clear, false);
       el.classList.remove('fadeIn');
     }
+  }
+
+  closeUp(e) {
+    e.preventDefault();
+    let el = e.target;
+    let active = document.getElementsByClassName('closeUp');
+    
+    for (let i = 0; i < active.length; i++) {
+      active[i].classList.remove('closeUp'); 
+    }
+
+    el.classList.add('closeUp');
+    this.fadeIn(e);
   }
 }

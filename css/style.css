@@ -7249,6 +7249,18 @@ article {
         #Front article#Works nav div div a {
           display: inline-block;
           margin: 1px; }
+          #Front article#Works nav div div a img {
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+          #Front article#Works nav div div a img.closeUp {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+            opacity: 1; }
     #Front article#Works nav div.pf-Works-Loc {
       background-color: #0198CA; }
       #Front article#Works nav div.pf-Works-Loc div > img:first-child {
@@ -7257,8 +7269,12 @@ article {
         margin: 0.5rem; }
     #Front article#Works nav div.pf-Works-Time {
       background-color: #CA0185; }
+      #Front article#Works nav div.pf-Works-Time a:hover {
+        opacity: 1; }
     #Front article#Works nav div.pf-Works-Cat {
       background-color: #0151CA; }
+      #Front article#Works nav div.pf-Works-Cat a:hover {
+        opacity: 1; }
     #Front article#Works div.pf-Works-Search {
       background-color: #0151CA;
       padding-top: 2rem;

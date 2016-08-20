@@ -23,6 +23,12 @@ article#Works
         a
           display: inline-block
           margin: 1px
+          img
+            +transition(all 0.5s ease-in-out)
+          img.closeUp
+            +transform(scale(1.1))
+            box-shadow: 0 10px 30px 0 rgba(0,0,0,0.3)
+            opacity: 1
 
     div.pf-Works-Loc
       background-color: $color-loc
@@ -34,9 +40,13 @@ article#Works
 
     div.pf-Works-Time
       background-color: $color-time
+      a:hover
+        opacity: 1
 
     div.pf-Works-Cat
       background-color: $color-cat
+      a:hover
+        opacity: 1
 
   div.pf-Works-Search
     background-color: $color-cat
