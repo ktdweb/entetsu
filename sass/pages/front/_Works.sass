@@ -1,0 +1,162 @@
+/*
+  # pages/front/Works.sass
+  front/Works.jsxに関するクラスを定義  
+  prefixには`pf-Works`を付与
+  */
+
+article#Works
+  padding-top: 180px
+
+  nav
+    div
+      padding: $small-spacing / 2
+      div
+        position: relative
+        width: 960px
+        margin: 0 auto
+        padding-left: 120px
+
+        & > img:first-child
+          position: absolute
+          left: 0
+
+        a
+          display: inline-block
+          margin: 1px
+
+    div.pf-Works-Loc
+      background-color: $color-loc
+      div
+        & > img:first-child
+          top: -41px
+        a
+          margin: $small-spacing / 2
+
+    div.pf-Works-Time
+      background-color: $color-time
+
+    div.pf-Works-Cat
+      background-color: $color-cat
+
+  div.pf-Works-Search
+    background-color: $color-cat
+    padding-top: $base-spacing
+    padding-bottom: $base-spacing * 3
+    color: white
+    div
+      width: 960px
+      margin: 0 auto
+      & > img
+        padding-left: 20px
+    
+
+  div.pf-Works-List
+    font-size: $small-font-size * 1.25
+    background-color: $color-works-bg
+    $path: '../imgs/pages/works/list_border.png'
+    +border-image(url($path) 60 repeat)
+    border-style: solid
+    border-width: 30px
+    border-top: 0
+    border-left: 0
+    border-right: 0
+
+    & > div
+      position: relative
+      width: 960px
+      margin: 0 auto
+      padding-top: $base-spacing * 3
+
+      section
+        display: table
+        width: 100%
+        & > div, ul
+          display: table-cell
+          text-align: center
+          vertical-align: middle
+        & > ul
+          width: auto
+        & > div
+          width: 35px
+
+      div.pf-Works-List-tab
+        position: absolute
+        top: -25px
+        width: 196px
+        height: 34px
+        text-align: center
+        line-height: 42px
+        $path: '../imgs/pages/works/list_tab.png'
+        background-image: url($path)
+        background-size: contain
+        background-repeat: no-repeat
+
+      ul li.pf-Works-List-column
+        display: inline-block
+        position: relative
+        width: 30%
+        height: 200px
+        margin: $small-spacing / 2
+        text-align: left
+        $path: '../imgs/pages/works/list_column.png'
+        +border-image(url($path) 120 repeat)
+        border-style: solid
+        border-width: 45px
+
+        div.pf-Works-List-column-head
+          position: absolute
+          top: -36px
+          left: -5px
+          right: -10px
+          a
+            position: absolute
+            top: -8px
+            right: -25px
+
+        div.pf-Works-List-column-section
+          position: absolute
+          top: 0px
+          bottom: -30px
+          left: -30px
+          right: -30px
+          text-align: justify
+          background-color: white
+          a img
+            border: 1px solid $color-works-base
+            margin-right: 10px
+            margin-bottom: 10px
+            float: left
+
+        div.pf-Works-List-column-footer
+          position: absolute
+          bottom: -32px
+          left: -30px
+          right: -10px
+          span:first-child
+            display: inline-block
+            margin-right: 10px
+            padding: 0px 10px
+            color: white
+            background-color: $color-works-base
+            border-radius: 3px
+          span:last-child
+            color: $color-works-base
+
+  footer
+    width: 960px
+    margin: 20px auto
+    font-size: $small-font-size * 1.25
+    p
+      float: left
+      color: $color-works-base
+    a
+      display: inline-block
+      margin: 0 10px
+      padding: 0 15px
+      border: 2px solid $color-works-base
+      border-radius: 20px
+
+  #column
+    &.fadeIn
+      +fadeIn()
+      

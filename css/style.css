@@ -7041,6 +7041,11 @@ article {
   # pages/front/Comapny.sass
   front/Company.jsxに関するクラスを定義
   prefixには`pf-Detail`を付与
+  */
+  /*
+  # pages/front/Works.sass
+  front/Works.jsxに関するクラスを定義
+  prefixには`pf-Works`を付与
   */ }
   #Front .menuTop {
     margin-top: 2rem; }
@@ -7229,6 +7234,170 @@ article {
       margin-right: 0.5rem; }
     #Front article#Company div.ceo img {
       border: 1px solid white; }
+  #Front article#Works {
+    padding-top: 180px; }
+    #Front article#Works nav div {
+      padding: 0.5rem; }
+      #Front article#Works nav div div {
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+        padding-left: 120px; }
+        #Front article#Works nav div div > img:first-child {
+          position: absolute;
+          left: 0; }
+        #Front article#Works nav div div a {
+          display: inline-block;
+          margin: 1px; }
+    #Front article#Works nav div.pf-Works-Loc {
+      background-color: #0198CA; }
+      #Front article#Works nav div.pf-Works-Loc div > img:first-child {
+        top: -41px; }
+      #Front article#Works nav div.pf-Works-Loc div a {
+        margin: 0.5rem; }
+    #Front article#Works nav div.pf-Works-Time {
+      background-color: #CA0185; }
+    #Front article#Works nav div.pf-Works-Cat {
+      background-color: #0151CA; }
+    #Front article#Works div.pf-Works-Search {
+      background-color: #0151CA;
+      padding-top: 2rem;
+      padding-bottom: 6rem;
+      color: white; }
+      #Front article#Works div.pf-Works-Search div {
+        width: 960px;
+        margin: 0 auto; }
+        #Front article#Works div.pf-Works-Search div > img {
+          padding-left: 20px; }
+    #Front article#Works div.pf-Works-List {
+      font-size: 1.5rem;
+      background-color: #F5FBFE;
+      -webkit-border-image: url("../imgs/pages/works/list_border.png") 60 repeat;
+      border-image: url("../imgs/pages/works/list_border.png") 60 repeat;
+      border-style: solid;
+      border-style: solid;
+      border-width: 30px;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0; }
+      #Front article#Works div.pf-Works-List > div {
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+        padding-top: 6rem; }
+        #Front article#Works div.pf-Works-List > div section {
+          display: table;
+          width: 100%; }
+          #Front article#Works div.pf-Works-List > div section > div, #Front article#Works div.pf-Works-List > div section ul {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle; }
+          #Front article#Works div.pf-Works-List > div section > ul {
+            width: auto; }
+          #Front article#Works div.pf-Works-List > div section > div {
+            width: 35px; }
+        #Front article#Works div.pf-Works-List > div div.pf-Works-List-tab {
+          position: absolute;
+          top: -25px;
+          width: 196px;
+          height: 34px;
+          text-align: center;
+          line-height: 42px;
+          background-image: url("../imgs/pages/works/list_tab.png");
+          background-size: contain;
+          background-repeat: no-repeat; }
+        #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column {
+          display: inline-block;
+          position: relative;
+          width: 30%;
+          height: 200px;
+          margin: 0.5rem;
+          text-align: left;
+          -webkit-border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
+          border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
+          border-style: solid;
+          border-style: solid;
+          border-width: 45px; }
+          #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-head {
+            position: absolute;
+            top: -36px;
+            left: -5px;
+            right: -10px; }
+            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-head a {
+              position: absolute;
+              top: -8px;
+              right: -25px; }
+          #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-section {
+            position: absolute;
+            top: 0px;
+            bottom: -30px;
+            left: -30px;
+            right: -30px;
+            text-align: justify;
+            background-color: white; }
+            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-section a img {
+              border: 1px solid #0099DE;
+              margin-right: 10px;
+              margin-bottom: 10px;
+              float: left; }
+          #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-footer {
+            position: absolute;
+            bottom: -32px;
+            left: -30px;
+            right: -10px; }
+            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-footer span:first-child {
+              display: inline-block;
+              margin-right: 10px;
+              padding: 0px 10px;
+              color: white;
+              background-color: #0099DE;
+              border-radius: 3px; }
+            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-footer span:last-child {
+              color: #0099DE; }
+    #Front article#Works footer {
+      width: 960px;
+      margin: 20px auto;
+      font-size: 1.5rem; }
+      #Front article#Works footer p {
+        float: left;
+        color: #0099DE; }
+      #Front article#Works footer a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 0 15px;
+        border: 2px solid #0099DE;
+        border-radius: 20px; }
+    #Front article#Works #column.fadeIn {
+      -webkit-animation-name: fadeIn;
+      -moz-animation-name: fadeIn;
+      -ms-animation-name: fadeIn;
+      -o-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      -ms-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      -ms-animation-timing-function: ease;
+      -o-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden; }
 
 /*
   # pages/front/detail/index.sass

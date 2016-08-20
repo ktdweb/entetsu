@@ -6721,12 +6721,183 @@ var Works = function (_React$Component) {
   _createClass(Works, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 仕事を探す' }), _react2.default.createElement('img', {
-        src: 'imgs/pages/works.jpg',
-        width: '1040',
-        height: '550',
-        alt: 'mansion'
-      }));
+      var IMG = 'imgs/pages/works/';
+
+      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('nav', null, _react2.default.createElement('div', { className: 'pf-Works-Loc' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
+        src: IMG + 'title_loc.png',
+        width: '120',
+        height: '120',
+        alt: 'img',
+        className: 'pf-Works-Title-loc'
+      }), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner01.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner02.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner03.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner04.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner05.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner06.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner07.png',
+        width: '170',
+        height: '45',
+        alt: 'img'
+      })))), _react2.default.createElement('div', { className: 'pf-Works-Time' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
+        src: IMG + 'title_time.png',
+        width: '120',
+        height: '120',
+        alt: 'img'
+      }), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'time/banner01.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'time/banner02.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'time/banner03.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('br', null), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'time/banner04.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'time/banner05.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'time/banner06.png',
+        height: '120',
+        alt: 'img'
+      })))), _react2.default.createElement('div', { className: 'pf-Works-Cat' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
+        src: IMG + 'title_cat.png',
+        width: '120',
+        height: '120',
+        alt: 'img'
+      }), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner01.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner02.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner03.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner04.png',
+        height: '120',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner05.png',
+        height: '120',
+        alt: 'img'
+      }))))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
+        src: IMG + 'search_dummy.png',
+        width: '940',
+        alt: 'img',
+        onClick: this.fadeIn.bind(this)
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_column_left.png',
+        width: '30',
+        alt: 'img',
+        onClick: this.fadeIn.bind(this)
+      }))), _react2.default.createElement('ul', { id: 'column' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement('div', null, _react2.default.createElement('a', {
+        href: '#',
+        onClick: this.fadeIn.bind(this)
+      }, _react2.default.createElement('img', {
+        src: IMG + 'list_column_right.png',
+        width: '30',
+        alt: 'img'
+      })))))), _react2.default.createElement('footer', null, _react2.default.createElement('p', null, ' エントリーの際ご利用ください', _react2.default.createElement('br', null), '「個人情報の取扱いに関する採用応募者同意書」'), _react2.default.createElement('a', { href: '#' }, 'ダウンロード')));
+    }
+  }, {
+    key: 'fadeIn',
+    value: function fadeIn(e) {
+      e.preventDefault();
+      var el = document.getElementById('column');
+
+      el.classList.add('fadeIn');
+      el.addEventListener('animationend', clear, false);
+
+      function clear() {
+        el.removeEventListener('animationend', clear, false);
+        el.classList.remove('fadeIn');
+      }
     }
   }]);
 
