@@ -6709,16 +6709,37 @@ function _inherits(subClass, superClass) {
   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
+var BTN_WIDTH = 30;
+var AREA_WIDTH = 500;
+var AREA_PADDING = 14;
+
+var drag = false;
+var slider_val01 = 0;
+var slider_val02 = 75;
+var start = 0;
+var end = 75;
+
 var Works = function (_React$Component) {
   _inherits(Works, _React$Component);
 
   function Works(props) {
     _classCallCheck(this, Works);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Works).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Works).call(this, props));
+
+    _this.state = {
+      slider: {
+        start: start,
+        end: end
+      }
+    };
+    return _this;
   }
 
   _createClass(Works, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
     key: 'render',
     value: function render() {
       var IMG = 'imgs/pages/works/';
@@ -6840,12 +6861,33 @@ var Works = function (_React$Component) {
         src: IMG + 'cat/banner05.png',
         height: '120',
         alt: 'img'
-      }))))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
-        src: IMG + 'search_dummy.png',
-        width: '940',
+      })))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, 'さらに詳しく検索'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
+        src: IMG + 'list_slider_button.png',
+        width: '30',
         alt: 'img',
+        name: 'first',
+        id: 'sliderFirst',
+        onMouseDown: this.onMouseDown.bind(this),
+        onMouseUp: this.onMouseUp.bind(this),
+        onMouseMove: this.onMouseMove.bind(this),
+        onMouseOut: this.onMouseUp.bind(this)
+      }), _react2.default.createElement('img', {
+        src: IMG + 'list_slider_button.png',
+        width: '30',
+        alt: 'img',
+        name: 'second',
+        id: 'sliderSecond',
+        onMouseDown: this.onMouseDown.bind(this),
+        onMouseUp: this.onMouseUp.bind(this),
+        onMouseMove: this.onMouseMove.bind(this),
+        onMouseOut: this.onMouseUp.bind(this)
+      })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement('a', { href: '#',
         onClick: this.fadeIn.bind(this)
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      }, _react2.default.createElement('img', {
+        src: IMG + 'search_dummy.png',
+        width: '400',
+        alt: 'img'
+      }))))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
         src: IMG + 'list_column_left.png',
         width: '30',
         alt: 'img',
@@ -6934,6 +6976,53 @@ var Works = function (_React$Component) {
 
       el.classList.add('closeUp');
       this.fadeIn(e);
+    }
+  }, {
+    key: 'onMouseDown',
+    value: function onMouseDown(e) {
+      e.preventDefault();
+      drag = true;
+    }
+  }, {
+    key: 'onMouseUp',
+    value: function onMouseUp(e) {
+      e.preventDefault();
+      drag = false;
+
+      this.setState({ slider: { start: start, end: end } });
+    }
+  }, {
+    key: 'onMouseMove',
+    value: function onMouseMove(e) {
+      if (drag) {
+        var s = this.state.slider;
+        var pos = e.clientX - BTN_WIDTH - AREA_PADDING;
+        var v = (pos + BTN_WIDTH / 2) * (100 / AREA_WIDTH);
+        var el = document.getElementById('sliderLabel');
+        start = el.style.left;
+        end = el.style.width;
+
+        if (v >= 0 && v <= 100) {
+          e.target.style.left = pos + 'px';
+
+          if (e.target.name == 'first') {
+            slider_val01 = parseInt(v);
+          } else {
+            slider_val02 = parseInt(v);
+          }
+
+          if (slider_val01 <= slider_val02) {
+            start = slider_val01;
+            end = slider_val02;
+          } else {
+            start = slider_val02;
+            end = slider_val01;
+          }
+
+          el.style.left = start * 5 + 'px';
+          el.style.width = end * 5 - start * 5 + 'px';
+        }
+      }
     }
   }]);
 

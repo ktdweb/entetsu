@@ -6,8 +6,10 @@
 
 article#Works
   padding-top: 180px
+  max-width: 100%
 
   nav
+    width: 100%
     div
       padding: $small-spacing / 2
       div
@@ -48,17 +50,52 @@ article#Works
       a:hover
         opacity: 1
 
-  div.pf-Works-Search
-    background-color: $color-cat
-    padding-top: $base-spacing
-    padding-bottom: $base-spacing * 3
-    color: white
-    div
-      width: 960px
-      margin: 0 auto
-      & > img
-        padding-left: 20px
-    
+    div.pf-Works-Search
+      padding: $base-spacing * 3 0
+      background-color: $color-cat
+
+      div.pf-Works-Search-slider
+        position: relative
+        display: inline-block
+        width: 500px
+        height: 60px
+        margin-left: 30px
+        padding: 0
+        $path: '../imgs/pages/works/list_slider_bg.png'
+        background-image: url($path)
+        background-size: contain
+
+        h1
+          position: absolute
+          top: -40px
+          color: white
+          font-size: $base-font-size * 1.3
+
+        p#sliderLabel
+          position: absolute
+          top: 43px
+          left: 0px
+          width: 375px
+          margin: 0
+          padding: 0
+          height: 6px
+          background-color: $color-works-base
+          opacity: 0.5
+
+        img
+          position: absolute
+          top: 33px
+          left: -14px
+          &:first-child
+            left: (125px - 3px) - 14px
+          &:last-child
+            left: (375px) - 14px
+
+      div.pf-Works-Search-advance
+        display: inline-block
+        padding: 0
+        width: 440px
+        text-align: right
 
   div.pf-Works-List
     font-size: $small-font-size * 1.25
@@ -169,4 +206,3 @@ article#Works
   #column
     &.fadeIn
       +fadeIn()
-      

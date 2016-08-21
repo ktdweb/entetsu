@@ -2,10 +2,30 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+let BTN_WIDTH = 30;
+let AREA_WIDTH = 500;
+let AREA_PADDING = 14;
+
+let drag = false;
+let slider_val01 = 0;
+let slider_val02 = 75;
+let start = 0;
+let end = 75;
+
 export default class Works extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      slider: {
+        start: start,
+        end: end
+      }
+    }
+  }
+
+  componentDidMount() {
   }
 
   render() {
@@ -224,18 +244,51 @@ export default class Works extends React.Component {
               </a>
             </div>
           </div>
-        </nav>
 
-        <div className="pf-Works-Search">
-          <div>
-            <img
-              src={IMG + 'search_dummy.png'}
-              width="940"
-              alt="img"
-              onClick={this.fadeIn.bind(this)}
-              />
+          <div className="pf-Works-Search">
+            <div className="pf-Works-Search-slider">
+              <h1>さらに詳しく検索</h1>
+
+              <p id="sliderLabel"></p>
+
+              <img
+                src={IMG + 'list_slider_button.png'}
+                width="30"
+                alt="img"
+                name="first"
+                id="sliderFirst"
+                onMouseDown={this.onMouseDown.bind(this)}
+                onMouseUp={this.onMouseUp.bind(this)}
+                onMouseMove={this.onMouseMove.bind(this)}
+                onMouseOut={this.onMouseUp.bind(this)}
+                />
+
+              <img
+                src={IMG + 'list_slider_button.png'}
+                width="30"
+                alt="img"
+                name="second"
+                id="sliderSecond"
+                onMouseDown={this.onMouseDown.bind(this)}
+                onMouseUp={this.onMouseUp.bind(this)}
+                onMouseMove={this.onMouseMove.bind(this)}
+                onMouseOut={this.onMouseUp.bind(this)}
+                />
+            </div>
+
+            <div className="pf-Works-Search-advance">
+              <a href="#"
+                onClick={this.fadeIn.bind(this)}
+              >
+                <img
+                  src={IMG + 'search_dummy.png'}
+                  width="400"
+                  alt="img"
+                  />
+              </a>
+            </div>
           </div>
-        </div>
+        </nav>
 
         <div className="pf-Works-List">
           <div>
@@ -431,7 +484,7 @@ export default class Works extends React.Component {
               </li>
             </ul>
 
-            <div>
+           <div>
               <a
                 href="#"
                 onClick={this.fadeIn.bind(this)}
@@ -484,5 +537,49 @@ export default class Works extends React.Component {
 
     el.classList.add('closeUp');
     this.fadeIn(e);
+  }
+
+  onMouseDown(e) {
+    e.preventDefault();
+    drag = true;
+  }
+
+  onMouseUp(e) {
+    e.preventDefault();
+    drag = false;
+
+    this.setState({ slider: {start: start, end: end} });
+  }
+
+  onMouseMove(e) {
+    if (drag) {
+      let s = this.state.slider;
+      let pos = (e.clientX - BTN_WIDTH) - AREA_PADDING;
+      let v = (pos + BTN_WIDTH / 2) * (100 / AREA_WIDTH);
+      let el = document.getElementById('sliderLabel');
+      start = el.style.left;
+      end = el.style.width;
+
+      if (v >= 0 && v <= 100) {
+        e.target.style.left = pos + 'px';
+
+        if (e.target.name == 'first') {
+          slider_val01 = parseInt(v);
+        } else {
+          slider_val02 = parseInt(v);
+        }
+
+        if (slider_val01 <= slider_val02) {
+          start = slider_val01; 
+          end = slider_val02; 
+        } else {
+          start = slider_val02; 
+          end = slider_val01; 
+        }
+
+        el.style.left = start * 5 + 'px';
+        el.style.width = (end * 5) - (start * 5) + 'px';
+      }
+    }
   }
 }
