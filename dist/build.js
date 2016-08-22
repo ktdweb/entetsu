@@ -667,12 +667,38 @@ var Parallax = function () {
     key: 'update',
     value: function update() {
       var y = window.pageYOffset;
+      var sec = document.getElementsByTagName('section');
       var val = void 0;
+
+      for (var v = 0; v < sec.length; v++) {
+        if (document.body.scrollTop + window.innerHeight / 2 + 100 > sec[v].offsetTop) {
+          sec[v].classList.add('posi');
+        }
+      }
+
       for (var i = 0; i < this.layers.length; i++) {
         // 移動量
         if (this.depths[i] != 0) {
           val = this.tops[i] + y / (this.depths[i] * 4);
           this.layers[i].style.top = val + 'px';
+
+          if (document.body.scrollTop + window.innerHeight / 2 + 100 > this.layers[i].offsetTop) {
+            this.layers[i].classList.add('posi');
+          }
+
+          if (i > 1 && i < 8) {
+            if (i == 2) {
+              this.layers[i].style.right = 0 + y / 50 + 'px';
+            }
+
+            if (i == 4) {
+              this.layers[i].style.left = 0 + y / 50 + 'px';
+            }
+
+            if (i == 6) {
+              this.layers[i].style.right = 0 + y / 50 + 'px';
+            }
+          }
         }
       }
       tick = false;
