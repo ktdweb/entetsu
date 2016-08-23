@@ -44,23 +44,6 @@ class Mailer
     }
 
     /**
-     * Twigのテンプレートを反映して返す
-     *
-     * @param String $template
-     * @param Array $data
-     * @return Object
-     */
-    public function setTemplate(
-        $template,
-        $data
-    ) {
-        return $this->swift->setTemplate(
-            $template,
-            $data
-        );
-    }
-
-    /**
      * メッセージを返す
      *
      * @param String $subject
@@ -103,6 +86,18 @@ class Mailer
     }
 
     /**
+     * htmlメールとして設定
+     * messageオブジェクトにaddPartする
+     *
+     * @param String $body
+     * @return void
+     */
+    public function addPart($body)
+    {
+        $this->message->addPart($body, 'text/html');
+    }
+
+    /**
      * 添付ファイルを設定
      *
      * @param String $path
@@ -129,6 +124,22 @@ class Mailer
     }
 
     /**
+     * X-Original-Toを設定
+     * (リターンメールでオリジナルの宛先特定用)
+     *
+     * @param String $to
+     * @return void
+     */
+    public function setXOriginalTo($to)
+    {
+        $headers = $this->message->getHeaders();
+        if ($headers->has('X-Original-To')) {
+            $field = $headers->get('X-Original-To');
+            $field->setValue($to);
+        }
+    }
+
+    /**
      * 実際に送る
      *
      * @param Array $to
@@ -142,10 +153,10 @@ class Mailer
             $this->message->attach($this->attach);
         }
 
-        $i = 1;
         foreach ((Array)$to as $addr) {
             try {
                 $this->message->setTo((Array)$addr);
+                $this->setXOriginalTo($addr);
 
                 $res[$i] = $mailer->send(
                     $this->message,
@@ -154,8 +165,6 @@ class Mailer
             } catch (\Swift_RfcComplianceException $e) {
                 $res[$i] = 'RFC Compliance Error';
             }
-
-            $i++;
         }
 
         return $res;
