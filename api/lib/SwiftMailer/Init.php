@@ -14,12 +14,6 @@ namespace Lib\SwiftMailer;
  */
 class Init
 {
-    /** Twigのテンプレートディレクトリseparatorはいらない */
-    const TEMPLATE_DIR = 'mail';
-
-    /** Twigのキャッシュディレクトリseparatorはいらない */
-    const CACHE_DIR = 'cache';
-
     /** クラスの保存先 最後にseparatorはいらない */
     const LOG_DIR = 'logs/mail';
 
@@ -28,6 +22,9 @@ class Init
 
     /** メール分割送信の間隔 */
     const INTERVAL_TIME = 30;
+
+    /** リターンメール内で宛先元をヘッダに含める */
+    const X_ORIGINAL_TO = true;
 
     /** @var String $host ホスト名 */
     private $host;
@@ -41,6 +38,9 @@ class Init
     /** @var String $pass パスワード */
     private $pass;
 
+    /** @var String $pass リターンメール用アドレス */
+    private $fail;
+
     /** @var String $charset 文字コード */
     private $charset;
 
@@ -49,6 +49,9 @@ class Init
 
     /** @var Object $logger ログ機能のオブジェクト */
     private $logger;
+
+    /** @var Object $message Swift Message Object */
+    private $message;
 
     /**
      * Swift初期化
@@ -66,12 +69,14 @@ class Init
         $port,
         $user,
         $pass,
+        $fail = null,
         $charset = 'iso-2022-jp'
     ) {
         $this->host = $host;
         $this->port = $port;
         $this->user = $user;
         $this->pass = $pass;
+        $this->fail = $fail;
         $this->charset = $charset;
         $this->setPath();
 
@@ -107,6 +112,38 @@ class Init
         $mailer = $this->setLog($mailer);
 
         return $mailer;
+    }
+
+    /**
+     * Swiftのメッセージオブジェクトを返す
+     *
+     * @param String $subject
+     * @param Array $from
+     * @param String $body
+     * @return Object
+     * @codeCoverageIgnore
+     */
+    public function setMessage(
+        $subject,
+        $from,
+        $body
+    ) {
+        $message = \Swift_Message::newInstance()
+            ->setSubject($subject)
+            ->setFrom($from)
+            ->setBody($body);
+
+        $message->setCharset($this->charset);
+        $message->setEncoder(
+            \Swift_Encoding::get7BitEncoding()
+        );
+
+        $this->message = $message;
+
+        $this->setReturnPath();
+        $this->addTextHeader('X-Original-To');
+        
+        return $message;
     }
 
     /**
@@ -185,67 +222,44 @@ class Init
      */
     public function saveLog()
     {
-        $current = '';
-        if (file_exists($this->path)) {
-            $current .= file_get_contents($this->path);
-        }
-
         $log = $this->logger->dump();
-        $current .= $log;
 
         file_put_contents(
             $this->path,
-            $current,
+            $log,
             FILE_APPEND
         );
     }
 
     /**
-     * Twigのテンプレートを反映して返す
+     * リターンメール用のアドレスを設定
+     * もし、configで空であればなにもしない
      *
-     * @param String $template // テンプレートファイル名
-     * @param Array $data // テンプレート内ファイルの変数
      * @return void
-     * @codeCoverageIgnore
      */
-    public function setTemplate($template, $data)
+    private function setReturnPath()
     {
-        $dir = self::TEMPLATE_DIR;
-        $loader = new \Twig_Loader_Filesystem($dir);
-        $this->twig = new \Twig_Environment($loader, array(
-            'cache' => self::CACHE_DIR
-        ));
-
-        return $this->twig->render(
-            $template,
-            $data
-        );
+        if (!empty($this->fail)) {
+            $this->message->setReturnPath(
+                $this->fail
+            );
+        }
     }
 
     /**
-     * Swiftのメッセージオブジェクトを返す
+     * テキストのカスタムヘッダを追加
+     * (テキストタイプのヘッダのみ)
+     * mailbox, date, key-valueタイプはマニュアル参照
+     * もし、X_ORIGINAL_TOがfalseであればなにもしない
      *
-     * @param String $subject
-     * @param Array $from
-     * @param String $body
-     * @return Object
-     * @codeCoverageIgnore
+     * @param String $field
+     * @return void
      */
-    public function setMessage(
-        $subject,
-        $from,
-        $body
-    ) {
-        $message = \Swift_Message::newInstance()
-            ->setSubject($subject)
-            ->setFrom($from)
-            ->setBody($body);
-
-        $message->setCharset($this->charset);
-        $message->setEncoder(
-            \Swift_Encoding::get7BitEncoding()
-        );
-        
-        return $message;
+    private function addTextHeader($field)
+    {
+        if (self::X_ORIGINAL_TO) {
+            $header = $this->message->getHeaders();
+            $header->addTextHeader($field, '');
+        }
     }
 }

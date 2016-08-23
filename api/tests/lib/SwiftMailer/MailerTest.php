@@ -42,22 +42,6 @@ class MailerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * 正常系 テンプレートを返すか
-     *
-     * @covers Lib\SwiftMailer\Mailer::setTemplate()
-     * @test testSetTemplateNormal()
-     */
-    public function testSetTemplateNormal()
-    {
-        $res = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => 'twig')
-        );
-
-        $this->assertEquals('Hello twig' . PHP_EOL, $res);
-    }
-
-    /**
      * 正常系 メッセージを返すか
      *
      * @covers Lib\SwiftMailer\Mailer::setMessage()
@@ -65,10 +49,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetMessageNormal()
     {
-        $body = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => '太郎')
-        );
+        $body = 'hello twig';
 
         $this->object->setFrom($GLOBALS['MAIL_FROM']);
         $this->object->setName($GLOBALS['MAIL_NAME']);
@@ -131,7 +112,6 @@ class MailerTest extends \PHPUnit_Framework_TestCase
         );
         $res = $ref->getValue($this->object);
 
-
         $this->assertInternalType('object', $res);
     }
 
@@ -143,10 +123,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testSendNormal()
     {
-        $body = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => '太郎')
-        );
+        $body = 'hello twig';
 
         $this->object->setFrom($GLOBALS['MAIL_FROM']);
         $this->object->setName($GLOBALS['MAIL_NAME']);
@@ -159,7 +136,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
             'test@example.com'
         );
 
-        $this->assertEquals(1, $res['1']);
+        $this->assertEquals(1, $res);
     }
 
     /**
@@ -170,10 +147,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetSendExceptionRfc()
     {
-        $body = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => '太郎')
-        );
+        $body = 'hello twig';
 
         $this->object->setFrom($GLOBALS['MAIL_FROM']);
         $this->object->setName($GLOBALS['MAIL_NAME']);
@@ -186,7 +160,10 @@ class MailerTest extends \PHPUnit_Framework_TestCase
             'failure'
         );
 
-        $this->assertEquals('RFC Compliance Error', $res['1']);
+        $this->assertEquals(
+            'RFC Compliance Error',
+            $res
+        );
     }
 
     /**
@@ -197,10 +174,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testSendAttachmentNormal()
     {
-        $body = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => '太郎')
-        );
+        $body = 'hello twig';
 
         $this->object->setAttachment(
             'tests/imgs/test.jpg',
@@ -219,7 +193,31 @@ class MailerTest extends \PHPUnit_Framework_TestCase
             'test@example.com'
         );
 
-        $this->assertEquals(1, $res['1']);
+        $this->assertEquals(1, $res);
+    }
+
+    /**
+     * 正常系 X-Original-Toが設定されるか
+     *
+     * @covers Lib\SwiftMailer\Mailer::setXOriginalTo()
+     * @test testSetXOriginalTo()
+     */
+    public function testSetXOriginalTo()
+    {
+        $body = 'hello test';
+
+        $this->object->setFrom($GLOBALS['MAIL_FROM']);
+        $this->object->setName($GLOBALS['MAIL_NAME']);
+        $this->object->setMessage(
+            'X-Original-Toテスト',
+            $body
+        );
+
+        $to = array(1 => 'test@example.com');
+        $this->object->setXOriginalTo($to[1]);
+        $res = $this->object->send($to);
+
+        $this->assertEquals(1, $res['1']['result']);
     }
 
     /**
@@ -230,10 +228,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetSaveLog()
     {
-        $body = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => '太郎')
-        );
+        $body = 'hello twig';
 
         $this->object->setFrom($GLOBALS['MAIL_FROM']);
         $this->object->setName($GLOBALS['MAIL_NAME']);
@@ -260,10 +255,7 @@ class MailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetGetPath()
     {
-        $body = $this->object->setTemplate(
-            'defaultTest.twig',
-            array('name' => '太郎')
-        );
+        $body = 'hello twig';
 
         $this->object->setFrom($GLOBALS['MAIL_FROM']);
         $this->object->setName($GLOBALS['MAIL_NAME']);

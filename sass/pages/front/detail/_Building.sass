@@ -17,16 +17,29 @@ article#BuildingDetail
       margin-top: 0px
 
     &:nth-of-type(3)
+      opacity: 0
+      +transition(all 2s ease-in-out)
       margin-top: 140px
+      &.posi
+        opacity: 1
 
     &:nth-of-type(4)
+      opacity: 0
+      +transition(all 2s ease-in-out)
       margin-top: 160px
+      &.posi
+        opacity: 1
 
     &:nth-of-type(5)
+      opacity: 0
+      +transition(all 2s ease-in-out)
       margin-top: 120px
+      &.posi
+        opacity: 1
 
   #plx01
     top: 220px
+    left: 0
     z-index: -100
 
   #plx02
@@ -37,25 +50,50 @@ article#BuildingDetail
   #plx03
     top: 900px
     right: 0
+    opacity: 0
+    +transition(all 0.5s ease-in-out)
+    &.posi
+      opacity: 1
 
   #plx03b
     top: 980px
     right: 210px
+    opacity: 0
+    +transition(all 0.5s ease-in-out)
+    &.posi
+      opacity: 1
 
   #plx04
     top: 1600px
+    left: 0
+    opacity: 0
+    +transition(all 0.5s ease-in-out)
+    &.posi
+      opacity: 1
 
   #plx04b
     top: 1680px
     left: 210px
+    opacity: 0
+    +transition(all 0.5s ease-in-out)
+    &.posi
+      opacity: 1
 
   #plx05
     top: 2100px
     right: 0
+    opacity: 0
+    +transition(all 0.5s ease-in-out)
+    &.posi
+      opacity: 1
 
   #plx05b
     top: 2180px
     right: 210px
+    opacity: 0
+    +transition(all 0.5s ease-in-out)
+    &.posi
+      opacity: 1
 
   #plx06
     top: 700px

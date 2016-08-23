@@ -7643,13 +7643,32 @@ article#BuildingDetail {
   article#BuildingDetail section:nth-of-type(2) {
     margin-top: 0px; }
   article#BuildingDetail section:nth-of-type(3) {
+    opacity: 0;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
     margin-top: 140px; }
+    article#BuildingDetail section:nth-of-type(3).posi {
+      opacity: 1; }
   article#BuildingDetail section:nth-of-type(4) {
+    opacity: 0;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
     margin-top: 160px; }
+    article#BuildingDetail section:nth-of-type(4).posi {
+      opacity: 1; }
   article#BuildingDetail section:nth-of-type(5) {
+    opacity: 0;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
     margin-top: 120px; }
+    article#BuildingDetail section:nth-of-type(5).posi {
+      opacity: 1; }
   article#BuildingDetail #plx01 {
     top: 220px;
+    left: 0;
     z-index: -100; }
   article#BuildingDetail #plx02 {
     top: 120px;
@@ -7657,21 +7676,58 @@ article#BuildingDetail {
     z-index: -50; }
   article#BuildingDetail #plx03 {
     top: 900px;
-    right: 0; }
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    article#BuildingDetail #plx03.posi {
+      opacity: 1; }
   article#BuildingDetail #plx03b {
     top: 980px;
-    right: 210px; }
+    right: 210px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    article#BuildingDetail #plx03b.posi {
+      opacity: 1; }
   article#BuildingDetail #plx04 {
-    top: 1600px; }
+    top: 1600px;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    article#BuildingDetail #plx04.posi {
+      opacity: 1; }
   article#BuildingDetail #plx04b {
     top: 1680px;
-    left: 210px; }
+    left: 210px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    article#BuildingDetail #plx04b.posi {
+      opacity: 1; }
   article#BuildingDetail #plx05 {
     top: 2100px;
-    right: 0; }
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    article#BuildingDetail #plx05.posi {
+      opacity: 1; }
   article#BuildingDetail #plx05b {
     top: 2180px;
-    right: 210px; }
+    right: 210px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    article#BuildingDetail #plx05b.posi {
+      opacity: 1; }
   article#BuildingDetail #plx06 {
     top: 700px;
     z-index: -100; }

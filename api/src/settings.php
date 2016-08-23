@@ -43,6 +43,8 @@ return array(
             'from' => MAIL_FROM,
             'name' => MAIL_NAME,
             'addr' => MAIL_ADDR,
+
+            'fail' => MAIL_FAIL
         ),
 
         'logger' => array(

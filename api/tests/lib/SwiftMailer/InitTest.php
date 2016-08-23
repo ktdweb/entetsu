@@ -79,4 +79,81 @@ class InitTest extends \PHPUnit_Framework_TestCase
         $file = $this->object->getPath();
         $this->assertFileExists($file);
     }
+
+    /**
+     * 正常系 リターンメールが設定されるか
+     *
+     * @covers Lib\SwiftMailer\Init::setReturnPath()
+     * @test testReturnPathNormal()
+     */
+    public function testReturnPathNormal()
+    {
+        $object = new \Lib\SwiftMailer\Init(
+            '127.0.0.1',
+            '1025',
+            null,
+            null,
+            'failure@example.com'
+        );
+        $ref = new \ReflectionClass($object);
+        $method = $ref->getMethod('setReturnPath');
+        $method->setAccessible(true);
+
+        $message = $object->setMessage(
+            'test return-path',
+            'info@example.com',
+            'return-path'
+        );
+        $headers = $message->getHeaders();
+        $res = $headers->has('return-path');
+        $this->assertTrue($res);
+    }
+
+    /**
+     * 異常系エラー Initの第四引数が空ならヘッダもないか
+     *
+     * @covers Lib\SwiftMailer\Init::setReturnPath()
+     * @test testReturnPathError()
+     */
+    public function testReturnPathError()
+    {
+        $object = new \Lib\SwiftMailer\Init(
+            '127.0.0.1',
+            '1025',
+            null,
+            null
+        );
+        $ref = new \ReflectionClass($object);
+        $method = $ref->getMethod('setReturnPath');
+        $method->setAccessible(true);
+
+        $message = $object->setMessage(
+            'test return-path',
+            'info@example.com',
+            'return-path'
+        );
+
+        $headers = $message->getHeaders();
+        $res = $headers->has('return-path');
+        $this->assertFalse($res);
+    }
+
+    /**
+     * 正常系 ヘッダに設定されるか
+     *
+     * @covers Lib\SwiftMailer\Init::addTextHeader()
+     * @test testAddTextHeader()
+     */
+    public function testAddTextHeader()
+    {
+        $message = $this->object->setMessage(
+            'test add text hedaer',
+            'info@example.com',
+            'add text header'
+        );
+
+        $headers = $message->getHeaders();
+        $res = $headers->has('X-Original-To');
+        $this->assertTrue($res);
+    }
 }

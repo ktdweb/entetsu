@@ -11,6 +11,7 @@ use \Lib\Db\Delete;
 
 use \Lib\SwiftMailer\Init;
 use \Lib\SwiftMailer\Mailer;
+use \Lib\SwiftMailer\Unit\Twig;
 
 use \Lib\Image\Original;
 use \Lib\Image\Thumbnail;
@@ -107,12 +108,12 @@ $container['db.delete'] = function ($c) {
  * Swift Mailer
  *
  * [ e.g. ]
- * $mailer = $this->get('mailer');
+ * $mailer = $this->get('mailer.text');
+ * $twig = $this->get('mailer.twig');
  *
- * $tempate = $mailer('mailer');
- *   'users.twig',
- *   array('name' => 'taro')
- * );
+ * // テンプレート内で変数を使う場合は第二引数に
+ * // array('name' => 'taro)などを追加する
+ * $body = $twig('users.twig');
  *
  * $mailer->setAttachment(
  *     '../upload/' . $filename . '_s.jpg',
@@ -120,17 +121,18 @@ $container['db.delete'] = function ($c) {
  *     $body['name'] . '.jpg'
  * );
  *
- * $mailer->setMessage('title',$template);
+ * $mailer->setMessage('title',$body);
  * $res = $mailer->send('info@test.com');
  */
-$container['mailer'] = function ($c) {
+$container['mailer.text'] = function ($c) {
     $settings = $c->get('settings')['mail'];
 
     $transport = new Init(
         $settings['host'],
         $settings['port'],
         $settings['user'],
-        $settings['pass']
+        $settings['pass'],
+        $settings['fail']
     );
 
     $mailer = new Mailer($transport);
@@ -138,6 +140,23 @@ $container['mailer'] = function ($c) {
     $mailer->setName($settings['name']);
 
     return $mailer;
+};
+
+/**
+ * Swift Mailer Util/Twig
+ * // cacheを利用する場合には
+ * // lib/SwiftMailer/Util/Twig.phpの
+ * // debugをfalseにする
+ *
+ * [ e.g. ]
+ * $twig = $this->get('mailer.twig');
+ *
+ * // テンプレート内で変数を使う場合は第二引数に
+ * // array('name' => 'taro)などを追加する
+ * $body = $twig('users.twig');
+ */
+$container['mailer.twig'] = function ($c) {
+    return new Twig();
 };
 
 
