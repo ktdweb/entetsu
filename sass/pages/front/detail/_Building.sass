@@ -10,53 +10,77 @@ article#BuildingDetail
   -webkit-overflow-scrolling: touch
 
   section
+    h1
+
     &:nth-of-type(1)
       margin-top: 160px
 
     &:nth-of-type(2)
-      margin-top: 0px
+      margin-top: 120px
 
     &:nth-of-type(3)
       opacity: 0
-      +transition(all 2s ease-in-out)
-      margin-top: 140px
+      h1
+        opacity: 0
+        +transform(scale(1.1))
+        +transition(all 4s ease-in-out)
+      +transition(all 3s ease-in-out)
+      margin-top: 170px
       &.posi
         opacity: 1
+        h1
+          opacity: 1
+          +transform(scale(1.0))
 
     &:nth-of-type(4)
       opacity: 0
-      +transition(all 2s ease-in-out)
-      margin-top: 160px
+      h1
+        opacity: 0
+        +transform(scale(1.1))
+        +transition(all 4s ease-in-out)
+      +transition(all 3s ease-in-out)
+      margin-top: 240px
       &.posi
         opacity: 1
+        h1
+          opacity: 1
+          +transform(scale(1.0))
 
     &:nth-of-type(5)
       opacity: 0
-      +transition(all 2s ease-in-out)
-      margin-top: 120px
+      h1
+        opacity: 0
+        +transform(scale(1.1))
+        +transition(all 4s ease-in-out)
+      +transition(all 3s ease-in-out)
+      margin-top: 280px
       &.posi
         opacity: 1
+        h1
+          opacity: 1
+          +transform(scale(1.0))
+          opacity: 1
 
   #plx01
-    top: 220px
+    top: 300px
     left: 0
     z-index: -100
 
   #plx02
-    top: 120px
+    top: 150px
     right: 0
     z-index: -50
 
   #plx03
-    top: 900px
+    top: 1180px
     right: 0
     opacity: 0
-    +transition(all 0.5s ease-in-out)
+    +transition(all .5s ease-in-out)
     &.posi
       opacity: 1
 
   #plx03b
-    top: 980px
+    top: 1260px
     right: 210px
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -64,7 +88,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx04
-    top: 1600px
+    top: 1880px
     left: 0
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -72,7 +96,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx04b
-    top: 1680px
+    top: 1960px
     left: 210px
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -80,7 +104,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx05
-    top: 2100px
+    top: 2380px
     right: 0
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -88,7 +112,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx05b
-    top: 2180px
+    top: 2460px
     right: 210px
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -100,5 +124,5 @@ article#BuildingDetail
     z-index: -100
 
   #plx07
-    top: 2660px
+    top: 2860px
     z-index: -100

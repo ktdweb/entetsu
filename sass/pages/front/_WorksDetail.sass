@@ -1,0 +1,211 @@
+/*
+  # pages/front/WorksDetail.sass
+  front/WorksDetail.jsxに関するクラスを定義  
+  prefixには`pf-WorksDetail`を付与
+  */
+
+article#WorksDetail
+  padding-top: 180px
+  max-width: 100%
+
+  div.pf-Works-Detail
+    font-size: $small-font-size * 1.25
+    padding-bottom: $base-spacing
+    background-color: $color-works-bg
+    $path: '../imgs/pages/works/list_border.png'
+    +border-image(url($path) 60 repeat)
+    border-style: solid
+    border-width: 30px
+    border-top: 4px solid $color-works-base
+    border-left: 0
+    border-right: 0
+
+    & > div
+      position: relative
+      width: 960px
+      margin: 0 auto
+      padding-top: $base-spacing * 2
+
+      div.pf-Works-Detail-tab
+        position: absolute
+        top: -25px
+        width: 196px
+        height: 34px
+        text-align: center
+        line-height: 42px
+        $path: '../imgs/pages/works/list_tab.png'
+        background-image: url($path)
+        background-size: contain
+        background-repeat: no-repeat
+
+      div.pf-Works-Detail-column
+        position: relative
+        width: 70%
+        $path: '../imgs/pages/works/list_column.png'
+        +border-image(url($path) 120 repeat)
+        border-style: solid
+        border-width: 45px
+        background-color: white
+        font-size: $base-font-size * 0.85
+
+        div.pf-Works-Detail-column-head
+          position: absolute
+          top: -36px
+          left: -5px
+          right: -10px
+
+        div.pf-Works-Detail-column-section
+          display: table
+          background-color: white
+          margin: 10px -20px
+
+          & > div:first-child
+            display: table-cell
+            vertical-align: top
+            padding-right: 30px
+            span
+              display: block
+              margin-bottom: 10px
+              padding: 0px 10px
+              color: white
+              background-color: $color-works-base
+              border-radius: 3px
+
+          & > div:last-child
+            display: table-cell
+            dl
+              margin-bottom: $small-spacing
+              padding-bottom: $small-spacing
+              border-bottom: 1px solid $color-works-base
+              dt
+                width: 25%
+                line-height: $small-line-height
+                color: $color-works-base
+              dd
+                line-height: $small-line-height
+                text-align: justify
+
+      div.pf-Works-Detail-login
+        float: right
+        text-align: center
+        color: $color-works-base
+        img
+          border: 1px solid $color-works-base
+          margin-bottom: $base-spacing
+        button
+          display: block
+          width: 240px
+          height: 40px
+          color: $color-works-base
+          font-size: $base-font-size
+          margin: 0
+          padding: 0
+          border: 2px solid $color-works-base
+          border-radius: 20px
+          background-color: white
+        p
+          margin: $base-spacing
+        & > div
+          width: 240px
+          padding: 10px
+          font-size: $small-font-size
+          text-align: left
+          border: 2px solid $color-works-base
+          border-radius: 5px
+          background-color: white
+          dl
+            margin-bottom: $small-spacing
+            dd
+              input
+                width: 145px
+          input
+            border: 1px solid $color-works-base
+            margin: 0
+          & > input
+            width: 210px
+          div
+            margin: 20px 0
+            button
+              width: 180px
+              height: 30px
+              color: white
+              margin: 0 15px
+              font-size: $small-font-size
+              line-height: 20px
+              background-color: $color-works-base
+
+  div.pf-Works-Detail-footer
+    margin: $base-spacing * 2 0
+    text-align: center
+    button
+      display: inline-block
+      width: 240px
+      height: 40px
+      color: $color-works-base
+      font-size: $base-font-size
+      margin: 0 $base-spacing
+      padding: 0
+      border: 2px solid $color-works-base
+      border-radius: 20px
+      background-color: white
+    button:last-child
+      background-color: $color-works-bg
+
+  div.modal
+      position: absolute
+      display: none
+      top: 0
+      left: 0
+      width: 100%
+      height: 1540px
+      text-align: center
+      background-color: rgba(0,0,12,0.4)
+      z-index: 1000
+
+      +keyframes(show)
+        from
+          opacity: 0
+        to
+          opacity: 1
+
+      &.enable
+        opacity: 1
+        display: block
+        +animation(show 1s ease-in-out 0s)
+
+      & > div
+        margin: 200px auto
+        width: 480px
+        height: 380px
+        text-align: center
+        color: $color-works-base
+        font-size: $small-font-size * 1.1
+        background-color: white
+        border-radius: 10px
+        box-shadow: 0 10px 50px 10px rgba(0,0,0,0.2)
+
+        h1
+          font-size: $base-font-size * 1.5
+          color: $color-works-base
+          line-height: $base-spacing * 3
+          background-color: $color-works-bg
+          border-radius: 10px
+
+        & > div
+          width: 240px
+          color: $color-works-base
+          margin: $small-spacing auto
+          font-size: $small-font-size
+          padding: $small-spacing $small-spacing
+          border: 1px solid $color-works-base
+
+        button
+          display: block
+          width: 240px
+          height: 40px
+          color: white
+          font-size: $base-font-size
+          margin: 0 auto
+          padding: 0
+          border-radius: 20px
+          background-color: $color-works-base

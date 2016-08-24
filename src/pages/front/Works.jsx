@@ -277,7 +277,7 @@ export default class Works extends React.Component {
             </div>
 
             <div className="pf-Works-Search-advance">
-              <a href="#"
+              <Link to="works_detail"
                 onClick={this.fadeIn.bind(this)}
               >
                 <img
@@ -285,7 +285,7 @@ export default class Works extends React.Component {
                   width="400"
                   alt="img"
                   />
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
@@ -298,37 +298,37 @@ export default class Works extends React.Component {
 
             <section>
             <div>
-              <a href="#">
+              <Link to="works_detail">
                 <img
                   src={IMG + 'list_column_left.png'}
                   width="30"
                   alt="img"
                   onClick={this.fadeIn.bind(this)}
                   />
-              </a>
+              </Link>
             </div>
 
             <ul id="column">
               <li className="pf-Works-List-column">
                 <div className="pf-Works-List-column-head">
                   <p>ホテル客室整備スタッフ</p>
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
                       alt="img"
                       />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="pf-Works-List-column-section">
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_dummy_photo.png'}
                       width="45"
                       alt="img"
                       / >
-                  </a>
+                  </Link>
                   <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
                 </div>
 
@@ -341,23 +341,23 @@ export default class Works extends React.Component {
               <li className="pf-Works-List-column">
                 <div className="pf-Works-List-column-head">
                   <p>ホテル客室整備スタッフ</p>
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
                       alt="img"
                       />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="pf-Works-List-column-section">
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_dummy_photo.png'}
                       width="45"
                       alt="img"
                       / >
-                  </a>
+                  </Link>
                   <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
                 </div>
 
@@ -370,23 +370,23 @@ export default class Works extends React.Component {
               <li className="pf-Works-List-column">
                 <div className="pf-Works-List-column-head">
                   <p>ホテル客室整備スタッフ</p>
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
                       alt="img"
                       />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="pf-Works-List-column-section">
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_dummy_photo.png'}
                       width="45"
                       alt="img"
                       / >
-                  </a>
+                  </Link>
                   <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
                 </div>
 
@@ -399,23 +399,23 @@ export default class Works extends React.Component {
               <li className="pf-Works-List-column">
                 <div className="pf-Works-List-column-head">
                   <p>ホテル客室整備スタッフ</p>
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
                       alt="img"
                       />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="pf-Works-List-column-section">
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_dummy_photo.png'}
                       width="45"
                       alt="img"
                       / >
-                  </a>
+                  </Link>
                   <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
                 </div>
 
@@ -428,23 +428,23 @@ export default class Works extends React.Component {
               <li className="pf-Works-List-column">
                 <div className="pf-Works-List-column-head">
                   <p>ホテル客室整備スタッフ</p>
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
                       alt="img"
                       />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="pf-Works-List-column-section">
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_dummy_photo.png'}
                       width="45"
                       alt="img"
                       / >
-                  </a>
+                  </Link>
                   <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
                 </div>
 
@@ -457,23 +457,23 @@ export default class Works extends React.Component {
               <li className="pf-Works-List-column">
                 <div className="pf-Works-List-column-head">
                   <p>ホテル客室整備スタッフ</p>
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
                       alt="img"
                       />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="pf-Works-List-column-section">
-                  <a href="#">
+                  <Link to="works_detail">
                     <img
                       src={IMG + 'list_dummy_photo.png'}
                       width="45"
                       alt="img"
                       / >
-                  </a>
+                  </Link>
                   <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
                 </div>
 
@@ -485,8 +485,8 @@ export default class Works extends React.Component {
             </ul>
 
            <div>
-              <a
-                href="#"
+              <Link
+                to="works_detail"
                 onClick={this.fadeIn.bind(this)}
                 >
                 <img
@@ -494,7 +494,7 @@ export default class Works extends React.Component {
                   width="30"
                   alt="img"
                   />
-              </a>
+              </Link>
             </div>
             </section>
           </div>

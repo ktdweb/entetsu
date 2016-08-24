@@ -15,6 +15,39 @@ export default class BuildingDetail extends React.Component {
   componentDidMount() {
     this.parallax = new Parallax();
     this.parallax.start();
+    window.scrollTo(0,0);
+
+    let h01 = document.getElementById('h01');
+    let h02 = document.getElementById('h02');
+    let h03 = document.getElementById('h03');
+
+    /*
+    h01.addEventListener(
+      'transitionend',
+      function(e) {
+        let txt = e.target.innerHTML;
+        let now;
+        let cnt = 0;
+        let timer;
+        let flag = true;
+
+        oneByOne();
+        
+        function oneByOne() { 
+          e.target.innerHTML = txt.substring(0, cnt); 
+          now = e.target.innerHTML; 
+
+          cnt++;
+
+          if (txt.length > now.length) {
+            setTimeout(oneByOne(), 1000);
+            console.log('test');
+          }
+        }
+      },
+      false
+    );
+    */
   }
 
   componentWillUnmount() {
@@ -31,10 +64,10 @@ export default class BuildingDetail extends React.Component {
         <div
           id="plx01"
           className="layer"
-          data-depth="2">
+          data-depth="1">
           <img
             src={IMG + 'bg.jpg'}
-            width="100%"
+            width="120%"
             alt="img"
             />
         </div>
@@ -125,7 +158,7 @@ export default class BuildingDetail extends React.Component {
         <div
           id="plx06"
           className="layer"
-          data-depth="0">
+          data-depth="3">
           <img
             src={IMG + 'bg_header.jpg'}
             width="100%"
@@ -184,7 +217,7 @@ export default class BuildingDetail extends React.Component {
         </section>
 
         <section>
-          <h1>遠鉄アシストの取り組み</h1>
+          <h1 id="h01">遠鉄アシストの取り組み</h1>
 
           <h3>経験と実績に裏付けられた遠鉄クオリティ</h3>
           <p>
@@ -206,7 +239,7 @@ export default class BuildingDetail extends React.Component {
         </section>
 
         <section className="odd">
-          <h1 className="text-right">遠鉄アシストの特徴</h1>
+          <h1 id="h02" className="text-right">遠鉄アシストの特徴</h1>
 
           <p className="text-right">遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。</p>
 
@@ -223,7 +256,7 @@ export default class BuildingDetail extends React.Component {
         </section>
 
         <section>
-          <h1>遠鉄アシストのサポート</h1>
+          <h1 id="h03">遠鉄アシストのサポート</h1>
 
           <p>専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。</p>
 
