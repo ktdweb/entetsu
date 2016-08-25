@@ -46,7 +46,9 @@ export default class Works extends React.Component {
                 className="pf-Works-Title-loc"
                 />
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner01.png'}
                   width="170"
@@ -55,7 +57,9 @@ export default class Works extends React.Component {
                   />
                 </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner02.png'}
                   width="170"
@@ -64,7 +68,9 @@ export default class Works extends React.Component {
                 />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner03.png'}
                   width="170"
@@ -73,7 +79,9 @@ export default class Works extends React.Component {
                 />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner04.png'}
                   width="170"
@@ -82,7 +90,9 @@ export default class Works extends React.Component {
                 />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner05.png'}
                   width="170"
@@ -91,7 +101,9 @@ export default class Works extends React.Component {
                 />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner06.png'}
                   width="170"
@@ -100,7 +112,9 @@ export default class Works extends React.Component {
                 />
               </a>
 
-              <a href="#">
+              <a href="#"
+                onClick={this.closeUp.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner07.png'}
                   width="170"
@@ -536,7 +550,14 @@ export default class Works extends React.Component {
     }
 
     el.classList.add('closeUp');
+
     this.fadeIn(e);
+
+    el.addEventListener('animationend', scroll(), false);
+
+    function scroll() {
+      window.scrollTo(0, 700);
+    }
   }
 
   onMouseDown(e) {

@@ -21,33 +21,28 @@ export default class BuildingDetail extends React.Component {
     let h02 = document.getElementById('h02');
     let h03 = document.getElementById('h03');
 
-    /*
+    let txt = h01.innerHTML;
+    let now = '';
+    let cnt = 0;
+    let timer;
+    let flag = true;
+
     h01.addEventListener(
       'transitionend',
-      function(e) {
-        let txt = e.target.innerHTML;
-        let now;
-        let cnt = 0;
-        let timer;
-        let flag = true;
-
-        oneByOne();
-        
-        function oneByOne() { 
-          e.target.innerHTML = txt.substring(0, cnt); 
-          now = e.target.innerHTML; 
-
-          cnt++;
-
-          if (txt.length > now.length) {
-            setTimeout(oneByOne(), 1000);
-            console.log('test');
-          }
-        }
-      },
+      oneByOne.bind(this),
       false
     );
-    */
+
+    function oneByOne(e) { 
+      let s = '<span>' + txt.substr(0, cnt) + '</span>';
+      e.target.innerHTML = s;
+      now = e.target.innerHTML; 
+      cnt++;
+
+      if (txt.length > cnt) {
+        setTimeout(oneByOne(e), 1000);
+      }
+    }
   }
 
   componentWillUnmount() {

@@ -6916,14 +6916,17 @@ article {
     #Front > footer .lf-credit div div:first-child p {
       float: left;
       margin-bottom: 0; }
-  #Front > footer .lf-credit div div:last-child {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%;
-    text-align: right; }
-    #Front > footer .lf-credit div div:last-child:last-child {
-      margin-right: 0; }
+  #Front > footer .lf-credit div {
+    width: 960px;
+    margin: 0 auto; }
+    #Front > footer .lf-credit div div:last-child {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      text-align: right; }
+      #Front > footer .lf-credit div div:last-child:last-child {
+        margin-right: 0; }
   #Front .lf-Top {
     min-width: 960px;
     max-width: 960px;
@@ -7285,14 +7288,15 @@ article {
           opacity: 1; }
       #Front article#Works nav div.pf-Works-Search {
         padding: 6rem 0;
-        background-color: #0151CA; }
+        background-color: #0151CA;
+        text-align: center; }
         #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider {
           position: relative;
           display: inline-block;
           width: 500px;
           height: 60px;
-          margin-left: 30px;
           padding: 0;
+          left: -160px;
           background-image: url("../imgs/pages/works/list_slider_bg.png");
           background-size: contain; }
           #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider h1 {
@@ -7321,8 +7325,9 @@ article {
         #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-advance {
           display: inline-block;
           padding: 0;
-          width: 440px;
-          text-align: right; }
+          width: 200px;
+          text-align: right;
+          margin-left: -150px; }
     #Front article#Works div.pf-Works-List {
       font-size: 1.5rem;
       background-color: #F5FBFE;
@@ -7625,7 +7630,7 @@ article {
       #Front article#WorksDetail div.modal > div {
         margin: 200px auto;
         width: 480px;
-        height: 380px;
+        height: 420px;
         text-align: center;
         color: #0099DE;
         font-size: 1.32rem;
@@ -7863,9 +7868,9 @@ article#BuildingDetail {
       -ms-transform: scale(1.1);
       -o-transform: scale(1.1);
       transform: scale(1.1);
-      -webkit-transition: all 4s ease-in-out;
-      -moz-transition: all 4s ease-in-out;
-      transition: all 4s ease-in-out; }
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out; }
     article#BuildingDetail section:nth-of-type(3).posi {
       opacity: 1; }
       article#BuildingDetail section:nth-of-type(3).posi h1 {

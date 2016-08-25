@@ -1438,7 +1438,7 @@ var Footer = function (_React$Component) {
         width: '140',
         height: '35',
         alt: '竜洋海洋公園'
-      }))), _react2.default.createElement('p', null, _react2.default.createElement('a', {
+      })), _react2.default.createElement('a', {
         target: '_blank',
         href: 'http://www.h-seisyounen-ie.com/'
       }, _react2.default.createElement('img', {
@@ -1446,7 +1446,7 @@ var Footer = function (_React$Component) {
         width: '140',
         height: '35',
         alt: '青少年の家'
-      })), _react2.default.createElement('a', {
+      }))), _react2.default.createElement('p', null, _react2.default.createElement('a', {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/busparking/'
       }, _react2.default.createElement('img', {
@@ -5686,30 +5686,24 @@ var BuildingDetail = function (_React$Component) {
       var h02 = document.getElementById('h02');
       var h03 = document.getElementById('h03');
 
-      /*
-      h01.addEventListener(
-        'transitionend',
-        function(e) {
-          let txt = e.target.innerHTML;
-          let now;
-          let cnt = 0;
-          let timer;
-          let flag = true;
-           oneByOne();
-          
-          function oneByOne() { 
-            e.target.innerHTML = txt.substring(0, cnt); 
-            now = e.target.innerHTML; 
-             cnt++;
-             if (txt.length > now.length) {
-              setTimeout(oneByOne(), 1000);
-              console.log('test');
-            }
-          }
-        },
-        false
-      );
-      */
+      var txt = h01.innerHTML;
+      var now = '';
+      var cnt = 0;
+      var timer = void 0;
+      var flag = true;
+
+      h01.addEventListener('transitionend', oneByOne.bind(this), false);
+
+      function oneByOne(e) {
+        var s = '<span>' + txt.substr(0, cnt) + '</span>';
+        e.target.innerHTML = s;
+        now = e.target.innerHTML;
+        cnt++;
+
+        if (txt.length > cnt) {
+          setTimeout(oneByOne(e), 1000);
+        }
+      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -6816,37 +6810,51 @@ var Works = function (_React$Component) {
         height: '120',
         alt: 'img',
         className: 'pf-Works-Title-loc'
-      }), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      }), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner01.png',
         width: '170',
         height: '45',
         alt: 'img'
-      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner02.png',
         width: '170',
         height: '45',
         alt: 'img'
-      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner03.png',
         width: '170',
         height: '45',
         alt: 'img'
-      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner04.png',
         width: '170',
         height: '45',
         alt: 'img'
-      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner05.png',
         width: '170',
         height: '45',
         alt: 'img'
-      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner06.png',
         width: '170',
         height: '45',
         alt: 'img'
-      })), _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('img', {
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.closeUp.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'loc/banner07.png',
         width: '170',
         height: '45',
@@ -7041,7 +7049,14 @@ var Works = function (_React$Component) {
       }
 
       el.classList.add('closeUp');
+
       this.fadeIn(e);
+
+      el.addEventListener('animationend', scroll(), false);
+
+      function scroll() {
+        window.scrollTo(0, 700);
+      }
     }
   }, {
     key: 'onMouseDown',
@@ -7186,12 +7201,16 @@ var WorksDetail = function (_React$Component) {
       }), _react2.default.createElement('div', { className: 'text-center' }, _react2.default.createElement('button', {
         onClick: this.enableModal.bind(this)
       }, '担当者からすぐ連絡希望'), 'もしくは…', _react2.default.createElement('button', {
-        onClick: this.enableModal.bind(this)
+        onClick: this.enableModal2.bind(this)
       }, '応募する')))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ')), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: 'works' }, _react2.default.createElement('button', null, '似た仕事を検索')), _react2.default.createElement(_reactRouter.Link, { to: 'works' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement('div', {
         id: 'modal',
         className: 'modal',
         onClick: this.disableModal.bind(this)
-      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), 'メールアドレス: taro@example.com'), _react2.default.createElement('p', null, '弊社スタッフより、お仕事のご紹介や、', _react2.default.createElement('br', null), 'ご都合のご確認として、', _react2.default.createElement('br', null), 'お電話・メールにてご連絡させていただきます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「応募する」クリックしてください。'), _react2.default.createElement('button', null, '応募する'))));
+      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), '電話番号: 012-333-4444'), _react2.default.createElement('p', null, '弊社スタッフより、お仕事のご紹介や、', _react2.default.createElement('br', null), 'ご都合のご確認として、', _react2.default.createElement('br', null), 'お電話・メールにてご連絡させていただきます。', _react2.default.createElement('br', null), 'また、あわせて会員情報も登録されます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「登録後応募する」クリックしてください。'), _react2.default.createElement('button', null, '登録後応募する'))), _react2.default.createElement('div', {
+        id: 'modal2',
+        className: 'modal',
+        onClick: this.disableModal2.bind(this)
+      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), 'メールアドレス: info@example.com'), _react2.default.createElement('p', null, '弊社スタッフより、お仕事のご紹介や、', _react2.default.createElement('br', null), 'ご都合のご確認として、', _react2.default.createElement('br', null), 'メールにてご連絡させていただきます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「応募する」クリックしてください。'), _react2.default.createElement('button', null, '応募する'))));
     }
   }, {
     key: 'enableModal',
@@ -7200,9 +7219,21 @@ var WorksDetail = function (_React$Component) {
       el.classList.toggle('enable');
     }
   }, {
+    key: 'enableModal2',
+    value: function enableModal2() {
+      var el = document.getElementById('modal2');
+      el.classList.toggle('enable');
+    }
+  }, {
     key: 'disableModal',
     value: function disableModal() {
       var el = document.getElementById('modal');
+      el.classList.toggle('enable');
+    }
+  }, {
+    key: 'disableModal2',
+    value: function disableModal2() {
+      var el = document.getElementById('modal2');
       el.classList.toggle('enable');
     }
   }]);

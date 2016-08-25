@@ -129,9 +129,7 @@ export default class Footer extends React.Component {
                     alt="竜洋海洋公園"
                     />
                 </a>
-              </p>
 
-              <p>
                 <a
                   target="_blank"
                   href="http://www.h-seisyounen-ie.com/"
@@ -143,7 +141,9 @@ export default class Footer extends React.Component {
                     alt="青少年の家"
                     />
                 </a>
+              </p>
 
+              <p>
                 <a
                   target="_blank"
                   href="http://www.entetsuassist-dms.com/busparking/"

@@ -82,7 +82,7 @@ export default class WorksDetail extends React.Component {
                   >担当者からすぐ連絡希望</button>
                   もしくは…
                   <button
-                    onClick={this.enableModal.bind(this)}
+                    onClick={this.enableModal2.bind(this)}
                   >応募する</button>
                 </div>
               </div>
@@ -189,13 +189,41 @@ export default class WorksDetail extends React.Component {
             <div>
               名前:  山田太郎<br />
               フリガナ: ヤマダタロウ<br />
-              メールアドレス: taro@example.com
+              電話番号: 012-333-4444
             </div>
 
             <p>
               弊社スタッフより、お仕事のご紹介や、<br />
               ご都合のご確認として、<br />
-              お電話・メールにてご連絡させていただきます。
+              お電話・メールにてご連絡させていただきます。<br />
+              また、あわせて会員情報も登録されます。
+            </p>
+
+            <p>
+              以上の内容でお間違いなければ「登録後応募する」クリックしてください。
+            </p>
+
+            <button>登録後応募する</button>
+          </div>
+        </div>
+
+        <div
+          id="modal2"
+          className="modal"
+          onClick={this.disableModal2.bind(this)}
+          >
+          <div>
+            <h1>応募内容のご確認</h1>
+            <div>
+              名前:  山田太郎<br />
+              フリガナ: ヤマダタロウ<br />
+              メールアドレス: info@example.com
+            </div>
+
+            <p>
+              弊社スタッフより、お仕事のご紹介や、<br />
+              ご都合のご確認として、<br />
+              メールにてご連絡させていただきます。
             </p>
 
             <p>
@@ -214,8 +242,18 @@ export default class WorksDetail extends React.Component {
     el.classList.toggle('enable');
   }
 
+  enableModal2() {
+    let el = document.getElementById('modal2');
+    el.classList.toggle('enable');
+  }
+
   disableModal() {
     let el = document.getElementById('modal');
+    el.classList.toggle('enable');
+  }
+
+  disableModal2() {
+    let el = document.getElementById('modal2');
     el.classList.toggle('enable');
   }
 }
