@@ -60,8 +60,8 @@ article#Works
         display: inline-block
         width: 500px
         height: 60px
+        margin-left: 30px
         padding: 0
-        left: -160px
         $path: '../imgs/pages/works/list_slider_bg.png'
         background-image: url($path)
         background-size: contain
@@ -95,9 +95,8 @@ article#Works
       div.pf-Works-Search-advance
         display: inline-block
         padding: 0
-        width: 200px
+        width: 400px
         text-align: right
-        margin-left: -150px
 
   div.pf-Works-List
     font-size: $small-font-size * 1.25
@@ -151,6 +150,9 @@ article#Works
         +border-image(url($path) 120 repeat)
         border-style: solid
         border-width: 45px
+        &.fadeIn
+          opacity: 1
+
 
         div.pf-Works-List-column-head
           position: absolute

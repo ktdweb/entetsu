@@ -21,28 +21,70 @@ export default class BuildingDetail extends React.Component {
     let h02 = document.getElementById('h02');
     let h03 = document.getElementById('h03');
 
-    let txt = h01.innerHTML;
-    let now = '';
-    let cnt = 0;
-    let timer;
-    let flag = true;
+    let p01 = document.getElementById('p01');
+    let p02 = document.getElementById('p02');
+    let p03 = document.getElementById('p03');
 
-    h01.addEventListener(
+    let txt1 = h01.innerHTML;
+    let txt2 = h02.innerHTML;
+    let txt3 = h03.innerHTML;
+    let now1 = '';
+    let now2 = '';
+    let now3 = '';
+    let cnt1 = 0;
+    let cnt2 = 0;
+    let cnt3 = 0;
+
+    p01.addEventListener(
       'transitionend',
-      oneByOne.bind(this),
+      oneByOne1.bind(this),
       false
     );
 
-    function oneByOne(e) { 
-      let s = '<span>' + txt.substr(0, cnt) + '</span>';
-      e.target.innerHTML = s;
-      now = e.target.innerHTML; 
-      cnt++;
+    function oneByOne1(e) { 
+      h01.innerHTML = txt1.substr(0, cnt1);
+      now1 = h01.innerHTML; 
+      cnt1++;
 
-      if (txt.length > cnt) {
-        setTimeout(oneByOne(e), 1000);
+      if (txt1.length >= cnt1) {
+        setTimeout(oneByOne1.bind(this, e), 60);
       }
     }
+
+    p02.addEventListener(
+      'transitionend',
+      oneByOne2.bind(this),
+      false
+    );
+
+    function oneByOne2(e) { 
+      h02.innerHTML = txt2.substr(0, cnt2);
+      now2 = h02.innerHTML; 
+      cnt2++;
+
+      if (txt2.length >= cnt2) {
+        setTimeout(oneByOne2.bind(this, e), 60);
+      }
+    }
+
+    p03.addEventListener(
+      'transitionend',
+      oneByOne3.bind(this),
+      false
+    );
+
+    function oneByOne3(e) { 
+      h03.innerHTML = txt3.substr(0, cnt3);
+      now3 = h03.innerHTML; 
+      cnt3++;
+
+      if (txt3.length >= cnt3) {
+        setTimeout(oneByOne3.bind(this, e), 60);
+      }
+    }
+
+    //let bg = document.getElementById('plx02');
+    //bg.style.width = '1920px'; 
   }
 
   componentWillUnmount() {
@@ -153,7 +195,7 @@ export default class BuildingDetail extends React.Component {
         <div
           id="plx06"
           className="layer"
-          data-depth="3">
+          data-depth="8">
           <img
             src={IMG + 'bg_header.jpg'}
             width="100%"
@@ -211,7 +253,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section>
+        <section id="p01">
           <h1 id="h01">遠鉄アシストの取り組み</h1>
 
           <h3>経験と実績に裏付けられた遠鉄クオリティ</h3>
@@ -233,7 +275,7 @@ export default class BuildingDetail extends React.Component {
           <p>夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。</p>
         </section>
 
-        <section className="odd">
+        <section  id="p02" className="odd">
           <h1 id="h02" className="text-right">遠鉄アシストの特徴</h1>
 
           <p className="text-right">遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。</p>
@@ -250,7 +292,7 @@ export default class BuildingDetail extends React.Component {
           </p>
         </section>
 
-        <section>
+        <section id="p03">
           <h1 id="h03">遠鉄アシストのサポート</h1>
 
           <p>専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。</p>

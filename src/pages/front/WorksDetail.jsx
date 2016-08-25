@@ -79,7 +79,7 @@ export default class WorksDetail extends React.Component {
                 <div className="text-center">
                   <button
                     onClick={this.enableModal.bind(this)}
-                  >担当者からすぐ連絡希望</button>
+                  >担当者からすぐ連絡希望する</button>
                   もしくは…
                   <button
                     onClick={this.enableModal2.bind(this)}

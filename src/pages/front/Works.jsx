@@ -112,9 +112,7 @@ export default class Works extends React.Component {
                 />
               </a>
 
-              <a href="#"
-                onClick={this.closeUp.bind(this)}
-              >
+              <a href="#">
                 <img
                   src={IMG + 'loc/banner07.png'}
                   width="170"
@@ -529,15 +527,11 @@ export default class Works extends React.Component {
 
   fadeIn(e) {
     e.preventDefault();
-    let el = document.getElementById('column');
+    $('#column li').css({opacity: 0});
 
-    el.classList.add('fadeIn');
-    el.addEventListener('animationend', clear, false);
-    
-    function clear() {
-      el.removeEventListener('animationend', clear, false);
-      el.classList.remove('fadeIn');
-    }
+    $('#column li').each(function(i) {
+      $(this).delay(200 * i).animate({opacity: 1}, 200).css('visibility','visible');
+    });
   }
 
   closeUp(e) {
@@ -551,13 +545,8 @@ export default class Works extends React.Component {
 
     el.classList.add('closeUp');
 
+    $("html,body").animate({scrollTop:700});
     this.fadeIn(e);
-
-    el.addEventListener('animationend', scroll(), false);
-
-    function scroll() {
-      window.scrollTo(0, 700);
-    }
   }
 
   onMouseDown(e) {
@@ -574,10 +563,11 @@ export default class Works extends React.Component {
 
   onMouseMove(e) {
     if (drag) {
+      let el = document.getElementById('sliderLabel');
       let s = this.state.slider;
+      AREA_PADDING = el.style.padding-left;
       let pos = (e.clientX - BTN_WIDTH) - AREA_PADDING;
       let v = (pos + BTN_WIDTH / 2) * (100 / AREA_WIDTH);
-      let el = document.getElementById('sliderLabel');
       start = el.style.left;
       end = el.style.width;
 
