@@ -1,0 +1,65 @@
+div#contents {
+    position: relative;
+    height: 1800px;
+}
+
+div.doorTop {
+    z-index: 1;
+}
+
+div.doorBtm {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+div#search {
+    position: absolute;
+    top: 440px;
+    height: 200px;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+}
+
+div#search ul {
+    display: table;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+}
+
+div#search ul:first-child {
+    padding-top: 30px;
+}
+
+div#search ul img {
+    opacity: 0;
+}
+
+div#search ul.sub {
+    display: table;
+    width: 100%;
+    padding: 0 25px;
+    margin: 0;
+}
+
+div#search li {
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+div#search input {
+    border: 1px solid #00a6eb;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 30px;
+    padding: 5px;
+    background-image: url('../imgs/btn/search.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center right;
+}

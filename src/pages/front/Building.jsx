@@ -201,7 +201,7 @@ export default class BuildingDetail extends React.Component {
         <div
           id="plx06"
           className="layer"
-          data-depth="8">
+          data-depth="1">
           <img
             src={IMG + 'bg_header.jpg'}
             width="100%"

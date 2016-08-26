@@ -5818,7 +5818,7 @@ var BuildingDetail = function (_React$Component) {
       }))), _react2.default.createElement('div', {
         id: 'plx06',
         className: 'layer',
-        'data-depth': '8' }, _react2.default.createElement('img', {
+        'data-depth': '1' }, _react2.default.createElement('img', {
         src: IMG + 'bg_header.jpg',
         width: '100%',
         alt: 'img'
