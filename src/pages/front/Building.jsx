@@ -17,6 +17,10 @@ export default class BuildingDetail extends React.Component {
     this.parallax.start();
     window.scrollTo(0,0);
 
+    let plx02 = document.getElementById('plx02');
+    let w = window.innerHeight - 1000;
+    plx02.style.top = 360 - (w * 1.5) + 'px';
+
     let h01 = document.getElementById('h01');
     let h02 = document.getElementById('h02');
     let h03 = document.getElementById('h03');
@@ -120,6 +124,7 @@ export default class BuildingDetail extends React.Component {
             />
         </div>
 
+        <div className="wrapper">
         <div
           id="plx03"
           className="layer"
@@ -191,6 +196,7 @@ export default class BuildingDetail extends React.Component {
             alt="img"
             />
         </div>
+        </div>
 
         <div
           id="plx06"
@@ -215,8 +221,8 @@ export default class BuildingDetail extends React.Component {
         </div>
         
         <section>
-          <h1>機能するビルディング</h1>
-          <p>
+          <h1 className="h00">機能するビルディング</h1>
+          <p className="p00">
             仕事に集中できる環境。<br />
             始業ベルとともに、一斉にスタートする職場には、<br />
             なにが求められているか?<br />
