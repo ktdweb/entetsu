@@ -7,16 +7,22 @@
 article#BuildingDetail
 
   section
+    color: #24353c
     h1
+      color: #ff5c5c
       height: 30px
       opacity: 1
       +transition(all 2s ease-in-out 1s)
 
     &:nth-of-type(1)
       padding-top: 220px
+      background-color: white
 
     &:nth-of-type(2)
-      margin-top: 200px
+      color: white
+      h1
+        color: white
+      margin-top: 280px
 
     &:nth-of-type(3)
       margin-top: 200px
@@ -71,15 +77,18 @@ article#BuildingDetail
     z-index: -100
 
   #plx02
-    top: 410px
-    left: 0 
-    right: 0
+    top: -600px
     width: 100%
-    height: 600px
+    height: 1920px
+    left: 0
+    right: 0
     z-index: -50
+    background-image: url('../imgs/detail/building/bg_detail.png')
+    background-size: 3800px auto
+    background-position: center bottom
 
   #plx03
-    top: 1280px
+    top: 1380px
     right: 0
     opacity: 0
     +transition(all .5s ease-in-out)
@@ -87,7 +96,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx03b
-    top: 1260px
+    top: 1360px
     right: 210px
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -95,7 +104,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx04
-    top: 1880px
+    top: 1980px
     left: 0
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -103,7 +112,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx04b
-    top: 1960px
+    top: 2060px
     left: 210px
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -111,7 +120,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx05
-    top: 2380px
+    top: 2480px
     right: 0
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -119,7 +128,7 @@ article#BuildingDetail
       opacity: 1
 
   #plx05b
-    top: 2460px
+    top: 2560px
     right: 210px
     opacity: 0
     +transition(all 0.5s ease-in-out)
@@ -129,10 +138,15 @@ article#BuildingDetail
   #plx06
     top: 900px
     width: 1040px 
+    height: 1040px
     z-index: -100
+    background-image: url('../imgs/bg.png')
+    background-size: 200%
 
   #plx07
-    display: none
+    top: 2400px
     width: 1040px 
-    top: 2880px 
+    height: 1040px
     z-index: -100
+    background-image: url('../imgs/bg.png')
+    background-size: 200%

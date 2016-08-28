@@ -17,65 +17,158 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                清掃
+                <Link to="/cleaning#h00">
+                  清掃</Link>
               </p>
               <ul>
-                <li>サービス案内</li>
-                <li>清掃業務管理</li>
-                <li>特徴</li>
-                <li>サポート</li>
+                <li>
+                  <Link to="/cleaning_detail#h01">
+                    サービス案内
+                    </Link>
+                  </li>
+
+
+                <li>
+                  <Link to="/cleaning_detail#h02">
+                  清掃業務管理
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cleaning_detail#h03">
+                  特徴
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cleaning_detail#h04">
+                  サポート
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                ビル管理
+                <Link to="/building#h00">
+                  ビル管理
+                  </Link>
               </p>
               <ul>
-                <li>サービス案内</li>
-                <li>取り組み</li>
-                <li>特徴</li>
-                <li>サポート</li>
+                <li>
+                  <Link to="/building_detail#h01">
+                  サービス案内
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/building_detail#h02">
+                  取り組み
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/building_detail#h03">
+                  特徴
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/building_detail#h04">
+                  サポート
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                マンション管理
+                <Link to="/mansion_detail#h00">
+                  マンション管理
+                  </Link>
               </p>
               <ul>
-                <li>サービス案内</li>
-                <li>取り組み</li>
-                <li>特徴</li>
-                <li>サポート</li>
+                <li>
+                  <Link to="/mansion_detail#h01">
+                  サービス案内
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/mansion_detail#h02">
+                  取り組み
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/mansion_detail#h03">
+                  特徴
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/mansion_detail#h04">
+                  サポート
+                  </Link>
+                  </li>
               </ul>
             </div>
 
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                運行管理
+                <Link to="/driving#h00">
+                  運行管理
+                </Link>
               </p>
               <ul>
-                <li>サービス案内</li>
-                <li>導入事例</li>
-                <li>特徴</li>
-                <li>安全・安心・快適への取組</li>
+                <li>
+                  <Link to="/driving_detail#h01">
+                  サービス案内
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/driving_detail#h02">
+                  導入事例
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/driving_detail#h03">
+                  特徴
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/driving_detail#h04">
+                  安全・安心・快適の取組
+                  </Link>
+                  </li>
               </ul>
             </div>
 
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                会社案内
+                <Link to="/company#h00">
+                  会社案内
+                  </Link>
               </p>
               <ul>
-                <li>遠鉄アシストについて</li>
-                <li>社長メッセージ</li>
-                <li>会社概要</li>
-                <li>戦略事業</li>
+                <li>
+                  <Link to="/company#h01">
+                  遠鉄アシストについて
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/company#h02">
+                  社長メッセージ
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/company#h03">
+                  会社概要
+                  </Link>
+                  </li>
+                <li>
+                  <Link to="/company#h04">
+                  戦略事業
+                  </Link>
+                   </li>
               </ul>
             </div>
 
@@ -85,7 +178,11 @@ export default class Footer extends React.Component {
                 その他
               </p>
               <ul>
-                <li>お仕事を探す</li>
+                <li>
+                  <Link to="/works">
+                  お仕事を探す
+                  </Link>
+                  </li>
               </ul>
             </div>
           </nav>
@@ -255,6 +352,7 @@ export default class Footer extends React.Component {
             </div>
 
             <div>
+              <br />
               ビル管理・清掃  - 053-455-3451<br />
               マンション管理  - 053-450-9922<br />
               運行管理請負    - 053-450-1515

@@ -10,7 +10,23 @@
   ヘッダの縦中央にみせるためpadding-topを追加  
   font-sizeをあげる
   */
+  
+div#root
+  position: relative
+  height: 3730px
 
+div#badge
+  position: fixed
+  opacity: 0
+  top: 950px
+  background-color: #ff5c5c
+  width: 100%
+  height: 160px
+  z-index: -1000
+  text-align: center
+  padding-top: 40px
+  &.posi
+    opacity: 1
 
 article
   +outer-container()
@@ -26,3 +42,7 @@ article
 
 #grand_menu a
   float: left
+
+body *::selection
+  background: rgba(255, 252, 62, 0.5)
+

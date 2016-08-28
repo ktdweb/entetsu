@@ -6497,6 +6497,23 @@ body.grid::after {
   ヘッダの縦中央にみせるためpadding-topを追加
   font-sizeをあげる
   */
+div#root {
+  position: relative;
+  height: 3730px; }
+
+div#badge {
+  position: fixed;
+  opacity: 0;
+  top: 950px;
+  background-color: #ff5c5c;
+  width: 100%;
+  height: 160px;
+  z-index: -1000;
+  text-align: center;
+  padding-top: 40px; }
+  div#badge.posi {
+    opacity: 1; }
+
 article {
   max-width: 100%;
   margin-left: auto;
@@ -6517,6 +6534,9 @@ article {
 
 #grand_menu a {
   float: left; }
+
+body *::selection {
+  background: rgba(255, 252, 62, 0.5); }
 
 /*
   # layouts/index.sass
@@ -6870,20 +6890,25 @@ article {
       border-bottom: 1px solid #EEE; }
     #Front > footer .lf-contents div ul li {
       line-height: 2rem; }
-  #Front > footer .lf-external div {
-    padding: 2rem 0; }
-    #Front > footer .lf-external div p {
-      margin-bottom: 1rem; }
-    #Front > footer .lf-external div img {
-      border: 1px solid black; }
-  #Front > footer .lf-external div:first-child {
-    float: left; }
-    #Front > footer .lf-external div:first-child a img {
-      margin-right: 1rem; }
-  #Front > footer .lf-external div:last-child {
-    float: right; }
-    #Front > footer .lf-external div:last-child a:nth-child(even) img {
-      margin-left: 1rem; }
+    #Front > footer .lf-contents div a {
+      color: black; }
+  #Front > footer {
+    margin-bottom: 120px;
+    background-color: white; }
+    #Front > footer .lf-external div {
+      padding: 2rem 0; }
+      #Front > footer .lf-external div p {
+        margin-bottom: 1rem; }
+      #Front > footer .lf-external div img {
+        border: 1px solid black; }
+    #Front > footer .lf-external div:first-child {
+      float: left; }
+      #Front > footer .lf-external div:first-child a img {
+        margin-right: 1rem; }
+    #Front > footer .lf-external div:last-child {
+      float: right; }
+      #Front > footer .lf-external div:last-child a:nth-child(even) img {
+        margin-left: 1rem; }
   #Front > footer .lf-credit {
     width: 100%;
     margin: 0;
@@ -7280,53 +7305,57 @@ article {
           margin: 0.5rem; }
       #Front article#Works nav div.pf-Works-Time {
         background-color: #CA0185; }
-        #Front article#Works nav div.pf-Works-Time a:hover {
-          opacity: 1; }
       #Front article#Works nav div.pf-Works-Cat {
         background-color: #0151CA; }
-        #Front article#Works nav div.pf-Works-Cat a:hover {
-          opacity: 1; }
-      #Front article#Works nav div.pf-Works-Search {
-        padding: 6rem 0;
-        background-color: #0151CA;
-        text-align: center; }
-        #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider {
-          position: relative;
-          display: inline-block;
-          width: 500px;
-          height: 60px;
-          margin-left: 30px;
+    #Front article#Works div.pf-Works-Search {
+      display: block;
+      padding: 6rem 0;
+      text-align: center; }
+      #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider {
+        position: relative;
+        display: inline-block;
+        width: 500px;
+        height: 60px;
+        margin-left: 30px;
+        padding: 0;
+        background-image: url("../imgs/pages/works/list_slider_bg.png");
+        background-size: contain; }
+        #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider h1 {
+          position: absolute;
+          top: -40px;
+          color: #0099DE;
+          font-size: 2.08rem; }
+        #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider p#sliderLabel {
+          position: absolute;
+          top: 43px;
+          left: 0px;
+          width: 375px;
+          margin: 0;
           padding: 0;
-          background-image: url("../imgs/pages/works/list_slider_bg.png");
+          height: 6px;
+          background-color: #0099DE;
+          opacity: 0.5; }
+        #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider img {
+          position: absolute;
+          top: 33px;
+          left: -14px; }
+          #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider img:first-child {
+            left: 108px; }
+          #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider img:last-child {
+            left: 361px; }
+      #Front article#Works div.pf-Works-Search div.pf-Works-Search-advance {
+        display: inline-block;
+        padding: 0;
+        width: 400px;
+        text-align: right; }
+        #Front article#Works div.pf-Works-Search div.pf-Works-Search-advance input {
+          float: right;
+          border: 1px solid #0099DE;
+          width: 32rem;
+          background-image: url("../imgs/pages/works/list_column_search.png");
+          background-repeat: no-repeat;
+          background-position: top right;
           background-size: contain; }
-          #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider h1 {
-            position: absolute;
-            top: -40px;
-            color: white;
-            font-size: 2.08rem; }
-          #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider p#sliderLabel {
-            position: absolute;
-            top: 43px;
-            left: 0px;
-            width: 375px;
-            margin: 0;
-            padding: 0;
-            height: 6px;
-            background-color: #0099DE;
-            opacity: 0.5; }
-          #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider img {
-            position: absolute;
-            top: 33px;
-            left: -14px; }
-            #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider img:first-child {
-              left: 108px; }
-            #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-slider img:last-child {
-              left: 361px; }
-        #Front article#Works nav div.pf-Works-Search div.pf-Works-Search-advance {
-          display: inline-block;
-          padding: 0;
-          width: 400px;
-          text-align: right; }
     #Front article#Works div.pf-Works-List {
       font-size: 1.5rem;
       background-color: #F5FBFE;
@@ -7383,9 +7412,9 @@ article {
             top: -36px;
             left: -5px;
             right: -10px; }
-            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-head a {
+            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-head img {
               position: absolute;
-              top: -8px;
+              top: -3px;
               right: -25px; }
           #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-section {
             position: absolute;
@@ -7394,8 +7423,9 @@ article {
             left: -30px;
             right: -30px;
             text-align: justify;
-            background-color: white; }
-            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-section a img {
+            background-color: white;
+            color: #000; }
+            #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-section img {
               border: 1px solid #0099DE;
               margin-right: 10px;
               margin-bottom: 10px;
@@ -7631,7 +7661,7 @@ article {
       #Front article#WorksDetail div.modal > div {
         margin: 200px auto;
         width: 480px;
-        height: 420px;
+        height: 440px;
         text-align: center;
         color: #0099DE;
         font-size: 1.32rem;
@@ -7721,7 +7751,7 @@ article.pf-Detail {
     width: 9rem;
     height: 9rem;
     padding-top: 2rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     color: white;
     font-size: 1.2rem;
     text-align: center;
@@ -7847,96 +7877,98 @@ article#CleaningDetail {
   front/Building.jsxに関するクラスを定義
   prefixには`pf-Building`を付与
   */
-article#BuildingDetail section h1 {
-  height: 30px;
-  opacity: 1;
-  -webkit-transition: all 2s ease-in-out 1s;
-  -moz-transition: all 2s ease-in-out 1s;
-  transition: all 2s ease-in-out 1s; }
-
-article#BuildingDetail section:nth-of-type(1) {
-  padding-top: 220px; }
-
-article#BuildingDetail section:nth-of-type(2) {
-  margin-top: 200px; }
-
-article#BuildingDetail section:nth-of-type(3) {
-  margin-top: 200px;
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out; }
-  article#BuildingDetail section:nth-of-type(3) h1 {
-    opacity: 0;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
+article#BuildingDetail section {
+  color: #24353c; }
+  article#BuildingDetail section h1 {
+    color: #ff5c5c;
+    height: 30px;
+    opacity: 1;
     -webkit-transition: all 2s ease-in-out 1s;
     -moz-transition: all 2s ease-in-out 1s;
     transition: all 2s ease-in-out 1s; }
-  article#BuildingDetail section:nth-of-type(3).posi {
-    opacity: 1; }
-    article#BuildingDetail section:nth-of-type(3).posi h1 {
-      opacity: 1;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1); }
-
-article#BuildingDetail section:nth-of-type(4) {
-  margin-top: 240px;
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out; }
-  article#BuildingDetail section:nth-of-type(4) h1 {
+  article#BuildingDetail section:nth-of-type(1) {
+    padding-top: 220px;
+    background-color: white; }
+  article#BuildingDetail section:nth-of-type(2) {
+    color: white;
+    margin-top: 280px; }
+    article#BuildingDetail section:nth-of-type(2) h1 {
+      color: white; }
+  article#BuildingDetail section:nth-of-type(3) {
+    margin-top: 200px;
     opacity: 0;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    -webkit-transition: all 2s ease-in-out 1s;
-    -moz-transition: all 2s ease-in-out 1s;
-    transition: all 2s ease-in-out 1s; }
-  article#BuildingDetail section:nth-of-type(4).posi {
-    opacity: 1; }
-    article#BuildingDetail section:nth-of-type(4).posi h1 {
-      opacity: 1;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1); }
-
-article#BuildingDetail section:nth-of-type(5) {
-  margin-top: 280px;
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out; }
-  article#BuildingDetail section:nth-of-type(5) h1 {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+    article#BuildingDetail section:nth-of-type(3) h1 {
+      opacity: 0;
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: all 2s ease-in-out 1s;
+      -moz-transition: all 2s ease-in-out 1s;
+      transition: all 2s ease-in-out 1s; }
+    article#BuildingDetail section:nth-of-type(3).posi {
+      opacity: 1; }
+      article#BuildingDetail section:nth-of-type(3).posi h1 {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1); }
+  article#BuildingDetail section:nth-of-type(4) {
+    margin-top: 240px;
     opacity: 0;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    -webkit-transition: all 2s ease-in-out 1s;
-    -moz-transition: all 2s ease-in-out 1s;
-    transition: all 2s ease-in-out 1s; }
-  article#BuildingDetail section:nth-of-type(5).posi {
-    opacity: 1; }
-    article#BuildingDetail section:nth-of-type(5).posi h1 {
-      opacity: 1;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1); }
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+    article#BuildingDetail section:nth-of-type(4) h1 {
+      opacity: 0;
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: all 2s ease-in-out 1s;
+      -moz-transition: all 2s ease-in-out 1s;
+      transition: all 2s ease-in-out 1s; }
+    article#BuildingDetail section:nth-of-type(4).posi {
+      opacity: 1; }
+      article#BuildingDetail section:nth-of-type(4).posi h1 {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1); }
+  article#BuildingDetail section:nth-of-type(5) {
+    margin-top: 280px;
+    opacity: 0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+    article#BuildingDetail section:nth-of-type(5) h1 {
+      opacity: 0;
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: all 2s ease-in-out 1s;
+      -moz-transition: all 2s ease-in-out 1s;
+      transition: all 2s ease-in-out 1s; }
+    article#BuildingDetail section:nth-of-type(5).posi {
+      opacity: 1; }
+      article#BuildingDetail section:nth-of-type(5).posi h1 {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1); }
 
 article#BuildingDetail div.wrapper {
   position: relative;
@@ -7949,15 +7981,18 @@ article#BuildingDetail #plx01 {
   z-index: -100; }
 
 article#BuildingDetail #plx02 {
-  top: 410px;
+  top: -600px;
+  width: 100%;
+  height: 1920px;
   left: 0;
   right: 0;
-  width: 100%;
-  height: 600px;
-  z-index: -50; }
+  z-index: -50;
+  background-image: url("../imgs/detail/building/bg_detail.png");
+  background-size: 3800px auto;
+  background-position: center bottom; }
 
 article#BuildingDetail #plx03 {
-  top: 1280px;
+  top: 1380px;
   right: 0;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -7967,7 +8002,7 @@ article#BuildingDetail #plx03 {
     opacity: 1; }
 
 article#BuildingDetail #plx03b {
-  top: 1260px;
+  top: 1360px;
   right: 210px;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -7977,7 +8012,7 @@ article#BuildingDetail #plx03b {
     opacity: 1; }
 
 article#BuildingDetail #plx04 {
-  top: 1880px;
+  top: 1980px;
   left: 0;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -7987,7 +8022,7 @@ article#BuildingDetail #plx04 {
     opacity: 1; }
 
 article#BuildingDetail #plx04b {
-  top: 1960px;
+  top: 2060px;
   left: 210px;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -7997,7 +8032,7 @@ article#BuildingDetail #plx04b {
     opacity: 1; }
 
 article#BuildingDetail #plx05 {
-  top: 2380px;
+  top: 2480px;
   right: 0;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -8007,7 +8042,7 @@ article#BuildingDetail #plx05 {
     opacity: 1; }
 
 article#BuildingDetail #plx05b {
-  top: 2460px;
+  top: 2560px;
   right: 210px;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -8019,13 +8054,18 @@ article#BuildingDetail #plx05b {
 article#BuildingDetail #plx06 {
   top: 900px;
   width: 1040px;
-  z-index: -100; }
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 200%; }
 
 article#BuildingDetail #plx07 {
-  display: none;
+  top: 2400px;
   width: 1040px;
-  top: 2880px;
-  z-index: -100; }
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 200%; }
 
 /*
   # pages/front/Mansion.sass

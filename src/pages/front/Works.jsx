@@ -256,10 +256,209 @@ export default class Works extends React.Component {
               </a>
             </div>
           </div>
+        </nav>
+
+        <div className="pf-Works-List">
+          <div>
+            <div className="pf-Works-List-tab">
+              検索結果
+            </div>
+
+            <section>
+            <div>
+              <Link to="works_detail">
+                <img
+                  src={IMG + 'list_column_left.png'}
+                  width="30"
+                  alt="img"
+                  onClick={this.fadeIn.bind(this)}
+                  />
+              </Link>
+            </div>
+
+            <ul id="column">
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>ホテル客室整備スタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 860円</span>
+                    <span>17:00~19:30</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>ホテル客室整備スタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 860円</span>
+                    <span>17:00~19:30</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>ホテル客室整備スタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 860円</span>
+                    <span>17:00~19:30</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>ホテル客室整備スタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 860円</span>
+                    <span>17:00~19:30</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>ホテル客室整備スタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 860円</span>
+                    <span>17:00~19:30</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>ホテル客室整備スタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 860円</span>
+                    <span>17:00~19:30</span>
+                  </div>
+                </li>
+              </Link>
+            </ul>
+
+
+           <div>
+              <Link
+                to="works_detail"
+                onClick={this.fadeIn.bind(this)}
+                >
+                <img
+                  src={IMG + 'list_column_right.png'}
+                  width="30"
+                  alt="img"
+                  />
+              </Link>
+            </div>
+            </section>
+          </div>
 
           <div className="pf-Works-Search">
             <div className="pf-Works-Search-slider">
-              <h1>さらに詳しく検索</h1>
+              <h1>自分の好きな時間帯をみつける</h1>
 
               <p id="sliderLabel"></p>
 
@@ -289,238 +488,14 @@ export default class Works extends React.Component {
             </div>
 
             <div className="pf-Works-Search-advance">
-              <Link to="works_detail"
-                onClick={this.fadeIn.bind(this)}
-              >
-                <img
-                  src={IMG + 'search_dummy.png'}
-                  width="400"
-                  alt="img"
-                  />
-              </Link>
+              <input
+                type="text"
+                defaultValue="キーワード検索"
+                onKeyPress={this.fadeIn.bind(this)}
+                />
             </div>
-          </div>
-        </nav>
-
-        <div className="pf-Works-List">
-          <div>
-            <div className="pf-Works-List-tab">
-              検索結果
-            </div>
-
-            <section>
-            <div>
-              <Link to="works_detail">
-                <img
-                  src={IMG + 'list_column_left.png'}
-                  width="30"
-                  alt="img"
-                  onClick={this.fadeIn.bind(this)}
-                  />
-              </Link>
-            </div>
-
-            <ul id="column">
-              <li className="pf-Works-List-column">
-                <div className="pf-Works-List-column-head">
-                  <p>ホテル客室整備スタッフ</p>
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </Link>
-                </div>
-
-                <div className="pf-Works-List-column-section">
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                  </Link>
-                  <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                </div>
-
-                <div className="pf-Works-List-column-footer">
-                  <span>時給: 860円</span>
-                  <span>17:00~19:30</span>
-                </div>
-              </li>
-
-              <li className="pf-Works-List-column">
-                <div className="pf-Works-List-column-head">
-                  <p>ホテル客室整備スタッフ</p>
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </Link>
-                </div>
-
-                <div className="pf-Works-List-column-section">
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                  </Link>
-                  <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                </div>
-
-                <div className="pf-Works-List-column-footer">
-                  <span>時給: 860円</span>
-                  <span>17:00~19:30</span>
-                </div>
-              </li>
-
-              <li className="pf-Works-List-column">
-                <div className="pf-Works-List-column-head">
-                  <p>ホテル客室整備スタッフ</p>
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </Link>
-                </div>
-
-                <div className="pf-Works-List-column-section">
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                  </Link>
-                  <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                </div>
-
-                <div className="pf-Works-List-column-footer">
-                  <span>時給: 860円</span>
-                  <span>17:00~19:30</span>
-                </div>
-              </li>
-
-              <li className="pf-Works-List-column">
-                <div className="pf-Works-List-column-head">
-                  <p>ホテル客室整備スタッフ</p>
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </Link>
-                </div>
-
-                <div className="pf-Works-List-column-section">
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                  </Link>
-                  <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                </div>
-
-                <div className="pf-Works-List-column-footer">
-                  <span>時給: 860円</span>
-                  <span>17:00~19:30</span>
-                </div>
-              </li>
-
-              <li className="pf-Works-List-column">
-                <div className="pf-Works-List-column-head">
-                  <p>ホテル客室整備スタッフ</p>
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </Link>
-                </div>
-
-                <div className="pf-Works-List-column-section">
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                  </Link>
-                  <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                </div>
-
-                <div className="pf-Works-List-column-footer">
-                  <span>時給: 860円</span>
-                  <span>17:00~19:30</span>
-                </div>
-              </li>
-
-              <li className="pf-Works-List-column">
-                <div className="pf-Works-List-column-head">
-                  <p>ホテル客室整備スタッフ</p>
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </Link>
-                </div>
-
-                <div className="pf-Works-List-column-section">
-                  <Link to="works_detail">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                  </Link>
-                  <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                </div>
-
-                <div className="pf-Works-List-column-footer">
-                  <span>時給: 860円</span>
-                  <span>17:00~19:30</span>
-                </div>
-              </li>
-            </ul>
-
-           <div>
-              <Link
-                to="works_detail"
-                onClick={this.fadeIn.bind(this)}
-                >
-                <img
-                  src={IMG + 'list_column_right.png'}
-                  width="30"
-                  alt="img"
-                  />
-              </Link>
-            </div>
-            </section>
           </div>
         </div>
-
-        <footer>
-          <p>
-            &nbsp;エントリーの際ご利用ください<br />
-            「個人情報の取扱いに関する採用応募者同意書」
-          </p>
-          <a href="#">
-            ダウンロード
-          </a>
-        </footer>
       </article>
     );
   }
@@ -530,12 +505,14 @@ export default class Works extends React.Component {
     $('#column li').css({opacity: 0});
 
     $('#column li').each(function(i) {
-      $(this).delay(200 * i).animate({opacity: 1}, 200).css('visibility','visible');
+      $(this).delay(150 * i).animate({opacity: 1}, 300, 'swing').css('visibility','visible');
     });
   }
 
   closeUp(e) {
     e.preventDefault();
+
+    /*
     let el = e.target;
     let active = document.getElementsByClassName('closeUp');
     
@@ -544,6 +521,7 @@ export default class Works extends React.Component {
     }
 
     el.classList.add('closeUp');
+    */
 
     $("html,body").animate({scrollTop:700});
     this.fadeIn(e);

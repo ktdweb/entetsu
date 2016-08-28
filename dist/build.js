@@ -1414,7 +1414,7 @@ var Footer = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('footer', { id: 'Footer' }, _react2.default.createElement('div', { id: 'footerLink' }, _react2.default.createElement('nav', { className: 'lf-contents' }, _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '清掃'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '清掃業務管理'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'ビル管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '取り組み'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'マンション管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '取り組み'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, 'サポート'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '運行管理'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'サービス案内'), _react2.default.createElement('li', null, '導入事例'), _react2.default.createElement('li', null, '特徴'), _react2.default.createElement('li', null, '安全・安心・快適への取組'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), '会社案内'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, '遠鉄アシストについて'), _react2.default.createElement('li', null, '社長メッセージ'), _react2.default.createElement('li', null, '会社概要'), _react2.default.createElement('li', null, '戦略事業'))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'その他'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, 'お仕事を探す')))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
+      return _react2.default.createElement('footer', { id: 'Footer' }, _react2.default.createElement('div', { id: 'footerLink' }, _react2.default.createElement('nav', { className: 'lf-contents' }, _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/cleaning#h00' }, '清掃')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/cleaning_detail#h01' }, 'サービス案内')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/cleaning_detail#h02' }, '清掃業務管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/cleaning_detail#h03' }, '特徴')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/cleaning_detail#h04' }, 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/building#h00' }, 'ビル管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/building_detail#h01' }, 'サービス案内')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/building_detail#h02' }, '取り組み')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/building_detail#h03' }, '特徴')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/building_detail#h04' }, 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/mansion_detail#h00' }, 'マンション管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/mansion_detail#h01' }, 'サービス案内')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/mansion_detail#h02' }, '取り組み')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/mansion_detail#h03' }, '特徴')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/mansion_detail#h04' }, 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/driving#h00' }, '運行管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/driving_detail#h01' }, 'サービス案内')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/driving_detail#h02' }, '導入事例')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/driving_detail#h03' }, '特徴')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/driving_detail#h04' }, '安全・安心・快適の取組')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/company#h00' }, '会社案内')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company#h01' }, '遠鉄アシストについて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company#h02' }, '社長メッセージ')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company#h03' }, '会社概要')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company#h04' }, '戦略事業')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'その他'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/works' }, 'お仕事を探す'))))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/hamamatsu-jyo/'
       }, _react2.default.createElement('img', {
@@ -1504,7 +1504,7 @@ var Footer = function (_React$Component) {
         width: '140',
         height: '35',
         alt: 'logo'
-      })), _react2.default.createElement('p', null, '遠鉄アシスト株式会社', _react2.default.createElement('br', null), '静岡県浜松市中区旭町12-1　遠鉄百貨店新館　事務所フロア11階', _react2.default.createElement('br', null), 'TEL.053-450-1511（代）　FAX.053-450-1512', _react2.default.createElement('br', null), 'Copyright(C) Entetsu Assist Co.,Ltd. All Rights Reserved.')), _react2.default.createElement('div', null, 'ビル管理・清掃  - 053-455-3451', _react2.default.createElement('br', null), 'マンション管理  - 053-450-9922', _react2.default.createElement('br', null), '運行管理請負    - 053-450-1515'))));
+      })), _react2.default.createElement('p', null, '遠鉄アシスト株式会社', _react2.default.createElement('br', null), '静岡県浜松市中区旭町12-1　遠鉄百貨店新館　事務所フロア11階', _react2.default.createElement('br', null), 'TEL.053-450-1511（代）　FAX.053-450-1512', _react2.default.createElement('br', null), 'Copyright(C) Entetsu Assist Co.,Ltd. All Rights Reserved.')), _react2.default.createElement('div', null, _react2.default.createElement('br', null), 'ビル管理・清掃  - 053-455-3451', _react2.default.createElement('br', null), 'マンション管理  - 053-450-9922', _react2.default.createElement('br', null), '運行管理請負    - 053-450-1515'))));
     }
   }]);
 
@@ -5682,10 +5682,6 @@ var BuildingDetail = function (_React$Component) {
       this.parallax.start();
       window.scrollTo(0, 0);
 
-      var plx02 = document.getElementById('plx02');
-      var w = window.innerHeight - 1000;
-      plx02.style.top = 360 - w * 1.5 + 'px';
-
       var h01 = document.getElementById('h01');
       var h02 = document.getElementById('h02');
       var h03 = document.getElementById('h03');
@@ -5693,6 +5689,18 @@ var BuildingDetail = function (_React$Component) {
       var p01 = document.getElementById('p01');
       var p02 = document.getElementById('p02');
       var p03 = document.getElementById('p03');
+
+      $(window).on('load scroll', getScrollTop);
+      function getScrollTop() {
+        var badge = document.getElementById('badge');
+        var scr = $(window).scrollTop();
+        if (3400 < scr) {
+          badge.classList.add('posi');
+          console.log(scr);
+        } else {
+          badge.classList.remove('posi');
+        }
+      };
 
       var txt1 = h01.innerHTML;
       var txt2 = h02.innerHTML;
@@ -5763,11 +5771,7 @@ var BuildingDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx02',
         className: 'layer',
-        'data-depth': '0' }, _react2.default.createElement('img', {
-        src: IMG + 'bg_detail.png',
-        width: '100%',
-        alt: 'img'
-      })), _react2.default.createElement('div', { className: 'wrapper' }, _react2.default.createElement('div', {
+        'data-depth': '0' }), _react2.default.createElement('div', { className: 'wrapper' }, _react2.default.createElement('div', {
         id: 'plx03',
         className: 'layer',
         'data-depth': '2' }, _react2.default.createElement('img', {
@@ -5818,18 +5822,10 @@ var BuildingDetail = function (_React$Component) {
       }))), _react2.default.createElement('div', {
         id: 'plx06',
         className: 'layer',
-        'data-depth': '1' }, _react2.default.createElement('img', {
-        src: IMG + 'bg_header.jpg',
-        width: '100%',
-        alt: 'img'
-      })), _react2.default.createElement('div', {
+        'data-depth': '1' }), _react2.default.createElement('div', {
         id: 'plx07',
         className: 'layer',
-        'data-depth': '0' }, _react2.default.createElement('img', {
-        src: IMG + 'bg_footer.jpg',
-        width: '100%',
-        alt: 'img'
-      })), _react2.default.createElement('section', null, _react2.default.createElement('h1', { className: 'h00' }, '機能するビルディング'), _react2.default.createElement('p', { className: 'p00' }, '仕事に集中できる環境。', _react2.default.createElement('br', null), '始業ベルとともに、一斉にスタートする職場には、', _react2.default.createElement('br', null), 'なにが求められているか?', _react2.default.createElement('br', null), 'オフィスとして求められるもの全てを', _react2.default.createElement('br', null), '遠鉄アシストはサポートします。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '保安警備'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '駐車場管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '環境衛生管理'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '諸設備', _react2.default.createElement('br', null), 'メンテナンス'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '設備管理')), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '9', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '8', onClick: this.onService.bind(this) }, '設備管理業務'), _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '管理員業務'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, '事務管理業務')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'p01' }, _react2.default.createElement('h1', { id: 'h01' }, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのビル管理事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、徹底した教育研修を受けた専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、環境衛生管理、メンテナンス、特殊作業、警備など、ビル管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('strong', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。ビル管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社は経営方針に「顧客満足」を掲げ、お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたいと願っています。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。')), _react2.default.createElement('section', { id: 'p02', className: 'odd' }, _react2.default.createElement('h1', { id: 'h02', className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、“しっかり造り、きちんと守る”体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', { id: 'p03' }, _react2.default.createElement('h1', { id: 'h03' }, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるビル・マンションは、いざという時も待ったなし。日頃から防犯、防災を徹底し、もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業 ', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業 ', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業 ', _react2.default.createElement('br', null), '・マンション管理業 ', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が ビルの保守・管理に努めています。')));
+        'data-depth': '1' }), _react2.default.createElement('section', null, _react2.default.createElement('h1', { className: 'h00' }, '機能するビルディング'), _react2.default.createElement('p', { className: 'p00' }, '仕事に集中できる環境。', _react2.default.createElement('br', null), '始業ベルとともに、一斉にスタートする職場には、', _react2.default.createElement('br', null), 'なにが求められているか?', _react2.default.createElement('br', null), 'オフィスとして求められるもの全てを', _react2.default.createElement('br', null), '遠鉄アシストはサポートします。')), _react2.default.createElement('section', { className: 'odd reverse' }, _react2.default.createElement('h1', { className: 'text-right' }, '遠鉄アシストのサービス'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストならではのきめ細かいサービスと、', _react2.default.createElement('br', null), 'まかせて安心のトータルサポートでお応えします。'), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '5', onClick: this.onService.bind(this) }, '保安警備'), _react2.default.createElement('p', { value: '4', onClick: this.onService.bind(this) }, '駐車場管理'), _react2.default.createElement('p', { value: '3', onClick: this.onService.bind(this) }, '環境衛生管理'), _react2.default.createElement('p', { value: '2', onClick: this.onService.bind(this) }, '諸設備', _react2.default.createElement('br', null), 'メンテナンス'), _react2.default.createElement('p', { value: '1', onClick: this.onService.bind(this) }, '設備管理')), _react2.default.createElement('div', { className: 'pf-Detail-services' }, _react2.default.createElement('p', { value: '9', onClick: this.onService.bind(this) }, 'その他'), _react2.default.createElement('p', { value: '8', onClick: this.onService.bind(this) }, '設備管理業務'), _react2.default.createElement('p', { value: '7', onClick: this.onService.bind(this) }, '管理員業務'), _react2.default.createElement('p', { value: '6', onClick: this.onService.bind(this) }, '事務管理業務')), _react2.default.createElement('div', { className: 'pf-Detail-services-desc' }, _react2.default.createElement('p', { className: 'mgnBtm0' }, _react2.default.createElement('strong', null, this.state.service.title)), _react2.default.createElement('p', null, this.state.service.text))), _react2.default.createElement('section', { id: 'p01' }, _react2.default.createElement('h1', { id: 'h01' }, '遠鉄アシストの取り組み'), _react2.default.createElement('h3', null, '経験と実績に裏付けられた遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄アシストのビル管理事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、徹底した教育研修を受けた専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、環境衛生管理、メンテナンス、特殊作業、警備など、ビル管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。'), _react2.default.createElement('strong', null, '遠鉄グループの総合力'), _react2.default.createElement('p', null, '弊社ではグループ内の建設業、不動産業と密に連携し、お客様のさまざまなご要望に幅広くお応えします。ビル管理事業の枠を超え、遠鉄グループの総合力を活用して、他にはない力強いサポートを実現します。'), _react2.default.createElement('strong', null, '顧客第一'), _react2.default.createElement('p', null, '弊社は経営方針に「顧客満足」を掲げ、お客様からの「ありがとう」のお言葉を最大の喜びと受け止めています。顧客第一の企業風土を大切に育み、今後もたくさんの「ありがとう」に出会いたいと願っています。'), _react2.default.createElement('strong', null, '緊急時のサービス体制'), _react2.default.createElement('p', null, '夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。')), _react2.default.createElement('section', { id: 'p02', className: 'odd' }, _react2.default.createElement('h1', { id: 'h02', className: 'text-right' }, '遠鉄アシストの特徴'), _react2.default.createElement('p', { className: 'text-right' }, '遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。'), _react2.default.createElement('h3', null, 'アフターまで見据えた三位一体の遠鉄クオリティ'), _react2.default.createElement('p', null, '遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、“しっかり造り、きちんと守る”体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。'), _react2.default.createElement('h3', null, '地元の優秀な人材と、地元の協力業者で見守る管理体制'), _react2.default.createElement('p', null, '地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。')), _react2.default.createElement('section', { id: 'p03' }, _react2.default.createElement('h1', { id: 'h03' }, '遠鉄アシストのサポート'), _react2.default.createElement('p', null, '専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。'), _react2.default.createElement('h3', null, '困った時にも安心の24時間365日体制'), _react2.default.createElement('p', null, '日常生活のステージであるビル・マンションは、いざという時も待ったなし。日頃から防犯、防災を徹底し、もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。'), _react2.default.createElement('h3', null, '登録・認定'), _react2.default.createElement('p', null, '・建築物環境衛生総合管理業 ', _react2.default.createElement('br', null), '・建築物飲料水貯水槽清掃業 ', _react2.default.createElement('br', null), '・建築物ねずみ昆虫等防除業 ', _react2.default.createElement('br', null), '・マンション管理業 ', _react2.default.createElement('br', null), '・警備業'), _react2.default.createElement('h3', null, '主な技術有資格者'), _react2.default.createElement('p', null, '・建築物環境衛生管理技術者', _react2.default.createElement('br', null), '・消防設備士', _react2.default.createElement('br', null), '・衛生管理者', _react2.default.createElement('br', null), '・空気環境測定実施者', _react2.default.createElement('br', null), '・統括管理者', _react2.default.createElement('br', null), '・貯水槽清掃作業監督者', _react2.default.createElement('br', null), '・清掃作業監督者', _react2.default.createElement('br', null), '・電気工事施工管理技士', _react2.default.createElement('br', null), '・ビルクリーニング技能士', _react2.default.createElement('br', null), '・警備員指導教育責任者', _react2.default.createElement('br', null), '・病院清掃受託責任者', _react2.default.createElement('br', null), '・空調給排水監督者', _react2.default.createElement('br', null), '・防除作業監督者', _react2.default.createElement('br', null), '・排水管清掃作業監督者', _react2.default.createElement('br', null), '・ボイラー技士', _react2.default.createElement('br', null), '・建築設備検査資格者', _react2.default.createElement('br', null), '・自衛消防業務', _react2.default.createElement('br', null), '・電気工事士', _react2.default.createElement('br', null), '・電気主任技術者', _react2.default.createElement('br', null), '・管理業務主任者', _react2.default.createElement('br', null), '・危険物取扱者', _react2.default.createElement('br', null), '・冷凍機械責任者', _react2.default.createElement('br', null), '・防火管理者', _react2.default.createElement('br', null), '・消防設備点検資格者'), _react2.default.createElement('p', null, '※上記のほか、多くの資格保有者が ビルの保守・管理に努めています。')));
     }
   }, {
     key: 'onService',
@@ -6971,7 +6967,67 @@ var Works = function (_React$Component) {
         src: IMG + 'cat/banner05.png',
         height: '120',
         alt: 'img'
-      })))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, 'さらに詳しく検索'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
+      }))))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
+        src: IMG + 'list_column_left.png',
+        width: '30',
+        alt: 'img',
+        onClick: this.fadeIn.bind(this)
+      }))), _react2.default.createElement('ul', { id: 'column' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
+      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))))), _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, {
+        to: 'works_detail',
+        onClick: this.fadeIn.bind(this)
+      }, _react2.default.createElement('img', {
+        src: IMG + 'list_column_right.png',
+        width: '30',
+        alt: 'img'
+      }))))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, '自分の好きな時間帯をみつける'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
         src: IMG + 'list_slider_button.png',
         width: '30',
         alt: 'img',
@@ -6991,73 +7047,11 @@ var Works = function (_React$Component) {
         onMouseUp: this.onMouseUp.bind(this),
         onMouseMove: this.onMouseMove.bind(this),
         onMouseOut: this.onMouseUp.bind(this)
-      })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail',
-        onClick: this.fadeIn.bind(this)
-      }, _react2.default.createElement('img', {
-        src: IMG + 'search_dummy.png',
-        width: '400',
-        alt: 'img'
-      }))))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_column_left.png',
-        width: '30',
-        alt: 'img',
-        onClick: this.fadeIn.bind(this)
-      }))), _react2.default.createElement('ul', { id: 'column' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))), _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      }))), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      })), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')))), _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, {
-        to: 'works_detail',
-        onClick: this.fadeIn.bind(this)
-      }, _react2.default.createElement('img', {
-        src: IMG + 'list_column_right.png',
-        width: '30',
-        alt: 'img'
-      })))))), _react2.default.createElement('footer', null, _react2.default.createElement('p', null, ' エントリーの際ご利用ください', _react2.default.createElement('br', null), '「個人情報の取扱いに関する採用応募者同意書」'), _react2.default.createElement('a', { href: '#' }, 'ダウンロード')));
+      })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement('input', {
+        type: 'text',
+        defaultValue: 'キーワード検索',
+        onKeyPress: this.fadeIn.bind(this)
+      })))));
     }
   }, {
     key: 'fadeIn',
@@ -7066,21 +7060,23 @@ var Works = function (_React$Component) {
       $('#column li').css({ opacity: 0 });
 
       $('#column li').each(function (i) {
-        $(this).delay(200 * i).animate({ opacity: 1 }, 200).css('visibility', 'visible');
+        $(this).delay(150 * i).animate({ opacity: 1 }, 300, 'swing').css('visibility', 'visible');
       });
     }
   }, {
     key: 'closeUp',
     value: function closeUp(e) {
       e.preventDefault();
-      var el = e.target;
-      var active = document.getElementsByClassName('closeUp');
 
-      for (var i = 0; i < active.length; i++) {
-        active[i].classList.remove('closeUp');
+      /*
+      let el = e.target;
+      let active = document.getElementsByClassName('closeUp');
+      
+      for (let i = 0; i < active.length; i++) {
+        active[i].classList.remove('closeUp'); 
       }
-
-      el.classList.add('closeUp');
+       el.classList.add('closeUp');
+      */
 
       $("html,body").animate({ scrollTop: 700 });
       this.fadeIn(e);
@@ -7228,17 +7224,17 @@ var WorksDetail = function (_React$Component) {
         type: 'text'
       }), _react2.default.createElement('div', { className: 'text-center' }, _react2.default.createElement('button', {
         onClick: this.enableModal.bind(this)
-      }, '担当者からすぐ連絡希望する'), 'もしくは…', _react2.default.createElement('button', {
+      }, '担当者からすぐ連絡を希望する'), 'もしくは…', _react2.default.createElement('button', {
         onClick: this.enableModal2.bind(this)
-      }, '応募する')))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ')), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: 'works' }, _react2.default.createElement('button', null, '似た仕事を検索')), _react2.default.createElement(_reactRouter.Link, { to: 'works' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement('div', {
+      }, 'メールにて連絡を希望する')))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ')), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30')), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: 'works' }, _react2.default.createElement('button', null, '似た仕事を検索')), _react2.default.createElement(_reactRouter.Link, { to: 'works' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement('div', {
         id: 'modal',
         className: 'modal',
         onClick: this.disableModal.bind(this)
-      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), '電話番号: 012-333-4444'), _react2.default.createElement('p', null, '弊社スタッフより、お仕事のご紹介や、', _react2.default.createElement('br', null), 'ご都合のご確認として、', _react2.default.createElement('br', null), 'お電話・メールにてご連絡させていただきます。', _react2.default.createElement('br', null), 'また、あわせて会員情報も登録されます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「登録後応募する」クリックしてください。'), _react2.default.createElement('button', null, '登録後応募する'))), _react2.default.createElement('div', {
+      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), '電話番号: 012-333-4444', _react2.default.createElement('br', null), 'メールアドレス: info@example.com'), _react2.default.createElement('p', null, '弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。', _react2.default.createElement('br', null), 'その際にご不明な点などお気軽にお電話口にてお話し下さい。', _react2.default.createElement('br', null), 'また、あわせて会員情報も登録されます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「電話にて連絡を希望する」を', _react2.default.createElement('br', null), 'クリックしてください。'), _react2.default.createElement('button', null, '電話にて連絡を希望する'))), _react2.default.createElement('div', {
         id: 'modal2',
         className: 'modal',
         onClick: this.disableModal2.bind(this)
-      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), 'メールアドレス: info@example.com'), _react2.default.createElement('p', null, '弊社スタッフより、お仕事のご紹介や、', _react2.default.createElement('br', null), 'ご都合のご確認として、', _react2.default.createElement('br', null), 'メールにてご連絡させていただきます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「応募する」クリックしてください。'), _react2.default.createElement('button', null, '応募する'))));
+      }, _react2.default.createElement('div', null, _react2.default.createElement('h1', null, '応募内容のご確認'), _react2.default.createElement('div', null, '名前:  山田太郎', _react2.default.createElement('br', null), 'フリガナ: ヤマダタロウ', _react2.default.createElement('br', null), '電話番号: 012-333-4444', _react2.default.createElement('br', null), 'メールアドレス: info@example.com'), _react2.default.createElement('p', null, '弊社スタッフより、メールにて連絡させていただきます。', _react2.default.createElement('br', null), 'その際にご不明な点などお気軽にお問い合わせ下さい。', _react2.default.createElement('br', null), 'また、あわせて会員情報も登録されます。'), _react2.default.createElement('p', null, '以上の内容でお間違いなければ「メールにて連絡を希望する」を', _react2.default.createElement('br', null), 'クリックしてください。'), _react2.default.createElement('button', null, 'メールにて連絡を希望する'))));
     }
   }, {
     key: 'enableModal',

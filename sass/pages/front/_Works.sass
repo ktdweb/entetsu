@@ -42,62 +42,65 @@ article#Works
 
     div.pf-Works-Time
       background-color: $color-time
-      a:hover
-        opacity: 1
 
     div.pf-Works-Cat
       background-color: $color-cat
-      a:hover
-        opacity: 1
 
-    div.pf-Works-Search
-      padding: $base-spacing * 3 0
-      background-color: $color-cat
-      text-align: center
+  div.pf-Works-Search
+    display: block
+    padding: $base-spacing * 3 0
+    text-align: center
 
-      div.pf-Works-Search-slider
-        position: relative
-        display: inline-block
-        width: 500px
-        height: 60px
-        margin-left: 30px
+    div.pf-Works-Search-slider
+      position: relative
+      display: inline-block
+      width: 500px
+      height: 60px
+      margin-left: 30px
+      padding: 0
+      $path: '../imgs/pages/works/list_slider_bg.png'
+      background-image: url($path)
+      background-size: contain
+
+      h1
+        position: absolute
+        top: -40px
+        color: $color-works-base
+        font-size: $base-font-size * 1.3
+
+      p#sliderLabel
+        position: absolute
+        top: 43px
+        left: 0px
+        width: 375px
+        margin: 0
         padding: 0
-        $path: '../imgs/pages/works/list_slider_bg.png'
-        background-image: url($path)
+        height: 6px
+        background-color: $color-works-base
+        opacity: 0.5
+
+      img
+        position: absolute
+        top: 33px
+        left: -14px
+        &:first-child
+          left: (125px - 3px) - 14px
+        &:last-child
+          left: (375px) - 14px
+
+    div.pf-Works-Search-advance
+      display: inline-block
+      padding: 0
+      width: 400px
+      text-align: right
+      input
+        float: right
+        border: 1px solid $color-works-base
+        width: 32rem
+        background-image: url('../imgs/pages/works/list_column_search.png')
+        background-repeat: no-repeat
+        background-position: top right
         background-size: contain
-
-        h1
-          position: absolute
-          top: -40px
-          color: white
-          font-size: $base-font-size * 1.3
-
-        p#sliderLabel
-          position: absolute
-          top: 43px
-          left: 0px
-          width: 375px
-          margin: 0
-          padding: 0
-          height: 6px
-          background-color: $color-works-base
-          opacity: 0.5
-
-        img
-          position: absolute
-          top: 33px
-          left: -14px
-          &:first-child
-            left: (125px - 3px) - 14px
-          &:last-child
-            left: (375px) - 14px
-
-      div.pf-Works-Search-advance
-        display: inline-block
-        padding: 0
-        width: 400px
-        text-align: right
-
   div.pf-Works-List
     font-size: $small-font-size * 1.25
     background-color: $color-works-bg
@@ -159,9 +162,9 @@ article#Works
           top: -36px
           left: -5px
           right: -10px
-          a
+          img
             position: absolute
-            top: -8px
+            top: -3px
             right: -25px
 
         div.pf-Works-List-column-section
@@ -172,7 +175,8 @@ article#Works
           right: -30px
           text-align: justify
           background-color: white
-          a img
+          color: $base-color
+          img
             border: 1px solid $color-works-base
             margin-right: 10px
             margin-bottom: 10px

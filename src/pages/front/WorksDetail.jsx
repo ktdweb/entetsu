@@ -79,11 +79,11 @@ export default class WorksDetail extends React.Component {
                 <div className="text-center">
                   <button
                     onClick={this.enableModal.bind(this)}
-                  >担当者からすぐ連絡希望する</button>
+                  >担当者からすぐ連絡を希望する</button>
                   もしくは…
                   <button
                     onClick={this.enableModal2.bind(this)}
-                  >応募する</button>
+                  >メールにて連絡を希望する</button>
                 </div>
               </div>
             </div>
@@ -189,21 +189,21 @@ export default class WorksDetail extends React.Component {
             <div>
               名前:  山田太郎<br />
               フリガナ: ヤマダタロウ<br />
-              電話番号: 012-333-4444
+              電話番号: 012-333-4444<br />
+              メールアドレス: info@example.com
             </div>
 
             <p>
-              弊社スタッフより、お仕事のご紹介や、<br />
-              ご都合のご確認として、<br />
-              お電話・メールにてご連絡させていただきます。<br />
-              また、あわせて会員情報も登録されます。
+              弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />
+その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />
+また、あわせて会員情報も登録されます。
             </p>
 
             <p>
-              以上の内容でお間違いなければ「登録後応募する」クリックしてください。
+              以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。
             </p>
 
-            <button>登録後応募する</button>
+            <button>電話にて連絡を希望する</button>
           </div>
         </div>
 
@@ -217,20 +217,21 @@ export default class WorksDetail extends React.Component {
             <div>
               名前:  山田太郎<br />
               フリガナ: ヤマダタロウ<br />
+              電話番号: 012-333-4444<br />
               メールアドレス: info@example.com
             </div>
 
             <p>
-              弊社スタッフより、お仕事のご紹介や、<br />
-              ご都合のご確認として、<br />
-              メールにてご連絡させていただきます。
+              弊社スタッフより、メールにて連絡させていただきます。<br />
+その際にご不明な点などお気軽にお問い合わせ下さい。<br />
+また、あわせて会員情報も登録されます。
             </p>
 
             <p>
-              以上の内容でお間違いなければ「応募する」クリックしてください。
+              以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。
             </p>
 
-            <button>応募する</button>
+            <button>メールにて連絡を希望する</button>
           </div>
         </div>
       </article>

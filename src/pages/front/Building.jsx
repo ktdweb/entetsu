@@ -17,10 +17,6 @@ export default class BuildingDetail extends React.Component {
     this.parallax.start();
     window.scrollTo(0,0);
 
-    let plx02 = document.getElementById('plx02');
-    let w = window.innerHeight - 1000;
-    plx02.style.top = 360 - (w * 1.5) + 'px';
-
     let h01 = document.getElementById('h01');
     let h02 = document.getElementById('h02');
     let h03 = document.getElementById('h03');
@@ -28,6 +24,18 @@ export default class BuildingDetail extends React.Component {
     let p01 = document.getElementById('p01');
     let p02 = document.getElementById('p02');
     let p03 = document.getElementById('p03');
+
+    $(window).on('load scroll', getScrollTop);
+    function getScrollTop() {
+      let badge = document.getElementById('badge');
+      let scr = $(window).scrollTop();
+      if (3400 < scr) {
+        badge.classList.add('posi');
+        console.log(scr);
+      } else {
+        badge.classList.remove('posi');
+      }
+    };
 
     let txt1 = h01.innerHTML;
     let txt2 = h02.innerHTML;
@@ -117,11 +125,6 @@ export default class BuildingDetail extends React.Component {
           id="plx02"
           className="layer"
           data-depth="0">
-          <img
-            src={IMG + 'bg_detail.png'}
-            width="100%"
-            alt="img"
-            />
         </div>
 
         <div className="wrapper">
@@ -202,22 +205,12 @@ export default class BuildingDetail extends React.Component {
           id="plx06"
           className="layer"
           data-depth="1">
-          <img
-            src={IMG + 'bg_header.jpg'}
-            width="100%"
-            alt="img"
-            />
         </div>
 
         <div
           id="plx07"
           className="layer"
-          data-depth="0">
-          <img
-            src={IMG + 'bg_footer.jpg'}
-            width="100%"
-            alt="img"
-            />
+          data-depth="1">
         </div>
         
         <section>
