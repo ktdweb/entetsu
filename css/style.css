@@ -6503,16 +6503,24 @@ div#root {
 
 div#badge {
   position: fixed;
+  display: table-cell;
   opacity: 0;
-  top: 950px;
+  bottom: 0;
   background-color: #ff5c5c;
   width: 100%;
-  height: 160px;
+  height: 130px;
   z-index: -1000;
   text-align: center;
-  padding-top: 40px; }
+  vertical-align: middle; }
   div#badge.posi {
     opacity: 1; }
+  div#badge img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
 
 article {
   max-width: 100%;
@@ -7278,7 +7286,9 @@ body *::selection {
           position: relative;
           width: 960px;
           margin: 0 auto;
-          padding-left: 120px; }
+          padding-left: 120px;
+          padding-top: 30px;
+          padding-bottom: 30px; }
           #Front article#Works nav div div > img:first-child {
             position: absolute;
             left: 0; }

@@ -490,7 +490,7 @@ export default class Works extends React.Component {
             <div className="pf-Works-Search-advance">
               <input
                 type="text"
-                defaultValue="キーワード検索"
+                defaultValue="フリーワード検索"
                 onKeyPress={this.fadeIn.bind(this)}
                 />
             </div>

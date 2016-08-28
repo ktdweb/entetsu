@@ -5691,16 +5691,34 @@ var BuildingDetail = function (_React$Component) {
       var p03 = document.getElementById('p03');
 
       $(window).on('load scroll', getScrollTop);
+
       function getScrollTop() {
-        var badge = document.getElementById('badge');
         var scr = $(window).scrollTop();
-        if (3400 < scr) {
+        var foot = $('#Footer').offset().top - 700;
+      };
+
+      $(window).on('load scroll', getScrollBottom);
+
+      function getScrollBottom() {
+        var body = window.document.body;
+        var html = window.document.documentElement;
+        var scrollTop = body.scrollTop || html.scrollTop;
+        var res = html.scrollHeight - html.clientHeight - scrollTop;
+
+        var badge = document.getElementById('badge');
+        var foot = document.getElementById('Footer').getBoundingClientRect();
+        //console.log(foot.top + scrollTop);
+
+        console.log($('#badge').position().top);
+
+        if (260 > res) {
           badge.classList.add('posi');
-          console.log(scr);
         } else {
           badge.classList.remove('posi');
         }
-      };
+
+        return res;
+      }
 
       var txt1 = h01.innerHTML;
       var txt2 = h02.innerHTML;
@@ -7049,7 +7067,7 @@ var Works = function (_React$Component) {
         onMouseOut: this.onMouseUp.bind(this)
       })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement('input', {
         type: 'text',
-        defaultValue: 'キーワード検索',
+        defaultValue: 'フリーワード検索',
         onKeyPress: this.fadeIn.bind(this)
       })))));
     }

@@ -26,16 +26,34 @@ export default class BuildingDetail extends React.Component {
     let p03 = document.getElementById('p03');
 
     $(window).on('load scroll', getScrollTop);
+
     function getScrollTop() {
-      let badge = document.getElementById('badge');
       let scr = $(window).scrollTop();
-      if (3400 < scr) {
+      let foot = $('#Footer').offset().top - 700;
+    };
+
+    $(window).on('load scroll', getScrollBottom);
+
+    function getScrollBottom() {
+      var body = window.document.body;
+      var html = window.document.documentElement;
+      var scrollTop = body.scrollTop || html.scrollTop;
+      var res = html.scrollHeight - html.clientHeight - scrollTop;
+
+      let badge = document.getElementById('badge');
+      let foot = document.getElementById('Footer').getBoundingClientRect();
+      //console.log(foot.top + scrollTop);
+
+      console.log($('#badge').position().top);
+
+      if (260 > res) {
         badge.classList.add('posi');
-        console.log(scr);
       } else {
         badge.classList.remove('posi');
       }
-    };
+
+      return res;
+    }
 
     let txt1 = h01.innerHTML;
     let txt2 = h02.innerHTML;
