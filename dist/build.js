@@ -6503,15 +6503,22 @@ var Home = function (_React$Component) {
   _createClass(Home, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.init();
+      //this.init();
+      var title = document.getElementById('homeTitle');
+
+      window.onload = function () {
+        title.classList.add('posi');
+      };
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('canvas', {
-        id: 'canvas',
-        width: '1040',
-        height: '624'
+
+      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト' }), _react2.default.createElement('div', { id: 'mainImage' }, _react2.default.createElement('img', {
+        id: 'homeTitle',
+        src: 'imgs/pages/top/title.png',
+        width: '400',
+        alt: '人には人が必要'
       })), _react2.default.createElement('table', { className: 'menuTop' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('td', null, _react2.default.createElement('img', { src: 'imgs/pages/top/col_a.jpg',
         width: '405',
         height: '315',

@@ -6964,9 +6964,9 @@ div#badge {
       #Front > footer .lf-credit div div:last-child:last-child {
         margin-right: 0; }
   #Front .lf-Top {
+    padding-top: 660px;
     min-width: 960px;
-    max-width: 960px;
-    margin-top: 4rem; }
+    max-width: 960px; }
     #Front .lf-Top nav {
       float: left;
       display: block;
@@ -7091,21 +7091,89 @@ div#badge {
   front/WorksDetail.jsxに関するクラスを定義
   prefixには`pf-WorksDetail`を付与
   */ }
-  #Front .menuTop {
-    margin-top: 2rem; }
-    #Front .menuTop td {
-      vertical-align: top; }
-      #Front .menuTop td p {
-        margin-bottom: 1.2rem; }
+  #Front .menuTop td {
+    vertical-align: top; }
+    #Front .menuTop td p {
+      margin-bottom: 1.2rem; }
+  #Front table {
+    margin-top: 0;
+    padding-top: 580px; }
+  #Front #mainImage {
+    position: absolute;
+    display: table-cell;
+    width: 100%;
+    height: 560px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-image: url("../imgs/pages/top/home.gif");
+    background-size: auto 560px;
+    background-position: center bottom;
+    z-index: -10;
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    #Front #mainImage img#homeTitle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      -webkit-transform: translateY(30px);
+      -moz-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      -o-transform: translateY(30px);
+      transform: translateY(30px);
+      opacity: 0;
+      -webkit-transition: all 5s ease-in-out 1s;
+      -moz-transition: all 5s ease-in-out 1s;
+      transition: all 5s ease-in-out 1s; }
+      #Front #mainImage img#homeTitle.posi {
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1; }
   #Front #cover {
-    background-color: #ffffff;
+    position: absolute;
     width: 100%;
     height: 630px;
+    left: 0;
+    right: 0;
     text-align: center;
-    background-position: left 0px top 0, right 0 top 0;
-    background-attachment: fixed;
-    background-size: 35%, 35%;
-    background-repeat: no-repeat, no-repeat; }
+    vertical-align: middle;
+    background-position: center bottom;
+    background-size: auto 630px; }
   #Front #canvas {
     max-width: 1040px;
     min-width: 960px;
@@ -7142,7 +7210,7 @@ div#badge {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-image: url("../imgs/pages/covers/cleaning_l.png"), url("../imgs/pages/covers/cleaning_r.png"); }
+    background-image: url("../imgs/pages/covers/cleaning.png"); }
   #Front .bg-building {
     -webkit-animation-name: fadeIn;
     -moz-animation-name: fadeIn;
@@ -7174,7 +7242,7 @@ div#badge {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-image: url("../imgs/pages/covers/building_l.png"), url("../imgs/pages/covers/building_r.png"); }
+    background-image: url("../imgs/pages/covers/building.png"); }
   #Front .bg-mansion {
     -webkit-animation-name: fadeIn;
     -moz-animation-name: fadeIn;
@@ -7206,7 +7274,7 @@ div#badge {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-image: url("../imgs/pages/covers/mansion_l.png"), url("../imgs/pages/covers/mansion_r.png"); }
+    background-image: url("../imgs/pages/covers/mansion.png"); }
   #Front .bg-driving {
     -webkit-animation-name: fadeIn;
     -moz-animation-name: fadeIn;
@@ -7238,7 +7306,7 @@ div#badge {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-image: url("../imgs/pages/covers/driving_l.png"), url("../imgs/pages/covers/driving_r.png"); }
+    background-image: url("../imgs/pages/covers/driving.png"); }
   #Front article#Company {
     margin-top: 20rem;
     background-image: url("../imgs/detail/bg_detail_company.png"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
