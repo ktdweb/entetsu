@@ -7110,37 +7110,7 @@ div#badge {
     background-image: url("../imgs/pages/top/home.gif");
     background-size: auto 560px;
     background-position: center bottom;
-    z-index: -10;
-    -webkit-animation-name: fadeIn;
-    -moz-animation-name: fadeIn;
-    -ms-animation-name: fadeIn;
-    -o-animation-name: fadeIn;
-    animation-name: fadeIn;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -ms-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-delay: 0s;
-    -moz-animation-delay: 0s;
-    -ms-animation-delay: 0s;
-    -o-animation-delay: 0s;
-    animation-delay: 0s;
-    -webkit-animation-timing-function: ease;
-    -moz-animation-timing-function: ease;
-    -ms-animation-timing-function: ease;
-    -o-animation-timing-function: ease;
-    animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -ms-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden; }
+    z-index: -10; }
     #Front #mainImage img#homeTitle {
       position: absolute;
       top: 0;
@@ -7175,6 +7145,10 @@ div#badge {
     background-position: center bottom;
     background-size: auto 630px; }
   #Front #canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     max-width: 1040px;
     min-width: 960px;
     margin: 0 auto;
