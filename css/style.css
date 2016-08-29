@@ -6498,29 +6498,7 @@ body.grid::after {
   font-sizeをあげる
   */
 div#root {
-  position: relative;
-  height: 3730px; }
-
-div#badge {
-  position: fixed;
-  display: table-cell;
-  opacity: 0;
-  bottom: 0;
-  background-color: #ff5c5c;
-  width: 100%;
-  height: 130px;
-  z-index: -1000;
-  text-align: center;
-  vertical-align: middle; }
-  div#badge.posi {
-    opacity: 1; }
-  div#badge img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto; }
+  position: relative; }
 
 article {
   max-width: 100%;
@@ -6545,6 +6523,31 @@ article {
 
 body *::selection {
   background: rgba(255, 252, 62, 0.5); }
+
+/*
+  # #badge
+  スクロールで画面最下部にくると
+  「困ったをありがとう」を表示する箇所
+  */
+div#badge {
+  position: fixed;
+  display: table-cell;
+  opacity: 0;
+  bottom: 0;
+  background-color: #ff5c5c;
+  width: 100%;
+  height: 130px;
+  z-index: -1000;
+  text-align: center; }
+  div#badge.posi {
+    opacity: 1; }
+  div#badge img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
 
 /*
   # layouts/index.sass
@@ -7748,7 +7751,8 @@ article.pf-Detail {
     -webkit-overflow-scrolling: touch; }
   article.pf-Detail h1 {
     font-size: 2.56rem;
-    font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif; }
+    font-family: "YuMincho", "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
+    color: #ff5c5c; }
   article.pf-Detail h3 {
     font-size: 1.6rem;
     line-height: 2.2rem; }
@@ -7815,6 +7819,7 @@ article.pf-Detail {
     position: relative;
     margin: 0;
     padding: 0 5rem;
+    color: #24353c;
     text-align: justify;
     overflow: hidden;
     clear: both;
@@ -7827,6 +7832,35 @@ article.pf-Detail {
     # section.odd.reverse
     サービス内の文字を白くする
    */ }
+    article.pf-Detail section h1.effectTitle {
+      height: 30px;
+      opacity: 0;
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: all 1s ease-in-out 0s;
+      -moz-transition: all 1s ease-in-out 0s;
+      transition: all 1s ease-in-out 0s; }
+      article.pf-Detail section h1.effectTitle.posi {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: 1; }
+    article.pf-Detail section div.effect {
+      opacity: 0;
+      -webkit-transition: all 2s ease-in-out 1s;
+      -moz-transition: all 2s ease-in-out 1s;
+      transition: all 2s ease-in-out 1s; }
+      article.pf-Detail section div.effect.posi {
+        opacity: 1; }
+    article.pf-Detail section div.wrapper {
+      position: relative;
+      width: 1040px;
+      margin: 0 auto; }
     article.pf-Detail section.odd {
       margin-left: auto; }
     article.pf-Detail section.odd.reverse {
@@ -7837,148 +7871,115 @@ article.pf-Detail {
   front/Cleaning.jsxに関するクラスを定義
   prefixには`pf-Cleaning`を付与
   */
-article#CleaningDetail {
+article#CleaningDetail section:nth-of-type(1) {
+  padding-top: 220px; }
+
+article#CleaningDetail section:nth-of-type(2) {
+  color: white;
+  margin-top: 280px; }
+  article#CleaningDetail section:nth-of-type(2) h1 {
+    color: white; }
+
+article#CleaningDetail section:nth-of-type(3) {
+  margin-top: 340px; }
+
+article#CleaningDetail section:nth-of-type(4) {
+  margin-top: 480px; }
+  article#CleaningDetail section:nth-of-type(4) h1 {
+    width: 240px;
+    margin-left: 280px; }
+
+article#CleaningDetail section:nth-of-type(5) {
+  margin-top: 120px; }
+
+article#CleaningDetail div.wrapper {
   position: relative;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch; }
-  article#CleaningDetail section:nth-of-type(1) {
-    margin-top: 160px; }
-  article#CleaningDetail section:nth-of-type(2) {
-    margin-top: 90px; }
-  article#CleaningDetail section:nth-of-type(3) {
-    margin-top: 160px; }
-  article#CleaningDetail section:nth-of-type(4) {
-    margin-top: 480px; }
-  article#CleaningDetail section:nth-of-type(5) {
-    margin-top: 120px; }
-  article#CleaningDetail #plx01 {
-    top: 220px;
-    z-index: -100; }
-  article#CleaningDetail #plx02 {
-    top: 120px;
-    right: 0;
-    z-index: -50; }
-  article#CleaningDetail #plx03 {
-    top: 900px;
-    right: 0; }
-  article#CleaningDetail #plx03b {
-    top: 980px;
-    right: 210px; }
-  article#CleaningDetail #plx04 {
-    top: 1500px; }
-  article#CleaningDetail #plx04b {
-    top: 1580px;
-    left: 210px; }
-  article#CleaningDetail #plx05 {
-    top: 2200px;
-    right: 0; }
-  article#CleaningDetail #plx05b {
-    top: 2280px;
-    right: 210px; }
-  article#CleaningDetail #plx06 {
-    top: 700px;
-    z-index: -100; }
-  article#CleaningDetail #plx07 {
-    top: 2160px;
-    z-index: -100; }
+  width: 1040px;
+  margin: 0 auto; }
+
+article#CleaningDetail #plx01 {
+  top: 340px;
+  left: auto;
+  z-index: -100; }
+
+article#CleaningDetail #plx02 {
+  top: -600px;
+  width: 100%;
+  height: 1920px;
+  left: 0;
+  right: 0;
+  z-index: -50;
+  background-image: url("../imgs/detail/cleaning/bg_detail.png");
+  background-size: 3800px auto;
+  background-position: center bottom;
+  opacity: 1; }
+
+article#CleaningDetail #plx03 {
+  top: 1300px;
+  right: 0; }
+
+article#CleaningDetail #plx03b {
+  top: 1300px;
+  right: 210px; }
+
+article#CleaningDetail #plx04 {
+  top: 2100px; }
+
+article#CleaningDetail #plx04b {
+  top: 2100px;
+  left: 210px; }
+
+article#CleaningDetail #plx05 {
+  top: 2700px;
+  right: 0; }
+
+article#CleaningDetail #plx05b {
+  top: 2700px;
+  right: 210px; }
+
+article#CleaningDetail #plx06 {
+  top: 900px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 100%;
+  opacity: 1; }
+
+article#CleaningDetail #plx07 {
+  top: 2400px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 150%;
+  opacity: 1; }
 
 /*
   # pages/front/Building.sass
   front/Building.jsxに関するクラスを定義
   prefixには`pf-Building`を付与
   */
-article#BuildingDetail section {
-  color: #24353c; }
-  article#BuildingDetail section h1 {
-    color: #ff5c5c;
-    height: 30px;
-    opacity: 1;
-    -webkit-transition: all 2s ease-in-out 1s;
-    -moz-transition: all 2s ease-in-out 1s;
-    transition: all 2s ease-in-out 1s; }
-  article#BuildingDetail section:nth-of-type(1) {
-    padding-top: 220px;
-    background-color: white; }
-  article#BuildingDetail section:nth-of-type(2) {
-    color: white;
-    margin-top: 280px; }
-    article#BuildingDetail section:nth-of-type(2) h1 {
-      color: white; }
-  article#BuildingDetail section:nth-of-type(3) {
-    margin-top: 200px;
-    opacity: 0;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out; }
-    article#BuildingDetail section:nth-of-type(3) h1 {
-      opacity: 0;
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
-      -webkit-transition: all 2s ease-in-out 1s;
-      -moz-transition: all 2s ease-in-out 1s;
-      transition: all 2s ease-in-out 1s; }
-    article#BuildingDetail section:nth-of-type(3).posi {
-      opacity: 1; }
-      article#BuildingDetail section:nth-of-type(3).posi h1 {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-        transform: scale(1); }
-  article#BuildingDetail section:nth-of-type(4) {
-    margin-top: 240px;
-    opacity: 0;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out; }
-    article#BuildingDetail section:nth-of-type(4) h1 {
-      opacity: 0;
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
-      -webkit-transition: all 2s ease-in-out 1s;
-      -moz-transition: all 2s ease-in-out 1s;
-      transition: all 2s ease-in-out 1s; }
-    article#BuildingDetail section:nth-of-type(4).posi {
-      opacity: 1; }
-      article#BuildingDetail section:nth-of-type(4).posi h1 {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-        transform: scale(1); }
-  article#BuildingDetail section:nth-of-type(5) {
-    margin-top: 280px;
-    opacity: 0;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out; }
-    article#BuildingDetail section:nth-of-type(5) h1 {
-      opacity: 0;
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
-      -webkit-transition: all 2s ease-in-out 1s;
-      -moz-transition: all 2s ease-in-out 1s;
-      transition: all 2s ease-in-out 1s; }
-    article#BuildingDetail section:nth-of-type(5).posi {
-      opacity: 1; }
-      article#BuildingDetail section:nth-of-type(5).posi h1 {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-        transform: scale(1); }
+article#BuildingDetail section:nth-of-type(1) {
+  padding-top: 220px; }
+
+article#BuildingDetail section:nth-of-type(2) {
+  color: white;
+  margin-top: 280px; }
+  article#BuildingDetail section:nth-of-type(2) h1 {
+    color: white; }
+
+article#BuildingDetail section:nth-of-type(3) {
+  margin-top: 200px; }
+
+article#BuildingDetail section:nth-of-type(4) {
+  margin-top: 240px; }
+  article#BuildingDetail section:nth-of-type(4) h1 {
+    width: 240px;
+    margin-left: 280px; }
+
+article#BuildingDetail section:nth-of-type(5) {
+  margin-top: 280px; }
 
 article#BuildingDetail div.wrapper {
   position: relative;
@@ -7999,67 +8000,32 @@ article#BuildingDetail #plx02 {
   z-index: -50;
   background-image: url("../imgs/detail/building/bg_detail.png");
   background-size: 3800px auto;
-  background-position: center bottom; }
+  background-position: center bottom;
+  opacity: 1; }
 
 article#BuildingDetail #plx03 {
-  top: 1380px;
-  right: 0;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  article#BuildingDetail #plx03.posi {
-    opacity: 1; }
+  top: 1400px;
+  right: 0; }
 
 article#BuildingDetail #plx03b {
-  top: 1360px;
-  right: 210px;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  article#BuildingDetail #plx03b.posi {
-    opacity: 1; }
+  top: 1400px;
+  right: 210px; }
 
 article#BuildingDetail #plx04 {
-  top: 1980px;
-  left: 0;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  article#BuildingDetail #plx04.posi {
-    opacity: 1; }
+  top: 2100px;
+  left: 0; }
 
 article#BuildingDetail #plx04b {
-  top: 2060px;
-  left: 210px;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  article#BuildingDetail #plx04b.posi {
-    opacity: 1; }
+  top: 2100px;
+  left: 210px; }
 
 article#BuildingDetail #plx05 {
-  top: 2480px;
-  right: 0;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  article#BuildingDetail #plx05.posi {
-    opacity: 1; }
+  top: 2980px;
+  right: 0; }
 
 article#BuildingDetail #plx05b {
-  top: 2560px;
-  right: 210px;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-  article#BuildingDetail #plx05b.posi {
-    opacity: 1; }
+  top: 2980px;
+  right: 210px; }
 
 article#BuildingDetail #plx06 {
   top: 900px;
@@ -8067,7 +8033,8 @@ article#BuildingDetail #plx06 {
   height: 1040px;
   z-index: -100;
   background-image: url("../imgs/bg.png");
-  background-size: 200%; }
+  background-size: 100%;
+  opacity: 1; }
 
 article#BuildingDetail #plx07 {
   top: 2400px;
@@ -8075,104 +8042,183 @@ article#BuildingDetail #plx07 {
   height: 1040px;
   z-index: -100;
   background-image: url("../imgs/bg.png");
-  background-size: 200%; }
+  background-size: 150%;
+  opacity: 1; }
 
 /*
   # pages/front/Mansion.sass
   front/Mansion.jsxに関するクラスを定義
   prefixには`pf-Mansion`を付与
   */
-article#MansionDetail {
+article#MansionDetail section:nth-of-type(1) {
+  padding-top: 220px; }
+
+article#MansionDetail section:nth-of-type(2) {
+  color: white;
+  margin-top: 280px; }
+  article#MansionDetail section:nth-of-type(2) h1 {
+    color: white; }
+
+article#MansionDetail section:nth-of-type(3) {
+  margin-top: 200px; }
+
+article#MansionDetail section:nth-of-type(4) {
+  margin-top: 240px; }
+  article#MansionDetail section:nth-of-type(4) h1 {
+    width: 240px;
+    margin-left: 280px; }
+
+article#MansionDetail section:nth-of-type(5) {
+  margin-top: 280px; }
+
+article#MansionDetail div.wrapper {
   position: relative;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch; }
-  article#MansionDetail section:nth-of-type(1) {
-    margin-top: 160px; }
-  article#MansionDetail section:nth-of-type(2) {
-    margin-top: 140px; }
-  article#MansionDetail section:nth-of-type(3) {
-    margin-top: 140px; }
-  article#MansionDetail section:nth-of-type(4) {
-    margin-top: 160px; }
-  article#MansionDetail section:nth-of-type(5) {
-    margin-top: 120px; }
-  article#MansionDetail #plx01 {
-    top: 220px;
-    z-index: -100; }
-  article#MansionDetail #plx02 {
-    top: 120px;
-    right: 0;
-    z-index: -50; }
-  article#MansionDetail #plx03 {
-    top: 1000px;
-    right: 0; }
-  article#MansionDetail #plx03b {
-    top: 1080px;
-    right: 210px; }
-  article#MansionDetail #plx04 {
-    top: 1920px; }
-  article#MansionDetail #plx04b {
-    top: 2000px;
-    left: 210px; }
-  article#MansionDetail #plx05 {
-    top: 2500px;
-    right: 0; }
-  article#MansionDetail #plx05b {
-    top: 2580px;
-    right: 210px; }
-  article#MansionDetail #plx06 {
-    top: 700px;
-    z-index: -100; }
-  article#MansionDetail #plx07 {
-    top: 2900px;
-    z-index: -100; }
+  width: 1040px;
+  margin: 0 auto; }
+
+article#MansionDetail #plx01 {
+  top: 340px;
+  left: auto;
+  z-index: -100; }
+
+article#MansionDetail #plx02 {
+  top: -600px;
+  width: 100%;
+  height: 1920px;
+  left: 0;
+  right: 0;
+  z-index: -50;
+  background-image: url("../imgs/detail/mansion/bg_detail.png");
+  background-size: 3800px auto;
+  background-position: center bottom;
+  opacity: 1; }
+
+article#MansionDetail #plx03 {
+  top: 1400px;
+  right: 0; }
+
+article#MansionDetail #plx03b {
+  top: 1480px;
+  right: 210px; }
+
+article#MansionDetail #plx04 {
+  top: 2300px; }
+
+article#MansionDetail #plx04b {
+  top: 2300px;
+  left: 210px; }
+
+article#MansionDetail #plx05 {
+  top: 3200px;
+  right: 0; }
+
+article#MansionDetail #plx05b {
+  top: 3200px;
+  right: 210px; }
+
+article#MansionDetail #plx06 {
+  top: 900px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 100%;
+  opacity: 1; }
+
+article#MansionDetail #plx07 {
+  top: 3600px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 150%;
+  opacity: 1; }
 
 /*
   # pages/front/Driving.sass
   front/Driving.jsxに関するクラスを定義
   prefixには`pf-Driving`を付与
   */
-article#DrivingDetail {
+article#DrivingDetail section:nth-of-type(1) {
+  padding-top: 220px; }
+
+article#DrivingDetail section:nth-of-type(2) {
+  color: white;
+  margin-top: 280px; }
+  article#DrivingDetail section:nth-of-type(2) h1 {
+    color: white; }
+
+article#DrivingDetail section:nth-of-type(3) {
+  margin-top: 200px; }
+
+article#DrivingDetail section:nth-of-type(4) {
+  margin-top: 260px; }
+  article#DrivingDetail section:nth-of-type(4) h1 {
+    width: 240px;
+    margin-left: 280px; }
+
+article#DrivingDetail section:nth-of-type(5) {
+  margin-top: 240px; }
+
+article#DrivingDetail div.wrapper {
   position: relative;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch; }
-  article#DrivingDetail section:nth-of-type(1) {
-    margin-top: 160px; }
-  article#DrivingDetail section:nth-of-type(2) {
-    margin-top: 0px; }
-  article#DrivingDetail section:nth-of-type(3) {
-    margin-top: 140px; }
-  article#DrivingDetail section:nth-of-type(4) {
-    margin-top: 260px; }
-  article#DrivingDetail section:nth-of-type(5) {
-    margin-top: 240px; }
-  article#DrivingDetail #plx01 {
-    top: 220px;
-    z-index: -100; }
-  article#DrivingDetail #plx02 {
-    top: 180px;
-    right: 0;
-    z-index: -50; }
-  article#DrivingDetail #plx03 {
-    top: 1000px;
-    right: 0; }
-  article#DrivingDetail #plx03b {
-    top: 1080px;
-    right: 210px; }
-  article#DrivingDetail #plx04 {
-    top: 1300px; }
-  article#DrivingDetail #plx04b {
-    top: 1380px;
-    left: 210px; }
-  article#DrivingDetail #plx05 {
-    top: 1800px;
-    right: 0; }
-  article#DrivingDetail #plx05b {
-    top: 1880px;
-    right: 210px; }
-  article#DrivingDetail #plx06 {
-    top: 700px;
-    z-index: -100; }
-  article#DrivingDetail #plx07 {
-    top: 1860px;
-    z-index: -100; }
+  width: 1040px;
+  margin: 0 auto; }
+
+article#DrivingDetail #plx01 {
+  top: 340px;
+  left: auto;
+  z-index: -100; }
+
+article#DrivingDetail #plx02 {
+  top: -600px;
+  width: 100%;
+  height: 1920px;
+  left: 0;
+  right: 0;
+  z-index: -50;
+  background-image: url("../imgs/detail/driving/bg_detail.png");
+  background-size: 3800px auto;
+  background-position: center bottom;
+  opacity: 1; }
+
+article#DrivingDetail #plx03 {
+  top: 1320px;
+  right: 0; }
+
+article#DrivingDetail #plx03b {
+  top: 1320px;
+  right: 210px; }
+
+article#DrivingDetail #plx04 {
+  top: 1700px; }
+
+article#DrivingDetail #plx04b {
+  top: 1700px;
+  left: 210px; }
+
+article#DrivingDetail #plx05 {
+  top: 2300px;
+  right: 0; }
+
+article#DrivingDetail #plx05b {
+  top: 2300px;
+  right: 210px; }
+
+article#DrivingDetail #plx06 {
+  top: 900px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 100%;
+  opacity: 1; }
+
+article#DrivingDetail #plx07 {
+  top: 2000px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 150%;
+  opacity: 1; }

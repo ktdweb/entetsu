@@ -19,6 +19,7 @@
 h1
   font-size: $base-font-size * 1.6
   font-family: $YuMincho-font-family
+  color: $color-salmon
 
 /*
   # h3
@@ -82,10 +83,31 @@ section
   position: relative
   margin: 0
   padding: 0 5rem
+  color: $color-text-dark
   text-align: justify
   overflow: hidden
   clear: both
   width: 60%
+
+  h1.effectTitle
+    height: 30px
+    opacity: 0
+    +transform(scale(1.1))
+    +transition(all 1s ease-in-out 0s)
+    &.posi
+      +transform(scale(1.0))
+      opacity: 1
+
+  div.effect
+    opacity: 0
+    +transition(all 2s ease-in-out 1s)
+    &.posi
+      opacity: 1
+
+  div.wrapper
+    position: relative
+    width: 1040px
+    margin: 0 auto
 
   /*
     # section.odd
@@ -100,3 +122,5 @@ section
    */
   &.odd.reverse
     color: white
+
+

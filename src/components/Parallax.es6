@@ -135,7 +135,6 @@ export default class Parallax {
 
     for (let i = 0; i < this.layers.length; i++) {
       let dep = this.layers[i].getAttribute('data-depth');
-      this.layers[i].style.position = 'absolute';
       this.depths[i] = dep;
       this.tops[i] = this.layers[i].offsetTop;
     }

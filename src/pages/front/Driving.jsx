@@ -15,10 +15,31 @@ export default class UnkouDetail extends React.Component {
   componentDidMount() {
     this.parallax = new Parallax();
     this.parallax.start();
+
+    /* 文字のエフェクト*/
+    this.h1s = document.getElementsByClassName(
+      'effectTitle'
+    );
+    this.ps  = document.getElementsByClassName(
+      'effect'
+    );
+
+    this.h1s[0].classList.add('posi');
+    this.ps[0].classList.add('posi');
+
+    window.addEventListener(
+      'scroll',
+      this.showElement.bind(this)
+    );
   }
 
   componentWillUnmount() {
     this.parallax.destroy();
+
+    window.removeEventListener(
+      'scroll',
+      this.getScrollTop
+    );
   }
 
   render() {
@@ -31,7 +52,7 @@ export default class UnkouDetail extends React.Component {
         <div
           id="plx01"
           className="layer"
-          data-depth="2">
+          data-depth="1">
           <img
             src={IMG + 'bg.jpg'}
             width="100%"
@@ -43,121 +64,110 @@ export default class UnkouDetail extends React.Component {
           id="plx02"
           className="layer"
           data-depth="0">
-          <img
-            src={IMG + 'bg_detail.png'}
-            width="100%"
-            alt="img"
-            />
         </div>
 
-        <div
-          id="plx03"
-          className="layer"
-          data-depth="2">
-          <img
-            src={IMG + 'hex01l.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx03b"
-          className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'hex01r.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx04"
-          className="layer"
-          data-depth="2">
-          <img
-            src={IMG + 'hex02l.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx04b"
-          className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'hex02r.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx05"
-          className="layer"
-          data-depth="2">
-          <img
-            src={IMG + 'hex03l.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx05b"
-          className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'hex03r.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx06"
-          className="layer"
-          data-depth="0">
-          <img
-            src={IMG + 'bg_header.jpg'}
-            width="100%"
-            alt="img"
-            />
-        </div>
-
-        <div
-          id="plx07"
-          className="layer"
-          data-depth="0">
-          <img
-            src={IMG + 'bg_footer.jpg'}
-            width="100%"
-            alt="img"
-            />
+        <div className="wrapper">
+          <div
+            id="plx03"
+            className="layer"
+            data-depth="2">
+            <img
+              src={IMG + 'hex01l.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
+          
+          <div
+            id="plx03b"
+            className="layer"
+            data-depth="3">
+            <img
+              src={IMG + 'hex01r.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
+          
+          <div
+            id="plx04"
+            className="layer"
+            data-depth="2">
+            <img
+              src={IMG + 'hex02l.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
+          
+          <div
+            id="plx04b"
+            className="layer"
+            data-depth="3">
+            <img
+              src={IMG + 'hex02r.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
+          
+          <div
+            id="plx05"
+            className="layer"
+            data-depth="2">
+            <img
+              src={IMG + 'hex03l.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
+          
+          <div
+            id="plx05b"
+            className="layer"
+            data-depth="3">
+            <img
+              src={IMG + 'hex03r.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
+          
+          <div
+            id="plx06"
+            className="layer"
+            data-depth="0">
+          </div>
+          
+          <div
+            id="plx07"
+            className="layer"
+            data-depth="0">
+          </div>
         </div>
 
         <section>
-          <h1>子どもたちのヒーローは、私でした。</h1>
-          <p>
-            ドライバー歴30年。転職したのは5年前だった。<br />
-            長距離ドライバーから、学校の送迎ドライバーへ。<br />
-            孤独な仕事は、人とふれ合う仕事になった。<br />
-<br />
-            子どもたちの笑顔と成長。すぐに天職だと気付いた。<br />
-            子どもの憧れは身近にある。<br />
-            大きなバスを運転する私は、
-            いつの間にか子どもたちのヒーローになった。<br />
-            活き方で生き方は、変わる。
-            新しい自分を探そう、スタートを切ろう。
-          </p>
+          <h1 className="effectTitle">子どもたちのヒーローは、私でした。</h1>
+          <div className="effect">
+            <p>
+              ドライバー歴30年。転職したのは5年前だった。<br />
+              長距離ドライバーから、学校の送迎ドライバーへ。<br />
+              孤独な仕事は、人とふれ合う仕事になった。<br />
+            
+              子どもたちの笑顔と成長。すぐに天職だと気付いた。<br />
+              子どもの憧れは身近にある。<br />
+              大きなバスを運転する私は、
+              いつの間にか子どもたちのヒーローになった。<br />
+              活き方で生き方は、変わる。
+              新しい自分を探そう、スタートを切ろう。
+            </p>
+          </div>
         </section>
 
         <section className="odd reverse">
@@ -187,49 +197,100 @@ export default class UnkouDetail extends React.Component {
         </section>
 
         <section>
-          <h1>遠鉄アシストの特徴</h1>
+          <h1 className="effectTitle">遠鉄アシストの特徴</h1>
 
-          <h3>遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、<br />
-            笑顔の接客・接遇で、多くのお客様から信頼をいただいております。</h3>
-
-          <strong>地元に根付いた遠鉄グループだから出来ること</strong>
-          <p>
-            母体が遠州鉄道株式会社だからこそ、70年以上の旅客運送のノウハウの蓄積を生かし、安全運転のための運転士研修、健康管理体制を取っており、サービス向上のための接客接遇教育を欠かしておりません。 また、グループ各社の総合力を結集し、給油・整備・自動車保険・万が一の事故対応から代車の手配まで、お客様へ安心と満足をお届けする体制をとっております。
-          </p>
+          <div className="effect">
+            <h3>遠鉄グループ輸送部門の実績とノウハウ、運転士の確かな安全技術、<br />
+              笑顔の接客・接遇で、多くのお客様から信頼をいただいております。</h3>
+            
+            <strong>地元に根付いた遠鉄グループだから出来ること</strong>
+            <p>
+              母体が遠州鉄道株式会社だからこそ、70年以上の旅客運送のノウハウの蓄積を生かし、安全運転のための運転士研修、健康管理体制を取っており、サービス向上のための接客接遇教育を欠かしておりません。 また、グループ各社の総合力を結集し、給油・整備・自動車保険・万が一の事故対応から代車の手配まで、お客様へ安心と満足をお届けする体制をとっております。
+            </p>
+          </div>
         </section>
 
         <section className="odd">
-          <h1 className="text-right">導入事例</h1>
+          <h1 className="effectTitle">導入事例</h1>
 
-          <p className="text-right">運行管理事業の導入事例です。 <br />お客様のニーズに合わせて、臨機応変に問題を解決いたします。</p>
+          <div className="effect">
+            <p className="text-right">運行管理事業の導入事例です。 <br />お客様のニーズに合わせて、臨機応変に問題を解決いたします。</p>
+          </div>
         </section>
 
         <section>
-          <h1>安心・安全・快適への取り組み</h1>
+          <h1 className="effectTitle">安心・安全・快適への取り組み</h1>
 
-          <h3>お客様の安全・安心・快適をモットーに、<br />
-            遠鉄アシストでは 運転士の安全教育を徹底。<br />
-            経験と実績に甘んじることなく、 技術と知識の強化を図っています。</h3>
-
-          <strong>定期的な研修会を行い、常に高いクオリティを提供します。</strong>
-          <p>
-            安全運行の実施と接客サービスの向上を目的として、定期的に年２回の運転士の研修会を実施しております。 もしも事故やクレームがあった場合には、運転士全員で情報を共有し、意識を共有し、技術･マナー･意識の見直しをさせています。
-          </p>
-
-          <strong>研修会の内容</strong>
-          <p>
-            ・運転技術向上のためのケーススタディ<br />
-            ・サービス向上のための接客・接遇教育<br />
-            ・実際にあった事故をもとにしたグループディスカッション
-          </p>
-
-          <strong>安全・安心・快適を生む管理の徹底</strong>
-          <p>
-            遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。
-          </p>
+          <div className="effect">
+            <h3>お客様の安全・安心・快適をモットーに、<br />
+              遠鉄アシストでは 運転士の安全教育を徹底。<br />
+              経験と実績に甘んじることなく、 技術と知識の強化を図っています。</h3>
+            
+            <strong>定期的な研修会を行い、常に高いクオリティを提供します。</strong>
+            <p>
+              安全運行の実施と接客サービスの向上を目的として、定期的に年２回の運転士の研修会を実施しております。 もしも事故やクレームがあった場合には、運転士全員で情報を共有し、意識を共有し、技術･マナー･意識の見直しをさせています。
+            </p>
+            
+            <strong>研修会の内容</strong>
+            <p>
+              ・運転技術向上のためのケーススタディ<br />
+              ・サービス向上のための接客・接遇教育<br />
+              ・実際にあった事故をもとにしたグループディスカッション
+            </p>
+            
+            <strong>安全・安心・快適を生む管理の徹底</strong>
+            <p>
+              遠鉄グループのノウハウを活かし、安全・安心・快適の管理を行っています。遠州鉄道株式会社が行う旅客運送事業のノウハウを生かし、他社より一歩進んだ管理を行なっております。 運転士は出勤時には必ずアルコールのチェックを行い、月に一度は健康状態を確認しております。また、ご相談頂ければ、車両にドライブレコーダーを搭載させていただき、リアルタイムでの勤務状態の確認、万が一の事故の際の記録等を行っております。
+            </p>
+          </div>
         </section>
       </article>
     );
+  }
+
+  showElement() {
+    for (let i = 0; i < this.h1s.length; i++) {
+      let h1 = this.h1s[i].getBoundingClientRect().top;
+
+      if (window.innerHeight > h1) {
+        this.h1s[i].classList.add('posi');
+
+        if (this.h1s[i].flag != true) {
+          this.h1s[i].flag = true;
+          this.oneByOne(
+            this.h1s[i],
+            this.h1s[i].innerHTML,
+            0
+          );
+        }
+      }
+    }
+
+    for (let i = 0; i < this.ps.length; i++) {
+      let ps = this.ps[i].getBoundingClientRect().top;
+
+      if (window.innerHeight > ps) {
+        this.ps[i].classList.add('posi');
+      }
+    }
+  }
+
+  oneByOne(e, txt, cnt) {
+    e.innerHTML = txt.substr(0, cnt);
+    let now = e.innerHTML; 
+    cnt++;
+
+    if (txt.length >= cnt) {
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+    }
+  }
+
+  getScrollTop() {
+    let body = window.document.body;
+    let html = window.document.documentElement;
+    let scrollTop = body.scrollTop || html.scrollTop;
+
+    return scrollTop;
   }
 
   onService(e) {
