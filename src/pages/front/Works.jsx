@@ -137,7 +137,7 @@ export default class Works extends React.Component {
               >
                 <img
                   src={IMG + 'time/banner01.png'}
-                  height="120"
+                  height="135"
                   alt="img"
                   />
               </a>
@@ -147,7 +147,7 @@ export default class Works extends React.Component {
               >
                 <img
                   src={IMG + 'time/banner02.png'}
-                  height="120"
+                  height="135"
                   alt="img"
                   />
               </a>
@@ -157,7 +157,7 @@ export default class Works extends React.Component {
               >
                 <img
                   src={IMG + 'time/banner03.png'}
-                  height="120"
+                  height="135"
                   alt="img"
                   />
               </a>

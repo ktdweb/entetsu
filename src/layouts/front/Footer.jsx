@@ -183,6 +183,12 @@ export default class Footer extends React.Component {
                   お仕事を探す
                   </Link>
                   </li>
+
+                <li>
+                  <Link to="/privacy">
+                  個人情報取扱について
+                  </Link>
+                  </li>
               </ul>
             </div>
           </nav>
