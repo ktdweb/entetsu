@@ -165,7 +165,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section className="odd reverse">
+        <section id="h01" className="odd reverse">
           <h1 className="text-right">遠鉄アシストのサービス</h1>
           <p className="text-right">
             遠鉄アシストならではのきめ細かいサービスと、<br /> 
@@ -193,7 +193,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section>
+        <section id="h02">
           <h1 className="effectTitle">遠鉄アシストの取り組み</h1>
 
           <div className="effect">
@@ -217,7 +217,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section className="odd">
+        <section  id="h03" className="odd">
           <h1 className="effectTitle">遠鉄アシストの特徴</h1>
 
           <div className="effect">
@@ -236,7 +236,7 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section>
+        <section id="h04">
           <h1 className="effectTitle">遠鉄アシストのサポート</h1>
 
           <div className="effect">
@@ -297,7 +297,7 @@ export default class BuildingDetail extends React.Component {
     for (let i = 0; i < this.h1s.length; i++) {
       let h1 = this.h1s[i].getBoundingClientRect().top;
 
-      if (window.innerHeight > h1) {
+      if (window.innerHeight > h1 && i != 0) {
         this.h1s[i].classList.add('posi');
 
         if (this.h1s[i].flag != true) {
@@ -326,7 +326,7 @@ export default class BuildingDetail extends React.Component {
     cnt++;
 
     if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
     }
   }
 

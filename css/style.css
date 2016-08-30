@@ -6536,7 +6536,7 @@ div#badge {
   bottom: 0;
   background-color: #ff5c5c;
   width: 100%;
-  height: 130px;
+  height: 260px;
   z-index: -1000;
   text-align: center; }
   div#badge.posi {
@@ -6904,7 +6904,7 @@ div#badge {
     #Front > footer .lf-contents div a {
       color: black; }
   #Front > footer {
-    margin-bottom: 120px;
+    margin-bottom: 260px;
     background-color: white; }
     #Front > footer .lf-external div {
       padding: 2rem 0; }
@@ -7107,7 +7107,7 @@ div#badge {
     right: 0;
     text-align: center;
     vertical-align: middle;
-    background-image: url("../imgs/pages/top/home.gif");
+    background-image: url("../imgs/pages/top/home.png");
     background-size: auto 560px;
     background-position: center bottom;
     z-index: -10; }
@@ -7909,6 +7909,96 @@ article.pf-Detail {
       color: white; }
 
 /*
+  # pages/front/Building.sass
+  front/Building.jsxに関するクラスを定義
+  prefixには`pf-Building`を付与
+  */
+article#CompanyDetail section:nth-of-type(1) {
+  padding-top: 220px; }
+
+article#CompanyDetail section:nth-of-type(2) {
+  color: white;
+  margin-top: 280px; }
+  article#CompanyDetail section:nth-of-type(2) h1 {
+    color: white; }
+
+article#CompanyDetail section:nth-of-type(3) {
+  margin-top: 200px; }
+
+article#CompanyDetail section:nth-of-type(4) {
+  margin-top: 240px; }
+  article#CompanyDetail section:nth-of-type(4) h1 {
+    width: 240px;
+    margin-left: 280px; }
+
+article#CompanyDetail section:nth-of-type(5) {
+  margin-top: 280px; }
+
+article#CompanyDetail div.wrapper {
+  position: relative;
+  width: 1040px;
+  margin: 0 auto; }
+
+article#CompanyDetail #plx01 {
+  top: 340px;
+  left: auto;
+  z-index: -100; }
+
+article#CompanyDetail #plx02 {
+  top: -600px;
+  width: 100%;
+  height: 1920px;
+  left: 0;
+  right: 0;
+  z-index: -50;
+  background-image: url("../imgs/detail/building/bg_detail.png");
+  background-size: 3800px auto;
+  background-position: center bottom;
+  opacity: 1; }
+
+article#CompanyDetail #plx03 {
+  top: 1400px;
+  right: 0; }
+
+article#CompanyDetail #plx03b {
+  top: 1400px;
+  right: 210px; }
+
+article#CompanyDetail #plx04 {
+  top: 2100px;
+  left: 0; }
+
+article#CompanyDetail #plx04b {
+  top: 2100px;
+  left: 210px; }
+
+article#CompanyDetail #plx05 {
+  top: 2980px;
+  right: 0; }
+
+article#CompanyDetail #plx05b {
+  top: 2980px;
+  right: 210px; }
+
+article#CompanyDetail #plx06 {
+  top: 900px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 100%;
+  opacity: 1; }
+
+article#CompanyDetail #plx07 {
+  top: 2400px;
+  width: 1040px;
+  height: 1040px;
+  z-index: -100;
+  background-image: url("../imgs/bg.png");
+  background-size: 150%;
+  opacity: 1; }
+
+/*
   # pages/front/Cleaning.sass
   front/Cleaning.jsxに関するクラスを定義
   prefixには`pf-Cleaning`を付与
@@ -7957,27 +8047,33 @@ article#CleaningDetail #plx02 {
   opacity: 1; }
 
 article#CleaningDetail #plx03 {
-  top: 1300px;
-  right: 0; }
+  top: 1390px;
+  right: 0;
+  z-index: -10; }
 
 article#CleaningDetail #plx03b {
-  top: 1300px;
-  right: 210px; }
+  top: 1390px;
+  right: 210px;
+  z-index: -20; }
 
 article#CleaningDetail #plx04 {
-  top: 2100px; }
+  top: 1910px;
+  z-index: -10; }
 
 article#CleaningDetail #plx04b {
-  top: 2100px;
-  left: 210px; }
+  top: 1910px;
+  left: 210px;
+  z-index: -20; }
 
 article#CleaningDetail #plx05 {
   top: 2700px;
-  right: 0; }
+  right: 0;
+  z-index: -10; }
 
 article#CleaningDetail #plx05b {
   top: 2700px;
-  right: 210px; }
+  right: 210px;
+  z-index: -20; }
 
 article#CleaningDetail #plx06 {
   top: 900px;
@@ -7989,7 +8085,7 @@ article#CleaningDetail #plx06 {
   opacity: 1; }
 
 article#CleaningDetail #plx07 {
-  top: 2400px;
+  top: 1980px;
   width: 1040px;
   height: 1040px;
   z-index: -100;
@@ -8046,31 +8142,37 @@ article#BuildingDetail #plx02 {
   opacity: 1; }
 
 article#BuildingDetail #plx03 {
-  top: 1400px;
-  right: 0; }
+  top: 1340px;
+  right: 0;
+  z-index: -10; }
 
 article#BuildingDetail #plx03b {
-  top: 1400px;
-  right: 210px; }
+  top: 1340px;
+  right: 210px;
+  z-index: -20; }
 
 article#BuildingDetail #plx04 {
-  top: 2100px;
-  left: 0; }
+  top: 2120px;
+  left: 0;
+  z-index: -10; }
 
 article#BuildingDetail #plx04b {
-  top: 2100px;
-  left: 210px; }
+  top: 2120px;
+  left: 210px;
+  z-index: -20; }
 
 article#BuildingDetail #plx05 {
-  top: 2980px;
-  right: 0; }
+  top: 2730px;
+  right: 0;
+  z-index: -10; }
 
 article#BuildingDetail #plx05b {
-  top: 2980px;
-  right: 210px; }
+  top: 2730px;
+  right: 210px;
+  z-index: -20; }
 
 article#BuildingDetail #plx06 {
-  top: 900px;
+  top: 1900px;
   width: 1040px;
   height: 1040px;
   z-index: -100;
@@ -8097,7 +8199,7 @@ article#MansionDetail section:nth-of-type(1) {
 
 article#MansionDetail section:nth-of-type(2) {
   color: white;
-  margin-top: 280px; }
+  margin-top: 480px; }
   article#MansionDetail section:nth-of-type(2) h1 {
     color: white; }
 
@@ -8136,27 +8238,33 @@ article#MansionDetail #plx02 {
   opacity: 1; }
 
 article#MansionDetail #plx03 {
-  top: 1400px;
-  right: 0; }
+  top: 1300px;
+  right: 0;
+  z-index: -10; }
 
 article#MansionDetail #plx03b {
-  top: 1480px;
-  right: 210px; }
+  top: 1380px;
+  right: 210px;
+  z-index: -20; }
 
 article#MansionDetail #plx04 {
-  top: 2300px; }
+  top: 2600px;
+  z-index: -10; }
 
 article#MansionDetail #plx04b {
-  top: 2300px;
-  left: 210px; }
+  top: 2600px;
+  left: 210px;
+  z-index: -20; }
 
 article#MansionDetail #plx05 {
   top: 3200px;
-  right: 0; }
+  right: 0;
+  z-index: -10; }
 
 article#MansionDetail #plx05b {
   top: 3200px;
-  right: 210px; }
+  right: 210px;
+  z-index: -20; }
 
 article#MansionDetail #plx06 {
   top: 900px;
@@ -8200,7 +8308,7 @@ article#DrivingDetail section:nth-of-type(4) {
     margin-left: 280px; }
 
 article#DrivingDetail section:nth-of-type(5) {
-  margin-top: 240px; }
+  margin-top: 440px; }
 
 article#DrivingDetail div.wrapper {
   position: relative;
@@ -8225,27 +8333,33 @@ article#DrivingDetail #plx02 {
   opacity: 1; }
 
 article#DrivingDetail #plx03 {
-  top: 1320px;
-  right: 0; }
+  top: 1380px;
+  right: 0;
+  z-index: -10; }
 
 article#DrivingDetail #plx03b {
-  top: 1320px;
-  right: 210px; }
+  top: 1380px;
+  right: 210px;
+  z-index: -20; }
 
 article#DrivingDetail #plx04 {
-  top: 1700px; }
+  top: 1890px;
+  z-index: -10; }
 
 article#DrivingDetail #plx04b {
-  top: 1700px;
-  left: 210px; }
+  top: 1890px;
+  left: 210px;
+  z-index: -20; }
 
 article#DrivingDetail #plx05 {
-  top: 2300px;
-  right: 0; }
+  top: 2400px;
+  right: 0;
+  z-index: -10; }
 
 article#DrivingDetail #plx05b {
-  top: 2300px;
-  right: 210px; }
+  top: 2400px;
+  right: 210px;
+  z-index: -20; }
 
 article#DrivingDetail #plx06 {
   top: 900px;
@@ -8257,10 +8371,10 @@ article#DrivingDetail #plx06 {
   opacity: 1; }
 
 article#DrivingDetail #plx07 {
-  top: 2000px;
+  top: 1800px;
   width: 1040px;
   height: 1040px;
   z-index: -100;
   background-image: url("../imgs/bg.png");
-  background-size: 150%;
+  background-size: 100%;
   opacity: 1; }

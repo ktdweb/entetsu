@@ -142,13 +142,13 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx06"
             className="layer"
-            data-depth="0">
+            data-depth="1">
           </div>
           
           <div
             id="plx07"
             className="layer"
-            data-depth="0">
+            data-depth="1">
           </div>
         </div>
 
@@ -252,7 +252,7 @@ export default class UnkouDetail extends React.Component {
     for (let i = 0; i < this.h1s.length; i++) {
       let h1 = this.h1s[i].getBoundingClientRect().top;
 
-      if (window.innerHeight > h1) {
+      if (window.innerHeight > h1 && i != 0) {
         this.h1s[i].classList.add('posi');
 
         if (this.h1s[i].flag != true) {
@@ -281,7 +281,7 @@ export default class UnkouDetail extends React.Component {
     cnt++;
 
     if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
     }
   }
 

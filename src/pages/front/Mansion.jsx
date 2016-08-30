@@ -308,7 +308,7 @@ export default class MansionDetail extends React.Component {
     for (let i = 0; i < this.h1s.length; i++) {
       let h1 = this.h1s[i].getBoundingClientRect().top;
 
-      if (window.innerHeight > h1) {
+      if (window.innerHeight > h1 && i != 0) {
         this.h1s[i].classList.add('posi');
 
         if (this.h1s[i].flag != true) {
@@ -337,7 +337,7 @@ export default class MansionDetail extends React.Component {
     cnt++;
 
     if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
     }
   }
 

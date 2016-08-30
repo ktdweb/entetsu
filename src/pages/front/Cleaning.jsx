@@ -59,13 +59,13 @@ export default class SeisougDetail extends React.Component {
             alt="img"
             />
         </div>
-        
+
         <div
           id="plx02"
           className="layer"
           data-depth="0">
         </div>
-          
+
         <div className="wrapper">
           <div
             id="plx03"
@@ -78,7 +78,7 @@ export default class SeisougDetail extends React.Component {
               alt="img"
               />
           </div>
-          
+
           <div
             id="plx03b"
             className="layer"
@@ -90,7 +90,7 @@ export default class SeisougDetail extends React.Component {
               alt="img"
               />
           </div>
-          
+
           <div
             id="plx04"
             className="layer"
@@ -102,7 +102,7 @@ export default class SeisougDetail extends React.Component {
               alt="img"
               />
           </div>
-          
+
           <div
             id="plx04b"
             className="layer"
@@ -114,7 +114,7 @@ export default class SeisougDetail extends React.Component {
               alt="img"
               />
           </div>
-          
+
           <div
             id="plx05"
             className="layer"
@@ -126,7 +126,7 @@ export default class SeisougDetail extends React.Component {
               alt="img"
               />
           </div>
-          
+
           <div
             id="plx05b"
             className="layer"
@@ -138,17 +138,17 @@ export default class SeisougDetail extends React.Component {
               alt="img"
               />
           </div>
-          
+
           <div
             id="plx06"
             className="layer"
-            data-depth="0">
+            data-depth="1">
           </div>
-          
+
           <div
             id="plx07"
             className="layer"
-            data-depth="0">
+            data-depth="1">
           </div>
         </div>
 
@@ -268,7 +268,7 @@ export default class SeisougDetail extends React.Component {
     for (let i = 0; i < this.h1s.length; i++) {
       let h1 = this.h1s[i].getBoundingClientRect().top;
 
-      if (window.innerHeight > h1) {
+      if (window.innerHeight > h1 && i != 0) {
         this.h1s[i].classList.add('posi');
 
         if (this.h1s[i].flag != true) {
@@ -297,7 +297,7 @@ export default class SeisougDetail extends React.Component {
     cnt++;
 
     if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
     }
   }
 
