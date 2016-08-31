@@ -79,11 +79,11 @@ export default class WorksDetail extends React.Component {
                 <div className="text-center">
                   <button
                     onClick={this.enableModal.bind(this)}
-                  >担当者からすぐ連絡希望</button>
+                  >担当者からすぐ連絡を希望する</button>
                   もしくは…
                   <button
-                    onClick={this.enableModal.bind(this)}
-                  >応募する</button>
+                    onClick={this.enableModal2.bind(this)}
+                  >メールにて連絡を希望する</button>
                 </div>
               </div>
             </div>
@@ -189,20 +189,50 @@ export default class WorksDetail extends React.Component {
             <div>
               名前:  山田太郎<br />
               フリガナ: ヤマダタロウ<br />
-              メールアドレス: taro@example.com
+              電話番号: 012-333-4444<br />
+              メールアドレス: info@example.com
+            </div>
+
+            <p>
+              弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />
+その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />
+また、あわせて会員情報も登録されます。
+            </p>
+
+            <p>
+              以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。
+            </p>
+
+            <button>電話にて連絡を希望する</button>
+          </div>
+        </div>
+
+        <div
+          id="modal2"
+          className="modal"
+          onClick={this.disableModal2.bind(this)}
+          >
+          <div>
+            <h1>応募内容のご確認</h1>
+            <div>
+              名前:  山田太郎<br />
+              フリガナ: ヤマダタロウ<br />
+              電話番号: 012-333-4444<br />
+              メールアドレス: info@example.com
             </div>
 
             <p>
               弊社スタッフより、お仕事のご紹介や、<br />
               ご都合のご確認として、<br />
-              お電話・メールにてご連絡させていただきます。
+              メールにてご連絡させていただきます。<br />
+また、あわせて会員情報も登録されます。
             </p>
 
             <p>
-              以上の内容でお間違いなければ「応募する」クリックしてください。
+              以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。
             </p>
 
-            <button>応募する</button>
+            <button>メールにて連絡を希望する</button>
           </div>
         </div>
       </article>
@@ -214,8 +244,18 @@ export default class WorksDetail extends React.Component {
     el.classList.toggle('enable');
   }
 
+  enableModal2() {
+    let el = document.getElementById('modal2');
+    el.classList.toggle('enable');
+  }
+
   disableModal() {
     let el = document.getElementById('modal');
+    el.classList.toggle('enable');
+  }
+
+  disableModal2() {
+    let el = document.getElementById('modal2');
     el.classList.toggle('enable');
   }
 }

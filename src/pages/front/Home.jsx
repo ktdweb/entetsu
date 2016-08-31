@@ -16,20 +16,29 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.init();
+    //this.init();
+    let title  = document.getElementById(
+      'homeTitle'
+    );
+
+    window.onload = function() {
+    title.classList.add('posi');
+    };
   }
 
   render() {
+
     return (
       <article id="Home">
         <DocumentTitle title="遠鉄アシスト" />
 
         <div id="mainImage">
-          <canvas
-            id="canvas"
-            width="1040"
-            height="624"
-            ></canvas>
+          <img
+            id="homeTitle"
+            src="imgs/pages/top/title.png"
+            width="400"
+            alt="人には人が必要"
+            />
         </div>
 
         <table className="menuTop">

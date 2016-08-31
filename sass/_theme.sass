@@ -10,7 +10,9 @@
   ヘッダの縦中央にみせるためpadding-topを追加  
   font-sizeをあげる
   */
-
+  
+div#root
+  position: relative
 
 article
   +outer-container()
@@ -26,3 +28,32 @@ article
 
 #grand_menu a
   float: left
+
+body *::selection
+  background: rgba(255, 252, 62, 0.5)
+
+/*
+  # #badge
+  スクロールで画面最下部にくると
+  「困ったをありがとう」を表示する箇所
+  */
+
+div#badge
+  position: fixed
+  display: table-cell
+  opacity: 0
+  bottom: 0
+  background-color: $color-salmon
+  width: 100%
+  height: 260px
+  z-index: -1000
+  text-align: center
+  &.posi
+    opacity: 1
+  img
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto

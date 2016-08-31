@@ -2,35 +2,107 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+import Parallax from '../../components/Parallax'
+
 export default class Company extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.parallax = new Parallax();
+    this.parallax.start();
+
+    /* 文字のエフェクト*/
+    this.h1s = document.getElementsByClassName(
+      'effectTitle'
+    );
+    this.ps  = document.getElementsByClassName(
+      'effect'
+    );
+
+    this.h1s[0].classList.add('posi');
+    this.ps[0].classList.add('posi');
+
+    window.addEventListener(
+      'scroll',
+      this.showElement.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    this.parallax.destroy();
+
+    window.removeEventListener(
+      'scroll',
+      this.getScrollTop
+    );
+  }
+
   render() {
+    let IMG = 'imgs/detail/company/';
+
     return (
-      <article id="Company" className="pf-Detail">
+      <article id="CompanyDetail" className="pf-Detail">
         <DocumentTitle title="遠鉄アシスト | 会社概要" />
 
-        <section id="company01">
-          <h1>遠鉄アシストについて</h1>
-          <p>
-            当社は、1999年7月21日、遠州鉄道株式会社の100％子会社として、<br />
-            運行管理部門で企業団体や自治体などのアシストをすることを目的に設立されました。<br />
-            遠州鉄道のバス部門との連携をとりながら、
-            規制が緩和されつつあった人材派遣などの<br />人材ビジネスへの参入を図りました。<br />
-          </p>
-          <p>
-            一方では、グループ内の再編に伴い、2002年7月、株式会社遠鉄総合ビルサービスから<br />
-            ビル管理・清掃部門とマンション管理部門を譲り受け、業容を拡大しました。<br />
-            運行管理、ビル・マンション管理、清掃、<br />
-            指定管理施設運営、食品検査、生活支援サービスを運営しています。
-          </p>
+        <div
+          id="plx01"
+          className="layer"
+          data-depth="1">
+          <img
+            src={IMG + 'bg.png'}
+            width="75%"
+            alt="img"
+            />
+        </div>
+        
+        <div className="wrapper">
+          <div
+            id="plx02"
+            className="layer"
+            data-depth="0">
+            <img
+              src={IMG + 'bg_detail.png'}
+              width="100%"
+              alt="img"
+              />
+          </div>
+
+          <div
+            id="plx06"
+            className="layer"
+            data-depth="1">
+          </div>
+
+          <div
+            id="plx07"
+            className="layer"
+            data-depth="1">
+          </div>
+        </div>
+
+        <section>
+          <h1 className="effectTitle">遠鉄アシストについて</h1>
+          <div className="effect">
+            <p>
+              当社は、1999年7月21日、遠州鉄道株式会社の100％子会社として、<br />
+              運行管理部門で企業団体や自治体などのアシストをすることを目的に設立されました。<br />
+              遠州鉄道のバス部門との連携をとりながら、
+              規制が緩和されつつあった人材派遣などの<br />人材ビジネスへの参入を図りました。<br />
+            </p>
+            <p>
+              一方では、グループ内の再編に伴い、2002年7月、株式会社遠鉄総合ビルサービスから<br />
+              ビル管理・清掃部門とマンション管理部門を譲り受け、業容を拡大しました。<br />
+              運行管理、ビル・マンション管理、清掃、<br />
+              指定管理施設運営、食品検査、生活支援サービスを運営しています。
+            </p>
+          </div>
         </section>
 
-        <section id="company02" className="odd odd-white">
-          <h1>社長メッセージ</h1>
+        <section className="odd odd-white">
+          <h1 className="text-right">社長メッセージ</h1>
             <div id="ceoMessage">
               <p>
                 "困った!をありがとうに"は、私たち遠鉄アシストの９年後のありたい姿です。2015年度から<br />
@@ -64,108 +136,112 @@ export default class Company extends React.Component {
 
             <div className="ceo">
               <p>取締役社長<br />藤野 聡</p>
-              <img src="imgs/detail/company_ceo_photo.jpg" width="140" height="210" alt="CEO" />
+              <img src={IMG + 'ceo_photo.jpg'} width="140" height="210" alt="CEO" />
             </div>
 
-            <img src="imgs/detail/company_message.png" width="500" height="317" alt="message" />
-        </section>
-
-        <section id="company02">
-          <h1>会社概要</h1>
-          <table>
-            <tbody>
-              <tr>
-                <td>称号</td>
-                <td>遠鉄アシスト株式会社</td>
-              </tr>
-
-              <tr>
-                <td>本社</td>
-                <td>
-                  静岡県浜松市中区旭町12-1　遠鉄百貨店新館　事務所フロア11階
-                  <p>TEL.053-450-1511（代）　FAX.053-450-1512</p>
-
-                  <p>
-                    ［ビルサービス課］<br />
-                    TEL.053-455-3451　FAX.053-454-3507
-                  </p>
-
-                  <p>
-                    ［マンション管理サービス課］<br />
-                    TEL.053-450-9922　FAX.053-454-3507
-                  </p>
-                  <p>
-                    ［運行管理サービス課］<br />
-                    TEL.053-450-1515　FAX.053-450-1512
-                  </p>
-                  <p>
-                    ［指定管理サービス課］<br />
-                    TEL.053-450-1516　FAX.053-450-1512
-                  </p>
-                  <p>
-                    ［食品検査センター］<br />
-                    TEL.053-441-5075　FAX.053-441-5111
-                  </p>
-                  <p>
-                    ［ベンリーえんてつ］<br />
-                    <a href="http://e-tomitsuka.benry.com/" target="_blank">
-                      連絡先 (ベンリーえんてつ)
-                    </a>
-                  </p>
-                </td>
-              </tr>
-
-              <tr>
-                <td>創立</td>
-                <td>1999年7月21日</td>
-              </tr>
-
-              <tr>
-                <td>資本金</td>
-                <td>4,000万円（遠州鉄道株式会社100%出資）</td>
-              </tr>
-              
-              <tr>
-                <td>代表者</td>
-                <td>取締役社長　藤野　聡</td>
-              </tr>
-
-              <tr>
-                <td>従業員</td>
-                <td>647名 （2015年3月31日現在）</td>
-              </tr>
-
-              <tr>
-                <td>登録許認可・認定</td>
-                <td>
-                  建築物環境衛生総合管理業<br />
-                  建築物飲料水貯水槽清掃業<br />
-                  建築物ねずみ昆虫等防除業<br />
-                  マンション管理業<br />
-                  警備業<br />
-                  医療関連サービスマーク<br />
-                  プライバシーマーク（第19000927(01)号）<br />
-                  有料職業紹介業（22-ユ-020029）<br />
-                  一般労働者派遣事業（派22-020046）
-                </td>
-              </tr>
-
-              <tr>
-                <td>加盟団体</td>
-                <td>
-                  一般社団法人　日本自動車運行管理協会<br />
-                  一般社団法人　中部地区自動車管理業協会<br />
-                  一般社団法人　日本人材派遣協会<br />
-                  一般社団法人　マンション管理業協会<br />
-                  一般社団法人　静岡県ビルメンテナンス協会
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <img src={IMG + 'message.jpg'} width="500" height="317" alt="message" />
         </section>
 
         <section>
-          <h1>沿革</h1>
+          <h1 className="effectTitle">会社概要</h1>
+
+          <div className="effect">
+            <table>
+              <tbody>
+                <tr>
+                  <td>称号</td>
+                  <td>遠鉄アシスト株式会社</td>
+                </tr>
+            
+                <tr>
+                  <td>本社</td>
+                  <td>
+                    静岡県浜松市中区旭町12-1　遠鉄百貨店新館　事務所フロア11階
+                    <p>TEL.053-450-1511（代）　FAX.053-450-1512</p>
+            
+                    <p>
+                      ［ビルサービス課］<br />
+                      TEL.053-455-3451　FAX.053-454-3507
+                    </p>
+            
+                    <p>
+                      ［マンション管理サービス課］<br />
+                      TEL.053-450-9922　FAX.053-454-3507
+                    </p>
+                    <p>
+                      ［運行管理サービス課］<br />
+                      TEL.053-450-1515　FAX.053-450-1512
+                    </p>
+                    <p>
+                      ［指定管理サービス課］<br />
+                      TEL.053-450-1516　FAX.053-450-1512
+                    </p>
+                    <p>
+                      ［食品検査センター］<br />
+                      TEL.053-441-5075　FAX.053-441-5111
+                    </p>
+                    <p>
+                      ［ベンリーえんてつ］<br />
+                      <a href="http://e-tomitsuka.benry.com/" target="_blank">
+                        連絡先 (ベンリーえんてつ)
+                      </a>
+                    </p>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <td>創立</td>
+                  <td>1999年7月21日</td>
+                </tr>
+            
+                <tr>
+                  <td>資本金</td>
+                  <td>4,000万円（遠州鉄道株式会社100%出資）</td>
+                </tr>
+                
+                <tr>
+                  <td>代表者</td>
+                  <td>取締役社長　藤野　聡</td>
+                </tr>
+            
+                <tr>
+                  <td>従業員</td>
+                  <td>647名 （2015年3月31日現在）</td>
+                </tr>
+            
+                <tr>
+                  <td>登録許認可・認定</td>
+                  <td>
+                    建築物環境衛生総合管理業<br />
+                    建築物飲料水貯水槽清掃業<br />
+                    建築物ねずみ昆虫等防除業<br />
+                    マンション管理業<br />
+                    警備業<br />
+                    医療関連サービスマーク<br />
+                    プライバシーマーク（第19000927(01)号）<br />
+                    有料職業紹介業（22-ユ-020029）<br />
+                    一般労働者派遣事業（派22-020046）
+                  </td>
+                </tr>
+            
+                <tr>
+                  <td>加盟団体</td>
+                  <td>
+                    一般社団法人　日本自動車運行管理協会<br />
+                    一般社団法人　中部地区自動車管理業協会<br />
+                    一般社団法人　日本人材派遣協会<br />
+                    一般社団法人　マンション管理業協会<br />
+                    一般社団法人　静岡県ビルメンテナンス協会
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h1 className="effectTitle">沿革</h1>
+
           <table>
             <tbody>
               <tr>
@@ -257,7 +333,7 @@ export default class Company extends React.Component {
           </table>
 
           <p>
-            <img src="imgs/detail/map.jpg" width="640" height="164" alt="map" />
+            <img src={IMG + 'map.jpg'} width="640" height="164" alt="map" />
           </p>
 
           <div id="company05"></div>
@@ -281,7 +357,7 @@ export default class Company extends React.Component {
           <h3>指定管理業務</h3>
 
           <p>
-            <img src="imgs/detail/company_banner00.jpg" width="260" height="98" alt="指定管理事業" />
+            <img src={IMG + 'banner00.jpg'} width="260" height="98" alt="指定管理事業" />
             行政の指定管理者として公共事業業務を受託<br />
             市民の立場・目線で地域の暮らしを支えます
           </p>
@@ -328,7 +404,7 @@ export default class Company extends React.Component {
           <p>
 
             <a href="http://www.entetsu.co.jp/kensa/" target="_blank" >
-              <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品検査" />
+              <img src={IMG + 'banner01.jpg'} width="260" height="98" alt="食品検査" />
             </a>
 
             全国の上場企業をはじめ、地元企業など<br />
@@ -340,7 +416,7 @@ export default class Company extends React.Component {
           <p>
 
             <a href="http://e-tomitsuka.benry.com/" target="_blank" >
-              <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
+              <img src={IMG + 'banner02.jpg'} width="260" height="98" alt="ベンリ− " />
             </a>
 
             暮らしの困った解決!<br />
@@ -352,4 +428,50 @@ export default class Company extends React.Component {
       </article>
     );
   }
+
+  showElement() {
+    for (let i = 0; i < this.h1s.length; i++) {
+      let h1 = this.h1s[i].getBoundingClientRect().top;
+
+      if (window.innerHeight > h1 && i != 0) {
+        this.h1s[i].classList.add('posi');
+
+        if (this.h1s[i].flag != true) {
+          this.h1s[i].flag = true;
+          this.oneByOne(
+            this.h1s[i],
+            this.h1s[i].innerHTML,
+            0
+          );
+        }
+      }
+    }
+
+    for (let i = 0; i < this.ps.length; i++) {
+      let ps = this.ps[i].getBoundingClientRect().top;
+
+      if (window.innerHeight > ps) {
+        this.ps[i].classList.add('posi');
+      }
+    }
+  }
+
+  oneByOne(e, txt, cnt) {
+    e.innerHTML = txt.substr(0, cnt);
+    let now = e.innerHTML; 
+    cnt++;
+
+    if (txt.length >= cnt) {
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+    }
+  }
+
+  getScrollTop() {
+    let body = window.document.body;
+    let html = window.document.documentElement;
+    let scrollTop = body.scrollTop || html.scrollTop;
+
+    return scrollTop;
+  }
+
 }

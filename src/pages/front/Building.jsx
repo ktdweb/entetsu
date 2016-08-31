@@ -15,43 +15,31 @@ export default class BuildingDetail extends React.Component {
   componentDidMount() {
     this.parallax = new Parallax();
     this.parallax.start();
-    window.scrollTo(0,0);
 
-    let h01 = document.getElementById('h01');
-    let h02 = document.getElementById('h02');
-    let h03 = document.getElementById('h03');
-
-    /*
-    h01.addEventListener(
-      'transitionend',
-      function(e) {
-        let txt = e.target.innerHTML;
-        let now;
-        let cnt = 0;
-        let timer;
-        let flag = true;
-
-        oneByOne();
-        
-        function oneByOne() { 
-          e.target.innerHTML = txt.substring(0, cnt); 
-          now = e.target.innerHTML; 
-
-          cnt++;
-
-          if (txt.length > now.length) {
-            setTimeout(oneByOne(), 1000);
-            console.log('test');
-          }
-        }
-      },
-      false
+    /* 文字のエフェクト*/
+    this.h1s = document.getElementsByClassName(
+      'effectTitle'
     );
-    */
+    this.ps  = document.getElementsByClassName(
+      'effect'
+    );
+
+    this.h1s[0].classList.add('posi');
+    this.ps[0].classList.add('posi');
+
+    window.addEventListener(
+      'scroll',
+      this.showElement.bind(this)
+    );
   }
 
   componentWillUnmount() {
     this.parallax.destroy();
+
+    window.removeEventListener(
+      'scroll',
+      this.getScrollTop
+    );
   }
 
   render() {
@@ -76,109 +64,97 @@ export default class BuildingDetail extends React.Component {
           id="plx02"
           className="layer"
           data-depth="0">
-          <img
-            src={IMG + 'bg_detail.png'}
-            width="100%"
-            alt="img"
-            />
         </div>
 
-        <div
-          id="plx03"
-          className="layer"
-          data-depth="2">
-          <img
-            src={IMG + 'hex01l.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
+        <div className="wrapper">
+          <div
+            id="plx03"
+            className="layer"
+            data-depth="3">
+            <img
+              src={IMG + 'hex01l.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
 
-        <div
-          id="plx03b"
-          className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'hex01r.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
+          <div
+            id="plx03b"
+            className="layer"
+            data-depth="2">
+            <img
+              src={IMG + 'hex01r.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
 
-        <div
-          id="plx04"
-          className="layer"
-          data-depth="2">
-          <img
-            src={IMG + 'hex02l.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
+          <div
+            id="plx04"
+            className="layer"
+            data-depth="3">
+            <img
+              src={IMG + 'hex02l.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
 
-        <div
-          id="plx04b"
-          className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'hex02r.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
+          <div
+            id="plx04b"
+            className="layer"
+            data-depth="2">
+            <img
+              src={IMG + 'hex02r.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
 
-        <div
-          id="plx05"
-          className="layer"
-          data-depth="2">
-          <img
-            src={IMG + 'hex03l.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
-        </div>
+          <div
+            id="plx05"
+            className="layer"
+            data-depth="3">
+            <img
+              src={IMG + 'hex03l.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
 
-        <div
-          id="plx05b"
-          className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'hex03r.png'}
-            width="210"
-            height="340"
-            alt="img"
-            />
+          <div
+            id="plx05b"
+            className="layer"
+            data-depth="2">
+            <img
+              src={IMG + 'hex03r.png'}
+              width="210"
+              height="340"
+              alt="img"
+              />
+          </div>
         </div>
 
         <div
           id="plx06"
           className="layer"
-          data-depth="3">
-          <img
-            src={IMG + 'bg_header.jpg'}
-            width="100%"
-            alt="img"
-            />
+          data-depth="1">
         </div>
 
         <div
           id="plx07"
           className="layer"
-          data-depth="0">
-          <img
-            src={IMG + 'bg_footer.jpg'}
-            width="100%"
-            alt="img"
-            />
+          data-depth="1">
         </div>
         
         <section>
-          <h1>機能するビルディング</h1>
+          <h1 className="effectTitle">機能するビルディング</h1>
+          <div className="effect">
           <p>
             仕事に集中できる環境。<br />
             始業ベルとともに、一斉にスタートする職場には、<br />
@@ -186,9 +162,10 @@ export default class BuildingDetail extends React.Component {
             オフィスとして求められるもの全てを<br />
             遠鉄アシストはサポートします。
           </p>
+          </div>
         </section>
 
-        <section className="odd reverse">
+        <section id="h01" className="odd reverse">
           <h1 className="text-right">遠鉄アシストのサービス</h1>
           <p className="text-right">
             遠鉄アシストならではのきめ細かいサービスと、<br /> 
@@ -216,9 +193,10 @@ export default class BuildingDetail extends React.Component {
           </div>
         </section>
 
-        <section>
-          <h1 id="h01">遠鉄アシストの取り組み</h1>
+        <section id="h02">
+          <h1 className="effectTitle">遠鉄アシストの取り組み</h1>
 
+          <div className="effect">
           <h3>経験と実績に裏付けられた遠鉄クオリティ</h3>
           <p>
             遠鉄アシストのビル管理事業は、地域に密着した遠鉄グループの豊富な経験と実績をもとに生まれたサービスです。顧客第一をモットーに、徹底した教育研修を受けた専門スタッフが適材適所で責任を持ってサポート。清掃、設備管理、環境衛生管理、メンテナンス、特殊作業、警備など、ビル管理をトータルで担い、信頼の遠鉄クオリティでお客様のご満足にお応えします。
@@ -236,11 +214,13 @@ export default class BuildingDetail extends React.Component {
 
           <strong>緊急時のサービス体制</strong>
           <p>夜間・深夜に起こる緊急トラブルにも随時対応します。また、大雨や台風などの自然災害が見込まれる場合、関係部署との連携を密に図り対応・対策に努めます。</p>
+          </div>
         </section>
 
-        <section className="odd">
-          <h1 id="h02" className="text-right">遠鉄アシストの特徴</h1>
+        <section  id="h03" className="odd">
+          <h1 className="effectTitle">遠鉄アシストの特徴</h1>
 
+          <div className="effect">
           <p className="text-right">遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。</p>
 
           <h3>アフターまで見据えた三位一体の遠鉄クオリティ</h3>
@@ -253,11 +233,13 @@ export default class BuildingDetail extends React.Component {
           <p>
             地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。
           </p>
+          </div>
         </section>
 
-        <section>
-          <h1 id="h03">遠鉄アシストのサポート</h1>
+        <section id="h04">
+          <h1 className="effectTitle">遠鉄アシストのサポート</h1>
 
+          <div className="effect">
           <p>専門の資格を持ったスタッフが、 迅速に対応。安心してご利用頂けます。</p>
 
           <h3>困った時にも安心の24時間365日体制</h3>
@@ -305,9 +287,55 @@ export default class BuildingDetail extends React.Component {
             ※上記のほか、多くの資格保有者が
             ビルの保守・管理に努めています。
           </p>
+          </div>
         </section>
       </article>
     );
+  }
+
+  showElement() {
+    for (let i = 0; i < this.h1s.length; i++) {
+      let h1 = this.h1s[i].getBoundingClientRect().top;
+
+      if (window.innerHeight > h1 && i != 0) {
+        this.h1s[i].classList.add('posi');
+
+        if (this.h1s[i].flag != true) {
+          this.h1s[i].flag = true;
+          this.oneByOne(
+            this.h1s[i],
+            this.h1s[i].innerHTML,
+            0
+          );
+        }
+      }
+    }
+
+    for (let i = 0; i < this.ps.length; i++) {
+      let ps = this.ps[i].getBoundingClientRect().top;
+
+      if (window.innerHeight > ps) {
+        this.ps[i].classList.add('posi');
+      }
+    }
+  }
+
+  oneByOne(e, txt, cnt) {
+    e.innerHTML = txt.substr(0, cnt);
+    let now = e.innerHTML; 
+    cnt++;
+
+    if (txt.length >= cnt) {
+      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
+    }
+  }
+
+  getScrollTop() {
+    let body = window.document.body;
+    let html = window.document.documentElement;
+    let scrollTop = body.scrollTop || html.scrollTop;
+
+    return scrollTop;
   }
 
   onService(e) {
