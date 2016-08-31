@@ -5742,7 +5742,7 @@ var BuildingDetail = function (_React$Component) {
         'data-depth': '0' }), _react2.default.createElement('div', { className: 'wrapper' }, _react2.default.createElement('div', {
         id: 'plx03',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex01l.png',
         width: '210',
         height: '340',
@@ -5750,7 +5750,7 @@ var BuildingDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx03b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex01r.png',
         width: '210',
         height: '340',
@@ -5758,7 +5758,7 @@ var BuildingDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex02l.png',
         width: '210',
         height: '340',
@@ -5766,7 +5766,7 @@ var BuildingDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex02r.png',
         width: '210',
         height: '340',
@@ -5774,7 +5774,7 @@ var BuildingDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex03l.png',
         width: '210',
         height: '340',
@@ -5782,7 +5782,7 @@ var BuildingDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex03r.png',
         width: '210',
         height: '340',
@@ -5990,7 +5990,7 @@ var SeisougDetail = function (_React$Component) {
         'data-depth': '0' }), _react2.default.createElement('div', { className: 'wrapper' }, _react2.default.createElement('div', {
         id: 'plx03',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex01l.png',
         width: '210',
         height: '340',
@@ -5998,7 +5998,7 @@ var SeisougDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx03b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex01r.png',
         width: '210',
         height: '340',
@@ -6006,7 +6006,7 @@ var SeisougDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex02l.png',
         width: '210',
         height: '340',
@@ -6014,7 +6014,7 @@ var SeisougDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex02r.png',
         width: '210',
         height: '340',
@@ -6022,7 +6022,7 @@ var SeisougDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex03l.png',
         width: '210',
         height: '340',
@@ -6030,7 +6030,7 @@ var SeisougDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex03r.png',
         width: '210',
         height: '340',
@@ -6383,7 +6383,7 @@ var UnkouDetail = function (_React$Component) {
         'data-depth': '0' }), _react2.default.createElement('div', { className: 'wrapper' }, _react2.default.createElement('div', {
         id: 'plx03',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex01l.png',
         width: '210',
         height: '340',
@@ -6391,7 +6391,7 @@ var UnkouDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx03b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex01r.png',
         width: '210',
         height: '340',
@@ -6399,7 +6399,7 @@ var UnkouDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex02l.png',
         width: '210',
         height: '340',
@@ -6407,7 +6407,7 @@ var UnkouDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex02r.png',
         width: '210',
         height: '340',
@@ -6415,7 +6415,7 @@ var UnkouDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex03l.png',
         width: '210',
         height: '340',
@@ -6423,7 +6423,7 @@ var UnkouDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex03r.png',
         width: '210',
         height: '340',
@@ -6859,7 +6859,7 @@ var MansionDetail = function (_React$Component) {
         'data-depth': '0' }), _react2.default.createElement('div', { className: 'wrapper' }, _react2.default.createElement('div', {
         id: 'plx03',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex01l.png',
         width: '210',
         height: '340',
@@ -6867,7 +6867,7 @@ var MansionDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx03b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex01r.png',
         width: '210',
         height: '340',
@@ -6875,7 +6875,7 @@ var MansionDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex02l.png',
         width: '210',
         height: '340',
@@ -6883,7 +6883,7 @@ var MansionDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx04b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex02r.png',
         width: '210',
         height: '340',
@@ -6891,7 +6891,7 @@ var MansionDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05',
         className: 'layer',
-        'data-depth': '2' }, _react2.default.createElement('img', {
+        'data-depth': '3' }, _react2.default.createElement('img', {
         src: IMG + 'hex03l.png',
         width: '210',
         height: '340',
@@ -6899,7 +6899,7 @@ var MansionDetail = function (_React$Component) {
       })), _react2.default.createElement('div', {
         id: 'plx05b',
         className: 'layer',
-        'data-depth': '3' }, _react2.default.createElement('img', {
+        'data-depth': '2' }, _react2.default.createElement('img', {
         src: IMG + 'hex03r.png',
         width: '210',
         height: '340',

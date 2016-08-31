@@ -70,7 +70,7 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx03"
             className="layer"
-            data-depth="2">
+            data-depth="3">
             <img
               src={IMG + 'hex01l.png'}
               width="210"
@@ -82,7 +82,7 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx03b"
             className="layer"
-            data-depth="3">
+            data-depth="2">
             <img
               src={IMG + 'hex01r.png'}
               width="210"
@@ -94,7 +94,7 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx04"
             className="layer"
-            data-depth="2">
+            data-depth="3">
             <img
               src={IMG + 'hex02l.png'}
               width="210"
@@ -106,7 +106,7 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx04b"
             className="layer"
-            data-depth="3">
+            data-depth="2">
             <img
               src={IMG + 'hex02r.png'}
               width="210"
@@ -118,7 +118,7 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx05"
             className="layer"
-            data-depth="2">
+            data-depth="3">
             <img
               src={IMG + 'hex03l.png'}
               width="210"
@@ -130,7 +130,7 @@ export default class UnkouDetail extends React.Component {
           <div
             id="plx05b"
             className="layer"
-            data-depth="3">
+            data-depth="2">
             <img
               src={IMG + 'hex03r.png'}
               width="210"
