@@ -65,6 +65,14 @@ const routes = (
           footer: FrontFooter
         }} />
 
+      <Route path={root.documentRoot + '/works_detail/:id'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontWorksDetail,
+          footer: FrontFooter
+        }} />
+
       <Route path={root.documentRoot + '/cleaning'}
         global={root}
         page={'cleaning'}

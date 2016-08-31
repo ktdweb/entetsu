@@ -277,7 +277,7 @@ export default class Works extends React.Component {
             </div>
 
             <ul id="column">
-              <Link to="works_detail">
+              <Link to="works_detail/0">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>ホテル客室整備スタッフ</p>
@@ -290,7 +290,7 @@ export default class Works extends React.Component {
                 
                   <div className="pf-Works-List-column-section">
                     <img
-                      src={IMG + 'list_dummy_photo.png'}
+                      src={'imgs/works/001s.jpg'}
                       width="45"
                       alt="img"
                       / >
@@ -304,7 +304,7 @@ export default class Works extends React.Component {
                 </li>
               </Link>
 
-              <Link to="works_detail">
+              <Link to="works_detail/1">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>クリーンスタッフ</p>
@@ -317,7 +317,7 @@ export default class Works extends React.Component {
                 
                   <div className="pf-Works-List-column-section">
                     <img
-                      src={IMG + 'list_dummy_photo.png'}
+                      src={'imgs/works/002s.jpg'}
                       width="45"
                       alt="img"
                       / >
@@ -331,7 +331,7 @@ export default class Works extends React.Component {
                 </li>
               </Link>
 
-              <Link to="works_detail">
+              <Link to="works_detail/2">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>クリーンスタッフ</p>
@@ -344,7 +344,7 @@ export default class Works extends React.Component {
                 
                   <div className="pf-Works-List-column-section">
                     <img
-                      src={IMG + 'list_dummy_photo.png'}
+                      src={'imgs/works/002s.jpg'}
                       width="45"
                       alt="img"
                       / >
@@ -358,7 +358,7 @@ export default class Works extends React.Component {
                 </li>
               </Link>
 
-              <Link to="works_detail">
+              <Link to="works_detail/3">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>クリーンスタッフ</p>
@@ -371,7 +371,7 @@ export default class Works extends React.Component {
                 
                   <div className="pf-Works-List-column-section">
                     <img
-                      src={IMG + 'list_dummy_photo.png'}
+                      src={'imgs/works/002s.jpg'}
                       width="45"
                       alt="img"
                       / >
@@ -385,7 +385,7 @@ export default class Works extends React.Component {
                 </li>
               </Link>
 
-              <Link to="works_detail">
+              <Link to="works_detail/4">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>A.客室整備　B.客室の布...</p>
@@ -398,7 +398,7 @@ export default class Works extends React.Component {
                 
                   <div className="pf-Works-List-column-section">
                     <img
-                      src={IMG + 'list_dummy_photo.png'}
+                      src={'imgs/works/002s.jpg'}
                       width="45"
                       alt="img"
                       / >
@@ -412,7 +412,7 @@ export default class Works extends React.Component {
                 </li>
               </Link>
 
-              <Link to="works_detail">
+              <Link to="works_detail/5">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>駐車場管理業務（浜松...</p>
@@ -425,7 +425,7 @@ export default class Works extends React.Component {
                 
                   <div className="pf-Works-List-column-section">
                     <img
-                      src={IMG + 'list_dummy_photo.png'}
+                      src={'imgs/works/003s.jpg'}
                       width="45"
                       alt="img"
                       / >
