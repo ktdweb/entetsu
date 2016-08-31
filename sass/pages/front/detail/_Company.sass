@@ -7,26 +7,56 @@
 article#CompanyDetail
 
   section
+    table
+      padding-top: 0
+      font-size: $base-font-size
+      td
+        vertical-align: top
+        border-top: 1px solid #999
+        line-height: $base-spacing * 1.5
+      td:first-child
+        width: 12rem
     &:nth-of-type(1)
       padding-top: 220px
+      width: 70%
 
     &:nth-of-type(2)
       color: white
       margin-top: 280px
+      width: 100%
+      text-align: right
       h1
         color: white
+      div.ceo
+        margin-bottom: 3rem
+        p
+          margin-right: 0.5rem
+        img
+          border: 1px solid white
 
     &:nth-of-type(3)
       margin-top: 200px
+      table
+        padding-top: 0
 
     &:nth-of-type(4)
-      margin-top: 240px
+      margin-top: 100px
       h1
         width: 240px
-        margin-left: 280px
 
     &:nth-of-type(5)
-      margin-top: 280px
+      margin-top: 200px
+
+    &:nth-of-type(6)
+      width: 90%
+      margin-top: 0px
+      h3
+        clear: both
+        line-height: $small-spacing
+      img
+        float: left
+        margin-right: $base-spacing
+        margin-bottom: $base-spacing
 
   div.wrapper
     position: relative
@@ -39,7 +69,7 @@ article#CompanyDetail
     z-index: -100
 
   #plx02
-    top: -600px
+    top: 420px
     z-index: -50
     background-image: url('../imgs/detail/company/bg_detail.png')
     opacity: 1
@@ -78,7 +108,7 @@ article#CompanyDetail
     opacity: 1
 
   #plx07
-    top: 2400px
+    top: 3800px
     width: 1040px 
     height: 1040px
     z-index: -100

@@ -307,7 +307,7 @@ export default class Works extends React.Component {
               <Link to="works_detail">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
-                    <p>ホテル客室整備スタッフ</p>
+                    <p>クリーンスタッフ</p>
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
@@ -321,12 +321,12 @@ export default class Works extends React.Component {
                       width="45"
                       alt="img"
                       / >
-                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                    <p>事務所・工場内の日常清掃（玄関・通路・トイレ等）</p>
                   </div>
                 
                   <div className="pf-Works-List-column-footer">
-                    <span>時給: 860円</span>
-                    <span>17:00~19:30</span>
+                    <span>時給: 820円</span>
+                    <span>7:30~11:30</span>
                   </div>
                 </li>
               </Link>
@@ -334,7 +334,7 @@ export default class Works extends React.Component {
               <Link to="works_detail">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
-                    <p>ホテル客室整備スタッフ</p>
+                    <p>クリーンスタッフ</p>
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
@@ -348,12 +348,12 @@ export default class Works extends React.Component {
                       width="45"
                       alt="img"
                       / >
-                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                    <p>フロア・トイレ等の日常清掃</p>
                   </div>
                 
                   <div className="pf-Works-List-column-footer">
-                    <span>時給: 860円</span>
-                    <span>17:00~19:30</span>
+                    <span>時給: 830円</span>
+                    <span>8:00~12:00</span>
                   </div>
                 </li>
               </Link>
@@ -361,7 +361,7 @@ export default class Works extends React.Component {
               <Link to="works_detail">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
-                    <p>ホテル客室整備スタッフ</p>
+                    <p>クリーンスタッフ</p>
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
@@ -375,12 +375,12 @@ export default class Works extends React.Component {
                       width="45"
                       alt="img"
                       / >
-                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                    <p>遠鉄電車各駅舎での日常清掃（待合室・ホーム・階段・トイレ等）</p>
                   </div>
                 
                   <div className="pf-Works-List-column-footer">
-                    <span>時給: 860円</span>
-                    <span>17:00~19:30</span>
+                    <span>時給: 830円</span>
+                    <span>7:30~12:00</span>
                   </div>
                 </li>
               </Link>
@@ -388,7 +388,7 @@ export default class Works extends React.Component {
               <Link to="works_detail">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
-                    <p>ホテル客室整備スタッフ</p>
+                    <p>クリーンスタッフ</p>
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
@@ -402,12 +402,12 @@ export default class Works extends React.Component {
                       width="45"
                       alt="img"
                       / >
-                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                    <p>遠鉄電車各駅舎での日常清掃（待合室・ホーム・階段・トイレ等）</p>
                   </div>
                 
                   <div className="pf-Works-List-column-footer">
-                    <span>時給: 860円</span>
-                    <span>17:00~19:30</span>
+                    <span>時給: 830円</span>
+                    <span>12:00~16:30</span>
                   </div>
                 </li>
               </Link>
@@ -456,7 +456,8 @@ export default class Works extends React.Component {
             </section>
           </div>
 
-          <div className="pf-Works-Search">
+          {/*
+            <div className="pf-Works-Search">
             <div className="pf-Works-Search-slider">
               <h1>自分の好きな時間帯をみつける</h1>
 
@@ -495,6 +496,7 @@ export default class Works extends React.Component {
                 />
             </div>
           </div>
+          */}
         </div>
       </article>
     );

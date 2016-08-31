@@ -52,7 +52,7 @@ export default class Company extends React.Component {
           className="layer"
           data-depth="1">
           <img
-            src={IMG + 'bg.png'}
+            src={IMG + 'bg.jpg'}
             width="75%"
             alt="img"
             />
@@ -139,7 +139,7 @@ export default class Company extends React.Component {
               <img src={IMG + 'ceo_photo.jpg'} width="140" height="210" alt="CEO" />
             </div>
 
-            <img src={IMG + 'message.jpg'} width="500" height="317" alt="message" />
+            <img src={IMG + 'message.png'} width="500" height="317" alt="message" />
         </section>
 
         <section>
@@ -362,6 +362,7 @@ export default class Company extends React.Component {
             市民の立場・目線で地域の暮らしを支えます
           </p>
 
+          <h3></h3>
           <p>
             遠鉄アシストのお取引先は、浜松市内を中心に約1300社。<br />
             設備管理、清掃等様々な業務を通じて培った豊富な実績により、<br />

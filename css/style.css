@@ -7913,26 +7913,57 @@ article.pf-Detail {
   front/Building.jsxに関するクラスを定義
   prefixには`pf-Building`を付与
   */
+article#CompanyDetail section table {
+  padding-top: 0;
+  font-size: 1.6rem; }
+  article#CompanyDetail section table td {
+    vertical-align: top;
+    border-top: 1px solid #999;
+    line-height: 3rem; }
+  article#CompanyDetail section table td:first-child {
+    width: 12rem; }
+
 article#CompanyDetail section:nth-of-type(1) {
-  padding-top: 220px; }
+  padding-top: 220px;
+  width: 70%; }
 
 article#CompanyDetail section:nth-of-type(2) {
   color: white;
-  margin-top: 280px; }
+  margin-top: 280px;
+  width: 100%;
+  text-align: right; }
   article#CompanyDetail section:nth-of-type(2) h1 {
     color: white; }
+  article#CompanyDetail section:nth-of-type(2) div.ceo {
+    margin-bottom: 3rem; }
+    article#CompanyDetail section:nth-of-type(2) div.ceo p {
+      margin-right: 0.5rem; }
+    article#CompanyDetail section:nth-of-type(2) div.ceo img {
+      border: 1px solid white; }
 
 article#CompanyDetail section:nth-of-type(3) {
   margin-top: 200px; }
+  article#CompanyDetail section:nth-of-type(3) table {
+    padding-top: 0; }
 
 article#CompanyDetail section:nth-of-type(4) {
-  margin-top: 240px; }
+  margin-top: 100px; }
   article#CompanyDetail section:nth-of-type(4) h1 {
-    width: 240px;
-    margin-left: 280px; }
+    width: 240px; }
 
 article#CompanyDetail section:nth-of-type(5) {
-  margin-top: 280px; }
+  margin-top: 200px; }
+
+article#CompanyDetail section:nth-of-type(6) {
+  width: 90%;
+  margin-top: 0px; }
+  article#CompanyDetail section:nth-of-type(6) h3 {
+    clear: both;
+    line-height: 1rem; }
+  article#CompanyDetail section:nth-of-type(6) img {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem; }
 
 article#CompanyDetail div.wrapper {
   position: relative;
@@ -7945,7 +7976,7 @@ article#CompanyDetail #plx01 {
   z-index: -100; }
 
 article#CompanyDetail #plx02 {
-  top: -600px;
+  top: 420px;
   z-index: -50;
   background-image: url("../imgs/detail/company/bg_detail.png");
   opacity: 1; }
@@ -7984,7 +8015,7 @@ article#CompanyDetail #plx06 {
   opacity: 1; }
 
 article#CompanyDetail #plx07 {
-  top: 2400px;
+  top: 3800px;
   width: 1040px;
   height: 1040px;
   z-index: -100;
