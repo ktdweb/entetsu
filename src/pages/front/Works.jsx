@@ -321,6 +321,33 @@ export default class Works extends React.Component {
                       width="45"
                       alt="img"
                       / >
+                    <p>温浴施設内の日常清掃（脱衣所・洗い場・階段等）</p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 940円</span>
+                    <span>5:30~8:30</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>クリーンスタッフ</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
                     <p>事務所・工場内の日常清掃（玄関・通路・トイレ等）</p>
                   </div>
                 
@@ -361,7 +388,7 @@ export default class Works extends React.Component {
               <Link to="works_detail">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
-                    <p>クリーンスタッフ</p>
+                    <p>A.客室整備　B.客室の布...</p>
                     <img
                       src={IMG + 'list_btn_detail.png'}
                       width="40"
@@ -375,66 +402,39 @@ export default class Works extends React.Component {
                       width="45"
                       alt="img"
                       / >
-                    <p>遠鉄電車各駅舎での日常清掃（待合室・ホーム・階段・トイレ等）</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 830円</span>
-                    <span>7:30~12:00</span>
-                  </div>
-                </li>
-              </Link>
-
-              <Link to="works_detail">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>クリーンスタッフ</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>遠鉄電車各駅舎での日常清掃（待合室・ホーム・階段・トイレ等）</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 830円</span>
-                    <span>12:00~16:30</span>
-                  </div>
-                </li>
-              </Link>
-
-              <Link to="works_detail">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>ホテル客室整備スタッフ</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={IMG + 'list_dummy_photo.png'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
+                    <p>A.客室整備　B.客室の布団敷き</p>
                   </div>
                 
                   <div className="pf-Works-List-column-footer">
                     <span>時給: 860円</span>
-                    <span>17:00~19:30</span>
+                    <span>9:00~13:00</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="works_detail">
+                <li className="pf-Works-List-column">
+                  <div className="pf-Works-List-column-head">
+                    <p>駐車場管理業務（浜松...</p>
+                    <img
+                      src={IMG + 'list_btn_detail.png'}
+                      width="40"
+                      alt="img"
+                      />
+                  </div>
+                
+                  <div className="pf-Works-List-column-section">
+                    <img
+                      src={IMG + 'list_dummy_photo.png'}
+                      width="45"
+                      alt="img"
+                      / >
+                    <p>街中の駐車場で、売上金やサービス券の回収・集計、駐車場機械操作、車両誘導などをするお仕事です。未経験者歓迎！</p>
+                  </div>
+                
+                  <div className="pf-Works-List-column-footer">
+                    <span>時給: 800円</span>
+                    <span>5:45～20:00</span>
                   </div>
                 </li>
               </Link>

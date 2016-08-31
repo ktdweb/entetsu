@@ -7232,6 +7232,14 @@ var Works = function (_React$Component) {
         src: IMG + 'list_dummy_photo.png',
         width: '45',
         alt: 'img'
+      }), _react2.default.createElement('p', null, '温浴施設内の日常清掃（脱衣所・洗い場・階段等）')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 940円'), _react2.default.createElement('span', null, '5:30~8:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'クリーンスタッフ'), _react2.default.createElement('img', {
+        src: IMG + 'list_btn_detail.png',
+        width: '40',
+        alt: 'img'
+      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
+        src: IMG + 'list_dummy_photo.png',
+        width: '45',
+        alt: 'img'
       }), _react2.default.createElement('p', null, '事務所・工場内の日常清掃（玄関・通路・トイレ等）')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 820円'), _react2.default.createElement('span', null, '7:30~11:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'クリーンスタッフ'), _react2.default.createElement('img', {
         src: IMG + 'list_btn_detail.png',
         width: '40',
@@ -7240,7 +7248,7 @@ var Works = function (_React$Component) {
         src: IMG + 'list_dummy_photo.png',
         width: '45',
         alt: 'img'
-      }), _react2.default.createElement('p', null, 'フロア・トイレ等の日常清掃')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 830円'), _react2.default.createElement('span', null, '8:00~12:00')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'クリーンスタッフ'), _react2.default.createElement('img', {
+      }), _react2.default.createElement('p', null, 'フロア・トイレ等の日常清掃')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 830円'), _react2.default.createElement('span', null, '8:00~12:00')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'A.客室整備　B.客室の布...'), _react2.default.createElement('img', {
         src: IMG + 'list_btn_detail.png',
         width: '40',
         alt: 'img'
@@ -7248,7 +7256,7 @@ var Works = function (_React$Component) {
         src: IMG + 'list_dummy_photo.png',
         width: '45',
         alt: 'img'
-      }), _react2.default.createElement('p', null, '遠鉄電車各駅舎での日常清掃（待合室・ホーム・階段・トイレ等）')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 830円'), _react2.default.createElement('span', null, '7:30~12:00')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'クリーンスタッフ'), _react2.default.createElement('img', {
+      }), _react2.default.createElement('p', null, 'A.客室整備　B.客室の布団敷き')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '9:00~13:00')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, '駐車場管理業務（浜松...'), _react2.default.createElement('img', {
         src: IMG + 'list_btn_detail.png',
         width: '40',
         alt: 'img'
@@ -7256,15 +7264,7 @@ var Works = function (_React$Component) {
         src: IMG + 'list_dummy_photo.png',
         width: '45',
         alt: 'img'
-      }), _react2.default.createElement('p', null, '遠鉄電車各駅舎での日常清掃（待合室・ホーム・階段・トイレ等）')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 830円'), _react2.default.createElement('span', null, '12:00~16:30')))), _react2.default.createElement(_reactRouter.Link, { to: 'works_detail' }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', null, 'ホテル客室整備スタッフ'), _react2.default.createElement('img', {
-        src: IMG + 'list_btn_detail.png',
-        width: '40',
-        alt: 'img'
-      })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
-        src: IMG + 'list_dummy_photo.png',
-        width: '45',
-        alt: 'img'
-      }), _react2.default.createElement('p', null, 'リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 ')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 860円'), _react2.default.createElement('span', null, '17:00~19:30'))))), _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, {
+      }), _react2.default.createElement('p', null, '街中の駐車場で、売上金やサービス券の回収・集計、駐車場機械操作、車両誘導などをするお仕事です。未経験者歓迎！')), _react2.default.createElement('div', { className: 'pf-Works-List-column-footer' }, _react2.default.createElement('span', null, '時給: 800円'), _react2.default.createElement('span', null, '5:45～20:00'))))), _react2.default.createElement('div', null, _react2.default.createElement(_reactRouter.Link, {
         to: 'works_detail',
         onClick: this.fadeIn.bind(this)
       }, _react2.default.createElement('img', {
