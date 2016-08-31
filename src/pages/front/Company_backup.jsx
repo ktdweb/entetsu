@@ -63,11 +63,6 @@ export default class Company extends React.Component {
             id="plx02"
             className="layer"
             data-depth="0">
-            <img
-              src={IMG + 'bg_detail.png'}
-              width="100%"
-              alt="img"
-              />
           </div>
 
           <div
@@ -136,10 +131,10 @@ export default class Company extends React.Component {
 
             <div className="ceo">
               <p>取締役社長<br />藤野 聡</p>
-              <img src={IMG + 'ceo_photo.jpg'} width="140" height="210" alt="CEO" />
+              <img src="imgs/detail/company_ceo_photo.jpg" width="140" height="210" alt="CEO" />
             </div>
 
-            <img src={IMG + 'message.jpg'} width="500" height="317" alt="message" />
+            <img src="imgs/detail/company_message.png" width="500" height="317" alt="message" />
         </section>
 
         <section>
@@ -333,7 +328,7 @@ export default class Company extends React.Component {
           </table>
 
           <p>
-            <img src={IMG + 'map.jpg'} width="640" height="164" alt="map" />
+            <img src="imgs/detail/map.jpg" width="640" height="164" alt="map" />
           </p>
 
           <div id="company05"></div>
@@ -357,7 +352,7 @@ export default class Company extends React.Component {
           <h3>指定管理業務</h3>
 
           <p>
-            <img src={IMG + 'banner00.jpg'} width="260" height="98" alt="指定管理事業" />
+            <img src="imgs/detail/company_banner00.jpg" width="260" height="98" alt="指定管理事業" />
             行政の指定管理者として公共事業業務を受託<br />
             市民の立場・目線で地域の暮らしを支えます
           </p>
@@ -404,7 +399,7 @@ export default class Company extends React.Component {
           <p>
 
             <a href="http://www.entetsu.co.jp/kensa/" target="_blank" >
-              <img src={IMG + 'banner01.jpg'} width="260" height="98" alt="食品検査" />
+              <img src="imgs/detail/company_banner01.jpg" width="260" height="98" alt="食品検査" />
             </a>
 
             全国の上場企業をはじめ、地元企業など<br />
@@ -416,7 +411,7 @@ export default class Company extends React.Component {
           <p>
 
             <a href="http://e-tomitsuka.benry.com/" target="_blank" >
-              <img src={IMG + 'banner02.jpg'} width="260" height="98" alt="ベンリ− " />
+              <img src="imgs/detail/company_banner02.jpg" width="260" height="98" alt="ベンリ− " />
             </a>
 
             暮らしの困った解決!<br />
