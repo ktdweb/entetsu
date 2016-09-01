@@ -17,32 +17,16 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/cleaning#h00">
+                <Link to="/cleaning">
                   清掃</Link>
               </p>
               <ul>
                 <li>
-                  <Link to="/cleaning_detail#h01">
-                    サービス案内
-                    </Link>
-                  </li>
-
-
-                <li>
-                  <Link to="/cleaning_detail#h02">
-                  清掃業務管理
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/cleaning_detail#h03">
-                  特徴
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/cleaning_detail#h04">
-                  サポート
+                  <Link to="/cleaning_detail">
+                    サービス案内<br />
+                    清掃業務管理<br />
+                    特徴<br />
+                    サポート
                   </Link>
                 </li>
               </ul>
@@ -51,28 +35,16 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/building#h00">
+                  <Link to="/building">
                   ビル管理
                   </Link>
               </p>
               <ul>
                 <li>
-                  <Link to="/building_detail#h01">
-                  サービス案内
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/building_detail#h02">
-                  取り組み
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/building_detail#h03">
-                  特徴
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/building_detail#h04">
+                  <Link to="/building_detail">
+                  サービス案内<br />
+                  取り組み<br />
+                  特徴<br />
                   サポート
                   </Link>
                 </li>
@@ -82,60 +54,37 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/mansion_detail#h00">
+                <Link to="/mansion">
                   マンション管理
                   </Link>
               </p>
+
               <ul>
                 <li>
-                  <Link to="/mansion_detail#h01">
-                  サービス案内
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/mansion_detail#h02">
-                  取り組み
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/mansion_detail#h03">
-                  特徴
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/mansion_detail#h04">
+                  <Link to="/mansion_detail">
+                  サービス案内<br />
+                  取り組み<br />
+                  特徴<br />
                   サポート
                   </Link>
-                  </li>
+                </li>
               </ul>
             </div>
 
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/driving#h00">
+                <Link to="/driving">
                   運行管理
                 </Link>
               </p>
               <ul>
                 <li>
-                  <Link to="/driving_detail#h01">
-                  サービス案内
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/driving_detail#h02">
-                  導入事例
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/driving_detail#h03">
-                  特徴
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/driving_detail#h04">
-                  安全・安心・快適の取組
+                  <Link to="/driving_detail">
+                    サービス案内<br />
+                    導入事例<br />
+                    特徴<br />
+                    安全・安心・快適の取組
                   </Link>
                   </li>
               </ul>
@@ -144,31 +93,21 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/company#h00">
+                <Link to="/company">
                   会社案内
                   </Link>
               </p>
               <ul>
                 <li>
-                  <Link to="/company#h01">
-                  遠鉄アシストについて
+                  <Link to="/company">
+                    遠鉄アシストについて<br />
+                    社長メッセージ<br />
+                    会社概要<br />
                   </Link>
-                  </li>
-                <li>
-                  <Link to="/company#h02">
-                  社長メッセージ
+                  <Link to="/company#company05">
+                    戦略事業
                   </Link>
-                  </li>
-                <li>
-                  <Link to="/company#h03">
-                  会社概要
-                  </Link>
-                  </li>
-                <li>
-                  <Link to="/company#h04">
-                  戦略事業
-                  </Link>
-                   </li>
+                 </li>
               </ul>
             </div>
 
@@ -185,9 +124,12 @@ export default class Footer extends React.Component {
                   </li>
 
                 <li>
-                  <Link to="/privacy">
+                  <a
+                    href="#"
+                    onClick={this.enableModal.bind(this)}
+                    >
                   個人情報取扱について
-                  </Link>
+                  </a>
                   </li>
               </ul>
             </div>
@@ -365,7 +307,55 @@ export default class Footer extends React.Component {
             </div>
           </div>
         </div>
+
+        <div
+          id="footerPrivacy"
+          className="modal"
+          onClick={this.disableModal.bind(this)}
+          >
+          <div>
+            <h1>個人情報の取り扱いについて</h1>
+
+            <p>
+遠鉄アシスト株式会社は、以下に示す個人情報保護方針を定め、社全体で個人情報保護に取り組みます。
+            </p>
+
+            <p className="text-left">
+              個人情報保護に関する法令、国が定める指針、その他の規範を遵守します。<br />
+個人情報の利用目的を明示し、適切に個人情報の取得、利用および提供を行います。取得した個人情報は、法令で定める場合を除き、明示した利用目的の範囲内でのみ利用します。<br />
+取得した個人情報は、法令で定める場合を除き、本人の同意なしに第三者への提供は行いません。<br />
+個人情報保護に関して、組織的、物理的、人的、技術的に適切な対策を実施し、安全管理措置を行います。<br />
+個人情報保護に関するルールを策定、周知し、個人情報を適切に取り扱うよう教育、啓発を行います。<br />
+個人情報の取り扱い、管理体制および取り組みに関する点検を実施し、継続的に改善・見直しを行います。<br />
+外部委託を行う際には、適格性を十分に審査し、情報管理を徹底するよう指導、監督します。<br />
+本人の求めによる個人情報の開示、訂正、追加、削除、もしくは利用目的の通知を法令に従い行うとともに、ご意見、ご相談に関して適切に対応します。
+            </p>
+
+            <p>
+              「個人情報の取扱いに関する採用応募者同意書」<br />
+               エントリーの際ご利用ください
+            </p>
+
+            <a
+              href="/pdf/privacy.pdf"
+              target="_blank"
+              >ダウンロード</a>
+          </div>
+        </div>
+
       </footer>
     );
+  }
+
+  enableModal(e) {
+    e.preventDefault;
+    let el = document.getElementById('footerPrivacy');
+    el.classList.toggle('enable');
+  }
+
+  disableModal(e) {
+    e.preventDefault;
+    let el = document.getElementById('footerPrivacy');
+    el.classList.toggle('enable');
   }
 }
