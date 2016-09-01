@@ -143,11 +143,6 @@ export default class MansionDetail extends React.Component {
             id="plx06"
             className="layer"
             data-depth="0">
-            <img
-              src={IMG + 'bg_header.jpg'}
-              width="100%"
-              alt="img"
-              />
           </div>
           
           <div

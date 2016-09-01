@@ -8,274 +8,270 @@ export default class Footer extends React.Component {
   }
 
   render() {
-    let root = this.props.route.global.documentRoot;
-
     return (
       <footer id="Footer">
-        <div id="footera">
-          <nav className="lf-contents">
-            <div>
-              <p>
-                <i className="fa fa-plus-square" />
-                <a href="/cleaning">
-                  清掃</a>
-              </p>
-              <ul>
-                <li>
-                  <a href="/cleaning_detail">
-                    サービス案内<br />
-                    清掃業務管理<br />
-                    特徴<br />
-                    サポート
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p>
-                <i className="fa fa-plus-square" />
-                  <a href="/building">
-                  ビル管理
-                  </a>
-              </p>
-              <ul>
-                <li>
-                  <a href="/building_detail">
+        <nav className="lf-contents">
+          <div>
+            <p>
+              <i className="fa fa-plus-square" />
+              <a href="/cleaning">
+                清掃</a>
+            </p>
+            <ul>
+              <li>
+                <a href="/cleaning_detail">
                   サービス案内<br />
-                  取り組み<br />
+                  清掃業務管理<br />
                   特徴<br />
                   サポート
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p>
-                <i className="fa fa-plus-square" />
-                <a href="/mansion">
-                  マンション管理
-                  </a>
-              </p>
-
-              <ul>
-                <li>
-                  <a href="/mansion_detail">
-                  サービス案内<br />
-                  取り組み<br />
-                  特徴<br />
-                  サポート
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p>
-                <i className="fa fa-plus-square" />
-                <a href="/driving">
-                  運行管理
                 </a>
-              </p>
-              <ul>
-                <li>
-                  <a href="/driving_detail">
-                    サービス案内<br />
-                    導入事例<br />
-                    特徴<br />
-                    安全・安心・快適の取組
-                  </a>
-                  </li>
-              </ul>
-            </div>
+              </li>
+            </ul>
+          </div>
 
-            <div>
-              <p>
-                <i className="fa fa-plus-square" />
+          <div>
+            <p>
+              <i className="fa fa-plus-square" />
+                <a href="/building">
+                ビル管理
+                </a>
+            </p>
+            <ul>
+              <li>
+                <a href="/building_detail">
+                サービス案内<br />
+                取り組み<br />
+                特徴<br />
+                サポート
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p>
+              <i className="fa fa-plus-square" />
+              <a href="/mansion">
+                マンション管理
+                </a>
+            </p>
+
+            <ul>
+              <li>
+                <a href="/mansion_detail">
+                サービス案内<br />
+                取り組み<br />
+                特徴<br />
+                サポート
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p>
+              <i className="fa fa-plus-square" />
+              <a href="/driving">
+                運行管理
+              </a>
+            </p>
+            <ul>
+              <li>
+                <a href="/driving_detail">
+                  サービス案内<br />
+                  導入事例<br />
+                  特徴<br />
+                  安全・安心・快適の取組
+                </a>
+                </li>
+            </ul>
+          </div>
+
+          <div>
+            <p>
+              <i className="fa fa-plus-square" />
+              <a href="/company">
+                会社案内
+                </a>
+            </p>
+            <ul>
+              <li>
                 <a href="/company">
-                  会社案内
-                  </a>
-              </p>
-              <ul>
-                <li>
-                  <a href="/company">
-                    遠鉄アシストについて<br />
-                    社長メッセージ<br />
-                    会社概要<br />
-                  </a>
-                  <a href="/company#company05">
-                    戦略事業
-                  </a>
-                 </li>
-              </ul>
-            </div>
-
-            <div>
-              <p>
-                <i className="fa fa-plus-square" />
-                その他
-              </p>
-              <ul>
-                <li>
-                  <a href="/works">
-                  お仕事を探す
-                  </a>
-                  </li>
-
-                <li>
-                  <a
-                    href="#"
-                    onClick={this.enableModal.bind(this)}
-                    >
-                  個人情報取扱について
-                  </a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
-
-          <div className="lf-external">
-            <div>
-              <span>公共事業リンク</span>
-              <p>
-                <a
-                  target="_blank"
-                  href="http://www.entetsuassist-dms.com/hamamatsu-jyo/"
-                  >
-                  <img
-                    src="/imgs/banners/01.jpg"
-                    width="140"
-                    height="35"
-                    alt="浜松城公園"
-                    />
+                  遠鉄アシストについて<br />
+                  社長メッセージ<br />
+                  会社概要<br />
                 </a>
-
-                <a
-                  target="_blank"
-                  href="http://www.hamamatsu-navi.jp/matsuri/"
-                  >
-                  <img
-                    src="/imgs/banners/02.jpg"
-                    width="140"
-                    height="35"
-                    alt="浜松まつり会館"
-                    />
+                <a href="/company#company05">
+                  戦略事業
                 </a>
+               </li>
+            </ul>
+          </div>
 
-                <a
-                  target="_blank"
-                  href="http://www.ryuyo-kaiyopark.jp/"
-                  >
-                  <img
-                    src="/imgs/banners/04.jpg"
-                    width="140"
-                    height="35"
-                    alt="竜洋海洋公園"
-                    />
+          <div>
+            <p>
+              <i className="fa fa-plus-square" />
+              その他
+            </p>
+            <ul>
+              <li>
+                <a href="/works">
+                お仕事を探す
                 </a>
+                </li>
 
+              <li>
                 <a
-                  target="_blank"
-                  href="http://www.h-seisyounen-ie.com/"
+                  href="#"
+                  onClick={this.enableModal.bind(this)}
                   >
-                  <img
-                    src="/imgs/banners/05.jpg"
-                    width="140"
-                    height="35"
-                    alt="青少年の家"
-                    />
+                個人情報取扱について
                 </a>
-              </p>
+                </li>
+            </ul>
+          </div>
+        </nav>
 
-              <p>
-                <a
-                  target="_blank"
-                  href="http://www.entetsuassist-dms.com/busparking/"
-                  >
-                  <img
-                    src="/imgs/banners/06.jpg"
-                    width="140"
-                    height="35"
-                    alt="観光バス駐車場"
-                    />
-                </a>
-
-                <a
-                  target="_blank"
-                  href="http://www.hamamatsu-navi.jp/parking/"
-                  >
-                  <img
-                    src="/imgs/banners/07.jpg"
-                    width="140"
-                    height="35"
-                    alt="浜松市営駐車場"
-                    />
-                </a>
-   
-                <a
-                  target="_blank"
-                  href="http://www.entetsuassist-dms.com/sanaru-park/"
-                  >
-                  <img
-                    src="/imgs/banners/08.jpg"
-                    width="140"
-                    height="35"
-                    alt="佐鳴湖公園"
-                    />
-                </a>
-              </p>
-            </div>
-
-            <div>
-              <span>関連リンク</span>
-              <p>
-                <a
-                  target="_blank"
-                  href="https://netsuper.entstore.co.jp/"
-                  >
-                  <img
-                    src="/imgs/links/01.jpg"
-                    width="140"
-                    height="35"
-                    alt="ネットスーパー"
-                    />
-                </a>
-
-                <a
-                  target="_blank"
-                  href="https://cards.entetsu.co.jp/"
-                  >
-                  <img
-                    src="/imgs/links/02.jpg"
-                    width="140"
-                    height="35"
-                    alt="えんてつカード"
-                    />
-                </a>
-              </p>
-
-              <p>
+        <div className="lf-external">
+          <div>
+            <span>公共事業リンク</span>
+            <p>
+              <a
+                target="_blank"
+                href="http://www.entetsuassist-dms.com/hamamatsu-jyo/"
+                >
                 <img
-                  src="/imgs/links/03.jpg"
+                  src="/imgs/banners/01.jpg"
                   width="140"
                   height="35"
-                  alt="子育て中"
+                  alt="浜松城公園"
                   />
+              </a>
 
-                <a
-                  target="_blank"
-                  href="https://cards.entetsu.co.jp/kidsclub/"
-                  >
-                  <img
-                    src="/imgs/links/04.jpg"
-                    width="140"
-                    height="35"
-                    alt="えんてつカード キッズクラブ"
-                    />
-                </a>
-              </p>
-            </div>
+              <a
+                target="_blank"
+                href="http://www.hamamatsu-navi.jp/matsuri/"
+                >
+                <img
+                  src="/imgs/banners/02.jpg"
+                  width="140"
+                  height="35"
+                  alt="浜松まつり会館"
+                  />
+              </a>
+
+              <a
+                target="_blank"
+                href="http://www.ryuyo-kaiyopark.jp/"
+                >
+                <img
+                  src="/imgs/banners/04.jpg"
+                  width="140"
+                  height="35"
+                  alt="竜洋海洋公園"
+                  />
+              </a>
+
+              <a
+                target="_blank"
+                href="http://www.h-seisyounen-ie.com/"
+                >
+                <img
+                  src="/imgs/banners/05.jpg"
+                  width="140"
+                  height="35"
+                  alt="青少年の家"
+                  />
+              </a>
+            </p>
+
+            <p>
+              <a
+                target="_blank"
+                href="http://www.entetsuassist-dms.com/busparking/"
+                >
+                <img
+                  src="/imgs/banners/06.jpg"
+                  width="140"
+                  height="35"
+                  alt="観光バス駐車場"
+                  />
+              </a>
+
+              <a
+                target="_blank"
+                href="http://www.hamamatsu-navi.jp/parking/"
+                >
+                <img
+                  src="/imgs/banners/07.jpg"
+                  width="140"
+                  height="35"
+                  alt="浜松市営駐車場"
+                  />
+              </a>
+ 
+              <a
+                target="_blank"
+                href="http://www.entetsuassist-dms.com/sanaru-park/"
+                >
+                <img
+                  src="/imgs/banners/08.jpg"
+                  width="140"
+                  height="35"
+                  alt="佐鳴湖公園"
+                  />
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <span>関連リンク</span>
+            <p>
+              <a
+                target="_blank"
+                href="https://netsuper.entstore.co.jp/"
+                >
+                <img
+                  src="/imgs/links/01.jpg"
+                  width="140"
+                  height="35"
+                  alt="ネットスーパー"
+                  />
+              </a>
+
+              <a
+                target="_blank"
+                href="https://cards.entetsu.co.jp/"
+                >
+                <img
+                  src="/imgs/links/02.jpg"
+                  width="140"
+                  height="35"
+                  alt="えんてつカード"
+                  />
+              </a>
+            </p>
+
+            <p>
+              <img
+                src="/imgs/links/03.jpg"
+                width="140"
+                height="35"
+                alt="子育て中"
+                />
+
+              <a
+                target="_blank"
+                href="https://cards.entetsu.co.jp/kidsclub/"
+                >
+                <img
+                  src="/imgs/links/04.jpg"
+                  width="140"
+                  height="35"
+                  alt="えんてつカード キッズクラブ"
+                  />
+              </a>
+            </p>
           </div>
         </div>
 
@@ -350,12 +346,15 @@ export default class Footer extends React.Component {
   enableModal(e) {
     e.preventDefault;
     let el = document.getElementById('footerPrivacy');
-    el.classList.toggle('enable');
+    el.classList.add('enable');
+
+    let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+    el.style.height = height + 'px'; 
   }
 
   disableModal(e) {
     e.preventDefault;
     let el = document.getElementById('footerPrivacy');
-    el.classList.toggle('enable');
+    el.classList.remove('enable');
   }
 }

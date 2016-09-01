@@ -1,7 +1,7 @@
 /*
-  # pages/front/Building.sass
-  front/Building.jsxに関するクラスを定義  
-  prefixには`pf-Building`を付与
+  # pages/front/Company.sass
+  front/Company.jsxに関するクラスを定義  
+  prefixには`pf-Company`を付与
   */
 
 article#CompanyDetail
@@ -9,13 +9,16 @@ article#CompanyDetail
   section
     table
       padding-top: 0
-      font-size: $base-font-size
+      border-collapse: collapse
       td
+        font-size: $base-font-size * 0.9
         vertical-align: top
         border-top: 1px solid #999
-        line-height: $base-spacing * 1.5
+        line-height: $base-spacing
+        padding: $small-spacing 0
       td:first-child
         width: 12rem
+
     &:nth-of-type(1)
       padding-top: 220px
       width: 70%
@@ -35,23 +38,27 @@ article#CompanyDetail
           border: 1px solid white
 
     &:nth-of-type(3)
-      margin-top: 200px
+      margin-top: 220px
+      width: 70%
       table
-        padding-top: 0
+        td:first-child
+          width: 14rem
 
     &:nth-of-type(4)
-      margin-top: 100px
-      width: 80%
+      margin-top: 60px
+      width: 70%
+      table
+        td:first-child
+          width: 14rem
       h1
         width: 240px
 
     &:nth-of-type(5)
-      margin-top: 200px
+      margin-top: 60px
 
     &:nth-of-type(6)
       width: 90%
       margin-top: 0px
-      font-size: $base-font-size * 0.3
       h3
         clear: both
         line-height: $small-spacing
@@ -110,7 +117,7 @@ article#CompanyDetail
     opacity: 1
 
   #plx07
-    top: 3800px
+    top: 3600px
     width: 1040px 
     height: 1040px
     z-index: -100

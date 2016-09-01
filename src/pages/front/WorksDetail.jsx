@@ -243,11 +243,17 @@ export default class WorksDetail extends React.Component {
   enableModal() {
     let el = document.getElementById('modal');
     el.classList.toggle('enable');
+
+    let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+    el.style.height = height + 'px'; 
   }
 
   enableModal2() {
     let el = document.getElementById('modal2');
     el.classList.toggle('enable');
+
+    let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+    el.style.height = height + 'px'; 
   }
 
   disableModal() {
