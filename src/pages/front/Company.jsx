@@ -336,7 +336,6 @@ export default class Company extends React.Component {
             <img src={IMG + 'map.jpg'} width="640" height="164" alt="map" />
           </p>
 
-          <div id="company05"></div>
           <p>
             [経路] <br />
             JR浜松駅北口を出て、遠鉄バスターミナルの<br />
@@ -345,11 +344,10 @@ export default class Company extends React.Component {
             交番の右手に事務所フロア入口があります。<br />
             受付は11階エレベーターを降り、左手正面となります。
           </p>
+          <div id="company05"></div>
         </section>
 
-        <section id="company04" className="odd">
-
-        </section>
+        <section></section>
 
         <section>
           <h1>遠鉄アシストの戦略事業</h1> 

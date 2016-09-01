@@ -8017,7 +8017,8 @@ article#CompanyDetail section:nth-of-type(3) {
     padding-top: 0; }
 
 article#CompanyDetail section:nth-of-type(4) {
-  margin-top: 100px; }
+  margin-top: 100px;
+  width: 80%; }
   article#CompanyDetail section:nth-of-type(4) h1 {
     width: 240px; }
 
@@ -8026,7 +8027,8 @@ article#CompanyDetail section:nth-of-type(5) {
 
 article#CompanyDetail section:nth-of-type(6) {
   width: 90%;
-  margin-top: 0px; }
+  margin-top: 0px;
+  font-size: 0.48rem; }
   article#CompanyDetail section:nth-of-type(6) h3 {
     clear: both;
     line-height: 1rem; }
