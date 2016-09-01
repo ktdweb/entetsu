@@ -26,7 +26,7 @@ export default class Header extends React.Component {
           <div>
             <a href="/">
               <img
-                src="imgs/logo.png"
+                src="/imgs/logo.png"
                 width="170"
                 height="40"
                 alt="logo"
@@ -36,7 +36,7 @@ export default class Header extends React.Component {
 
           <div>
             <img
-              src="imgs/tel.png"
+              src="/imgs/tel.png"
               width="380"
               height="40"
               alt="tel"
@@ -47,44 +47,44 @@ export default class Header extends React.Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">
+              <a href="/">
                 HOME
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/works">
+              <a href="/works">
                 仕事を探す
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/cleaning">
+              <a href="/cleaning">
                 清掃でお困りの方
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/building">
+              <a href="/building">
                 ビル管理でお困りの方
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/mansion">
+              <a href="/mansion">
                 マンション管理でお困りの方
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/driving">
+              <a href="/driving">
                 運転・送迎でお困りの方
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/company#company05">
+              <a href="/company/strategy">
                 戦略事業
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/company">
+              <a href="/company">
                 会社案内
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>

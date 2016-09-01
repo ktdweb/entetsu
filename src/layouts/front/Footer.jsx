@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { a } from 'react-router'
 
 export default class Footer extends React.Component {
 
@@ -12,22 +12,22 @@ export default class Footer extends React.Component {
 
     return (
       <footer id="Footer">
-        <div id="footerLink">
+        <div id="footera">
           <nav className="lf-contents">
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/cleaning">
-                  清掃</Link>
+                <a href="/cleaning">
+                  清掃</a>
               </p>
               <ul>
                 <li>
-                  <Link to="/cleaning_detail">
+                  <a href="/cleaning_detail">
                     サービス案内<br />
                     清掃業務管理<br />
                     特徴<br />
                     サポート
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -35,18 +35,18 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                  <Link to="/building">
+                  <a href="/building">
                   ビル管理
-                  </Link>
+                  </a>
               </p>
               <ul>
                 <li>
-                  <Link to="/building_detail">
+                  <a href="/building_detail">
                   サービス案内<br />
                   取り組み<br />
                   特徴<br />
                   サポート
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -54,19 +54,19 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/mansion">
+                <a href="/mansion">
                   マンション管理
-                  </Link>
+                  </a>
               </p>
 
               <ul>
                 <li>
-                  <Link to="/mansion_detail">
+                  <a href="/mansion_detail">
                   サービス案内<br />
                   取り組み<br />
                   特徴<br />
                   サポート
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -74,18 +74,18 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/driving">
+                <a href="/driving">
                   運行管理
-                </Link>
+                </a>
               </p>
               <ul>
                 <li>
-                  <Link to="/driving_detail">
+                  <a href="/driving_detail">
                     サービス案内<br />
                     導入事例<br />
                     特徴<br />
                     安全・安心・快適の取組
-                  </Link>
+                  </a>
                   </li>
               </ul>
             </div>
@@ -93,20 +93,20 @@ export default class Footer extends React.Component {
             <div>
               <p>
                 <i className="fa fa-plus-square" />
-                <Link to="/company">
+                <a href="/company">
                   会社案内
-                  </Link>
+                  </a>
               </p>
               <ul>
                 <li>
-                  <Link to="/company">
+                  <a href="/company">
                     遠鉄アシストについて<br />
                     社長メッセージ<br />
                     会社概要<br />
-                  </Link>
-                  <Link to="/company#company05">
+                  </a>
+                  <a href="/company/strategy">
                     戦略事業
-                  </Link>
+                  </a>
                  </li>
               </ul>
             </div>
@@ -118,9 +118,9 @@ export default class Footer extends React.Component {
               </p>
               <ul>
                 <li>
-                  <Link to="/works">
+                  <a href="/works">
                   お仕事を探す
-                  </Link>
+                  </a>
                   </li>
 
                 <li>
@@ -144,7 +144,7 @@ export default class Footer extends React.Component {
                   href="http://www.entetsuassist-dms.com/hamamatsu-jyo/"
                   >
                   <img
-                    src="imgs/banners/01.jpg"
+                    src="/imgs/banners/01.jpg"
                     width="140"
                     height="35"
                     alt="浜松城公園"
@@ -156,7 +156,7 @@ export default class Footer extends React.Component {
                   href="http://www.hamamatsu-navi.jp/matsuri/"
                   >
                   <img
-                    src="imgs/banners/02.jpg"
+                    src="/imgs/banners/02.jpg"
                     width="140"
                     height="35"
                     alt="浜松まつり会館"
@@ -168,7 +168,7 @@ export default class Footer extends React.Component {
                   href="http://www.ryuyo-kaiyopark.jp/"
                   >
                   <img
-                    src="imgs/banners/04.jpg"
+                    src="/imgs/banners/04.jpg"
                     width="140"
                     height="35"
                     alt="竜洋海洋公園"
@@ -180,7 +180,7 @@ export default class Footer extends React.Component {
                   href="http://www.h-seisyounen-ie.com/"
                   >
                   <img
-                    src="imgs/banners/05.jpg"
+                    src="/imgs/banners/05.jpg"
                     width="140"
                     height="35"
                     alt="青少年の家"
@@ -194,7 +194,7 @@ export default class Footer extends React.Component {
                   href="http://www.entetsuassist-dms.com/busparking/"
                   >
                   <img
-                    src="imgs/banners/06.jpg"
+                    src="/imgs/banners/06.jpg"
                     width="140"
                     height="35"
                     alt="観光バス駐車場"
@@ -206,7 +206,7 @@ export default class Footer extends React.Component {
                   href="http://www.hamamatsu-navi.jp/parking/"
                   >
                   <img
-                    src="imgs/banners/07.jpg"
+                    src="/imgs/banners/07.jpg"
                     width="140"
                     height="35"
                     alt="浜松市営駐車場"
@@ -218,7 +218,7 @@ export default class Footer extends React.Component {
                   href="http://www.entetsuassist-dms.com/sanaru-park/"
                   >
                   <img
-                    src="imgs/banners/08.jpg"
+                    src="/imgs/banners/08.jpg"
                     width="140"
                     height="35"
                     alt="佐鳴湖公園"
@@ -235,7 +235,7 @@ export default class Footer extends React.Component {
                   href="https://netsuper.entstore.co.jp/"
                   >
                   <img
-                    src="imgs/links/01.jpg"
+                    src="/imgs/links/01.jpg"
                     width="140"
                     height="35"
                     alt="ネットスーパー"
@@ -247,7 +247,7 @@ export default class Footer extends React.Component {
                   href="https://cards.entetsu.co.jp/"
                   >
                   <img
-                    src="imgs/links/02.jpg"
+                    src="/imgs/links/02.jpg"
                     width="140"
                     height="35"
                     alt="えんてつカード"
@@ -257,7 +257,7 @@ export default class Footer extends React.Component {
 
               <p>
                 <img
-                  src="imgs/links/03.jpg"
+                  src="/imgs/links/03.jpg"
                   width="140"
                   height="35"
                   alt="子育て中"
@@ -268,7 +268,7 @@ export default class Footer extends React.Component {
                   href="https://cards.entetsu.co.jp/kidsclub/"
                   >
                   <img
-                    src="imgs/links/04.jpg"
+                    src="/imgs/links/04.jpg"
                     width="140"
                     height="35"
                     alt="えんてつカード キッズクラブ"
@@ -284,7 +284,7 @@ export default class Footer extends React.Component {
             <div>
               <a href="/">
                 <img
-                  src="imgs/logo_footer.png"
+                  src="/imgs/logo_footer.png"
                   width="140"
                   height="35"
                   alt="logo"

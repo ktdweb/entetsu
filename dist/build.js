@@ -184,6 +184,12 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     main: _Cover2.default,
     top: _Top2.default,
     footer: _Footer2.default
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/company/:page',
+  global: root,
+  components: {
+    header: _Header4.default,
+    main: _Company2.default,
+    footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/company',
   global: root,
   components: {
@@ -1420,14 +1426,14 @@ var Footer = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('footer', { id: 'Footer' }, _react2.default.createElement('div', { id: 'footerLink' }, _react2.default.createElement('nav', { className: 'lf-contents' }, _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/cleaning' }, '清掃')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/cleaning_detail' }, 'サービス案内', _react2.default.createElement('br', null), '清掃業務管理', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/building' }, 'ビル管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/building_detail' }, 'サービス案内', _react2.default.createElement('br', null), '取り組み', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/mansion' }, 'マンション管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/mansion_detail' }, 'サービス案内', _react2.default.createElement('br', null), '取り組み', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/driving' }, '運行管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/driving_detail' }, 'サービス案内', _react2.default.createElement('br', null), '導入事例', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), '安全・安心・快適の取組')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement(_reactRouter.Link, { to: '/company' }, '会社案内')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company' }, '遠鉄アシストについて', _react2.default.createElement('br', null), '社長メッセージ', _react2.default.createElement('br', null), '会社概要', _react2.default.createElement('br', null)), _react2.default.createElement(_reactRouter.Link, { to: '/company#company05' }, '戦略事業')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'その他'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/works' }, 'お仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement('a', {
+      return _react2.default.createElement('footer', { id: 'Footer' }, _react2.default.createElement('div', { id: 'footera' }, _react2.default.createElement('nav', { className: 'lf-contents' }, _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement('a', { href: '/cleaning' }, '清掃')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/cleaning_detail' }, 'サービス案内', _react2.default.createElement('br', null), '清掃業務管理', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement('a', { href: '/building' }, 'ビル管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/building_detail' }, 'サービス案内', _react2.default.createElement('br', null), '取り組み', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement('a', { href: '/mansion' }, 'マンション管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/mansion_detail' }, 'サービス案内', _react2.default.createElement('br', null), '取り組み', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), 'サポート')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement('a', { href: '/driving' }, '運行管理')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/driving_detail' }, 'サービス案内', _react2.default.createElement('br', null), '導入事例', _react2.default.createElement('br', null), '特徴', _react2.default.createElement('br', null), '安全・安心・快適の取組')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), _react2.default.createElement('a', { href: '/company' }, '会社案内')), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/company' }, '遠鉄アシストについて', _react2.default.createElement('br', null), '社長メッセージ', _react2.default.createElement('br', null), '会社概要', _react2.default.createElement('br', null)), _react2.default.createElement('a', { href: '/company/strategy' }, '戦略事業')))), _react2.default.createElement('div', null, _react2.default.createElement('p', null, _react2.default.createElement('i', { className: 'fa fa-plus-square' }), 'その他'), _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/works' }, 'お仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement('a', {
         href: '#',
         onClick: this.enableModal.bind(this)
       }, '個人情報取扱について'))))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/hamamatsu-jyo/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/01.jpg',
+        src: '/imgs/banners/01.jpg',
         width: '140',
         height: '35',
         alt: '浜松城公園'
@@ -1435,7 +1441,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'http://www.hamamatsu-navi.jp/matsuri/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/02.jpg',
+        src: '/imgs/banners/02.jpg',
         width: '140',
         height: '35',
         alt: '浜松まつり会館'
@@ -1443,7 +1449,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'http://www.ryuyo-kaiyopark.jp/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/04.jpg',
+        src: '/imgs/banners/04.jpg',
         width: '140',
         height: '35',
         alt: '竜洋海洋公園'
@@ -1451,7 +1457,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'http://www.h-seisyounen-ie.com/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/05.jpg',
+        src: '/imgs/banners/05.jpg',
         width: '140',
         height: '35',
         alt: '青少年の家'
@@ -1459,7 +1465,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/busparking/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/06.jpg',
+        src: '/imgs/banners/06.jpg',
         width: '140',
         height: '35',
         alt: '観光バス駐車場'
@@ -1467,7 +1473,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'http://www.hamamatsu-navi.jp/parking/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/07.jpg',
+        src: '/imgs/banners/07.jpg',
         width: '140',
         height: '35',
         alt: '浜松市営駐車場'
@@ -1475,7 +1481,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/sanaru-park/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/banners/08.jpg',
+        src: '/imgs/banners/08.jpg',
         width: '140',
         height: '35',
         alt: '佐鳴湖公園'
@@ -1483,7 +1489,7 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'https://netsuper.entstore.co.jp/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/links/01.jpg',
+        src: '/imgs/links/01.jpg',
         width: '140',
         height: '35',
         alt: 'ネットスーパー'
@@ -1491,12 +1497,12 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'https://cards.entetsu.co.jp/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/links/02.jpg',
+        src: '/imgs/links/02.jpg',
         width: '140',
         height: '35',
         alt: 'えんてつカード'
       }))), _react2.default.createElement('p', null, _react2.default.createElement('img', {
-        src: 'imgs/links/03.jpg',
+        src: '/imgs/links/03.jpg',
         width: '140',
         height: '35',
         alt: '子育て中'
@@ -1504,12 +1510,12 @@ var Footer = function (_React$Component) {
         target: '_blank',
         href: 'https://cards.entetsu.co.jp/kidsclub/'
       }, _react2.default.createElement('img', {
-        src: 'imgs/links/04.jpg',
+        src: '/imgs/links/04.jpg',
         width: '140',
         height: '35',
         alt: 'えんてつカード キッズクラブ'
       })))))), _react2.default.createElement('div', { id: 'credit', className: 'lf-credit' }, _react2.default.createElement('div', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '/' }, _react2.default.createElement('img', {
-        src: 'imgs/logo_footer.png',
+        src: '/imgs/logo_footer.png',
         width: '140',
         height: '35',
         alt: 'logo'
@@ -1723,16 +1729,16 @@ var Header = function (_React$Component) {
       var root = this.props.route.global.documentRoot;
 
       return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('div', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '/' }, _react2.default.createElement('img', {
-        src: 'imgs/logo.png',
+        src: '/imgs/logo.png',
         width: '170',
         height: '40',
         alt: 'logo'
       }))), _react2.default.createElement('div', null, _react2.default.createElement('img', {
-        src: 'imgs/tel.png',
+        src: '/imgs/tel.png',
         width: '380',
         height: '40',
         alt: 'tel'
-      }))), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/' }, 'HOME')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/works' }, '仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/cleaning' }, '清掃でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/building' }, 'ビル管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/mansion' }, 'マンション管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/driving' }, '運転・送迎でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company#company05' }, '戦略事業')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/company' }, '会社案内')))));
+      }))), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/' }, 'HOME')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/works' }, '仕事を探す')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/cleaning' }, '清掃でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/building' }, 'ビル管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/mansion' }, 'マンション管理でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/driving' }, '運転・送迎でお困りの方')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/company/strategy' }, '戦略事業')), _react2.default.createElement('li', null, _react2.default.createElement('a', { href: '/company' }, '会社案内')))));
     }
   }]);
 
@@ -6213,6 +6219,11 @@ var Company = function (_React$Component) {
   _createClass(Company, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      /* 戦略事業用ページ内リンク */
+      if (this.props.params.page == 'strategy') {
+        indow.scrollTo(0, 4500);
+      }
+
       this.parallax = new _Parallax2.default();
       this.parallax.start();
 
@@ -6235,7 +6246,7 @@ var Company = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var IMG = 'imgs/detail/company/';
+      var IMG = '/imgs/detail/company/';
 
       return _react2.default.createElement('article', { id: 'CompanyDetail', className: 'pf-Detail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '遠鉄アシスト | 会社概要' }), _react2.default.createElement('div', {
         id: 'plx01',

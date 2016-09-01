@@ -11,6 +11,11 @@ export default class Company extends React.Component {
   }
 
   componentDidMount() {
+    /* 戦略事業用ページ内リンク */
+    if (this.props.params.page == 'strategy') {
+      indow.scrollTo(0, 4500);
+    }
+
     this.parallax = new Parallax();
     this.parallax.start();
 
@@ -41,7 +46,7 @@ export default class Company extends React.Component {
   }
 
   render() {
-    let IMG = 'imgs/detail/company/';
+    let IMG = '/imgs/detail/company/';
 
     return (
       <article id="CompanyDetail" className="pf-Detail">

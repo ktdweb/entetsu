@@ -113,6 +113,14 @@ const routes = (
           footer: FrontFooter
         }} />
 
+      <Route path={root.documentRoot + '/company/:page'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontCompany,
+          footer: FrontFooter
+        }} />
+
       <Route path={root.documentRoot + '/company'}
         global={root}
         components={{
