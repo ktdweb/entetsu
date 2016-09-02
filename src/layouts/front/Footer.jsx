@@ -101,7 +101,7 @@ export default class Footer extends React.Component {
                   社長メッセージ<br />
                   会社概要<br />
                 </a>
-                <a href="/company#company05">
+                <a href="/company#strategy">
                   戦略事業
                 </a>
                </li>

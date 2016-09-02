@@ -7155,11 +7155,6 @@ div#badge {
   prefixには`pf-Home`を付与
   */
   /*
-  # pages/front/Comapny.sass
-  front/Company.jsxに関するクラスを定義
-  prefixには`pf-Detail`を付与
-  */
-  /*
   # pages/front/Works.sass
   front/Works.jsxに関するクラスを定義
   prefixには`pf-Works`を付与
@@ -7359,45 +7354,6 @@ div#badge {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
     background-image: url("../imgs/pages/covers/driving.png"); }
-  #Front article#Company {
-    padding-top: 160px;
-    background-image: url("../imgs/detail/bg_detail_company.png"), url("../imgs/detail/bg_company.jpg"), url("../imgs/detail/bg_company02.jpg"), url("../imgs/detail/bg_company03.jpg");
-    background-position: left 0px top 40px, left 0px top 160px, left 0px top 1620px, left 0 bottom 0px;
-    background-size: 1040px auto, 600px auto, 1040px auto, 1040px auto;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; }
-  #Front article#Company section:nth-child(3) {
-    margin-top: 18rem; }
-  #Front article#Company h1 {
-    margin-top: 8rem;
-    margin-bottom: 4rem; }
-  #Front article#Company section:nth-child(5) {
-    margin: 8rem 6rem; }
-  #Front article#Company p {
-    margin-right: -1.5rem; }
-  #Front article#Company section:nth-child(6) {
-    margin: 8rem 6rem; }
-    #Front article#Company section:nth-child(6) h3 {
-      clear: both;
-      line-height: 1rem; }
-    #Front article#Company section:nth-child(6) img {
-      float: left;
-      margin-right: 2rem;
-      margin-bottom: 2rem; }
-  #Front article#Company section table {
-    width: 60%;
-    display: inline-block; }
-    #Front article#Company section table td {
-      vertical-align: top;
-      border-top: 1px solid #999;
-      line-height: 3rem; }
-    #Front article#Company section table td:first-child {
-      width: 12rem; }
-  #Front article#Company div.ceo {
-    margin-bottom: 3rem; }
-    #Front article#Company div.ceo p {
-      margin-right: 0.5rem; }
-    #Front article#Company div.ceo img {
-      border: 1px solid white; }
   #Front article#Works {
     padding-top: 180px;
     max-width: 100%; }
@@ -7982,9 +7938,12 @@ article.pf-Detail {
       width: 1040px;
       margin: 0 auto; }
     article.pf-Detail section.odd {
-      margin-left: auto; }
+      margin-left: auto;
+      text-align: right; }
     article.pf-Detail section.odd.reverse {
       color: white; }
+      article.pf-Detail section.odd.reverse h1 {
+        color: white; }
 
 /*
   # pages/front/Company.sass
@@ -7997,21 +7956,19 @@ article#CompanyDetail section table {
   article#CompanyDetail section table td {
     font-size: 1.44rem;
     vertical-align: top;
-    border-top: 1px solid #999;
+    border-top: 1px solid #a3b4bd;
     line-height: 2rem;
     padding: 1rem 0; }
   article#CompanyDetail section table td:first-child {
     width: 12rem; }
 
 article#CompanyDetail section:nth-of-type(1) {
-  padding-top: 220px;
+  padding-top: 180px;
   width: 70%; }
 
 article#CompanyDetail section:nth-of-type(2) {
-  color: white;
   margin-top: 280px;
-  width: 100%;
-  text-align: right; }
+  width: 100%; }
   article#CompanyDetail section:nth-of-type(2) h1 {
     color: white; }
   article#CompanyDetail section:nth-of-type(2) div.ceo {
@@ -8036,15 +7993,13 @@ article#CompanyDetail section:nth-of-type(4) {
     width: 240px; }
 
 article#CompanyDetail section:nth-of-type(5) {
-  margin-top: 60px; }
-
-article#CompanyDetail section:nth-of-type(6) {
-  width: 90%;
-  margin-top: 0px; }
-  article#CompanyDetail section:nth-of-type(6) h3 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  width: 90%; }
+  article#CompanyDetail section:nth-of-type(5) h3 {
     clear: both;
     line-height: 1rem; }
-  article#CompanyDetail section:nth-of-type(6) img {
+  article#CompanyDetail section:nth-of-type(5) img {
     float: left;
     margin-right: 2rem;
     margin-bottom: 2rem; }
@@ -8113,7 +8068,7 @@ article#CompanyDetail #plx07 {
   prefixには`pf-Cleaning`を付与
   */
 article#CleaningDetail section:nth-of-type(1) {
-  padding-top: 220px; }
+  padding-top: 180px; }
 
 article#CleaningDetail section:nth-of-type(2) {
   color: white;
@@ -8131,7 +8086,8 @@ article#CleaningDetail section:nth-of-type(4) {
     margin-left: 280px; }
 
 article#CleaningDetail section:nth-of-type(5) {
-  margin-top: 120px; }
+  margin-top: 120px;
+  margin-bottom: 30px; }
 
 article#CleaningDetail div.wrapper {
   position: relative;
@@ -8188,7 +8144,8 @@ article#CleaningDetail #plx06 {
   opacity: 1; }
 
 article#CleaningDetail #plx07 {
-  top: 1980px;
+  top: auto;
+  bottom: 50px;
   width: 1040px;
   height: 1040px;
   z-index: -100;
@@ -8202,7 +8159,7 @@ article#CleaningDetail #plx07 {
   prefixには`pf-Building`を付与
   */
 article#BuildingDetail section:nth-of-type(1) {
-  padding-top: 220px; }
+  padding-top: 180px; }
 
 article#BuildingDetail section:nth-of-type(2) {
   color: white;
@@ -8220,7 +8177,8 @@ article#BuildingDetail section:nth-of-type(4) {
     margin-left: 280px; }
 
 article#BuildingDetail section:nth-of-type(5) {
-  margin-top: 280px; }
+  margin-top: 280px;
+  margin-bottom: 30px; }
 
 article#BuildingDetail div.wrapper {
   position: relative;
@@ -8292,7 +8250,7 @@ article#BuildingDetail #plx07 {
   prefixには`pf-Mansion`を付与
   */
 article#MansionDetail section:nth-of-type(1) {
-  padding-top: 220px; }
+  padding-top: 180px; }
 
 article#MansionDetail section:nth-of-type(2) {
   color: white;
@@ -8310,7 +8268,8 @@ article#MansionDetail section:nth-of-type(4) {
     margin-left: 280px; }
 
 article#MansionDetail section:nth-of-type(5) {
-  margin-top: 280px; }
+  margin-top: 280px;
+  margin-bottom: 30px; }
 
 article#MansionDetail div.wrapper {
   position: relative;
@@ -8381,7 +8340,7 @@ article#MansionDetail #plx07 {
   prefixには`pf-Driving`を付与
   */
 article#DrivingDetail section:nth-of-type(1) {
-  padding-top: 220px; }
+  padding-top: 180px; }
 
 article#DrivingDetail section:nth-of-type(2) {
   color: white;
@@ -8399,7 +8358,8 @@ article#DrivingDetail section:nth-of-type(4) {
     margin-left: 280px; }
 
 article#DrivingDetail section:nth-of-type(5) {
-  margin-top: 440px; }
+  margin-top: 440px;
+  margin-bottom: 30px; }
 
 article#DrivingDetail div.wrapper {
   position: relative;

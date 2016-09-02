@@ -148,7 +148,7 @@ export default class SeisougDetail extends React.Component {
           <div
             id="plx07"
             className="layer"
-            data-depth="1">
+            data-depth="0">
           </div>
         </div>
 

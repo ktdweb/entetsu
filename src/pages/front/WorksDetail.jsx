@@ -172,12 +172,12 @@ export default class WorksDetail extends React.Component {
         </div>
 
         <div className="pf-Works-Detail-footer">
-          <Link to="works">
+          <a href="/works">
             <button>似た仕事を検索</button>
-          </Link>
-          <Link to="works">
+          </a>
+          <a href="/works">
             <button>戻る</button>
-          </Link>
+          </a>
         </div>
 
         <div

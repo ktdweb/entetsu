@@ -77,7 +77,7 @@ export default class Header extends React.Component {
               </a>
             </li>
             <li>
-              <a href="/company#company05">
+              <a href="/company#strategy">
                 戦略事業
               </a>
             </li>

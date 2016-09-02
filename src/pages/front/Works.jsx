@@ -29,7 +29,7 @@ export default class Works extends React.Component {
   }
 
   render() {
-    let IMG = 'imgs/pages/works/';
+    let IMG = '/imgs/pages/works/';
 
     return (
       <article id="Works">
@@ -266,18 +266,18 @@ export default class Works extends React.Component {
 
             <section>
             <div>
-              <Link to="works_detail">
+              <a href="/works_detail">
                 <img
                   src={IMG + 'list_column_left.png'}
                   width="30"
                   alt="img"
                   onClick={this.fadeIn.bind(this)}
                   />
-              </Link>
+              </a>
             </div>
 
             <ul id="column">
-              <Link to="works_detail/0">
+              <a href="/works_detail/0">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>ホテル客室整備スタッフ</p>
@@ -302,9 +302,9 @@ export default class Works extends React.Component {
                     <span>17:00~19:30</span>
                   </div>
                 </li>
-              </Link>
+              </a>
 
-              <Link to="works_detail/1">
+              <a href="/works_detail/1">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>クリーンスタッフ</p>
@@ -329,9 +329,9 @@ export default class Works extends React.Component {
                     <span>5:30~8:30</span>
                   </div>
                 </li>
-              </Link>
+              </a>
 
-              <Link to="works_detail/2">
+              <a href="/works_detail/2">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>クリーンスタッフ</p>
@@ -356,9 +356,9 @@ export default class Works extends React.Component {
                     <span>7:30~11:30</span>
                   </div>
                 </li>
-              </Link>
+              </a>
 
-              <Link to="works_detail/3">
+              <a href="works_detail/3">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>クリーンスタッフ</p>
@@ -383,9 +383,9 @@ export default class Works extends React.Component {
                     <span>8:00~12:00</span>
                   </div>
                 </li>
-              </Link>
+              </a>
 
-              <Link to="works_detail/4">
+              <a href="works_detail/4">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>A.客室整備　B.客室の布...</p>
@@ -410,9 +410,9 @@ export default class Works extends React.Component {
                     <span>9:00~13:00</span>
                   </div>
                 </li>
-              </Link>
+              </a>
 
-              <Link to="works_detail/5">
+              <a href="works_detail/5">
                 <li className="pf-Works-List-column">
                   <div className="pf-Works-List-column-head">
                     <p>駐車場管理業務（浜松...</p>
@@ -437,13 +437,12 @@ export default class Works extends React.Component {
                     <span>5:45～20:00</span>
                   </div>
                 </li>
-              </Link>
+              </a>
             </ul>
 
-
            <div>
-              <Link
-                to="works_detail"
+              <a
+                href="works_detail"
                 onClick={this.fadeIn.bind(this)}
                 >
                 <img
@@ -451,7 +450,7 @@ export default class Works extends React.Component {
                   width="30"
                   alt="img"
                   />
-              </Link>
+              </a>
             </div>
             </section>
           </div>
