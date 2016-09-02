@@ -1869,7 +1869,7 @@ var Top = function (_React$Component) {
   }, {
     key: 'onLinkArea',
     value: function onLinkArea(e) {
-      _reactRouter.browserHistory.push(page + '_detail');
+      location.href = page + '_detail';
     }
   }]);
 

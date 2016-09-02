@@ -108,7 +108,7 @@ export default class Top extends React.Component {
   }
 
   onLinkArea(e) {
-    browserHistory.push(page + '_detail');
+    location.href = page + '_detail';
   }
 }
 
