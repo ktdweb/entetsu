@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Promise } from 'es6-promise'
-=======
-import Promise from 'es6-promise'
->>>>>>> ccb057fd5ebb657da81139c344eaadef9ceb2ba3
 
 /*
  * - JSONを取得するクラス

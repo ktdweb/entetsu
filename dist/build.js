@@ -449,15 +449,6 @@ exports.default = Count;
 
 var _es6Promise = require('es6-promise');
 
-<<<<<<< HEAD
-=======
-var _es6Promise2 = _interopRequireDefault(_es6Promise);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
->>>>>>> ccb057fd5ebb657da81139c344eaadef9ceb2ba3
 /*
  * - JSONを取得するクラス
  * XMLHTTPRequestをPromiseでラップ
@@ -479,11 +470,7 @@ function _interopRequireDefault(obj) {
 var Http = {
   http: {
     get: function get(url) {
-<<<<<<< HEAD
       return new _es6Promise.Promise(function (resolve, reject) {
-=======
-      return new _es6Promise2.default(function (resolve, reject) {
->>>>>>> ccb057fd5ebb657da81139c344eaadef9ceb2ba3
 
         var rq = new XMLHttpRequest();
 
@@ -508,11 +495,7 @@ var Http = {
     },
 
     put: function put(url, data) {
-<<<<<<< HEAD
       return new _es6Promise.Promise(function (resolve, reject) {
-=======
-      return new _es6Promise2.default(function (resolve, reject) {
->>>>>>> ccb057fd5ebb657da81139c344eaadef9ceb2ba3
 
         var rq = new XMLHttpRequest();
 
@@ -537,11 +520,7 @@ var Http = {
     },
 
     post: function post(url, data) {
-<<<<<<< HEAD
       return new _es6Promise.Promise(function (resolve, reject) {
-=======
-      return new _es6Promise2.default(function (resolve, reject) {
->>>>>>> ccb057fd5ebb657da81139c344eaadef9ceb2ba3
 
         var rq = new XMLHttpRequest();
 
@@ -566,11 +545,7 @@ var Http = {
     },
 
     delete: function _delete(url, data) {
-<<<<<<< HEAD
       return new _es6Promise.Promise(function (resolve, reject) {
-=======
-      return new _es6Promise2.default(function (resolve, reject) {
->>>>>>> ccb057fd5ebb657da81139c344eaadef9ceb2ba3
 
         var rq = new XMLHttpRequest();
 
