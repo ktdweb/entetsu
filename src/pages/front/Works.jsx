@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
+import WorkStore from '../../stores/WorkStore'
+import WorkActions from '../../actions/WorkActions'
+
 let BTN_WIDTH = 30;
 let AREA_WIDTH = 500;
 let AREA_PADDING = 14;
@@ -17,19 +20,41 @@ export default class Works extends React.Component {
   constructor(props) {
     super(props);
 
+    let works = WorkStore.read();
+
     this.state = {
       slider: {
         start: start,
         end: end
-      }
+      },
+      page: 1,
+      works: works
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    WorkStore.subscribe(this.updateState.bind(this));
+    WorkActions.create();
+  }
+
+  componentDidMount() {}
+
+  componentWillUnmount() {
+    WorkStore.destroy(this.updateState.bind(this));
   }
 
   render() {
     let IMG = '/imgs/pages/works/';
+
+    let columns = Object.keys(this.state.works).map((i) => {
+      return (
+        <Column
+          key={i}
+          data={this.state.works[i]}
+          sort={i}
+          />
+      );
+    });
 
     return (
       <article id="Works">
@@ -47,76 +72,86 @@ export default class Works extends React.Component {
                 />
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'loc/banner01.png'}
                   width="170"
                   height="45"
+                  name="1"
                   alt="img"
                   />
                 </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'loc/banner02.png'}
                   width="170"
                   height="45"
+                  name="2"
                   alt="img"
                 />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'loc/banner03.png'}
                   width="170"
                   height="45"
+                  name="3"
                   alt="img"
                 />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'loc/banner04.png'}
                   width="170"
                   height="45"
+                  name="4"
                   alt="img"
                 />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'loc/banner05.png'}
                   width="170"
                   height="45"
+                  name="5"
                   alt="img"
                 />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'loc/banner06.png'}
                   width="170"
                   height="45"
+                  name="6"
                   alt="img"
                 />
               </a>
 
-              <a href="#">
+              <a
+                href="#"
+                onClick={this.getCategorySearch.bind(this)}
+              >
                 <img
                   src={IMG + 'loc/banner07.png'}
                   width="170"
                   height="45"
+                  name="7"
                   alt="img"
                 />
               </a>
@@ -133,31 +168,34 @@ export default class Works extends React.Component {
                 />
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'time/banner01.png'}
                   height="135"
+                  name="8"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'time/banner02.png'}
                   height="135"
+                  name="9"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'time/banner03.png'}
                   height="135"
+                  name="10"
                   alt="img"
                   />
               </a>
@@ -165,31 +203,34 @@ export default class Works extends React.Component {
               <br />
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'time/banner04.png'}
                   height="120"
+                  name="11"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'time/banner05.png'}
                   height="120"
+                  name="12"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'time/banner06.png'}
                   height="120"
+                  name="13"
                   alt="img"
                   />
               </a>
@@ -206,51 +247,56 @@ export default class Works extends React.Component {
                 />
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'cat/banner01.png'}
                   height="120"
+                  name="14"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'cat/banner02.png'}
                   height="120"
+                  name="15"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'cat/banner03.png'}
                   height="120"
+                  name="16"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'cat/banner04.png'}
                   height="120"
+                  name="17"
                   alt="img"
                   />
               </a>
 
               <a href="#"
-                onClick={this.closeUp.bind(this)}
+                onClick={this.getCategorySearch.bind(this)}
               >
                 <img
                   src={IMG + 'cat/banner05.png'}
                   height="120"
+                  name="18"
                   alt="img"
                   />
               </a>
@@ -265,267 +311,110 @@ export default class Works extends React.Component {
             </div>
 
             <section>
-            <div>
-              <a href="/works_detail">
-                <img
-                  src={IMG + 'list_column_left.png'}
-                  width="30"
-                  alt="img"
-                  onClick={this.fadeIn.bind(this)}
-                  />
-              </a>
-            </div>
+              <div>
+                <a href="/works_detail">
+                  <img
+                    src={IMG + 'list_column_left.png'}
+                    width="30"
+                    alt="img"
+                    onClick={this.previousPage.bind(this)}
+                    />
+                </a>
+              </div>
 
-            <ul id="column">
-              <a href="/works_detail/0">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>ホテル客室整備スタッフ</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={'imgs/works/001s.jpg'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>リゾートホテルのチェックイン後の客室整備・布団敷き 基本和室（約３０部屋程度）での布団敷きの作業です。 </p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 860円</span>
-                    <span>17:00~19:30</span>
-                  </div>
-                </li>
-              </a>
+              <ul id="column">{columns}</ul>
 
-              <a href="/works_detail/1">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>クリーンスタッフ</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={'imgs/works/002s.jpg'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>温浴施設内の日常清掃（脱衣所・洗い場・階段等）</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 940円</span>
-                    <span>5:30~8:30</span>
-                  </div>
-                </li>
-              </a>
-
-              <a href="/works_detail/2">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>クリーンスタッフ</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={'imgs/works/002s.jpg'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>事務所・工場内の日常清掃（玄関・通路・トイレ等）</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 820円</span>
-                    <span>7:30~11:30</span>
-                  </div>
-                </li>
-              </a>
-
-              <a href="works_detail/3">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>クリーンスタッフ</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={'imgs/works/002s.jpg'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>フロア・トイレ等の日常清掃</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 830円</span>
-                    <span>8:00~12:00</span>
-                  </div>
-                </li>
-              </a>
-
-              <a href="works_detail/4">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>A.客室整備　B.客室の布...</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={'imgs/works/002s.jpg'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>A.客室整備　B.客室の布団敷き</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 860円</span>
-                    <span>9:00~13:00</span>
-                  </div>
-                </li>
-              </a>
-
-              <a href="works_detail/5">
-                <li className="pf-Works-List-column">
-                  <div className="pf-Works-List-column-head">
-                    <p>駐車場管理業務（浜松...</p>
-                    <img
-                      src={IMG + 'list_btn_detail.png'}
-                      width="40"
-                      alt="img"
-                      />
-                  </div>
-                
-                  <div className="pf-Works-List-column-section">
-                    <img
-                      src={'imgs/works/003s.jpg'}
-                      width="45"
-                      alt="img"
-                      / >
-                    <p>街中の駐車場で、売上金やサービス券の回収・集計、駐車場機械操作、車両誘導などをするお仕事です。未経験者歓迎！</p>
-                  </div>
-                
-                  <div className="pf-Works-List-column-footer">
-                    <span>時給: 800円</span>
-                    <span>5:45～20:00</span>
-                  </div>
-                </li>
-              </a>
-            </ul>
-
-           <div>
-              <a
-                href="works_detail"
-                onClick={this.fadeIn.bind(this)}
-                >
-                <img
-                  src={IMG + 'list_column_right.png'}
-                  width="30"
-                  alt="img"
-                  />
-              </a>
-            </div>
+             <div>
+                <a
+                  href="works_detail"
+                  onClick={this.nextPage.bind(this)}
+                  >
+                  <img
+                    src={IMG + 'list_column_right.png'}
+                    width="30"
+                    alt="img"
+                    />
+                </a>
+              </div>
             </section>
           </div>
 
-          {/*
-            <div className="pf-Works-Search">
-            <div className="pf-Works-Search-slider">
-              <h1>自分の好きな時間帯をみつける</h1>
+          <div className="pf-Works-Search">
+          <div className="pf-Works-Search-slider">
+            <h1>自分の好きな時間帯をみつける</h1>
 
-              <p id="sliderLabel"></p>
+            <p id="sliderLabel"></p>
 
-              <img
-                src={IMG + 'list_slider_button.png'}
-                width="30"
-                alt="img"
-                name="first"
-                id="sliderFirst"
-                onMouseDown={this.onMouseDown.bind(this)}
-                onMouseUp={this.onMouseUp.bind(this)}
-                onMouseMove={this.onMouseMove.bind(this)}
-                onMouseOut={this.onMouseUp.bind(this)}
-                />
+            <img
+              src={IMG + 'list_slider_button.png'}
+              width="30"
+              alt="img"
+              name="first"
+              id="sliderFirst"
+              onMouseDown={this.onMouseDown.bind(this)}
+              onMouseUp={this.onMouseUp.bind(this)}
+              onMouseMove={this.onMouseMove.bind(this)}
+              onMouseOut={this.onMouseUp.bind(this)}
+              />
 
-              <img
-                src={IMG + 'list_slider_button.png'}
-                width="30"
-                alt="img"
-                name="second"
-                id="sliderSecond"
-                onMouseDown={this.onMouseDown.bind(this)}
-                onMouseUp={this.onMouseUp.bind(this)}
-                onMouseMove={this.onMouseMove.bind(this)}
-                onMouseOut={this.onMouseUp.bind(this)}
-                />
-            </div>
-
-            <div className="pf-Works-Search-advance">
-              <input
-                type="text"
-                defaultValue="フリーワード検索"
-                onKeyPress={this.fadeIn.bind(this)}
-                />
-            </div>
+            <img
+              src={IMG + 'list_slider_button.png'}
+              width="30"
+              alt="img"
+              name="second"
+              id="sliderSecond"
+              onMouseDown={this.onMouseDown.bind(this)}
+              onMouseUp={this.onMouseUp.bind(this)}
+              onMouseMove={this.onMouseMove.bind(this)}
+              onMouseOut={this.onMouseUp.bind(this)}
+              />
           </div>
-          */}
+
+          <div className="pf-Works-Search-advance">
+            <input
+              type="text"
+              defaultValue="フリーワード検索"
+              onKeyDown={this.getKeyword.bind(this)}
+              onFocus={this.clearValue.bind(this)}
+              />
+          </div>
+        </div>
         </div>
       </article>
     );
   }
 
-  fadeIn(e) {
-    e.preventDefault();
-    $('#column li').css({opacity: 0});
-
-    $('#column li').each(function(i) {
-      $(this).delay(150 * i).animate({opacity: 1}, 300, 'swing').css('visibility','visible');
-    });
-  }
-
   closeUp(e) {
     e.preventDefault();
 
-    /*
-    let el = e.target;
-    let active = document.getElementsByClassName('closeUp');
-    
-    for (let i = 0; i < active.length; i++) {
-      active[i].classList.remove('closeUp'); 
-    }
+    this.scrollMotion(820);
 
-    el.classList.add('closeUp');
-    */
-
-    $("html,body").animate({scrollTop:700});
     this.fadeIn(e);
+  }
+
+  scrollMotion(to) {
+    let t = 0;
+    let b = window.scrollY;
+    let c = 820 - b;
+    let d = 2000 / 10;
+
+    let interval = setInterval(function() {
+      let step = easeInOut(t, b, c, d);
+      if (window.scrollY < to) {
+        window.scrollTo(0, step);
+        t++;
+      } else {
+        clearInterval(interval);
+      }
+
+    }, 0);
+
+    function easeInOut(t, b, c, d) {
+      t /= d/2;
+      if (t < 1) return c/2*t*t + b;
+      t--;
+      return -c/2 * (t*(t-2) - 1) + b;
+    }
   }
 
   onMouseDown(e) {
@@ -537,6 +426,7 @@ export default class Works extends React.Component {
     e.preventDefault();
     drag = false;
 
+    WorkActions.slider(start, end);
     this.setState({ slider: {start: start, end: end} });
   }
 
@@ -544,7 +434,7 @@ export default class Works extends React.Component {
     if (drag) {
       let el = document.getElementById('sliderLabel');
       let s = this.state.slider;
-      AREA_PADDING = el.style.padding-left;
+      AREA_PADDING = el.style.padding - -60;
       let pos = (e.clientX - BTN_WIDTH) - AREA_PADDING;
       let v = (pos + BTN_WIDTH / 2) * (100 / AREA_WIDTH);
       start = el.style.left;
@@ -572,4 +462,155 @@ export default class Works extends React.Component {
       }
     }
   }
+
+  getCategorySearch(e) {
+    e.preventDefault();
+
+    this.state.page = 1;
+    let id = e.target.name;
+    WorkActions.category(id);
+
+    this.scrollMotion(820);
+  }
+
+  clearValue(e) {
+    e.target.value = '';
+  }
+
+  getKeyword(e) {
+    if (e.keyCode == 13) {
+      this.state.page = 1;
+      WorkActions.keyword(e.target.value);
+    }
+  }
+
+  updateState() {
+    let res = WorkStore.read();
+    let total = res.length;
+    res = this.paging(res);
+
+    this.setState({
+      works: res,
+      total: total
+    });
+  }
+
+  fadeIn() {
+    let ul = document.getElementById('column');
+    let els = ul.children;
+
+    for (let i = 0; i < els.length; i++) {
+      els[i].style.animationDelay = i * 0.15 + 's';
+      els[i].addEventListener('animationend', endMotion);
+      els[i].classList.add('active');
+
+      function endMotion() {
+        els[i].removeEventListener('animationend', endMotion);
+        els[i].classList.remove('active');
+      }
+    }
+  }
+
+  removeActive() {
+    let ul = document.getElementById('column');
+    let els = ul.children;
+    for (let i = 0; i < els.length; i++) {
+      els[i].classList.remove('active');
+    }
+  }
+
+  previousPage(e) {
+    e.preventDefault();
+    let page = this.state.page;
+    if (page != 1) {
+      page = page - 1;
+    }
+    this.state.page = page;
+
+    this.updateState();
+  }
+
+  nextPage(e) {
+    e.preventDefault();
+    let page = this.state.page;
+    if (page * 6 <= this.state.total) {
+      page = page + 1;
+    }
+    this.state.page = page;
+
+    this.updateState();
+  }
+
+  paging(res) {
+    let start = 6 * (this.state.page - 1);
+    let end = 6 * this.state.page;
+
+    return res.slice(start, end);
+  }
+}
+
+class Column extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidUpdate() {
+    let el = this.refs.el;
+    el.style.visibility = 'none';
+    el.style.animationDelay = this.props.sort * 0.1 + 's';
+    el.addEventListener('animationend', endMotion);
+    el.classList.add('active');
+
+    function endMotion() {
+      el.removeEventListener('animationend', endMotion);
+      el.classList.remove('active');
+    }
+  }
+
+  render() {
+    let IMG = '/imgs/pages/works/';
+
+    let data = this.props.data;
+
+    return (
+      <a
+        href={'/works_detail/' + data.id}
+        ref='el'
+        >
+        <li className="pf-Works-List-column">
+          <div className="pf-Works-List-column-head">
+            <p className="overflow">{data.title}</p>
+            <img
+              src={IMG + 'list_btn_detail.png'}
+              width="40"
+              alt="img"
+              />
+          </div>
+        
+          <div className="pf-Works-List-column-section">
+            <img
+              src={'imgs/works/' + data.img + 's.jpg'}
+              width="45"
+              height="45"
+              alt="img"
+              / >
+            <p>{this.overflow(data.detail, 64)}</p>
+          </div>
+
+          <div className="pf-Works-List-column-footer">
+            <span>時給: {data.abbr_wage}円</span>
+            <span>{data.abbr_time}</span>
+          </div>
+        </li>
+      </a>
+    );
+  }
+
+  overflow(txt, cnt) {
+    if (txt.length > cnt) {
+      txt = txt.slice(0, cnt) + '…';
+    }
+    return txt;
+  }
+
 }

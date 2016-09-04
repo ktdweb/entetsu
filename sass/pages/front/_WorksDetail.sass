@@ -19,6 +19,13 @@ article#WorksDetail
     border-top: 4px solid $color-works-base
     border-left: 0
     border-right: 0
+    +animation(common 1.5s ease)
+
+    +keyframes(common)
+      0% 
+        opacity: 0
+      100% 
+        opacity: 1
 
     & > div
       position: relative
@@ -58,6 +65,8 @@ article#WorksDetail
           display: table
           background-color: white
           margin: 10px -20px
+          width: 100%
+          min-height: 600px
 
           & > div:first-child
             display: table-cell
@@ -162,16 +171,16 @@ article#WorksDetail
       background-color: rgba(0,0,12,0.4)
       z-index: 1000
 
+      &.enable
+        opacity: 1
+        display: block
+        +animation(show 1s ease-in-out 0s)
+
       +keyframes(show)
         from
           opacity: 0
         to
           opacity: 1
-
-      &.enable
-        opacity: 1
-        display: block
-        +animation(show 1s ease-in-out 0s)
 
       & > div
         margin: 200px auto
