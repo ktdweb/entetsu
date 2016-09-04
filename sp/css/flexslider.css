@@ -78,6 +78,7 @@ html[xmlns] .flexslider .slides {
   background: transparent;
   border: none;
   position: relative;
+  z-index: 10;
   zoom: 1;
   -webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);

@@ -589,7 +589,7 @@ class Column extends React.Component {
         
           <div className="pf-Works-List-column-section">
             <img
-              src={'imgs/works/' + data.img + 's.jpg'}
+              src={'/imgs/works/' + data.img + 's.jpg'}
               width="45"
               height="45"
               alt="img"

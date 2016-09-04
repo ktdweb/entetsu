@@ -1,10 +1,10 @@
 div#contents {
     position: relative;
-    height: 1800px;
 }
 
 div.doorTop {
-    z-index: 1;
+    position: relative;
+    z-index: 9;
 }
 
 div.doorBtm {
@@ -14,20 +14,23 @@ div.doorBtm {
     z-index: 10;
 }
 
+div.doorBtm img {
+	}
+
 div#search {
     position: absolute;
-    top: 440px;
+    top: 500px;
     height: 200px;
     width: 100%;
-    z-index: 5;
+    z-index: 1;
     text-align: center;
 }
 
 div#search ul {
     display: table;
-    width: 100%;
-    padding: 0 10px;
-    margin: 0;
+    width: 90.625%;
+    padding: 0;
+    margin: 0 auto;
 }
 
 div#search ul:first-child {
@@ -38,17 +41,27 @@ div#search ul img {
     opacity: 0;
 }
 
-div#search ul.sub {
+div#search ul.sub ,
+div#search .time ul.sub ,
+div#search .cat ul.sub ,
+div#search .loc ul.sub {
     display: table;
     width: 100%;
-    padding: 0 25px;
+    padding: 0;
     margin: 0;
 }
 
 div#search li {
     display: table-cell;
-    width: 33%;
-    text-align: center;
+    width: 35.3445%;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+div#search li:first-child {
+    display: table-cell;
+    width: 29.3103%;
+    text-align: left;
     vertical-align: bottom;
 }
 
@@ -63,3 +76,20 @@ div#search input {
     background-repeat: no-repeat;
     background-position: center right;
 }
+
+div#search .searchBox {
+	position: relative;
+	}
+
+div#search .searchBox .time ,
+div#search .searchBox .cat ,
+div#search .searchBox .loc {
+	position: absolute;
+	top: 0;
+    width: 100%;
+	padding: 0 4.6875%;
+	}
+
+div#search .searchBox .time {
+	z-index: 100;
+	}

@@ -13,6 +13,13 @@ $(".serviceBg .serviceBox").click(
 	}
 ); 
 
+$(".typeList li").click(
+	function(){
+	var url = $(this).find('a').attr('href');
+	location.href = url;
+	}
+); 
+
 $(".recruitBox").click(
 	function(){
 	var url = $(this).find('a').attr('href');
