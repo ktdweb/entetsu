@@ -12,6 +12,9 @@
 &
   -webkit-overflow-scrolling: touch
 
+& > div
+  position: absolute
+
 /*
   # h1
   明朝体にする
@@ -104,11 +107,6 @@ section
     &.posi
       opacity: 1
 
-  div.wrapper
-    position: relative
-    width: 1040px
-    margin: 0 auto
-
   /*
     # section.odd
     右寄せのコンテンツ
@@ -125,3 +123,11 @@ section
     color: white
     h1
       color: white
+
+div.wrapper
+  position: relative
+  width: 1040px
+  margin: 0 auto
+  & > div
+    position: absolute
+
