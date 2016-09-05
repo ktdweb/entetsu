@@ -7202,7 +7202,6 @@ function _inherits(subClass, superClass) {
 
 var BTN_WIDTH = 30;
 var AREA_WIDTH = 500;
-var AREA_PADDING = 14;
 
 var drag = false;
 var slider_val01 = 0;
@@ -7422,7 +7421,7 @@ var Works = function (_React$Component) {
         src: IMG + 'list_column_right.png',
         width: '30',
         alt: 'img'
-      }))))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, '自分の好きな時間帯をみつける'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
+      }))))), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { id: 'sliderArea', className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, '自分の好きな時間帯をみつける'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
         src: IMG + 'list_slider_button.png',
         width: '30',
         alt: 'img',
@@ -7502,21 +7501,22 @@ var Works = function (_React$Component) {
     key: 'onMouseMove',
     value: function onMouseMove(e) {
       if (drag) {
-        var el = document.getElementById('sliderLabel');
-        var s = this.state.slider;
-        AREA_PADDING = el.style.padding - -60;
-        var pos = e.clientX - BTN_WIDTH - AREA_PADDING;
-        var v = (pos + BTN_WIDTH / 2) * (100 / AREA_WIDTH);
-        start = el.style.left;
-        end = el.style.width;
+        // sliderのドラッグ
+        var area = document.getElementById('sliderArea');
+        var rect = area.getBoundingClientRect();
+        var pos = e.clientX - rect.left;
 
-        if (v >= 0 && v <= 100) {
-          e.target.style.left = pos + 'px';
+        if (pos >= 0 && pos <= 500) {
+          e.target.style.left = pos - BTN_WIDTH / 2 - 1 + 'px';
 
+          // 100分率に変換
+          var v = parseInt(pos * (100 / AREA_WIDTH));
+
+          // 各ボタンが入れ替えってもOKなように
           if (e.target.name == 'first') {
-            slider_val01 = parseInt(v);
+            slider_val01 = v;
           } else {
-            slider_val02 = parseInt(v);
+            slider_val02 = v;
           }
 
           if (slider_val01 <= slider_val02) {
@@ -7527,6 +7527,8 @@ var Works = function (_React$Component) {
             end = slider_val01;
           }
 
+          console.log(start + ':' + end);
+          var el = document.getElementById('sliderLabel');
           el.style.left = start * 5 + 'px';
           el.style.width = end * 5 - start * 5 + 'px';
         }
@@ -7625,10 +7627,10 @@ var Works = function (_React$Component) {
   }, {
     key: 'paging',
     value: function paging(res) {
-      var start = 6 * (this.state.page - 1);
-      var end = 6 * this.state.page;
+      var paging_start = 6 * (this.state.page - 1);
+      var paging_end = 6 * this.state.page;
 
-      return res.slice(start, end);
+      return res.slice(paging_start, paging_end);
     }
   }]);
 

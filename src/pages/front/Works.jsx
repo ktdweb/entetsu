@@ -5,9 +5,8 @@ import DocumentTitle from 'react-document-title'
 import WorkStore from '../../stores/WorkStore'
 import WorkActions from '../../actions/WorkActions'
 
-let BTN_WIDTH = 30;
-let AREA_WIDTH = 500;
-let AREA_PADDING = 14;
+const BTN_WIDTH = 30;
+const AREA_WIDTH = 500;
 
 let drag = false;
 let slider_val01 = 0;
@@ -340,7 +339,7 @@ export default class Works extends React.Component {
           </div>
 
           <div className="pf-Works-Search">
-          <div className="pf-Works-Search-slider">
+          <div id="sliderArea" className="pf-Works-Search-slider">
             <h1>自分の好きな時間帯をみつける</h1>
 
             <p id="sliderLabel"></p>
@@ -432,21 +431,22 @@ export default class Works extends React.Component {
 
   onMouseMove(e) {
     if (drag) {
-      let el = document.getElementById('sliderLabel');
-      let s = this.state.slider;
-      AREA_PADDING = el.style.padding - -60;
-      let pos = (e.clientX - BTN_WIDTH) - AREA_PADDING;
-      let v = (pos + BTN_WIDTH / 2) * (100 / AREA_WIDTH);
-      start = el.style.left;
-      end = el.style.width;
+      // sliderのドラッグ
+      let area = document.getElementById('sliderArea');
+      let rect = area.getBoundingClientRect();
+      let pos = e.clientX - rect.left;
 
-      if (v >= 0 && v <= 100) {
-        e.target.style.left = pos + 'px';
+      if (pos >= 0 && pos <= 500) {
+        e.target.style.left = (pos - BTN_WIDTH / 2 - 1) + 'px';
 
+        // 100分率に変換
+        let v =  parseInt(pos * (100 / AREA_WIDTH));
+
+        // 各ボタンが入れ替えってもOKなように
         if (e.target.name == 'first') {
-          slider_val01 = parseInt(v);
+          slider_val01 = v;
         } else {
-          slider_val02 = parseInt(v);
+          slider_val02 = v;
         }
 
         if (slider_val01 <= slider_val02) {
@@ -457,7 +457,9 @@ export default class Works extends React.Component {
           end = slider_val01; 
         }
 
-        el.style.left = start * 5 + 'px';
+        console.log(start + ':' + end);
+        let el = document.getElementById('sliderLabel');
+        el.style.left =  start * 5 + 'px';
         el.style.width = (end * 5) - (start * 5) + 'px';
       }
     }
@@ -542,10 +544,10 @@ export default class Works extends React.Component {
   }
 
   paging(res) {
-    let start = 6 * (this.state.page - 1);
-    let end = 6 * this.state.page;
+    let paging_start = 6 * (this.state.page - 1);
+    let paging_end = 6 * this.state.page;
 
-    return res.slice(start, end);
+    return res.slice(paging_start, paging_end);
   }
 }
 
