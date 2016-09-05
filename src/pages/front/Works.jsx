@@ -457,7 +457,6 @@ export default class Works extends React.Component {
           end = slider_val01; 
         }
 
-        console.log(start + ':' + end);
         let el = document.getElementById('sliderLabel');
         el.style.left =  start * 5 + 'px';
         el.style.width = (end * 5) - (start * 5) + 'px';

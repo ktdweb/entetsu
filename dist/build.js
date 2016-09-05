@@ -7527,7 +7527,6 @@ var Works = function (_React$Component) {
             end = slider_val01;
           }
 
-          console.log(start + ':' + end);
           var el = document.getElementById('sliderLabel');
           el.style.left = start * 5 + 'px';
           el.style.width = end * 5 - start * 5 + 'px';
