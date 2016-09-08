@@ -7727,11 +7727,13 @@ div#badge {
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-section > div:first-child {
               display: table-cell;
               vertical-align: top;
-              padding-right: 40px; }
+              text-align: center;
+              width: 25%;
+              padding-right: 2rem; }
               #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-section > div:first-child span {
                 display: block;
                 margin-bottom: 10px;
-                padding: 0px 10px;
+                padding: 0px 5px;
                 color: white;
                 background-color: #0099DE;
                 border-radius: 3px; }
