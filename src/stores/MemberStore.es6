@@ -9,16 +9,36 @@ const URL = '/api/members/';
 
 let _members = [
   {
-    id: '',
-    name: '',
-    furi: '',
-    tel: '',
-    mail: ''
+  id: '',
+  name: '',
+  furi: '',
+  tel: '',
+  mail: '',
+  password: '',
+  gender: '',
+  age: '',
+  birthday: '',
+  zip: '',
+  prefecture: '',
+  city: '',
+  address: '',
+  detail_flag: '',
+  created: '',
+  modified: ''
   }
 ];
 
 function create(res) {
   _members = res;
+}
+
+function add(res) {
+  _members = res;
+}
+
+function login(res, cb) {
+  cb(res[0]);
+  //return res[0];
 }
 
 function update(id, updates) {
@@ -53,6 +73,21 @@ Dispatcher.register( function(action) {
       http.get(URL).then(res => {
         create(res);
         memberStore.update();
+      }).catch(e => {
+        //console.error(e);
+      });
+      break;
+
+    case MemberConstants.ADD:
+      http.post(URL, action.data).then(res => {
+      }).catch(e => {
+        //console.error(e);
+      });
+      break;
+
+    case MemberConstants.LOGIN:
+      http.post(URL + 'login', action.data).then(res => {
+        login(res, action.callback);
       }).catch(e => {
         //console.error(e);
       });

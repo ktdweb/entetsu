@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import MemberStore from '../../stores/MemberStore'
+import MemberActions from '../../actions/MemberActions'
+
 export default class WorksEntry extends React.Component {
 
   constructor(props) {
@@ -36,10 +39,30 @@ export default class WorksEntry extends React.Component {
               dangerouslySetInnerHTML={{__html: this.props.body}}
               />
 
-            <button>{this.props.button}</button>
+            <p id={'modalError' + this.props.id} className="loginError"></p>
+
+            <button
+              name={this.props.id}
+              onClick={this.onSubmit.bind(this)}
+            >{this.props.button}</button>
           </div>
         </div>
     );
+  }
+
+  onSubmit(e) {
+    let el = document.getElementById('modalError' + this.props.id);
+    el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
+    el.classList.toggle('active');
+
+    let obj = {
+      name: this.props.name,
+      furi: this.props.furi,
+      tel:  this.props.tel,
+      mail: this.props.mail,
+    };
+
+    MemberActions.add(obj);
   }
 
   disableModal(e) {

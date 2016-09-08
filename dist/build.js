@@ -105,7 +105,13 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-var root = { documentRoot: '' };
+var root = {
+  documentRoot: '',
+  login: {
+    status: false,
+    name: ''
+  }
+};
 
 // components
 
@@ -301,6 +307,21 @@ exports.default = {
   create: function create() {
     _Dispatcher2.default.dispatch({
       actionType: _MemberConstants2.default.CREATE
+    });
+  },
+
+  add: function add(data) {
+    _Dispatcher2.default.dispatch({
+      actionType: _MemberConstants2.default.ADD,
+      data: data
+    });
+  },
+
+  login: function login(data, callback) {
+    _Dispatcher2.default.dispatch({
+      actionType: _MemberConstants2.default.LOGIN,
+      data: data,
+      callback: callback
     });
   },
 
@@ -993,6 +1014,8 @@ function _interopRequireDefault(obj) {
 
 var MemberConstants = (0, _keymirror2.default)({
   CREATE: null,
+  ADD: null,
+  LOGIN: null,
   UPDATE: null,
   DESTROY: null
 });
@@ -7865,6 +7888,10 @@ var WorksDetail = function (_React$Component) {
     _this.state = {
       works: works,
       members: members,
+      login: {
+        name: '',
+        status: false
+      },
       form: {
         name: { val: '日本語で入力', flag: true },
         furi: { val: 'カタカナで入力', flag: true },
@@ -7908,6 +7935,7 @@ var WorksDetail = function (_React$Component) {
         height: '180',
         alt: 'img'
       }), _react2.default.createElement('button', {
+        id: 'loginButton',
         name: 'modalLogin',
         onClick: this.enableLogin.bind(this)
       }, 'ログイン'), _react2.default.createElement('p', null, 'もしくは…'), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '名前'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
@@ -7976,8 +8004,40 @@ var WorksDetail = function (_React$Component) {
         mail: this.state.form.mail.val
       }), _react2.default.createElement(_WorksLogin2.default, {
         key: '2',
-        id: 'modalLogin'
+        id: 'modalLogin',
+        changeLoginStatus: this.changeLoginStatus.bind(this)
       }));
+    }
+
+    /*
+     * submit
+     */
+
+  }, {
+    key: 'onSubmit',
+    value: function onSubmit() {
+      var f1 = this.validateName();
+      var f2 = this.validateFuri();
+      var f3 = this.validateTel();
+      var f4 = this.validateMail();
+      var f5 = this.validateConfirm();
+
+      return f1 && f2 && f3 && f4 && f5 ? true : false;
+    }
+
+    /*
+     * ログインステータス変更  子componentに渡す
+     */
+
+  }, {
+    key: 'changeLoginStatus',
+    value: function changeLoginStatus(data) {
+      var el = document.getElementById('loginButton');
+      el.classList.add('pf-loginDone');
+      el.innerHTML = 'ログイン済: ' + data.name + 'さん';
+
+      var obj = { name: data.name, status: true };
+      this.setState({ login: obj });
     }
 
     /*
@@ -8030,6 +8090,11 @@ var WorksDetail = function (_React$Component) {
         });
       }
     }
+
+    /*
+     * バリデート
+     */
+
   }, {
     key: 'validateName',
     value: function validateName() {
@@ -8042,11 +8107,6 @@ var WorksDetail = function (_React$Component) {
         return this.turnGreen(el);
       }
     }
-
-    /*
-     * バリデート
-     */
-
   }, {
     key: 'validateFuri',
     value: function validateFuri() {
@@ -8110,27 +8170,11 @@ var WorksDetail = function (_React$Component) {
       return true;
     }
   }, {
-    key: 'onSubmit',
-
-    /*
-     * submit
-     */
-    value: function onSubmit() {
-      var f1 = this.validateName();
-      var f2 = this.validateFuri();
-      var f3 = this.validateTel();
-      var f4 = this.validateMail();
-      var f5 = this.validateConfirm();
-
-      return f1 && f2 && f3 && f4 && f5 ? true : false;
-    }
+    key: 'enableModal',
 
     /*
      * modalを開く
      */
-
-  }, {
-    key: 'enableModal',
     value: function enableModal(e) {
       var error = document.getElementById('error');
 
@@ -8154,11 +8198,13 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'enableLogin',
     value: function enableLogin(e) {
-      var el = document.getElementById(e.target.name);
-      el.classList.toggle('enable');
+      if (!this.state.login.status) {
+        var el = document.getElementById(e.target.name);
+        el.classList.toggle('enable');
 
-      var height = document.documentElement.scrollHeight || document.body.scrollHeight;
-      el.style.height = height + 'px';
+        var height = document.documentElement.scrollHeight || document.body.scrollHeight;
+        el.style.height = height + 'px';
+      }
     }
   }, {
     key: 'updateState',
@@ -8214,6 +8260,14 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
 
+var _MemberStore = require('../../stores/MemberStore');
+
+var _MemberStore2 = _interopRequireDefault(_MemberStore);
+
+var _MemberActions = require('../../actions/MemberActions');
+
+var _MemberActions2 = _interopRequireDefault(_MemberActions);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -8259,7 +8313,26 @@ var WorksEntry = function (_React$Component) {
         alt: 'close'
       })), _react2.default.createElement('h1', null, this.props.title), _react2.default.createElement('div', null, '名前:  ', this.props.name, _react2.default.createElement('br', null), 'フリガナ: ', this.props.furi, _react2.default.createElement('br', null), '電話番号: ', this.props.tel, _react2.default.createElement('br', null), 'メールアドレス: ', this.props.mail), _react2.default.createElement('span', {
         dangerouslySetInnerHTML: { __html: this.props.body }
-      }), _react2.default.createElement('button', null, this.props.button)));
+      }), _react2.default.createElement('p', { id: 'modalError' + this.props.id, className: 'loginError' }), _react2.default.createElement('button', {
+        name: this.props.id,
+        onClick: this.onSubmit.bind(this)
+      }, this.props.button)));
+    }
+  }, {
+    key: 'onSubmit',
+    value: function onSubmit(e) {
+      var el = document.getElementById('modalError' + this.props.id);
+      el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
+      el.classList.toggle('active');
+
+      var obj = {
+        name: this.props.name,
+        furi: this.props.furi,
+        tel: this.props.tel,
+        mail: this.props.mail
+      };
+
+      _MemberActions2.default.add(obj);
     }
   }, {
     key: 'disableModal',
@@ -8275,7 +8348,7 @@ var WorksEntry = function (_React$Component) {
 
 exports.default = WorksEntry;
 
-},{"react":284,"react-router":83}],37:[function(require,module,exports){
+},{"../../actions/MemberActions":4,"../../stores/MemberStore":39,"react":284,"react-router":83}],37:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -8299,6 +8372,14 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
+
+var _MemberStore = require('../../stores/MemberStore');
+
+var _MemberStore2 = _interopRequireDefault(_MemberStore);
+
+var _MemberActions = require('../../actions/MemberActions');
+
+var _MemberActions2 = _interopRequireDefault(_MemberActions);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -8328,10 +8409,24 @@ var WorksLogin = function (_React$Component) {
   function WorksLogin(props) {
     _classCallCheck(this, WorksLogin);
 
-    return _possibleConstructorReturn(this, (WorksLogin.__proto__ || Object.getPrototypeOf(WorksLogin)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (WorksLogin.__proto__ || Object.getPrototypeOf(WorksLogin)).call(this, props));
+
+    _this.state = {
+      login: {
+        id: { val: 'メールアドレスを入力', flag: true },
+        pw: { val: 'パスワードを入力', flag: true }
+      }
+    };
+    return _this;
   }
 
   _createClass(WorksLogin, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {}
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {}
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement('div', { id: this.props.id, className: 'modal' }, _react2.default.createElement('div', null, _react2.default.createElement('a', {
@@ -8345,20 +8440,150 @@ var WorksLogin = function (_React$Component) {
         alt: 'close'
       })), _react2.default.createElement('h1', null, 'ログイン'), _react2.default.createElement('div', { className: 'login' }, _react2.default.createElement('label', null, 'メールアドレス'), _react2.default.createElement('input', {
         type: 'text',
-        id: 'formName',
-        name: 'name'
+        id: 'loginId',
+        name: 'id',
+        value: this.state.login.id.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validateId.bind(this),
+        onChange: this.formUpdate.bind(this)
       }), _react2.default.createElement('br', null), _react2.default.createElement('label', null, 'パスワード'), _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formName',
-        name: 'name'
-      }), _react2.default.createElement('p', null, 'メールアドレスとパスワードを入力し、', _react2.default.createElement('br', null), '「ログインする」をクリックしてください。')), _react2.default.createElement('button', null, 'ログインする')));
+        type: 'password',
+        id: 'loginPassword',
+        name: 'pw',
+        value: this.state.login.pw.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validatePw.bind(this),
+        onChange: this.formUpdate.bind(this)
+      }), _react2.default.createElement('p', null, 'メールアドレスとパスワードを入力し、', _react2.default.createElement('br', null), '「ログインする」をクリックしてください。'), _react2.default.createElement('p', { id: 'loginError', className: 'loginError' }, 'message')), _react2.default.createElement('button', {
+        onClick: this.login.bind(this)
+      }, 'ログインする')));
+    }
+
+    /*
+     * submit
+     */
+
+  }, {
+    key: 'login',
+    value: function login(e) {
+      e.preventDefault();
+
+      var id = document.getElementById('loginId').value;
+      var pw = document.getElementById('loginPassword').value;
+
+      var obj = { id: id, password: pw };
+
+      _MemberActions2.default.login(obj, this.loginCallBack.bind(this));
+    }
+  }, {
+    key: 'loginCallBack',
+    value: function loginCallBack(res) {
+      var el = document.getElementById('loginError');
+
+      if (res === undefined) {
+        el.innerHTML = 'メールアドレス、パスワードをご確認ください';
+        el.classList.add('active');
+      } else {
+        el.innerHTML = 'ログインに成功しました';
+        el.classList.add('active');
+        this.props.changeLoginStatus(res);
+      }
+    }
+
+    /*
+     * フォーム関連
+     */
+
+  }, {
+    key: 'txtCount',
+    value: function txtCount(field, val) {
+      var cnt = void 0;
+
+      switch (field) {
+        case 'id':
+          cnt = 110;break;
+        case 'pw':
+          cnt = 16;break;
+        default:
+          break;
+      }
+
+      return val.length <= cnt ? true : false;
+    }
+  }, {
+    key: 'formUpdate',
+    value: function formUpdate(e) {
+      var field = e.target.name;
+      var val = e.target.value;
+
+      var login = this.state.login;
+
+      if (login[field].flag) {
+        val = '';
+        e.target.style.color = 'black';
+      }
+
+      login[field] = {
+        val: val,
+        flag: false
+      };
+
+      if (this.txtCount(field, val)) {
+        this.setState({
+          login: login
+        });
+      }
+    }
+  }, {
+    key: 'validateId',
+    value: function validateId() {
+      var vals = this.state.login;
+      var el = document.getElementById('loginId');
+
+      if (vals.id.val == '' || vals.id.val == 'メールアドレスを入力' || !vals.id.val.match(/^[A-Za-z0-9]+[\w-]+@[\w\.-]+\.\w{2,}$/)) {
+        return this.turnRed(el);
+      } else {
+        return this.turnGreen(el);
+      }
+    }
+  }, {
+    key: 'validatePw',
+    value: function validatePw() {
+      var vals = this.state.login;
+      var el = document.getElementById('loginPassword');
+
+      if (vals.pw.val == '' || vals.pw.val == 'パスワードを入力' || vals.pw.val.match(/[^A-Za-z0-9]+/)) {
+        return this.turnRed(el);
+      } else {
+        return this.turnGreen(el);
+      }
+    }
+
+    /*
+     * エラー時表示処理
+     */
+
+  }, {
+    key: 'turnRed',
+    value: function turnRed(el) {
+      el.classList.add('active');;
+      return false;
+    }
+  }, {
+    key: 'turnGreen',
+    value: function turnGreen(el) {
+      el.classList.remove('active');;
+      return true;
     }
   }, {
     key: 'disableModal',
-    value: function disableModal(e) {
+    value: function disableModal() {
+      var e = arguments.length <= 0 || arguments[0] === undefined ? undefined : arguments[0];
+
       e.preventDefault();
+
       var el = document.getElementById(this.props.id);
-      el.classList.toggle('enable');
+      el.classList.remove('enable');
     }
   }]);
 
@@ -8367,7 +8592,7 @@ var WorksLogin = function (_React$Component) {
 
 exports.default = WorksLogin;
 
-},{"react":284,"react-router":83}],38:[function(require,module,exports){
+},{"../../actions/MemberActions":4,"../../stores/MemberStore":39,"react":284,"react-router":83}],38:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -8557,11 +8782,31 @@ var _members = [{
   name: '',
   furi: '',
   tel: '',
-  mail: ''
+  mail: '',
+  password: '',
+  gender: '',
+  age: '',
+  birthday: '',
+  zip: '',
+  prefecture: '',
+  city: '',
+  address: '',
+  detail_flag: '',
+  created: '',
+  modified: ''
 }];
 
 function create(res) {
   _members = res;
+}
+
+function add(res) {
+  _members = res;
+}
+
+function login(res, cb) {
+  cb(res[0]);
+  //return res[0];
 }
 
 function update(id, updates) {
@@ -8612,6 +8857,20 @@ _Dispatcher2.default.register(function (action) {
       _Http.http.get(URL).then(function (res) {
         create(res);
         memberStore.update();
+      }).catch(function (e) {
+        //console.error(e);
+      });
+      break;
+
+    case _MemberConstants2.default.ADD:
+      _Http.http.post(URL, action.data).then(function (res) {}).catch(function (e) {
+        //console.error(e);
+      });
+      break;
+
+    case _MemberConstants2.default.LOGIN:
+      _Http.http.post(URL + 'login', action.data).then(function (res) {
+        login(res, action.callback);
       }).catch(function (e) {
         //console.error(e);
       });

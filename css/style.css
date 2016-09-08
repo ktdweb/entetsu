@@ -7116,9 +7116,20 @@ div#badge {
         #Front .modal > div > div.login input {
           width: 300px;
           border: 1px solid #0099DE;
-          margin-bottom: 1rem; }
-        #Front .modal > div > div.login.active {
-          border: 1px solid #ef2a90;
+          margin-bottom: 1rem;
+          color: #aaa; }
+          #Front .modal > div > div.login input.active {
+            border: 1px solid #ef2a90;
+            -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+            -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+            animation: blink 0.2s linear 0.2s 2 forwards; }
+      #Front .modal > div p.loginError {
+        visibility: hidden;
+        margin: 1rem 0;
+        color: #ef2a90;
+        font-size: 1.44rem; }
+        #Front .modal > div p.loginError.active {
+          visibility: visible;
           -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
           -moz-animation: blink 0.2s linear 0.2s 2 forwards;
           animation: blink 0.2s linear 0.2s 2 forwards; }
@@ -7768,6 +7779,11 @@ div#badge {
             border: 2px solid #0099DE;
             border-radius: 20px;
             background-color: white; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login button.pf-loginDone, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label.pf-loginDone.inputFileButton {
+              background-color: rgba(0, 153, 222, 0.1);
+              opacity: 1;
+              cursor: default;
+              border: none; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p {
             margin: 2rem; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label {

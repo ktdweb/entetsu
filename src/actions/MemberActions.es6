@@ -8,6 +8,21 @@ export default {
     })
   },
 
+  add: (data) => {
+    Dispatcher.dispatch({
+      actionType: MemberConstants.ADD,
+      data: data
+    })
+  },
+
+  login: (data, callback) => {
+    Dispatcher.dispatch({
+      actionType: MemberConstants.LOGIN,
+      data: data,
+      callback: callback
+    })
+  },
+
   update: (id, count) => {
     Dispatcher.dispatch({
       actionType: MemberConstants.UPDATE,

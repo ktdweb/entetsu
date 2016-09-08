@@ -22,6 +22,10 @@ export default class WorksDetail extends React.Component {
     this.state = {
       works: works,
       members: members,
+      login: {
+        name: '',
+        status: false
+      },
       form: {
         name: { val: '日本語で入力', flag: true },
         furi: { val: 'カタカナで入力', flag: true },
@@ -72,6 +76,7 @@ export default class WorksDetail extends React.Component {
                 />
 
               <button
+                id="loginButton"
                 name="modalLogin"
                 onClick={this.enableLogin.bind(this)}
               >ログイン</button>
@@ -283,9 +288,35 @@ export default class WorksDetail extends React.Component {
         <WorksLogin
           key="2"
           id="modalLogin"
+          changeLoginStatus={this.changeLoginStatus.bind(this)}
           />
       </article>
     );
+  }
+
+  /*
+   * submit
+   */
+  onSubmit() {
+    let f1 = this.validateName();
+    let f2 = this.validateFuri();
+    let f3 = this.validateTel();
+    let f4 = this.validateMail();
+    let f5 = this.validateConfirm();
+
+    return (f1 && f2 && f3 && f4 && f5) ? true : false;
+  }
+
+  /*
+   * ログインステータス変更  子componentに渡す
+   */
+  changeLoginStatus(data) {
+    let el = document.getElementById('loginButton');
+    el.classList.add('pf-loginDone');
+    el.innerHTML = 'ログイン済: ' + data.name + 'さん';
+
+    let obj = { name: data.name, status: true };
+    this.setState({ login: obj });
   }
 
   /*
@@ -329,6 +360,10 @@ export default class WorksDetail extends React.Component {
     }
   }
 
+
+  /*
+   * バリデート
+   */
   validateName() {
     let vals = this.state.form;
     let el = document.getElementById('formName');
@@ -344,9 +379,6 @@ export default class WorksDetail extends React.Component {
     }
   }
 
-  /*
-   * バリデート
-   */
   validateFuri() {
     let vals = this.state.form;
     let el = document.getElementById('formFuri');
@@ -404,6 +436,7 @@ export default class WorksDetail extends React.Component {
     }
   }
 
+
   /*
    * エラー時表示処理
    */
@@ -417,18 +450,6 @@ export default class WorksDetail extends React.Component {
     return true;
   };
 
-  /*
-   * submit
-   */
-  onSubmit() {
-    let f1 = this.validateName();
-    let f2 = this.validateFuri();
-    let f3 = this.validateTel();
-    let f4 = this.validateMail();
-    let f5 = this.validateConfirm();
-
-    return (f1 && f2 && f3 && f4 && f5) ? true : false;
-  }
 
   /*
    * modalを開く
@@ -453,11 +474,13 @@ export default class WorksDetail extends React.Component {
    * ログイン
    */
   enableLogin(e) {
+    if (!this.state.login.status) {
       let el = document.getElementById(e.target.name);
       el.classList.toggle('enable');
 
       let height = document.documentElement.scrollHeight || document.body.scrollHeight;
       el.style.height = height + 'px'; 
+    }
   }
 
   updateState() {

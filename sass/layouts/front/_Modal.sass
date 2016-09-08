@@ -70,12 +70,23 @@
         width: 120px
         text-align: right
         margin-right: $base-spacing
+
       input
         width: 300px
         border: 1px solid $color-works-base
         margin-bottom: $small-spacing
+        color: #aaa
+        &.active
+          border: 1px solid $color-works-error
+          +animation(blink 0.2s linear 0.2s 2 forwards)
+
+    p.loginError
+      visibility: hidden
+      margin: $small-spacing 0
+      color: $color-works-error
+      font-size: $small-font-size * 1.2
       &.active
-        border: 1px solid $color-works-error
+        visibility: visible 
         +animation(blink 0.2s linear 0.2s 2 forwards)
 
     & > a.modalLink

@@ -41,7 +41,7 @@ $app->group('/members', function () {
     );
 
     /**
-     * POST
+     * POST add
      */
     $this->post(
         '/',
@@ -53,21 +53,51 @@ $app->group('/members', function () {
             $body = $request->getParsedBody();
 
             $db = $this->get('db.post');
+            $sql = 'INSERT INTO `members` (`name`,`furi`,`tel`,`mail`) VALUES ';
+            $sql .= '(?, ?, ?, ?);';
 
-            $sql  = 'INSERT INTO `users` ';
-
-            $fields = array_keys($body);
-            $values = array_values($body);
-            $holder = array_fill(0, count($values), '?');
-
-            $sql .= '(' . implode(', ', $fields) . ')';
-            $sql .= ' VALUES ';
-            $sql .= '(' . implode(', ', $holder) . ')';
-
-            $db->execute($sql, $values);
+            $res = $db->execute(
+                $sql,
+                array(
+                    $body['name'],
+                    $body['furi'],
+                    $body['tel'],
+                    $body['mail']
+                )
+            );
 
             return $response->withJson(
-                $body,
+                $res,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * POST login
+     */
+    $this->post(
+        '/login',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $body = $request->getParsedBody();
+
+            $db = $this->get('db.get');
+            $sql = 'select `name` from `members`';
+            $sql .= ' WHERE `mail` = ? AND `password` = ?';
+            $sql .= ' LIMIT 1';
+
+            $res = $db->execute(
+                $sql,
+                array($body['id'], $body['password'])
+            );
+
+            return $response->withJson(
+                $res,
                 200,
                 $this->get('settings')['withJsonEnc']
             );
