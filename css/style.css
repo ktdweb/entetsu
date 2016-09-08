@@ -5364,7 +5364,8 @@ img {
   下線を消す
   */
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  outline: none; }
 
 /*
   # small
@@ -5386,6 +5387,9 @@ li {
   */
 address {
   font-style: normal; }
+
+button, label.inputFileButton {
+  outline: none; }
 
 /*
   # modules/index.sass
@@ -6092,14 +6096,15 @@ h1, h2, h3, h4, h5, h6 {
   prefixはなし
   */
 /*
-  # a:hover
+  # a:hover, button
   マウスオーバー時、透明度を半分下げる
   */
-a {
+a, button, label.inputFileButton {
   color: #428BCA;
   transition: opacity 300ms;
-  cursor: pointer; }
-  a:hover {
+  cursor: pointer;
+  outline: none; }
+  a:hover, button:hover, label.inputFileButton:hover {
     opacity: .5; }
 
 /*
@@ -7074,15 +7079,16 @@ div#badge {
       -moz-animation: show 1s ease-in-out 0s;
       animation: show 1s ease-in-out 0s; }
     #Front .modal > div {
+      position: relative;
       margin: 200px auto;
       padding: 20px;
-      width: 740px;
-      height: 480px;
+      width: 680px;
+      height: auto;
       text-align: center;
       color: #0099DE;
       font-size: 1.32rem;
       background-color: white;
-      border-radius: 10px;
+      border-radius: 7px;
       box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.2); }
       #Front .modal > div h1 {
         font-size: 2.4rem;
@@ -7098,7 +7104,25 @@ div#badge {
         font-size: 1.2rem;
         padding: 1rem 1rem;
         border: 1px solid #0099DE; }
-      #Front .modal > div a {
+      #Front .modal > div > div.login {
+        width: auto;
+        border: none;
+        font-size: 1.38rem; }
+        #Front .modal > div > div.login label {
+          display: inline-block;
+          width: 120px;
+          text-align: right;
+          margin-right: 2rem; }
+        #Front .modal > div > div.login input {
+          width: 300px;
+          border: 1px solid #0099DE;
+          margin-bottom: 1rem; }
+        #Front .modal > div > div.login.active {
+          border: 1px solid #ef2a90;
+          -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+          -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+          animation: blink 0.2s linear 0.2s 2 forwards; }
+      #Front .modal > div > a.modalLink {
         display: block;
         width: 240px;
         height: 40px;
@@ -7109,6 +7133,24 @@ div#badge {
         padding: 0;
         border-radius: 20px;
         background-color: #0099DE; }
+    #Front .modal .modalClose {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      border: 1px solid #0099DE;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 1px 0 0 #0099DE; }
+    #Front .modal button, #Front .modal label.inputFileButton {
+      display: block;
+      width: 260px;
+      height: 40px;
+      color: white;
+      font-size: 1.6rem;
+      margin: 0 auto;
+      padding: 0;
+      border-radius: 20px;
+      background-color: #0099DE; }
 
 /*
   # pages/index.sass
@@ -7652,7 +7694,7 @@ div#badge {
         position: relative;
         width: 960px;
         margin: 0 auto;
-        padding-top: 4rem; }
+        padding-top: 3rem; }
         #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-tab {
           position: absolute;
           top: -25px;
@@ -7669,7 +7711,6 @@ div#badge {
           -webkit-border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-style: solid;
-          border-style: solid;
           border-width: 45px;
           background-color: white;
           font-size: 1.36rem; }
@@ -7680,14 +7721,13 @@ div#badge {
             right: -10px; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-section {
             display: table;
-            background-color: white;
-            margin: 10px -20px;
             width: 100%;
-            min-height: 600px; }
+            min-height: 620px;
+            margin-top: 2rem; }
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-section > div:first-child {
               display: table-cell;
               vertical-align: top;
-              padding-right: 30px; }
+              padding-right: 40px; }
               #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-section > div:first-child span {
                 display: block;
                 margin-bottom: 10px;
@@ -7717,7 +7757,7 @@ div#badge {
             margin-bottom: 2rem; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login button, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label.inputFileButton {
             display: block;
-            width: 240px;
+            width: 260px;
             height: 40px;
             color: #0099DE;
             font-size: 1.6rem;
@@ -7728,33 +7768,53 @@ div#badge {
             background-color: white; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p {
             margin: 2rem; }
+          #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label {
+            display: block;
+            width: 100%;
+            text-align: left; }
+          #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login input {
+            display: block;
+            width: 100%;
+            color: #aaa;
+            border: 1px solid #0099DE; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login input.active {
+              border: 1px solid #ef2a90;
+              -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+              -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+              animation: blink 0.2s linear 0.2s 2 forwards; }
+          #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.error {
+            visibility: hidden;
+            margin: 1rem 0;
+            color: #ef2a90;
+            font-size: 1.44rem; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.error.active {
+              visibility: visible;
+              -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+              -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+              animation: blink 0.2s linear 0.2s 2 forwards; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div {
-            width: 240px;
+            width: 260px;
+            margin: 0 auto;
             padding: 10px;
             font-size: 1.2rem;
-            text-align: left;
+            text-align: center;
             border: 2px solid #0099DE;
             border-radius: 5px;
             background-color: white; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div dl, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div dd, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div input {
+              margin: 0; }
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div dl {
               margin-bottom: 1rem; }
-              #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div dl dd input {
-                width: 145px; }
-            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div input {
-              border: 1px solid #0099DE;
-              margin: 0; }
-            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div > input {
-              width: 210px; }
-            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div div {
-              margin: 20px 0; }
-              #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div div button, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div div label.inputFileButton {
-                width: 180px;
-                height: 30px;
-                color: white;
-                margin: 0 15px;
-                font-size: 1.2rem;
-                line-height: 20px;
-                background-color: #0099DE; }
+              #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div dl dd {
+                width: auto; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div button, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div label.inputFileButton {
+              width: 100%;
+              height: 30px;
+              margin: 0 auto;
+              color: white;
+              font-size: 1.2rem;
+              line-height: 20px;
+              background-color: #0099DE; }
     #Front article#WorksDetail div.pf-Works-Detail-footer {
       margin: 4rem 0;
       text-align: center; }
@@ -7771,73 +7831,24 @@ div#badge {
         background-color: white; }
       #Front article#WorksDetail div.pf-Works-Detail-footer button:last-child, #Front article#WorksDetail div.pf-Works-Detail-footer label.inputFileButton:last-child {
         background-color: #F5FBFE; }
-    #Front article#WorksDetail div.modal {
-      position: absolute;
-      display: none;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1540px;
-      text-align: center;
-      background-color: rgba(0, 0, 12, 0.4);
-      z-index: 1000; }
-      #Front article#WorksDetail div.modal.enable {
-        opacity: 1;
-        display: block;
-        -webkit-animation: show 1s ease-in-out 0s;
-        -moz-animation: show 1s ease-in-out 0s;
-        animation: show 1s ease-in-out 0s; }
 
-@-webkit-keyframes show {
+@-webkit-keyframes blink {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
 
-@-moz-keyframes show {
+@-moz-keyframes blink {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
 
-@keyframes show {
+@keyframes blink {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
-      #Front article#WorksDetail div.modal > div {
-        margin: 200px auto;
-        width: 480px;
-        height: 440px;
-        text-align: center;
-        color: #0099DE;
-        font-size: 1.32rem;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.2); }
-        #Front article#WorksDetail div.modal > div h1 {
-          font-size: 2.4rem;
-          color: #0099DE;
-          line-height: 6rem;
-          background-color: #F5FBFE;
-          border-radius: 10px; }
-        #Front article#WorksDetail div.modal > div > div {
-          width: 240px;
-          color: #0099DE;
-          margin: 1rem auto;
-          font-size: 1.2rem;
-          padding: 1rem 1rem;
-          border: 1px solid #0099DE; }
-        #Front article#WorksDetail div.modal > div button, #Front article#WorksDetail div.modal > div label.inputFileButton {
-          display: block;
-          width: 240px;
-          height: 40px;
-          color: white;
-          font-size: 1.6rem;
-          margin: 0 auto;
-          padding: 0;
-          border-radius: 20px;
-          background-color: #0099DE; }
   #Front article.pf-Detail {
     /*
   # pages/front/Detail.sass

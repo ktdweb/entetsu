@@ -5,15 +5,30 @@ import DocumentTitle from 'react-document-title'
 import WorkStore from '../../stores/WorkStore'
 import WorkActions from '../../actions/WorkActions'
 
+import MemberStore from '../../stores/MemberStore'
+import MemberActions from '../../actions/MemberActions'
+
+import WorksEntry from './WorksEntry' 
+import WorksLogin from './WorksLogin' 
+
 export default class WorksDetail extends React.Component {
 
   constructor(props) {
     super(props);
 
     let works = WorkStore.read();
+    let members = MemberStore.read();
 
     this.state = {
-      works: works
+      works: works,
+      members: members,
+      form: {
+        name: { val: '日本語で入力', flag: true },
+        furi: { val: 'カタカナで入力', flag: true },
+        tel: { val: '日中つながる電話番号', flag: true },
+        mail: { val: '半角で入力', flag: true },
+        confirm: { val: 'もう一度入力', flag: true }
+      }
     }
   }
 
@@ -57,6 +72,8 @@ export default class WorksDetail extends React.Component {
                 />
 
               <button
+                name="modalLogin"
+                onClick={this.enableLogin.bind(this)}
               >ログイン</button>
 
               <p>もしくは…</p>
@@ -67,6 +84,12 @@ export default class WorksDetail extends React.Component {
                   <dd>
                     <input
                       type="text"
+                      id="formName"
+                      name="name"
+                      value={this.state.form.name.val}
+                      onFocus={this.formUpdate.bind(this)}
+                      onBlur={this.validateName.bind(this)}
+                      onChange={this.formUpdate.bind(this)}
                       />
                   </dd>
                 </dl>
@@ -76,6 +99,12 @@ export default class WorksDetail extends React.Component {
                   <dd>
                     <input
                       type="text"
+                      id="formFuri"
+                      name="furi"
+                      value={this.state.form.furi.val}
+                      onFocus={this.formUpdate.bind(this)}
+                      onBlur={this.validateFuri.bind(this)}
+                      onChange={this.formUpdate.bind(this)}
                       />
                   </dd>
                 </dl>
@@ -85,27 +114,54 @@ export default class WorksDetail extends React.Component {
                   <dd>
                     <input
                       type="text"
+                      id="formTel"
+                      name="tel"
+                      value={this.state.form.tel.val}
+                      onFocus={this.formUpdate.bind(this)}
+                      onBlur={this.validateTel.bind(this)}
+                      onChange={this.formUpdate.bind(this)}
                       />
                   </dd>
                 </dl>
 
-                メールアドレス
+                <label>メールアドレス</label>
                 <input
-                  type="text"
+                    type="text"
+                    id="formMail"
+                    name="mail"
+                    value={this.state.form.mail.val}
+                    onFocus={this.formUpdate.bind(this)}
+                    onBlur={this.validateMail.bind(this)}
+                    onChange={this.formUpdate.bind(this)}
                   />
 
-                メールアドレス再入力
+                <label>メールアドレス再入力</label>
                 <input
-                  type="text"
+                    type="text"
+                    id="formConfirm"
+                    name="confirm"
+                    value={this.state.form.confirm.val}
+                    onFocus={this.formUpdate.bind(this)}
+                    onBlur={this.validateConfirm.bind(this)}
+                    onChange={this.formUpdate.bind(this)}
                   />
 
-                <div className="text-center">
-                  <button
-                  >担当者からすぐ連絡を希望する</button>
-                  もしくは…
-                  <button
-                  >メールにて連絡を希望する</button>
-                </div>
+                <p id="error" className="error">
+                  赤枠の内容をご確認ください
+                </p>
+
+                <button
+                  name="modalTel"
+                  onClick={this.enableModal.bind(this)}
+                >{modal[0].button}</button>
+
+                もしくは…
+
+                <button
+                  name="modalMail"
+                  onClick={this.enableModal.bind(this)}
+                >{modal[1].button}</button>
+
               </div>
             </div>
 
@@ -202,90 +258,206 @@ export default class WorksDetail extends React.Component {
           </a>
         </div>
 
-        <div
-          id="modal"
-          className="modal"
-          onClick={this.disableModal.bind(this)}
-          >
-          <div>
-            <h1>応募内容のご確認</h1>
-            <div>
-              名前:  山田太郎<br />
-              フリガナ: ヤマダタロウ<br />
-              電話番号: 012-333-4444<br />
-              メールアドレス: info@example.com
-            </div>
+        <WorksEntry
+          key="0"
+          id="modalTel"
+          body={modal[0].body}
+          button={modal[0].button}
+          name={this.state.form.name.val}
+          furi={this.state.form.furi.val}
+          tel= {this.state.form.tel.val}
+          mail={this.state.form.mail.val}
+          />
 
-            <p>
-              弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />
-その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />
-また、あわせて会員情報も登録されます。
-            </p>
+        <WorksEntry
+          key="1"
+          id="modalMail"
+          body={modal[1].body}
+          button={modal[1].button}
+          name={this.state.form.name.val}
+          furi={this.state.form.furi.val}
+          tel= {this.state.form.tel.val}
+          mail={this.state.form.mail.val}
+          />
 
-            <p>
-              以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。
-            </p>
-
-            <button>電話にて連絡を希望する</button>
-          </div>
-        </div>
-
-        <div
-          id="modal2"
-          className="modal"
-          onClick={this.disableModal2.bind(this)}
-          >
-          <div>
-            <h1>応募内容のご確認</h1>
-            <div>
-              名前:  山田太郎<br />
-              フリガナ: ヤマダタロウ<br />
-              電話番号: 012-333-4444<br />
-              メールアドレス: info@example.com
-            </div>
-
-            <p>
-              弊社スタッフより、お仕事のご紹介や、<br />
-              ご都合のご確認として、<br />
-              メールにてご連絡させていただきます。<br />
-また、あわせて会員情報も登録されます。
-            </p>
-
-            <p>
-              以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。
-            </p>
-
-            <button>メールにて連絡を希望する</button>
-          </div>
-        </div>
+        <WorksLogin
+          key="2"
+          id="modalLogin"
+          />
       </article>
     );
   }
 
-  enableModal() {
-    let el = document.getElementById('modal');
-    el.classList.toggle('enable');
+  /*
+   * フォーム関連
+   */
+  txtCount(field, val) {
+    let cnt;
 
-    let height = document.documentElement.scrollHeight || document.body.scrollHeight;
-    el.style.height = height + 'px'; 
+    switch(field) {
+      case 'name': cnt = 12; break;
+      case 'furi': cnt = 24; break;
+      case 'tel':  cnt = 13; break;
+      case 'mail': cnt = 110; break;
+      case 'confirm': cnt = 110; break;
+      default: break;
+    }
+
+    return (val.length <= cnt) ? true : false ;
   }
 
-  enableModal2() {
-    let el = document.getElementById('modal2');
-    el.classList.toggle('enable');
+  formUpdate(e) {
+    let field = e.target.name;
+    let val = e.target.value;
 
-    let height = document.documentElement.scrollHeight || document.body.scrollHeight;
-    el.style.height = height + 'px'; 
+    let form = this.state.form;
+
+    if (form[field].flag) {
+      val = '';
+      e.target.style.color = 'black';
+    }
+
+    form[field] = {
+      val: val,
+      flag: false
+    }
+
+    if (this.txtCount(field, val)) {
+      this.setState({
+        form: form
+      });
+    }
   }
 
-  disableModal() {
-    let el = document.getElementById('modal');
-    el.classList.toggle('enable');
+  validateName() {
+    let vals = this.state.form;
+    let el = document.getElementById('formName');
+
+    if (
+      vals.name.val == '' ||
+      vals.name.val == '日本語で入力' ||
+      vals.name.val.match(/[A-Za-z0-9]+/)
+    ) {
+      return this.turnRed(el);
+    } else {
+      return this.turnGreen(el);
+    }
   }
 
-  disableModal2() {
-    let el = document.getElementById('modal2');
-    el.classList.toggle('enable');
+  /*
+   * バリデート
+   */
+  validateFuri() {
+    let vals = this.state.form;
+    let el = document.getElementById('formFuri');
+
+    if (
+      vals.furi.val == '' ||
+      vals.furi.val == 'カタカナで入力' ||
+      vals.furi.val.match(/[^ァ-ン\s]+/)
+    ) {
+      return this.turnRed(el);
+    } else {
+      return this.turnGreen(el);
+    }
+  }
+
+  validateTel() {
+    let vals = this.state.form;
+    let el = document.getElementById('formTel');
+    if (
+      vals.tel.val == '' ||
+      vals.tel.val == '日中つながる電話番号' ||
+      vals.tel.val.match(/[^0-9\-\s]+/)
+    ) {
+      return this.turnRed(el);
+    } else {
+      return this.turnGreen(el);
+    }
+  }
+
+  validateMail() {
+    let vals = this.state.form;
+    let el = document.getElementById('formMail');
+    if (
+      vals.mail.val == '' ||
+      vals.mail.val == '半角で入力' ||
+      !vals.mail.val.match(/^[A-Za-z0-9]+[\w-]+@[\w\.-]+\.\w{2,}$/)
+    ) {
+      return this.turnRed(el);
+    } else {
+      return this.turnGreen(el);
+    }
+  }
+
+  validateConfirm() {
+    let vals = this.state.form;
+    let el = document.getElementById('formConfirm');
+    if (
+      vals.confirm.val == '' ||
+      vals.confirm.val == '半角で入力' ||
+      vals.confirm.val != vals.mail.val
+    ) {
+      return this.turnRed(el);
+    } else {
+      return this.turnGreen(el);
+    }
+  }
+
+  /*
+   * エラー時表示処理
+   */
+  turnRed(el) {
+    el.classList.add('active');;
+    return false;
+  }; 
+
+  turnGreen(el) {
+    el.classList.remove('active');;
+    return true;
+  };
+
+  /*
+   * submit
+   */
+  onSubmit() {
+    let f1 = this.validateName();
+    let f2 = this.validateFuri();
+    let f3 = this.validateTel();
+    let f4 = this.validateMail();
+    let f5 = this.validateConfirm();
+
+    return (f1 && f2 && f3 && f4 && f5) ? true : false;
+  }
+
+  /*
+   * modalを開く
+   */
+  enableModal(e) {
+    let error = document.getElementById('error');
+
+    if (this.onSubmit()) {
+      error.classList.remove('active');
+
+      let el = document.getElementById(e.target.name);
+      el.classList.toggle('enable');
+
+      let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+      el.style.height = height + 'px'; 
+    } else {
+      error.classList.add('active');
+    }
+  }
+
+  /*
+   * ログイン
+   */
+  enableLogin(e) {
+      let el = document.getElementById(e.target.name);
+      el.classList.toggle('enable');
+
+      let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+      el.style.height = height + 'px'; 
   }
 
   updateState() {
@@ -298,3 +470,42 @@ export default class WorksDetail extends React.Component {
     });
   }
 }
+
+
+
+
+let modal = new Array();
+modal = [
+  {
+    title: '応募内容のご確認',
+    body: String.raw`
+      <p>
+        弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />
+        その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />
+        また、あわせて会員情報も登録されます。
+      </p>
+
+      <p>
+        以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。
+      </p>
+    `,
+    button: '担当者からすぐ連絡を希望する'
+  },
+
+  {
+    title: '応募内容のご確認',
+    body: String.raw`
+      <p>
+        弊社スタッフより、お仕事のご紹介や、<br />
+        ご都合のご確認として、<br />
+        メールにてご連絡させていただきます。<br />
+また、あわせて会員情報も登録されます。
+      </p>
+
+      <p>
+        以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。
+      </p>
+    `,
+    button: 'メールにて連絡を希望する'
+  }
+];

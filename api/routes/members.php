@@ -10,7 +10,7 @@ namespace Routes;
 /**
  * users
  */
-$app->group('/users', function () {
+$app->group('/members', function () {
 
     /**
      * GET

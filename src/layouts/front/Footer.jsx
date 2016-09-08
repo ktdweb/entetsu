@@ -310,6 +310,19 @@ export default class Footer extends React.Component {
           onClick={this.disableModal.bind(this)}
           >
           <div>
+            <a
+              href="#"
+              onClick={this.disableModal.bind(this)}
+              >
+              <img
+                className="modalClose"
+                src="/imgs/close.png"
+                width="50"
+                height="50"
+                alt="close"
+                />
+            </a>
+
             <h1>個人情報の取り扱いについて</h1>
 
             <p>
@@ -333,6 +346,7 @@ export default class Footer extends React.Component {
             </p>
 
             <a
+              className="modalLink"
               href="/pdf/privacy.pdf"
               target="_blank"
               >ダウンロード</a>
@@ -344,7 +358,7 @@ export default class Footer extends React.Component {
   }
 
   enableModal(e) {
-    e.preventDefault;
+    e.preventDefault();
     let el = document.getElementById('footerPrivacy');
     el.classList.add('enable');
 
@@ -353,7 +367,7 @@ export default class Footer extends React.Component {
   }
 
   disableModal(e) {
-    e.preventDefault;
+    e.preventDefault();
     let el = document.getElementById('footerPrivacy');
     el.classList.remove('enable');
   }
