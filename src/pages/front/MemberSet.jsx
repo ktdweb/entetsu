@@ -5,6 +5,9 @@ import DocumentTitle from 'react-document-title'
 import MemberStore from '../../stores/MemberStore'
 import MemberActions from '../../actions/MemberActions'
 
+import TokenStore from '../../stores/TokenStore'
+import TokenActions from '../../actions/TokenActions'
+
 import YubinBango from '../../components/YubinBango'
 
 
@@ -14,6 +17,7 @@ export default class MemberSet extends React.Component {
     super(props);
 
     this.state = {
+      status: false,
       form: {
         pw: { val:'12345678', flag: true },
         repw: { val:'12345678', flag: true },
@@ -35,12 +39,20 @@ export default class MemberSet extends React.Component {
   }
 
   componentDidMount() {
-    this.bgFull();
-    let gender1 = document.getElementById('formGender1');
-    gender1.checked = true;
+    let obj = { token: this.props.params.token };
+    let _this = this;
+    TokenActions.check(obj, (function(res) {
+      if (res.length == 0) {
+        location.href = '/tokens/timeout';
+      } else {
+        _this.updateStatus();
+      }
+    }));
   }
 
   render() {
+    if (!this.state.status) return false;
+
     let IMG = '/imgs/pages/works/';
 
     return (
@@ -226,10 +238,13 @@ export default class MemberSet extends React.Component {
         </div>
       </article>
     );
+
+    this.bgFull();
+    let gender1 = document.getElementById('formGender1');
+    gender1.checked = true;
   }
 
   onSubmit(e) {
-    console.log(this.props);
     let obj = {
       token: this.props.params.token,
       pw: this.state.form.pw.val,
@@ -503,5 +518,9 @@ export default class MemberSet extends React.Component {
         adds.style.color = 'black';
         _this.setState({ form: obj });
     });
+  }
+
+  updateStatus() {
+    this.setState({ status: true });
   }
 }

@@ -7098,7 +7098,7 @@ div#badge {
         text-align: center;
         border-radius: 10px; }
       #Front .modal > div > div {
-        width: 240px;
+        width: 400px;
         color: #0099DE;
         margin: 1rem auto;
         font-size: 1.2rem;
@@ -7879,7 +7879,6 @@ div#badge {
       position: relative;
       top: 70px;
       width: 680px;
-      min-height: 680px;
       overflow: visible;
       padding-bottom: 2rem;
       margin: 0 auto;
@@ -7917,7 +7916,7 @@ div#badge {
         width: 380px;
         margin: 0 auto; }
         #Front article#MemberSet > div dl dt {
-          width: 140px; }
+          width: 160px; }
         #Front article#MemberSet > div dl dd input {
           border: 1px solid #0099DE;
           margin-bottom: 1rem;

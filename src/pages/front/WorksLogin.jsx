@@ -158,7 +158,7 @@ export default class WorksLogin extends React.Component {
     if (
       vals.id.val == '' ||
       vals.id.val == 'メールアドレスを入力' ||
-      !vals.id.val.match(/^[A-Za-z0-9]+[\w-]+@[\w\.-]+\.\w{2,}$/)
+      !vals.id.val.match(/^[A-Za-z0-9-_\.]+[\w-]+@[\w\.-]+\.\w{2,}$/)
     ) {
       return this.turnRed(el);
     } else {

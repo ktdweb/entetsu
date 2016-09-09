@@ -35,6 +35,8 @@ import FrontHome      from './pages/front/Home'
 import FrontWorks     from './pages/front/Works'
 import FrontWorksDetail from './pages/front/WorksDetail'
 import FrontMemberSet from './pages/front/MemberSet'
+import FrontTokenReset from './pages/front/TokenReset'
+import FrontTokenTimeout from './pages/front/TokenTimeout'
 import FrontCompany   from './pages/front/Company'
 
 import FrontCleaning  from './pages/front/Cleaning'
@@ -172,6 +174,18 @@ const routes = (
         global={root}
         components={{
           main: FrontMemberSet,
+        }} />
+
+      <Route path={root.documentRoot + '/tokens/reset'}
+        global={root}
+        components={{
+          main: FrontTokenReset,
+        }} />
+
+      <Route path={root.documentRoot + '/tokens/timeout'}
+        global={root}
+        components={{
+          main: FrontTokenTimeout,
         }} />
     </Route>
 

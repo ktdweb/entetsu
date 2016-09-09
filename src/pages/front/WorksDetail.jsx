@@ -422,7 +422,7 @@ export default class WorksDetail extends React.Component {
     if (
       vals.mail.val == '' ||
       vals.mail.val == '半角で入力' ||
-      !vals.mail.val.match(/^[A-Za-z0-9]+[\w-]+@[\w\.-]+\.\w{2,}$/)
+      !vals.mail.val.match(/^[A-Za-z0-9-_\.]+[\w-]+@[\w\.-]+\.\w{2,}$/)
     ) {
       return this.turnRed(el);
     } else {
