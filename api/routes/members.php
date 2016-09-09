@@ -206,11 +206,13 @@ $app->group('/members', function () {
                 $body['city'],
                 $body['addr'],
                 $body['age'],
-                $gender,
+                1,
                 $birthday,
                 $member_id[0]->member_id,
             );
-            $res = $db->execute(
+
+            $put = $this->get('db.put');
+            $res = $put->execute(
                 $sql,
                 $data
             );
