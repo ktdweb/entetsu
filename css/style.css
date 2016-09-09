@@ -7218,6 +7218,11 @@ div#badge {
   prefixには`pf-WorksDetail`を付与
   */
   /*
+  # pages/front/MemberSet.sass
+  front/MemberSet.jsxに関するクラスを定義
+  prefixには`pf-MemberSet`を付与
+  */
+  /*
   # pages/front/detail/index.sass
   pages/front/detailディレクトリ内で利用するファイルをリストアップ
   このファイルを経由しpages/front/index.sassに読込
@@ -7867,6 +7872,88 @@ div#badge {
     opacity: 0; }
   to {
     opacity: 1; } }
+  #Front article#MemberSet {
+    position: relative;
+    background: #F5FBFE; }
+    #Front article#MemberSet > div {
+      position: relative;
+      top: 70px;
+      width: 680px;
+      min-height: 680px;
+      overflow: visible;
+      padding-bottom: 2rem;
+      margin: 0 auto;
+      color: #0099DE;
+      font-size: 1.44rem;
+      text-align: center;
+      background-color: white;
+      border: 2px solid #0099DE;
+      border-radius: 7px;
+      box-shadow: 0 1px 0px 0px #0099DE; }
+      #Front article#MemberSet > div h1 {
+        font-size: 2.4rem;
+        line-height: 6rem;
+        background-color: #F5FBFE;
+        border-radius: 10px; }
+      #Front article#MemberSet > div p {
+        margin: 2rem 0; }
+      #Front article#MemberSet > div p.error {
+        visibility: hidden;
+        margin: 1rem 0;
+        color: #ef2a90;
+        font-size: 1.56rem; }
+        #Front article#MemberSet > div p.error a {
+          color: #ef2a90; }
+        #Front article#MemberSet > div p.error.active {
+          visibility: visible;
+          -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+          -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+          animation: blink 0.2s linear 0.2s 2 forwards; }
+      #Front article#MemberSet > div hr {
+        height: 1px;
+        background-color: #0099DE;
+        border: none; }
+      #Front article#MemberSet > div dl {
+        width: 380px;
+        margin: 0 auto; }
+        #Front article#MemberSet > div dl dt {
+          width: 140px; }
+        #Front article#MemberSet > div dl dd input {
+          border: 1px solid #0099DE;
+          margin-bottom: 1rem;
+          color: #aaa;
+          width: 100%; }
+          #Front article#MemberSet > div dl dd input.width-s {
+            width: 65%; }
+          #Front article#MemberSet > div dl dd input.width-xs {
+            width: 40%; }
+          #Front article#MemberSet > div dl dd input.active {
+            border: 1px solid #ef2a90;
+            -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+            -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+            animation: blink 0.2s linear 0.2s 2 forwards; }
+        #Front article#MemberSet > div dl dd input[type=radio] {
+          display: inline;
+          border: 1px solid #0099DE;
+          width: 40px; }
+        #Front article#MemberSet > div dl dd button, #Front article#MemberSet > div dl dd label.inputFileButton {
+          height: 3rem;
+          float: right;
+          width: auto;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          border-radius: 5px;
+          font-size: 1.2rem; }
+      #Front article#MemberSet > div button, #Front article#MemberSet > div label.inputFileButton {
+        display: block;
+        width: 260px;
+        height: 40px;
+        color: white;
+        font-size: 1.6rem;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 20px;
+        background-color: #0099DE; }
   #Front article.pf-Detail {
     /*
   # pages/front/Detail.sass

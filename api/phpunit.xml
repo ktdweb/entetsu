@@ -6,7 +6,7 @@
   >
   <php>
     <var name="DB_HOST" value="0.0.0.0" />
-    <var name="DB_NAME" value="api_test" />
+    <var name="DB_NAME" value="ad110xb4ir_test" />
     <var name="DB_USER" value="api" />
     <var name="DB_PASS" value="api012" />
     <var name="DB_PORT" value="3306" />
@@ -17,11 +17,11 @@
     <var name="MAIL_USER" value="null" />
     <var name="MAIL_PASS" value="null" />
 
-    <var name="MAIL_FROM" value="info@example.com" />
-    <var name="MAIL_NAME" value="System Notification" />
-    <var name="MAIL_ADDR" value="admin@example.com" />
+    <var name="MAIL_FROM" value="saiyo@entetsu-assist.co.jp" />
+    <var name="MAIL_NAME" value="遠鉄アシスト" />
+    <var name="MAIL_ADDR" value="saiyo@entetsu-assist.co.jp" />
 
-    <var name="MAIL_FAIL" value="info@example.com" />
+    <var name="MAIL_FAIL" value="saiyo@entetsu-assist.co.jp" />
   </php>
 
   <testsuites>

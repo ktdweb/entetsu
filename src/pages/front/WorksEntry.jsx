@@ -53,13 +53,17 @@ export default class WorksEntry extends React.Component {
   onSubmit(e) {
     let el = document.getElementById('modalError' + this.props.id);
     el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
-    el.classList.toggle('active');
+    el.classList.add('active');
 
     let obj = {
+      id: this.props.id,
       name: this.props.name,
       furi: this.props.furi,
       tel:  this.props.tel,
       mail: this.props.mail,
+      workid: this.props.workid,
+      worktitle: this.props.worktitle,
+      worktime: this.props.worktime
     };
 
     MemberActions.add(obj);
@@ -69,5 +73,9 @@ export default class WorksEntry extends React.Component {
     e.preventDefault();
     let el = document.getElementById(this.props.id);
     el.classList.toggle('enable');
+
+    let er = document.getElementById('modalError' + this.props.id);
+    er.innerHTML = '';
+    er.classList.remove('active');
   }
 }

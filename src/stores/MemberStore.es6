@@ -85,6 +85,13 @@ Dispatcher.register( function(action) {
       });
       break;
 
+    case MemberConstants.SET:
+      http.post(URL + 'set/', action.data).then(res => {
+      }).catch(e => {
+        //console.error(e);
+      });
+      break;
+
     case MemberConstants.LOGIN:
       http.post(URL + 'login', action.data).then(res => {
         login(res, action.callback);

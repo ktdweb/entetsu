@@ -268,10 +268,14 @@ export default class WorksDetail extends React.Component {
           id="modalTel"
           body={modal[0].body}
           button={modal[0].button}
+          title={modal[0].title}
           name={this.state.form.name.val}
           furi={this.state.form.furi.val}
           tel= {this.state.form.tel.val}
           mail={this.state.form.mail.val}
+          workid={data.id}
+          worktitle={data.title}
+          worktime={data.abbr_time}
           />
 
         <WorksEntry
@@ -279,10 +283,14 @@ export default class WorksDetail extends React.Component {
           id="modalMail"
           body={modal[1].body}
           button={modal[1].button}
+          title={modal[0].title}
           name={this.state.form.name.val}
           furi={this.state.form.furi.val}
           tel= {this.state.form.tel.val}
           mail={this.state.form.mail.val}
+          workid={data.id}
+          worktitle={data.title}
+          worktime={data.abbr_time}
           />
 
         <WorksLogin

@@ -34,6 +34,7 @@ import AdminHome    from './pages/admin/Home'
 import FrontHome      from './pages/front/Home'
 import FrontWorks     from './pages/front/Works'
 import FrontWorksDetail from './pages/front/WorksDetail'
+import FrontMemberSet from './pages/front/MemberSet'
 import FrontCompany   from './pages/front/Company'
 
 import FrontCleaning  from './pages/front/Cleaning'
@@ -165,6 +166,12 @@ const routes = (
           header: FrontHeader,
           main: FrontDriving,
           footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/members/set/:token'}
+        global={root}
+        components={{
+          main: FrontMemberSet,
         }} />
     </Route>
 

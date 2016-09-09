@@ -1,0 +1,95 @@
+/*
+  # pages/front/MemberSet.sass
+  front/MemberSet.jsxに関するクラスを定義  
+  prefixには`pf-MemberSet`を付与
+  */
+
+article#MemberSet
+  position: relative
+  background: $color-works-bg
+
+  & > div
+    position: relative
+    top: 70px
+    width: 680px
+    min-height: 680px
+    overflow: visible
+    padding-bottom: $base-spacing
+    margin: 0 auto
+    color: $color-works-base
+    font-size: $small-font-size * 1.2
+    text-align: center
+    background-color: white
+    border: 2px solid $color-works-base
+    border-radius: 7px
+    box-shadow: 0 1px 0px 0px $color-works-base
+
+    h1
+      font-size: $base-font-size * 1.5
+      line-height: $base-spacing * 3
+      background-color: $color-works-bg
+      border-radius: 10px
+
+    p
+      margin: $base-spacing 0
+
+    p.error
+      visibility: hidden
+      margin: $small-spacing 0
+      color: $color-works-error
+      font-size: $small-font-size * 1.3
+      a
+        color: $color-works-error
+      &.active
+        visibility: visible 
+        +animation(blink 0.2s linear 0.2s 2 forwards)
+
+    hr
+      height: 1px
+      background-color: $color-works-base
+      border: none
+
+    dl
+      width: 380px
+      margin: 0 auto
+      dt
+        width: 140px
+      dd
+        input
+          border: 1px solid $color-works-base
+          margin-bottom: $small-spacing
+          color: #aaa
+          width: 100%
+          &.width-s
+            width: 65%
+          &.width-xs
+            width: 40%
+          &.active
+            border: 1px solid $color-works-error
+            +animation(blink 0.2s linear 0.2s 2 forwards)
+
+        input[type=radio]
+          display: inline
+          border: 1px solid $color-works-base
+          width: 40px
+        
+        button
+          height: 3rem
+          float: right
+          width: auto
+          padding-left: 1rem
+          padding-right: 1rem
+          border-radius: 5px
+          font-size: $small-font-size
+
+
+    button
+      display: block
+      width: 260px
+      height: 40px
+      color: white
+      font-size: $base-font-size
+      margin: 0 auto
+      padding: 0
+      border-radius: 20px
+      background-color: $color-works-base

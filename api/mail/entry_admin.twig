@@ -1,0 +1,22 @@
+ホームページより応募がありました。
+{% if type == 'modalTel' %}
+電話での連絡希望の方です。
+{% else %}
+メールでの連絡希望の方です。
+{% endif %}
+
+[応募者]
+-----
+{{name}}
+{{tel}}
+{{mail}}
+-----
+
+[今回ご応募頂いたお仕事]
+-----
+{{worktitle}}
+{{worktime}}
+http://www.entetsu-assist.co.jp/works_detail/{{workid}}
+-----
+
+メール識別ID: ENTRY_ADMIN

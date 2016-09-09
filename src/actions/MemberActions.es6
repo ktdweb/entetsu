@@ -15,6 +15,13 @@ export default {
     })
   },
 
+  set: (data) => {
+    Dispatcher.dispatch({
+      actionType: MemberConstants.SET,
+      data: data
+    })
+  },
+
   login: (data, callback) => {
     Dispatcher.dispatch({
       actionType: MemberConstants.LOGIN,

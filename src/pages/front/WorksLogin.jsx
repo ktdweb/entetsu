@@ -200,5 +200,9 @@ export default class WorksLogin extends React.Component {
 
     let el = document.getElementById(this.props.id);
     el.classList.remove('enable');
+
+    let er = document.getElementById('loginError');
+    er.innerHTML = '';
+    er.classList.remove('active');
   }
 }

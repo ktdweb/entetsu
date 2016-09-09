@@ -714,61 +714,6 @@ NOW() + INTERVAL 38 second
 
 (
 24,
-'駐車場管理業務',
-'街中の駐車場で、売上金やサービス券の回収・集計、駐車場機械操作、車両誘導などをするお仕事です。未経験者歓迎！',
-'浜松市街中',
-'5:45~20:00（シフト制）　例：5:45~15:00、10:00~17:30、11:00~19:00など',
-'05:45',
-'20:00',
-'0000-00-00 00:00:00',
-'0000-00-00 00:00:00',
-'60分',
-'時給800円',
-'週3日程度',
-'シフト制',
-'アルバイト',
-'長期または1ヵ月程度の短期もOK',
-'不問',
-'60代の男性多数活躍中！',
-'普通運転免許',
-'交通費規定支給、車通勤可、制服貸与、研修有り',
-'003',
-'800',
-'5:45~20:00',
-NOW() + INTERVAL 37 second,
-NOW() + INTERVAL 37 second
-),
-
-
-(
-25,
-'病院玄関エスコートスタッフ',
-'（請負）ご来院の乗降補助やご案内。午前中のみのお仕事で扶養内勤務OK！',
-'浜松市街中',
-'7:50~12:10、7:50~12:40　※交代制',
-'07:50',
-'12:10',
-'0000-00-00 00:00:00',
-'0000-00-00 00:00:00',
-'なし',
-'時給1,000円',
-'平日＋第1・3土曜日勤務で週2～3日程度',
-'シフト制',
-'契約社員',
-'8/下旬～長期',
-'不問',
-'女性活躍中',
-'接客経験者歓迎',
-'制服貸与',
-'001',
-'1000',
-'7:50~12:10',
-NOW() + INTERVAL 36 second,
-NOW() + INTERVAL 36 second
-),
-
-(
-26,
 '図書館スタッフ',
 '図書館業務全般　カウンター業務（貸出・返却・予約等）、書架整理・点検、資料の装備・補修等',
 '浜松市浜北区',
@@ -795,7 +740,7 @@ NOW() + INTERVAL 35 second
 ),
 
 (
-27,
+25,
 '幼稚園送迎バスドライバー',
 '幼稚園送迎バスのドライバー、朝と午後にきめられた３コースを運行します。現在、バスの車庫（出勤場所）は浜松市西区または南区にあります。',
 '浜松市中区',
@@ -925,19 +870,12 @@ INSERT INTO `tags` (
 (23, 1),
 (23, 12),
 (23, 14),
-(24, 1),
+(24, 2),
 (24, 8),
-(24, 10),
-(24, 18),
+(24, 17),
 (25, 1),
-(25, 11),
-(25, 17),
-(26, 2),
-(26, 8),
-(26, 17),
-(27, 1),
-(27, 8),
-(27, 15);
+(25, 8),
+(25, 15);
 /*}}}*/
 
 
@@ -1020,6 +958,7 @@ INSERT INTO `category_groups` (
 -- members テーブル確認 /*{{{*/
 DESC `members`;
 SELECT * FROM `members`;
+UPDATE `members` SET  `password`='0123', `zip`='4200834', `prefecture`='静岡県', `city`='静岡市',`address`='葵区', `age`=42, `gender`=1, `birthday`='1974-04-02', `detail_flag`=1 WHERE `id` = ?;
 /*}}}*/
 
 -- members テーブル作成 /*{{{*/
@@ -1041,7 +980,8 @@ CREATE TABLE IF NOT EXISTS `members` (
   `detail_flag` TINYINT(1) NULL,
   `created` DATETIME NULL,
   `modified` DATETIME NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `mail_UNIQUE` (`mail` ASC))
 ENGINE = InnoDB
 /*}}}*/
 
@@ -1064,7 +1004,7 @@ INSERT INTO `members` (
   `created`,
   `modified`
 ) VALUES
-('山田太郎', 'ヤマダタロウ', '09068074649', 'keiji@seeknetusa.com', '0123', 1, '42', '1974-04-02', '4200834', NULL, '', '', NULL, NOW(), NOW());
+('山田太郎', 'ヤマダタロウ', '09068074649', 'keiji@seeknetusa.com', '', 1, '42', '0000-00-00', NULL, NULL, '', '', NULL, NOW(), NOW());
 /*}}}*/
 
 --- entries
@@ -1095,4 +1035,32 @@ INSERT INTO `entries` (
   `created`
 ) VALUES
 (1, 1, NULL, NOW());
+/*}}}*/
+
+--- tokens
+
+-- tokens テーブル確認 /*{{{*/
+DESC `tokens`;
+SELECT * FROM `tokens`;
+/*}}}*/
+
+-- tokens テーブル作成 /*{{{*/
+DROP TABLE `tokens`;
+CREATE TABLE IF NOT EXISTS `tokens` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `member_id` INT(11) NOT NULL,
+  `token` VARCHAR(255) NOT NULL,
+  `created` DATETIME NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+/*}}}*/
+
+-- tokens レコード挿入 /*{{{*/
+TRUNCATE `tokens`;
+INSERT INTO `tokens` (
+  `member_id`,
+  `token`,
+  `created`
+) VALUES
+(1, '2157d1c1995ed74', NOW());
 /*}}}*/

@@ -51,9 +51,12 @@ $app->group('/members', function () {
             $args
         ) {
             $body = $request->getParsedBody();
+            $token = '';
 
             $db = $this->get('db.post');
-            $sql = 'INSERT INTO `members` (`name`,`furi`,`tel`,`mail`) VALUES ';
+            $sql = 'INSERT INTO `members` ';
+            $sql .= '(`name`,`furi`,`tel`,`mail`)';
+            $sql .= ' VALUES ';
             $sql .= '(?, ?, ?, ?);';
 
             $res = $db->execute(
@@ -65,6 +68,155 @@ $app->group('/members', function () {
                     $body['mail']
                 )
             );
+
+            $resAdd = preg_match("/Duplicate\sentry/i", $res);
+
+            if ($resAdd) {
+                $id = $db->execute('SELECT last_insert_id();');
+
+                $token = rand(0, 100).uniqid();
+                $sql = 'INSERT INTO `tokens` ';
+                $sql .= '(`member_id`,`token`,`created`)';
+                $sql .= ' VALUES ';
+                $sql .= '(?, ?, NOW());';
+
+                $res = $db->execute(
+                    $sql,
+                    array(
+                        $id,
+                        $token
+                    )
+                );
+
+                $body['id'] .= '_already';
+            }
+
+            $mailer = $this->get('mailer.text');
+            $twig = $this->get('mailer.twig');
+
+            // 応募者用メール送信
+            $title = '[お仕事を探す] ご応募ありがとうございました';
+            switch ($body['id']) {
+                case 'modalTel':
+                    $template = 'entry_tel.twig';
+                    break;
+                case 'modalMail':
+                    $template = 'entry_mail.twig';
+                    break;
+                case 'modalTel_already':
+                    $template = 'entry_tel_already.twig';
+                    break;
+                case 'modalMail_already':
+                    $template = 'entry_tel_already.twig';
+                    break;
+                default:
+                    // no op
+                    break;
+            }
+            
+            $mailer->setMessage(
+                $title,
+                $twig->render(
+                    $template,
+                    array(
+                        'name' => $body['name'],
+                        'mail' => $body['mail'],
+                        'token' => $token,
+                        'workid' => $body['workid'],
+                        'worktitle' => $body['worktitle'],
+                        'worktime' => $body['worktime']
+                    )
+                )
+            );
+
+            $res = $mailer->send($body['mail']);
+
+            // 管理社用メール送信
+            $mailer->setMessage(
+                'ホームページより応募がありました',
+                $twig->render(
+                    'entry_admin.twig',
+                    array(
+                        'name' => $body['name'],
+                        'tel' => $body['tel'],
+                        'mail' => $body['mail'],
+                        'token' => $token,
+                        'workid' => $body['workid'],
+                        'worktitle' => $body['worktitle'],
+                        'worktime' => $body['worktime'],
+                        'type' => $body['id']
+                    )
+                )
+            );
+
+            $res = $mailer->send('keiji@seeknetusa.com');
+
+            return $response->withJson(
+                $res,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * POST set
+     */
+    $this->post(
+        '/set/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $body = $request->getParsedBody();
+
+            $db = $this->get('db.get');
+
+            $sql = 'SELECT `member_id` FROM `tokens` ';
+            $sql .= 'WHERE `token` = ? LIMIT 1';
+
+            $member_id = $db->execute(
+                $sql,
+                array($body['token'])
+            );
+
+            $gender = 1;
+            if ($body['gender'] != '女性') {
+                $gender = 2;
+            }
+
+            $zip = preg_replace("/-/", "", $body['zip']);
+            $birthday = preg_replace(
+                "/\//",
+                "-",
+                $body['birthday']
+            );
+
+            $sql = 'UPDATE `members` SET ';
+            $sql .= ' `password`=?, `zip`=?, `prefecture`=?, ';
+            $sql .= '`city`=?,`address`=?, `age`=?, `gender`=?, ';
+            $sql .= '`birthday`=?, `detail_flag`=1 ';
+            $sql .= 'WHERE `id` = ?;';
+
+            $data = array(
+                $body['pw'],
+                $zip,
+                $body['pref'],
+                $body['city'],
+                $body['addr'],
+                $body['age'],
+                $gender,
+                $birthday,
+                $member_id[0]->member_id,
+            );
+            $res = $db->execute(
+                $sql,
+                $data
+            );
+
+            print_r($sql);
+            print_r($data);
 
             return $response->withJson(
                 $res,
