@@ -70,11 +70,11 @@ $app->group('/members', function () {
             );
 
             $resAdd = preg_match("/Duplicate\sentry/i", $res);
+            $token = rand(0, 100).uniqid();
 
             if ($resAdd) {
                 $id = $db->execute('SELECT last_insert_id();');
 
-                $token = rand(0, 100).uniqid();
                 $sql = 'INSERT INTO `tokens` ';
                 $sql .= '(`member_id`,`token`,`created`)';
                 $sql .= ' VALUES ';
@@ -214,9 +214,6 @@ $app->group('/members', function () {
                 $sql,
                 $data
             );
-
-            print_r($sql);
-            print_r($data);
 
             return $response->withJson(
                 $res,
