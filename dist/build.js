@@ -8583,6 +8583,15 @@ var Works = function (_React$Component) {
         height: '45',
         name: '7',
         alt: 'img'
+      })), _react2.default.createElement('a', {
+        href: '#',
+        onClick: this.getCategorySearch.bind(this)
+      }, _react2.default.createElement('img', {
+        src: IMG + 'loc/banner08.png',
+        width: '170',
+        height: '45',
+        name: '8',
+        alt: 'img'
       })))), _react2.default.createElement('div', { className: 'pf-Works-Time' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
         src: IMG + 'title_time.png',
         width: '120',
@@ -8593,42 +8602,42 @@ var Works = function (_React$Component) {
       }, _react2.default.createElement('img', {
         src: IMG + 'time/banner01.png',
         height: '135',
-        name: '8',
+        name: '9',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'time/banner02.png',
         height: '135',
-        name: '9',
+        name: '10',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'time/banner03.png',
         height: '135',
-        name: '10',
+        name: '11',
         alt: 'img'
       })), _react2.default.createElement('br', null), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'time/banner04.png',
         height: '120',
-        name: '11',
+        name: '12',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'time/banner05.png',
         height: '120',
-        name: '12',
+        name: '13',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'time/banner06.png',
         height: '120',
-        name: '13',
+        name: '14',
         alt: 'img'
       })))), _react2.default.createElement('div', { className: 'pf-Works-Cat' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
         src: IMG + 'title_cat.png',
@@ -8640,35 +8649,35 @@ var Works = function (_React$Component) {
       }, _react2.default.createElement('img', {
         src: IMG + 'cat/banner01.png',
         height: '120',
-        name: '14',
+        name: '15',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'cat/banner02.png',
         height: '120',
-        name: '15',
+        name: '16',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'cat/banner03.png',
         height: '120',
-        name: '16',
+        name: '17',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'cat/banner04.png',
         height: '120',
-        name: '17',
+        name: '18',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'cat/banner05.png',
         height: '120',
-        name: '18',
+        name: '19',
         alt: 'img'
       }))))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '/works_detail' }, _react2.default.createElement('img', {
         src: IMG + 'list_column_left.png',
@@ -8929,8 +8938,8 @@ var Column = function (_React$Component2) {
 
       var data = this.props.data;
 
-      return _react2.default.createElement('a', {
-        href: '/works_detail/' + data.id,
+      return _react2.default.createElement(_reactRouter.Link, {
+        to: '/works_detail/' + data.id,
         ref: 'el'
       }, _react2.default.createElement('li', { className: 'pf-Works-List-column' }, _react2.default.createElement('div', { className: 'pf-Works-List-column-head' }, _react2.default.createElement('p', { className: 'overflow' }, data.title), _react2.default.createElement('img', {
         src: IMG + 'list_btn_detail.png',
@@ -9157,7 +9166,7 @@ var WorksDetail = function (_React$Component) {
       }, modal[0].button), 'もしくは…', _react2.default.createElement('button', {
         name: 'modalMail',
         onClick: this.enableModal.bind(this)
-      }, modal[1].button))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement('a', { href: '/works' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
+      }, modal[1].button))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
         key: '0',
         id: 'modalTel',
         body: modal[0].body,

@@ -263,9 +263,9 @@ export default class WorksDetail extends React.Component {
             <button>似た仕事を検索</button>
           </a>
           */}
-          <a href="/works">
+          <Link to="/works">
             <button>戻る</button>
-          </a>
+          </Link>
         </div>
 
         <WorksEntry

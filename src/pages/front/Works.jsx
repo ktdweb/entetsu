@@ -154,6 +154,19 @@ export default class Works extends React.Component {
                   alt="img"
                 />
               </a>
+
+              <a
+                href="#"
+                onClick={this.getCategorySearch.bind(this)}
+              >
+                <img
+                  src={IMG + 'loc/banner08.png'}
+                  width="170"
+                  height="45"
+                  name="8"
+                  alt="img"
+                />
+              </a>
             </div>
           </div>
 
@@ -172,7 +185,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'time/banner01.png'}
                   height="135"
-                  name="8"
+                  name="9"
                   alt="img"
                   />
               </a>
@@ -183,7 +196,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'time/banner02.png'}
                   height="135"
-                  name="9"
+                  name="10"
                   alt="img"
                   />
               </a>
@@ -194,7 +207,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'time/banner03.png'}
                   height="135"
-                  name="10"
+                  name="11"
                   alt="img"
                   />
               </a>
@@ -207,7 +220,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'time/banner04.png'}
                   height="120"
-                  name="11"
+                  name="12"
                   alt="img"
                   />
               </a>
@@ -218,7 +231,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'time/banner05.png'}
                   height="120"
-                  name="12"
+                  name="13"
                   alt="img"
                   />
               </a>
@@ -229,7 +242,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'time/banner06.png'}
                   height="120"
-                  name="13"
+                  name="14"
                   alt="img"
                   />
               </a>
@@ -251,7 +264,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'cat/banner01.png'}
                   height="120"
-                  name="14"
+                  name="15"
                   alt="img"
                   />
               </a>
@@ -262,7 +275,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'cat/banner02.png'}
                   height="120"
-                  name="15"
+                  name="16"
                   alt="img"
                   />
               </a>
@@ -273,7 +286,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'cat/banner03.png'}
                   height="120"
-                  name="16"
+                  name="17"
                   alt="img"
                   />
               </a>
@@ -284,7 +297,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'cat/banner04.png'}
                   height="120"
-                  name="17"
+                  name="18"
                   alt="img"
                   />
               </a>
@@ -295,7 +308,7 @@ export default class Works extends React.Component {
                 <img
                   src={IMG + 'cat/banner05.png'}
                   height="120"
-                  name="18"
+                  name="19"
                   alt="img"
                   />
               </a>
@@ -574,8 +587,8 @@ class Column extends React.Component {
     let data = this.props.data;
 
     return (
-      <a
-        href={'/works_detail/' + data.id}
+      <Link
+        to={'/works_detail/' + data.id}
         ref='el'
         >
         <li className="pf-Works-List-column">
@@ -603,7 +616,7 @@ class Column extends React.Component {
             <span>{data.abbr_time}</span>
           </div>
         </li>
-      </a>
+      </Link>
     );
   }
 
