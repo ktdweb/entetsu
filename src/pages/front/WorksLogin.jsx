@@ -34,8 +34,8 @@ export default class WorksLogin extends React.Component {
               <img
                 className="modalClose"
                 src="/imgs/close.png"
-                width="50"
-                height="50"
+                width="30"
+                height="30"
                 alt="close"
                 />
             </a>

@@ -121,6 +121,22 @@ article#Works
       margin: 0 auto
       padding-top: $base-spacing * 2
 
+      nav.pf-Works-Paging
+        margin-bottom: $base-spacing
+        font-size: $base-font-size
+        text-align: center
+        span
+          padding: 0 $base-spacing
+          border-right: 1px solid $color-works-base
+          color: rgba($color-works-base, 0.5)
+          cursor: pointer
+          &:last-child
+            border: none
+          &.current
+            color: $color-works-base
+            cursor: default
+            
+
       section
         display: table
         width: 100%
@@ -147,6 +163,13 @@ article#Works
         background-image: url($path)
         background-size: contain
         background-repeat: no-repeat
+
+      ul li.pf-Works-List-column-empty
+        width: 100%
+        padding-top: $base-spacing * 10
+        font-size: $base-font-size * 1.5
+        color: $color-works-base
+        text-align: center
 
       ul li.pf-Works-List-column
         display: inline-block

@@ -338,7 +338,7 @@ export default class Company extends React.Component {
           </table>
 
           <p>
-            <img src={IMG + 'map.jpg'} width="640" height="164" alt="map" />
+            <img src={IMG + 'map.jpg'} width="860" alt="map" />
           </p>
 
           <div id="strategy"></div>

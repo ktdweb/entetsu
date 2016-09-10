@@ -5,6 +5,10 @@ import DocumentTitle from 'react-document-title'
 import WorkStore from '../../stores/WorkStore'
 import WorkActions from '../../actions/WorkActions'
 
+import SearchStore from '../../stores/SearchStore'
+import SearchActions from '../../actions/SearchActions'
+
+
 const BTN_WIDTH = 30;
 const AREA_WIDTH = 500;
 
@@ -20,40 +24,73 @@ export default class Works extends React.Component {
     super(props);
 
     let works = WorkStore.read();
+    let search = SearchStore.read();
 
     this.state = {
+      works: works,
+      search: search,
       slider: {
         start: start,
         end: end
       },
-      page: 1,
-      works: works
+      total: 0
     }
   }
 
   componentWillMount() {
+    SearchStore.subscribe(this.updateState.bind(this));
     WorkStore.subscribe(this.updateState.bind(this));
-    WorkActions.create();
+    if (this.state.search.category) {
+      WorkActions.category(this.state.search.category);
+    } else {
+      WorkActions.create();
+    }
   }
 
   componentDidMount() {}
 
   componentWillUnmount() {
     WorkStore.destroy(this.updateState.bind(this));
+    SearchStore.destroy(this.updateState.bind(this));
   }
 
   render() {
     let IMG = '/imgs/pages/works/';
 
-    let columns = Object.keys(this.state.works).map((i) => {
-      return (
-        <Column
-          key={i}
-          data={this.state.works[i]}
-          sort={i}
-          />
-      );
-    });
+    let columns;
+    if (this.state.works.length > 0) {
+      columns = Object.keys(this.state.works).map((i) => {
+        return (
+          <Column
+            key={i}
+            data={this.state.works[i]}
+            sort={i}
+            />
+        );
+      });
+    } else {
+      columns = <li className="pf-Works-List-column-empty">検索結果が0件でした</li>;
+    }
+
+    let pages = [];
+    let cnt = Math.ceil(this.state.search.total / 6);
+    for (let i = 0; i < cnt; i++) {
+      if (this.state.search.page != i + 1) {
+        pages.push(
+          <span
+            key={i}
+            name={parseInt(i) + 1}
+            onClick={this.jump.bind(this, parseInt(i) + 1)}
+            >
+            {parseInt(i) + 1}</span>
+        );
+      } else {
+        pages.push(
+          <span key={i} className="current">
+            {parseInt(i) + 1}</span>
+        );
+      }
+    }
 
     return (
       <article id="Works">
@@ -322,6 +359,10 @@ export default class Works extends React.Component {
               検索結果
             </div>
 
+            <nav className="pf-Works-Paging">
+              {pages}
+            </nav>
+
             <section>
               <div>
                 <a href="/works_detail">
@@ -480,8 +521,9 @@ export default class Works extends React.Component {
   getCategorySearch(e) {
     e.preventDefault();
 
-    this.state.page = 1;
     let id = e.target.name;
+    SearchActions.updateField('page', 1);
+    SearchActions.updateField('category', id);
     WorkActions.category(id);
 
     this.scrollMotion(820);
@@ -493,20 +535,10 @@ export default class Works extends React.Component {
 
   getKeyword(e) {
     if (e.keyCode == 13) {
-      this.state.page = 1;
+      SearchActions.updateField('page', 1);
+      SearchActions.updateField('keyword', e.target.value);
       WorkActions.keyword(e.target.value);
     }
-  }
-
-  updateState() {
-    let res = WorkStore.read();
-    let total = res.length;
-    res = this.paging(res);
-
-    this.setState({
-      works: res,
-      total: total
-    });
   }
 
   fadeIn() {
@@ -535,31 +567,43 @@ export default class Works extends React.Component {
 
   previousPage(e) {
     e.preventDefault();
-    let page = this.state.page;
+    let page = this.state.search.page;
     if (page != 1) {
       page = page - 1;
     }
-    this.state.page = page;
-
-    this.updateState();
+    SearchActions.updateField('page', page);
   }
 
   nextPage(e) {
     e.preventDefault();
-    let page = this.state.page;
-    if (page * 6 <= this.state.total) {
+    let page = this.state.search.page;
+    if (page * 6 <= this.state.search.total) {
       page = page + 1;
     }
-    this.state.page = page;
+    SearchActions.updateField('page', page);
+  }
 
-    this.updateState();
+  jump(page) {
+    SearchActions.updateField('page', page);
   }
 
   paging(res) {
-    let paging_start = 6 * (this.state.page - 1);
-    let paging_end = 6 * this.state.page;
+    let paging_start = 6 * (this.state.search.page - 1);
+    let paging_end = 6 * this.state.search.page;
 
     return res.slice(paging_start, paging_end);
+  }
+
+  updateState() {
+    let res = WorkStore.read();
+    let search = SearchStore.read();
+    search.total = res.length;
+    res = this.paging(res);
+
+    this.setState({
+      works: res,
+      search: search
+    });
   }
 }
 
@@ -570,10 +614,12 @@ class Column extends React.Component {
 
   componentDidUpdate() {
     let el = this.refs.el;
-    el.style.visibility = 'none';
-    el.style.animationDelay = this.props.sort * 0.1 + 's';
-    el.addEventListener('animationend', endMotion);
-    el.classList.add('active');
+    if (el.style) {
+      el.style.visibility = 'none';
+      el.style.animationDelay = this.props.sort * 0.1 + 's';
+      el.addEventListener('animationend', endMotion);
+      el.classList.add('active');
+    }
 
     function endMotion() {
       el.removeEventListener('animationend', endMotion);

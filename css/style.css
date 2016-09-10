@@ -7146,8 +7146,8 @@ div#badge {
         background-color: #0099DE; }
     #Front .modal .modalClose {
       position: absolute;
-      top: 25px;
-      right: 25px;
+      top: 35px;
+      right: 35px;
       border: 1px solid #0099DE;
       border-radius: 5px;
       background-color: white;
@@ -7551,6 +7551,20 @@ div#badge {
         width: 960px;
         margin: 0 auto;
         padding-top: 4rem; }
+        #Front article#Works div.pf-Works-List > div nav.pf-Works-Paging {
+          margin-bottom: 2rem;
+          font-size: 1.6rem;
+          text-align: center; }
+          #Front article#Works div.pf-Works-List > div nav.pf-Works-Paging span {
+            padding: 0 2rem;
+            border-right: 1px solid #0099DE;
+            color: rgba(0, 153, 222, 0.5);
+            cursor: pointer; }
+            #Front article#Works div.pf-Works-List > div nav.pf-Works-Paging span:last-child {
+              border: none; }
+            #Front article#Works div.pf-Works-List > div nav.pf-Works-Paging span.current {
+              color: #0099DE;
+              cursor: default; }
         #Front article#Works div.pf-Works-List > div section {
           display: table;
           width: 100%; }
@@ -7575,6 +7589,12 @@ div#badge {
           background-image: url("../imgs/pages/works/list_tab.png");
           background-size: contain;
           background-repeat: no-repeat; }
+        #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column-empty {
+          width: 100%;
+          padding-top: 20rem;
+          font-size: 2.4rem;
+          color: #0099DE;
+          text-align: center; }
         #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column {
           display: inline-block;
           position: relative;
@@ -8154,9 +8174,11 @@ div#badge {
       width: 14rem; }
   #Front article#CompanyDetail section:nth-of-type(4) {
     margin-top: 60px;
-    width: 70%; }
-    #Front article#CompanyDetail section:nth-of-type(4) table td:first-child {
-      width: 14rem; }
+    width: 90%; }
+    #Front article#CompanyDetail section:nth-of-type(4) table {
+      width: 75%; }
+      #Front article#CompanyDetail section:nth-of-type(4) table td:first-child {
+        width: 14rem; }
     #Front article#CompanyDetail section:nth-of-type(4) h1 {
       width: 240px; }
   #Front article#CompanyDetail section:nth-of-type(5) {

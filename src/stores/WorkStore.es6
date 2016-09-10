@@ -91,7 +91,6 @@ Dispatcher.register( function(action) {
 
     case WorkConstants.KEYWORD:
       let keyword = URL + 'keyword/' + action.keyword;
-      console.log(action.keyword);
       http.get(keyword).then(res => {
         create(res);
         workStore.update();
