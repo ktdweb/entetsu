@@ -69,7 +69,7 @@ $app->group('/entries', function () {
             $mailer = $this->get('mailer.text');
             $twig = $this->get('mailer.twig');
 
-            $title = '[お仕事を探す] 応募';
+            $title = '[お仕事を探す] ご応募ありがとうございました';
             $template = 'entry_login.twig';
             
             $mailer->setMessage(
