@@ -9089,9 +9089,6 @@ var _createClass = function () {
   };
 }();
 
-var _templateObject = _taggedTemplateLiteral(['\n      <p>\n        弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />\n        その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />\n        また、あわせて会員情報も登録されます。\n      </p>\n\n      <p>\n        以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。\n      </p>\n    '], ['\n      <p>\n        弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />\n        その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />\n        また、あわせて会員情報も登録されます。\n      </p>\n\n      <p>\n        以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。\n      </p>\n    ']),
-    _templateObject2 = _taggedTemplateLiteral(['\n      <p>\n        弊社スタッフより、お仕事のご紹介や、<br />\n        ご都合のご確認として、<br />\n        メールにてご連絡させていただきます。<br />\nまた、あわせて会員情報も登録されます。\n      </p>\n\n      <p>\n        以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。\n      </p>\n    '], ['\n      <p>\n        弊社スタッフより、お仕事のご紹介や、<br />\n        ご都合のご確認として、<br />\n        メールにてご連絡させていただきます。<br />\nまた、あわせて会員情報も登録されます。\n      </p>\n\n      <p>\n        以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。\n      </p>\n    ']);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -9136,10 +9133,6 @@ var _WorksLogin2 = _interopRequireDefault(_WorksLogin);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
 }
 
 function _classCallCheck(instance, Constructor) {
@@ -9203,7 +9196,9 @@ var WorksDetail = function (_React$Component) {
     }
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -9541,11 +9536,11 @@ exports.default = WorksDetail;
 var modal = new Array();
 modal = [{
   title: '応募内容のご確認',
-  body: String.raw(_templateObject),
+  body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。</p>',
   button: '担当者からすぐ連絡を希望する'
 }, {
   title: '応募内容のご確認',
-  body: String.raw(_templateObject2),
+  body: '<p>弊社スタッフより、お仕事のご紹介や、<br />ご都合のご確認として、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。</p>',
   button: 'メールにて連絡を希望する'
 }];
 
