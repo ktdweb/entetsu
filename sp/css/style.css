@@ -315,7 +315,14 @@ h2.stitle {
 	background: url(../imgs/rec_type_bg.png) no-repeat left top;
 	background-size: 100% auto;
 	overflow: hidden;
-	left: -30px;
+	left: 0px;
+	}
+
+.recTypeTime ul.typeList li a ,
+.recTypeBusiness ul.typeList li a ,
+.recTypePlace ul.typeList li a {
+    -webkit-backface-visibility: hidden; /* 追加 */
+    backface-visibility: hidden; /* 追加 */
 	}
 
 .recTypeTime ul.typeList li img ,
@@ -323,7 +330,8 @@ h2.stitle {
 .recTypePlace ul.typeList li img {
 	position: relative;
 	float: left;
-	left: -30px;
+	left: 0px;
+	display: block;
 	}
 
 .recTypeBusiness ul.typeList {
@@ -609,7 +617,7 @@ dl.workInfo dd {
 
 .workEntryBtn {
 	display:block;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	padding: 10px;
 	border-radius: 20px;
@@ -635,15 +643,16 @@ dl.workInfo dd {
 	overflow: hidden;
 	padding: 20px 0 0;
 	}
-	
+/*	
 .worksBtnBox .btnOther { float: left; }
 .worksBtnBox .btnBack { float: right; }
-
+*/
 .worksBtnBox .btnOther ,
 .worksBtnBox .btnBack {
 	display: block;
 	width: 48.275%;
 	padding: 10px;
+	margin: 0 auto;
 	border-radius: 22px;
 	-webkit-border-radius: 22px;
 	-moz-border-radius: 22px;
@@ -664,11 +673,12 @@ dl.workInfo dd {
 	-webkit-border-radius: 22px;
 	-moz-border-radius: 22px;
 	border: #00a6eb solid 2px;
-	background: #00a6eb;
 	font-size: 150%;
 	line-height: 20px;
 	text-align: center;
-	color: #fff;
+/*	color: #fff;
+	background: #00a6eb;
+*/	background: #fff;
 	}
 
 

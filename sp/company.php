@@ -19,7 +19,7 @@
 	<div class="companyStitle">
     <img src="imgs/detail/company/company_stitle01.png" alt="遠鉄アシストについて" width="100%"></div>
     <div class="companyCont">
-        <p class="companyText">当社は、1999年7月21日、遠州鉄道株式会社の00％子会社として、運行管理部門で企業団体や自治体などのアシストをすることを目的に設立されました。遠州鉄道のバス部門との連携をとりながら、 規制が緩和されつつあった人材派遣などの人材ビジネスへの参入を図りました。</p>
+        <p class="companyText">当社は、1999年7月21日、遠州鉄道株式会社の100％子会社として、運行管理部門で企業団体や自治体などのアシストをすることを目的に設立されました。遠州鉄道のバス部門との連携をとりながら、 規制が緩和されつつあった人材派遣などの人材ビジネスへの参入を図りました。</p>
         <p class="companyText">一方では、グループ内の再編に伴い、2002年7月、株式会社遠鉄総合ビルサービスからビル管理・清掃部門とマンション管理部門を譲り受け、業容を拡大しました。運行管理、ビル・マンション管理、清掃、指定管理施設運営、食品検査、生活支援サービスを運営しています。</p>
     </div>
 </section>
@@ -160,7 +160,7 @@
             </li>
         </ul>
         <div class="access">
-        	<div class="map"><img src="imgs/detail/company/company_map.png" alt="map" width="100%"></div>
+        	<div class="map"><img src="imgs/detail/company/company_map_l.png" alt="map" width="100%"></div>
             <p>[経路]<br>
             JR浜松駅北口を出て、遠鉄バスターミナルの西側を北へ約150m。遠鉄百貨店新館の東側、交番の右手に事務所フロア入口があります。受付は11階エレベーターを降り、左手正面となります。</p>
         </div>
@@ -217,7 +217,7 @@
         <div class="businessCont">
         	<div class="businessImg">
             <a href="http://e-tomitsuka.benry.com/" target="_blank">
-            <img src="imgs/detail/company/company_business02.jpg" alt="食品検査" width="100%"></a></div>
+            <img src="imgs/detail/company/company_business03.jpg" alt="ベンリーえんてつ" width="100%"></a></div>
             <p>暮らしの困った解決！ハウスクリーニング、オフィスでの困った、急なトラブルにも対応します<br>
             詳細は<a href="http://e-tomitsuka.benry.com/" target="_blank">こちら</a>のHPをご覧ください</p>
         </div>

@@ -8,8 +8,44 @@
 <link rel="stylesheet" href="css/flexslider.css">
 <link rel="stylesheet" href="css/adv.css">
 
+    <script type="text/javascript">
+        /* 先読みする画像の配列 */
+        var images_ary=new Array(
+        'imgs/rec_type_time01_t.png',
+        'imgs/rec_type_time02_t.png',
+        'imgs/rec_type_time03_t.png',
+        'imgs/rec_type_time04_t.png',
+        'imgs/rec_type_time05_t.png',
+        'imgs/rec_type_time06_t.png',
+        'imgs/rec_type_time_arrow.png',
+        'imgs/rec_type_business01_t.png',
+        'imgs/rec_type_business02_t.png',
+        'imgs/rec_type_business03_t.png',
+        'imgs/rec_type_business04_t.png',
+        'imgs/rec_type_business05_t.png',
+        'imgs/rec_type_business_arrow.png',
+        'imgs/rec_type_place01_t.png',
+        'imgs/rec_type_place02_t.png',
+        'imgs/rec_type_place03_t.png',
+        'imgs/rec_type_place04_t.png',
+        'imgs/rec_type_place05_t.png',
+        'imgs/rec_type_place06_t.png',
+        'imgs/rec_type_place07_t.png',
+        'imgs/rec_type_place_arrow.png',
+        );
+        /* 画像先読み処理関数 */
+        function preLoad(imgAry) {
+            var imgMax=imgAry.length;
+            var images=new Array(imgMax);
+            for (var i=0; i<imgMax; i++) {
+                images[i]=new Image();
+                images[i].src=imgAry[i];
+            }
+        }
+    </script>
+
 </head>
-<body>
+<body onLoad="preLoad(images_ary)">
 <div id="view">
 <div class="wrap">
 <?php include 'include/header.inc'; ?>
@@ -20,7 +56,7 @@
 </div>
 
 <div id="search">
-    <input type="text" value="フリーワードで仕事を探す" />
+    <input type="text" value="" placeholder="フリーワードで仕事を探す" />
     <ul>
         <li><img id="t" src="imgs/btn/time_a.png" alt="img" width="100%"></li>
         <li><img id="c" src="imgs/btn/cat_a.png" alt="img" width="82.9268%"></li>
@@ -272,17 +308,9 @@
 	<h2 class="stitle"><img src="imgs/news_head.png" alt="NEWS" width="100%"></h2>
     <div class="newsBox">
         <ul>
-        	<li class="event">
-            	<p class="day">2016.08.30</p>
-                <p class="postName"><a href="#">第二回お仕事セミナー開催</a></p>
-            </li>
         	<li class="ippan">
-            	<p class="day">2016.07.15</p>
-                <p class="postName"><a href="#">HPメンテナンスのお知らせ</a></p>
-            </li>
-        	<li class="event">
-            	<p class="day">2016.08.30</p>
-                <p class="postName"><a href="#">お仕事セミナー開催</a></p>
+            	<p class="day">2016年06月28日</p>
+                <p class="postName">ホームページリニューアル</p>
             </li>
         </ul>
     </div>

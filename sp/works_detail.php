@@ -81,14 +81,14 @@
                 <dd><input type="text"></dd>
             </dl>
             
-            <a href="" class="workEntryBtn">担当者からすぐ連絡希望</a>
+            <a href="" class="workEntryBtn">担当者からすぐ連絡を希望する</a>
             <p class="textOR">もしくは・・・</p>
-            <a href="" class="workEntryBtn">応募する</a>
+            <a href="" class="workEntryBtn">メールにて連絡を希望する</a>
             </form>
         </div>
         
         <div class="worksBtnBox">
-        	<a class="btnOther" href="works.php">似た仕事を検索</a>
+        	<!--a class="btnOther" href="works.php">似た仕事を検索</a-->
         	<a class="btnBack" href="works.php">戻る</a>
         </div>
     </div>

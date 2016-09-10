@@ -70,11 +70,12 @@ div#search input {
     margin: 0 auto;
     width: 90%;
     margin-bottom: 30px;
-    padding: 5px;
+    padding: 15px 10px;
     background-image: url('../imgs/btn/search.png');
-    background-size: 20px;
+    background-size: 30px;
     background-repeat: no-repeat;
     background-position: center right;
+	font-size: 133.4%;
 }
 
 div#search .searchBox {

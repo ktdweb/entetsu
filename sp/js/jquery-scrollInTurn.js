@@ -14,7 +14,7 @@
     var defaults = $.extend( {
       selector : '.target',
       delaySpeed : 200,
-      fadeInSpeed : 300,
+      fadeInSpeed : 500,
       fadeOutSpeed : 300,
       easing : 'swing',
       delayHeight : 400,
@@ -26,7 +26,7 @@
       var self = $(this);
 
       $(window).on('load',function(){
-        self.find(defaults.selector).css({opacity: 0});
+        self.find(defaults.selector).css({opacity: 0, left: -30});
       });
 
       $(window).on('load scroll resize',function(){
