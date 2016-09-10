@@ -8,6 +8,9 @@ import WorkActions from '../../actions/WorkActions'
 import MemberStore from '../../stores/MemberStore'
 import MemberActions from '../../actions/MemberActions'
 
+import EntryStore from '../../stores/EntryStore'
+import EntryActions from '../../actions/EntryActions'
+
 import WorksEntry from './WorksEntry' 
 import WorksLogin from './WorksLogin' 
 
@@ -23,6 +26,7 @@ export default class WorksDetail extends React.Component {
       works: works,
       members: members,
       login: {
+        id: '',
         name: '',
         status: false
       },
@@ -81,7 +85,8 @@ export default class WorksDetail extends React.Component {
                 onClick={this.enableLogin.bind(this)}
               >ログイン</button>
 
-              <p>もしくは…</p>
+              <p id="loginMessage" className="pf-loginMessage"></p>
+              <p id="loginStatus">もしくは…</p>
 
               <div>
                 <dl>
@@ -321,9 +326,17 @@ export default class WorksDetail extends React.Component {
   changeLoginStatus(data) {
     let el = document.getElementById('loginButton');
     el.classList.add('pf-loginDone');
-    el.innerHTML = 'ログイン済: ' + data.name + 'さん';
+    el.innerHTML = '応募する';
 
-    let obj = { name: data.name, status: true };
+    let mes = document.getElementById('loginStatus');
+    mes.innerHTML = 'ログイン済: ' + data.name + 'さん';
+
+    let obj = {
+      id: data.id,
+      name: data.name,
+      status: true
+    };
+
     this.setState({ login: obj });
   }
 
@@ -488,6 +501,17 @@ export default class WorksDetail extends React.Component {
 
       let height = document.documentElement.scrollHeight || document.body.scrollHeight;
       el.style.height = height + 'px'; 
+    } else {
+      let mes = document.getElementById('loginMessage');
+      mes.innerHTML = '応募しました';
+      mes.classList.add('active');
+
+      let obj = {
+        id: this.state.login.id,
+        workid: this.props.params.id
+      };
+
+      EntryActions.insert(obj);
     }
   }
 

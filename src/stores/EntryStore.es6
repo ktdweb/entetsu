@@ -1,25 +1,25 @@
 import { EventEmitter } from 'events'
 import Dispatcher from '../dispathcer/Dispatcher'
-import TokenConstants from '../constants/TokenConstants'
+import EntryConstants from '../constants/EntryConstants'
 
 import { http } from '../components/Http'
 
 const CHANGE_EVENT = 'change';
-const URL = '/api/tokens/';
+const URL = '/api/entries/';
 
-let _tokens = {};
+let _entries = {};
 
-function update(res, callback) {
+function update(res) {
   callback(res);
 };
 
-class TokenStore extends EventEmitter {
+class EntryStore extends EventEmitter {
   subscribe(callback) {
     this.on(CHANGE_EVENT, callback);
   }
 
   read() {
-    return _tokens;
+    return _entries;
   }
   
   update() {
@@ -33,25 +33,17 @@ class TokenStore extends EventEmitter {
 
 Dispatcher.register( function(action) {
   switch(action.actionType) {
-    case TokenConstants.CHECK:
-      http.post(URL + 'check', action.token).then(res => {
-        update(res, action.callback);
+    case EntryConstants.INSERT:
+      http.post(URL, action.data).then(res => {
       }).catch(e => {
         //console.error(e);
       });
       break;
 
-    case TokenConstants.RESET:
-      http.post(URL + 'reset', action.token).then(res => {
-        update(res);
-      }).catch(e => {
-        //console.error(e);
-      });
-      break;
     default:
       // no OP
   }
 });
 
-const tokenStore = new TokenStore();
-export default tokenStore;
+const entryStore = new EntryStore();
+export default entryStore;

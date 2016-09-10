@@ -114,11 +114,20 @@ article#WorksDetail
           border: 2px solid $color-works-base
           border-radius: 20px
           background-color: white
+
           &.pf-loginDone
-            background-color: rgba($color-works-base, 0.1)
-            opacity: 1
-            cursor: default
+            color: white
+            background-color: $color-works-base
             border: none
+
+        p.pf-loginMessage
+          visibility: hidden
+          margin: $small-spacing 0
+          color: $color-works-error
+          font-size: $small-font-size * 1.25
+          &.active
+            visibility: visible 
+            +animation(blink 0.2s linear 0.2s 2 forwards)
 
 
         p

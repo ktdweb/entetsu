@@ -296,7 +296,7 @@ $app->group('/members', function () {
             $body = $request->getParsedBody();
 
             $db = $this->get('db.get');
-            $sql = 'select `name` from `members`';
+            $sql = 'select `id`, `name` from `members`';
             $sql .= ' WHERE `mail` = ? AND `password` = ?';
             $sql .= ' LIMIT 1';
 

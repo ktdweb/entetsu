@@ -22,6 +22,17 @@ SHOW tables;
 SELECT * FROM `users`;
 /*}}}*/
 
+--- 登録テスト用
+-- 登録クリア /*{{{*/
+TRUNCATE `members`;
+TRUNCATE `entries`;
+TRUNCATE `tokens`;
+
+SELECT * FROM `members`;
+SELECT * FROM `entries`;
+SELECT * FROM `tokens`;
+/*}}}*/
+
 
 --- works
 
@@ -958,7 +969,6 @@ INSERT INTO `category_groups` (
 -- members テーブル確認 /*{{{*/
 DESC `members`;
 SELECT * FROM `members`;
-UPDATE `members` SET  `password`='0123', `zip`='4200834', `prefecture`='静岡県', `city`='静岡市',`address`='葵区', `age`=42, `gender`=1, `birthday`='1974-04-02', `detail_flag`=1 WHERE `id` = ?;
 /*}}}*/
 
 -- members テーブル作成 /*{{{*/
@@ -1020,7 +1030,8 @@ CREATE TABLE IF NOT EXISTS `entries` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `member_id` INT(11) NOT NULL,
   `work_id` INT(11) NOT NULL,
-  `flag` TINYINT(1) NULL,
+  `hired_flag` TINYINT(1) NULL,
+  `close_flag` TINYINT(1) NULL,
   `created` DATETIME NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB

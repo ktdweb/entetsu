@@ -7785,10 +7785,19 @@ div#badge {
             border-radius: 20px;
             background-color: white; }
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login button.pf-loginDone, #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label.pf-loginDone.inputFileButton {
-              background-color: rgba(0, 153, 222, 0.1);
-              opacity: 1;
-              cursor: default;
+              color: white;
+              background-color: #0099DE;
               border: none; }
+          #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.pf-loginMessage {
+            visibility: hidden;
+            margin: 1rem 0;
+            color: #ef2a90;
+            font-size: 1.5rem; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.pf-loginMessage.active {
+              visibility: visible;
+              -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
+              -moz-animation: blink 0.2s linear 0.2s 2 forwards;
+              animation: blink 0.2s linear 0.2s 2 forwards; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p {
             margin: 2rem; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label {
