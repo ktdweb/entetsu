@@ -58,6 +58,14 @@ const routes = (
           footer: FrontFooter
         }} />
 
+      <Route path={root.documentRoot + '/works/:section'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontWorks,
+          footer: FrontFooter
+        }} />
+
       <Route path={root.documentRoot + '/works'}
         global={root}
         components={{

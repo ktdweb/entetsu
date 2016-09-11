@@ -152,6 +152,12 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     header: _Header4.default,
     main: _Home4.default,
     footer: _Footer2.default
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/:section',
+  global: root,
+  components: {
+    header: _Header4.default,
+    main: _Works2.default,
+    footer: _Footer2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works',
   global: root,
   components: {
@@ -8570,15 +8576,28 @@ var Works = function (_React$Component) {
     value: function componentWillMount() {
       _SearchStore2.default.subscribe(this.updateState.bind(this));
       _WorkStore2.default.subscribe(this.updateState.bind(this));
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.params.section == 'result') {
+        window.scrollTo(0, 820);
+      }
+
       if (this.state.search.category) {
         _WorkActions2.default.category(this.state.search.category);
+      } else if (this.state.search.keyword) {
+        _WorkActions2.default.keyword(this.state.search.keyword);
+        var el = document.getElementById('keyword');
+        el.value = this.state.search.keyword;
+      } else if (this.state.search.slider_flag) {
+        start = this.state.search.slider_start;
+        end = this.state.search.slider_end;
+        _WorkActions2.default.slider(start, end);
       } else {
         _WorkActions2.default.create();
       }
     }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {}
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
@@ -8778,13 +8797,19 @@ var Works = function (_React$Component) {
         height: '120',
         name: '19',
         alt: 'img'
-      }))))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('nav', { className: 'pf-Works-Paging' }, pages), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '/works_detail' }, _react2.default.createElement('img', {
+      }))))), _react2.default.createElement('div', { className: 'pf-Works-List' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-List-tab' }, '検索結果'), _react2.default.createElement('nav', { className: 'pf-Works-Paging' }, pages), _react2.default.createElement('section', null, _react2.default.createElement('div', null, _react2.default.createElement('a', {
+        href: '/works_detail',
+        id: 'previous',
+        className: 'navButton disable',
+        onClick: this.previousPage.bind(this)
+      }, _react2.default.createElement('img', {
         src: IMG + 'list_column_left.png',
         width: '30',
-        alt: 'img',
-        onClick: this.previousPage.bind(this)
+        alt: 'img'
       }))), _react2.default.createElement('ul', { id: 'column' }, columns), _react2.default.createElement('div', null, _react2.default.createElement('a', {
         href: 'works_detail',
+        id: 'next',
+        className: 'navButton',
         onClick: this.nextPage.bind(this)
       }, _react2.default.createElement('img', {
         src: IMG + 'list_column_right.png',
@@ -8812,10 +8837,53 @@ var Works = function (_React$Component) {
         onMouseOut: this.onMouseUp.bind(this)
       })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement('input', {
         type: 'text',
+        id: 'keyword',
         defaultValue: 'フリーワード検索',
         onKeyDown: this.getKeyword.bind(this),
         onFocus: this.clearValue.bind(this)
       })))));
+    }
+  }, {
+    key: 'navControl',
+    value: function navControl() {
+      var cnt = Math.ceil(this.state.search.total / 6);
+
+      var previous = document.getElementById('previous');
+      var next = document.getElementById('next');
+
+      previous.classList.remove('disable');
+      next.classList.remove('disable');
+
+      if (this.state.search.page == 1) {
+        previous.classList.add('disable');
+      }
+
+      if (this.state.search.page == cnt) {
+        next.classList.add('disable');
+      }
+
+      var s = document.getElementById('sliderFirst');
+      var e = document.getElementById('sliderSecond');
+      var el = document.getElementById('sliderLabel');
+
+      var pos = void 0;
+      var reg = BTN_WIDTH / 2;
+      var start = this.state.search.slider_start;
+      var end = this.state.search.slider_end;
+
+      pos = start * 5 - reg - 1;
+      s.style.left = pos + 'px';
+
+      pos = end * 5 - reg - 1;
+      e.style.left = pos + 'px';
+
+      el.style.left = start * 5 + 'px';
+      el.style.width = end * 5 - start * 5 + 'px';
+
+      if (this.state.search.keyword == '') {
+        var k = document.getElementById('keyword');
+        k.value = 'フリーワード検索';
+      }
     }
   }, {
     key: 'closeUp',
@@ -8900,6 +8968,12 @@ var Works = function (_React$Component) {
           el.style.left = start * 5 + 'px';
           el.style.width = end * 5 - start * 5 + 'px';
         }
+
+        _SearchActions2.default.updateField('slider_start', start);
+        _SearchActions2.default.updateField('slider_end', end);
+        _SearchActions2.default.updateField('slider_flag', true);
+        _SearchActions2.default.updateField('keyword', '');
+        _SearchActions2.default.updateField('category', '');
       }
     }
   }, {
@@ -8910,6 +8984,10 @@ var Works = function (_React$Component) {
       var id = e.target.name;
       _SearchActions2.default.updateField('page', 1);
       _SearchActions2.default.updateField('category', id);
+      _SearchActions2.default.updateField('slider_start', 0);
+      _SearchActions2.default.updateField('slider_end', 75);
+      _SearchActions2.default.updateField('slider_flag', false);
+      _SearchActions2.default.updateField('keyword', '');
       _WorkActions2.default.category(id);
 
       this.scrollMotion(820);
@@ -8925,6 +9003,10 @@ var Works = function (_React$Component) {
       if (e.keyCode == 13) {
         _SearchActions2.default.updateField('page', 1);
         _SearchActions2.default.updateField('keyword', e.target.value);
+        _SearchActions2.default.updateField('slider_start', 0);
+        _SearchActions2.default.updateField('slider_end', 75);
+        _SearchActions2.default.updateField('slider_flag', false);
+        _SearchActions2.default.updateField('category', '');
         _WorkActions2.default.keyword(e.target.value);
       }
     }
@@ -9003,6 +9085,7 @@ var Works = function (_React$Component) {
         works: res,
         search: search
       });
+      this.navControl();
     }
   }]);
 
@@ -9266,7 +9349,7 @@ var WorksDetail = function (_React$Component) {
       }, modal[0].button), 'もしくは…', _react2.default.createElement('button', {
         name: 'modalMail',
         onClick: this.enableModal.bind(this)
-      }, modal[1].button))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
+      }, modal[1].button))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '時給: ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc))))))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
         key: '0',
         id: 'modalTel',
         body: modal[0].body,
@@ -10384,23 +10467,16 @@ function _inherits(subClass, superClass) {
   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }return obj;
-}
-
 var CHANGE_EVENT = 'change';
 
-var _search = _defineProperty({
+var _search = {
   category: '',
   page: 1,
   total: 1,
   keyword: '',
-  slider_start: ''
-}, 'slider_start', '');
+  slider_start: 0,
+  slider_end: 75
+};
 
 function create(res) {
   _search = res;

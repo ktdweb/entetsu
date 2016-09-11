@@ -263,7 +263,7 @@ export default class WorksDetail extends React.Component {
             <button>似た仕事を検索</button>
           </a>
           */}
-          <Link to="/works">
+          <Link to="/works/result">
             <button>戻る</button>
           </Link>
         </div>

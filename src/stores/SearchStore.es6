@@ -9,8 +9,8 @@ let _search = {
   page: 1,
   total: 1,
   keyword: '',
-  slider_start: '',
-  slider_start: ''
+  slider_start: 0,
+  slider_end: 75
 };
 
 function create(res) {

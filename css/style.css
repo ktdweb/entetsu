@@ -7579,6 +7579,8 @@ div#badge {
             vertical-align: top; }
           #Front article#Works div.pf-Works-List > div section > div {
             width: 35px; }
+            #Front article#Works div.pf-Works-List > div section > div a.navButton.disable {
+              display: none; }
         #Front article#Works div.pf-Works-List > div div.pf-Works-List-tab {
           position: absolute;
           top: -25px;

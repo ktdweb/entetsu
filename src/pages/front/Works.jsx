@@ -40,14 +40,27 @@ export default class Works extends React.Component {
   componentWillMount() {
     SearchStore.subscribe(this.updateState.bind(this));
     WorkStore.subscribe(this.updateState.bind(this));
+  }
+
+  componentDidMount() {
+    if (this.props.params.section == 'result') {
+      window.scrollTo(0, 820);
+    }
+
     if (this.state.search.category) {
       WorkActions.category(this.state.search.category);
+    } else if (this.state.search.keyword) {
+      WorkActions.keyword(this.state.search.keyword);
+      let el = document.getElementById('keyword');
+      el.value = this.state.search.keyword;
+    } else if (this.state.search.slider_flag) {
+      start = this.state.search.slider_start;
+      end = this.state.search.slider_end;
+      WorkActions.slider(start, end);
     } else {
       WorkActions.create();
     }
   }
-
-  componentDidMount() {}
 
   componentWillUnmount() {
     WorkStore.destroy(this.updateState.bind(this));
@@ -365,12 +378,16 @@ export default class Works extends React.Component {
 
             <section>
               <div>
-                <a href="/works_detail">
+                <a
+                  href="/works_detail"
+                  id="previous"
+                  className="navButton disable"
+                  onClick={this.previousPage.bind(this)}
+                  >
                   <img
                     src={IMG + 'list_column_left.png'}
                     width="30"
                     alt="img"
-                    onClick={this.previousPage.bind(this)}
                     />
                 </a>
               </div>
@@ -380,6 +397,8 @@ export default class Works extends React.Component {
              <div>
                 <a
                   href="works_detail"
+                  id="next"
+                  className="navButton"
                   onClick={this.nextPage.bind(this)}
                   >
                   <img
@@ -426,6 +445,7 @@ export default class Works extends React.Component {
           <div className="pf-Works-Search-advance">
             <input
               type="text"
+              id="keyword"
               defaultValue="フリーワード検索"
               onKeyDown={this.getKeyword.bind(this)}
               onFocus={this.clearValue.bind(this)}
@@ -435,6 +455,47 @@ export default class Works extends React.Component {
         </div>
       </article>
     );
+  }
+
+  navControl() {
+    let cnt = Math.ceil(this.state.search.total / 6);
+
+    let previous = document.getElementById('previous');
+    let next = document.getElementById('next');
+
+    previous.classList.remove('disable');
+    next.classList.remove('disable');
+
+    if (this.state.search.page == 1) {
+      previous.classList.add('disable');
+    }
+
+    if (this.state.search.page == cnt) {
+      next.classList.add('disable');
+    }
+
+    let s = document.getElementById('sliderFirst');
+    let e = document.getElementById('sliderSecond');
+    let el = document.getElementById('sliderLabel');
+
+    let pos;
+    let reg = BTN_WIDTH / 2;
+    let start = this.state.search.slider_start;
+    let end = this.state.search.slider_end;
+
+    pos = (start * 5 - reg - 1);
+    s.style.left = pos + 'px';
+
+    pos = (end * 5 - reg - 1);
+    e.style.left = pos + 'px';
+
+    el.style.left =  start * 5 + 'px';
+    el.style.width = (end * 5) - (start * 5) + 'px';
+
+    if (this.state.search.keyword == '') {
+      let k = document.getElementById('keyword');
+      k.value = 'フリーワード検索';
+    }
   }
 
   closeUp(e) {
@@ -515,6 +576,12 @@ export default class Works extends React.Component {
         el.style.left =  start * 5 + 'px';
         el.style.width = (end * 5) - (start * 5) + 'px';
       }
+
+      SearchActions.updateField('slider_start', start);
+      SearchActions.updateField('slider_end', end);
+      SearchActions.updateField('slider_flag', true);
+      SearchActions.updateField('keyword', '');
+      SearchActions.updateField('category', '');
     }
   }
 
@@ -524,6 +591,10 @@ export default class Works extends React.Component {
     let id = e.target.name;
     SearchActions.updateField('page', 1);
     SearchActions.updateField('category', id);
+    SearchActions.updateField('slider_start', 0);
+    SearchActions.updateField('slider_end', 75);
+    SearchActions.updateField('slider_flag', false);
+    SearchActions.updateField('keyword', '');
     WorkActions.category(id);
 
     this.scrollMotion(820);
@@ -537,6 +608,10 @@ export default class Works extends React.Component {
     if (e.keyCode == 13) {
       SearchActions.updateField('page', 1);
       SearchActions.updateField('keyword', e.target.value);
+      SearchActions.updateField('slider_start', 0);
+      SearchActions.updateField('slider_end', 75);
+      SearchActions.updateField('slider_flag', false);
+      SearchActions.updateField('category', '');
       WorkActions.keyword(e.target.value);
     }
   }
@@ -604,6 +679,7 @@ export default class Works extends React.Component {
       works: res,
       search: search
     });
+    this.navControl();
   }
 }
 
