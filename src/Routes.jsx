@@ -2,7 +2,13 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 import { Router, Route } from 'react-router'
 
-const root = { documentRoot: '' };
+const root = {
+  documentRoot: '',
+  login: {
+    status: false,
+    name: ''
+  }
+};
 
 // components
 import Count        from './components/Count'
@@ -28,6 +34,9 @@ import AdminHome    from './pages/admin/Home'
 import FrontHome      from './pages/front/Home'
 import FrontWorks     from './pages/front/Works'
 import FrontWorksDetail from './pages/front/WorksDetail'
+import FrontMemberSet from './pages/front/MemberSet'
+import FrontTokenReset from './pages/front/TokenReset'
+import FrontTokenTimeout from './pages/front/TokenTimeout'
 import FrontCompany   from './pages/front/Company'
 
 import FrontCleaning  from './pages/front/Cleaning'
@@ -49,6 +58,14 @@ const routes = (
           footer: FrontFooter
         }} />
 
+      <Route path={root.documentRoot + '/works/:section'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontWorks,
+          footer: FrontFooter
+        }} />
+
       <Route path={root.documentRoot + '/works'}
         global={root}
         components={{
@@ -58,6 +75,14 @@ const routes = (
         }} />
 
       <Route path={root.documentRoot + '/works_detail'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontWorksDetail,
+          footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/works_detail/:id'}
         global={root}
         components={{
           header: FrontHeader,
@@ -105,6 +130,14 @@ const routes = (
           footer: FrontFooter
         }} />
 
+      <Route path={root.documentRoot + '/company/:page'}
+        global={root}
+        components={{
+          header: FrontHeader,
+          main: FrontCompany,
+          footer: FrontFooter
+        }} />
+
       <Route path={root.documentRoot + '/company'}
         global={root}
         components={{
@@ -143,6 +176,24 @@ const routes = (
           header: FrontHeader,
           main: FrontDriving,
           footer: FrontFooter
+        }} />
+
+      <Route path={root.documentRoot + '/members/set/:token'}
+        global={root}
+        components={{
+          main: FrontMemberSet,
+        }} />
+
+      <Route path={root.documentRoot + '/tokens/reset'}
+        global={root}
+        components={{
+          main: FrontTokenReset,
+        }} />
+
+      <Route path={root.documentRoot + '/tokens/timeout'}
+        global={root}
+        components={{
+          main: FrontTokenTimeout,
         }} />
     </Route>
 

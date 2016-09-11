@@ -10,17 +10,18 @@
   */
 
 & > footer
+  margin-bottom: 260px
   font-size: $small-font-size
-  margin-bottom: 0
 
-& > footer
-  #footerLink
-    min-width: 960px
-    max-width: 960px 
-    margin: $base-spacing auto
+/*
+  # #Front > footer .lf-contents
+  俗にいうフッタリンク
+  */
 
 & > footer
   .lf-contents
+    width: 960px
+    margin: 0 auto
     div
       +span-columns(2)
       i
@@ -34,16 +35,16 @@
       a
         color: black
 
-
 /*
   # #Front > footer .lf-external
   関連リンク、公共事業リンク・バナー
   */
 
 & > footer
-  margin-bottom: 260px
   background-color: white
   .lf-external
+    width: 960px
+    margin: 0 auto
     div
       padding: $base-spacing 0
       p
@@ -67,7 +68,6 @@
 & > footer
   .lf-credit
     +fill-parent()
-    margin: 0
     padding: $base-spacing
     line-height: $small-line-height
     text-align: left
@@ -75,9 +75,6 @@
     border-top: 1px solid #EEEEEE
     overflow: hidden
     zoom: 1
-    div
-      +outer-container()
-      padding: 0 $small-spacing
 
 /*
   # #Front > footer .lf-credit div:first-child
@@ -87,6 +84,9 @@
 & > footer
   .lf-credit
     div
+      +outer-container()
+      width: 960px
+      margin: 0 auto
       div:first-child
         +span-columns(9)
         a img
@@ -95,17 +95,6 @@
         p
           float: left
           margin-bottom: 0
-
-/*
-  # #Front > footer .lf-credit div:first-child
-  部署電話番号
-  */
-
-& > footer
-  .lf-credit
-    div
-      width: 960px
-      margin: 0 auto
       div:last-child
         +span-columns(3)
         text-align: right

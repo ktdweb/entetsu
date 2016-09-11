@@ -120,7 +120,7 @@ input{	vertical-align:middle;	}
 	}
 
 #contents {
-/*	position: relative;*/
+	position: relative;
 	}
 
 header {
@@ -182,9 +182,18 @@ header {
 	margin-top:-40%;
 	}
 
+.recruit {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+	}
+
 h2.stitle {
 	margin: 0;
 	padding: 0;
+	position: relative;
+	z-index: 10;
 	}
 
 .newRec {
@@ -223,6 +232,7 @@ h2.stitle {
 .recruitBox {
 	position: relative;
 	width: 100%;
+	height: 220px;
 	padding: 10px 10px 20px 10px;
 /*	border: #0099de solid 2px;*/
 	box-sizing: border-box;
@@ -259,6 +269,9 @@ h2.stitle {
 	}
 
 .recPoint {
+	position: absolute;
+	left: 10px;
+	bottom: 20px;
 	padding: 10px 0 0;
 	line-height: 150%;
 	font-size: 116.7%;
@@ -292,10 +305,33 @@ h2.stitle {
 	padding: 0;
 	}
 
-.recTypeTime ul.typeList li {
+.recTypeTime ul.typeList li ,
+.recTypeBusiness ul.typeList li ,
+.recTypePlace ul.typeList li {
 	display: block;
+	position: relative;
 	list-style: none;
 	padding: 0 0 6.666%;
+	background: url(../imgs/rec_type_bg.png) no-repeat left top;
+	background-size: 100% auto;
+	overflow: hidden;
+	left: 0px;
+	}
+
+.recTypeTime ul.typeList li a ,
+.recTypeBusiness ul.typeList li a ,
+.recTypePlace ul.typeList li a {
+    -webkit-backface-visibility: hidden; /* 追加 */
+    backface-visibility: hidden; /* 追加 */
+	}
+
+.recTypeTime ul.typeList li img ,
+.recTypeBusiness ul.typeList li img ,
+.recTypePlace ul.typeList li img {
+	position: relative;
+	float: left;
+	left: 0px;
+	display: block;
 	}
 
 .recTypeBusiness ul.typeList {
@@ -308,12 +344,6 @@ h2.stitle {
 	padding: 0;
 	}
 
-.recTypeBusiness ul.typeList li {
-	display: block;
-	list-style: none;
-	padding: 0 0 6.666%;
-	}
-
 .recTypePlace ul.typeList {
 	width: 60.9375%;
 	position: absolute;
@@ -322,12 +352,6 @@ h2.stitle {
 	z-index: 100;
 	margin: 0;
 	padding: 0;
-	}
-
-.recTypePlace ul.typeList li {
-	display: block;
-	list-style: none;
-	padding: 0 0 6.666%;
 	}
 
 .recBar {
@@ -476,7 +500,7 @@ h2.stitle {
 .workData .workPoint li {
 	display: inline-block ;
 	list-style: none;
-	margin: 0 5px 0 0;
+	margin: 0 5px 5px 0;
 	padding: 5px 10px;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -593,7 +617,7 @@ dl.workInfo dd {
 
 .workEntryBtn {
 	display:block;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	padding: 10px;
 	border-radius: 20px;
@@ -619,15 +643,16 @@ dl.workInfo dd {
 	overflow: hidden;
 	padding: 20px 0 0;
 	}
-	
+/*	
 .worksBtnBox .btnOther { float: left; }
 .worksBtnBox .btnBack { float: right; }
-
+*/
 .worksBtnBox .btnOther ,
 .worksBtnBox .btnBack {
 	display: block;
 	width: 48.275%;
 	padding: 10px;
+	margin: 0 auto;
 	border-radius: 22px;
 	-webkit-border-radius: 22px;
 	-moz-border-radius: 22px;
@@ -648,11 +673,12 @@ dl.workInfo dd {
 	-webkit-border-radius: 22px;
 	-moz-border-radius: 22px;
 	border: #00a6eb solid 2px;
-	background: #00a6eb;
 	font-size: 150%;
 	line-height: 20px;
 	text-align: center;
-	color: #fff;
+/*	color: #fff;
+	background: #00a6eb;
+*/	background: #fff;
 	}
 
 

@@ -153,7 +153,7 @@ class Mailer
             $this->message->attach($this->attach);
         }
 
-        foreach ((Array)$to as $addr) {
+        foreach ((Array)$to as $i => $addr) {
             try {
                 $this->message->setTo((Array)$addr);
                 $this->setXOriginalTo($addr);

@@ -11,7 +11,7 @@ use \Lib\Db\Delete;
 
 use \Lib\SwiftMailer\Init;
 use \Lib\SwiftMailer\Mailer;
-use \Lib\SwiftMailer\Unit\Twig;
+use \Lib\SwiftMailer\Util\Twig;
 
 use \Lib\Image\Original;
 use \Lib\Image\Thumbnail;

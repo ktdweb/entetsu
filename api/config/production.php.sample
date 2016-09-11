@@ -27,3 +27,6 @@ const MAIL_PASS     = null;
 const MAIL_FROM     = 'info@example.com';
 const MAIL_NAME     = 'System Notification';
 const MAIL_ADDR     = 'admin@example.com';
+
+// return-path
+const MAIL_FAIL     = 'info@example.com';

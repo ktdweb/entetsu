@@ -1,0 +1,122 @@
+/*
+  # modules/modal.sass
+  modalに関するクラスを定義  
+  prefixはなし
+  */
+
+/*
+  # description list
+  table layoutにし左寄せ
+  */
+
+.modal
+  position: absolute
+  display: none
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  text-align: center
+  background-color: rgba(0,0,12,0.4)
+  z-index: 1000
+
+  +keyframes(show)
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+  &.enable
+    opacity: 1
+    display: block
+    +animation(show 1s ease-in-out 0s)
+
+  & > div
+    position: relative
+    margin: 200px auto
+    padding: 20px
+    width: 680px
+    height: auto
+    text-align: center
+    color: $color-works-base
+    font-size: $small-font-size * 1.1
+    background-color: white
+    border-radius: 7px
+    box-shadow: 0 10px 50px 10px rgba(0,0,0,0.2)
+
+    h1
+      font-size: $base-font-size * 1.5
+      color: $color-works-base
+      line-height: $base-spacing * 3
+      background-color: $color-works-bg
+      text-align: center
+      border-radius: 10px
+
+    & > div
+      width: 400px
+      color: $color-works-base
+      margin: $small-spacing auto
+      font-size: $small-font-size
+      padding: $small-spacing $small-spacing
+      border: 1px solid $color-works-base
+
+    & > div.login
+      width: auto
+      border: none
+      font-size: $small-font-size * 1.15
+      label
+        display: inline-block
+        width: 120px
+        text-align: right
+        margin-right: $base-spacing
+
+      input
+        width: 300px
+        border: 1px solid $color-works-base
+        margin-bottom: $small-spacing
+        color: #aaa
+        &.active
+          border: 1px solid $color-works-error
+          +animation(blink 0.2s linear 0.2s 2 forwards)
+
+    p.loginError
+      visibility: hidden
+      margin: $small-spacing 0
+      color: $color-works-error
+      font-size: $small-font-size * 1.2
+      &.active
+        visibility: visible 
+        +animation(blink 0.2s linear 0.2s 2 forwards)
+
+    & > a.modalLink
+      display: block
+      width: 240px
+      height: 40px
+      color: white
+      font-size: $base-font-size * 1.25
+      line-height: $base-font-size * 2.5
+      margin: 0 auto
+      padding: 0
+      border-radius: 20px
+      background-color: $color-works-base
+
+  .modalClose
+    position: absolute
+    top: 35px
+    right: 35px
+    border: 1px solid $color-works-base
+    border-radius: 5px
+    background-color: white
+    box-shadow: 0 1px 0 0 $color-works-base
+
+  button
+    display: block
+    width: 260px
+    height: 40px
+    color: white
+    font-size: $base-font-size
+    margin: 0 auto
+    padding: 0
+    border-radius: 20px
+    background-color: $color-works-base

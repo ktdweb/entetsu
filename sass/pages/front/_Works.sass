@@ -103,6 +103,7 @@ article#Works
         background-repeat: no-repeat
         background-position: top right
         background-size: contain
+
   div.pf-Works-List
     font-size: $small-font-size * 1.25
     background-color: $color-works-bg
@@ -120,6 +121,22 @@ article#Works
       margin: 0 auto
       padding-top: $base-spacing * 2
 
+      nav.pf-Works-Paging
+        margin-bottom: $base-spacing
+        font-size: $base-font-size
+        text-align: center
+        span
+          padding: 0 $base-spacing
+          border-right: 1px solid $color-works-base
+          color: rgba($color-works-base, 0.5)
+          cursor: pointer
+          &:last-child
+            border: none
+          &.current
+            color: $color-works-base
+            cursor: default
+            
+
       section
         display: table
         width: 100%
@@ -129,8 +146,14 @@ article#Works
           vertical-align: middle
         & > ul
           width: auto
+          height: 440px
+          text-align: left
+          vertical-align: top
         & > div
           width: 35px
+          a.navButton
+            &.disable
+              display: none
 
       div.pf-Works-List-tab
         position: absolute
@@ -144,10 +167,17 @@ article#Works
         background-size: contain
         background-repeat: no-repeat
 
+      ul li.pf-Works-List-column-empty
+        width: 100%
+        padding-top: $base-spacing * 10
+        font-size: $base-font-size * 1.5
+        color: $color-works-base
+        text-align: center
+
       ul li.pf-Works-List-column
         display: inline-block
         position: relative
-        width: 30%
+        width: 32%
         height: 200px
         margin: $small-spacing / 2
         text-align: left
@@ -158,7 +188,6 @@ article#Works
         &.fadeIn
           opacity: 1
 
-
         div.pf-Works-List-column-head
           position: absolute
           top: -36px
@@ -168,6 +197,11 @@ article#Works
             position: absolute
             top: -3px
             right: -25px
+          p
+            width: 17rem
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
 
         div.pf-Works-List-column-section
           position: absolute
@@ -213,6 +247,13 @@ article#Works
       border: 2px solid $color-works-base
       border-radius: 20px
 
-  #column
-    &.fadeIn
-      +fadeIn()
+  ul#column a
+    +transition(all 0s linear)
+  ul#column a.active
+    +animation(common 1s linear)
+
+    +keyframes(common)
+      0% 
+        opacity: 0
+      100% 
+        opacity: 1

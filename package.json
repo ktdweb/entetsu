@@ -27,7 +27,8 @@
     "moment": "*",
     "clone": "*",
     "history": "*",
-    "flux": "*"
+    "flux": "*",
+    "es6-promise": "*"
   },
   "devDependencies": {
     "gulp": "gulpjs/gulp.git#4.0",

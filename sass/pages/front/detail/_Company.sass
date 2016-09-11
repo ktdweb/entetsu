@@ -1,32 +1,68 @@
 /*
-  # pages/front/Building.sass
-  front/Building.jsxに関するクラスを定義  
-  prefixには`pf-Building`を付与
+  # pages/front/Company.sass
+  front/Company.jsxに関するクラスを定義  
+  prefixには`pf-Company`を付与
   */
 
 article#CompanyDetail
 
   section
+    table
+      padding-top: 0
+      border-collapse: collapse
+      td
+        font-size: $base-font-size * 0.9
+        vertical-align: top
+        border-top: 1px solid $color-line
+        line-height: $base-spacing
+        padding: $small-spacing 0
+      td:first-child
+        width: 12rem
+
     &:nth-of-type(1)
-      padding-top: 220px
+      padding-top: 180px
+      width: 70%
 
     &:nth-of-type(2)
-      color: white
       margin-top: 280px
+      width: 100%
       h1
         color: white
+      div.ceo
+        margin-bottom: 3rem
+        p
+          margin-right: 0.5rem
+        img
+          border: 1px solid white
 
     &:nth-of-type(3)
-      margin-top: 200px
+      margin-top: 220px
+      width: 70%
+      table
+        td:first-child
+          width: 14rem
 
     &:nth-of-type(4)
-      margin-top: 240px
+      margin-top: 60px
+      width: 90%
+      table
+        width: 75%
+        td:first-child
+          width: 14rem
       h1
         width: 240px
-        margin-left: 280px
 
     &:nth-of-type(5)
-      margin-top: 280px
+      margin-top: 60px
+      margin-bottom: 30px
+      width: 90%
+      h3
+        clear: both
+        line-height: $small-spacing
+      img
+        float: left
+        margin-right: $base-spacing
+        margin-bottom: $base-spacing
 
   div.wrapper
     position: relative
@@ -39,7 +75,7 @@ article#CompanyDetail
     z-index: -100
 
   #plx02
-    top: -600px
+    top: 420px
     z-index: -50
     background-image: url('../imgs/detail/company/bg_detail.png')
     opacity: 1
@@ -78,7 +114,7 @@ article#CompanyDetail
     opacity: 1
 
   #plx07
-    top: 2400px
+    top: 3600px
     width: 1040px 
     height: 1040px
     z-index: -100
