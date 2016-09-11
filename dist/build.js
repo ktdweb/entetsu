@@ -10475,7 +10475,8 @@ var _search = {
   total: 1,
   keyword: '',
   slider_start: 0,
-  slider_end: 75
+  slider_end: 75,
+  slider_flag: false
 };
 
 function create(res) {
