@@ -1,0 +1,47 @@
+'use strict';
+
+import gulp from 'gulp';
+import shell from '/usr/local/lib/node_modules/gulp-shell';
+
+/**
+ * for gulpfile.bable.js in parent directory
+ */
+import react from './admin/gulp/tasks/react.es6';
+import sass from './admin/gulp/tasks/sass.es6';
+
+/**
+ * for gulpfile.bable.js in this directory
+ */
+// import react from './gulp/tasks/react.es6';
+// import sass from './gulp/tasks/sass.es6';
+
+
+/**
+ * react
+ *
+ * gulp admin:src
+ * gulp admin:src:watch
+ */
+gulp.registry(react);
+
+/**
+ * sass
+ *
+ * gulp admin:sass
+ * gulp admin:sass:watch
+ */
+gulp.registry(sass);
+
+/**
+ * gulp watch
+ */
+gulp.task('watch', shell.task([`
+  tput setaf 36 && echo '\n  gulp watch: empty task. \n'
+`]));
+
+/**
+ * gulp build
+ */
+gulp.task('build', shell.task([`
+  tput setaf 36 && echo '\n  gulp build: empty task. \n'
+`]));

@@ -1,0 +1,27 @@
+/*
+  # extends/fullscreen.sass
+  // 画面全体に表示させるためのクラスを定義  
+  // prefixはなし
+  */
+
+// # html, body
+// html, bodyはheight 100%
+
+html, body
+  height: 100%
+
+// # react
+// react用のindex.htmlに記述されるdiv#root 
+// div#rootには必ず内包するboxがあるため  
+// body,htmlと同様にheight: 100%
+
+#Front, #Admin
+  min-height: 100%
+
+// # react
+// react用のindex.htmlに記述されるdiv#root 
+// div#rootには必ず内包するboxがあるため  
+// body,htmlと同様にheight: 100%
+
+#root > #Front, #root > #Aront
+  height: auto

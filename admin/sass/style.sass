@@ -1,0 +1,57 @@
+/*
+  # style.sass
+  // importで構成
+  */
+
+//  # config
+//  各ライブラリ用の環境設定
+
+@import 'config/config'
+
+// # vendor
+// bourbon, neat, animate, web-fontsを読込  
+// sass3.4の仕様上scss,sassの読込に変数は使えない
+
+@import '../../vendor/bourbon/app/assets/stylesheets/_bourbon.scss'
+@import '../../vendor/neat/app/assets/stylesheets/_neat.scss'
+@import '../../vendor/sass-web-fonts/web-fonts.scss'
+
+// # vars, arrays
+// 変数,配列を定義。すべてのファイルで利用
+
+@import 'config/colors'
+@import 'config/types'
+@import 'config/vars'
+@import 'config/arrays'
+
+// # functions, mixins
+// 汎用のライブラリを読込
+
+@import 'functions/index'
+@import 'mixins/index'
+
+// # rule
+// smaccsをもとに構成  
+
+@import 'base'
+@import 'theme'
+@import 'layouts/index'
+@import 'pages/index'
+
+// # extends
+// タグ・クラスをoverrideする 
+
+@import 'extends/index'
+
+// # vendor (modules, motions用)
+// bourbon, neat, animate, web-fontsを読込  
+// sass3.4の仕様上scss,sassの読込に変数は使えない
+
+/* animate.css */
+@import '../../vendor/animate.css-scss/animate.scss'
+
+// # modules, motions
+// smaccsをもとに構成  
+
+@import 'motions/index'
+@import 'modules/index'

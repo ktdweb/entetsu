@@ -1,0 +1,15 @@
+/*
+  # extends/neat.sass
+  // fontawesomeを拡張するクラスを定義  
+  // prefixはなし
+  */
+
+
+// # grid
+// neatのgridはresiponsiveの場合  
+// gridの読込前にbreakpointを設定する必要があるため  
+// overrideし強制的に変更
+
+body:before
+  +media($mobile)
+    +grid-column-gradient(gradient-stops($mobile-columns))

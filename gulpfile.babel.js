@@ -11,6 +11,9 @@ import sass from './gulp/tasks/sass.es6';
 import karma from './gulp/tasks/karma.es6';
 import e2e from './gulp/tasks/e2e.es6';
 
+import adminReact from './admin/gulp/tasks/react.es6';
+import adminSass from './admin/gulp/tasks/sass.es6';
+
 /**
  * for gulpfile.bable.js in this directory
  */
@@ -18,6 +21,9 @@ import e2e from './gulp/tasks/e2e.es6';
 // import sass from './tasks/sass.es6';
 // import karma from './tasks/karma.es6';
 // import e2e from './tasks/e2e.es6';
+
+// import adminReact from '../admin/gulp/tasks/react.es6';
+// import adminSass from '../admin/gulp/tasks/sass.es6';
 
 /**
  * react
@@ -55,6 +61,16 @@ gulp.registry(karma);
  */
 gulp.registry(e2e);
 
+/**
+ * admin
+ *
+ * gulp admin:src
+ * gulp admin:src:watch
+ * gulp admin:sass
+ * gulp admin:sass:watch
+ */
+gulp.registry(adminReact);
+gulp.registry(adminSass);
 
 /**
  * gulp watch

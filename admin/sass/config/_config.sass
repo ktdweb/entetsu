@@ -1,0 +1,51 @@
+/*
+  # config.sass
+  // 各ライブラリ用の環境設定 
+  */
+
+// # document root
+// パス設定  
+// 
+// * $root      - projectのルート
+// * $path-root - document root
+// * $path-img  - 画像ディレクトリ
+
+$root:        "../../"
+$path-root:   "../../"
+$path-img:    "/imgs"
+
+// # sass
+// sassのwarningを抑制
+
+$disable-warnings: true
+
+// # bourbon
+// remの基準値を設定
+// vars.sass内で読込  
+// vars.sass内でbase-emをエイリアスとして設定
+
+$em-base: 10px
+
+// # grid
+// $base-emはbourbonの$em-baseと共有 -> config.sass  
+// $base-remはgridの最小単位
+
+$base-em:  $em-base
+$base-rem: 1rem
+
+// # neat
+// neatの設定  
+// visual-gridは縦のgridを表示する設定  
+// gridを消す場合は$visual-gridをfalseに
+
+$max-width: 100%
+$visual-grid: false
+$visual-grid-color: #EEE
+$visual-grid-index: back
+$visual-grid-opacity: 0.4
+
+// # neat columns
+// responsiveの横幅とカラム数を設定
+
+$mobile-columns: 4
+$mobile: new-breakpoint(max-width 500px $mobile-columns)

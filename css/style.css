@@ -6318,7 +6318,7 @@ textarea {
   */
 button, label.inputFileButton {
   font-size: 1.2rem;
-  color: #FFF;
+  color: white;
   background-color: #337AB7;
   border: none;
   cursor: pointer; }

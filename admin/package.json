@@ -5,7 +5,7 @@
   "main": "./gulpfile.babel.js",
   "repository": {
     "type": "git",
-    "url": "//github.com/kobabasu/micro-gulp.git"
+    "url": "//github.com/kobabasu/micro-admin.git"
   },
   "keywords": [
     "gulp",
@@ -47,7 +47,7 @@
   "scripts": {
     "global": "npm install -g gulp gulp-shell",
     "watch": "gulp watch",
-    "build": "gulp build"
+    "build": "mkdir ./{css,dist,imgs,js};"
   },
 
   "preferGlobal": true,
