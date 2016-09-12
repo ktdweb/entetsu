@@ -1,0 +1,42 @@
+{
+  "name": "sass-app",
+  "version": "0.0.1",
+  "description": "sass minimum app",
+  "main": "sample/css/style.css",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/kobabasu/micro-sass.git"
+  },
+
+  "keywords": [
+    "sass",
+    "bourbon",
+    "neat",
+    "bitters"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+
+  "scripts": {
+    "global": "npm install -g bower styledocco;",
+    "gitkeep": "touch ../css/.gitkeep; touch ../docs/.gitkeep;",
+    "preinstall": "cp ./{.bowerrc,bower.json} ../; mkdir ../{css,docs}; npm run gitkeep; cd ../; bower install",
+    "start": "NODE_ENV=production NODE_PATH=../",
+
+    "sass": "sassc -M ./sass/style.sass > ./css/style.css -m ./css/style.css",
+
+    "build": "npm run sass:min; npm run doc:pages; npm run doc:layouts; npm run doc:sass"
+  },
+
+  "preferGlobal": true,
+  "author": "kobabasu",
+  "license": "MIT"
+}

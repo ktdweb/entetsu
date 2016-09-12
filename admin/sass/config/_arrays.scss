@@ -1,0 +1,55 @@
+/*
+  # arrays.sass
+  */
+// グローバルな配列を定義  
+// ソースコード内で改行が使えないため  
+// このファイルのみscss
+
+// # colors
+// modules/_colors.sassで以下に展開  
+//
+// * .color-{カラー名}
+// * .bgcolor-{カラー名}
+// * .bordercolor-{カラー名}
+
+$colors: (
+  'base':           $base-color,
+  'base-reverse':   $base-color-reverse,
+  'link':           $base-color-link,
+  'link-hover':     $base-color-link-hover,
+  'button':         $base-color-button,
+  'border':         $base-border-color,
+  'bg':             $base-background-color,
+  'bg-secondary':   $secondary-background-color,
+
+  'gray-darker':    $gray-darker,
+  'gray-dark':      $gray-dark,
+  'gray':           $gray,
+  'gray-light':     $gray-light,
+  'gray-lighter':   $gray-lighter,
+
+  'brand-primary':  $brand-primary,
+  'brand-success':  $brand-success,
+  'brand-info':     $brand-info,
+  'brand-warning':  $brand-warning,
+  'brand-danger':   $brand-danger,
+
+  'corp':           $corp-color,
+  'corp-text':      $corp-color-secondary,
+  'corp-bg':        $corp-background-color,
+
+  'facebook':       #243897,
+  'twitter':        #55ACEE
+);
+
+// # widths
+// modules/_widths.sassでクラスに展開  
+
+$widths: (
+  'xs':  10%,
+  's':   30%,
+  'm':   40%,
+  'l':   70%,
+  'xl':  80%,
+  'f':   100%,
+);

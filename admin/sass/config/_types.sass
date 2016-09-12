@@ -1,0 +1,61 @@
+/*
+  # types.sass
+  // グローバルなフォントの変数を定義
+  */
+
+// # font-family
+// 遊ゴシックはieでのline-heightで違いがあるため見送り。
+// メイリオで統一。遊書体はオプションで設定可能  
+// web-fontの読込は_config.sassで設定
+
+$base-san-serif: 'Meiryo', arial, Helvetica, sans-serif
+$base-serif: 'HG明朝E', 'Hiragino Mincho ProN', 'Meiryo', serif
+
+$YuGothic-font-family: 'YuGothic', $base-san-serif
+$YuMincho-font-family: 'YuMincho', $base-serif
+
+$base-font-family: $base-san-serif
+$heading-font-family: $base-serif
+
+// # webfont
+// sass上でwebfontを読み込むmixinを使用   
+// sass-web-fonts  libsass対応  
+// 読み込むフォントの設定
+
+$url: web-fonts-url('Hind')
+@import url($url)
+
+// # font-size
+// font-family, font-size, line-heightは  
+// neatのgridによりvarsを反映  
+// modules/typographyでもvarsを反映
+
+$base-font-size:        1.6rem
+$small-font-size:       1.4rem
+$heading-font-size:     2.4rem
+
+// # line-height
+// font-family, font-size, line-heightは  
+// neatのgridによりvarsを反映  
+// modules/typographyでもvarsを反映
+
+$base-line-height:      3rem
+$small-line-height:     2rem
+$heading-line-height:   3rem
+
+// # spacing
+// gridに関わるspacingの設定  
+// $base-remの整数倍になるよう設定すること
+
+$base-spacing:          $base-rem * 2
+$small-spacing:         $base-rem
+$large-spacing:         $base-rem * 4
+
+// # letter-spacing
+// font-family, font-size, line-heightは  
+// modules/typographyでvarsを反映  
+// neatのgridによりvarsを反映
+
+$base-letter-spacing:      normal
+$small-letter-spacing:     0.2rem
+$heading-letter-spacing:   0.6rem

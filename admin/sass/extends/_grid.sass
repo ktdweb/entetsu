@@ -1,0 +1,134 @@
+/*
+  # extends/grid.sass
+  // gridに揃えるためのクラスを定義  
+  // prefixはなし
+  */
+
+
+// # body
+// デフォルトのline-heightを_vars.sassから読込
+
+body
+  line-height: $base-line-height
+
+// # heading
+// headerのh1以外は1行分のmargin-bottomを設定  
+// セクションエレメンツの最初のh1はbase-spacing
+
+h1, h2, h3, h4, h5, h6 
+  line-height: $heading-line-height
+  margin-bottom: $base-spacing
+
+header[id] > h1, footer[id] > h1,
+section[id] > h1, article[id] > h1
+  margin-bottom: $base-spacing
+
+// # section elements
+// margin-bottomに1行分のスペースを追加
+
+header, footer, section, article
+  margin-bottom: $base-spacing
+
+// # paragraph
+// line-heightを2/3に設定  
+// 1行分のmargin-bottomを設定
+
+p
+  line-height: $small-line-height
+  margin-bottom: $base-spacing
+
+// # small
+// smallのline-heightを設定 
+
+small
+  line-height: $small-line-height
+
+// # address
+// baseのline-heightを設定 
+
+address
+  line-height: $base-line-height
+
+// # table
+// before, afterで調整したが崩れるため  
+// th, tdより1px分引く  
+// それでも親のtableが1px増えるため  
+// 最後のtdからは2px分引く
+
+table, div.table
+  margin-bottom: $base-spacing
+
+th, td
+  line-height: $small-line-height
+  padding-top: $small-spacing / 2
+  padding-bottom: $small-spacing / 2 - 0.1rem
+
+table:not(.cells) tr:last-child > th, td
+  padding-top: $small-spacing / 2 - 0.1rem
+  padding-bottom: $small-spacing / 2 - 0.1rem
+
+// # table cells
+// rowspan, colspanが入るとさらにgirdが崩れる  
+// th, tdは引かずにそのままに戻し   
+// 親のtableが3px増えるため  
+// 最後のtdからは3px分引く
+// trやtableの構成によりgirdがずれる  
+// 現時点では都度微調整する必要がある
+
+table.cells
+  th, td
+    padding-bottom: $small-spacing / 2
+  tr:last-child > td
+    padding-top: $small-spacing / 2 - 0.1rem
+    padding-bottom: $small-spacing / 2 - 0.1rem
+
+// # form
+// formタグが隙間ができるためline-heightを0  
+// input, select, buttonにheightを設定  
+// select[multiple], textareaに4行分のheightを設定  
+
+form
+  line-height: 0
+  margin-bottom: $base-spacing
+
+// # input, select, button
+// line-height指定だと親のtableやdlで  
+// 1,2px超えてしまうheightを指定
+
+input, select, button
+  height: $heading-line-height
+
+// # radio, checkbox
+// line-height指定だと余計なpddingがつく  
+// _from.sassでvertical-alignを  
+// 数値指定することで文字位置の調整
+// 
+// th, td内のradio, chekcboxでテーブルの  
+// gridがずれるためheightを小さくしている
+
+input[type=radio], input[type=checkbox]
+  height: $small-line-height
+
+th input[type=radio], td input[type=checkbox]
+  height: $small-line-height - 0.15rem
+
+// # label
+// labelの文字位置の調整
+
+label
+  vertical-align: middle
+
+// # Description List
+// marginを設定  
+// line-heightを設定  
+// ddにline-heigthを設定すると親のgirdがずれる
+
+dl
+  margin-bottom: $base-spacing * 2
+
+dt
+  line-height: $base-line-height
+
+dd > p
+  line-height: $base-line-height
+  margin-bottom: $small-spacing

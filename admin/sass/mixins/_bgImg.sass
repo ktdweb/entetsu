@@ -1,0 +1,21 @@
+/*
+  # mixins/bgImg.sass
+  // background-imageに展開  
+  // 引数に画像ファイルを4つまで記述  
+  // グローバル変数 pathImgが設定されていれば付加する
+  // 
+  // @method bgImg
+  // @param $imgs {String} 拡張子を含めた画像ファイル名
+  // @return void
+  */
+
+=bgImg($imgs...)
+  $path: ''
+  @if global-variable-exists(path-img)
+    $path: $path-img + '/'
+
+  $urls: ()
+  @each $img in $imgs
+    $urls: append($urls, url($path + $img), comma)
+
+  background-image: $urls

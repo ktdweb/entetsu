@@ -1,0 +1,23 @@
+/*
+  # lib.sass
+  // 依存しない外部ライブラリをまとめる
+  // style.cssとは独立させコンパイルを高速化
+  // index.htmlでstyle.cssより前に読み込む
+  // importで構成
+  */
+
+// # path setting
+// * $vendor - bowerのvendorディレクトリへのパス
+
+$vendor: "../../vendor/"
+
+// # normalize
+// noramalizeはcssを読込
+
+@import url('#{$vendor}normalize.css/normalize.css')
+
+// # fontawesome
+// fontawesomeを読込  
+
+$fa-font-path: '#{$vendor}font-awesome/fonts'
+@import '../../vendor/font-awesome/scss/font-awesome.scss'

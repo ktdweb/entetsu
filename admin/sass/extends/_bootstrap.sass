@@ -1,0 +1,49 @@
+/*
+  # extends/bootstrap.sass
+  // bootstrapの記述に合わせたクラスを定義  
+  // prefixはなし
+  */
+
+// # Alignment Classes
+// 変数を定義。すべてのファイルで利用  
+// center, justify, nowrapはmargin, paddingをキャンセル
+
+.text-left
+  text-align: left !important
+
+.text-center
+  text-align: center !important
+
+.text-right
+  text-align: right !important
+
+.text-justify
+  text-align: justify !important
+
+.text-nowrap
+  white-space: nowrap !important
+
+.text-center > *, text-justify > *, text-nowrap > *
+  margin-left: 0
+  margin-right: 0
+  padding-left: 0
+  padding-right: 0
+
+// # Headding Secondaly Text
+// h1 - h6内 .class内で.smallまたは<small>で  
+// secondary textを設定
+
+h1, h2, h3, h4, h5, h6, .lead
+  small, .small
+    font-size: $small-font-size !important
+    line-height: $small-line-height !important
+
+// # Lead Body Copy
+// headingと同様のfont-sizeを設定  
+// rem基準値分のmargin-bottomを設定
+
+.lead
+  font-family: $heading-font-family !important
+  font-size: $heading-font-size !important
+  line-height: $heading-font-size * 2 !important
+  margin-bottom: 0 !important

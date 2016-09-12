@@ -1,0 +1,76 @@
+/*
+  # modules/corner-ribbon.sass
+  // .corner-ribbonをに関するクラスを定義
+  // ページの角にリボンを表示する  
+  // vars.sassなどに影響されないように記述
+  */
+
+// # .corner-ribbon
+// divなどblock要素に設定
+
+.corner-ribbon
+  position: fixed
+  right: -38px
+  top: 38px
+  width: 180px
+  font-size: 1.6rem
+  background-color: #aa0000
+  overflow: hidden
+  white-space: nowrap
+  transform: rotate(45deg)
+  box-shadow: 0 0 10px #888
+
+// # .corner-ribbon a
+// divに内包するaタグの設定
+
+.corner-ribbon a
+  display: block
+  margin: 1px 0
+  padding: 8px 0
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Meiryo', sans-serif
+  font-size: 81.25%
+  font-weight: bold
+  text-align: center
+  line-height: 1rem
+  color: #fff
+  border: 1px solid #faa
+
+// # .corner-ribbon .left
+// ページの左側に表示
+
+.corner-ribbon.left
+  left: -40px
+  right: auto
+  transform: rotate(-45deg)
+
+// # .corner-ribbon .right
+// ページの右側に表示
+
+.corner-ribbon.right
+  left: auto
+  right: -38px
+  transform: rotate(45deg)
+
+// # .corner-ribbon .red
+// 赤色
+
+.corner-ribbon.red
+  background-color: #aa0000
+  a
+    border: 1px solid #faa
+
+// # .corner-ribbon .green
+// 緑色
+
+.corner-ribbon.green
+  background-color: #109a10
+  a
+    border: 1px solid #aca
+
+// # .corner-ribbon .blue
+// 青色
+
+.corner-ribbon.blue
+  background-color: #00358f
+  a
+    border: 1px solid #aaf
