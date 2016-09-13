@@ -734,7 +734,7 @@ class Column extends React.Component {
           </div>
 
           <div className="pf-Works-List-column-footer">
-            <span>時給: {data.abbr_wage}円</span>
+            <span>{data.unit_wage}: {data.abbr_wage}円</span>
             <span>{data.abbr_time}</span>
           </div>
         </li>

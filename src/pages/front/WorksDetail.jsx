@@ -182,7 +182,7 @@ export default class WorksDetail extends React.Component {
 
               <div className="pf-Works-Detail-column-section">
                 <div>
-                  <span>時給: {data.abbr_wage}円</span>
+                  <span>{data.unit_wage}: {data.abbr_wage}円</span>
                   <span>{data.abbr_time}</span>
                 </div>
 

@@ -78,12 +78,43 @@ article[id] > h1 {
   font-size: 2.4rem;
   line-height: 3rem; }
 
-article[id] {
-  height: 100%;
-  background-color: blue; }
+aside {
+  background-color: #f9f9f9; }
 
 /*
   # layouts/index.sass */
+/*
+  # layouts/Default.sass */
+aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  padding: 2.35765%;
+  height: 100%; }
+  aside:last-child {
+    margin-right: 0; }
+
+article[id] {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-right: 0;
+  padding: 2.35765%; }
+  article[id]:last-child {
+    margin-right: 0; }
+
+/*
+  # layouts/Header.sass */
+header {
+  margin-bottom: 0; }
+  header p {
+    line-height: 6rem;
+    margin: 0; }
+
+/*
+  # layouts/Nav.sass */
 /*
   # pages/index.sass */
 /*
@@ -437,7 +468,7 @@ header[id] > h1, footer[id] > h1,
 section[id] > h1, article[id] > h1 {
   margin-bottom: 2rem; }
 
-header, footer, section, article {
+section, article {
   margin-bottom: 2rem; }
 
 p {
@@ -3641,6 +3672,16 @@ i.fa:not(.fa-circlie > i.fa) {
 
 #root {
   height: 100%; }
+
+#root > div {
+  height: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  #root > div::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 /*
   # modules/responsive.sass */

@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `works` (
   `img` VARCHAR(45) NULL,
   `abbr_wage` VARCHAR(8) NOT NULL,
   `abbr_time` VARCHAR(16) NOT NULL,
+  `unit_wage` VARCHAR(8) NOT NULL,
   `created` DATETIME NOT NULL,
   `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`))
@@ -98,6 +99,7 @@ INSERT INTO `works` (
   `img`,
   `abbr_wage`,
   `abbr_time`,
+  `unit_wage`,
   `created`,
   `modified`
 ) VALUES
@@ -125,6 +127,7 @@ INSERT INTO `works` (
 '001',
 '860',
 '17:00~19:30',
+'時給',
 NOW() + INTERVAL 60 second,
 NOW() + INTERVAL 60 second
 ),
@@ -152,6 +155,7 @@ NOW() + INTERVAL 60 second
 '002',
 '950',
 '5:30~8:30',
+'時給',
 NOW() + INTERVAL 59 second,
 NOW() + INTERVAL 59 second
 ),
@@ -179,6 +183,7 @@ NOW() + INTERVAL 59 second
 '002',
 '850',
 '7:30~11:30',
+'時給',
 NOW() + INTERVAL 58 second,
 NOW() + INTERVAL 58 second
 ),
@@ -206,6 +211,7 @@ NOW() + INTERVAL 58 second
 '002',
 '840',
 '8:00~17:00',
+'時給',
 NOW() + INTERVAL 57 second,
 NOW() + INTERVAL 57 second
 ),
@@ -233,6 +239,7 @@ NOW() + INTERVAL 57 second
 '002',
 '840',
 '7:30~12:00',
+'時給',
 NOW() + INTERVAL 56 second,
 NOW() + INTERVAL 56 second
 ),
@@ -260,6 +267,7 @@ NOW() + INTERVAL 56 second
 '002',
 '840',
 '12:00~16:30',
+'時給',
 NOW() + INTERVAL 55 second,
 NOW() + INTERVAL 55 second
 ),
@@ -287,6 +295,7 @@ NOW() + INTERVAL 55 second
 '001',
 '875',
 '9:00~19:30',
+'時給',
 NOW() + INTERVAL 54 second,
 NOW() + INTERVAL 54 second
 ),
@@ -314,6 +323,7 @@ NOW() + INTERVAL 54 second
 '001',
 '860',
 '7:45~13:00',
+'時給',
 NOW() + INTERVAL 53 second,
 NOW() + INTERVAL 53 second
 ),
@@ -341,6 +351,7 @@ NOW() + INTERVAL 53 second
 '001',
 '790',
 '8:30~11:30',
+'時給',
 NOW() + INTERVAL 52 second,
 NOW() + INTERVAL 52 second
 ),
@@ -368,6 +379,7 @@ NOW() + INTERVAL 52 second
 '002',
 '880',
 '7:30~10:00',
+'時給',
 NOW() + INTERVAL 51 second,
 NOW() + INTERVAL 51 second
 ),
@@ -395,6 +407,7 @@ NOW() + INTERVAL 51 second
 '002',
 '880',
 '7:30~9:30',
+'時給',
 NOW() + INTERVAL 50 second,
 NOW() + INTERVAL 50 second
 ),
@@ -422,6 +435,7 @@ NOW() + INTERVAL 50 second
 '002',
 '785',
 '8:00~12:00',
+'時給',
 NOW() + INTERVAL 49 second,
 NOW() + INTERVAL 49 second
 ),
@@ -449,6 +463,7 @@ NOW() + INTERVAL 49 second
 '002',
 '880',
 '8:00~10:00',
+'時給',
 NOW() + INTERVAL 48 second,
 NOW() + INTERVAL 48 second
 ),
@@ -476,6 +491,7 @@ NOW() + INTERVAL 48 second
 '002',
 '880',
 '8:00~10:00',
+'時給',
 NOW() + INTERVAL 47 second,
 NOW() + INTERVAL 47 second
 ),
@@ -503,6 +519,7 @@ NOW() + INTERVAL 47 second
 '002',
 '880',
 '7:30~9:30',
+'時給',
 NOW() + INTERVAL 46 second,
 NOW() + INTERVAL 46 second
 ),
@@ -530,6 +547,7 @@ NOW() + INTERVAL 46 second
 '002',
 '880',
 '7:30~9:30',
+'時給',
 NOW() + INTERVAL 45 second,
 NOW() + INTERVAL 45 second
 ),
@@ -557,6 +575,7 @@ NOW() + INTERVAL 45 second
 '002',
 '880',
 '7:30~9:30',
+'時給',
 NOW() + INTERVAL 44 second,
 NOW() + INTERVAL 44 second
 ),
@@ -584,6 +603,7 @@ NOW() + INTERVAL 44 second
 '002',
 '840',
 '9:00~13:00',
+'時給',
 NOW() + INTERVAL 43 second,
 NOW() + INTERVAL 43 second
 ),
@@ -611,6 +631,7 @@ NOW() + INTERVAL 43 second
 '002',
 '840',
 '17:00~21:00',
+'時給',
 NOW() + INTERVAL 42 second,
 NOW() + INTERVAL 42 second
 ),
@@ -638,6 +659,7 @@ NOW() + INTERVAL 42 second
 '002',
 '830',
 '7:00~11:00',
+'時給',
 NOW() + INTERVAL 41 second,
 NOW() + INTERVAL 41 second
 ),
@@ -665,6 +687,7 @@ NOW() + INTERVAL 41 second
 '002',
 '840',
 '8:30~12:00',
+'時給',
 NOW() + INTERVAL 40 second,
 NOW() + INTERVAL 40 second
 ),
@@ -692,6 +715,7 @@ NOW() + INTERVAL 40 second
 '002',
 '920',
 '7:30~21:30',
+'時給',
 NOW() + INTERVAL 39 second,
 NOW() + INTERVAL 39 second
 ),
@@ -719,6 +743,7 @@ NOW() + INTERVAL 39 second
 '002',
 '850',
 '14:45~17:45',
+'時給',
 NOW() + INTERVAL 38 second,
 NOW() + INTERVAL 38 second
 ),
@@ -746,11 +771,11 @@ NOW() + INTERVAL 38 second
 '001',
 '880',
 '8:30~17:30',
+'時給',
 NOW() + INTERVAL 35 second,
 NOW() + INTERVAL 35 second
 ),
 
-/*
 (
 25,
 '幼稚園送迎バスドライバー',
@@ -774,10 +799,10 @@ NOW() + INTERVAL 35 second
 '003',
 '7000',
 '6:30～16:30',
+'日給',
 NOW() + INTERVAL 34 second,
 NOW() + INTERVAL 34 second
 );
-*/
 /*}}}*/
 
 
@@ -896,11 +921,9 @@ INSERT INTO `tags` (
 (24, 2),
 (24, 9),
 (24, 18),
-/*
 (25, 1),
 (25, 9),
 (25, 16);
-*/
 /*}}}*/
 
 

@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      {
+        "name": "react-addons",
+        "raw": "react-addons@*",
+        "rawSpec": "*",
+        "scope": null,
+        "spec": "*",
+        "type": "range"
+      },
+      "/Users/keiji/projects/seeknetusa/entetsu/html"
+    ]
+  ],
+  "_from": "react-addons@*",
+  "_id": "react-addons@0.9.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-addons",
+  "_npmUser": {
+    "email": "samuel.trace.reed@gmail.com",
+    "name": "strml"
+  },
+  "_npmVersion": "1.4.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "react-addons",
+    "raw": "react-addons@*",
+    "rawSpec": "*",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-addons/-/react-addons-0.9.0.tgz",
+  "_shasum": "423ad12b586a161fdacb2691d787cf8c264b3e9a",
+  "_shrinkwrap": null,
+  "_spec": "react-addons@*",
+  "_where": "/Users/keiji/projects/seeknetusa/entetsu/html",
+  "author": {
+    "email": "sam@tixelated.com",
+    "name": "Samuel Reed",
+    "url": "http://strml.net/"
+  },
+  "bugs": {
+    "url": "https://github.com/STRML/react-addons/issues"
+  },
+  "dependencies": {},
+  "deprecated": "Deprecated: The Browserify bug this package works around is now fixed; use require('react/addons') instead.",
+  "description": "Simple packaging of react addons to avoid fiddly 'react/addons' npm module.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "423ad12b586a161fdacb2691d787cf8c264b3e9a",
+    "tarball": "https://registry.npmjs.org/react-addons/-/react-addons-0.9.0.tgz"
+  },
+  "homepage": "https://github.com/STRML/react-addons",
+  "keywords": [
+    "react",
+    "react-addons",
+    "npm",
+    "browserify"
+  ],
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "samuel.trace.reed@gmail.com",
+      "name": "strml"
+    }
+  ],
+  "name": "react-addons",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "react": ">= 0.9.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/STRML/react-addons.git"
+  },
+  "version": "0.9.0"
+}

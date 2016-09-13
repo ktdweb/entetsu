@@ -1,0 +1,16 @@
+/*
+  # layouts/Default.sass
+  // layouts/Default.jsxに関するクラスを定義  
+  // prefixには`lf-Default`を付与
+  // 大枠のレイアウトをneatを使って設定
+  */
+
+aside
+  +span-columns(2)
+  +pad()
+  height: 100% 
+
+article[id]
+  +span-columns(10)
+  +omega()
+  +pad()

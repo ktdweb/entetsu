@@ -3,20 +3,24 @@ import { browserHistory } from 'react-router'
 import { Router, Route } from 'react-router'
 
 // layouts
-import NoMatch      from './pages/NoMatch'
-import Admin        from './layouts/Admin'
-import AdminHeader  from './layouts/Header'
+import Default      from './layouts/Default'
+import Header       from './layouts/Header'
+import Nav          from './layouts/Nav'
 
 // pages
-import AdminHome    from './pages/Home'
+import Home         from './pages/Home'
+import NoMatch      from './pages/NoMatch'
 
 const routes = (
   <Router history={browserHistory}>
-      <Route path={root.documentRoot + '/admin/'}
+    <Route component={Default}>
+      <Route path={'/admin/'}
         components={{
-          header: AdminHeader,
-          main: AdminHome
+          header: Header,
+          nav: Nav,
+          main: Home
         }} />
+    </Route>
 
     <Route path="*" components={NoMatch} />
   </Router>
