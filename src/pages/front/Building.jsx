@@ -173,18 +173,15 @@ export default class BuildingDetail extends React.Component {
           </p>
 
           <div className="pf-Detail-services">
-            <p value="5" onClick={this.onService.bind(this)} >保安警備</p>
-            <p value="4" onClick={this.onService.bind(this)} >駐車場管理</p>
-            <p value="3" onClick={this.onService.bind(this)} >環境衛生管理</p>
-            <p value="2" onClick={this.onService.bind(this)} >諸設備<br />メンテナンス</p>
+            <p value="4" onClick={this.onService.bind(this)} >保安警備</p>
+            <p value="3" onClick={this.onService.bind(this)} >駐車場管理</p>
+            <p value="2" onClick={this.onService.bind(this)} >環境衛生管理</p>
             <p value="1" onClick={this.onService.bind(this)} >設備管理</p>
           </div>
 
           <div className="pf-Detail-services">
-            <p value="9" onClick={this.onService.bind(this)} >その他</p>
-            <p value="8" onClick={this.onService.bind(this)} >設備管理業務</p>
-            <p value="7" onClick={this.onService.bind(this)} >管理員業務</p>
-            <p value="6" onClick={this.onService.bind(this)} >事務管理業務</p>
+            <p value="6" onClick={this.onService.bind(this)} >その他</p>
+            <p value="5" onClick={this.onService.bind(this)} >管理員業務</p>
           </div>
 
           <div className="pf-Detail-services-desc">
@@ -221,12 +218,12 @@ export default class BuildingDetail extends React.Component {
           <h1 className="effectTitle">遠鉄アシストの特徴</h1>
 
           <div className="effect">
-          <p className="text-right">遠鉄アシストの組織力が、ビル管理業務を 円滑にバックアップします。</p>
+          <p className="text-right">遠鉄アシストの組織力が、ビル管理業務を円滑にバックアップします。</p>
 
           <h3>アフターまで見据えた三位一体の遠鉄クオリティ</h3>
 
           <p>
-            遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、“しっかり造り、きちんと守る”体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。
+            遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。
           </p>
 
           <h3>地元の優秀な人材と、地元の協力業者で見守る管理体制</h3>
@@ -321,13 +318,13 @@ export default class BuildingDetail extends React.Component {
   }
 
   oneByOne(e, txt, cnt) {
-    e.innerHTML = txt.substr(0, cnt);
-    let now = e.innerHTML; 
-    cnt++;
+    // e.innerHTML = txt.substr(0, cnt);
+    // let now = e.innerHTML; 
+    // cnt++;
 
-    if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
-    }
+    // if (txt.length >= cnt) {
+    //   setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
+    // }
   }
 
   getScrollTop() {
@@ -351,27 +348,18 @@ text: '常に快適な空間の維持に心掛け、ビルの総合管理業と�
 },
 
 {
-title: '',
-text: '住みやすいマンションを実現し、資産価値を高めるためのマンション内諸設備のメンテナンスを展開しております。',
+title: '安心・清潔な建物環境を提供いたします',
+  text: 'ビル管理法などの法的基準に基づき、測定・点検を実施し、建物の快適性・安全性を維持管理いたします。',
 },
 
 {
 title: '安全を基本に、接客・接遇面でもご満足いただけます',
 text: '安全で効率的な駐車場運営と付加価値の高い接客サービスで対応。お客様に安心して気持ちよくご利用いただける駐車場であることを目指し、行き届いた駐車場管理を行います。',
 },
-{
-title: '働く皆様と財産の安全を見守ります',
-text: 'リスクマネジメント意識が高まる現在、お客様と利用者の生命・財産の安全を確保するため、高いモラルと信頼性のある保安警備技術で皆様の安全をしっかり見守ります。',
-},
 
 {
 title: '働く皆様と財産の安全を見守ります',
 text: 'リスクマネジメント意識が高まる現在、お客様と利用者の生命・財産の安全を確保するため、高いモラルと信頼性のある保安警備技術で皆様の安全をしっかり見守ります。',
-},
-
-{
-title: '管理運営がよりスムーズに',
-text: '管理組合様のスムーズな管理運営をサポートすべく、会計、出納事務をはじめ、マンションの維持修繕に関する企画、調整業務、理事会・総会支援業務、図書、関連書類の管理等を一括してお引き受けいたします。',
 },
 
 {
@@ -380,13 +368,8 @@ text: '入居者の皆様が日々、安全・安心・快適に生活できる�
 },
 
 {
-title: '建物設備の異常は迅速に対応',
-text: 'マンションの建物や設備の異常をいち早く発見し、トラブルを未然に防ぐために、建物や設備を定期的に点検・検査します。また、これらのデータをもとに、経年劣化を踏まえた修繕や保守の必要性についてご提案します。',
-},
-
-{
 title: '物品販売やリースについても承ります',
-text: 'ホスピタリティーを重視し、常に快適な環境でお客様を迎えるため、マット、リース、清掃用洗剤などを提供。使用環境や使用頻度などに応じて最適な物品をご提案いたします。お気軽にご相談ください。',
+text: 'ホスピタリティーを重視し、常に快適な環境でお客様を迎えるため、マットリース、清掃用洗剤などを提供。使用環境や使用頻度などに応じて最適な物品をご提案いたします。お気軽にご相談ください。',
 },
 ]
 

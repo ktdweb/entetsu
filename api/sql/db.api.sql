@@ -1052,7 +1052,8 @@ INSERT INTO `members` (
   `created`,
   `modified`
 ) VALUES
-('山田太郎', 'ヤマダタロウ', '09068074649', 'keiji@seeknetusa.com', '', 1, '42', '0000-00-00', NULL, NULL, '', '', NULL, NOW(), NOW());
+('山田太郎', 'ヤマダタロウ', '09068074649', 'taro@seeknetusa.com', '', 1, '42', '0000-00-00', NULL, NULL, '', '', NULL, NOW(), NOW()),
+('山田花子', 'ヤマダハナコ', '09011112222', 'hanako@seeknetusa.com', '0123', 2, 24, '1993-04-01', 4201234, '静岡県', '浜松市南区', '遠鉄町1-4', 1, NOW(), NOW());
 /*}}}*/
 
 --- entries

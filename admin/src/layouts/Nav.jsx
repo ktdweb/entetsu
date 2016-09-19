@@ -8,18 +8,32 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    let root = '/admin';
+    let root = this.props.route.global.documentRoot;
 
     return (
-      <aside id="Nav">
-        <p>Nav</p>
-
+      <aside>
         <nav>
           <ul>
-            <li><Link to={root + '/'}
-              >home</Link></li>
-            <li><a href={root + '/sass/sample/index.html'}
-              >sample</a></li>
+            <li>
+              <i className="fa fa-check-square-o" />
+              <Link to={root + '/'}>
+                新着情報
+              </Link>
+            </li>
+
+            <li>
+              <i className="fa fa-paperclip" />
+              <Link to={root + '/works'}>
+                求人情報
+              </Link>
+            </li>
+
+            <li>
+              <i className="fa fa-bell-o" />
+              <Link to={root + '/members'}>
+                会員情報
+              </Link>
+            </li>
           </ul>
         </nav>
       </aside>

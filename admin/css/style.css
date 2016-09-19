@@ -46,7 +46,7 @@ html {
 
 body {
   position: relative;
-  color: #000;
+  color: #001f4b;
   background-color: #FFF;
   z-index: 0; }
 
@@ -71,260 +71,6 @@ address {
 
 button, label.inputFileButton {
   outline: none; }
-
-/*
-  # theme.sass */
-article[id] > h1 {
-  font-size: 2.4rem;
-  line-height: 3rem; }
-
-aside {
-  background-color: #f9f9f9; }
-
-/*
-  # layouts/index.sass */
-/*
-  # layouts/Default.sass */
-aside {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 14.70196%;
-  padding: 2.35765%;
-  height: 100%; }
-  aside:last-child {
-    margin-right: 0; }
-
-article[id] {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 82.94039%;
-  margin-right: 0;
-  padding: 2.35765%; }
-  article[id]:last-child {
-    margin-right: 0; }
-
-/*
-  # layouts/Header.sass */
-header {
-  margin-bottom: 0; }
-  header p {
-    line-height: 6rem;
-    margin: 0; }
-
-/*
-  # layouts/Nav.sass */
-/*
-  # pages/index.sass */
-/*
-  # pages/front/Sample.sass */
-#Sample {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto; }
-  #Sample::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-#Sample header, #Sample footer, #Sample section {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4rem; }
-  #Sample header::after, #Sample footer::after, #Sample section::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-#Sample header {
-  padding-top: 2rem; }
-  #Sample header h1 {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%; }
-    #Sample header h1:last-child {
-      margin-right: 0; }
-  #Sample header nav {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    text-align: right; }
-    #Sample header nav:last-child {
-      margin-right: 0; }
-    #Sample header nav a {
-      padding-right: 2rem; }
-      #Sample header nav a:last-child {
-        padding-right: 0; }
-
-#Sample section, #Sample footer {
-  text-align: center; }
-
-#Sample #bootstrap div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%; }
-  #Sample #bootstrap div:last-child {
-    margin-right: 0; }
-
-#Sample #animate div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
-  #Sample #animate div:last-child {
-    margin-right: 0; }
-  #Sample #animate div p {
-    margin: 0 auto 2rem;
-    width: 8rem;
-    height: 8rem;
-    line-height: 8rem; }
-
-/*
-  # #fontawesome
-  fa-stackがgridにあわないためaにheightを指定
-  */
-#Sample #fontawesome div {
-  margin-bottom: 4rem; }
-
-#Sample #fontawesome a {
-  display: inline-block;
-  height: 4rem;
-  margin: 0 4rem; }
-
-#Sample #utils #responsive div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
-  margin-left: 34.11922%; }
-  #Sample #utils #responsive div:last-child {
-    margin-right: 0; }
-
-#Sample #utils #widths {
-  text-align: center; }
-  #Sample #utils #widths div span {
-    display: block;
-    text-align: left; }
-  #Sample #utils #widths div p {
-    font-size: 1.4rem;
-    height: 2rem;
-    background-color: #cdcdcd; }
-
-#Sample #colors div {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4rem; }
-  #Sample #colors div::after {
-    clear: both;
-    content: "";
-    display: table; }
-  #Sample #colors div p {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%;
-    height: 8rem;
-    line-height: 8rem; }
-    #Sample #colors div p:last-child {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(6n) {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(6n+1) {
-      clear: left; }
-
-#Sample #colors a {
-  display: inline-block;
-  height: 4rem;
-  margin: 0 4rem; }
-
-#Sample #shadows div {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
-  #Sample #shadows div:last-child {
-    margin-right: 0; }
-  #Sample #shadows div p {
-    margin: 0 auto 2rem;
-    width: 8rem;
-    height: 8rem;
-    line-height: 8rem; }
-
-/*
-  # pages/front/Sample.sass */
-@media screen and (min-width: max-width 500px 4) {
-  #Sample header h1 {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-    text-align: center; }
-    #Sample header h1:last-child {
-      margin-right: 0; }
-  #Sample header nav {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-    text-align: center; }
-    #Sample header nav:last-child {
-      margin-right: 0; }
-    #Sample header nav a {
-      display: block;
-      padding-right: 0; } }
-
-@media screen and (min-width: max-width 500px 4) {
-  #Sample #bootstrap div {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%;
-    margin-left: 8.5298%;
-    margin-bottom: 2rem; }
-    #Sample #bootstrap div:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: max-width 500px 4) {
-  #Sample #fontawesome div pre {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%;
-    margin-left: 8.5298%; }
-    #Sample #fontawesome div pre:last-child {
-      margin-right: 0; }
-  #Sample #fontawesome a {
-    display: block;
-    margin: 4rem; } }
-
-@media screen and (min-width: max-width 500px 4) {
-  #Sample #utils #responsive div {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%;
-    margin-left: 8.5298%; }
-    #Sample #utils #responsive div:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: max-width 500px 4) {
-  #Sample #colors div p {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 6.17215%; }
-    #Sample #colors div p:last-child {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(4n) {
-      margin-right: 0; }
-    #Sample #colors div p:nth-child(4n+1) {
-      clear: left; } }
 
 /*
   # extends/index.sass */
@@ -366,7 +112,7 @@ h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .sma
   line-height: 2rem !important; }
 
 .lead {
-  font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif !important;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif !important;
   font-size: 2.4rem !important;
   line-height: 4.8rem !important;
   margin-bottom: 0 !important; }
@@ -612,12 +358,12 @@ table.chart td {
 /*
   # extends/typography.sass */
 body {
-  font-family: "Meiryo", arial, Helvetica, sans-serif;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   letter-spacing: normal; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "HG明朝E", "Hiragino Mincho ProN", "Meiryo", serif;
+  font-family: "YuGothic", "Meiryo", arial, Helvetica, sans-serif;
   font-size: 2.4rem;
   letter-spacing: normal; }
 
@@ -3402,14 +3148,14 @@ h1, h2, h3, h4, h5, h6 {
 /*
   # modules/colors.sass */
 .color-base {
-  color: #000 !important; }
+  color: #001f4b !important; }
 
 .bgcolor-base {
-  color: white !important;
-  background-color: #000 !important; }
+  color: #ffe0b4 !important;
+  background-color: #001f4b !important; }
 
 .bordercolor-base {
-  border-color: #000 !important; }
+  border-color: #001f4b !important; }
 
 .color-base-reverse {
   color: #FFF !important; }
@@ -3582,14 +3328,14 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #D9534F !important; }
 
 .color-corp {
-  color: #008D9F !important; }
+  color: #0198ca !important; }
 
 .bgcolor-corp {
-  color: #ff7260 !important;
-  background-color: #008D9F !important; }
+  color: #fe6735 !important;
+  background-color: #0198ca !important; }
 
 .bordercolor-corp {
-  border-color: #008D9F !important; }
+  border-color: #0198ca !important; }
 
 .color-corp-text {
   color: #002356 !important; }
@@ -3602,14 +3348,14 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #002356 !important; }
 
 .color-corp-bg {
-  color: #FFFEEE !important; }
+  color: #f0f3f7 !important; }
 
 .bgcolor-corp-bg {
-  color: #000111 !important;
-  background-color: #FFFEEE !important; }
+  color: #0f0c08 !important;
+  background-color: #f0f3f7 !important; }
 
 .bordercolor-corp-bg {
-  border-color: #FFFEEE !important; }
+  border-color: #f0f3f7 !important; }
 
 .color-facebook {
   color: #243897 !important; }
@@ -3755,3 +3501,85 @@ i.fa:not(.fa-circlie > i.fa) {
   background-color: #00358f; }
   .corner-ribbon.blue a {
     border: 1px solid #aaf; }
+
+/*
+  # theme.sass */
+body {
+  background-color: #f0f3f7; }
+
+article[id] > h1 {
+  font-size: 2.4rem;
+  line-height: 3rem; }
+
+header {
+  color: white;
+  background-color: #002356;
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.2); }
+
+table.sheet {
+  border-collapse: collapse; }
+  table.sheet th, table.sheet td {
+    padding: 1rem;
+    font-size: 1.6rem; }
+  table.sheet th {
+    text-align: left; }
+
+hr {
+  margin-bottom: 2rem; }
+
+dl {
+  margin-bottom: 2rem; }
+  dl dt {
+    width: 16rem; }
+
+/*
+  # layouts/index.sass */
+/*
+  # layouts/Default.sass */
+aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  height: 100%; }
+  aside:last-child {
+    margin-right: 0; }
+
+article[id] {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-right: 0;
+  padding: 2.35765%; }
+  article[id]:last-child {
+    margin-right: 0; }
+  article[id] i {
+    width: 3.5rem; }
+
+/*
+  # layouts/Header.sass */
+header {
+  margin-bottom: 0; }
+  header p {
+    line-height: 6rem;
+    margin: 0; }
+
+/*
+  # layouts/Nav.sass */
+aside {
+  color: white;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(1, 152, 202, 0.9); }
+  aside li {
+    padding-left: 2rem;
+    line-height: 6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #0198ca; }
+  aside i {
+    width: 2rem; }
+  aside a {
+    color: white; }
+
+/*
+  # pages/index.sass */

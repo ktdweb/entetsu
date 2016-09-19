@@ -8,9 +8,29 @@
 // ヘッダの縦中央にみせるためpadding-topを追加  
 // font-sizeをあげる
 
+body
+  background-color: $corp-background-color
+
 article[id] > h1
   font-size: $heading-font-size
   line-height: $heading-line-height
 
-aside
-  background-color: $gray-lighter
+header
+  color: white
+  background-color: $corp-color-secondary
+  box-shadow: 0px 2px 5px 0 rgba(black, 0.2)
+
+table.sheet
+  border-collapse: collapse
+  th, td
+    padding: $small-spacing
+    font-size: $base-font-size
+  th
+    text-align: left
+
+hr
+  margin-bottom: $base-spacing
+dl
+  margin-bottom: $base-spacing
+  dt
+    width: 16rem

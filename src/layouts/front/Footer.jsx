@@ -122,12 +122,22 @@ export default class Footer extends React.Component {
 
               <li>
                 <a
-                  href="#"
-                  onClick={this.enableModal.bind(this)}
+                  href="/pdf/privacy.pdf"
+                  target="_blank"
                   >
-                個人情報取扱について
+                個人情報保護方針
                 </a>
                 </li>
+
+              <li>
+                <a
+                  href="/pdf/douisho.pdf"
+                  target="_blank"
+                  >
+                採用応募者同意書
+                </a>
+                </li>
+
             </ul>
           </div>
         </nav>
@@ -296,10 +306,10 @@ export default class Footer extends React.Component {
             </div>
 
             <div>
-              <br />
-              ビル管理・清掃  - 053-455-3451<br />
-              マンション管理  - 053-450-9922<br />
-              運行管理請負    - 053-450-1515
+              ビル管理・清掃   - 053-455-3451<br />
+              マンション管理   - 053-450-9922<br />
+              運行管理請負     - 053-450-1515<br />
+              食品検査センター - 053-441-5075
             </div>
           </div>
         </div>

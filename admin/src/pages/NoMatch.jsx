@@ -9,11 +9,11 @@ export default class NoMatch extends React.Component {
 
   render() {
     return (
-      <article id="NoMatch">
+      <section id="NoMatch">
         <p>No Match</p>
 
         {this.props.children}
-      </article>
+      </section>
     );
   }
 }

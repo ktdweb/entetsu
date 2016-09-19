@@ -50,7 +50,7 @@ article#Works
 
   div.pf-Works-Search
     display: block
-    padding: $base-spacing * 3 0
+    padding: $base-spacing * 3 0 $base-spacing
     text-align: center
 
     div.pf-Works-Search-slider
@@ -58,7 +58,7 @@ article#Works
       display: inline-block
       width: 500px
       height: 60px
-      margin-left: 30px
+      margin-left: 0px
       padding: 0
       $path: '../imgs/pages/works/list_slider_bg.png'
       background-image: url($path)
@@ -93,16 +93,24 @@ article#Works
     div.pf-Works-Search-advance
       display: inline-block
       padding: 0
-      width: 400px
+      padding-top: 2rem
+      padding-left: 3rem
+      width: 360px
       text-align: right
+      vertical-align: top
       input
-        float: right
+        float: left
         border: 1px solid $color-works-base
-        width: 32rem
+        width: 22rem
+      button
+        font-size: $base-font-size * 0.9
+        text-align: left
+        width: 8rem
         background-image: url('../imgs/pages/works/list_column_search.png')
         background-repeat: no-repeat
         background-position: top right
         background-size: contain
+        background-color: $color-works-base
 
   div.pf-Works-List
     font-size: $small-font-size * 1.25

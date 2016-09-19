@@ -252,47 +252,6 @@ export default class MansionDetail extends React.Component {
             
             <p>日常生活のステージであるマンションは、いざという時も待ったなし。もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。</p>
             
-            <h3>登録・認定</h3>
-            <p>
-              ・建築物環境衛生総合管理業<br />
-              ・建築物飲料水貯水槽清掃業<br />
-              ・建築物ねずみ昆虫等防除業<br />
-              ・マンション管理業<br />
-              ・警備業
-            </p>
-            
-            <h3>主な技術有資格者</h3>
-            <p>
-              ・建築物環境衛生管理技術者<br /> 
-              ・消防設備士<br />
-              ・衛生管理者<br />
-              ・空気環境測定実施者<br /> 
-              ・統括管理者<br />
-              ・貯水槽清掃作業監督者<br />
-              ・清掃作業監督者<br />
-              ・電気工事施工管理技士<br />
-              ・ビルクリーニング技能士<br />
-              ・警備員指導教育責任者<br />
-              ・病院清掃受託責任者<br />
-              ・空調給排水監督者<br />
-              ・防除作業監督者<br />
-              ・排水管清掃作業監督者<br />
-              ・ボイラー技士<br />
-              ・建築設備検査資格者<br /> 
-              ・自衛消防業務<br />
-              ・電気工事士<br />
-              ・電気主任技術者<br />
-              ・管理業務主任者<br />
-              ・危険物取扱者<br />
-              ・冷凍機械責任者<br />
-              ・防火管理者<br />
-              ・消防設備点検資格者
-            </p>
-            
-            <p>
-              ※上記のほか、多くの資格保有者が
-              マンションの保守・管理に努めています。
-            </p>
           </div>
         </section>
       </article>
@@ -327,13 +286,13 @@ export default class MansionDetail extends React.Component {
   }
 
   oneByOne(e, txt, cnt) {
-    e.innerHTML = txt.substr(0, cnt);
-    let now = e.innerHTML; 
-    cnt++;
+    // e.innerHTML = txt.substr(0, cnt);
+    // let now = e.innerHTML; 
+    // cnt++;
 
-    if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
-    }
+    // if (txt.length >= cnt) {
+    //   setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
+    // }
   }
 
   getScrollTop() {

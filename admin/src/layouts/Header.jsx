@@ -8,10 +8,16 @@ export default class Header extends React.Component {
   }
 
   render() {
+    let root = this.props.route.global.documentRoot;
 
     return (
-      <header id="Header">
-        <p>Header</p>
+      <header>
+        <p>
+        <img
+          src="/admin/imgs/logo.png"
+          alt="entets-assist.co.jp"
+          width="300" />
+        </p>
       </header>
     );
   }

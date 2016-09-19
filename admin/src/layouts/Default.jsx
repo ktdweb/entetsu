@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-export default class Admin extends React.Component {
+export default class Default extends React.Component {
 
   constructor(props) {
     super(props);
 
-    document.body.setAttribute('id', 'ready-Admin');
+    document.body.setAttribute('id', 'ready-Front');
   }
 
   componentWillMount() {}

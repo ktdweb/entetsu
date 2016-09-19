@@ -189,7 +189,9 @@ export default class SeisougDetail extends React.Component {
         <section>
           <h1 className="effectTitle">遠鉄アシストの清掃業務管理</h1>
 
-          <h3>高い清掃品質で、美観の維持、清潔な環境を保ちます。</h3>
+          <div className="effect">
+            <h3>高い清掃品質で、美観の維持、清潔な環境を保ちます。</h3>
+          </div>
         </section>
 
         <section className="odd">
@@ -293,13 +295,13 @@ export default class SeisougDetail extends React.Component {
   }
 
   oneByOne(e, txt, cnt) {
-    e.innerHTML = txt.substr(0, cnt);
-    let now = e.innerHTML; 
-    cnt++;
+    // e.innerHTML = txt.substr(0, cnt);
+    // let now = e.innerHTML; 
+    // cnt++;
 
-    if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
-    }
+    // if (txt.length >= cnt) {
+    //   setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
+    // }
   }
 
   getScrollTop() {

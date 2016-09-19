@@ -6539,7 +6539,7 @@ div#badge {
   display: table-cell;
   opacity: 0;
   bottom: 0;
-  background-color: #ff5c5c;
+  background-color: #5489c7;
   width: 100%;
   height: 260px;
   z-index: -1000;
@@ -7119,20 +7119,14 @@ div#badge {
           margin-bottom: 1rem;
           color: #aaa; }
           #Front .modal > div > div.login input.active {
-            border: 1px solid #ef2a90;
-            -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
-            -moz-animation: blink 0.2s linear 0.2s 2 forwards;
-            animation: blink 0.2s linear 0.2s 2 forwards; }
+            border: 1px solid #ef2a90; }
       #Front .modal > div p.loginError {
         visibility: hidden;
         margin: 1rem 0;
         color: #ef2a90;
         font-size: 1.44rem; }
         #Front .modal > div p.loginError.active {
-          visibility: visible;
-          -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
-          -moz-animation: blink 0.2s linear 0.2s 2 forwards;
-          animation: blink 0.2s linear 0.2s 2 forwards; }
+          visibility: visible; }
       #Front .modal > div > a.modalLink {
         display: block;
         width: 240px;
@@ -7444,6 +7438,37 @@ div#badge {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
     background-image: url("../imgs/pages/covers/driving.png"); }
+  #Front #ActionPlan {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    color: #0099DE;
+    border: 2px solid #0099DE;
+    border-radius: 5px;
+    margin: 2rem auto;
+    padding: 0.5rem; }
+    #Front #ActionPlan::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #Front #ActionPlan > h2 {
+      float: left;
+      display: block;
+      text-align: center;
+      vertical-align: middle;
+      padding-left: 2rem;
+      padding-top: 1.5rem; }
+    #Front #ActionPlan > div {
+      padding-left: 16rem; }
+      #Front #ActionPlan > div a {
+        line-height: 1.5rem;
+        vertical-align: middle; }
+      #Front #ActionPlan > div .fa-stack {
+        line-height: 1.5rem;
+        height: 1.5rem;
+        width: 3rem;
+        vertical-align: text-top; }
   #Front article#Works {
     padding-top: 180px;
     max-width: 100%; }
@@ -7488,14 +7513,14 @@ div#badge {
         background-color: #0151CA; }
     #Front article#Works div.pf-Works-Search {
       display: block;
-      padding: 6rem 0;
+      padding: 6rem 0 2rem;
       text-align: center; }
       #Front article#Works div.pf-Works-Search div.pf-Works-Search-slider {
         position: relative;
         display: inline-block;
         width: 500px;
         height: 60px;
-        margin-left: 30px;
+        margin-left: 0px;
         padding: 0;
         background-image: url("../imgs/pages/works/list_slider_bg.png");
         background-size: contain; }
@@ -7525,16 +7550,24 @@ div#badge {
       #Front article#Works div.pf-Works-Search div.pf-Works-Search-advance {
         display: inline-block;
         padding: 0;
-        width: 400px;
-        text-align: right; }
+        padding-top: 2rem;
+        padding-left: 3rem;
+        width: 360px;
+        text-align: right;
+        vertical-align: top; }
         #Front article#Works div.pf-Works-Search div.pf-Works-Search-advance input {
-          float: right;
+          float: left;
           border: 1px solid #0099DE;
-          width: 32rem;
+          width: 22rem; }
+        #Front article#Works div.pf-Works-Search div.pf-Works-Search-advance button, #Front article#Works div.pf-Works-Search div.pf-Works-Search-advance label.inputFileButton {
+          font-size: 1.44rem;
+          text-align: left;
+          width: 8rem;
           background-image: url("../imgs/pages/works/list_column_search.png");
           background-repeat: no-repeat;
           background-position: top right;
-          background-size: contain; }
+          background-size: contain;
+          background-color: #0099DE; }
     #Front article#Works div.pf-Works-List {
       font-size: 1.5rem;
       background-color: #F5FBFE;
@@ -7816,10 +7849,7 @@ div#badge {
             color: #ef2a90;
             font-size: 1.5rem; }
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.pf-loginMessage.active {
-              visibility: visible;
-              -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
-              -moz-animation: blink 0.2s linear 0.2s 2 forwards;
-              animation: blink 0.2s linear 0.2s 2 forwards; }
+              visibility: visible; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p {
             margin: 2rem; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login label {
@@ -7832,20 +7862,14 @@ div#badge {
             color: #aaa;
             border: 1px solid #0099DE; }
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login input.active {
-              border: 1px solid #ef2a90;
-              -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
-              -moz-animation: blink 0.2s linear 0.2s 2 forwards;
-              animation: blink 0.2s linear 0.2s 2 forwards; }
+              border: 1px solid #ef2a90; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.error {
             visibility: hidden;
             margin: 1rem 0;
             color: #ef2a90;
             font-size: 1.44rem; }
             #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login p.error.active {
-              visibility: visible;
-              -webkit-animation: blink 0.2s linear 0.2s 2 forwards;
-              -moz-animation: blink 0.2s linear 0.2s 2 forwards;
-              animation: blink 0.2s linear 0.2s 2 forwards; }
+              visibility: visible; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-login > div {
             width: 260px;
             margin: 0 auto;
@@ -8036,8 +8060,8 @@ div#badge {
     #Front article.pf-Detail div.pf-Detail-services p {
       position: relative;
       float: right;
-      width: 9rem;
-      height: 9rem;
+      width: 10rem;
+      height: 10rem;
       padding-top: 2rem;
       margin-left: 0.5rem;
       color: white;
@@ -8083,7 +8107,7 @@ div#badge {
         -ms-backface-visibility: hidden;
         -o-backface-visibility: hidden;
         backface-visibility: hidden;
-        font-size: 1.2rem;
+        font-size: 1.08rem;
         line-height: 2rem;
         color: white; }
       #Front article.pf-Detail div.pf-Detail-services-desc p:first-child {
@@ -8278,7 +8302,7 @@ div#badge {
     background-position: center bottom;
     opacity: 1; }
   #Front article#CleaningDetail #plx03 {
-    top: 1390px;
+    top: 1330px;
     right: 0; }
   #Front article#CleaningDetail #plx03b {
     top: 1390px;
@@ -8286,13 +8310,13 @@ div#badge {
   #Front article#CleaningDetail #plx04 {
     top: 1910px; }
   #Front article#CleaningDetail #plx04b {
-    top: 1910px;
+    top: 1970px;
     left: 210px; }
   #Front article#CleaningDetail #plx05 {
-    top: 2700px;
+    top: 2840px;
     right: 0; }
   #Front article#CleaningDetail #plx05b {
-    top: 2600px;
+    top: 2900px;
     right: 210px; }
   #Front article#CleaningDetail #plx06 {
     top: 900px;
@@ -8344,7 +8368,7 @@ div#badge {
     background-position: center bottom;
     opacity: 1; }
   #Front article#BuildingDetail #plx03 {
-    top: 1300px;
+    top: 1360px;
     right: 0; }
   #Front article#BuildingDetail #plx03b {
     top: 1300px;
@@ -8356,10 +8380,10 @@ div#badge {
     top: 2120px;
     left: 210px; }
   #Front article#BuildingDetail #plx05 {
-    top: 2730px;
+    top: 2690px;
     right: 0; }
   #Front article#BuildingDetail #plx05b {
-    top: 2690px;
+    top: 2750px;
     right: 210px; }
   #Front article#BuildingDetail #plx06 {
     top: 1900px;
@@ -8381,7 +8405,7 @@ div#badge {
     padding-top: 180px; }
   #Front article#MansionDetail section:nth-of-type(2) {
     color: white;
-    margin-top: 480px; }
+    margin-top: 380px; }
     #Front article#MansionDetail section:nth-of-type(2) h1 {
       color: white; }
   #Front article#MansionDetail section:nth-of-type(3) {
@@ -8392,8 +8416,8 @@ div#badge {
       width: 240px;
       margin-left: 280px; }
   #Front article#MansionDetail section:nth-of-type(5) {
-    margin-top: 280px;
-    margin-bottom: 30px; }
+    margin-top: 380px;
+    margin-bottom: 330px; }
   #Front article#MansionDetail div.wrapper {
     position: relative;
     width: 1040px;
@@ -8417,18 +8441,18 @@ div#badge {
     top: 1300px;
     right: 0; }
   #Front article#MansionDetail #plx03b {
-    top: 1300px;
+    top: 1360px;
     right: 210px; }
   #Front article#MansionDetail #plx04 {
     top: 2600px; }
   #Front article#MansionDetail #plx04b {
-    top: 2600px;
+    top: 2660px;
     left: 210px; }
   #Front article#MansionDetail #plx05 {
-    top: 3200px;
+    top: 3300px;
     right: 0; }
   #Front article#MansionDetail #plx05b {
-    top: 3100px;
+    top: 3360px;
     right: 210px; }
   #Front article#MansionDetail #plx06 {
     top: 900px;
@@ -8486,15 +8510,15 @@ div#badge {
     top: 1380px;
     right: 0; }
   #Front article#DrivingDetail #plx03b {
-    top: 1380px;
+    top: 1440px;
     right: 210px; }
   #Front article#DrivingDetail #plx04 {
-    top: 1890px; }
+    top: 1830px; }
   #Front article#DrivingDetail #plx04b {
     top: 1890px;
     left: 210px; }
   #Front article#DrivingDetail #plx05 {
-    top: 2940px;
+    top: 2880px;
     right: 0; }
   #Front article#DrivingDetail #plx05b {
     top: 2940px;

@@ -23,7 +23,7 @@ $app->group('/members', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'select * from `users`';
+            $sql = 'select * from `members`';
 
             if ($args['name']) {
                 $sql .= ' WHERE `name` = ?;';
