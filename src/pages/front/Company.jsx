@@ -140,7 +140,7 @@ export default class Company extends React.Component {
             </div>
 
             <div className="ceo">
-              <p>取締役社長<br />藤野 聡</p>
+              <p>代表取締役<br />藤野 聡</p>
               <img src={IMG + 'ceo_photo.jpg'} width="140" height="210" alt="CEO" />
             </div>
 
@@ -206,7 +206,7 @@ export default class Company extends React.Component {
                 
                 <tr>
                   <td>代表者</td>
-                  <td>取締役社長　藤野　聡</td>
+                  <td>代表取締役　藤野　聡</td>
                 </tr>
             
                 <tr>
@@ -252,7 +252,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>1999年7月21日</td>
                 <td>
-                  資本金10,000千円をもって設立、取締役社長に関利彦氏就任
+                  資本金10,000千円をもって設立、代表取締役に関利彦氏就任
                 </td>
               </tr>
 
@@ -301,8 +301,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>2002年7月1日</td>
                 <td>
-                  遠鉄グループ事業再編により株式会社遠鉄総合ビルサービス（現・遠鉄建設）から
-                  建物管理部門と清掃部門を営業譲受
+                  遠鉄グループ事業再編により株式会社遠鉄総合ビルサービス（現・遠鉄建設）から建物管理部門と清掃部門を営業譲受
                 </td>
               </tr>
 
