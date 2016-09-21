@@ -8158,6 +8158,9 @@ div#badge {
       #Front article.pf-Detail section.odd {
         margin-left: auto;
         text-align: right; }
+        #Front article.pf-Detail section.odd .effect p {
+          text-align: justify;
+          font-size: 1.38rem; }
       #Front article.pf-Detail section.odd.reverse {
         color: white; }
         #Front article.pf-Detail section.odd.reverse h1 {
@@ -8168,6 +8171,9 @@ div#badge {
       margin: 0 auto; }
       #Front article.pf-Detail div.wrapper > div {
         position: absolute; }
+    @media all and (-ms-high-contrast: none) {
+      #Front article.pf-Detail .effect p {
+        margin-right: -1rem; } }
   #Front article#CompanyDetail section table {
     padding-top: 0;
     border-collapse: collapse; }

@@ -446,6 +446,7 @@ export default class Works extends React.Component {
             <input
               type="text"
               id="keyword"
+              placeholder="キーワード検索"
               onFocus={this.clearValue.bind(this)}
               />
             <button
@@ -493,10 +494,10 @@ export default class Works extends React.Component {
     el.style.left =  start * 5 + 'px';
     el.style.width = (end * 5) - (start * 5) + 'px';
 
-    if (this.state.search.keyword == '') {
-      let k = document.getElementById('keyword');
-      k.value = 'フリーワード検索';
-    }
+    // if (this.state.search.keyword == '') {
+    //   let k = document.getElementById('keyword');
+    //   k.value = 'フリーワード検索';
+    // }
   }
 
   closeUp(e) {
@@ -609,6 +610,7 @@ export default class Works extends React.Component {
 
   getKeyword(e) {
     let el = document.getElementById('keyword');
+    console.log(el.value);
     SearchActions.updateField('page', 1);
     SearchActions.updateField('keyword', el.value);
     SearchActions.updateField('slider_start', 0);

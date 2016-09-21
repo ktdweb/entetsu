@@ -140,7 +140,7 @@ export default class Company extends React.Component {
             </div>
 
             <div className="ceo">
-              <p>代表取締役<br />藤野 聡</p>
+              <p>取締役社長<br />藤野 聡</p>
               <img src={IMG + 'ceo_photo.jpg'} width="140" height="210" alt="CEO" />
             </div>
 
@@ -206,7 +206,7 @@ export default class Company extends React.Component {
                 
                 <tr>
                   <td>代表者</td>
-                  <td>代表取締役　藤野　聡</td>
+                  <td>取締役社長　藤野　聡</td>
                 </tr>
             
                 <tr>
@@ -252,7 +252,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>1999年7月21日</td>
                 <td>
-                  資本金10,000千円をもって設立、代表取締役に関利彦氏就任
+                  資本金10,000千円をもって設立、取締役社長に関利彦氏就任
                 </td>
               </tr>
 
@@ -280,7 +280,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>2001年6月27日</td>
                 <td>
-                  代表取締役に村松修氏就任
+                  取締役社長に村松修氏就任
                 </td>
               </tr>
 
@@ -294,7 +294,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>2002年6月27日</td>
                 <td>
-                  代表取締役に斉藤薫氏就任
+                  取締役社長に斉藤薫氏就任
                 </td>
               </tr>
 
@@ -315,7 +315,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>2007年6月28日</td>
                 <td>
-                  代表取締役に内山芳実氏就任
+                  取締役社長に内山芳実氏就任
                 </td>
               </tr>
 
@@ -336,7 +336,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>2011年10月24日</td>
                 <td>
-                  代表取締役に藤野聡氏就任
+                  取締役社長に藤野聡氏就任
                 </td>
               </tr>
 
