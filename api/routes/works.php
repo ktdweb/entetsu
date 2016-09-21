@@ -79,6 +79,7 @@ $app->group('/works', function () {
 
             $key = $args['keyword'];
             $sql  = 'SELECT `works`.* FROM `works` WHERE ';
+            $sql .= "(`title` LIKE '%" .$key . "%') OR ";
             $sql .= "(`detail` LIKE '%" .$key . "%') OR ";
             $sql .= "(`location` LIKE '%" .$key . "%') OR ";
             $sql .= "(`wage` LIKE '%" .$key . "%') OR ";
