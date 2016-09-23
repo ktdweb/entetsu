@@ -7298,7 +7298,7 @@ var Home = function (_React$Component) {
         width: '277',
         height: '326',
         alt: 'ベンリーえんてつ'
-      }))))), _react2.default.createElement('div', { id: 'ActionPlan' }, _react2.default.createElement('h2', null, '行動計画'), _react2.default.createElement('div', null, _react2.default.createElement('a', { href: '/pdf/action_plan_a.pdf', target: '_blank' }, _react2.default.createElement('span', { className: 'fa-stack fa-lg' }, _react2.default.createElement('i', { className: 'fa fa-arrow-circle-right' })), '女性の就業生活における活躍の推進に関する法律に基づく一般事業主行動計画'), _react2.default.createElement('br', null), _react2.default.createElement('a', { href: '/pdf/action_plan_b.pdf', target: '_blank' }, _react2.default.createElement('span', { className: 'fa-stack fa-lg' }, _react2.default.createElement('i', { className: 'fa fa-arrow-circle-right' })), '従業員の仕事と子育ての両立を支援するための一般事業主行動計画'))));
+      }))))));
     }
   }, {
     key: 'init',

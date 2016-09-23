@@ -102,7 +102,7 @@ export default class Home extends React.Component {
           </tbody>
         </table>
 
-        <{/* div id="ActionPlan">
+        {/*< div id="ActionPlan">
 
           <h2>行動計画</h2>
 
