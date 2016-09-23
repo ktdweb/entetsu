@@ -102,7 +102,7 @@ export default class Home extends React.Component {
           </tbody>
         </table>
 
-        <div id="ActionPlan">
+        <{/* div id="ActionPlan">
 
           <h2>行動計画</h2>
 
@@ -124,7 +124,7 @@ export default class Home extends React.Component {
             </a>
           </div>
 
-        </div>
+        </div>*/}
       </article>
     );
   }

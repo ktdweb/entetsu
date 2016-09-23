@@ -1861,6 +1861,7 @@ _Dispatcher2.default.register(function (action) {
 
     case _WorkConstants2.default.KEYWORD:
       var keyword = URL + 'keyword/' + action.keyword;
+      console.log(action.keyword);
       _Http.http.get(keyword).then(function (res) {
         create(res);
         workStore.update();
