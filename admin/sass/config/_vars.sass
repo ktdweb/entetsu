@@ -22,8 +22,9 @@ $base-border-radius: 3px
 
 // # form
 // デフォルトのborderとborder-radius, focusを設定
+// focusではoutlineではなく、box-shadowを使う
 
-$form-focus: 1px solid $form-color-focus
+$form-focus: 0 0 0 1px $form-color-focus
 $form-border: 1px solid $form-border-color
 $form-border-radius: $base-border-radius
 
