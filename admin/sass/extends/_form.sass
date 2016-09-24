@@ -91,15 +91,3 @@ form small
   display: block
   color: $brand-danger
   padding: $small-spacing / 2
-
-// # input[type=file]
-// fileはappearanceをlabelで置換  
-// labelでinputをラップする必要がある
-
-label.inputFileButton
-  display: inline-block
-  padding-top: $small-spacing / 2
-  cursor: pointer
-  @extend button
-  & input[type=file]
-    display: none
