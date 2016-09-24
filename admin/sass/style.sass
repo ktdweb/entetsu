@@ -16,6 +16,18 @@
 @import '../../vendor/neat/app/assets/stylesheets/_neat.scss'
 @import '../../vendor/sass-web-fonts/web-fonts.scss'
 
+// # FonwAwesome
+// FontAwesomeのfontファイルをnpm packageより読込  
+// font-family: FontAwesomeで使用可能
+// クラスの方はlib.sassで読み込み
+
+$fa: '../../vendor/font-awesome/fonts/fontawesome-webfont'
+
+@font-face
+  font-family: 'FontAwesome'
+  src: url(#{$fa}.eot)
+  src: url(#{$fa}.eot?#iefix) format('eot'),url(#{$fa}.woff) format('woff'),url(#{$fa}.ttf) format('truetype'),url(#{$fa}.svg#FontAwesome) format('svg')
+
 // # vars, arrays
 // 変数,配列を定義。すべてのファイルで利用
 
