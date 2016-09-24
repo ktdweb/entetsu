@@ -11,7 +11,7 @@ export default class Header extends React.Component {
     let root = this.props.route.global.documentRoot;
 
     return (
-      <header>
+      <header id="Header">
         <p>
         <img
           src="/admin/imgs/logo.png"

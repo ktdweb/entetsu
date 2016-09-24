@@ -7080,9 +7080,9 @@ div#badge {
       animation: show 1s ease-in-out 0s; }
     #Front .modal > div {
       position: relative;
-      margin: 200px auto;
+      margin: 40px auto;
       padding: 20px;
-      width: 680px;
+      width: 840px;
       height: auto;
       text-align: center;
       color: #0099DE;
@@ -7156,6 +7156,15 @@ div#badge {
       padding: 0;
       border-radius: 20px;
       background-color: #0099DE; }
+    #Front .modal h5 {
+      font-size: 1.44rem;
+      margin-top: 2rem;
+      margin-bottom: 0; }
+      #Front .modal h5 strong {
+        font-weight: bold; }
+    #Front .modal iframe {
+      border: 1px solid #0099DE;
+      overflow-y: scroll; }
 
 /*
   # pages/index.sass

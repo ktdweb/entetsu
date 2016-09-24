@@ -10,6 +10,11 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(../../vendor/font-awesome/fonts/fontawesome-webfont.eot);
+  src: url(../../vendor/font-awesome/fonts/fontawesome-webfont.eot?#iefix) format("eot"), url(../../vendor/font-awesome/fonts/fontawesome-webfont.woff) format("woff"), url(../../vendor/font-awesome/fonts/fontawesome-webfont.ttf) format("truetype"), url(../../vendor/font-awesome/fonts/fontawesome-webfont.svg#FontAwesome) format("svg"); }
+
 /*
   # colors.sass */
 /*
@@ -48,7 +53,8 @@ body {
   position: relative;
   color: #001f4b;
   background-color: #FFF;
-  z-index: 0; }
+  z-index: 0;
+  overflow-y: scroll; }
 
 header, footer, section, article, nav, aside {
   overflow: visible; }
@@ -69,19 +75,26 @@ li {
 address {
   font-style: normal; }
 
-button, label.inputFileButton {
+button, label.formFile {
   outline: none; }
+
+canvas {
+  display: inline-block;
+  vertical-align: bottom; }
+
+input[type=text], textarea {
+  -webkit-appearance: none; }
 
 /*
   # extends/index.sass */
 /*
   # extends/anchor.sass */
-a, button, label.inputFileButton {
+a, button, label.formFile {
   color: #428BCA;
   transition: opacity 300ms;
   cursor: pointer;
   outline: none; }
-  a:hover, button:hover, label.inputFileButton:hover {
+  a:hover, button:hover, label.formFile:hover {
     opacity: .5; }
 
 /*
@@ -134,21 +147,27 @@ body.grid::after {
 
 /*
   # extends/form.sass */
-input, select, textarea, button, label.inputFileButton {
+input[type=text], select, label.formSelect, textarea, button, label.formFile {
+  display: inline-block;
   margin-right: 1rem;
   padding: 0 1rem;
   border: 1px solid #cdcdcd;
-  border-radius: 3px; }
+  border-radius: 3px;
+  background-color: #FFF; }
+  input[type=text]:focus, select:focus, label.formSelect:focus, textarea:focus, button:focus, label.formFile:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #5CB85C;
+    outline-offset: 0; }
 
-form input:last-child, form select:last-child,
-form textarea:last-child, form button:last-child, form label.inputFileButton:last-child {
+form input:last-child, form select:last-child, form label.formSelect:last-child,
+form textarea:last-child, form button:last-child, form label.formFile:last-child {
   margin-right: 0; }
 
-select[multiple], textarea {
+select[multiple], label[multiple].formSelect, textarea {
   line-height: 2rem;
   padding: 0.5rem; }
 
-select[multiple] {
+select[multiple], label[multiple].formSelect {
   height: 12rem; }
 
 textarea {
@@ -158,22 +177,28 @@ input[type=radio], input[type=checkbox] {
   vertical-align: -0.5rem;
   margin-left: 1rem;
   margin-right: 2rem; }
+  input[type=radio]:focus, input[type=checkbox]:focus {
+    box-shadow: none; }
 
 textarea {
   width: 100%; }
 
-button, label.inputFileButton {
+button, label.formFile {
   font-size: 1.4rem;
   color: white;
   background-color: #337AB7;
   border: none;
   cursor: pointer; }
 
-label + button, label + label.inputFileButton {
+label + button, label + label.formFile, label + input, label + select, label + label.formSelect {
   margin-left: 1rem; }
 
-label > button, label > label.inputFileButton {
+label > button, label > label.formFile {
   margin-left: 1rem; }
+
+button + small, label.formFile + small, input + small,
+select + small, label.formSelect + small, label + small {
+  margin-right: 1rem; }
 
 form p {
   margin-bottom: 1rem; }
@@ -182,13 +207,6 @@ form small {
   display: block;
   color: #D9534F;
   padding: 0.5rem; }
-
-label.inputFileButton {
-  display: inline-block;
-  padding-top: 0.5rem;
-  cursor: pointer; }
-  label.inputFileButton input[type=file] {
-    display: none; }
 
 /*
   # extends/fullscreen.sass */
@@ -250,7 +268,7 @@ form {
   line-height: 0;
   margin-bottom: 2rem; }
 
-input, select, button, label.inputFileButton {
+input, select, label.formSelect, button, label.formFile {
   height: 3rem; }
 
 input[type=radio], input[type=checkbox] {
@@ -3503,9 +3521,51 @@ i.fa:not(.fa-circlie > i.fa) {
     border: 1px solid #aaf; }
 
 /*
+  # modules/form-file.sass */
+label.formFile {
+  display: inline-block;
+  cursor: pointer; }
+  label.formFile input[type=file] {
+    display: none; }
+
+/*
+  # modules/form-select.sass */
+label.formSelect {
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top; }
+
+label.formSelect > select, label.formSelect > label.formSelect {
+  margin-right: 0;
+  padding-right: 4rem;
+  height: 2.8rem;
+  border: none;
+  background: none transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none; }
+  label.formSelect > select::-ms-expand, label.formSelect > label.formSelect::-ms-expand {
+    display: none; }
+
+label.formSelect:after {
+  position: absolute;
+  top: -0.2rem;
+  bottom: 0;
+  right: 1rem;
+  content: '\f078';
+  font-family: FontAwesome;
+  pointer-events: none; }
+
+/*
   # theme.sass */
 body {
   background-color: #f0f3f7; }
+
+body *::selection {
+  background-color: #5BC0DE; }
 
 article[id] > h1 {
   font-size: 2.4rem;
@@ -3536,26 +3596,39 @@ dl {
   # layouts/index.sass */
 /*
   # layouts/Default.sass */
-aside {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 14.70196%;
-  height: 100%; }
-  aside:last-child {
-    margin-right: 0; }
-
-article[id] {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 82.94039%;
-  margin-right: 0;
-  padding: 2.35765%; }
-  article[id]:last-child {
-    margin-right: 0; }
-  article[id] i {
-    width: 3.5rem; }
+#Main {
+  width: 100%;
+  display: table;
+  width: 100%;
+  table-layout: fixed; }
+  #Main aside {
+    display: table-cell;
+    width: 16.66667%;
+    padding-top: 0;
+    vertical-align: top; }
+  #Main article[id] {
+    display: table-cell;
+    width: 83.33333%;
+    padding: 2.35765%;
+    margin-top: 2rem;
+    vertical-align: top; }
+    #Main article[id] i {
+      width: 3.5rem; }
+    #Main article[id] button.headerButton, #Main article[id] label.headerButton.formFile {
+      float: right; }
+      #Main article[id] button.headerButton i, #Main article[id] label.headerButton.formFile i {
+        width: auto;
+        padding-left: 1rem; }
+    #Main article[id] nav {
+      margin: 4rem 0 0; }
+      #Main article[id] nav li {
+        display: inline-block;
+        padding: 0 1rem;
+        margin-right: 0.5rem;
+        border: 1px solid #cdcdcd;
+        border-bottom: none;
+        border-radius: 3px 3px 0px 0px;
+        background-color: white; }
 
 /*
   # layouts/Header.sass */

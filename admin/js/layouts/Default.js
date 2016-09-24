@@ -45,8 +45,12 @@ var Default = function (_React$Component) {
         'div',
         { id: 'Default' },
         this.props.header,
-        this.props.nav,
-        this.props.main
+        _react2.default.createElement(
+          'div',
+          { id: 'Main' },
+          this.props.nav,
+          this.props.main
+        )
       );
     }
   }]);

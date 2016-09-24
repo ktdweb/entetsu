@@ -44,6 +44,7 @@ var WorksDetail = function (_React$Component) {
     _this.state = {
       works: works
     };
+    _this.data = _this.state.works[0];
     return _this;
   }
 
@@ -56,12 +57,12 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _WorkStore2.default.destroy(this.updateState.bind(this));
+      _WorkStore2.default.destroy(this.updateState.bind(this));this;
     }
   }, {
     key: 'render',
     value: function render() {
-      var data = this.state.works[0];
+      var data = this.data;
 
       for (var i = 0; i < this.state.works.length; i++) {
         if (this.state.works[i].id == this.props.params.id) {
@@ -71,7 +72,7 @@ var WorksDetail = function (_React$Component) {
 
       return _react2.default.createElement(
         'article',
-        { id: 'Works' },
+        { id: 'WorksDetail' },
         _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }),
         _react2.default.createElement(
           'h1',
@@ -79,6 +80,101 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement('i', { className: 'fa fa-paperclip' }),
           '求人情報'
         ),
+        _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
+            '担当部署'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'label',
+              { className: 'formSelect' },
+              _react2.default.createElement(
+                'select',
+                null,
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  '清掃'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'ビル'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'マンション'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  '運行'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  '指定管理'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  'ベンリー'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  '食品'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  null,
+                  '総務'
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
+            '期間指定'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'label',
+              null,
+              '開始日時'
+            ),
+            _react2.default.createElement('input', {
+              type: 'text',
+              className: 'w-s',
+              value: data.term_start
+            }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '終了日時'
+            ),
+            _react2.default.createElement('input', {
+              type: 'text',
+              className: 'w-s',
+              value: data.term_end
+            })
+          )
+        ),
+        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'dl',
           null,
@@ -109,6 +205,7 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('textarea', {
+              type: 'text',
               className: 'w-xl',
               value: data.detail
             })
@@ -126,7 +223,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.location
             })
           )
@@ -143,7 +241,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.time
             })
           )
@@ -160,7 +259,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.break
             })
           )
@@ -177,7 +277,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.wage
             })
           )
@@ -194,7 +295,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.days
             })
           )
@@ -211,7 +313,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.holidays
             })
           )
@@ -228,7 +331,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.part
             })
           )
@@ -245,7 +349,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.term
             })
           )
@@ -262,7 +367,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.career
             })
           )
@@ -296,7 +402,8 @@ var WorksDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
-              className: 'w-s',
+              type: 'text',
+              className: 'w-l',
               value: data.cert
             })
           )
@@ -320,77 +427,139 @@ var WorksDetail = function (_React$Component) {
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
-          'p',
-          null,
-          '短縮表示用'
-        ),
-        _react2.default.createElement(
           'dl',
           null,
           _react2.default.createElement(
             'dt',
             null,
-            '給与 (短縮表示)'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            _react2.default.createElement('input', {
-              className: 'w-s',
-              value: data.abbr_wage
-            })
-          ),
-          _react2.default.createElement(
-            'dt',
-            null,
-            '単位 (短縮表示)'
+            '短縮表示'
           ),
           _react2.default.createElement(
             'dd',
             null,
             _react2.default.createElement(
-              'select',
+              'p',
               null,
               _react2.default.createElement(
-                'option',
+                'label',
                 null,
-                '時給'
+                '給与'
+              ),
+              _react2.default.createElement('input', {
+                type: 'text',
+                className: 'w-xs',
+                value: data.abbr_wage,
+                placeholder: '860'
+              }),
+              _react2.default.createElement(
+                'small',
+                null,
+                '円'
               ),
               _react2.default.createElement(
-                'option',
+                'label',
                 null,
-                '日給'
+                '単位'
               ),
               _react2.default.createElement(
-                'option',
-                null,
-                '月給'
+                'label',
+                { className: 'formSelect' },
+                _react2.default.createElement(
+                  'select',
+                  null,
+                  _react2.default.createElement(
+                    'option',
+                    null,
+                    '時給'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    null,
+                    '日給'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    null,
+                    '月給'
+                  )
+                )
               )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '時間 (短縮表示)'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
+            ),
+            _react2.default.createElement(
+              'label',
+              null,
+              '時間'
+            ),
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
-              value: data.abbr_wage
+              value: data.abbr_time,
+              placeholder: '09:00~17:00'
             })
           )
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
-          'p',
+          'dl',
           null,
-          '期間指定表示用'
+          _react2.default.createElement(
+            'dt',
+            null,
+            '場所で選ぶ'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'label',
+              null,
+              '中区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '北区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '東区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '西区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '南区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'label',
+              null,
+              '浜北区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '天竜区'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              'その他'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' })
+          )
         ),
         _react2.default.createElement(
           'dl',
@@ -398,144 +567,124 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '開始時間'
+            '時間で選ぶ'
           ),
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement('input', {
-              className: 'w-m',
-              value: data.time_start
-            })
-          ),
+            _react2.default.createElement(
+              'label',
+              null,
+              'フルタイム'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '短時間'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '短期'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '午前中'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '午後'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '夕方'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' })
+          )
+        ),
+        _react2.default.createElement(
+          'dl',
+          null,
           _react2.default.createElement(
             'dt',
             null,
-            '終了時間'
+            '業種で選ぶ'
           ),
           _react2.default.createElement(
             'dd',
             null,
+            _react2.default.createElement(
+              'label',
+              null,
+              '清掃職'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              'ドライバー'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              'ビル管理スタッフ'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '営業・事務職'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' }),
+            _react2.default.createElement(
+              'label',
+              null,
+              'その他'
+            ),
+            _react2.default.createElement('input', { type: 'checkbox' })
+          )
+        ),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
+            'スライダー検索用'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'label',
+              null,
+              '開始時間'
+            ),
             _react2.default.createElement('input', {
-              className: 'w-m',
+              type: 'text',
+              className: 'w-xs',
+              value: data.time_start
+            }),
+            _react2.default.createElement(
+              'label',
+              null,
+              '終了時間'
+            ),
+            _react2.default.createElement('input', {
+              type: 'text',
+              className: 'w-xs',
               value: data.time_end
             })
-          )
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          'スライダー検索用'
-        ),
-        _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '開始時間'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            _react2.default.createElement('input', {
-              className: 'w-m',
-              value: data.time_start
-            })
-          ),
-          _react2.default.createElement(
-            'dt',
-            null,
-            '終了時間'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            _react2.default.createElement('input', {
-              className: 'w-m',
-              value: data.time_end
-            })
-          )
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '場所で選ぶ用'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            '中区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '北区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '東区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '西区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '南区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '南区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '浜北区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '天竜区 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            'その他 ',
-            _react2.default.createElement('input', { type: 'checkbox' })
-          )
-        ),
-        _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '時間で選ぶ用'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            'フルタイム ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '短時間 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '短期 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '午前中 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '午後 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '夕方 ',
-            _react2.default.createElement('input', { type: 'checkbox' })
-          )
-        ),
-        _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '業種で選ぶ用'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            '清掃職 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            'ドライバー ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            'ビル管理スタッフ ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            '営業・事務職 ',
-            _react2.default.createElement('input', { type: 'checkbox' }),
-            'その他 ',
-            _react2.default.createElement('input', { type: 'checkbox' })
           )
         ),
         _react2.default.createElement('hr', null),
@@ -550,7 +699,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement('input', { type: 'file' })
+            _react2.default.createElement(
+              'label',
+              { className: 'formFile' },
+              'アップロード',
+              _react2.default.createElement('input', { type: 'file' })
+            )
           )
         ),
         _react2.default.createElement(
@@ -572,51 +726,3 @@ var WorksDetail = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WorksDetail;
-
-var EachWork = function (_React$Component2) {
-  _inherits(EachWork, _React$Component2);
-
-  function EachWork(props) {
-    _classCallCheck(this, EachWork);
-
-    return _possibleConstructorReturn(this, (EachWork.__proto__ || Object.getPrototypeOf(EachWork)).call(this, props));
-  }
-
-  _createClass(EachWork, [{
-    key: 'render',
-    value: function render() {
-      var data = this.props.data;
-      return _react2.default.createElement(
-        'tr',
-        null,
-        _react2.default.createElement(
-          'td',
-          null,
-          data.id
-        ),
-        _react2.default.createElement(
-          'td',
-          null,
-          data.title
-        ),
-        _react2.default.createElement(
-          'td',
-          null,
-          data.abbr_time
-        ),
-        _react2.default.createElement(
-          'td',
-          null,
-          data.unit_wage + data.abbr_wage + '円'
-        ),
-        _react2.default.createElement(
-          'td',
-          null,
-          data.modified
-        )
-      );
-    }
-  }]);
-
-  return EachWork;
-}(_react2.default.Component);

@@ -58,6 +58,7 @@ export default class MembersDetail extends React.Component {
           <dt>フリガナ</dt>
           <dd>
             <input
+              type="text"
               className="w-s"
               value={data.furi}
               />
@@ -68,6 +69,7 @@ export default class MembersDetail extends React.Component {
           <dt>電話番号</dt>
           <dd>
             <input
+              type="text"
               className="w-s"
               value={data.tel}
               />
@@ -78,16 +80,20 @@ export default class MembersDetail extends React.Component {
           <dt>メールアドレス</dt>
           <dd>
             <input
+              type="text"
               className="w-m"
               value={data.mail}
               />
           </dd>
         </dl>
 
+        <hr />
+
         <dl>
           <dt>パスワード</dt>
           <dd>
             <input
+              type="text"
               className="w-m"
               value={data.password}
               />
@@ -101,14 +107,13 @@ export default class MembersDetail extends React.Component {
             <input
               type="radio"
               name="gender_id"
-              className="w-s"
               value={data.gender_id}
               />
+
             <label>女性</label>
             <input
               type="radio"
               name="gender_id"
-              className="w-s"
               value={data.gender_id}
               />
           </dd>
@@ -118,6 +123,7 @@ export default class MembersDetail extends React.Component {
           <dt>年齢</dt>
           <dd>
             <input
+              type="text"
               className="w-xs"
               value={data.age}
               />
@@ -128,6 +134,7 @@ export default class MembersDetail extends React.Component {
           <dt>誕生日</dt>
           <dd>
             <input
+              type="text"
               className="w-s"
               value={data.birthday}
               />
@@ -138,6 +145,7 @@ export default class MembersDetail extends React.Component {
           <dt>郵便番号</dt>
           <dd>
             <input
+              type="text"
               className="w-s"
               value={data.zip}
               />
@@ -148,6 +156,7 @@ export default class MembersDetail extends React.Component {
           <dt>都道府県</dt>
           <dd>
             <input
+              type="text"
               className="w-s"
               value={data.prefecture}
               />
@@ -158,6 +167,7 @@ export default class MembersDetail extends React.Component {
           <dt>市区町村</dt>
           <dd>
             <input
+              type="text"
               className="w-s"
               value={data.city}
               />
@@ -168,6 +178,7 @@ export default class MembersDetail extends React.Component {
           <dt>住所</dt>
           <dd>
             <textarea
+              type="text"
               className="w-xl"
               value={data.address}
               />

@@ -17,8 +17,10 @@ export default class Default extends React.Component {
     return (
       <div id="Default">
         {this.props.header}
-        {this.props.nav}
-        {this.props.main}
+        <div id="Main">
+          {this.props.nav}
+          {this.props.main}
+        </div>
       </div>
     );
   }

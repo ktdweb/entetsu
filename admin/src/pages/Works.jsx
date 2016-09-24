@@ -40,10 +40,63 @@ export default class Works extends React.Component {
     return(
       <article id="Works">
         <DocumentTitle title="求人情報" />
+        <Link to="/admin/works/detail/add">
+          <button className="headerButton">
+            新規追加
+            <i className="fa fa-plus-circle" />
+          </button>
+        </Link>
+
         <h1>
           <i className="fa fa-paperclip" />
           求人情報
         </h1>
+
+        <nav>
+          <ul>
+            <li>
+              <Link>
+                清掃
+              </Link>
+            </li>
+            <li>
+              <Link>
+                ビル
+              </Link>
+            </li>
+            <li>
+              <Link>
+                マンション
+              </Link>
+            </li>
+            <li>
+              <Link>
+                運行
+              </Link>
+            </li>
+            <li>
+              <Link>
+                指定管理
+              </Link>
+            </li>
+            <li>
+              <Link>
+                ベンリー
+              </Link>
+            </li>
+            <li>
+              <Link>
+                食品
+              </Link>
+            </li>
+            <li>
+              <Link>
+                総務
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
 
         <table className="sheet">
           <tbody>

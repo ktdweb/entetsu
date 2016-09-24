@@ -69,7 +69,6 @@ var Members = function (_React$Component) {
           return _react2.default.createElement(EachMember, { key: i, data: _this2.state.members[i] });
         });
       }
-      console.log(this.state);
 
       return _react2.default.createElement(
         'article',

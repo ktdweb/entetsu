@@ -75,10 +75,100 @@ var Works = function (_React$Component) {
         { id: 'Works' },
         _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }),
         _react2.default.createElement(
+          _reactRouter.Link,
+          { to: '/admin/works/detail/add' },
+          _react2.default.createElement(
+            'button',
+            { className: 'headerButton' },
+            '新規追加',
+            _react2.default.createElement('i', { className: 'fa fa-plus-circle' })
+          )
+        ),
+        _react2.default.createElement(
           'h1',
           null,
           _react2.default.createElement('i', { className: 'fa fa-paperclip' }),
           '求人情報'
+        ),
+        _react2.default.createElement(
+          'nav',
+          null,
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                '清掃'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                'ビル'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                'マンション'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                '運行'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                '指定管理'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                'ベンリー'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                '食品'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                null,
+                '総務'
+              )
+            )
+          )
         ),
         _react2.default.createElement(
           'table',

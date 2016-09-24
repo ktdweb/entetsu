@@ -109,6 +109,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
               value: data.furi
             })
@@ -126,6 +127,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
               value: data.tel
             })
@@ -143,11 +145,13 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-m',
               value: data.mail
             })
           )
         ),
+        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'dl',
           null,
@@ -160,6 +164,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-m',
               value: data.password
             })
@@ -184,7 +189,6 @@ var MembersDetail = function (_React$Component) {
             _react2.default.createElement('input', {
               type: 'radio',
               name: 'gender_id',
-              className: 'w-s',
               value: data.gender_id
             }),
             _react2.default.createElement(
@@ -195,7 +199,6 @@ var MembersDetail = function (_React$Component) {
             _react2.default.createElement('input', {
               type: 'radio',
               name: 'gender_id',
-              className: 'w-s',
               value: data.gender_id
             })
           )
@@ -212,6 +215,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-xs',
               value: data.age
             })
@@ -229,6 +233,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
               value: data.birthday
             })
@@ -246,6 +251,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
               value: data.zip
             })
@@ -263,6 +269,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
               value: data.prefecture
             })
@@ -280,6 +287,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('input', {
+              type: 'text',
               className: 'w-s',
               value: data.city
             })
@@ -297,6 +305,7 @@ var MembersDetail = function (_React$Component) {
             'dd',
             null,
             _react2.default.createElement('textarea', {
+              type: 'text',
               className: 'w-xl',
               value: data.address
             })

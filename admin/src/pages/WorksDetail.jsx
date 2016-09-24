@@ -15,6 +15,7 @@ export default class WorksDetail extends React.Component {
     this.state = {
       works: works
     }
+    this.data = this.state.works[0];
   }
 
   componentWillMount() {
@@ -23,11 +24,11 @@ export default class WorksDetail extends React.Component {
   }
 
   componentWillUnmount() {
-    WorkStore.destroy(this.updateState.bind(this));
+    WorkStore.destroy(this.updateState.bind(this));this
   }
 
   render() {
-    let data = this.state.works[0];
+    let data = this.data;
 
     for (let i = 0; i < this.state.works.length; i++) {
       if (this.state.works[i].id == this.props.params.id) {
@@ -36,12 +37,52 @@ export default class WorksDetail extends React.Component {
     }
 
     return(
-      <article id="Works">
+      <article id="WorksDetail">
         <DocumentTitle title="求人情報" />
+
         <h1>
           <i className="fa fa-paperclip" />
           求人情報
         </h1>
+
+        <dl>
+          <dt>担当部署</dt>
+          <dd>
+            <label className="formSelect">
+              <select>
+                <option>清掃</option>
+                <option>ビル</option>
+                <option>マンション</option>
+                <option>運行</option>
+                <option>指定管理</option>
+                <option>ベンリー</option>
+                <option>食品</option>
+                <option>総務</option>
+              </select>
+            </label>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>期間指定</dt>
+          <dd>
+            <label>開始日時</label>
+            <input
+              type="text"
+              className="w-s"
+              value={data.term_start}
+              />
+
+            <label>終了日時</label>
+            <input
+              type="text"
+              className="w-s"
+              value={data.term_end}
+              />
+          </dd>
+        </dl>
+
+        <hr />
 
         <dl>
           <dt>タイトル</dt>
@@ -58,6 +99,7 @@ export default class WorksDetail extends React.Component {
           <dt>仕事の内容</dt>
           <dd>
             <textarea
+              type="text"
               className="w-xl"
               value={data.detail}
               />
@@ -68,7 +110,8 @@ export default class WorksDetail extends React.Component {
           <dt>勤務地</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.location}
               />
           </dd>
@@ -78,7 +121,8 @@ export default class WorksDetail extends React.Component {
           <dt>時間</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.time}
               />
           </dd>
@@ -88,7 +132,8 @@ export default class WorksDetail extends React.Component {
           <dt>休憩時間</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.break}
               />
           </dd>
@@ -98,7 +143,8 @@ export default class WorksDetail extends React.Component {
           <dt>給与</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.wage}
               />
           </dd>
@@ -108,7 +154,8 @@ export default class WorksDetail extends React.Component {
           <dt>日数</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.days}
               />
           </dd>
@@ -118,7 +165,8 @@ export default class WorksDetail extends React.Component {
           <dt>休日</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.holidays}
               />
           </dd>
@@ -128,7 +176,8 @@ export default class WorksDetail extends React.Component {
           <dt>雇用形態</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.part}
               />
           </dd>
@@ -138,7 +187,8 @@ export default class WorksDetail extends React.Component {
           <dt>雇用期間</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.term}
               />
           </dd>
@@ -148,7 +198,8 @@ export default class WorksDetail extends React.Component {
           <dt>学歴</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.career}
               />
           </dd>
@@ -168,7 +219,8 @@ export default class WorksDetail extends React.Component {
           <dt>資格</dt>
           <dd>
             <input
-              className="w-s"
+              type="text"
+              className="w-l"
               value={data.cert}
               />
           </dd>
@@ -186,115 +238,96 @@ export default class WorksDetail extends React.Component {
 
         <hr />
 
-        <p>短縮表示用</p>
         <dl>
-          <dt>給与 (短縮表示)</dt>
+          <dt>短縮表示</dt>
           <dd>
-            <input
-              className="w-s"
-              value={data.abbr_wage}
-              />
-          </dd>
+            <p>
+              <label>給与</label>
+              <input
+                type="text"
+                className="w-xs"
+                value={data.abbr_wage}
+                placeholder="860"
+                />
+                <small>円</small>
+              
+              <label>単位</label>
+              <label className="formSelect">
+                <select>
+                  <option>時給</option>
+                  <option>日給</option>
+                  <option>月給</option>
+                  </select>
+              </label>
+            </p>
 
-          <dt>単位 (短縮表示)</dt>
-          <dd>
-            <select>
-              <option>時給</option>
-              <option>日給</option>
-              <option>月給</option>
-            </select>
-          </dd>
-        </dl>
-
-        <dl>
-          <dt>時間 (短縮表示)</dt>
-          <dd>
+            <label>時間</label>
             <input
+              type="text"
               className="w-s"
-              value={data.abbr_wage}
+              value={data.abbr_time}
+              placeholder="09:00~17:00"
               />
           </dd>
         </dl>
 
         <hr />
 
-        <p>期間指定表示用</p>
         <dl>
-          <dt>開始時間</dt>
+          <dt>場所で選ぶ</dt>
           <dd>
+            <label>中区</label><input type="checkbox" />
+            <label>北区</label><input type="checkbox" />
+            <label>東区</label><input type="checkbox" />
+            <label>西区</label><input type="checkbox" />
+            <label>南区</label><input type="checkbox" /><br />
+            <label>浜北区</label><input type="checkbox" />
+            <label>天竜区</label><input type="checkbox" />
+            <label>その他</label><input type="checkbox" />
+          </dd>           
+        </dl>             
+
+        <dl>
+          <dt>時間で選ぶ</dt>
+          <dd>
+            <label>フルタイム</label><input type="checkbox" />
+            <label>短時間</label><input type="checkbox" />
+            <label>短期</label><input type="checkbox" />
+            <label>午前中</label><input type="checkbox" />
+            <label>午後</label><input type="checkbox" />
+            <label>夕方</label><input type="checkbox" />
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>業種で選ぶ</dt>
+          <dd>
+            <label>清掃職</label><input type="checkbox" />
+            <label>ドライバー</label><input type="checkbox" />
+            <label>ビル管理スタッフ</label><input type="checkbox" />
+            <label>営業・事務職</label><input type="checkbox" />
+            <label>その他</label><input type="checkbox" />
+          </dd>
+        </dl>
+
+        <hr />
+
+        <dl>
+          <dt>スライダー検索用</dt>
+          <dd>
+            <label>開始時間</label>
             <input
-              className="w-m"
+              type="text"
+              className="w-xs"
               value={data.time_start}
               />
-          </dd>
 
-          <dt>終了時間</dt>
-          <dd>
+            <label>終了時間</label>
             <input
-              className="w-m"
+              type="text"
+              className="w-xs"
               value={data.time_end}
               />
-          </dd>
-        </dl>
-
-        <hr />
-
-        <p>スライダー検索用</p>
-        <dl>
-          <dt>開始時間</dt>
-          <dd>
-            <input
-              className="w-m"
-              value={data.time_start}
-              />
-          </dd>
-
-          <dt>終了時間</dt>
-          <dd>
-            <input
-              className="w-m"
-              value={data.time_end}
-              />
-          </dd>
-        </dl>
-
-        <hr />
-
-        <dl>
-          <dt>場所で選ぶ用</dt>
-          <dd>
-            中区 <input type="checkbox" />
-            北区 <input type="checkbox" />
-            東区 <input type="checkbox" />
-            西区 <input type="checkbox" />
-            南区 <input type="checkbox" />
-            南区 <input type="checkbox" />
-            浜北区 <input type="checkbox" />
-            天竜区 <input type="checkbox" />
-            その他 <input type="checkbox" />
-          </dd>
-        </dl>
-
-        <dl>
-          <dt>時間で選ぶ用</dt>
-          <dd>
-            フルタイム <input type="checkbox" />
-            短時間 <input type="checkbox" />
-            短期 <input type="checkbox" />
-            午前中 <input type="checkbox" />
-            午後 <input type="checkbox" />
-            夕方 <input type="checkbox" />
-          </dd>
-        </dl>
-
-        <dl>
-          <dt>業種で選ぶ用</dt>
-          <dd>
-            清掃職 <input type="checkbox" />
-            ドライバー <input type="checkbox" />
-            ビル管理スタッフ <input type="checkbox" />
-            営業・事務職 <input type="checkbox" />
-            その他 <input type="checkbox" />
           </dd>
         </dl>
 
@@ -303,7 +336,10 @@ export default class WorksDetail extends React.Component {
         <dl>
           <dt>画像</dt>
           <dd>
-            <input type="file" />
+            <label className="formFile">
+              アップロード
+              <input type="file" />
+            </label>
           </dd>
         </dl>
 
@@ -316,24 +352,5 @@ export default class WorksDetail extends React.Component {
   updateState() {
     let res = WorkStore.read();
     this.setState({ works: res });
-  }
-}
-
-class EachWork extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    let data = this.props.data;
-    return (
-      <tr>
-        <td>{data.id}</td>
-        <td>{data.title}</td>
-        <td>{data.abbr_time}</td>
-        <td>{data.unit_wage + data.abbr_wage + '円'}</td>
-        <td>{data.modified}</td>
-      </tr>
-    );
   }
 }

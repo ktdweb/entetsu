@@ -13,6 +13,7 @@ import EntryActions from '../../actions/EntryActions'
 
 import WorksEntry from './WorksEntry' 
 import WorksLogin from './WorksLogin' 
+import WorksMerit from './WorksMerit' 
 
 export default class WorksDetail extends React.Component {
 
@@ -84,6 +85,14 @@ export default class WorksDetail extends React.Component {
                 name="modalLogin"
                 onClick={this.enableLogin.bind(this)}
               >ログイン</button>
+
+              <a
+                href="#"
+                name="modalMerit"
+                onClick={this.enableMerit.bind(this)}
+                >
+              会員用ログインのメリット
+              </a>
 
               <p id="loginMessage" className="pf-loginMessage"></p>
               <p id="loginStatus">もしくは…</p>
@@ -165,7 +174,7 @@ export default class WorksDetail extends React.Component {
                   onClick={this.enableModal.bind(this)}
                 >{modal[0].button}</button>
 
-                もしくは…
+                <br />
 
                 <button
                   name="modalMail"
@@ -288,7 +297,7 @@ export default class WorksDetail extends React.Component {
           id="modalMail"
           body={modal[1].body}
           button={modal[1].button}
-          title={modal[0].title}
+          title={modal[1].title}
           name={this.state.form.name.val}
           furi={this.state.form.furi.val}
           tel= {this.state.form.tel.val}
@@ -302,6 +311,12 @@ export default class WorksDetail extends React.Component {
           key="2"
           id="modalLogin"
           changeLoginStatus={this.changeLoginStatus.bind(this)}
+          />
+
+        <WorksMerit
+          key="3"
+          id="modalMerit"
+          title={modal[2].title}
           />
       </article>
     );
@@ -477,6 +492,7 @@ export default class WorksDetail extends React.Component {
    */
   enableModal(e) {
     let error = document.getElementById('error');
+    window.scroll(0,0);
 
     if (this.onSubmit()) {
       error.classList.remove('active');
@@ -515,6 +531,17 @@ export default class WorksDetail extends React.Component {
     }
   }
 
+  /*
+   * メリット
+   */
+  enableMerit(e) {
+      let el = document.getElementById(e.target.name);
+      el.classList.toggle('enable');
+
+      let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+      el.style.height = height + 'px'; 
+  }
+
   updateState() {
     let res = WorkStore.read();
     let total = res.length;
@@ -533,13 +560,19 @@ let modal = new Array();
 modal = [
   {
     title: '応募内容のご確認',
-    body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ「担当者からすぐ連絡を希望する」を<br />クリックしてください。</p>',
+    body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「担当者からすぐ連絡を希望する」をクリックしてください。</p>',
     button: '担当者からすぐ連絡を希望する'
   },
 
   {
     title: '応募内容のご確認',
-    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。</p>',
+    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
     button: 'メールにて連絡を希望する'
+  },
+
+  {
+    title: '会員用ログインのメリット',
+    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
+    button: null 
   }
 ];

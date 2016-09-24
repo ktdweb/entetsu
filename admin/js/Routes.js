@@ -26,6 +26,10 @@ var _Topics = require('./pages/Topics');
 
 var _Topics2 = _interopRequireDefault(_Topics);
 
+var _TopicsDetail = require('./pages/TopicsDetail');
+
+var _TopicsDetail2 = _interopRequireDefault(_TopicsDetail);
+
 var _Works = require('./pages/Works');
 
 var _Works2 = _interopRequireDefault(_Works);
@@ -77,6 +81,27 @@ var routes = _react2.default.createElement(
         header: _Header2.default,
         nav: _Nav2.default,
         main: _Topics2.default
+      } }),
+    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/topics',
+      global: root,
+      components: {
+        header: _Header2.default,
+        nav: _Nav2.default,
+        main: _Topics2.default
+      } }),
+    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/topics/detail/:id',
+      global: root,
+      components: {
+        header: _Header2.default,
+        nav: _Nav2.default,
+        main: _TopicsDetail2.default
+      } }),
+    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/detail/add',
+      global: root,
+      components: {
+        header: _Header2.default,
+        nav: _Nav2.default,
+        main: _WorksDetail2.default
       } }),
     _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/detail/:id',
       global: root,

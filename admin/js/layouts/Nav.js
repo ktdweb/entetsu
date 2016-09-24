@@ -30,13 +30,32 @@ var Nav = function (_React$Component) {
   }
 
   _createClass(Nav, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.addEventListener('resize', this.handleChange(), false);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.handleChange(), false);
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange() {
+      var el = document.getElementById('Nav');
+      var header = document.getElementById('Header');
+      var cli = document.documentElement.clientHeight;
+
+      el.style.height = cli - header.offsetHeight + 'px';
+    }
+  }, {
     key: 'render',
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
       return _react2.default.createElement(
         'aside',
-        null,
+        { id: 'Nav' },
         _react2.default.createElement(
           'nav',
           null,
@@ -49,7 +68,7 @@ var Nav = function (_React$Component) {
               _react2.default.createElement('i', { className: 'fa fa-check-square-o' }),
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: root + '/' },
+                { to: root + '/topics' },
                 '新着情報'
               )
             ),

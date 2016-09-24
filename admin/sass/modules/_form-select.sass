@@ -1,0 +1,42 @@
+/*
+  # modules/form-select.sass
+  // selectのアピアランスを変更  
+  // prefixはなし
+  // selectのappearanceをlabelで置換
+  // labelでselectをラップする必要がある
+  */
+
+label.formSelect
+  @extend select
+  padding: 0
+  position: relative
+  display: inline-block
+  vertical-align: top
+
+// selectは透明に
+
+label.formSelect > select
+  margin-right: 0
+  padding-right: $large-spacing
+  height: 2.8rem
+  border: none
+  background: none transparent
+  -moz-appearance: none
+  -webkit-appearance: none
+  -o-appearance: none
+  -ms-appearance: none
+  appearance: none
+  &::-ms-expand // for IE11
+    display: none
+
+// after内FontAwesomeを使用
+// contentはunicode
+
+label.formSelect:after
+  position: absolute
+  top: -0.2rem
+  bottom: 0
+  right: 1rem
+  content: '\f078'
+  font-family: FontAwesome
+  pointer-events: none

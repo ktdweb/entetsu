@@ -41,6 +41,16 @@ var Topics = function (_React$Component) {
         { id: 'Topics' },
         _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }),
         _react2.default.createElement(
+          _reactRouter.Link,
+          { to: '/admin/topics/detail/add' },
+          _react2.default.createElement(
+            'button',
+            { className: 'headerButton' },
+            '新規追加',
+            _react2.default.createElement('i', { className: 'fa fa-plus-circle' })
+          )
+        ),
+        _react2.default.createElement(
           'h1',
           null,
           _react2.default.createElement('i', { className: 'fa fa-check-square-o' }),
@@ -87,7 +97,11 @@ var Topics = function (_React$Component) {
               _react2.default.createElement(
                 'td',
                 null,
-                'ホームページが公開されました'
+                _react2.default.createElement(
+                  _reactRouter.Link,
+                  { to: '/admin/topics/detail/1' },
+                  'ホームページが公開されました'
+                )
               ),
               _react2.default.createElement(
                 'td',

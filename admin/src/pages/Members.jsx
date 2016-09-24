@@ -35,7 +35,6 @@ export default class Members extends React.Component {
         );
       });
     }
-    console.log(this.state);
 
     return(
       <article id="Members">

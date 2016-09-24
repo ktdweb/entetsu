@@ -18,12 +18,12 @@ import Nav          from './layouts/Nav'
 // pages
 import Home         from './pages/Home'
 import Topics       from './pages/Topics'
+import TopicsDetail from './pages/TopicsDetail'
 import Works        from './pages/Works'
 import WorksDetail  from './pages/WorksDetail'
 import Members      from './pages/Members'
 import MembersDetail      from './pages/MembersDetail'
 import NoMatch      from './pages/NoMatch'
-
 
 const routes = (
   <Router history={browserHistory}>
@@ -38,6 +38,30 @@ const routes = (
           header: Header,
           nav: Nav,
           main: Topics
+        }} />
+
+      <Route path={root.documentRoot + '/topics'}
+        global={root}
+        components={{
+          header: Header,
+          nav: Nav,
+          main: Topics
+        }} />
+
+      <Route path={root.documentRoot + '/topics/detail/:id'}
+        global={root}
+        components={{
+          header: Header,
+          nav: Nav,
+          main: TopicsDetail
+        }} />
+
+      <Route path={root.documentRoot + '/works/detail/add'}
+        global={root}
+        components={{
+          header: Header,
+          nav: Nav,
+          main: WorksDetail
         }} />
 
       <Route path={root.documentRoot + '/works/detail/:id'}
