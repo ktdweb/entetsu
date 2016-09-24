@@ -85,3 +85,17 @@ address
 
 button
   outline: none
+
+// # canvas
+// jsでcanvasを生成した際、
+// 縦横に隙間ができるのを防ぐ
+
+canvas
+  display: inline-block
+  vertical-align: bottom
+
+// # input[type=file], textarea
+// iOSで内側の影がつくため消す
+
+input[type=text], textarea
+  -webkit-appearance: none

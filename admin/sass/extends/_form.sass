@@ -10,11 +10,18 @@
 // 左右にpaddingを追加  
 // border, border-radiusはvarsの値を初期値として設定
 
-input, select, textarea, button
+input[type=text], select, textarea, button
+  display: inline-block
   margin-right: $small-spacing
   padding: 0 $small-spacing
-  border: 1px solid $form-border-color
+  border: $form-border
   border-radius: $form-border-radius
+  background-color: $form-background-color
+  &:focus
+    outline: none
+    box-shadow: $form-focus
+    // outline: $form-focus // 例として記述
+    outline-offset: 0
 
 form
   input:last-child, select:last-child,
@@ -46,6 +53,8 @@ input[type=radio], input[type=checkbox]
   vertical-align: -$small-spacing / 2
   margin-left: $small-spacing
   margin-right: $base-spacing
+  &:focus
+    box-shadow: none
 
 // # textarea
 // 横幅を100%に設定
@@ -69,11 +78,15 @@ button
   border: none
   cursor: pointer
 
-label+button
+label+button, label+input, label+select
   margin-left: $small-spacing
 
 label>button
   margin-left: $small-spacing
+
+button+small, input+small,
+select+small, label+small
+  margin-right: $small-spacing
 
 // # p
 // pタグを説明文用に利用  
