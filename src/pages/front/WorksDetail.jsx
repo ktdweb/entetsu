@@ -86,14 +86,6 @@ export default class WorksDetail extends React.Component {
                 onClick={this.enableLogin.bind(this)}
               >ログイン</button>
 
-              <a
-                href="#"
-                name="modalMerit"
-                onClick={this.enableMerit.bind(this)}
-                >
-              会員用ログインのメリット
-              </a>
-
               <p id="loginMessage" className="pf-loginMessage"></p>
               <p id="loginStatus">もしくは…</p>
 
@@ -171,16 +163,23 @@ export default class WorksDetail extends React.Component {
 
                 <button
                   name="modalTel"
+                  className="mgnBtm10"
                   onClick={this.enableModal.bind(this)}
                 >{modal[0].button}</button>
 
-                <br />
-
                 <button
                   name="modalMail"
+                  className="mgnBtm10"
                   onClick={this.enableModal.bind(this)}
                 >{modal[1].button}</button>
 
+                <a
+                  href="#"
+                  name="modalMerit"
+                  onClick={this.enableMerit.bind(this)}
+                  >
+                会員登録のメリットについて
+                </a>
               </div>
             </div>
 
@@ -265,7 +264,6 @@ export default class WorksDetail extends React.Component {
             </div>
           </div>
         </div>
-
         <div className="pf-Works-Detail-footer">
           {/*
           <a href="/works/cateogry/7">
@@ -571,8 +569,8 @@ modal = [
   },
 
   {
-    title: '会員用ログインのメリット',
-    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
+    title: '会員登録のメリットについて',
+    body: '当サイトでは会員登録せずとも、ご希望のお仕事に応募することも可能です。<br />会員にご登録頂きますと、都度お客様の情報を入力せずに、<br />メールアドレスとパスワードのみで応募ができるようになります。<br />また会員情報をもとに、有益な情報をお送りする場合もございます。<br />ぜひこの機会にご登録ください。',
     button: null 
   }
 ];
