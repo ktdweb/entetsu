@@ -24,11 +24,14 @@ let _works = [
     selling: '',
     cert: '',
     desc: '',
-    img: ''
+    img: '',
+    tel: '',
+    email: ''
   }
 ];
 
 function create(res) {
+  console.log(res);
   _works = res;
 }
 

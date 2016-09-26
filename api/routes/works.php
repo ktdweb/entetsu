@@ -120,17 +120,11 @@ $app->group('/works', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'select * from `works`';
-            $sql .= ' LEFT JOIN `sections` ON `works`.`id` = `sections`.`id`';
+            $sql = 'select `works`.*, `sections`.`tel`, `sections`.`email`, `sections`.`name` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
 
-            if ($args['name']) {
-                $sql .= ' WHERE `works`.`name` = ?;';
-                $sql .= ' AND ( `works`.`entry_end` > NOW() ';
-                $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
-                $sql .= ' AND ';
-                $sql .= ' ( `works`.`entry_start` < NOW() ';
-                $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
-                $body = $db->execute($sql, $args['name']);
+            if ($args['name'] == 'admin') {
+                $body = $db->execute($sql);
             } else {
                 $sql .= ' WHERE ';
                 $sql .= ' ( `works`.`entry_end` > NOW() ';
