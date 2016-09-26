@@ -163,13 +163,12 @@ export default class WorksDetail extends React.Component {
 
                 <button
                   name="modalTel"
-                  className="mgnBtm10"
                   onClick={this.enableModal.bind(this)}
                 >{modal[0].button}</button>
 
+
                 <button
                   name="modalMail"
-                  className="mgnBtm10"
                   onClick={this.enableModal.bind(this)}
                 >{modal[1].button}</button>
 
@@ -259,7 +258,12 @@ export default class WorksDetail extends React.Component {
                     <dt>備考</dt>
                     <dd>{data.desc}</dd>
                   </dl>
+
                 </div>
+              </div>
+
+              <div className="pf-Works-Detail-contact">
+                <span>電話でのお問い合わせは...</span>{data.tel}
               </div>
             </div>
           </div>

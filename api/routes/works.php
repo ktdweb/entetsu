@@ -121,22 +121,23 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.get');
             $sql = 'select * from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`id` = `sections`.`id`';
 
             if ($args['name']) {
-                $sql .= ' WHERE `name` = ?;';
-                $sql .= ' AND ( `entry_end` > NOW() ';
-                $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+                $sql .= ' WHERE `works`.`name` = ?;';
+                $sql .= ' AND ( `works`.`entry_end` > NOW() ';
+                $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
                 $sql .= ' AND ';
-                $sql .= ' ( `entry_start` < NOW() ';
-                $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
+                $sql .= ' ( `works`.`entry_start` < NOW() ';
+                $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
                 $body = $db->execute($sql, $args['name']);
             } else {
                 $sql .= ' WHERE ';
-                $sql .= ' ( `entry_end` > NOW() ';
-                $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+                $sql .= ' ( `works`.`entry_end` > NOW() ';
+                $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
                 $sql .= ' AND ';
-                $sql .= ' ( `entry_start` < NOW() ';
-                $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
+                $sql .= ' ( `works`.`entry_start` < NOW() ';
+                $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
                 $body = $db->execute($sql);
             }
 

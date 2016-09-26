@@ -7799,6 +7799,17 @@ div#badge {
             top: -36px;
             left: -5px;
             right: -10px; }
+          #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-contact {
+            padding: 1rem;
+            font-weight: bold;
+            color: #0099DE;
+            font-size: 2rem;
+            text-align: center;
+            border: 2px solid #0099DE;
+            border-radius: 5px; }
+            #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-contact span {
+              margin-right: 2rem;
+              font-weight: normal; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-section {
             display: table;
             width: 100%;
