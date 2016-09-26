@@ -28,10 +28,10 @@ $app->group('/works', function () {
             $sql .= 'INNER JOIN `works` ON ';
             $sql .= '`tags`.`work_id` = `works`.`id` ';
             $sql .= 'WHERE (`tags`.`category_id` = ?)';
-            $sql .= " AND ( `entry_start` = '0000-00-00 00:00:00'";
-            $sql .= ' OR `entry_start` < NOW() )';
-            $sql .= " AND ( `entry_end` = '0000-00-00 00:00:00'";
-            $sql .= ' OR `entry_end` > NOW() )';
+            $sql .= ' AND ( `entry_end` > NOW() ';
+            $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ( `entry_start` < NOW() ';
+            $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
             $body = $db->execute($sql, $args['id']);
 
             return $response->withJson(
@@ -59,6 +59,10 @@ $app->group('/works', function () {
 
             $sql  = 'SELECT `works`.* FROM `works` ';
             $sql .= 'WHERE (`time_start` >= ?) AND (`time_end` <= ?)';
+            $sql .= ' AND ( `entry_end` > NOW() ';
+            $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ( `entry_start` < NOW() ';
+            $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
             $body = $db->execute($sql, array($start, $end));
 
             return $response->withJson(
@@ -83,13 +87,17 @@ $app->group('/works', function () {
 
             $key = $args['keyword'];
             $sql  = 'SELECT `works`.* FROM `works` WHERE ';
-            $sql .= "(`title` LIKE '%" .$key . "%') OR ";
+            $sql .= ' ( `entry_end` > NOW() ';
+            $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ( `entry_start` < NOW() ';
+            $sql .= " OR `entry_start` = '0000-00-00 00:00:00' ) AND ";
+            $sql .= "( (`title` LIKE '%" .$key . "%') OR ";
             $sql .= "(`detail` LIKE '%" .$key . "%') OR ";
             $sql .= "(`location` LIKE '%" .$key . "%') OR ";
             $sql .= "(`wage` LIKE '%" .$key . "%') OR ";
             $sql .= "(`type` LIKE '%" .$key . "%') OR ";
             $sql .= "(`selling` LIKE '%" .$key . "%') OR ";
-            $sql .= "(`desc` LIKE '%" .$key . "%');";
+            $sql .= "(`desc` LIKE '%" .$key . "%') )";
             $body = $db->execute($sql);
 
             return $response->withJson(
@@ -116,8 +124,19 @@ $app->group('/works', function () {
 
             if ($args['name']) {
                 $sql .= ' WHERE `name` = ?;';
+                $sql .= ' AND ( `entry_end` > NOW() ';
+                $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+                $sql .= ' AND ';
+                $sql .= ' ( `entry_start` < NOW() ';
+                $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
                 $body = $db->execute($sql, $args['name']);
             } else {
+                $sql .= ' WHERE ';
+                $sql .= ' ( `entry_end` > NOW() ';
+                $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+                $sql .= ' AND ';
+                $sql .= ' ( `entry_start` < NOW() ';
+                $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
                 $body = $db->execute($sql);
             }
 
