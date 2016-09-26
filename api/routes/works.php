@@ -27,7 +27,11 @@ $app->group('/works', function () {
             $sql  = 'SELECT `works`.* FROM `tags` ';
             $sql .= 'INNER JOIN `works` ON ';
             $sql .= '`tags`.`work_id` = `works`.`id` ';
-            $sql .= 'WHERE `tags`.`category_id` = ?';
+            $sql .= 'WHERE (`tags`.`category_id` = ?)';
+            $sql .= " AND ( `entry_start` = '0000-00-00 00:00:00'";
+            $sql .= ' OR `entry_start` < NOW() )';
+            $sql .= " AND ( `entry_end` = '0000-00-00 00:00:00'";
+            $sql .= ' OR `entry_end` > NOW() )';
             $body = $db->execute($sql, $args['id']);
 
             return $response->withJson(

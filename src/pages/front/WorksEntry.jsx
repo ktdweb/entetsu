@@ -41,6 +41,8 @@ export default class WorksEntry extends React.Component {
 
             <p id={'modalError' + this.props.id} className="loginError"></p>
 
+            <iframe src="../../../privacy.html" width="800" height="200" />
+
             <button
               name={this.props.id}
               onClick={this.onSubmit.bind(this)}

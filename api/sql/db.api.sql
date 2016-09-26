@@ -46,6 +46,7 @@ SELECT `works`.* FROM `tags` INNER JOIN `works` ON `tags`.`work_id` = `works`.`i
 DROP TABLE `works`;
 CREATE TABLE IF NOT EXISTS `works` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `section_id` INT(2) NOT NULL,
   `title` VARCHAR(120) NOT NULL,
   `detail` TEXT NULL,
   `location` VARCHAR(120) NULL,
@@ -78,6 +79,7 @@ ENGINE = InnoDB
 TRUNCATE `works`;
 INSERT INTO `works` (
   `id`,
+  `section_id`,
   `title`,
   `detail`,
   `location`,
@@ -806,6 +808,7 @@ NOW() + INTERVAL 34 second
 /*}}}*/
 
 
+
 --- tags
 
 -- tags テーブル確認 /*{{{*/
@@ -926,6 +929,42 @@ INSERT INTO `tags` (
 (25, 16);
 /*}}}*/
 
+--- sections
+
+-- sections テーブル確認 /*{{{*/
+DESC `sections`;
+SELECT * FROM `sections`;
+/*}}}*/
+
+-- sections テーブル作成 /*{{{*/
+DROP TABLE `sections`;
+CREATE TABLE IF NOT EXISTS `sections` (
+  `id` INT(2) NOT NULL,
+  `name` VARCHAR(20) NOT NULL,
+  `tel` VARCHAR(15) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+/*}}}*/
+
+-- sections レコード挿入 /*{{{*/
+TRUNCATE `sections`;
+INSERT INTO `sections` (
+    `id`,
+    `name`,
+    `tel`,
+    `email`
+) VALUES
+(1, '清掃', '053-455-3451', 'cleaning@entetsu-assist.co.jp'),
+(2, 'ビル', '053-455-3451', 'building@entetsu-assist.co.jp'),
+(3, 'マンション', '053-450-9922', 'mansion@entetsu-assist.co.jp'),
+(4, '運行', '053-450-1515', 'driving@entetsu-assist.co.jp'),
+(5, '指定管理', '053-450-1516', 'strategy@entetsu-assist.co.jp'),
+(6, 'ベンリー', '', 'benry@entetsu-assist.co.jp'),
+(7, '食品検査', '053-441-5075', 'foods@entetsu-assist.co.jp'),
+(8, '総務', '053-472-0255', 'recruit@entetsu-assist.co.jp'),
+(9, 'その他', '053-450-1511', 'recruit@entetsu-assist.co.jp')
+/*}}}*/
 
 --- categories
 

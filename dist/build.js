@@ -9733,7 +9733,7 @@ var WorksEntry = function (_React$Component) {
         alt: 'close'
       })), _react2.default.createElement('h1', null, this.props.title), _react2.default.createElement('div', null, '名前:  ', this.props.name, _react2.default.createElement('br', null), 'フリガナ: ', this.props.furi, _react2.default.createElement('br', null), '電話番号: ', this.props.tel, _react2.default.createElement('br', null), 'メールアドレス: ', this.props.mail), _react2.default.createElement('span', {
         dangerouslySetInnerHTML: { __html: this.props.body }
-      }), _react2.default.createElement('p', { id: 'modalError' + this.props.id, className: 'loginError' }), _react2.default.createElement('button', {
+      }), _react2.default.createElement('p', { id: 'modalError' + this.props.id, className: 'loginError' }), _react2.default.createElement('iframe', { src: '../../../privacy.html', width: '800', height: '200' }), _react2.default.createElement('button', {
         name: this.props.id,
         onClick: this.onSubmit.bind(this)
       }, this.props.button)));
