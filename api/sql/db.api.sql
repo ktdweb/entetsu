@@ -40,7 +40,7 @@ SELECT * FROM `tokens`;
 DESC `works`;
 SELECT * FROM `works`;
 SELECT `works`.* FROM `tags` INNER JOIN `works` ON `tags`.`work_id` = `works`.`id` WHERE `tags`.`category_id` = 1
-UPDATE `works` SET `entry_start` = '0000-00-00 00:00:00', `entry_end` = '0000-00-00 00:00:00' WHERE `id` = 1;
+UPDATE `works` SET `entry_start` = '0000-00-00 00:00:00', `entry_end` = '' WHERE `id` = 1;
 /*}}}*/
 
 -- works テーブル作成 /*{{{*/

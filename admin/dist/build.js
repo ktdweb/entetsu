@@ -124,7 +124,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     header: _Header2.default,
     nav: _Nav2.default,
     main: _WorksDetail2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works(/:id)',
   global: root,
   components: {
     header: _Header2.default,
@@ -1131,12 +1131,17 @@ var Works = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.create();
+      _WorkActions2.default.adminGet(this.props.params.id);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       _WorkStore2.default.destroy(this.updateState.bind(this));
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      _WorkActions2.default.adminGet(nextProps.params.id);
     }
   }, {
     key: 'render',
@@ -1146,17 +1151,37 @@ var Works = function (_React$Component) {
       var eachWork = void 0;
       if (this.state.works.length > 0) {
         eachWork = Object.keys(this.state.works).map(function (i) {
-          return _react2.default.createElement(EachWork, { key: i, data: _this2.state.works[i] });
+          return _react2.default.createElement(EachWork, {
+            key: i,
+            data: _this2.state.works[i],
+            handleClick: _this2.adminDelete.bind(_this2)
+          });
         });
+      } else {
+        eachWork = _react2.default.createElement('tr', { className: 'result' }, _react2.default.createElement('td', { colSpan: '6' }, _react2.default.createElement('div', null, '登録件数は0件です')));
       }
 
-      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/detail/add' }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, '食品')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, null, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日')), eachWork)));
+      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/detail/add' }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works' }, 'すべて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/1' }, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/2' }, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/3' }, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/4' }, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/5' }, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/6' }, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/7' }, '食品検査')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/8' }, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachWork)));
     }
   }, {
     key: 'updateState',
     value: function updateState() {
       var res = _WorkStore2.default.read();
       this.setState({ works: res });
+    }
+  }, {
+    key: 'adminDelete',
+    value: function adminDelete(e) {
+      e.preventDefault();
+
+      var id = e.target.name;
+      var i = 'ID: ' + id + ' ';
+      var res = confirm(i + 'を本当に削除しますか?');
+      if (res) {
+        _WorkActions2.default.adminDelete(id);
+      } else {
+        return false;
+      }
     }
   }]);
 
@@ -1180,7 +1205,10 @@ var EachWork = function (_React$Component2) {
       var data = this.props.data;
       return _react2.default.createElement('tr', null, _react2.default.createElement('td', null, data.id), _react2.default.createElement('td', null, _react2.default.createElement(_reactRouter.Link, {
         to: '/admin/works/detail/' + data.id
-      }, data.title)), _react2.default.createElement('td', null, data.abbr_time), _react2.default.createElement('td', null, data.unit_wage + data.abbr_wage + '円'), _react2.default.createElement('td', null, data.modified));
+      }, data.title)), _react2.default.createElement('td', null, data.abbr_time), _react2.default.createElement('td', null, data.unit_wage + data.abbr_wage + '円'), _react2.default.createElement('td', null, data.modified), _react2.default.createElement('td', null, _react2.default.createElement('button', {
+        name: data.id,
+        onClick: this.props.handleClick.bind(this)
+      }, '削除')));
     }
   }]);
 
@@ -1490,6 +1518,22 @@ exports.default = {
     });
   },
 
+  adminGet: function adminGet() {
+    var id = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
+
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_GET,
+      id: id
+    });
+  },
+
+  adminDelete: function adminDelete(id) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_DELETE,
+      id: id
+    });
+  },
+
   update: function update(id, count) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.UPDATE,
@@ -1680,6 +1724,8 @@ var WorkConstants = (0, _keymirror2.default)({
   CATEGORY: null,
   SLIDER: null,
   KEYWORD: null,
+  ADMIN_GET: null,
+  ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
 });
@@ -1954,11 +2000,21 @@ var _works = [{
   selling: '',
   cert: '',
   desc: '',
-  img: ''
+  img: '',
+  tel: '',
+  email: ''
 }];
 
 function create(res) {
   _works = res;
+}
+
+function adminDelete(id) {
+  Object.keys(_works).map(function (i) {
+    if (_works[i].id == id) {
+      delete _works[i];
+    }
+  });
 }
 
 function update(id, updates) {
@@ -2036,12 +2092,31 @@ _Dispatcher2.default.register(function (action) {
 
     case _WorkConstants2.default.KEYWORD:
       var keyword = URL + 'keyword/' + action.keyword;
-      console.log(action.keyword);
       _Http.http.get(keyword).then(function (res) {
         create(res);
         workStore.update();
       }).catch(function (e) {
         //console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_GET:
+      var admin_get = URL + 'admin/' + action.id;
+      _Http.http.get(admin_get).then(function (res) {
+        create(res);
+        workStore.update();
+      }).catch(function (e) {
+        //console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_DELETE:
+      var admin_delete = URL + 'admin/' + action.id;
+      _Http.http.delete(admin_delete).then(function (res) {
+        adminDelete(action.id);
+        workStore.update();
+      }).catch(function (e) {
+        console.error(e);
       });
       break;
 

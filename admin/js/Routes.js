@@ -110,7 +110,7 @@ var routes = _react2.default.createElement(
         nav: _Nav2.default,
         main: _WorksDetail2.default
       } }),
-    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works',
+    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works(/:id)',
       global: root,
       components: {
         header: _Header2.default,

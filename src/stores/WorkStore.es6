@@ -31,8 +31,15 @@ let _works = [
 ];
 
 function create(res) {
-  console.log(res);
   _works = res;
+}
+
+function adminDelete(id) {
+  Object.keys(_works).map((i) => {
+    if (_works[i].id == id) {
+      delete _works[i];
+    }
+  });
 }
 
 function update(id, updates) {
@@ -94,12 +101,31 @@ Dispatcher.register( function(action) {
 
     case WorkConstants.KEYWORD:
       let keyword = URL + 'keyword/' + action.keyword;
-      console.log(action.keyword);
       http.get(keyword).then(res => {
         create(res);
         workStore.update();
       }).catch(e => {
         //console.error(e);
+      });
+      break;
+
+    case WorkConstants.ADMIN_GET:
+      let admin_get = URL + 'admin/' + action.id;
+      http.get(admin_get).then(res => {
+        create(res);
+        workStore.update();
+      }).catch(e => {
+        //console.error(e);
+      });
+      break;
+
+    case WorkConstants.ADMIN_DELETE:
+      let admin_delete = URL + 'admin/' + action.id;
+      http.delete(admin_delete).then(res => {
+        adminDelete(action.id);
+        workStore.update();
+      }).catch(e => {
+        console.error(e);
       });
       break;
 

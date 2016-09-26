@@ -113,6 +113,37 @@ $app->group('/works', function () {
      * GET
      */
     $this->get(
+        '/admin/{id:.*}',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+
+            if (is_numeric($args['id'])) {
+                $sql .= ' WHERE `works`.`section_id` = ?';
+                $body = $db->execute($sql, $args['id']);
+            } else {
+                $body = $db->execute($sql);
+            }
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+
+    /**
+     * GET
+     */
+    $this->get(
         '/{name:.*}',
         function (
             $request,
@@ -120,7 +151,8 @@ $app->group('/works', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'select `works`.*, `sections`.`tel`, `sections`.`email`, `sections`.`name` from `works`';
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
 
             if ($args['name'] == 'admin') {
@@ -212,7 +244,7 @@ $app->group('/works', function () {
      * DELETE
      */
     $this->delete(
-        '/{id:[0-9]+}',
+        '/admin/{id:.*}',
         function (
             $request,
             $response,
@@ -220,9 +252,12 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.delete');
 
-            $sql = 'DELETE FROM `users` ';
+            $sql = 'DELETE FROM `works` ';
             $sql .= 'WHERE `id` = ' . (int)$args['id'];
+            $res = $db->execute($sql);
 
+            $sql = 'DELETE FROM `tags` ';
+            $sql .= 'WHERE `work_id` = ' . (int)$args['id'];
             $res = $db->execute($sql);
 
             return $response->withJson(

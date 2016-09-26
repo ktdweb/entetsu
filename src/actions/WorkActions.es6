@@ -30,6 +30,20 @@ export default {
     })
   },
 
+  adminGet: (id = '') => {
+    Dispatcher.dispatch({
+      actionType: WorkConstants.ADMIN_GET,
+      id: id
+    })
+  },
+
+  adminDelete: (id) => {
+    Dispatcher.dispatch({
+      actionType: WorkConstants.ADMIN_DELETE,
+      id: id
+    })
+  },
+
   update: (id, count) => {
     Dispatcher.dispatch({
       actionType: WorkConstants.UPDATE,

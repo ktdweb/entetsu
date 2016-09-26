@@ -532,6 +532,22 @@ exports.default = {
     });
   },
 
+  adminGet: function adminGet() {
+    var id = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
+
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_GET,
+      id: id
+    });
+  },
+
+  adminDelete: function adminDelete(id) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_DELETE,
+      id: id
+    });
+  },
+
   update: function update(id, count) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.UPDATE,
@@ -1460,6 +1476,8 @@ var WorkConstants = (0, _keymirror2.default)({
   CATEGORY: null,
   SLIDER: null,
   KEYWORD: null,
+  ADMIN_GET: null,
+  ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
 });
@@ -10880,8 +10898,15 @@ var _works = [{
 }];
 
 function create(res) {
-  console.log(res);
   _works = res;
+}
+
+function adminDelete(id) {
+  Object.keys(_works).map(function (i) {
+    if (_works[i].id == id) {
+      delete _works[i];
+    }
+  });
 }
 
 function update(id, updates) {
@@ -10959,12 +10984,31 @@ _Dispatcher2.default.register(function (action) {
 
     case _WorkConstants2.default.KEYWORD:
       var keyword = URL + 'keyword/' + action.keyword;
-      console.log(action.keyword);
       _Http.http.get(keyword).then(function (res) {
         create(res);
         workStore.update();
       }).catch(function (e) {
         //console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_GET:
+      var admin_get = URL + 'admin/' + action.id;
+      _Http.http.get(admin_get).then(function (res) {
+        create(res);
+        workStore.update();
+      }).catch(function (e) {
+        //console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_DELETE:
+      var admin_delete = URL + 'admin/' + action.id;
+      _Http.http.delete(admin_delete).then(function (res) {
+        adminDelete(action.id);
+        workStore.update();
+      }).catch(function (e) {
+        console.error(e);
       });
       break;
 

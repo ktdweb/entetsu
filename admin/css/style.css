@@ -373,6 +373,15 @@ table.chart th {
 table.chart td {
   border: 1px solid #cdcdcd; }
 
+tr.result td {
+  text-align: center;
+  vertical-align: middle;
+  height: 24rem;
+  color: #0198ca;
+  border-bottom: none; }
+  tr.result td div {
+    font-size: 2.4rem; }
+
 /*
   # extends/typography.sass */
 body {

@@ -51,12 +51,17 @@ var Works = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.create();
+      _WorkActions2.default.adminGet(this.props.params.id);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       _WorkStore2.default.destroy(this.updateState.bind(this));
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      _WorkActions2.default.adminGet(nextProps.params.id);
     }
   }, {
     key: 'render',
@@ -66,8 +71,26 @@ var Works = function (_React$Component) {
       var eachWork = void 0;
       if (this.state.works.length > 0) {
         eachWork = Object.keys(this.state.works).map(function (i) {
-          return _react2.default.createElement(EachWork, { key: i, data: _this2.state.works[i] });
+          return _react2.default.createElement(EachWork, {
+            key: i,
+            data: _this2.state.works[i],
+            handleClick: _this2.adminDelete.bind(_this2)
+          });
         });
+      } else {
+        eachWork = _react2.default.createElement(
+          'tr',
+          { className: 'result' },
+          _react2.default.createElement(
+            'td',
+            { colSpan: '6' },
+            _react2.default.createElement(
+              'div',
+              null,
+              '登録件数は0件です'
+            )
+          )
+        );
       }
 
       return _react2.default.createElement(
@@ -101,7 +124,16 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works' },
+                'すべて'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/admin/works/1' },
                 '清掃'
               )
             ),
@@ -110,7 +142,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works/2' },
                 'ビル'
               )
             ),
@@ -119,7 +151,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works/3' },
                 'マンション'
               )
             ),
@@ -128,7 +160,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works/4' },
                 '運行'
               )
             ),
@@ -137,7 +169,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works/5' },
                 '指定管理'
               )
             ),
@@ -146,7 +178,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works/6' },
                 'ベンリー'
               )
             ),
@@ -155,8 +187,8 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
-                '食品'
+                { to: '/admin/works/7' },
+                '食品検査'
               )
             ),
             _react2.default.createElement(
@@ -164,7 +196,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                null,
+                { to: '/admin/works/8' },
                 '総務'
               )
             )
@@ -203,6 +235,11 @@ var Works = function (_React$Component) {
                 'th',
                 null,
                 '更新日'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                '-'
               )
             ),
             eachWork
@@ -215,6 +252,20 @@ var Works = function (_React$Component) {
     value: function updateState() {
       var res = _WorkStore2.default.read();
       this.setState({ works: res });
+    }
+  }, {
+    key: 'adminDelete',
+    value: function adminDelete(e) {
+      e.preventDefault();
+
+      var id = e.target.name;
+      var i = 'ID: ' + id + ' ';
+      var res = confirm(i + 'を本当に削除しますか?');
+      if (res) {
+        _WorkActions2.default.adminDelete(id);
+      } else {
+        return false;
+      }
     }
   }]);
 
@@ -269,6 +320,18 @@ var EachWork = function (_React$Component2) {
           'td',
           null,
           data.modified
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'button',
+            {
+              name: data.id,
+              onClick: this.props.handleClick.bind(this)
+            },
+            '削除'
+          )
         )
       );
     }

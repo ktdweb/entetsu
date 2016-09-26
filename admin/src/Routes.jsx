@@ -72,7 +72,7 @@ const routes = (
           main: WorksDetail
         }} />
 
-      <Route path={root.documentRoot + '/works'}
+      <Route path={root.documentRoot + '/works(/:id)'}
         global={root}
         components={{
           header: Header,
