@@ -12,28 +12,40 @@ export default class WorksDetail extends React.Component {
     super(props);
 
     let works = WorkStore.read();
-    this.state = {
-      works: works
-    }
-    this.data = this.state.works[0];
+    this.state = { works: works[0] }
   }
 
   componentWillMount() {
     WorkStore.subscribe(this.updateState.bind(this));
-    WorkActions.create();
+    WorkActions.adminEach(this.props.params.id);
   }
 
   componentWillUnmount() {
-    WorkStore.destroy(this.updateState.bind(this));this
+    WorkStore.destroy(this.updateState.bind(this));
   }
 
   render() {
-    let data = this.data;
-
-    for (let i = 0; i < this.state.works.length; i++) {
-      if (this.state.works[i].id == this.props.params.id) {
-        data = this.state.works[i];
+    let data = this.state.works;
+    const arr = [
+      '清掃',
+      'ビル',
+      'マンション',
+      '運行',
+      '指定管理',
+      'ベンリ-',
+      '食品',
+      '総務'
+    ];
+    let sectionIds;
+    for (var i = 1; i <= 8; i++) {
+      var res;
+      if (this.state.works.section_id == i) {
+        res = true;
+      } else {
+        res = false;
       }
+      sectionIds = <option value={i} key={i}
+        ></option>;
     }
 
     return(
@@ -49,15 +61,11 @@ export default class WorksDetail extends React.Component {
           <dt>担当部署</dt>
           <dd>
             <label className="formSelect">
-              <select>
-                <option>清掃</option>
-                <option>ビル</option>
-                <option>マンション</option>
-                <option>運行</option>
-                <option>指定管理</option>
-                <option>ベンリー</option>
-                <option>食品</option>
-                <option>総務</option>
+              <select
+                onChange={this.handleChange.bind(this)}
+                value={this.state.works.section_id}
+                >
+                {sectionIds}
               </select>
             </label>
           </dd>
@@ -70,14 +78,14 @@ export default class WorksDetail extends React.Component {
             <input
               type="text"
               className="w-s"
-              value={data.term_start}
+              value={data.entry_start}
               />
 
             <label>終了日時</label>
             <input
               type="text"
               className="w-s"
-              value={data.term_end}
+              value={data.entry_end}
               />
           </dd>
         </dl>
@@ -349,8 +357,11 @@ export default class WorksDetail extends React.Component {
     );
   }
 
+  handleChange(e) {
+  }
+  
   updateState() {
     let res = WorkStore.read();
-    this.setState({ works: res });
+    this.setState({ works: res[0], tags: res.tags });
   }
 }

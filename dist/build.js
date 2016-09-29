@@ -399,6 +399,13 @@ exports.default = {
     });
   },
 
+  memberAdminDelete: function memberAdminDelete(id) {
+    _Dispatcher2.default.dispatch({
+      actionType: _MemberConstants2.default.MEMBER_ADMIN_DELETE,
+      id: id
+    });
+  },
+
   destroy: function destroy() {
     _Dispatcher2.default.dispatch({
       actionType: _MemberConstants2.default.DESTROY
@@ -537,6 +544,13 @@ exports.default = {
 
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_GET,
+      id: id
+    });
+  },
+
+  adminEach: function adminEach(id) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_EACH,
       id: id
     });
   },
@@ -1405,6 +1419,7 @@ var MemberConstants = (0, _keymirror2.default)({
   ADD: null,
   SET: null,
   LOGIN: null,
+  MEMBER_ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
 });
@@ -1477,6 +1492,7 @@ var WorkConstants = (0, _keymirror2.default)({
   SLIDER: null,
   KEYWORD: null,
   ADMIN_GET: null,
+  ADMIN_EACH: null,
   ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
@@ -9313,66 +9329,12 @@ var WorksDetail = function (_React$Component) {
         }
       }
 
-      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-login' }, _react2.default.createElement('img', {
+      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
         src: '/imgs/works/' + data.img + 'l.jpg',
         width: '180',
         height: '180',
         alt: 'img'
-      }), _react2.default.createElement('button', {
-        id: 'loginButton',
-        name: 'modalLogin',
-        onClick: this.enableLogin.bind(this)
-      }, 'ログイン'), _react2.default.createElement('p', { id: 'loginMessage', className: 'pf-loginMessage' }), _react2.default.createElement('p', { id: 'loginStatus' }, 'もしくは…'), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '名前'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formName',
-        name: 'name',
-        value: this.state.form.name.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateName.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'フリガナ'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formFuri',
-        name: 'furi',
-        value: this.state.form.furi.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateFuri.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '電話番号'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formTel',
-        name: 'tel',
-        value: this.state.form.tel.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateTel.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }))), _react2.default.createElement('label', null, 'メールアドレス'), _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formMail',
-        name: 'mail',
-        value: this.state.form.mail.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateMail.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }), _react2.default.createElement('label', null, 'メールアドレス再入力'), _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formConfirm',
-        name: 'confirm',
-        value: this.state.form.confirm.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateConfirm.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }), _react2.default.createElement('p', { id: 'error', className: 'error' }, '赤枠の内容をご確認ください'), _react2.default.createElement('button', {
-        name: 'modalTel',
-        onClick: this.enableModal.bind(this)
-      }, modal[0].button), _react2.default.createElement('button', {
-        name: 'modalMail',
-        onClick: this.enableModal.bind(this)
-      }, modal[1].button), _react2.default.createElement('a', {
-        href: '#',
-        name: 'modalMerit',
-        onClick: this.enableMerit.bind(this)
-      }, '会員登録のメリットについて'))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, data.unit_wage, ': ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-contact' }, _react2.default.createElement('span', null, '電話でのお問い合わせは...'), data.tel)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
+      }), _react2.default.createElement('span', null, data.unit_wage, ': ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-contact' }, _react2.default.createElement('span', null, '電話でのお問い合わせは...'), data.tel)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
         key: '0',
         id: 'modalTel',
         body: modal[0].body,
@@ -10467,6 +10429,14 @@ function create(res) {
   _members = res;
 }
 
+function memberAdminDelete(id) {
+  Object.keys(_members).map(function (i) {
+    if (_members[i].id == id) {
+      delete _members[i];
+    }
+  });
+}
+
 function add(res) {
   _members = res;
 }
@@ -10546,6 +10516,16 @@ _Dispatcher2.default.register(function (action) {
         login(res, action.callback);
       }).catch(function (e) {
         //console.error(e);
+      });
+      break;
+
+    case _MemberConstants2.default.MEMBER_ADMIN_DELETE:
+      var admin_delete = URL + 'admin/' + action.id;
+      _Http.http.delete(admin_delete).then(function (res) {
+        memberAdminDelete(action.id);
+        memberStore.update();
+      }).catch(function (e) {
+        // console.error(e);
       });
       break;
 
@@ -10878,10 +10858,15 @@ var URL = '/api/works/';
 
 var _works = [{
   id: '',
+  section_id: 1,
   title: '',
   detail: '',
   location: '',
   time: '',
+  time_start: '',
+  time_end: '',
+  entry_start: '',
+  entry_end: '',
   break: '',
   wage: '',
   days: '',
@@ -11002,13 +10987,23 @@ _Dispatcher2.default.register(function (action) {
       });
       break;
 
+    case _WorkConstants2.default.ADMIN_EACH:
+      var admin_each = URL + 'admin/each/' + action.id;
+      _Http.http.get(admin_each).then(function (res) {
+        create(res);
+        workStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
     case _WorkConstants2.default.ADMIN_DELETE:
       var admin_delete = URL + 'admin/' + action.id;
       _Http.http.delete(admin_delete).then(function (res) {
         adminDelete(action.id);
         workStore.update();
       }).catch(function (e) {
-        console.error(e);
+        // console.error(e);
       });
       break;
 

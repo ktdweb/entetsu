@@ -7787,13 +7787,16 @@ div#badge {
           background-repeat: no-repeat; }
         #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column {
           position: relative;
-          width: 70%;
+          width: 100%;
           -webkit-border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-style: solid;
           border-width: 45px;
           background-color: white;
           font-size: 1.36rem; }
+          #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column img {
+            border: 1px solid #0099DE;
+            margin-bottom: 2rem; }
           #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column div.pf-Works-Detail-column-head {
             position: absolute;
             top: -36px;

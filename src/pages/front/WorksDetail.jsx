@@ -72,7 +72,7 @@ export default class WorksDetail extends React.Component {
               検索結果
             </div>
 
-            <div className="pf-Works-Detail-login">
+            {/*<div className="pf-Works-Detail-login">
               <img
                 src={'/imgs/works/' + data.img + 'l.jpg'}
                 width="180"
@@ -180,7 +180,7 @@ export default class WorksDetail extends React.Component {
                 会員登録のメリットについて
                 </a>
               </div>
-            </div>
+            </div>*/}
 
             <div className="pf-Works-Detail-column">
               <div className="pf-Works-Detail-column-head">
@@ -189,6 +189,12 @@ export default class WorksDetail extends React.Component {
 
               <div className="pf-Works-Detail-column-section">
                 <div>
+                  <img
+                    src={'/imgs/works/' + data.img + 'l.jpg'}
+                    width="180"
+                    height="180"
+                    alt="img"
+                    />
                   <span>{data.unit_wage}: {data.abbr_wage}円</span>
                   <span>{data.abbr_time}</span>
                 </div>

@@ -10,10 +10,15 @@ const URL = '/api/works/';
 let _works = [
   {
     id: '',
+    section_id: 1,
     title: '',
     detail: '',
     location: '',
     time: '',
+    time_start: '',
+    time_end: '',
+    entry_start: '',
+    entry_end: '',
     break: '',
     wage: '',
     days: '',
@@ -119,13 +124,23 @@ Dispatcher.register( function(action) {
       });
       break;
 
+    case WorkConstants.ADMIN_EACH:
+      let admin_each = URL + 'admin/each/' + action.id;
+      http.get(admin_each).then(res => {
+        create(res);
+        workStore.update();
+      }).catch(e => {
+        // console.error(e);
+      });
+      break;
+
     case WorkConstants.ADMIN_DELETE:
       let admin_delete = URL + 'admin/' + action.id;
       http.delete(admin_delete).then(res => {
         adminDelete(action.id);
         workStore.update();
       }).catch(e => {
-        console.error(e);
+        // console.error(e);
       });
       break;
 

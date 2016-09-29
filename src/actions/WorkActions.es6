@@ -37,6 +37,13 @@ export default {
     })
   },
 
+  adminEach: (id) => {
+    Dispatcher.dispatch({
+      actionType: WorkConstants.ADMIN_EACH,
+      id: id
+    })
+  },
+
   adminDelete: (id) => {
     Dispatcher.dispatch({
       actionType: WorkConstants.ADMIN_DELETE,

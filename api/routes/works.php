@@ -113,6 +113,41 @@ $app->group('/works', function () {
      * GET
      */
     $this->get(
+        '/admin/each/{id:.*}',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+
+            $sql .= ' WHERE `works`.`id` = ? LIMIT 1';
+            $body = $db->execute($sql, $args['id']);
+
+            $sql = 'SELECT `category_id` FROM `tags`';
+            $sql .= ' WHERE `work_id` = ?';
+            $tags = $db->execute($sql, $args['id']);
+
+            foreach ($tags as $val) {
+                $body['tags'][] = $val->category_id;
+            }
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+
+    /**
+     * GET
+     */
+    $this->get(
         '/admin/{id:.*}',
         function (
             $request,
@@ -138,7 +173,6 @@ $app->group('/works', function () {
             );
         }
     );
-
 
     /**
      * GET
@@ -267,5 +301,4 @@ $app->group('/works', function () {
             );
         }
     );
-
 });

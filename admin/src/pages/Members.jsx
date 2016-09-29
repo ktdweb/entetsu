@@ -26,14 +26,23 @@ export default class Members extends React.Component {
   }
 
   render() {
-
     let eachMember;
     if (this.state.members.length > 0) {
       eachMember = Object.keys(this.state.members).map((i) => {
         return (
-          <EachMember key={i} data={this.state.members[i]} />
+          <EachMember
+            key={i}
+            data={this.state.members[i]}
+            handleClick={this.adminDelete.bind(this)}
+            />
         );
       });
+    } else {
+      eachMember = <tr className="result">
+                    <td colSpan="6">
+                     <div>登録件数は0件です</div>
+                   </td>
+                  </tr>;
     }
 
     return(
@@ -53,6 +62,7 @@ export default class Members extends React.Component {
               <th>メールアドレス</th>
               <th>詳細情報</th>
               <th>更新日</th>
+              <th>-</th>
             </tr>
 
             {eachMember}
@@ -66,6 +76,19 @@ export default class Members extends React.Component {
   updateState() {
     let res = MemberStore.read();
     this.setState({ members: res });
+  }
+
+  adminDelete(e) {
+    e.preventDefault();
+
+    let id = e.target.name;
+    let i = 'ID: ' + id + ' ';
+    let res = confirm(i + 'を本当に削除しますか?');
+    if (res) {
+      MemberActions.memberAdminDelete(id);
+    } else {
+      return false;
+    }
   }
 }
 
@@ -90,6 +113,12 @@ class EachMember extends React.Component {
         <td>{data.mail}</td>
         <td>{this.changeFlag(data.detail_flag)}</td>
         <td>{data.created}</td>
+        <td>
+          <button
+            name={data.id}
+            onClick={this.props.handleClick.bind(this)}
+            >削除</button>
+        </td>
       </tr>
     );
   }

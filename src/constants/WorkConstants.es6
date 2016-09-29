@@ -6,6 +6,7 @@ const WorkConstants = keyMirror({
   SLIDER:    null,
   KEYWORD:   null,
   ADMIN_GET: null,
+  ADMIN_EACH: null,
   ADMIN_DELETE: null,
   UPDATE:    null,
   DESTROY:   null

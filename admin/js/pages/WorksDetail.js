@@ -41,10 +41,7 @@ var WorksDetail = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
     var works = _WorkStore2.default.read();
-    _this.state = {
-      works: works
-    };
-    _this.data = _this.state.works[0];
+    _this.state = { works: works[0] };
     return _this;
   }
 
@@ -52,22 +49,28 @@ var WorksDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.create();
+      _WorkActions2.default.adminEach(this.props.params.id);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _WorkStore2.default.destroy(this.updateState.bind(this));this;
+      _WorkStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
     key: 'render',
     value: function render() {
-      var data = this.data;
-
-      for (var i = 0; i < this.state.works.length; i++) {
-        if (this.state.works[i].id == this.props.params.id) {
-          data = this.state.works[i];
+      var data = this.state.works;
+      var arr = ['清掃', 'ビル', 'マンション', '運行', '指定管理', 'ベンリ-', '食品', '総務'];
+      var sectionIds = void 0;
+      for (var i = 1; i <= 8; i++) {
+        var res;
+        if (this.state.works.section_id == i) {
+          res = true;
+        } else {
+          res = false;
         }
+        sectionIds = _react2.default.createElement('option', { value: i, key: i
+        });
       }
 
       return _react2.default.createElement(
@@ -96,47 +99,11 @@ var WorksDetail = function (_React$Component) {
               { className: 'formSelect' },
               _react2.default.createElement(
                 'select',
-                null,
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  '清掃'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  'ビル'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  'マンション'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  '運行'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  '指定管理'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  'ベンリー'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  '食品'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  null,
-                  '総務'
-                )
+                {
+                  onChange: this.handleChange.bind(this),
+                  value: this.state.works.section_id
+                },
+                sectionIds
               )
             )
           )
@@ -160,7 +127,7 @@ var WorksDetail = function (_React$Component) {
             _react2.default.createElement('input', {
               type: 'text',
               className: 'w-s',
-              value: data.term_start
+              value: data.entry_start
             }),
             _react2.default.createElement(
               'label',
@@ -170,7 +137,7 @@ var WorksDetail = function (_React$Component) {
             _react2.default.createElement('input', {
               type: 'text',
               className: 'w-s',
-              value: data.term_end
+              value: data.entry_end
             })
           )
         ),
@@ -715,10 +682,13 @@ var WorksDetail = function (_React$Component) {
       );
     }
   }, {
+    key: 'handleChange',
+    value: function handleChange(e) {}
+  }, {
     key: 'updateState',
     value: function updateState() {
       var res = _WorkStore2.default.read();
-      this.setState({ works: res });
+      this.setState({ works: res[0], tags: res.tags });
     }
   }]);
 

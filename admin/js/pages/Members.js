@@ -66,8 +66,26 @@ var Members = function (_React$Component) {
       var eachMember = void 0;
       if (this.state.members.length > 0) {
         eachMember = Object.keys(this.state.members).map(function (i) {
-          return _react2.default.createElement(EachMember, { key: i, data: _this2.state.members[i] });
+          return _react2.default.createElement(EachMember, {
+            key: i,
+            data: _this2.state.members[i],
+            handleClick: _this2.adminDelete.bind(_this2)
+          });
         });
+      } else {
+        eachMember = _react2.default.createElement(
+          'tr',
+          { className: 'result' },
+          _react2.default.createElement(
+            'td',
+            { colSpan: '6' },
+            _react2.default.createElement(
+              'div',
+              null,
+              '登録件数は0件です'
+            )
+          )
+        );
       }
 
       return _react2.default.createElement(
@@ -118,6 +136,11 @@ var Members = function (_React$Component) {
                 'th',
                 null,
                 '更新日'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                '-'
               )
             ),
             eachMember
@@ -130,6 +153,20 @@ var Members = function (_React$Component) {
     value: function updateState() {
       var res = _MemberStore2.default.read();
       this.setState({ members: res });
+    }
+  }, {
+    key: 'adminDelete',
+    value: function adminDelete(e) {
+      e.preventDefault();
+
+      var id = e.target.name;
+      var i = 'ID: ' + id + ' ';
+      var res = confirm(i + 'を本当に削除しますか?');
+      if (res) {
+        _MemberActions2.default.memberAdminDelete(id);
+      } else {
+        return false;
+      }
     }
   }]);
 
@@ -189,6 +226,18 @@ var EachMember = function (_React$Component2) {
           'td',
           null,
           data.created
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'button',
+            {
+              name: data.id,
+              onClick: this.props.handleClick.bind(this)
+            },
+            '削除'
+          )
         )
       );
     }

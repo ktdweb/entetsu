@@ -550,17 +550,37 @@ var Members = function (_React$Component) {
       var eachMember = void 0;
       if (this.state.members.length > 0) {
         eachMember = Object.keys(this.state.members).map(function (i) {
-          return _react2.default.createElement(EachMember, { key: i, data: _this2.state.members[i] });
+          return _react2.default.createElement(EachMember, {
+            key: i,
+            data: _this2.state.members[i],
+            handleClick: _this2.adminDelete.bind(_this2)
+          });
         });
+      } else {
+        eachMember = _react2.default.createElement('tr', { className: 'result' }, _react2.default.createElement('td', { colSpan: '6' }, _react2.default.createElement('div', null, '登録件数は0件です')));
       }
 
-      return _react2.default.createElement('article', { id: 'Members' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '会員情報' }), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-bell-o' }), '会員情報'), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, '名前'), _react2.default.createElement('th', null, 'フリガナ'), _react2.default.createElement('th', null, 'メールアドレス'), _react2.default.createElement('th', null, '詳細情報'), _react2.default.createElement('th', null, '更新日')), eachMember)));
+      return _react2.default.createElement('article', { id: 'Members' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '会員情報' }), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-bell-o' }), '会員情報'), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, '名前'), _react2.default.createElement('th', null, 'フリガナ'), _react2.default.createElement('th', null, 'メールアドレス'), _react2.default.createElement('th', null, '詳細情報'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachMember)));
     }
   }, {
     key: 'updateState',
     value: function updateState() {
       var res = _MemberStore2.default.read();
       this.setState({ members: res });
+    }
+  }, {
+    key: 'adminDelete',
+    value: function adminDelete(e) {
+      e.preventDefault();
+
+      var id = e.target.name;
+      var i = 'ID: ' + id + ' ';
+      var res = confirm(i + 'を本当に削除しますか?');
+      if (res) {
+        _MemberActions2.default.memberAdminDelete(id);
+      } else {
+        return false;
+      }
     }
   }]);
 
@@ -584,7 +604,10 @@ var EachMember = function (_React$Component2) {
       var data = this.props.data;
       return _react2.default.createElement('tr', null, _react2.default.createElement('td', null, data.id), _react2.default.createElement('td', null, _react2.default.createElement(_reactRouter.Link, {
         to: '/admin/members/detail/' + data.id
-      }, data.name)), _react2.default.createElement('td', null, data.furi), _react2.default.createElement('td', null, data.mail), _react2.default.createElement('td', null, this.changeFlag(data.detail_flag)), _react2.default.createElement('td', null, data.created));
+      }, data.name)), _react2.default.createElement('td', null, data.furi), _react2.default.createElement('td', null, data.mail), _react2.default.createElement('td', null, this.changeFlag(data.detail_flag)), _react2.default.createElement('td', null, data.created), _react2.default.createElement('td', null, _react2.default.createElement('button', {
+        name: data.id,
+        onClick: this.props.handleClick.bind(this)
+      }, '削除')));
     }
   }, {
     key: 'changeFlag',
@@ -1283,10 +1306,7 @@ var WorksDetail = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
     var works = _WorkStore2.default.read();
-    _this.state = {
-      works: works
-    };
-    _this.data = _this.state.works[0];
+    _this.state = { works: works[0] };
     return _this;
   }
 
@@ -1294,32 +1314,41 @@ var WorksDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.create();
+      _WorkActions2.default.adminEach(this.props.params.id);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _WorkStore2.default.destroy(this.updateState.bind(this));this;
+      _WorkStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
     key: 'render',
     value: function render() {
-      var data = this.data;
-
-      for (var i = 0; i < this.state.works.length; i++) {
-        if (this.state.works[i].id == this.props.params.id) {
-          data = this.state.works[i];
+      var data = this.state.works;
+      var arr = ['清掃', 'ビル', 'マンション', '運行', '指定管理', 'ベンリ-', '食品', '総務'];
+      var sectionIds = void 0;
+      for (var i = 1; i <= 8; i++) {
+        var res;
+        if (this.state.works.section_id == i) {
+          res = true;
+        } else {
+          res = false;
         }
+        sectionIds = _react2.default.createElement('option', { value: i, key: i
+        });
       }
 
-      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '担当部署'), _react2.default.createElement('dd', null, _react2.default.createElement('label', { className: 'formSelect' }, _react2.default.createElement('select', null, _react2.default.createElement('option', null, '清掃'), _react2.default.createElement('option', null, 'ビル'), _react2.default.createElement('option', null, 'マンション'), _react2.default.createElement('option', null, '運行'), _react2.default.createElement('option', null, '指定管理'), _react2.default.createElement('option', null, 'ベンリー'), _react2.default.createElement('option', null, '食品'), _react2.default.createElement('option', null, '総務'))))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '期間指定'), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始日時'), _react2.default.createElement('input', {
+      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '担当部署'), _react2.default.createElement('dd', null, _react2.default.createElement('label', { className: 'formSelect' }, _react2.default.createElement('select', {
+        onChange: this.handleChange.bind(this),
+        value: this.state.works.section_id
+      }, sectionIds)))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '期間指定'), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始日時'), _react2.default.createElement('input', {
         type: 'text',
         className: 'w-s',
-        value: data.term_start
+        value: data.entry_start
       }), _react2.default.createElement('label', null, '終了日時'), _react2.default.createElement('input', {
         type: 'text',
         className: 'w-s',
-        value: data.term_end
+        value: data.entry_end
       }))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'タイトル'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
         type: 'text',
         value: data.title,
@@ -1395,10 +1424,13 @@ var WorksDetail = function (_React$Component) {
       }))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '画像'), _react2.default.createElement('dd', null, _react2.default.createElement('label', { className: 'formFile' }, 'アップロード', _react2.default.createElement('input', { type: 'file' })))), _react2.default.createElement('button', { className: 'w-s' }, '更新'));
     }
   }, {
+    key: 'handleChange',
+    value: function handleChange(e) {}
+  }, {
     key: 'updateState',
     value: function updateState() {
       var res = _WorkStore2.default.read();
-      this.setState({ works: res });
+      this.setState({ works: res[0], tags: res.tags });
     }
   }]);
 
@@ -1463,6 +1495,13 @@ exports.default = {
     });
   },
 
+  memberAdminDelete: function memberAdminDelete(id) {
+    _Dispatcher2.default.dispatch({
+      actionType: _MemberConstants2.default.MEMBER_ADMIN_DELETE,
+      id: id
+    });
+  },
+
   destroy: function destroy() {
     _Dispatcher2.default.dispatch({
       actionType: _MemberConstants2.default.DESTROY
@@ -1523,6 +1562,13 @@ exports.default = {
 
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_GET,
+      id: id
+    });
+  },
+
+  adminEach: function adminEach(id) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_EACH,
       id: id
     });
   },
@@ -1698,6 +1744,7 @@ var MemberConstants = (0, _keymirror2.default)({
   ADD: null,
   SET: null,
   LOGIN: null,
+  MEMBER_ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
 });
@@ -1725,6 +1772,7 @@ var WorkConstants = (0, _keymirror2.default)({
   SLIDER: null,
   KEYWORD: null,
   ADMIN_GET: null,
+  ADMIN_EACH: null,
   ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
@@ -1828,6 +1876,14 @@ function create(res) {
   _members = res;
 }
 
+function memberAdminDelete(id) {
+  Object.keys(_members).map(function (i) {
+    if (_members[i].id == id) {
+      delete _members[i];
+    }
+  });
+}
+
 function add(res) {
   _members = res;
 }
@@ -1910,6 +1966,16 @@ _Dispatcher2.default.register(function (action) {
       });
       break;
 
+    case _MemberConstants2.default.MEMBER_ADMIN_DELETE:
+      var admin_delete = URL + 'admin/' + action.id;
+      _Http.http.delete(admin_delete).then(function (res) {
+        memberAdminDelete(action.id);
+        memberStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
     case _MemberConstants2.default.UPDATE:
       update(action.id, action.member + 1);
       memberStore.update();
@@ -1986,10 +2052,15 @@ var URL = '/api/works/';
 
 var _works = [{
   id: '',
+  section_id: 1,
   title: '',
   detail: '',
   location: '',
   time: '',
+  time_start: '',
+  time_end: '',
+  entry_start: '',
+  entry_end: '',
   break: '',
   wage: '',
   days: '',
@@ -2110,13 +2181,23 @@ _Dispatcher2.default.register(function (action) {
       });
       break;
 
+    case _WorkConstants2.default.ADMIN_EACH:
+      var admin_each = URL + 'admin/each/' + action.id;
+      _Http.http.get(admin_each).then(function (res) {
+        create(res);
+        workStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
     case _WorkConstants2.default.ADMIN_DELETE:
       var admin_delete = URL + 'admin/' + action.id;
       _Http.http.delete(admin_delete).then(function (res) {
         adminDelete(action.id);
         workStore.update();
       }).catch(function (e) {
-        console.error(e);
+        // console.error(e);
       });
       break;
 
