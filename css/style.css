@@ -7156,6 +7156,13 @@ div#badge {
       padding: 0;
       border-radius: 20px;
       background-color: #0099DE; }
+    #Front .modal button.agree, #Front .modal label.agree.inputFileButton {
+      background-color: #ccc;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      #Front .modal button.agree.active, #Front .modal label.agree.active.inputFileButton {
+        background-color: #0099DE; }
     #Front .modal h5 {
       font-size: 1.44rem;
       margin-top: 2rem;
@@ -7165,6 +7172,18 @@ div#badge {
     #Front .modal iframe {
       border: 1px solid #0099DE;
       overflow-y: scroll; }
+    #Front .modal iframe + div {
+      font-size: 1.44rem;
+      border: none;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      width: auto; }
+      #Front .modal iframe + div input {
+        margin-left: 0; }
+    #Front .modal div#Agree {
+      font-size: 1.44rem;
+      border: none; }
 
 /*
   # pages/index.sass
@@ -7787,7 +7806,7 @@ div#badge {
           background-repeat: no-repeat; }
         #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column {
           position: relative;
-          width: 100%;
+          width: 70%;
           -webkit-border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-style: solid;

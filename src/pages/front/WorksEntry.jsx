@@ -8,6 +8,7 @@ export default class WorksEntry extends React.Component {
 
   constructor(props) {
     super(props);
+    this.flag = false;
   }
 
   render() {
@@ -42,8 +43,29 @@ export default class WorksEntry extends React.Component {
             <p id={'modalError' + this.props.id} className="loginError"></p>
 
             <iframe src="../../../privacy.html" width="800" height="200" />
+            <div>
+              <input
+                type="checkbox"
+                onChange={this.handleChange.bind(this)}
+                />
+              <label>
+                個人情報の取り扱いについての内容に同意する
+              </label>
+            </div>
+
+            <div id="Agree">
+              <p>あわせて会員への登録をしますか?</p>
+
+              <label>はい</label>
+              <input type="radio" name="agree" />
+              
+              <label>いいえ</label>
+              <input type="radio" name="agree" defaultChecked={true}/>
+            </div>
 
             <button
+              id="Submit"
+              className="agree"
               name={this.props.id}
               onClick={this.onSubmit.bind(this)}
             >{this.props.button}</button>
@@ -52,23 +74,39 @@ export default class WorksEntry extends React.Component {
     );
   }
 
+  handleChange(e) {
+    if (e.target.checked) {
+      this.flag = true;
+    } else {
+      this.flag = false;
+    }
+    let el = document.getElementById('Submit');
+    if (this.flag) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  }
+
   onSubmit(e) {
-    let el = document.getElementById('modalError' + this.props.id);
-    el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
-    el.classList.add('active');
+    if (this.flag) {
+      let el = document.getElementById('modalError' + this.props.id);
+      el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
+      el.classList.add('active');
 
-    let obj = {
-      id: this.props.id,
-      name: this.props.name,
-      furi: this.props.furi,
-      tel:  this.props.tel,
-      mail: this.props.mail,
-      workid: this.props.workid,
-      worktitle: this.props.worktitle,
-      worktime: this.props.worktime
-    };
+      let obj = {
+        id: this.props.id,
+        name: this.props.name,
+        furi: this.props.furi,
+        tel:  this.props.tel,
+        mail: this.props.mail,
+        workid: this.props.workid,
+        worktitle: this.props.worktitle,
+        worktime: this.props.worktime
+      };
 
-    MemberActions.add(obj);
+      MemberActions.add(obj);
+    }
   }
 
   disableModal(e) {

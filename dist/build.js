@@ -9329,12 +9329,66 @@ var WorksDetail = function (_React$Component) {
         }
       }
 
-      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
+      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-login' }, _react2.default.createElement('img', {
         src: '/imgs/works/' + data.img + 'l.jpg',
         width: '180',
         height: '180',
         alt: 'img'
-      }), _react2.default.createElement('span', null, data.unit_wage, ': ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-contact' }, _react2.default.createElement('span', null, '電話でのお問い合わせは...'), data.tel)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
+      }), _react2.default.createElement('button', {
+        id: 'loginButton',
+        name: 'modalLogin',
+        onClick: this.enableLogin.bind(this)
+      }, '会員ログイン'), _react2.default.createElement('p', { id: 'loginMessage', className: 'pf-loginMessage' }), _react2.default.createElement('p', { id: 'loginStatus' }, 'もしくは…'), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '名前'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
+        type: 'text',
+        id: 'formName',
+        name: 'name',
+        value: this.state.form.name.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validateName.bind(this),
+        onChange: this.formUpdate.bind(this)
+      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'フリガナ'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
+        type: 'text',
+        id: 'formFuri',
+        name: 'furi',
+        value: this.state.form.furi.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validateFuri.bind(this),
+        onChange: this.formUpdate.bind(this)
+      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '電話番号'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
+        type: 'text',
+        id: 'formTel',
+        name: 'tel',
+        value: this.state.form.tel.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validateTel.bind(this),
+        onChange: this.formUpdate.bind(this)
+      }))), _react2.default.createElement('label', null, 'メールアドレス'), _react2.default.createElement('input', {
+        type: 'text',
+        id: 'formMail',
+        name: 'mail',
+        value: this.state.form.mail.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validateMail.bind(this),
+        onChange: this.formUpdate.bind(this)
+      }), _react2.default.createElement('label', null, 'メールアドレス再入力'), _react2.default.createElement('input', {
+        type: 'text',
+        id: 'formConfirm',
+        name: 'confirm',
+        value: this.state.form.confirm.val,
+        onFocus: this.formUpdate.bind(this),
+        onBlur: this.validateConfirm.bind(this),
+        onChange: this.formUpdate.bind(this)
+      }), _react2.default.createElement('p', { id: 'error', className: 'error' }, '赤枠の内容をご確認ください'), _react2.default.createElement('button', {
+        name: 'modalTel',
+        onClick: this.enableModal.bind(this)
+      }, modal[0].button), _react2.default.createElement('button', {
+        name: 'modalMail',
+        onClick: this.enableModal.bind(this)
+      }, modal[1].button), _react2.default.createElement('a', {
+        href: '#',
+        name: 'modalMerit',
+        onClick: this.enableMerit.bind(this)
+      }, '会員登録のメリットについて'))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, data.unit_wage, ': ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-contact' }, _react2.default.createElement('span', null, '電話でのお問い合わせは...'), data.tel)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
         key: '0',
         id: 'modalTel',
         body: modal[0].body,
@@ -9696,7 +9750,10 @@ var WorksEntry = function (_React$Component) {
   function WorksEntry(props) {
     _classCallCheck(this, WorksEntry);
 
-    return _possibleConstructorReturn(this, (WorksEntry.__proto__ || Object.getPrototypeOf(WorksEntry)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (WorksEntry.__proto__ || Object.getPrototypeOf(WorksEntry)).call(this, props));
+
+    _this.flag = false;
+    return _this;
   }
 
   _createClass(WorksEntry, [{
@@ -9713,30 +9770,52 @@ var WorksEntry = function (_React$Component) {
         alt: 'close'
       })), _react2.default.createElement('h1', null, this.props.title), _react2.default.createElement('div', null, '名前:  ', this.props.name, _react2.default.createElement('br', null), 'フリガナ: ', this.props.furi, _react2.default.createElement('br', null), '電話番号: ', this.props.tel, _react2.default.createElement('br', null), 'メールアドレス: ', this.props.mail), _react2.default.createElement('span', {
         dangerouslySetInnerHTML: { __html: this.props.body }
-      }), _react2.default.createElement('p', { id: 'modalError' + this.props.id, className: 'loginError' }), _react2.default.createElement('iframe', { src: '../../../privacy.html', width: '800', height: '200' }), _react2.default.createElement('button', {
+      }), _react2.default.createElement('p', { id: 'modalError' + this.props.id, className: 'loginError' }), _react2.default.createElement('iframe', { src: '../../../privacy.html', width: '800', height: '200' }), _react2.default.createElement('div', null, _react2.default.createElement('input', {
+        type: 'checkbox',
+        onChange: this.handleChange.bind(this)
+      }), _react2.default.createElement('label', null, '個人情報の取り扱いについての内容に同意する')), _react2.default.createElement('div', { id: 'Agree' }, _react2.default.createElement('p', null, 'あわせて会員への登録をしますか?'), _react2.default.createElement('label', null, 'はい'), _react2.default.createElement('input', { type: 'radio', name: 'agree' }), _react2.default.createElement('label', null, 'いいえ'), _react2.default.createElement('input', { type: 'radio', name: 'agree', defaultChecked: true })), _react2.default.createElement('button', {
+        id: 'Submit',
+        className: 'agree',
         name: this.props.id,
         onClick: this.onSubmit.bind(this)
       }, this.props.button)));
     }
   }, {
+    key: 'handleChange',
+    value: function handleChange(e) {
+      if (e.target.checked) {
+        this.flag = true;
+      } else {
+        this.flag = false;
+      }
+      var el = document.getElementById('Submit');
+      if (this.flag) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    }
+  }, {
     key: 'onSubmit',
     value: function onSubmit(e) {
-      var el = document.getElementById('modalError' + this.props.id);
-      el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
-      el.classList.add('active');
+      if (this.flag) {
+        var el = document.getElementById('modalError' + this.props.id);
+        el.innerHTML = 'ご応募ありがとうございました。メールをご確認ください';
+        el.classList.add('active');
 
-      var obj = {
-        id: this.props.id,
-        name: this.props.name,
-        furi: this.props.furi,
-        tel: this.props.tel,
-        mail: this.props.mail,
-        workid: this.props.workid,
-        worktitle: this.props.worktitle,
-        worktime: this.props.worktime
-      };
+        var obj = {
+          id: this.props.id,
+          name: this.props.name,
+          furi: this.props.furi,
+          tel: this.props.tel,
+          mail: this.props.mail,
+          workid: this.props.workid,
+          worktitle: this.props.worktitle,
+          worktime: this.props.worktime
+        };
 
-      _MemberActions2.default.add(obj);
+        _MemberActions2.default.add(obj);
+      }
     }
   }, {
     key: 'disableModal',
@@ -9846,7 +9925,7 @@ var WorksLogin = function (_React$Component) {
         width: '30',
         height: '30',
         alt: 'close'
-      })), _react2.default.createElement('h1', null, 'ログイン'), _react2.default.createElement('div', { className: 'login' }, _react2.default.createElement('label', null, 'メールアドレス'), _react2.default.createElement('input', {
+      })), _react2.default.createElement('h1', null, '会員ログイン'), _react2.default.createElement('div', { className: 'login' }, _react2.default.createElement('label', null, 'メールアドレス'), _react2.default.createElement('input', {
         type: 'text',
         id: 'loginId',
         name: 'id',

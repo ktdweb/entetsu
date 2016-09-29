@@ -40,7 +40,7 @@ export default class WorksLogin extends React.Component {
                 />
             </a>
 
-            <h1>ログイン</h1>
+            <h1>会員ログイン</h1>
             <div className="login">
               <label>メールアドレス</label>
               <input
