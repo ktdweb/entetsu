@@ -29,6 +29,7 @@
     "history": "*",
     "flux": "*",
     "redux": "*",
+    "react-redux": "*",
     "es6-promise": "*",
     "pixi": "*"
   },

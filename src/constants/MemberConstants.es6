@@ -5,6 +5,7 @@ const MemberConstants = keyMirror({
   ADD:      null,
   SET:      null,
   LOGIN:    null,
+  MEMBER_ADMIN_DELETE: null,
   UPDATE:   null,
   DESTROY:  null
 });

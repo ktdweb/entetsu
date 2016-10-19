@@ -32,6 +32,14 @@ function create(res) {
   _members = res;
 }
 
+function memberAdminDelete(id) {
+  Object.keys(_members).map((i) => {
+    if (_members[i].id == id) {
+      delete _members[i];
+    }
+  });
+}
+
 function add(res) {
   _members = res;
 }
@@ -97,6 +105,16 @@ Dispatcher.register( function(action) {
         login(res, action.callback);
       }).catch(e => {
         //console.error(e);
+      });
+      break;
+
+    case MemberConstants.MEMBER_ADMIN_DELETE:
+      let admin_delete = URL + 'admin/' + action.id;
+      http.delete(admin_delete).then(res => {
+        memberAdminDelete(action.id);
+        memberStore.update();
+      }).catch(e => {
+        // console.error(e);
       });
       break;
 

@@ -23,11 +23,39 @@ $app->group('/members', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'select * from `users`';
+            $sql = 'select * from `members`';
 
             if ($args['name']) {
                 $sql .= ' WHERE `name` = ?;';
                 $body = $db->execute($sql, $args['name']);
+            } else {
+                $body = $db->execute($sql);
+            }
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * GET
+     */
+    $this->get(
+        '/admin/{id:.*}',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'select * from `members`';
+
+            if ($args['id']) {
+                $sql .= ' WHERE `id` = ?;';
+                $body = $db->execute($sql, $args['id']);
             } else {
                 $body = $db->execute($sql);
             }
@@ -348,7 +376,7 @@ $app->group('/members', function () {
      * DELETE
      */
     $this->delete(
-        '/{id:[0-9]+}',
+        '/admin/{id:.*}',
         function (
             $request,
             $response,
@@ -356,7 +384,7 @@ $app->group('/members', function () {
         ) {
             $db = $this->get('db.delete');
 
-            $sql = 'DELETE FROM `users` ';
+            $sql = 'DELETE FROM `members` ';
             $sql .= 'WHERE `id` = ' . (int)$args['id'];
 
             $res = $db->execute($sql);
@@ -368,5 +396,4 @@ $app->group('/members', function () {
             );
         }
     );
-
 });

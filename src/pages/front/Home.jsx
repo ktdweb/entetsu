@@ -101,6 +101,30 @@ export default class Home extends React.Component {
             </tr>
           </tbody>
         </table>
+
+        {/*< div id="ActionPlan">
+
+          <h2>行動計画</h2>
+
+          <div>
+            <a href="/pdf/action_plan_a.pdf" target="_blank">
+              <span className="fa-stack fa-lg">
+                <i className="fa fa-arrow-circle-right"></i>
+              </span>
+              女性の就業生活における活躍の推進に関する法律に基づく一般事業主行動計画
+            </a>
+
+            <br />
+
+            <a href="/pdf/action_plan_b.pdf" target="_blank">
+              <span className="fa-stack fa-lg">
+                <i className="fa fa-arrow-circle-right"></i>
+              </span>
+              従業員の仕事と子育ての両立を支援するための一般事業主行動計画
+            </a>
+          </div>
+
+        </div>*/}
       </article>
     );
   }

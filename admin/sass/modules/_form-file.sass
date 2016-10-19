@@ -1,0 +1,14 @@
+/*
+  # modules/form-file.sass
+  // input[type=flie]のアピアランスを変更  
+  // prefixはなし
+  // input[type=flie]のappearanceをlabelで置換
+  // labelでinputをラップする必要がある
+  */
+
+label.formFile
+  display: inline-block
+  cursor: pointer
+  @extend button
+  & input[type=file]
+    display: none

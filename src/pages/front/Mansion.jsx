@@ -171,16 +171,16 @@ export default class MansionDetail extends React.Component {
           </p>
 
           <div className="pf-Detail-services">
-            <p value="5" onClick={this.onService.bind(this)} >その他</p>
-            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
-            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
-            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
             <p value="1" onClick={this.onService.bind(this)} >事務管理</p>
+            <p value="2" onClick={this.onService.bind(this)} >管理員</p>
+            <p value="3" onClick={this.onService.bind(this)} >清掃</p>
+            <p value="4" onClick={this.onService.bind(this)} >設備管理</p>
+            <p value="5" onClick={this.onService.bind(this)} >その他</p>
           </div>
 
           <div className="pf-Detail-services-desc">
             <p className="mgnBtm0"><strong>{this.state.service.title}</strong></p>
-            <p>{this.state.service.text}</p>
+            <p dangerouslySetInnerHTML={{ __html: this.state.service.text}} />
           </div>
         </section>
 
@@ -230,13 +230,13 @@ export default class MansionDetail extends React.Component {
           <div className="effect">
             <h3 className="text-right">アフターまで見据えた三位一体の遠鉄クオリティ</h3>
             
-            <p>
+            <p className="text-right">
               遠鉄の不動産と遠鉄アシストが連携し、入居者の皆様の末永い幸せのために、"しっかり造り、きちんと守る"体制を築いています。建物の強度、耐久性を見据えた信頼の構造・工法を採用し、入居後は資産価値の維持と快適な生活を実現すべく、細部にわたって管理を徹底。商品企画販売、品質管理、アフター管理の三位一体体制が生み出す遠鉄クオリティが弊社の強みです。
             
             </p>
             
             <h3>地元の優秀な人材と、地元の協力業者で見守る管理体制</h3>
-            <p>
+            <p className="text-right">
               地域密着だから優秀な人材を確保しています。 いざという時の緊急時も、地元の協力業者との連携をはかり対応しています。
             </p>
           </div>
@@ -252,47 +252,6 @@ export default class MansionDetail extends React.Component {
             
             <p>日常生活のステージであるマンションは、いざという時も待ったなし。もしもの時には緊急対応が不可欠です。遠鉄アシストでは24時間365日の緊急対応システムを備えるとともに、素早く対応します。</p>
             
-            <h3>登録・認定</h3>
-            <p>
-              ・建築物環境衛生総合管理業<br />
-              ・建築物飲料水貯水槽清掃業<br />
-              ・建築物ねずみ昆虫等防除業<br />
-              ・マンション管理業<br />
-              ・警備業
-            </p>
-            
-            <h3>主な技術有資格者</h3>
-            <p>
-              ・建築物環境衛生管理技術者<br /> 
-              ・消防設備士<br />
-              ・衛生管理者<br />
-              ・空気環境測定実施者<br /> 
-              ・統括管理者<br />
-              ・貯水槽清掃作業監督者<br />
-              ・清掃作業監督者<br />
-              ・電気工事施工管理技士<br />
-              ・ビルクリーニング技能士<br />
-              ・警備員指導教育責任者<br />
-              ・病院清掃受託責任者<br />
-              ・空調給排水監督者<br />
-              ・防除作業監督者<br />
-              ・排水管清掃作業監督者<br />
-              ・ボイラー技士<br />
-              ・建築設備検査資格者<br /> 
-              ・自衛消防業務<br />
-              ・電気工事士<br />
-              ・電気主任技術者<br />
-              ・管理業務主任者<br />
-              ・危険物取扱者<br />
-              ・冷凍機械責任者<br />
-              ・防火管理者<br />
-              ・消防設備点検資格者
-            </p>
-            
-            <p>
-              ※上記のほか、多くの資格保有者が
-              マンションの保守・管理に努めています。
-            </p>
           </div>
         </section>
       </article>
@@ -327,13 +286,13 @@ export default class MansionDetail extends React.Component {
   }
 
   oneByOne(e, txt, cnt) {
-    e.innerHTML = txt.substr(0, cnt);
-    let now = e.innerHTML; 
-    cnt++;
+    // e.innerHTML = txt.substr(0, cnt);
+    // let now = e.innerHTML; 
+    // cnt++;
 
-    if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
-    }
+    // if (txt.length >= cnt) {
+    //   setTimeout(this.oneByOne.bind(this, e, txt, cnt), 60);
+    // }
   }
 
   getScrollTop() {
@@ -353,27 +312,27 @@ text: ''
 
 {
 title: '管理運営がよりスムーズに',
-text: '管理組合様のスムーズな管理運営をサポートすべく、会計、出納事務をはじめ、マンションの維持修繕に関する企画、調整業務、理事会・総会支援業務、図書、関連書類の管理等を一括してお引き受けいたします。',
+  text: '管理組合様をサポートすべく、会計、出納事務をはじめ、<br />マンションの維持修繕に関する企画又は実施の調整、<br />理事会・総会支援業務、図書、関連書類の管理等を一括してお引き受けいたします。',
 },
 
 {
 title: '安全・安心・快適を見据えて',
-text: '入居者の皆様が日々、安全・安心・快適に生活できるよう、マンションを訪問される方への対応、ライフラインや設備など各種点検の立ち合いを日常的または定期的に行います。入居者の皆様からのご質問やご相談も承り、必要に応じて管理組合様にご報告いたします。',
+  text: '入居者の皆様が日々、安全・安心・快適に生活できるよう、マンションを訪問される方への対応、<br />ライフラインや設備など各種点検の立ち合いを日常的または定期的に行います。<br />入居者の皆様からのご質問やご相談も承り、必要に応じて対応いたします。',
 },
 
 {
 title: '美しく衛生的な居住環境を実現',
-text: 'マンションの美観を維持し、清潔で快適な環境を整えるために、マンションの敷地内外や建物、設備などの共用部分の清掃を日常的または定期的に行います。',
+  text: 'マンションの美観を維持し、清潔で快適な環境を整えるために、<br />マンションの敷地内、建物などの共用部分の清掃を日常的または定期的に行います。',
 },
 
 {
 title: '建物設備の異常は迅速に対応',
-text: 'マンションの建物や設備の異常をいち早く発見し、トラブルを未然に防ぐために、建物や設備を定期的に点検・検査します。また、これらのデータをもとに、経年劣化を踏まえた修繕や保守の必要性についてご提案します。',
+  text: 'マンションの建物や設備の異常をいち早く発見し、<br />トラブルを未然に防ぐために、建物や設備を定期的に点検します。<br />また、これらのデータをもとに、経年劣化を踏まえた修繕や保守の必要性についてご提案します。',
 },
 
 {
 title: '',
-text: 'お客様のニーズに合わせてお部屋の修繕、リフォーム、ハウスクリーニングを行います。また、お部屋を売却（買取含む）又は賃貸されたい方のご相談を遠鉄の不動産で承ります。',
+  text: 'お客様のニーズに合わせたお部屋の修繕、リフォーム、ハウスクリーニングを行います。<br />また、お部屋を売却（買取含む）又は賃貸されたい方のご相談を遠鉄の不動産で承ります。',
 },
 ]
 

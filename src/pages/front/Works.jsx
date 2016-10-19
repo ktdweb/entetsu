@@ -372,10 +372,6 @@ export default class Works extends React.Component {
               検索結果
             </div>
 
-            <nav className="pf-Works-Paging">
-              {pages}
-            </nav>
-
             <section>
               <div>
                 <a
@@ -409,6 +405,10 @@ export default class Works extends React.Component {
                 </a>
               </div>
             </section>
+
+            <nav className="pf-Works-Paging">
+              {pages}
+            </nav>
           </div>
 
           <div className="pf-Works-Search">
@@ -446,10 +446,12 @@ export default class Works extends React.Component {
             <input
               type="text"
               id="keyword"
-              defaultValue="フリーワード検索"
-              onKeyDown={this.getKeyword.bind(this)}
+              placeholder="キーワード検索"
               onFocus={this.clearValue.bind(this)}
               />
+            <button
+              onClick={this.getKeyword.bind(this)}
+              >検索</button>
           </div>
         </div>
         </div>
@@ -492,10 +494,10 @@ export default class Works extends React.Component {
     el.style.left =  start * 5 + 'px';
     el.style.width = (end * 5) - (start * 5) + 'px';
 
-    if (this.state.search.keyword == '') {
-      let k = document.getElementById('keyword');
-      k.value = 'フリーワード検索';
-    }
+    // if (this.state.search.keyword == '') {
+    //   let k = document.getElementById('keyword');
+    //   k.value = 'フリーワード検索';
+    // }
   }
 
   closeUp(e) {
@@ -508,13 +510,15 @@ export default class Works extends React.Component {
 
   scrollMotion(to) {
     let t = 0;
-    let b = window.scrollY;
+    let b = document.body.scrollTop || document.documentElement.scrollTop;
     let c = 820 - b;
     let d = 2000 / 10;
 
     let interval = setInterval(function() {
       let step = easeInOut(t, b, c, d);
-      if (window.scrollY < to) {
+      let y = document.body.scrollTop || document.documentElement.scrollTop;
+
+      if (y < to) {
         window.scrollTo(0, step);
         t++;
       } else {
@@ -605,15 +609,15 @@ export default class Works extends React.Component {
   }
 
   getKeyword(e) {
-    if (e.keyCode == 13) {
-      SearchActions.updateField('page', 1);
-      SearchActions.updateField('keyword', e.target.value);
-      SearchActions.updateField('slider_start', 0);
-      SearchActions.updateField('slider_end', 75);
-      SearchActions.updateField('slider_flag', false);
-      SearchActions.updateField('category', '');
-      WorkActions.keyword(e.target.value);
-    }
+    let el = document.getElementById('keyword');
+    console.log(el.value);
+    SearchActions.updateField('page', 1);
+    SearchActions.updateField('keyword', el.value);
+    SearchActions.updateField('slider_start', 0);
+    SearchActions.updateField('slider_end', 75);
+    SearchActions.updateField('slider_flag', false);
+    SearchActions.updateField('category', '');
+    WorkActions.keyword(el.value);
   }
 
   fadeIn() {
@@ -734,7 +738,7 @@ class Column extends React.Component {
           </div>
 
           <div className="pf-Works-List-column-footer">
-            <span>時給: {data.abbr_wage}円</span>
+            <span>{data.unit_wage}: {data.abbr_wage}円</span>
             <span>{data.abbr_time}</span>
           </div>
         </li>

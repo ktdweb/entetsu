@@ -10,10 +10,15 @@ const URL = '/api/works/';
 let _works = [
   {
     id: '',
+    section_id: 1,
     title: '',
     detail: '',
     location: '',
     time: '',
+    time_start: '',
+    time_end: '',
+    entry_start: '',
+    entry_end: '',
     break: '',
     wage: '',
     days: '',
@@ -24,12 +29,22 @@ let _works = [
     selling: '',
     cert: '',
     desc: '',
-    img: ''
+    img: '',
+    tel: '',
+    email: ''
   }
 ];
 
 function create(res) {
   _works = res;
+}
+
+function adminDelete(id) {
+  Object.keys(_works).map((i) => {
+    if (_works[i].id == id) {
+      delete _works[i];
+    }
+  });
 }
 
 function update(id, updates) {
@@ -96,6 +111,36 @@ Dispatcher.register( function(action) {
         workStore.update();
       }).catch(e => {
         //console.error(e);
+      });
+      break;
+
+    case WorkConstants.ADMIN_GET:
+      let admin_get = URL + 'admin/' + action.id;
+      http.get(admin_get).then(res => {
+        create(res);
+        workStore.update();
+      }).catch(e => {
+        //console.error(e);
+      });
+      break;
+
+    case WorkConstants.ADMIN_EACH:
+      let admin_each = URL + 'admin/each/' + action.id;
+      http.get(admin_each).then(res => {
+        create(res);
+        workStore.update();
+      }).catch(e => {
+        // console.error(e);
+      });
+      break;
+
+    case WorkConstants.ADMIN_DELETE:
+      let admin_delete = URL + 'admin/' + action.id;
+      http.delete(admin_delete).then(res => {
+        adminDelete(action.id);
+        workStore.update();
+      }).catch(e => {
+        // console.error(e);
       });
       break;
 

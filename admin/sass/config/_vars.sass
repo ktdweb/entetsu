@@ -21,13 +21,12 @@ $base-border: 1px solid $base-border-color
 $base-border-radius: 3px
 
 // # form
-// デフォルトのborderとborder-radiusを設定
+// デフォルトのborderとborder-radius, focusを設定
+// focusではoutlineではなく、box-shadowを使う
 
-$form-border-color:     $base-border-color
-$form-border-radius:    $base-border-radius
-$form-bg:               $gray-lighter
-$form-color-required:   $brand-danger
-$form-color-note:       $brand-danger
+$form-focus: 0 0 0 1px $form-color-focus
+$form-border: 1px solid $form-border-color
+$form-border-radius: $base-border-radius
 
 // # animation
 // * アニメーションの長さ

@@ -34,9 +34,9 @@
 
   & > div
     position: relative
-    margin: 200px auto
+    margin: 40px auto
     padding: 20px
-    width: 680px
+    width: 840px
     height: auto
     text-align: center
     color: $color-works-base
@@ -54,7 +54,7 @@
       border-radius: 10px
 
     & > div
-      width: 400px
+      width: 560px
       color: $color-works-base
       margin: $small-spacing auto
       font-size: $small-font-size
@@ -78,7 +78,7 @@
         color: #aaa
         &.active
           border: 1px solid $color-works-error
-          +animation(blink 0.2s linear 0.2s 2 forwards)
+          // +animation(blink 0.2s linear 0.2s 2 forwards)
 
     p.loginError
       visibility: hidden
@@ -87,7 +87,7 @@
       font-size: $small-font-size * 1.2
       &.active
         visibility: visible 
-        +animation(blink 0.2s linear 0.2s 2 forwards)
+        // +animation(blink 0.2s linear 0.2s 2 forwards)
 
     & > a.modalLink
       display: block
@@ -120,3 +120,35 @@
     padding: 0
     border-radius: 20px
     background-color: $color-works-base
+
+  button.agree
+    background-color: #ccc
+    +transition(all 0.5s ease-in-out)
+    &.active
+      background-color: $color-works-base
+
+  h5
+    font-size: $base-font-size * 0.9
+    margin-top: $base-spacing
+    margin-bottom: 0
+    strong
+      font-weight: bold
+
+  iframe
+    border: 1px solid $color-works-base
+    overflow-y: scroll
+
+  iframe+div
+    font-size: $base-font-size * 0.9
+    border: none
+    margin: 0
+    padding: 0
+    text-align: left
+    width: auto
+    input
+      margin-left: 0
+
+  div#Agree
+    font-size: $base-font-size * 0.9
+    border: none
+    

@@ -211,7 +211,7 @@ export default class Company extends React.Component {
             
                 <tr>
                   <td>従業員</td>
-                  <td>647名 （2015年3月31日現在）</td>
+                  <td>823名 （2016年3月31日現在）</td>
                 </tr>
             
                 <tr>
@@ -252,7 +252,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>1999年7月21日</td>
                 <td>
-                  資本金10,000千円をもって設立、取締役社長に関利彦就任
+                  資本金10,000千円をもって設立、取締役社長に関利彦氏就任
                 </td>
               </tr>
 
@@ -280,22 +280,28 @@ export default class Company extends React.Component {
               <tr>
                 <td>2001年6月27日</td>
                 <td>
-                  取締役社長に村松修就任
+                  取締役社長に村松修氏就任
+                </td>
+              </tr>
+
+              <tr>
+                <td>2001年8月1日</td>
+                <td>
+                  有料職業紹介事業許可を受ける
                 </td>
               </tr>
 
               <tr>
                 <td>2002年6月27日</td>
                 <td>
-                  取締役社長に斉藤薫就任
+                  取締役社長に斉藤薫氏就任
                 </td>
               </tr>
 
               <tr>
                 <td>2002年7月1日</td>
                 <td>
-                  遠鉄グループ事業再編により株式会社遠鉄総合ビルサービス（現・遠鉄建設）から
-                  ビル管理・清掃部門とマンション管理部門を営業譲受
+                  遠鉄グループ事業再編により株式会社遠鉄総合ビルサービス（現・遠鉄建設）から建物管理部門と清掃部門を営業譲受
                 </td>
               </tr>
 
@@ -309,7 +315,7 @@ export default class Company extends React.Component {
               <tr>
                 <td>2007年6月28日</td>
                 <td>
-                  取締役社長に内山芳実就任
+                  取締役社長に内山芳実氏就任
                 </td>
               </tr>
 
@@ -321,18 +327,33 @@ export default class Company extends React.Component {
               </tr>
 
               <tr>
-                <td>2011年6月29日	</td>
+                <td>2011年6月30日</td>
                 <td>
-                  取締役社長に藤野聡就任
+                  本社を浜松市中区旭町へ移転
                 </td>
               </tr>
 
               <tr>
-                <td>2011年10月24日	</td>
+                <td>2011年10月24日</td>
                 <td>
-                  本社を伝馬町より旭町（現住所）へ移転
+                  取締役社長に藤野聡氏就任
                 </td>
               </tr>
+
+              <tr>
+                <td>2015年2月6日</td>
+                <td>
+                  ベンリー遠鉄浜松富塚店オープン
+                </td>
+              </tr>
+
+              <tr>
+                <td>2015年10月1日</td>
+                <td>
+                  遠州鉄道株式会社から食品検査部門を営業譲受
+                </td>
+              </tr>
+
 
             </tbody>
           </table>
@@ -397,7 +418,7 @@ export default class Company extends React.Component {
               <li><a href="http://www.entetsuassist-dms.com/sanaru-park/" target="_blank">佐鳴湖公園</a></li>
               <li><a href="http://www.orange.ne.jp/~ulotto/" target="_blank">浜名湖体験学習施設　ウォット</a></li>
               <li><a href="http://www.shouintei.jp/" target="_blank">浜松市茶室　松韻亭</a></li>
-              <li>リベーラ磐田市営駐車場</li>
+              <li><a href="http://www.entetsuassist-dms.com/iwata-p/" target="_blank">リベーラ磐田市営駐車場</a></li>
             </ul>
             
             <p>
@@ -462,13 +483,13 @@ export default class Company extends React.Component {
   }
 
   oneByOne(e, txt, cnt) {
-    e.innerHTML = txt.substr(0, cnt);
-    let now = e.innerHTML; 
-    cnt++;
+    // e.innerHTML = txt.substr(0, cnt);
+    // let now = e.innerHTML; 
+    // cnt++;
 
-    if (txt.length >= cnt) {
-      setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
-    }
+    // if (txt.length >= cnt) {
+    //   setTimeout(this.oneByOne.bind(this, e, txt, cnt), 120);
+    // }
   }
 
   getScrollTop() {

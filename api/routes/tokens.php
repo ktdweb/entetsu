@@ -31,7 +31,7 @@ $app->group('/tokens', function () {
             $res = $db->execute($sql, $body['token']);
             $res = $res[0]->created;
 
-            $created = strtotime("+5 minute", strtotime($res));
+            $created = strtotime("+24 hour", strtotime($res));
             $now = strtotime('now');
             if ($created < $now) {
                 $res = array();

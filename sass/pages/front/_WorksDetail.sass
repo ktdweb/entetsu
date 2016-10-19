@@ -47,18 +47,35 @@ article#WorksDetail
 
       div.pf-Works-Detail-column
         position: relative
-        width: 70%
+        // width: 70%
+        width: 100%
         $path: '../imgs/pages/works/list_column.png'
         +border-image(url($path) 120 repeat)
         border-width: 45px
         background-color: white
         font-size: $base-font-size * 0.85
 
+        img
+          border: 1px solid $color-works-base
+          margin-bottom: $base-spacing
+
         div.pf-Works-Detail-column-head
           position: absolute
           top: -36px
           left: -5px
           right: -10px
+
+        div.pf-Works-Detail-contact
+          padding: $small-spacing
+          font-weight: bold
+          color: $color-works-base
+          font-size: $heading-font-size
+          text-align: center
+          border: 2px solid $color-works-base
+          border-radius: 5px
+          span
+            margin-right: $base-spacing
+            font-weight: normal
 
         div.pf-Works-Detail-column-section
           display: table
@@ -127,7 +144,7 @@ article#WorksDetail
           font-size: $small-font-size * 1.25
           &.active
             visibility: visible 
-            +animation(blink 0.2s linear 0.2s 2 forwards)
+            // +animation(blink 0.2s linear 0.2s 2 forwards)
 
 
         p
@@ -145,7 +162,7 @@ article#WorksDetail
           border: 1px solid $color-works-base
           &.active
             border: 1px solid $color-works-error
-            +animation(blink 0.2s linear 0.2s 2 forwards)
+            // +animation(blink 0.2s linear 0.2s 2 forwards)
 
         p.error
           visibility: hidden 
@@ -154,7 +171,7 @@ article#WorksDetail
           font-size: $small-font-size * 1.2
           &.active
             visibility: visible 
-            +animation(blink 0.2s linear 0.2s 2 forwards)
+            // +animation(blink 0.2s linear 0.2s 2 forwards)
 
 
         & > div
@@ -178,7 +195,7 @@ article#WorksDetail
           button
             width: 100%
             height: 30px
-            margin: 0 auto
+            margin: 0 auto $small-spacing
             color: white
             font-size: $small-font-size
             line-height: 20px

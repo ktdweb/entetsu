@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-export default class Admin extends React.Component {
+export default class Default extends React.Component {
 
   constructor(props) {
     super(props);
 
-    document.body.setAttribute('id', 'ready-Admin');
+    document.body.setAttribute('id', 'ready-Front');
   }
 
   componentWillMount() {}
@@ -15,10 +15,12 @@ export default class Admin extends React.Component {
 
   render() {
     return (
-      <div id="Admin">
-        <h1>Admin</h1>
+      <div id="Default">
         {this.props.header}
-        {this.props.main}
+        <div id="Main">
+          {this.props.nav}
+          {this.props.main}
+        </div>
       </div>
     );
   }

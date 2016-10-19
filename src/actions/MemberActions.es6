@@ -38,6 +38,13 @@ export default {
     })
   },
 
+  memberAdminDelete: (id) => {
+    Dispatcher.dispatch({
+      actionType: MemberConstants.MEMBER_ADMIN_DELETE,
+      id: id
+    })
+  },
+
   destroy: () => {
     Dispatcher.dispatch({
       actionType: MemberConstants.DESTROY

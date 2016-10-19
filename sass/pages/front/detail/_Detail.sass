@@ -48,8 +48,8 @@ div.pf-Detail-services
   p
     position: relative
     float: right
-    width: 9rem
-    height: 9rem
+    width: 10rem
+    height: 10rem
     padding-top: 2rem
     margin-left: 0.5rem
     color: white
@@ -71,7 +71,7 @@ div.pf-Detail-services-desc
   height: 120px
   p 
     +fadeIn()
-    font-size: $small-font-size
+    font-size: $small-font-size * 0.90
     line-height: $base-spacing
     color: white
   p:first-child
@@ -115,6 +115,11 @@ section
     margin-left: auto
     text-align: right
 
+    .effect
+      p
+        text-align: justify
+        font-size: $small-font-size * 1.15
+
   /*
     # section.odd.reverse
     サービス内の文字を白くする
@@ -131,3 +136,8 @@ div.wrapper
   & > div
     position: absolute
 
+
+@media all and (-ms-high-contrast:none)
+  .effect
+    p
+      margin-right: -1rem

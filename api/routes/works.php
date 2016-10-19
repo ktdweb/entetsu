@@ -27,7 +27,11 @@ $app->group('/works', function () {
             $sql  = 'SELECT `works`.* FROM `tags` ';
             $sql .= 'INNER JOIN `works` ON ';
             $sql .= '`tags`.`work_id` = `works`.`id` ';
-            $sql .= 'WHERE `tags`.`category_id` = ?';
+            $sql .= 'WHERE (`tags`.`category_id` = ?)';
+            $sql .= ' AND ( `entry_end` > NOW() ';
+            $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ( `entry_start` < NOW() ';
+            $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
             $body = $db->execute($sql, $args['id']);
 
             return $response->withJson(
@@ -55,6 +59,10 @@ $app->group('/works', function () {
 
             $sql  = 'SELECT `works`.* FROM `works` ';
             $sql .= 'WHERE (`time_start` >= ?) AND (`time_end` <= ?)';
+            $sql .= ' AND ( `entry_end` > NOW() ';
+            $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ( `entry_start` < NOW() ';
+            $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
             $body = $db->execute($sql, array($start, $end));
 
             return $response->withJson(
@@ -79,12 +87,17 @@ $app->group('/works', function () {
 
             $key = $args['keyword'];
             $sql  = 'SELECT `works`.* FROM `works` WHERE ';
+            $sql .= ' ( `entry_end` > NOW() ';
+            $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ( `entry_start` < NOW() ';
+            $sql .= " OR `entry_start` = '0000-00-00 00:00:00' ) AND ";
+            $sql .= "( (`title` LIKE '%" .$key . "%') OR ";
             $sql .= "(`detail` LIKE '%" .$key . "%') OR ";
             $sql .= "(`location` LIKE '%" .$key . "%') OR ";
             $sql .= "(`wage` LIKE '%" .$key . "%') OR ";
             $sql .= "(`type` LIKE '%" .$key . "%') OR ";
             $sql .= "(`selling` LIKE '%" .$key . "%') OR ";
-            $sql .= "(`desc` LIKE '%" .$key . "%');";
+            $sql .= "(`desc` LIKE '%" .$key . "%') )";
             $body = $db->execute($sql);
 
             return $response->withJson(
@@ -100,6 +113,71 @@ $app->group('/works', function () {
      * GET
      */
     $this->get(
+        '/admin/each/{id:.*}',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+
+            $sql .= ' WHERE `works`.`id` = ? LIMIT 1';
+            $body = $db->execute($sql, $args['id']);
+
+            $sql = 'SELECT `category_id` FROM `tags`';
+            $sql .= ' WHERE `work_id` = ?';
+            $tags = $db->execute($sql, $args['id']);
+
+            foreach ($tags as $val) {
+                $body['tags'][] = $val->category_id;
+            }
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+
+    /**
+     * GET
+     */
+    $this->get(
+        '/admin/{id:.*}',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+
+            if (is_numeric($args['id'])) {
+                $sql .= ' WHERE `works`.`section_id` = ?';
+                $body = $db->execute($sql, $args['id']);
+            } else {
+                $body = $db->execute($sql);
+            }
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * GET
+     */
+    $this->get(
         '/{name:.*}',
         function (
             $request,
@@ -107,12 +185,19 @@ $app->group('/works', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'select * from `works`';
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
 
-            if ($args['name']) {
-                $sql .= ' WHERE `name` = ?;';
-                $body = $db->execute($sql, $args['name']);
+            if ($args['name'] == 'admin') {
+                $body = $db->execute($sql);
             } else {
+                $sql .= ' WHERE ';
+                $sql .= ' ( `works`.`entry_end` > NOW() ';
+                $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
+                $sql .= ' AND ';
+                $sql .= ' ( `works`.`entry_start` < NOW() ';
+                $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
                 $body = $db->execute($sql);
             }
 
@@ -193,7 +278,7 @@ $app->group('/works', function () {
      * DELETE
      */
     $this->delete(
-        '/{id:[0-9]+}',
+        '/admin/{id:.*}',
         function (
             $request,
             $response,
@@ -201,9 +286,12 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.delete');
 
-            $sql = 'DELETE FROM `users` ';
+            $sql = 'DELETE FROM `works` ';
             $sql .= 'WHERE `id` = ' . (int)$args['id'];
+            $res = $db->execute($sql);
 
+            $sql = 'DELETE FROM `tags` ';
+            $sql .= 'WHERE `work_id` = ' . (int)$args['id'];
             $res = $db->execute($sql);
 
             return $response->withJson(
@@ -213,5 +301,4 @@ $app->group('/works', function () {
             );
         }
     );
-
 });

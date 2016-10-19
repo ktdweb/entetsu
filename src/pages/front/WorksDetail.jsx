@@ -13,6 +13,7 @@ import EntryActions from '../../actions/EntryActions'
 
 import WorksEntry from './WorksEntry' 
 import WorksLogin from './WorksLogin' 
+import WorksMerit from './WorksMerit' 
 
 export default class WorksDetail extends React.Component {
 
@@ -71,6 +72,7 @@ export default class WorksDetail extends React.Component {
               検索結果
             </div>
 
+            {/*
             <div className="pf-Works-Detail-login">
               <img
                 src={'/imgs/works/' + data.img + 'l.jpg'}
@@ -83,7 +85,7 @@ export default class WorksDetail extends React.Component {
                 id="loginButton"
                 name="modalLogin"
                 onClick={this.enableLogin.bind(this)}
-              >ログイン</button>
+              >会員ログイン</button>
 
               <p id="loginMessage" className="pf-loginMessage"></p>
               <p id="loginStatus">もしくは…</p>
@@ -165,15 +167,22 @@ export default class WorksDetail extends React.Component {
                   onClick={this.enableModal.bind(this)}
                 >{modal[0].button}</button>
 
-                もしくは…
 
                 <button
                   name="modalMail"
                   onClick={this.enableModal.bind(this)}
                 >{modal[1].button}</button>
 
+                <a
+                  href="#"
+                  name="modalMerit"
+                  onClick={this.enableMerit.bind(this)}
+                  >
+                会員登録のメリットについて
+                </a>
               </div>
             </div>
+            */}
 
             <div className="pf-Works-Detail-column">
               <div className="pf-Works-Detail-column-head">
@@ -182,7 +191,13 @@ export default class WorksDetail extends React.Component {
 
               <div className="pf-Works-Detail-column-section">
                 <div>
-                  <span>時給: {data.abbr_wage}円</span>
+                  {/*<img
+                    src={'/imgs/works/' + data.img + 'l.jpg'}
+                    width="180"
+                    height="180"
+                    alt="img"
+                    />*/}
+                  <span>{data.unit_wage}: {data.abbr_wage}円</span>
                   <span>{data.abbr_time}</span>
                 </div>
 
@@ -251,12 +266,16 @@ export default class WorksDetail extends React.Component {
                     <dt>備考</dt>
                     <dd>{data.desc}</dd>
                   </dl>
+
                 </div>
+              </div>
+
+              <div className="pf-Works-Detail-contact">
+                <span>電話でのお問い合わせは...</span>{data.tel}
               </div>
             </div>
           </div>
         </div>
-
         <div className="pf-Works-Detail-footer">
           {/*
           <a href="/works/cateogry/7">
@@ -288,7 +307,7 @@ export default class WorksDetail extends React.Component {
           id="modalMail"
           body={modal[1].body}
           button={modal[1].button}
-          title={modal[0].title}
+          title={modal[1].title}
           name={this.state.form.name.val}
           furi={this.state.form.furi.val}
           tel= {this.state.form.tel.val}
@@ -302,6 +321,12 @@ export default class WorksDetail extends React.Component {
           key="2"
           id="modalLogin"
           changeLoginStatus={this.changeLoginStatus.bind(this)}
+          />
+
+        <WorksMerit
+          key="3"
+          id="modalMerit"
+          title={modal[2].title}
           />
       </article>
     );
@@ -477,6 +502,7 @@ export default class WorksDetail extends React.Component {
    */
   enableModal(e) {
     let error = document.getElementById('error');
+    window.scroll(0,0);
 
     if (this.onSubmit()) {
       error.classList.remove('active');
@@ -515,6 +541,17 @@ export default class WorksDetail extends React.Component {
     }
   }
 
+  /*
+   * メリット
+   */
+  enableMerit(e) {
+      let el = document.getElementById(e.target.name);
+      el.classList.toggle('enable');
+
+      let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+      el.style.height = height + 'px'; 
+  }
+
   updateState() {
     let res = WorkStore.read();
     let total = res.length;
@@ -533,13 +570,19 @@ let modal = new Array();
 modal = [
   {
     title: '応募内容のご確認',
-    body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ「電話にて連絡を希望する」を<br />クリックしてください。</p>',
+    body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「担当者からすぐ連絡を希望する」をクリックしてください。</p>',
     button: '担当者からすぐ連絡を希望する'
   },
 
   {
     title: '応募内容のご確認',
-    body: '<p>弊社スタッフより、お仕事のご紹介や、<br />ご都合のご確認として、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ「メールにて連絡を希望する」を<br />クリックしてください。</p>',
+    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
     button: 'メールにて連絡を希望する'
+  },
+
+  {
+    title: '会員登録のメリットについて',
+    body: '当サイトでは会員登録せずとも、ご希望のお仕事に応募することも可能です。<br />会員にご登録頂きますと、都度お客様の情報を入力せずに、<br />メールアドレスとパスワードのみで応募ができるようになります。<br />また会員情報をもとに、有益な情報をお送りする場合もございます。<br />ぜひこの機会にご登録ください。',
+    button: null 
   }
 ];
