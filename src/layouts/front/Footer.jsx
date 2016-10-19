@@ -147,6 +147,15 @@ export default class Footer extends React.Component {
                 </a>
                 </li>
 
+              <li className="twoLine">
+                <a
+                  href="/pdf/work.pdf"
+                  target="_blank"
+                  >
+                  労働者派遣事業に係る<br />情報提供
+                </a>
+                </li>
+
             </ul>
           </div>
         </nav>

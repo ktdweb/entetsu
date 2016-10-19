@@ -2079,7 +2079,10 @@ var Footer = function (_React$Component) {
       }, '個人情報保護方針')), _react2.default.createElement('li', null, _react2.default.createElement('a', {
         href: '/pdf/douisho.pdf',
         target: '_blank'
-      }, '採用応募者同意書'))))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
+      }, '採用応募者同意書')), _react2.default.createElement('li', { className: 'twoLine' }, _react2.default.createElement('a', {
+        href: '/pdf/work.pdf',
+        target: '_blank'
+      }, '労働者派遣事業に係る', _react2.default.createElement('br', null), '情報提供'))))), _react2.default.createElement('div', { className: 'lf-external' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, '公共事業リンク'), _react2.default.createElement('p', null, _react2.default.createElement('a', {
         target: '_blank',
         href: 'http://www.entetsuassist-dms.com/hamamatsu-jyo/'
       }, _react2.default.createElement('img', {
@@ -9329,66 +9332,7 @@ var WorksDetail = function (_React$Component) {
         }
       }
 
-      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-login' }, _react2.default.createElement('img', {
-        src: '/imgs/works/' + data.img + 'l.jpg',
-        width: '180',
-        height: '180',
-        alt: 'img'
-      }), _react2.default.createElement('button', {
-        id: 'loginButton',
-        name: 'modalLogin',
-        onClick: this.enableLogin.bind(this)
-      }, '会員ログイン'), _react2.default.createElement('p', { id: 'loginMessage', className: 'pf-loginMessage' }), _react2.default.createElement('p', { id: 'loginStatus' }, 'もしくは…'), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '名前'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formName',
-        name: 'name',
-        value: this.state.form.name.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateName.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'フリガナ'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formFuri',
-        name: 'furi',
-        value: this.state.form.furi.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateFuri.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '電話番号'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formTel',
-        name: 'tel',
-        value: this.state.form.tel.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateTel.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }))), _react2.default.createElement('label', null, 'メールアドレス'), _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formMail',
-        name: 'mail',
-        value: this.state.form.mail.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateMail.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }), _react2.default.createElement('label', null, 'メールアドレス再入力'), _react2.default.createElement('input', {
-        type: 'text',
-        id: 'formConfirm',
-        name: 'confirm',
-        value: this.state.form.confirm.val,
-        onFocus: this.formUpdate.bind(this),
-        onBlur: this.validateConfirm.bind(this),
-        onChange: this.formUpdate.bind(this)
-      }), _react2.default.createElement('p', { id: 'error', className: 'error' }, '赤枠の内容をご確認ください'), _react2.default.createElement('button', {
-        name: 'modalTel',
-        onClick: this.enableModal.bind(this)
-      }, modal[0].button), _react2.default.createElement('button', {
-        name: 'modalMail',
-        onClick: this.enableModal.bind(this)
-      }, modal[1].button), _react2.default.createElement('a', {
-        href: '#',
-        name: 'modalMerit',
-        onClick: this.enableMerit.bind(this)
-      }, '会員登録のメリットについて'))), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, data.unit_wage, ': ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-contact' }, _react2.default.createElement('span', null, '電話でのお問い合わせは...'), data.tel)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
+      return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, data.unit_wage, ': ', data.abbr_wage, '円'), _react2.default.createElement('span', null, data.abbr_time)), _react2.default.createElement('div', null, _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '仕事の内容'), _react2.default.createElement('dd', null, data.detail)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '勤務地'), _react2.default.createElement('dd', null, data.location)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間'), _react2.default.createElement('dd', null, data.time)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, data.break)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '給与'), _react2.default.createElement('dd', null, data.wage)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '日数'), _react2.default.createElement('dd', null, data.days)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休日'), _react2.default.createElement('dd', null, data.holidays)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, data.type)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, data.term)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '学歴'), _react2.default.createElement('dd', null, data.career)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '職場の雰囲気'), _react2.default.createElement('dd', null, data.selling)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '資格'), _react2.default.createElement('dd', null, data.cert)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, data.desc)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-contact' }, _react2.default.createElement('span', null, '電話でのお問い合わせは...'), data.tel)))), _react2.default.createElement('div', { className: 'pf-Works-Detail-footer' }, _react2.default.createElement(_reactRouter.Link, { to: '/works/result' }, _react2.default.createElement('button', null, '戻る'))), _react2.default.createElement(_WorksEntry2.default, {
         key: '0',
         id: 'modalTel',
         body: modal[0].body,
@@ -9677,11 +9621,11 @@ exports.default = WorksDetail;
 var modal = new Array();
 modal = [{
   title: '応募内容のご確認',
-  body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「担当者からすぐ連絡を希望する」をクリックしてください。</p>',
+  body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「担当者からすぐ連絡を希望する」をクリックしてください。</p>',
   button: '担当者からすぐ連絡を希望する'
 }, {
   title: '応募内容のご確認',
-  body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
+  body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
   button: 'メールにて連絡を希望する'
 }, {
   title: '会員登録のメリットについて',
@@ -9773,7 +9717,7 @@ var WorksEntry = function (_React$Component) {
       }), _react2.default.createElement('p', { id: 'modalError' + this.props.id, className: 'loginError' }), _react2.default.createElement('iframe', { src: '../../../privacy.html', width: '800', height: '200' }), _react2.default.createElement('div', null, _react2.default.createElement('input', {
         type: 'checkbox',
         onChange: this.handleChange.bind(this)
-      }), _react2.default.createElement('label', null, '個人情報の取り扱いについての内容に同意する')), _react2.default.createElement('div', { id: 'Agree' }, _react2.default.createElement('p', null, 'あわせて会員への登録をしますか?'), _react2.default.createElement('label', null, 'はい'), _react2.default.createElement('input', { type: 'radio', name: 'agree' }), _react2.default.createElement('label', null, 'いいえ'), _react2.default.createElement('input', { type: 'radio', name: 'agree', defaultChecked: true })), _react2.default.createElement('button', {
+      }), _react2.default.createElement('label', null, '個人情報の取り扱いについての内容に同意する')), _react2.default.createElement('div', { id: 'Agree' }, _react2.default.createElement('p', null, '会員登録のメリットについて'), _react2.default.createElement('p', null, '当サイトでは会員登録せずとも、ご希望のお仕事に応募することも可能です。', _react2.default.createElement('br', null), '会員にご登録頂きますと、都度お客様の情報を入力せずに、', _react2.default.createElement('br', null), 'メールアドレスとパスワードのみで応募ができるようになります。', _react2.default.createElement('br', null), 'また会員情報をもとに、有益な情報をお送りする場合もございます。', _react2.default.createElement('br', null), 'ぜひこの機会にご登録ください。'), _react2.default.createElement('p', null, 'あわせて会員への登録をしますか?'), _react2.default.createElement('label', null, 'はい'), _react2.default.createElement('input', { type: 'radio', name: 'agree' }), _react2.default.createElement('label', null, 'いいえ'), _react2.default.createElement('input', { type: 'radio', name: 'agree', defaultChecked: true })), _react2.default.createElement('button', {
         id: 'Submit',
         className: 'agree',
         name: this.props.id,

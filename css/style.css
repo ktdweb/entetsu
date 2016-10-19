@@ -6913,7 +6913,9 @@ div#badge {
         margin-bottom: 1rem;
         border-bottom: 1px solid #EEE; }
       #Front > footer .lf-contents div ul li {
-        line-height: 2rem; }
+        line-height: 2.7rem; }
+      #Front > footer .lf-contents div ul li.twoLine {
+        line-height: 1.8rem; }
       #Front > footer .lf-contents div a {
         color: black; }
   #Front > footer {
@@ -7098,7 +7100,7 @@ div#badge {
         text-align: center;
         border-radius: 10px; }
       #Front .modal > div > div {
-        width: 400px;
+        width: 560px;
         color: #0099DE;
         margin: 1rem auto;
         font-size: 1.2rem;
@@ -7806,7 +7808,7 @@ div#badge {
           background-repeat: no-repeat; }
         #Front article#WorksDetail div.pf-Works-Detail > div div.pf-Works-Detail-column {
           position: relative;
-          width: 70%;
+          width: 100%;
           -webkit-border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-image: url("../imgs/pages/works/list_column.png") 120 repeat;
           border-style: solid;

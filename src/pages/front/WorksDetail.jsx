@@ -72,6 +72,7 @@ export default class WorksDetail extends React.Component {
               検索結果
             </div>
 
+            {/*
             <div className="pf-Works-Detail-login">
               <img
                 src={'/imgs/works/' + data.img + 'l.jpg'}
@@ -181,6 +182,7 @@ export default class WorksDetail extends React.Component {
                 </a>
               </div>
             </div>
+            */}
 
             <div className="pf-Works-Detail-column">
               <div className="pf-Works-Detail-column-head">
@@ -568,13 +570,13 @@ let modal = new Array();
 modal = [
   {
     title: '応募内容のご確認',
-    body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「担当者からすぐ連絡を希望する」をクリックしてください。</p>',
+    body: '<p>弊社スタッフより、お電話にて1営業日中にご連絡させていただきます。<br />その際にご不明な点などお気軽にお電話口にてお話し下さい。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「担当者からすぐ連絡を希望する」をクリックしてください。</p>',
     button: '担当者からすぐ連絡を希望する'
   },
 
   {
     title: '応募内容のご確認',
-    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。<br />また、あわせて会員情報も登録されます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
+    body: '<p>弊社スタッフより、お仕事のご紹介、面談日時等、<br />メールにてご連絡させていただきます。</p><p>以上の内容でお間違いなければ、個人情報の取扱いについてをご確認の上、<br />「メールにて連絡を希望する」をクリックしてください。</p>',
     button: 'メールにて連絡を希望する'
   },
 
