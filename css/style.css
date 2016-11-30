@@ -8334,7 +8334,7 @@ div#badge {
     margin-bottom: 30px; }
   #Front article#CleaningDetail div.wrapper {
     position: relative;
-    width: 1040px;
+    width: 100%;
     margin: 0 auto; }
   #Front article#CleaningDetail #plx01 {
     top: 340px;
@@ -8363,10 +8363,10 @@ div#badge {
     top: 1970px;
     left: 210px; }
   #Front article#CleaningDetail #plx05 {
-    top: 2840px;
+    top: 2500px;
     right: 0; }
   #Front article#CleaningDetail #plx05b {
-    top: 2900px;
+    top: 2560px;
     right: 210px; }
   #Front article#CleaningDetail #plx06 {
     top: 900px;
@@ -8418,7 +8418,7 @@ div#badge {
     background-position: center bottom;
     opacity: 1; }
   #Front article#BuildingDetail #plx03 {
-    top: 1360px;
+    top: 1260px;
     right: 0; }
   #Front article#BuildingDetail #plx03b {
     top: 1300px;
@@ -8499,10 +8499,10 @@ div#badge {
     top: 2660px;
     left: 210px; }
   #Front article#MansionDetail #plx05 {
-    top: 3300px;
+    top: 3200px;
     right: 0; }
   #Front article#MansionDetail #plx05b {
-    top: 3360px;
+    top: 3260px;
     right: 210px; }
   #Front article#MansionDetail #plx06 {
     top: 900px;
