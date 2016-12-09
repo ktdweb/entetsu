@@ -555,6 +555,13 @@ exports.default = {
     });
   },
 
+  adminUpdate: function adminUpdate(obj) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_UPDATE,
+      obj: obj
+    });
+  },
+
   adminDelete: function adminDelete(id) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_DELETE,
@@ -1493,6 +1500,7 @@ var WorkConstants = (0, _keymirror2.default)({
   KEYWORD: null,
   ADMIN_GET: null,
   ADMIN_EACH: null,
+  ADMIN_UPDATE: null,
   ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
@@ -11014,6 +11022,16 @@ _Dispatcher2.default.register(function (action) {
       var admin_each = URL + 'admin/each/' + action.id;
       _Http.http.get(admin_each).then(function (res) {
         create(res);
+        workStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_UPDATE:
+      var admin_update = URL + 'admin/update/';
+      _Http.http.post(admin_update, action.obj).then(function (res) {
+        //create(res);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);

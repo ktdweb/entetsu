@@ -15,7 +15,7 @@ $app->add(function ($request, $response, $next) {
         )
         ->withAddedHeader(
             'Access-Control-Allow-Origin',
-            'null'
+            '*'
         );
 
     return $next($request, $newResponse);

@@ -134,6 +134,16 @@ Dispatcher.register( function(action) {
       });
       break;
 
+    case WorkConstants.ADMIN_UPDATE:
+      let admin_update = URL + 'admin/update/';
+      http.post(admin_update, action.obj).then(res => {
+        //create(res);
+        workStore.update();
+      }).catch(e => {
+        // console.error(e);
+      });
+      break;
+
     case WorkConstants.ADMIN_DELETE:
       let admin_delete = URL + 'admin/' + action.id;
       http.delete(admin_delete).then(res => {

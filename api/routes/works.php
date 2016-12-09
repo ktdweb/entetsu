@@ -213,6 +213,69 @@ $app->group('/works', function () {
      * POST
      */
     $this->post(
+        '/admin/update/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $body = $request->getParsedBody();
+
+            $db = $this->get('db.put');
+
+            $id = (int)$body['id'];
+
+            unset($body['email']);
+            unset($body['name']);
+            unset($body['tel']);
+            unset($body['id']);
+            $values = array_values($body);
+
+            $sql = 'UPDATE `works` SET ';
+            $sql .= '`section_id`=?,';
+            $sql .= '`title`=?,';
+            $sql .= '`detail`=?,';
+            $sql .= '`location`=?,';
+            $sql .= '`time`=?,';
+            $sql .= '`time_start`=?,';
+            $sql .= '`time_end`=?,';
+            $sql .= '`entry_start`=?,';
+            $sql .= '`entry_end`=?,';
+            $sql .= '`break`=?,';
+            $sql .= '`wage`=?,';
+            $sql .= '`days`=?,';
+            $sql .= '`holidays`=?,';
+            $sql .= '`type`=?,';
+            $sql .= '`term`=?,';
+            $sql .= '`career`=?,';
+            $sql .= '`selling`=?,';
+            $sql .= '`cert`=?,';
+            $sql .= '`desc`=?,';
+            $sql .= '`img`=?,';
+            $sql .= '`abbr_wage`=?,';
+            $sql .= '`abbr_time`=?,';
+            $sql .= '`unit_wage`=?,';
+            $sql .= '`created`=?,';
+            $sql .= '`modified`=?,';
+            $sql .= '`category_id`=?,';
+            $sql .= '`location_id`=?,';
+            $sql .= '`time_id`=?';
+            $sql .= ' WHERE `id` = ' . $id;
+
+            $res = $db->execute($sql, $values);
+
+            return $response->withJson(
+                $res,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * POST
+     */
+    $this->post(
         '/',
         function (
             $request,
