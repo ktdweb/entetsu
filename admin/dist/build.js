@@ -1498,7 +1498,7 @@ var WorksDetail = function (_React$Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       _WorkActions2.default.adminUpdate(this.state.works);
-      location.href('/admin/works/');
+      window.location.href('/admin/works/');
     }
   }, {
     key: 'updateState',

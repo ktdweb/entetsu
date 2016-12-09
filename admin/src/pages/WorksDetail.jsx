@@ -416,7 +416,7 @@ export default class WorksDetail extends React.Component {
 
   handleSubmit(e) {
     WorkActions.adminUpdate(this.state.works);
-    location.href('/admin/works/');
+    window.location.href('/admin/works/');
   }
 
   updateState() {
