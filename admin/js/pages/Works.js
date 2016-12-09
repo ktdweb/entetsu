@@ -64,6 +64,13 @@ var Works = function (_React$Component) {
       _WorkActions2.default.adminGet(nextProps.params.id);
     }
   }, {
+    key: 'handleAlert',
+    value: function handleAlert(e) {
+      e.preventDefault();
+
+      alert('開発環境では登録できません');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -98,8 +105,11 @@ var Works = function (_React$Component) {
         { id: 'Works' },
         _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }),
         _react2.default.createElement(
-          _reactRouter.Link,
-          { to: '/admin/works/detail/add' },
+          'a',
+          {
+            onClick: this.handleAlert.bind(this),
+            href: '/admin/works/detail/add'
+          },
           _react2.default.createElement(
             'button',
             { className: 'headerButton' },

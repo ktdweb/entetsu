@@ -1167,6 +1167,13 @@ var Works = function (_React$Component) {
       _WorkActions2.default.adminGet(nextProps.params.id);
     }
   }, {
+    key: 'handleAlert',
+    value: function handleAlert(e) {
+      e.preventDefault();
+
+      alert('開発環境では登録できません');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -1184,7 +1191,10 @@ var Works = function (_React$Component) {
         eachWork = _react2.default.createElement('tr', { className: 'result' }, _react2.default.createElement('td', { colSpan: '6' }, _react2.default.createElement('div', null, '登録件数は0件です')));
       }
 
-      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/detail/add' }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works' }, 'すべて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/1' }, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/2' }, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/3' }, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/4' }, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/5' }, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/6' }, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/7' }, '食品検査')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/8' }, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachWork)));
+      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement('a', {
+        onClick: this.handleAlert.bind(this),
+        href: '/admin/works/detail/add'
+      }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works' }, 'すべて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/1' }, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/2' }, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/3' }, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/4' }, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/5' }, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/6' }, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/7' }, '食品検査')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/8' }, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachWork)));
     }
   }, {
     key: 'updateState',
@@ -1322,10 +1332,16 @@ var WorksDetail = function (_React$Component) {
       _WorkStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
+    key: 'handleAlert',
+    value: function handleAlert(e) {
+      e.preventDefault();
+
+      alert('開発環境では登録できません');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var data = this.state.works;
-      console.log(data);
 
       var sections = this.generateSections();
 
@@ -1468,7 +1484,9 @@ var WorksDetail = function (_React$Component) {
         className: 'w-s',
         value: data.time_end,
         onChange: this.handleText.bind(this)
-      }))), _react2.default.createElement('hr', null), _react2.default.createElement('button', {
+      }))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '画像'), _react2.default.createElement('dd', null, _react2.default.createElement('label', {
+        onClick: this.handleAlert.bind(this),
+        className: 'formFile' }, 'アップロード', _react2.default.createElement('input', { type: 'file' })))), _react2.default.createElement('button', {
         className: 'w-s',
         onClick: this.handleSubmit.bind(this)
       }, '更新'));
@@ -1480,6 +1498,7 @@ var WorksDetail = function (_React$Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       _WorkActions2.default.adminUpdate(this.state.works);
+      location.href('/admin/works/');
     }
   }, {
     key: 'updateState',

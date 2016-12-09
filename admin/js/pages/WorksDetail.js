@@ -57,10 +57,16 @@ var WorksDetail = function (_React$Component) {
       _WorkStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
+    key: 'handleAlert',
+    value: function handleAlert(e) {
+      e.preventDefault();
+
+      alert('開発環境では登録できません');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var data = this.state.works;
-      console.log(data);
 
       var sections = this.generateSections();
 
@@ -695,6 +701,27 @@ var WorksDetail = function (_React$Component) {
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
+            '画像'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'label',
+              {
+                onClick: this.handleAlert.bind(this),
+                className: 'formFile' },
+              'アップロード',
+              _react2.default.createElement('input', { type: 'file' })
+            )
+          )
+        ),
+        _react2.default.createElement(
           'button',
           {
             className: 'w-s',
@@ -711,6 +738,7 @@ var WorksDetail = function (_React$Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       _WorkActions2.default.adminUpdate(this.state.works);
+      location.href('/admin/works/');
     }
   }, {
     key: 'updateState',
