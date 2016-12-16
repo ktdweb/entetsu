@@ -7971,6 +7971,9 @@ div#badge {
     opacity: 0; }
   to {
     opacity: 1; } }
+    #Front article#WorksDetail div.pf-Works-Detail-contact p {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem; }
   #Front article#MemberSet {
     position: relative;
     background: #F5FBFE; }

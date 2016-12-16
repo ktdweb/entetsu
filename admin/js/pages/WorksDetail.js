@@ -656,6 +656,16 @@ var WorksDetail = function (_React$Component) {
               _react2.default.createElement(
                 'option',
                 { value: '5' },
+                '食品検査技師'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '6' },
+                '新卒'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '7' },
                 'その他'
               )
             )
