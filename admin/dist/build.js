@@ -1472,7 +1472,7 @@ var WorksDetail = function (_React$Component) {
         name: 'category_id',
         onChange: this.handleText.bind(this),
         value: data.category_id
-      }, _react2.default.createElement('option', { value: '1' }, '清掃職'), _react2.default.createElement('option', { value: '2' }, 'ドライバー'), _react2.default.createElement('option', { value: '3' }, 'ビル管理スタッフ'), _react2.default.createElement('option', { value: '4' }, '営業・事務職'), _react2.default.createElement('option', { value: '5' }, 'その他')))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'スライダー検索用'), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始時間'), _react2.default.createElement('input', {
+      }, _react2.default.createElement('option', { value: '1' }, '清掃職'), _react2.default.createElement('option', { value: '2' }, 'ドライバー'), _react2.default.createElement('option', { value: '3' }, 'ビル管理スタッフ'), _react2.default.createElement('option', { value: '4' }, '営業・事務職'), _react2.default.createElement('option', { value: '5' }, '食品検査技師'), _react2.default.createElement('option', { value: '6' }, '新卒'), _react2.default.createElement('option', { value: '7' }, 'その他')))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'スライダー検索用'), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始時間'), _react2.default.createElement('input', {
         type: 'text',
         name: 'time_start',
         className: 'w-s',

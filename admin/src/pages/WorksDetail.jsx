@@ -358,7 +358,9 @@ export default class WorksDetail extends React.Component {
               <option value="2">ドライバー</option>
               <option value="3">ビル管理スタッフ</option>
               <option value="4">営業・事務職</option>
-              <option value="5">その他</option>
+              <option value="5">食品検査技師</option>
+              <option value="6">新卒</option>
+              <option value="7">その他</option>
               </select>
           </dd>
         </dl>
