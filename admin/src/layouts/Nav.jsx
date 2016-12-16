@@ -32,6 +32,7 @@ export default class Nav extends React.Component {
     el.style.height = cli - header.offsetHeight + 'px';
   }
 
+
   render() {
     let root = this.props.route.global.documentRoot;
 

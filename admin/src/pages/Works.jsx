@@ -30,6 +30,12 @@ export default class Works extends React.Component {
     WorkActions.adminGet(nextProps.params.id);
   }
 
+  handleAlert(e) {
+    e.preventDefault();
+
+    alert('開発環境では登録できません');
+  }
+
   render() {
 
     let eachWork;
@@ -54,12 +60,15 @@ export default class Works extends React.Component {
     return(
       <article id="Works">
         <DocumentTitle title="求人情報" />
-        <Link to="/admin/works/detail/add">
+        <a
+          onClick={this.handleAlert.bind(this)}
+          href="/admin/works/detail/add"
+          >
           <button className="headerButton">
             新規追加
             <i className="fa fa-plus-circle" />
           </button>
-        </Link>
+        </a>
 
         <h1>
           <i className="fa fa-paperclip" />

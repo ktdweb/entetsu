@@ -24,9 +24,14 @@ export default class WorksDetail extends React.Component {
     WorkStore.destroy(this.updateState.bind(this));
   }
 
+  handleAlert(e) {
+    e.preventDefault();
+
+    alert('開発環境では登録できません');
+  }
+
   render() {
     let data = this.state.works;
-    console.log(data);
 
     const sections = this.generateSections();
 
@@ -385,17 +390,17 @@ export default class WorksDetail extends React.Component {
 
         <hr />
 
-        {/*
         <dl>
           <dt>画像</dt>
           <dd>
-            <label className="formFile">
+            <label
+              onClick={this.handleAlert.bind(this)}
+              className="formFile">
               アップロード
               <input type="file" />
             </label>
           </dd>
         </dl>
-        */}
 
         <button
           className="w-s"
@@ -411,6 +416,7 @@ export default class WorksDetail extends React.Component {
 
   handleSubmit(e) {
     WorkActions.adminUpdate(this.state.works);
+    window.location.href = '/admin/works/';
   }
 
   updateState() {

@@ -45,9 +45,15 @@ UPDATE `works` SET `entry_start` = '0000-00-00 00:00:00', `entry_end` = '' WHERE
 
 -- works テーブル作成 /*{{{*/
 DROP TABLE `works`;
+ALTER TABLE `works` ADD `location_id` INT(2) NULL;
+ALTER TABLE `works` ADD `time_id` INT(2) NULL;
+ALTER TABLE `works` ADD `category_id` INT(2) NULL;
 CREATE TABLE IF NOT EXISTS `works` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `section_id` INT(2) NOT NULL,
+  `location_id` INT(2) NOT NULL,
+  `time_id` INT(2) NOT NULL,
+  `category_id` INT(2) NOT NULL,
   `title` VARCHAR(120) NOT NULL,
   `detail` TEXT NULL,
   `location` VARCHAR(120) NULL,
