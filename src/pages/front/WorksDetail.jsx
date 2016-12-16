@@ -272,6 +272,7 @@ export default class WorksDetail extends React.Component {
 
               <div className="pf-Works-Detail-contact">
                 <span>電話でのお問い合わせは...</span>{data.tel}
+                <p>（受付時間 平日9：00～18：00）</p>
               </div>
             </div>
           </div>
