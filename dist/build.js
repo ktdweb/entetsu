@@ -8825,14 +8825,28 @@ var Works = function (_React$Component) {
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
-        src: IMG + 'cat/banner04.png',
+        src: IMG + 'cat/banner06.png',
         height: '120',
         name: '18',
         alt: 'img'
       })), _react2.default.createElement('a', { href: '#',
         onClick: this.getCategorySearch.bind(this)
       }, _react2.default.createElement('img', {
-        src: IMG + 'cat/banner05.png',
+        src: IMG + 'cat/banner07.png',
+        height: '120',
+        name: '20',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.getCategorySearch.bind(this)
+      }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner08.png',
+        height: '120',
+        name: '21',
+        alt: 'img'
+      })), _react2.default.createElement('a', { href: '#',
+        onClick: this.getCategorySearch.bind(this)
+      }, _react2.default.createElement('img', {
+        src: IMG + 'cat/banner09.png',
         height: '120',
         name: '19',
         alt: 'img'
