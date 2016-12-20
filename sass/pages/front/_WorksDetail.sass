@@ -201,6 +201,31 @@ article#WorksDetail
             line-height: 20px
             background-color: $color-works-base
 
+  div.pf-Works-Banner
+    width: 960px
+    margin: $base-spacing auto $base-spacing * 2
+    padding: $small-spacing
+    border: 1px solid $color-works-base
+    border-radius: 5px
+    overflow: hidden
+    background-color: lighten($color-works-base, 54.5%)
+    div:last-child
+      width: 720px
+      display: inline-block
+      color: $color-works-base
+      p.lead
+        font-weight: bold
+        line-height: 3.6rem !important
+        border-bottom: 1px dotted $color-works-base
+      p.lead2
+        font-size: $small-font-size * 1.20
+        line-height: 1.7rem
+        margin-top: $small-spacing
+        margin-bottom: 0
+    a
+      display: inline-block
+      margin-right: $base-spacing
+
   div.pf-Works-Detail-footer
     margin: $base-spacing * 2 0
     text-align: center
