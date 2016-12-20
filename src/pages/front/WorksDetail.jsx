@@ -329,6 +329,32 @@ export default class WorksDetail extends React.Component {
           id="modalMerit"
           title={modal[2].title}
           />
+
+        <div className="pf-Works-Banner">
+          <a
+            href="http://entesu-hoikuen.com/"
+            target="_blank"
+            >
+            <img
+              src={'/imgs/banners/babyfarm.jpg'}
+              alt="企業内託児所"
+              width="186"
+              />
+          </a>
+
+          <div>
+            <p className="lead">企業内託児所</p>
+            
+            <p className="lead2">
+              従業員専用保育施設
+              遠鉄グループ保育園
+            </p>
+            <span>
+              私たち遠鉄グループは、保育が必要な、
+              働きたいママを応援します。
+            </span>
+          </div>
+        </div>
       </article>
     );
   }

@@ -7716,6 +7716,30 @@ div#badge {
               border-radius: 3px; }
             #Front article#Works div.pf-Works-List > div ul li.pf-Works-List-column div.pf-Works-List-column-footer span:last-child {
               color: #0099DE; }
+    #Front article#Works div.pf-Works-Banner {
+      width: 960px;
+      margin: 2rem auto 4rem;
+      padding: 1rem;
+      border: 1px solid #0099DE;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: #f5fcff; }
+      #Front article#Works div.pf-Works-Banner div:last-child {
+        width: 720px;
+        display: inline-block;
+        color: #0099DE; }
+        #Front article#Works div.pf-Works-Banner div:last-child p.lead {
+          font-weight: bold;
+          line-height: 3.6rem !important;
+          border-bottom: 1px dotted #0099DE; }
+        #Front article#Works div.pf-Works-Banner div:last-child p.lead2 {
+          font-size: 1.44rem;
+          line-height: 1.7rem;
+          margin-top: 1rem;
+          margin-bottom: 0; }
+      #Front article#Works div.pf-Works-Banner a {
+        display: inline-block;
+        margin-right: 2rem; }
     #Front article#Works footer {
       width: 960px;
       margin: 20px auto;
@@ -7937,6 +7961,30 @@ div#badge {
               font-size: 1.2rem;
               line-height: 20px;
               background-color: #0099DE; }
+    #Front article#WorksDetail div.pf-Works-Banner {
+      width: 960px;
+      margin: 2rem auto 4rem;
+      padding: 1rem;
+      border: 1px solid #0099DE;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: #f5fcff; }
+      #Front article#WorksDetail div.pf-Works-Banner div:last-child {
+        width: 720px;
+        display: inline-block;
+        color: #0099DE; }
+        #Front article#WorksDetail div.pf-Works-Banner div:last-child p.lead {
+          font-weight: bold;
+          line-height: 3.6rem !important;
+          border-bottom: 1px dotted #0099DE; }
+        #Front article#WorksDetail div.pf-Works-Banner div:last-child p.lead2 {
+          font-size: 1.44rem;
+          line-height: 1.7rem;
+          margin-top: 1rem;
+          margin-bottom: 0; }
+      #Front article#WorksDetail div.pf-Works-Banner a {
+        display: inline-block;
+        margin-right: 2rem; }
     #Front article#WorksDetail div.pf-Works-Detail-footer {
       margin: 4rem 0;
       text-align: center; }
