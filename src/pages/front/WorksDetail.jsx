@@ -330,6 +330,7 @@ export default class WorksDetail extends React.Component {
           title={modal[2].title}
           />
 
+        {/*
         <div className="pf-Works-Banner">
           <a
             href="http://entesu-hoikuen.com/"
@@ -355,6 +356,7 @@ export default class WorksDetail extends React.Component {
             </span>
           </div>
         </div>
+        */}
       </article>
     );
   }

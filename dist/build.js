@@ -8895,14 +8895,7 @@ var Works = function (_React$Component) {
         onFocus: this.clearValue.bind(this)
       }), _react2.default.createElement('button', {
         onClick: this.getKeyword.bind(this)
-      }, '検索')))), _react2.default.createElement('div', { className: 'pf-Works-Banner' }, _react2.default.createElement('a', {
-        href: 'http://entesu-hoikuen.com/',
-        target: '_blank'
-      }, _react2.default.createElement('img', {
-        src: '/imgs/banners/babyfarm.jpg',
-        alt: '企業内託児所',
-        width: '186'
-      })), _react2.default.createElement('div', null, _react2.default.createElement('p', { className: 'lead' }, '企業内託児所'), _react2.default.createElement('p', { className: 'lead2' }, '従業員専用保育施設 遠鉄グループ保育園'), _react2.default.createElement('span', null, '私たち遠鉄グループは、保育が必要な、 働きたいママを応援します。'))));
+      }, '検索')))));
     }
   }, {
     key: 'navControl',
@@ -9395,14 +9388,7 @@ var WorksDetail = function (_React$Component) {
         key: '3',
         id: 'modalMerit',
         title: modal[2].title
-      }), _react2.default.createElement('div', { className: 'pf-Works-Banner' }, _react2.default.createElement('a', {
-        href: 'http://entesu-hoikuen.com/',
-        target: '_blank'
-      }, _react2.default.createElement('img', {
-        src: '/imgs/banners/babyfarm.jpg',
-        alt: '企業内託児所',
-        width: '186'
-      })), _react2.default.createElement('div', null, _react2.default.createElement('p', { className: 'lead' }, '企業内託児所'), _react2.default.createElement('p', { className: 'lead2' }, '従業員専用保育施設 遠鉄グループ保育園'), _react2.default.createElement('span', null, '私たち遠鉄グループは、保育が必要な、 働きたいママを応援します。'))));
+      }));
     }
 
     /*
