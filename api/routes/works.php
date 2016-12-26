@@ -12,6 +12,42 @@ namespace Routes;
  */
 $app->group('/works', function () {
 
+
+    /**
+     * GET
+     */
+    $this->get(
+        '/detail/{id:[0-9]+}',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+
+            $sql .= ' WHERE ';
+            $sql .= ' ( `works`.`entry_end` > NOW() ';
+            $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ';
+            $sql .= ' ( `works`.`entry_start` < NOW() ';
+            $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
+
+            $sql .= ' AND ';
+            $sql .= '`works`.`id` = ?;';
+
+            $body = $db->execute($sql, $args['id']);
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
     /**
      * GET
      */
