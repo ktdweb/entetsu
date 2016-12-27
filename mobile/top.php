@@ -325,7 +325,7 @@
 	<div class="searchPlace">
 	<div class="recTypePlace"><img src="imgs/rec_type_place_bg.png" alt="Business" width="100%" class="target">
     <ul  id="locationBtn" class="typeList">
-    	<li class="target"><a href="works.php"><img src="imgs/rec_type_place01_t.png" alt="中区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
+    	<li class="target"><a href="works.php"><img src="imgs/rec_type_place01_t.png" alt="中区" width="82.05%" class="target nn"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_place02_t.png" alt="北区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_place03_t.png" alt="東区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_place04_t.png" alt="西区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
@@ -614,10 +614,7 @@
             window.location.href = 'works.php';
         });
         
-        $('.cat .sub').on('click', function() {
-            window.location.href = 'works.php';
-        });
-        $('.loc .sub').on('click', function() {
+        $('.sub').on('click', function() {
             window.location.href = 'works.php';
         });
     });
