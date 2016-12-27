@@ -395,6 +395,8 @@
         var lg = $('#lg');
         var lh = $('#lh');
 
+        var flag = false;
+
         $('div.doorBtm').on('click', function() {
             $('div.doorBtm').animate({top: '1400px'}, 1500);
             $('#contents').animate({paddingTop: '1400px'}, 1500);
@@ -405,13 +407,14 @@
         });
 
         t.on('click', function() {
+            flag = true;
             t.attr('src', 'imgs/btn/time_a.png');
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_d.png');
 
-            ta.animate({opacity: 1}, 500).css({'visibility':'visible'});
-            tb.animate({opacity: 1}, 500).css({'visibility':'visible'});
-            tc.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            ta.animate({opacity: 1}, 500).css({'visibility':'visible'}).addClass('timea');
+            tb.animate({opacity: 1}, 500).css({'visibility':'visible'}).addClass('timea');
+            tc.animate({opacity: 1}, 500).css({'visibility':'visible'}).addClass('timea');
 
             ca.animate({opacity: 0}, 500);
             cb.animate({opacity: 0}, 500);
@@ -432,13 +435,14 @@
         });
 
         c.on('click', function() {
+            flag = false;
             t.attr('src', 'imgs/btn/time_d.png');
             c.attr('src', 'imgs/btn/cat_a.png');
             l.attr('src', 'imgs/btn/loc_d.png');
 
-            ta.animate({opacity: 0}, 500).css({'visibility':'hidden'});
-            tb.animate({opacity: 0}, 500).css({'visibility':'hidden'});
-            tc.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta.animate({opacity: 0}, 500).css({'visibility':'hidden'}).removeClass('timea');
+            tb.animate({opacity: 0}, 500).css({'visibility':'hidden'}).removeClass('timea');
+            tc.animate({opacity: 0}, 500).css({'visibility':'hidden'}).removeClass('timea');
             ta1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
             ta2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
             ta3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
@@ -468,13 +472,14 @@
         });
 
         l.on('click', function() {
+            flag = false;
             t.attr('src', 'imgs/btn/time_d.png');
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_a.png');
 
-            ta.animate({opacity: 0}, 500).css({'visibility':'hidden'});
-            tb.animate({opacity: 0}, 500).css({'visibility':'hidden'});
-            tc.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta.animate({opacity: 0}, 500).css({'visibility':'hidden'}).removeClass('timea');
+            tb.animate({opacity: 0}, 500).css({'visibility':'hidden'}).removeClass('timea');
+            tc.animate({opacity: 0}, 500).css({'visibility':'hidden'}).removeClass('timea');
             ta1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
             ta2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
             ta3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
@@ -615,6 +620,11 @@
         });
         
         $('.sub').on('click', function() {
+            if (!flag) {
+                window.location.href = 'works.php';
+            }
+        });
+        $('#search button').on('click', function() {
             window.location.href = 'works.php';
         });
     });
