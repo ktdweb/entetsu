@@ -23,6 +23,8 @@
         'imgs/rec_type_business03_t.png',
         'imgs/rec_type_business04_t.png',
         'imgs/rec_type_business05_t.png',
+        'imgs/rec_type_business06_t.png',
+        'imgs/rec_type_business07_t.png',
         'imgs/rec_type_business_arrow.png',
         'imgs/rec_type_place01_t.png',
         'imgs/rec_type_place02_t.png',
@@ -31,6 +33,7 @@
         'imgs/rec_type_place05_t.png',
         'imgs/rec_type_place06_t.png',
         'imgs/rec_type_place07_t.png',
+        'imgs/rec_type_place08_t.png',
         'imgs/rec_type_place_arrow.png',
         );
         /* 画像先読み処理関数 */
@@ -56,7 +59,11 @@
 </div>
 
 <div id="search">
-    <input type="text" value="" placeholder="フリーワードで仕事を探す" />
+    <div>
+        <input type="text" value="" placeholder="フリーワードで仕事を探す" />
+        <button>検索</button>
+    </div>
+
     <ul>
         <li><img id="t" src="imgs/btn/time_a.png" alt="img" width="100%"></li>
         <li><img id="c" src="imgs/btn/cat_a.png" alt="img" width="82.9268%"></li>
@@ -66,21 +73,27 @@
     <div class="searchBox">
     	<div class="time">
             <ul class="sub">
-                <li><img id="ta" src="imgs/btn/time_a_a.png" alt="img" width="100%"></li>
-                <li><img id="tb" src="imgs/btn/time_b_a.png" alt="img" width="100%"></li>
-                <li><img id="tc" src="imgs/btn/time_c_a.png" alt="img" width="100%"></li>
+                <li><img id="ta" src="imgs/btn/time_b_a.png" alt="img" width="100%"></li>
+                <li><img id="tb" src="imgs/btn/time_c_a.png" alt="img" width="100%"></li>
+                <li><img id="tc" src="imgs/btn/time_d_a.png" alt="img" width="100%"></li>
             </ul>
         
             <ul class="sub">
-                <li><img id="ta1" src="imgs/btn/time_d_a.png" alt="img" width="100%"></li>
-                <li><img id="tb1" src="imgs/btn/time_d_a.png" alt="img" width="82.9268%"></li>
-                <li><img id="tc1" src="imgs/btn/time_d_a.png" alt="img" width="82.9268%"></li>
+                <li><img id="ta1" src="imgs/btn/time_e_a.png" alt="img" width="100%"></li>
+                <li><img id="tb1" src="imgs/btn/time_e_a.png" alt="img" width="82.9268%"></li>
+                <li><img id="tc1" src="imgs/btn/time_e_a.png" alt="img" width="82.9268%"></li>
             </ul>
         
             <ul class="sub">
-                <li><img id="ta2" src="imgs/btn/time_e_a.png" alt="img" width="100%"></li>
-                <li><img id="tb2" src="imgs/btn/time_e_a.png" alt="img" width="82.9268%"></li>
-                <li><img id="tc2" src="imgs/btn/time_e_a.png" alt="img" width="82.9268%"></li>
+                <li><img id="ta2" src="imgs/btn/time_f_a.png" alt="img" width="100%"></li>
+                <li><img id="tb2" src="imgs/btn/time_f_a.png" alt="img" width="82.9268%"></li>
+                <li><img id="tc2" src="imgs/btn/time_f_a.png" alt="img" width="82.9268%"></li>
+            </ul>
+        
+            <ul class="sub">
+                <li><img id="ta3" src="imgs/btn/time_g_a.png" alt="img" width="100%"></li>
+                <li><img id="tb3" src="imgs/btn/time_g_a.png" alt="img" width="82.9268%"></li>
+                <li><img id="tc3" src="imgs/btn/time_g_a.png" alt="img" width="82.9268%"></li>
             </ul>
         </div>
     	<!-- /.time -->
@@ -113,6 +126,18 @@
             <ul class="sub">
                 <li></li>
                 <li><img id="ce" src="imgs/btn/cat_f_a.png" alt="img" width="82.9268%"></li>
+                <li></li>
+            </ul>
+            
+            <ul class="sub">
+                <li></li>
+                <li><img id="cf" src="imgs/btn/cat_g_a.png" alt="img" width="82.9268%"></li>
+                <li></li>
+            </ul>
+            
+            <ul class="sub">
+                <li></li>
+                <li><img id="cg" src="imgs/btn/cat_h_a.png" alt="img" width="82.9268%"></li>
                 <li></li>
             </ul>
         </div>
@@ -159,6 +184,12 @@
                 <li></li>
                 <li></li>
                 <li><img id="lg" src="imgs/btn/loc_h_a.png" alt="img" width="82.9268%"></li>
+            </ul>
+            
+            <ul class="sub">
+                <li></li>
+                <li></li>
+                <li><img id="lh" src="imgs/btn/loc_i_a.png" alt="img" width="82.9268%"></li>
             </ul>
         </div>
     	<!-- /.loc -->
@@ -278,7 +309,7 @@
 
 	<div class="searchBusiness">
 	<div class="recTypeBusiness"><img src="imgs/rec_type_business_bg.png" alt="Business" width="100%" class="target">
-    <ul class="typeList">
+    <ul id="categoryBtn" class="typeList">
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_business01_t.png" alt="清掃職" width="82.05%" class="target"><img src="imgs/rec_type_business_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_business02_t.png" alt="ドライバー" width="82.05%" class="target"><img src="imgs/rec_type_business_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_business03_t.png" alt="ビル管理スタッフ" width="82.05%" class="target"><img src="imgs/rec_type_business_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
@@ -293,7 +324,7 @@
 
 	<div class="searchPlace">
 	<div class="recTypePlace"><img src="imgs/rec_type_place_bg.png" alt="Business" width="100%" class="target">
-    <ul class="typeList">
+    <ul  id="locationBtn" class="typeList">
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_place01_t.png" alt="中区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_place02_t.png" alt="北区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
     	<li class="target"><a href="works.php"><img src="imgs/rec_type_place03_t.png" alt="東区" width="82.05%" class="target"><img src="imgs/rec_type_place_arrow.png" alt="arrow" width="17.95%" class="target"></a></li>
@@ -308,20 +339,8 @@
 </section>
 
 <section>
-	<h2 class="stitle"><img src="imgs/news_head.png" alt="NEWS" width="100%"></h2>
-    <div class="newsBox">
-        <ul>
-        	<li class="ippan">
-            	<p class="day">2016年06月28日</p>
-                <p class="postName">ホームページリニューアル</p>
-            </li>
-        </ul>
-    </div>
-</section>
-
-<!--section>
 	<div class="topSeminar"><img src="imgs/seminar_img.png" alt="お仕事セミナー開催中" width="100%"></div>
-</section-->
+</section>
 </article>
 
 <?php include 'include/footer.inc'; ?>
@@ -351,16 +370,21 @@
         var tc = $('#tc');
         var ta1 = $('#ta1');
         var ta2 = $('#ta2');
+        var ta3 = $('#ta3');
         var tb1 = $('#tb1');
         var tb2 = $('#tb2');
+        var tb3 = $('#tb3');
         var tc1 = $('#tc1');
         var tc2 = $('#tc2');
+        var tc3 = $('#tc3');
 
         var ca = $('#ca');
         var cb = $('#cb');
         var cc = $('#cc');
         var cd = $('#cd');
         var ce = $('#ce');
+        var cf = $('#cf');
+        var cg = $('#cg');
 
         var la = $('#la');
         var lb = $('#lb');
@@ -369,10 +393,11 @@
         var le = $('#le');
         var lf = $('#lf');
         var lg = $('#lg');
+        var lh = $('#lh');
 
         $('div.doorBtm').on('click', function() {
-            $('div.doorBtm').animate({top: '1200px'}, 1500);
-            $('#contents').animate({paddingTop: '1200px'}, 1500);
+            $('div.doorBtm').animate({top: '1400px'}, 1500);
+            $('#contents').animate({paddingTop: '1400px'}, 1500);
             t.animate({opacity: 1}, 500);
             c.animate({opacity: 1}, 500);
             l.animate({opacity: 1}, 500);
@@ -384,15 +409,17 @@
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_d.png');
 
-            ta.animate({opacity: 1}, 500);
-            tb.animate({opacity: 1}, 500);
-            tc.animate({opacity: 1}, 500);
+            ta.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tb.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tc.animate({opacity: 1}, 500).css({'visibility':'visible'});
 
             ca.animate({opacity: 0}, 500);
             cb.animate({opacity: 0}, 500);
             cc.animate({opacity: 0}, 500);
             cd.animate({opacity: 0}, 500);
             ce.animate({opacity: 0}, 500);
+            cf.animate({opacity: 0}, 500);
+            cg.animate({opacity: 0}, 500);
 
             la.animate({opacity: 0}, 500);
             lb.animate({opacity: 0}, 500);
@@ -401,6 +428,7 @@
             le.animate({opacity: 0}, 500);
             lf.animate({opacity: 0}, 500);
             lg.animate({opacity: 0}, 500);
+            lh.animate({opacity: 0}, 500);
         });
 
         c.on('click', function() {
@@ -408,21 +436,26 @@
             c.attr('src', 'imgs/btn/cat_a.png');
             l.attr('src', 'imgs/btn/loc_d.png');
 
-            ta.animate({opacity: 0}, 500);
-            tb.animate({opacity: 0}, 500);
-            tc.animate({opacity: 0}, 500);
-            ta1.animate({opacity: 0}, 500);
-            ta2.animate({opacity: 0}, 500);
-            tb1.animate({opacity: 0}, 500);
-            tb2.animate({opacity: 0}, 500);
-            tc1.animate({opacity: 0}, 500);
-            tc2.animate({opacity: 0}, 500);
+            ta.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
 
             ca.animate({opacity: 1}, 500);
             cb.animate({opacity: 1}, 500);
             cc.animate({opacity: 1}, 500);
             cd.animate({opacity: 1}, 500);
             ce.animate({opacity: 1}, 500);
+            cf.animate({opacity: 1}, 500);
+            cg.animate({opacity: 1}, 500);
 
             la.animate({opacity: 0}, 500);
             lb.animate({opacity: 0}, 500);
@@ -431,6 +464,7 @@
             le.animate({opacity: 0}, 500);
             lf.animate({opacity: 0}, 500);
             lg.animate({opacity: 0}, 500);
+            lh.animate({opacity: 0}, 500);
         });
 
         l.on('click', function() {
@@ -438,21 +472,26 @@
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_a.png');
 
-            ta.animate({opacity: 0}, 500);
-            tb.animate({opacity: 0}, 500);
-            tc.animate({opacity: 0}, 500);
-            ta1.animate({opacity: 0}, 500);
-            ta2.animate({opacity: 0}, 500);
-            tb1.animate({opacity: 0}, 500);
-            tb2.animate({opacity: 0}, 500);
-            tc1.animate({opacity: 0}, 500);
-            tc2.animate({opacity: 0}, 500);
+            ta.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            ta3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tb3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc1.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc2.animate({opacity: 0}, 500).css({'visibility':'hidden'});
+            tc3.animate({opacity: 0}, 500).css({'visibility':'hidden'});
 
             ca.animate({opacity: 0}, 500);
             cb.animate({opacity: 0}, 500);
             cc.animate({opacity: 0}, 500);
             cd.animate({opacity: 0}, 500);
             ce.animate({opacity: 0}, 500);
+            cf.animate({opacity: 0}, 500);
+            cg.animate({opacity: 0}, 500);
 
             la.animate({opacity: 1}, 500);
             lb.animate({opacity: 1}, 500);
@@ -461,78 +500,125 @@
             le.animate({opacity: 1}, 500);
             lf.animate({opacity: 1}, 500);
             lg.animate({opacity: 1}, 500);
+            lh.animate({opacity: 1}, 500);
         });
 
         ta.on('click', function() {
-            console.log('test');
-            ta.attr('src', 'imgs/btn/time_a_a.png');
-            tb.attr('src', 'imgs/btn/time_b_d.png');
-            tc.attr('src', 'imgs/btn/time_c_d.png');
+            ta.attr('src', 'imgs/btn/time_b_a.png');
+            tb.attr('src', 'imgs/btn/time_c_d.png');
+            tc.attr('src', 'imgs/btn/time_d_d.png');
 
-            ta1.animate({opacity: 1}, 500);
-            ta2.animate({opacity: 1}, 500);
-            tb1.animate({opacity: 0}, 500);
-            tb2.animate({opacity: 0}, 500);
-            tc1.animate({opacity: 0}, 500);
-            tc2.animate({opacity: 0}, 500);
+            ta1.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            ta2.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            ta3.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tb1.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tb2.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tb3.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tc1.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tc2.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tc3.animate({opacity: 0}, 500).css({'visibility':'visible'});
         });
 
         tb.on('click', function() {
-            console.log('test');
-            ta.attr('src', 'imgs/btn/time_a_d.png');
-            tb.attr('src', 'imgs/btn/time_b_a.png');
-            tc.attr('src', 'imgs/btn/time_c_d.png');
+            ta.attr('src', 'imgs/btn/time_b_d.png');
+            tb.attr('src', 'imgs/btn/time_c_a.png');
+            tc.attr('src', 'imgs/btn/time_d_d.png');
 
-            ta1.animate({opacity: 0}, 500);
-            ta2.animate({opacity: 0}, 500);
-            tb1.animate({opacity: 1}, 500);
-            tb2.animate({opacity: 1}, 500);
-            tc1.animate({opacity: 0}, 500);
-            tc2.animate({opacity: 0}, 500);
+            ta1.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            ta2.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            ta3.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tb1.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tb2.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tb3.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tc1.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tc2.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tc3.animate({opacity: 0}, 500).css({'visibility':'visible'});
         });
 
         tc.on('click', function() {
-            console.log('test');
-            ta.attr('src', 'imgs/btn/time_a_d.png');
-            tb.attr('src', 'imgs/btn/time_b_d.png');
-            tc.attr('src', 'imgs/btn/time_c_a.png');
+            ta.attr('src', 'imgs/btn/time_b_d.png');
+            tb.attr('src', 'imgs/btn/time_c_d.png');
+            tc.attr('src', 'imgs/btn/time_d_a.png');
 
-            ta1.animate({opacity: 0}, 500);
-            ta2.animate({opacity: 0}, 500);
-            tb1.animate({opacity: 0}, 500);
-            tb2.animate({opacity: 0}, 500);
-            tc1.animate({opacity: 1}, 500);
-            tc2.animate({opacity: 1}, 500);
+            ta1.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            ta2.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            ta3.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tb1.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tb2.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tb3.animate({opacity: 0}, 500).css({'visibility':'visible'});
+            tc1.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tc2.animate({opacity: 1}, 500).css({'visibility':'visible'});
+            tc3.animate({opacity: 1}, 500).css({'visibility':'visible'});
         });
 
         ta1.on('click', function() {
-            ta1.attr('src', 'imgs/btn/time_d_a.png');
-            ta2.attr('src', 'imgs/btn/time_e_d.png');
+            ta1.attr('src', 'imgs/btn/time_e_a.png');
+            ta2.attr('src', 'imgs/btn/time_f_d.png');
+            ta3.attr('src', 'imgs/btn/time_g_d.png');
+            window.location.href = 'works.php';
         });
 
         ta2.on('click', function() {
-            ta1.attr('src', 'imgs/btn/time_d_d.png');
-            ta2.attr('src', 'imgs/btn/time_e_a.png');
+            ta1.attr('src', 'imgs/btn/time_e_d.png');
+            ta2.attr('src', 'imgs/btn/time_f_a.png');
+            ta3.attr('src', 'imgs/btn/time_g_d.png');
+            window.location.href = 'works.php';
+        });
+
+        ta3.on('click', function() {
+            ta1.attr('src', 'imgs/btn/time_e_d.png');
+            ta2.attr('src', 'imgs/btn/time_f_d.png');
+            ta3.attr('src', 'imgs/btn/time_g_a.png');
+            window.location.href = 'works.php';
         });
 
         tb1.on('click', function() {
-            tb1.attr('src', 'imgs/btn/time_d_a.png');
-            tb2.attr('src', 'imgs/btn/time_e_d.png');
+            tb1.attr('src', 'imgs/btn/time_e_a.png');
+            tb2.attr('src', 'imgs/btn/time_f_d.png');
+            tb3.attr('src', 'imgs/btn/time_g_d.png');
+            window.location.href = 'works.php';
         });
 
         tb2.on('click', function() {
-            tb1.attr('src', 'imgs/btn/time_d_d.png');
-            tb2.attr('src', 'imgs/btn/time_e_a.png');
+            tb1.attr('src', 'imgs/btn/time_e_d.png');
+            tb2.attr('src', 'imgs/btn/time_f_a.png');
+            tb3.attr('src', 'imgs/btn/time_g_d.png');
+            window.location.href = 'works.php';
+        });
+
+        tb3.on('click', function() {
+            tb1.attr('src', 'imgs/btn/time_e_d.png');
+            tb2.attr('src', 'imgs/btn/time_f_d.png');
+            tb3.attr('src', 'imgs/btn/time_g_a.png');
+            window.location.href = 'works.php';
         });
 
         tc1.on('click', function() {
-            tc1.attr('src', 'imgs/btn/time_d_a.png');
-            tc2.attr('src', 'imgs/btn/time_e_d.png');
+            tc1.attr('src', 'imgs/btn/time_e_a.png');
+            tc2.attr('src', 'imgs/btn/time_f_d.png');
+            tc3.attr('src', 'imgs/btn/time_g_d.png');
+            window.location.href = 'works.php';
         });
 
         tc2.on('click', function() {
-            tc1.attr('src', 'imgs/btn/time_d_d.png');
-            tc2.attr('src', 'imgs/btn/time_e_a.png');
+            tc1.attr('src', 'imgs/btn/time_e_d.png');
+            tc2.attr('src', 'imgs/btn/time_f_a.png');
+            tc3.attr('src', 'imgs/btn/time_g_d.png');
+            window.location.href = 'works.php';
+        });
+
+        tc3.on('click', function() {
+            tc1.attr('src', 'imgs/btn/time_e_d.png');
+            tc2.attr('src', 'imgs/btn/time_f_d.png');
+            tc3.attr('src', 'imgs/btn/time_g_a.png');
+            window.location.href = 'works.php';
+        });
+        
+        $('.cat .sub').on('click', function() {
+            window.location.href = 'works.php';
+        });
+        $('.loc .sub').on('click', function() {
+            window.location.href = 'works.php';
         });
     });
 </script>
