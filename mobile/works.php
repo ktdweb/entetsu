@@ -14,14 +14,10 @@
 <?php include 'include/header.inc'; ?>
 
 <div id="contents">
-<article>
-<div class="workSearch">
-	<div class="doorTop"><img src="imgs/search_top.png" alt="お仕事を探す" width="100%"></div>
-	<div class="doorBtm"><img src="imgs/search_bottom.png" alt="お仕事を探す" width="100%"></div>
-</div>
 
 <section>
 <div class="worksBg">
+    <p>&nbsp;</p>
     <div class="worksBox">
     <div class="recruitBox">
         <div class="recName"><p>ホテル客室整備スタッフ</p>
@@ -86,6 +82,11 @@
         </div>
         <div class="recPoint"><span class="pay">時給: 800円</span><span class="hour">5:45～20:00</span></div>
     </div>
+    </div>
+
+    <div class="worksBtnBox">
+        <!--a class="btnOther" href="works.php">似た仕事を検索</a-->
+        <a class="btnBack" href="top.php">戻る</a>
     </div>
 </div>
 </section>
