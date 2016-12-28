@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=320px, user-scalable=no, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=320, user-scalable=no, initial-scale=1, maximum-scale=1" />
 <title>遠鉄アシスト</title>
 <?php include 'include/meta.inc'; ?>
 <link rel="stylesheet" href="css/flexslider.css">
