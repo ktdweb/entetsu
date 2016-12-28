@@ -408,7 +408,6 @@
         });
 
         t.on('click', function() {
-            flag = true;
             t.attr('src', 'imgs/btn/time_a.png');
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_d.png');
@@ -508,6 +507,7 @@
         });
 
         tb.on('click', function() {
+            flag = true;
             ta.attr('src', 'imgs/btn/time_b_d.png');
             tb.attr('src', 'imgs/btn/time_c_a.png');
             tc.attr('src', 'imgs/btn/time_d_d.png');
