@@ -34,7 +34,7 @@
         'imgs/rec_type_place06_t.png',
         'imgs/rec_type_place07_t.png',
         'imgs/rec_type_place08_t.png',
-        'imgs/rec_type_place_arrow.png'
+        'imgs/rec_type_place_arrow.png',
         'imgs/btn/cat_a.png',
         'imgs/btn/cat_b_a.png',
         'imgs/btn/cat_b_d.png',
