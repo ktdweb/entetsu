@@ -10,7 +10,7 @@
 
     <script type="text/javascript">
         /* 先読みする画像の配列 */
-        var images_ary = [
+        var images_ary=new Array(
         'imgs/rec_type_time01_t.png',
         'imgs/rec_type_time02_t.png',
         'imgs/rec_type_time03_t.png',
@@ -34,9 +34,8 @@
         'imgs/rec_type_place06_t.png',
         'imgs/rec_type_place07_t.png',
         'imgs/rec_type_place08_t.png',
-        'imgs/rec_type_place_arrow.png'
-        ];
-
+        'imgs/rec_type_place_arrow.png',
+        );
         /* 画像先読み処理関数 */
         function preLoad(imgAry) {
             var imgMax=imgAry.length;
