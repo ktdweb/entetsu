@@ -390,9 +390,9 @@
     </div>    
 </section>
 
-<section>
+<!--section>
 	<div class="topSeminar"><img src="imgs/seminar_img.png" alt="お仕事セミナー開催中" width="100%"></div>
-</section>
+</section-->
 </article>
 
 <?php include 'include/footer.inc'; ?>
