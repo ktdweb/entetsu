@@ -10,7 +10,6 @@
 
     <script type="text/javascript">
         /* 先読みする画像の配列 */
-        /*
         var images_ary = [
         'imgs/rec_type_time01_t.png',
         'imgs/rec_type_time02_t.png',
@@ -36,10 +35,60 @@
         'imgs/rec_type_place07_t.png',
         'imgs/rec_type_place08_t.png',
         'imgs/rec_type_place_arrow.png'
+        'imgs/btn/cat_a.png',
+        'imgs/btn/cat_b_a.png',
+        'imgs/btn/cat_b_d.png',
+        'imgs/btn/cat_c_a.png',
+        'imgs/btn/cat_c_d.png',
+        'imgs/btn/cat_d.png',
+        'imgs/btn/cat_d_a.png',
+        'imgs/btn/cat_d_d.png',
+        'imgs/btn/cat_e_a.png',
+        'imgs/btn/cat_e_d.png',
+        'imgs/btn/cat_f_a.png',
+        'imgs/btn/cat_f_d.png',
+        'imgs/btn/cat_g_a.png',
+        'imgs/btn/cat_g_d.png',
+        'imgs/btn/cat_h_a.png',
+        'imgs/btn/cat_h_d.png',
+        'imgs/btn/loc_a.png',
+        'imgs/btn/loc_b_a.png',
+        'imgs/btn/loc_b_d.png',
+        'imgs/btn/loc_c_a.png',
+        'imgs/btn/loc_c_d.png',
+        'imgs/btn/loc_d.png',
+        'imgs/btn/loc_d_a.png',
+        'imgs/btn/loc_d_d.png',
+        'imgs/btn/loc_e_a.png',
+        'imgs/btn/loc_e_d.png',
+        'imgs/btn/loc_f_a.png',
+        'imgs/btn/loc_f_d.png',
+        'imgs/btn/loc_g_a.png',
+        'imgs/btn/loc_g_d.png',
+        'imgs/btn/loc_h_a.png',
+        'imgs/btn/loc_h_d.png',
+        'imgs/btn/loc_i_a.png',
+        'imgs/btn/loc_i_d.png',
+        'imgs/btn/search.png',
+        'imgs/btn/time_a.png',
+        'imgs/btn/time_a_a.png',
+        'imgs/btn/time_a_d.png',
+        'imgs/btn/time_b_a.png',
+        'imgs/btn/time_b_d.png',
+        'imgs/btn/time_c_a.png',
+        'imgs/btn/time_c_d.png',
+        'imgs/btn/time_d.png',
+        'imgs/btn/time_d_a.png',
+        'imgs/btn/time_d_d.png',
+        'imgs/btn/time_e_a.png',
+        'imgs/btn/time_e_d.png',
+        'imgs/btn/time_f_a.png',
+        'imgs/btn/time_f_d.png',
+        'imgs/btn/time_g_a.png',
+        'imgs/btn/time_g_d.png'
         ];
-        */
+
         /* 画像先読み処理関数 */
-        /*
         function preLoad(imgAry) {
             var imgMax=imgAry.length;
             var images=new Array(imgMax);
@@ -48,12 +97,10 @@
                 images[i].src=imgAry[i];
             }
         }
-         */
     </script>
 
 </head>
-<body>
-<!--body onLoad="preLoad(images_ary)"-->
+<body onLoad="preLoad(images_ary);">
 <div id="view">
 <div class="wrap">
 <?php include 'include/header.inc'; ?>
