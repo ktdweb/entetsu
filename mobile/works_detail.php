@@ -1,13 +1,13 @@
 <?php
 ini_set('allow_url_fopen', 1);
-define('DOMAIN', 'http://localhost:8080/api/works/detail/');
-// define('DOMAIN', 'http://entetsu-assist.co.jp/api/works/');
+include 'include/env.php';
 
-$id = 4;
-$url = DOMAIN . $id;
-
-print_r(file_get_contents($url));
-$data = json_decode(file_get_contents($url), true);
+$id = $_GET['id'];
+$url = DOMAIN . 'api/works/detail/'. $id;
+$w = array();
+if (!empty(json_decode(file_get_contents($url), true))) {
+    $w = json_decode(file_get_contents($url), true)[0];
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -25,54 +25,58 @@ $data = json_decode(file_get_contents($url), true);
 
 <div id="contents">
 <article>
-<h2 class="stitle"><img src="imgs/title_works.png" alt="検索結果" width="100%"></h2>
+<h2 class="stitle">
+    <img src="imgs/title_works.png" alt="検索結果" width="100%">
+</h2>
 <section>
 <div class="worksDetail">
     <div class="workData">
-        <div class="workName">ホテル客室整備スタッフ</div>
+    <div class="workName"><?php echo $w['title'] ;?></div>
         <ul class="workPoint">
-        	<li>時給: 860円</li>
-        	<li>17:00～19:30 </li>
+        <li><?php 
+            echo $w['unit_wage'] . ' : ' . $w['abbr_wage'] . '円';
+        ?></li>
+            <li><?php echo $w['abbr_time']; ?></li>
         </ul>
         <dl class="workInfo">
         	<dt>仕事の内容</dt>
-            <dd>リゾートホテルのチェックイン後の客室整備・布団敷き・基本和室（約３０部屋程度）での布団敷きの作業です が、時々洋室でのエキストラベッドの準備をして 頂きます。※２～３人１組にて作業</dd>
-            
+            <dd><?php echo $w['detail']; ?></dd>
+
             <dt>勤務地</dt>
-            <dd>浜松市東区</dd>
-            
+            <dd><?php echo $w['location']; ?></dd>
+
             <dt>時間</dt>
-            <dd>17:00～19:30</dd>
-            
+            <dd><?php echo $w['time']; ?></dd>
+
             <dt>休憩時間</dt>
-            <dd>0分</dd>
-            
+            <dd><?php echo $w['break']; ?></dd>
+
             <dt>給与</dt>
-            <dd>時給860円</dd>
-            
+            <dd><?php echo $w['wage']; ?></dd>
+
             <dt>日数</dt>
-            <dd>週5日程度</dd>
-            
+            <dd><?php echo $w['days']; ?></dd>
+
             <dt>休日</dt>
-            <dd>週休シフト制</dd>
-            
+            <dd><?php echo $w['holidays']; ?></dd>
+
             <dt>雇用形態</dt>
-            <dd>パート</dd>
-            
+            <dd><?php echo $w['type']; ?></dd>
+
             <dt>雇用期間</dt>
-            <dd>長期</dd>
-            
+            <dd><?php echo $w['term']; ?></dd>
+
             <dt>学歴</dt>
-            <dd>不問</dd>
-            
+            <dd><?php echo $w['career']; ?></dd>
+
             <dt>職場の雰囲気</dt>
-            <dd>仲の良い楽しい職場です。20～50代の幅広い女性がいます。</dd>
-            
+            <dd><?php echo $w['selling']; ?></dd>
+
             <dt>資格</dt>
-            <dd>普通運転免許</dd>
-            
+            <dd><?php echo $w['cert']; ?></dd>
+
             <dt>備考</dt>
-            <dd>シフトは融通がききます。</dd>
+            <dd><?php echo $w['desc']; ?></dd>
         </dl>
 
         <div class="worksBtnBox">
@@ -86,7 +90,17 @@ $data = json_decode(file_get_contents($url), true);
 </article>
 </div><!-- /.contents -->
 
-<?php include 'include/footer.inc'; ?>
+<footer>
+<div class="fContact">
+    電話でのお問い合わせは...
+    <p><?php echo $w['tel']; ?></p>
+    （受付時間 平日9：00～18：00）
+</div>
+<div class="copyright">
+	<div class="pagetop"><a href="#view"><img src="imgs/pagetop.png" alt="ページの先頭へ" width="100%"></a></div>
+    <p>Copyright(C) Entetsu Assist Co.,Ltd. All Rights Reserved</p>
+</div>
+</footer>
 
 </div><!-- /.wrap -->
 </div><!-- /#view -->
