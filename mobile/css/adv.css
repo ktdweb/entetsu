@@ -108,3 +108,8 @@ div#search .searchBox .loc {
 div#search .searchBox .time {
 	z-index: 100;
 	}
+
+div.fContact p {
+	font-size: 191.7%;
+    font-weight: bold;
+}

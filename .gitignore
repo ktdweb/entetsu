@@ -22,5 +22,7 @@ spec/js/*
 /index.html
 /index.php
 
+/mobile/include/env.php
+
 !.gitkeep
 !.htaccess.sample
