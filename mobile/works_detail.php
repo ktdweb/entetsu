@@ -80,7 +80,6 @@ if (!empty(json_decode(file_get_contents($url), true))) {
         </dl>
 
         <div class="worksBtnBox">
-        	<!--a class="btnOther" href="works.php">似た仕事を検索</a-->
         	<a class="btnBack" href="top.php">戻る</a>
         </div>
     </div>
