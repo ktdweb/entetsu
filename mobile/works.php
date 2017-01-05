@@ -30,6 +30,9 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 <div class="worksBg">
     <p>&nbsp;</p>
 
+    <?php if (empty($works)) : ?>
+        <p class="empty">検索結果が0件でした</p>
+    <?php else : ?>
     <?php foreach ($works as $w) :  ?>    
     <div class="worksBox">
     <div class="recruitBox">
@@ -48,9 +51,14 @@ if (!empty(json_decode(file_get_contents($url), true))) {
                 <?php echo $w['abbr_time']; ?>
             </span></div>
         </div>
+
     </div>
     <?php endforeach; ?>
+    <?php endif; ?>
 
+    <div class="worksBtnBox">
+        <a class="btnBack" href="top.php">戻る</a>
+    </div>
 </section>
 
 </article>

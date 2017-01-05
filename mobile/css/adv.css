@@ -113,3 +113,9 @@ div.fContact p {
 	font-size: 191.7%;
     font-weight: bold;
 }
+
+div.worksBg p.empty {
+    font-size: 191.7%;
+    color: white;
+    text-align: center;
+}
