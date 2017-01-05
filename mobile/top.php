@@ -112,8 +112,10 @@
 
 <div id="search">
     <div>
-        <input type="text" value="" placeholder="フリーワードで仕事を探す" />
+    <form method="post" action="works.php?category=freeword">
+        <input type="text" name="keyword" value="" placeholder="フリーワードで仕事を探す" />
         <button>検索</button>
+        </form>
     </div>
 
     <ul>
@@ -241,7 +243,7 @@
             <ul class="sub" name="8">
                 <li></li>
                 <li></li>
-                <li><img id="lh" src="imgs/btn/loc_i_a.png" alt="img" width="82.9268%"></li>
+                <li><img id="lh" name="8" src="imgs/btn/loc_i_a.png" alt="img" width="82.9268%"></li>
             </ul>
         </div>
     	<!-- /.loc -->
@@ -393,6 +395,7 @@
 <!--section>
 	<div class="topSeminar"><img src="imgs/seminar_img.png" alt="お仕事セミナー開催中" width="100%"></div>
 </section-->
+
 </article>
 
 <?php include 'include/footer.inc'; ?>
@@ -448,6 +451,7 @@
         var lh = $('#lh');
 
         var flag = false;
+        var cat = '';
 
         $('div.doorBtm').on('click', function() {
             $('div.doorBtm').animate({top: '1400px'}, 1500);
@@ -459,6 +463,7 @@
         });
 
         t.on('click', function() {
+            cat = 'time';
             t.attr('src', 'imgs/btn/time_a.png');
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_d.png');
@@ -487,6 +492,8 @@
 
         c.on('click', function() {
             flag = false;
+            cat = 'category';
+
             t.attr('src', 'imgs/btn/time_d.png');
             c.attr('src', 'imgs/btn/cat_a.png');
             l.attr('src', 'imgs/btn/loc_d.png');
@@ -518,6 +525,8 @@
 
         l.on('click', function() {
             flag = false;
+            cat = 'location';
+
             t.attr('src', 'imgs/btn/time_d.png');
             c.attr('src', 'imgs/btn/cat_d.png');
             l.attr('src', 'imgs/btn/loc_a.png');
@@ -600,15 +609,69 @@
         });
         
         $('.sub').on('click', function(e) {
-            var id = e.currentTarget.name;
-            console.log(id);
+            var id = e.currentTarget.getAttribute('name');
             if (id == undefined) {
-                // id = e.currentTarget.getAttribute('name');
+              id = 0;
             }
-            if (!flag) {
+
+            if (cat == 'time') {
+                id = e.target.name;
+            }
+
+            if (cat == 'category') {
+                switch (parseInt(id)) {
+                  case 0:
+                    id = 15;
+                    break;
+                  case 12:
+                    id = 16;
+                    break;
+                  case 13:
+                    id = 17;
+                    break;
+                  case 14:
+                    id = 18;
+                    break;
+                  case 5:
+                    id = 20;
+                    break;
+                  case 6:
+                    id = 21;
+                    break;
+                  case 7:
+                    id = 19;
+                    break;
+                  default:
+                    // no op
+                    break;
+                }
+            }
+
+            if (cat == 'location') {
+                switch (parseInt(id)) {
+                  case 0:
+                    id = 1;
+                    break;
+                  case 12:
+                    id = 2;
+                    break;
+                  case 13:
+                    id = 3;
+                    break;
+                  case 14:
+                    id = 4;
+                    break;
+                  default:
+                    id = e.target.name;
+                    break;
+                }
+            }
+
+            if (!flag || id != 10) {
               window.location.href = 'works.php?category=' +  id;
             }
         });
+
         $('#search button').on('click', function() {
             window.location.href = 'works.php';
         });
