@@ -3,7 +3,12 @@ ini_set('allow_url_fopen', 1);
 include 'include/env.php';
 
 $category = $_GET['category'];
-$url = DOMAIN . 'api/works/category/'. $category;
+if ($category == 'freeword') {
+    $keyword = $_POST['keyword'];
+    $url = DOMAIN . 'api/works/keyword/'. $keyword;
+} else {
+    $url = DOMAIN . 'api/works/category/'. $category;
+}
 $w = array();
 if (!empty(json_decode(file_get_contents($url), true))) {
     $works = json_decode(file_get_contents($url), true);

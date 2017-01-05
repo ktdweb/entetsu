@@ -112,8 +112,10 @@
 
 <div id="search">
     <div>
-        <input type="text" value="" placeholder="フリーワードで仕事を探す" />
+    <form method="post" action="works.php?category=freeword">
+        <input type="text" name="keyword" value="" placeholder="フリーワードで仕事を探す" />
         <button>検索</button>
+        </form>
     </div>
 
     <ul>
