@@ -20,6 +20,7 @@ SHOW tables;
 
 -- users テーブル確認 /*{{{*/
 SELECT * FROM `users`;
+SELECT * FROM `categories`;
 /*}}}*/
 
 --- 登録テスト用
