@@ -1681,7 +1681,6 @@ NOW() + INTERVAL 4 second
 /*}}}*/
 
 
-
 --- tags
 
 -- tags テーブル確認 /*{{{*/
@@ -1911,6 +1910,7 @@ INSERT INTO `tags` (
 (54,9),
 (54,18);
 /*}}}*/
+
 
 --- sections
 
