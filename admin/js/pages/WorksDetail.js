@@ -24,6 +24,14 @@ var _WorkActions = require('../../../js/actions/WorkActions');
 
 var _WorkActions2 = _interopRequireDefault(_WorkActions);
 
+var _CommonStore = require('../../../js/stores/CommonStore');
+
+var _CommonStore2 = _interopRequireDefault(_CommonStore);
+
+var _CommonActions = require('../../../js/actions/CommonActions');
+
+var _CommonActions2 = _interopRequireDefault(_CommonActions);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31,6 +39,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// jsを詠込むためsrc, admin共にgulpしないと反映不可
+
 
 var WorksDetail = function (_React$Component) {
   _inherits(WorksDetail, _React$Component);
@@ -41,7 +52,14 @@ var WorksDetail = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
     var works = _WorkStore2.default.read();
-    _this.state = { works: works[0] };
+    _this.state = {
+      works: works[0],
+      commons: {
+        'categories': [],
+        'groups': [],
+        'sections': []
+      }
+    };
     return _this;
   }
 
@@ -50,11 +68,15 @@ var WorksDetail = function (_React$Component) {
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       _WorkActions2.default.adminEach(this.props.params.id);
+
+      _CommonStore2.default.subscribe(this.updateCommon.bind(this));
+      _CommonActions2.default.get();
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       _WorkStore2.default.destroy(this.updateState.bind(this));
+      _CommonStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
     key: 'handleAlert',
@@ -66,9 +88,19 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      if (!this.state.commons.categories[1]) return false;
+
       var data = this.state.works;
 
-      var sections = this.generateSections();
+      var sections = this.generateSelects(this.state.commons.sections, 'sections');
+
+      var wages = this.generateSelects(this.state.commons.wages, 'wages');
+
+      var locations = this.generateCheckbox(this.state.commons.categories[1], 'locations');
+
+      var times = this.generateCheckbox(this.state.commons.categories[2], 'times');
+
+      var categories = this.generateCheckbox(this.state.commons.categories[3], 'categories');
 
       return _react2.default.createElement(
         'article',
@@ -444,7 +476,7 @@ var WorksDetail = function (_React$Component) {
               _react2.default.createElement('input', {
                 type: 'text',
                 name: 'abbr_wage',
-                className: 'w-xs',
+                className: 'w-s',
                 value: data.abbr_wage,
                 placeholder: '860',
                 onChange: this.handleText.bind(this)
@@ -465,25 +497,11 @@ var WorksDetail = function (_React$Component) {
                 _react2.default.createElement(
                   'select',
                   {
-                    name: 'unit_wage',
+                    name: 'unit_wage_id',
                     onChange: this.handleText.bind(this),
-                    value: data.unit_wage
+                    value: data.unit_wage_id
                   },
-                  _react2.default.createElement(
-                    'option',
-                    { value: '1' },
-                    '時給'
-                  ),
-                  _react2.default.createElement(
-                    'option',
-                    { value: '2' },
-                    '日給'
-                  ),
-                  _react2.default.createElement(
-                    'option',
-                    { value: '3' },
-                    '月給'
-                  )
+                  wages
                 )
               )
             ),
@@ -514,54 +532,7 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'location_id',
-                onChange: this.handleText.bind(this),
-                value: data.location_id
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                '中区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                '北区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                '東区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '4' },
-                '西区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '5' },
-                '南区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '6' },
-                '浜北区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '7' },
-                '天竜区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '8' },
-                'その他'
-              )
-            )
+            locations
           )
         ),
         _react2.default.createElement(
@@ -575,44 +546,7 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'time_id',
-                onChange: this.handleText.bind(this),
-                value: data.time_id
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                'フルタイム'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                '短時間'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                '短期'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '4' },
-                '午前中'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '5' },
-                '午後'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '6' },
-                '夕方'
-              )
-            )
+            times
           )
         ),
         _react2.default.createElement(
@@ -626,49 +560,7 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'category_id',
-                onChange: this.handleText.bind(this),
-                value: data.category_id
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                '清掃職'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                'ドライバー'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                'ビル管理スタッフ'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '4' },
-                '営業・事務職'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '5' },
-                '食品検査技師'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '6' },
-                '新卒'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '7' },
-                'その他'
-              )
-            )
+            categories
           )
         ),
         _react2.default.createElement('hr', null),
@@ -747,14 +639,40 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      _WorkActions2.default.adminUpdate(this.state.works);
-      window.location.href = '/admin/works/';
+      var keys = ['locations', 'times', 'categories'];
+
+      var tags = [];
+
+      Object.keys(keys).map(function (v) {
+        var arr = document.getElementsByName(keys[v]);
+        Object.keys(arr).map(function (i) {
+          if (arr[i].checked == true) {
+            tags.push(parseInt(arr[i].value));
+          }
+        });
+      });
+
+      var res = this.state.works;
+      res.tags = tags;
+
+      delete res.location_id;
+      delete res.time_id;
+      delete res.category_id;
+
+      _WorkActions2.default.adminUpdate(res);
+      //window.location.href = '/admin/works/';
     }
   }, {
     key: 'updateState',
     value: function updateState() {
       var res = _WorkStore2.default.read();
       this.setState({ works: res[0], tags: res.tags });
+    }
+  }, {
+    key: 'updateCommon',
+    value: function updateCommon() {
+      var res = _CommonStore2.default.read();
+      this.setState({ commons: res });
     }
   }, {
     key: 'handleSections',
@@ -770,18 +688,42 @@ var WorksDetail = function (_React$Component) {
       this.setState({ works: obj });
     }
   }, {
-    key: 'generateSections',
-    value: function generateSections() {
-      var arr = ['清掃', 'ビル', 'マンション', '運行', '指定管理', 'ベンリ-', '食品', '総務'];
-
+    key: 'generateSelects',
+    value: function generateSelects(arr, key) {
       return Object.keys(arr).map(function (i) {
         return _react2.default.createElement(
           'option',
           {
-            key: 'section' + i,
-            value: parseInt(i) + 1
+            key: key + i,
+            value: parseInt(arr[i].id)
           },
-          arr[i]
+          arr[i].name
+        );
+      });
+    }
+  }, {
+    key: 'generateCheckbox',
+    value: function generateCheckbox(arr, key) {
+      var _this2 = this;
+
+      return Object.keys(arr).map(function (i) {
+        var checked = '';
+        Object.keys(_this2.state.tags).map(function (v) {
+          if (arr[i].id == _this2.state.tags[v]) {
+            checked = 'checked';
+          }
+        });
+
+        return _react2.default.createElement(
+          'label',
+          { key: key + i },
+          arr[i].name,
+          _react2.default.createElement('input', {
+            name: key,
+            type: 'checkbox',
+            value: parseInt(arr[i].id),
+            defaultChecked: checked
+          })
         );
       });
     }

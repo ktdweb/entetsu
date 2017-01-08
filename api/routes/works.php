@@ -258,13 +258,37 @@ $app->group('/works', function () {
             $body = $request->getParsedBody();
 
             $db = $this->get('db.put');
+            $post = $this->get('db.post');
+            $del = $this->get('db.delete');
 
             $id = (int)$body['id'];
+            $tags = $body['tags'];
 
             unset($body['email']);
             unset($body['name']);
             unset($body['tel']);
             unset($body['id']);
+            unset($body['tags']);
+
+            // tags delete
+            $sql = 'DELETE FROM `tags` WHERE `work_id` = ?';
+            $del->execute($sql, $id);
+
+            // tags insert
+            $sql = '
+                INSERT INTO `tags` (
+                `work_id`,
+                `category_id`
+                ) VALUES
+            ';
+            foreach ($tags as $tag) {
+                $sql .= '(' . $id . ', ' . $tag . '),';
+            };
+            $sql = rtrim($sql, ',') . ';';
+
+            $post->execute($sql);
+
+            // works
             $values = array_values($body);
 
             $sql = 'UPDATE `works` SET ';
@@ -290,13 +314,10 @@ $app->group('/works', function () {
             $sql .= '`img`=?,';
             $sql .= '`abbr_wage`=?,';
             $sql .= '`abbr_time`=?,';
-            $sql .= '`unit_wage`=?,';
+            $sql .= '`unit_wage_id`=?,';
             $sql .= '`created`=?,';
-            $sql .= '`modified`=?,';
-            $sql .= '`category_id`=?,';
-            $sql .= '`location_id`=?,';
-            $sql .= '`time_id`=?';
-            $sql .= ' WHERE `id` = ' . $id;
+            $sql .= '`modified`=? ';
+            $sql .= ' WHERE `id` = ' . $id . ';';
 
             $res = $db->execute($sql, $values);
 

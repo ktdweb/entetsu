@@ -436,7 +436,8 @@ export default class WorksDetail extends React.Component {
     delete res.time_id;
     delete res.category_id;
     
-    WorkActions.adminUpdate(res);
+    console.log(res);
+    //WorkActions.adminUpdate(res);
     //window.location.href = '/admin/works/';
   }
 
