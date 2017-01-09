@@ -1561,7 +1561,7 @@ var WorksDetail = function (_React$Component) {
       delete res.category_id;
 
       _WorkActions2.default.adminUpdate(res);
-      //window.location.href = '/admin/works/';
+      window.location.href = '/admin/works/';
     }
   }, {
     key: 'updateState',
