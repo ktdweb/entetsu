@@ -32,6 +32,10 @@ var _CommonActions = require('../../../js/actions/CommonActions');
 
 var _CommonActions2 = _interopRequireDefault(_CommonActions);
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -118,7 +122,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '担当部署'
+            '担当部署',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -144,7 +153,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '期間指定'
+            '期間指定',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -159,7 +173,8 @@ var WorksDetail = function (_React$Component) {
               name: 'entry_start',
               className: 'w-s',
               onChange: this.handleText.bind(this),
-              value: data.entry_start
+              value: data.entry_start,
+              'data-type': 'datetime'
             }),
             _react2.default.createElement(
               'label',
@@ -172,7 +187,12 @@ var WorksDetail = function (_React$Component) {
               className: 'w-s',
               onChange: this.handleText.bind(this),
               value: data.entry_end
-            })
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です 0000-00-00 00:00:00の書式で入力してください'
+            )
           )
         ),
         _react2.default.createElement('hr', null),
@@ -182,7 +202,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            'タイトル'
+            'タイトル',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -192,8 +217,15 @@ var WorksDetail = function (_React$Component) {
               name: 'title',
               value: data.title,
               onChange: this.handleText.bind(this),
-              className: 'w-xl'
-            })
+              className: 'w-xl',
+              maxLength: '120',
+              required: true
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です'
+            )
           )
         ),
         _react2.default.createElement(
@@ -232,7 +264,8 @@ var WorksDetail = function (_React$Component) {
               name: 'location',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.location
+              value: data.location,
+              maxLength: '120'
             })
           )
         ),
@@ -271,7 +304,8 @@ var WorksDetail = function (_React$Component) {
               type: 'text',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.break
+              value: data.break,
+              maxLength: '120'
             })
           )
         ),
@@ -291,7 +325,8 @@ var WorksDetail = function (_React$Component) {
               name: 'wage',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.wage
+              value: data.wage,
+              maxLength: '120'
             })
           )
         ),
@@ -311,7 +346,8 @@ var WorksDetail = function (_React$Component) {
               name: 'days',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.days
+              value: data.days,
+              maxLength: '120'
             })
           )
         ),
@@ -331,7 +367,8 @@ var WorksDetail = function (_React$Component) {
               name: 'holidays',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.holidays
+              value: data.holidays,
+              maxLength: '120'
             })
           )
         ),
@@ -351,7 +388,8 @@ var WorksDetail = function (_React$Component) {
               name: 'part',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.part
+              value: data.part,
+              maxLength: '120'
             })
           )
         ),
@@ -371,7 +409,8 @@ var WorksDetail = function (_React$Component) {
               name: 'term',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.term
+              value: data.term,
+              maxLength: '120'
             })
           )
         ),
@@ -391,7 +430,8 @@ var WorksDetail = function (_React$Component) {
               name: 'career',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.career
+              value: data.career,
+              maxLength: '120'
             })
           )
         ),
@@ -430,7 +470,8 @@ var WorksDetail = function (_React$Component) {
               name: 'cert',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.cert
+              value: data.cert,
+              maxLength: '120'
             })
           )
         ),
@@ -460,14 +501,19 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '短縮表示'
+            '短縮表示',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
             null,
             _react2.default.createElement(
-              'p',
-              null,
+              'div',
+              { className: 'abbr' },
               _react2.default.createElement(
                 'label',
                 null,
@@ -479,13 +525,25 @@ var WorksDetail = function (_React$Component) {
                 className: 'w-s',
                 value: data.abbr_wage,
                 placeholder: '860',
-                onChange: this.handleText.bind(this)
+                onChange: this.handleText.bind(this),
+                maxLength: '8',
+                'data-type': 'int',
+                required: true
               }),
               _react2.default.createElement(
                 'small',
                 null,
                 '円'
               ),
+              _react2.default.createElement(
+                'p',
+                { className: 'message' },
+                '必須項目です 半角数字で入力してください'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'abbr' },
               _react2.default.createElement(
                 'label',
                 null,
@@ -506,18 +564,29 @@ var WorksDetail = function (_React$Component) {
               )
             ),
             _react2.default.createElement(
-              'label',
+              'div',
               null,
-              '時間'
-            ),
-            _react2.default.createElement('input', {
-              type: 'text',
-              name: 'abbr_time',
-              className: 'w-s',
-              value: data.abbr_time,
-              placeholder: '09:00~17:00',
-              onChange: this.handleText.bind(this)
-            })
+              _react2.default.createElement(
+                'label',
+                null,
+                '時間'
+              ),
+              _react2.default.createElement('input', {
+                type: 'text',
+                name: 'abbr_time',
+                className: 'w-s',
+                value: data.abbr_time,
+                placeholder: '09:00~17:00',
+                onChange: this.handleText.bind(this),
+                maxLength: '12',
+                required: true
+              }),
+              _react2.default.createElement(
+                'p',
+                { className: 'message' },
+                '必須項目です'
+              )
+            )
           )
         ),
         _react2.default.createElement('hr', null),
@@ -570,7 +639,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            'スライダー検索用'
+            'スライダー検索用',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -585,7 +659,8 @@ var WorksDetail = function (_React$Component) {
               name: 'time_start',
               className: 'w-s',
               value: data.time_start,
-              onChange: this.handleText.bind(this)
+              onChange: this.handleText.bind(this),
+              'data-type': 'time'
             }),
             _react2.default.createElement(
               'label',
@@ -597,8 +672,14 @@ var WorksDetail = function (_React$Component) {
               name: 'time_end',
               className: 'w-s',
               value: data.time_end,
-              onChange: this.handleText.bind(this)
-            })
+              onChange: this.handleText.bind(this),
+              'data-type': 'time'
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です 00:00:00の書式で入力してください'
+            )
           )
         ),
         _react2.default.createElement('hr', null),
@@ -683,9 +764,67 @@ var WorksDetail = function (_React$Component) {
     key: 'handleText',
     value: function handleText(e) {
       var field = e.target.getAttribute('name');
+      var req = e.target.required;
+      var value = e.target.value;
+      var type = e.target.getAttribute('data-type');
+      var mes = e.target.parentNode.querySelector('p.message');
+
+      var isValid = true;
+      if (req && !this.isValidRequired(value)) {
+        isValid = false;
+      }
+      if (type == 'int' && !this.isValidInt(value)) {
+        isValid = false;
+      }
+      if (type == 'time' && !this.isValidTime(value)) {
+        isValid = false;
+      }
+      if (type == 'datetime' && !this.isValidDateTime(value)) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        e.target.style.borderColor = '#D9534F';
+        if (mes) mes.classList.add('show');
+      } else {
+        e.target.style.borderColor = '#CDCDCD';
+        if (mes) mes.classList.remove('show');
+      }
+
       var obj = this.state.works;
       obj[field] = e.target.value;
       this.setState({ works: obj });
+    }
+  }, {
+    key: 'isValidRequired',
+    value: function isValidRequired(str) {
+      return str.length > 0 ? true : false;
+    }
+  }, {
+    key: 'isValidInt',
+    value: function isValidInt(str) {
+      return isFinite(str);
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return (0, _moment2.default)(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return (0, _moment2.default)(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidTime',
+    value: function isValidTime(str) {
+      return (0, _moment2.default)(str, 'HH:mm:ss', true).isValid();
     }
   }, {
     key: 'generateSelects',

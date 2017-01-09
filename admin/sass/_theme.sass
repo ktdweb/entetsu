@@ -37,3 +37,36 @@ dl
   margin-bottom: $base-spacing
   dt
     width: 16rem
+
+/*
+ # .warning
+ フォーム用のクラス
+ 文字色を赤く
+ */
+
+.warning
+  color: $brand-danger
+
+/*
+ # p.message
+ フォーム用のクラス
+ デフォルトは非表示
+ 文字色を赤く
+ */
+
+p.message
+  display: none
+  margin-top: $small-spacing / 2
+  margin-bottom: 0
+  font-size: $small-font-size
+  color: $brand-danger
+  &.show
+    display: block
+
+/*
+ # div.abbr
+ WorksDetail.jsx内の短縮表示のみで使用
+ */
+
+div.abbr
+  margin-bottom: $base-spacing

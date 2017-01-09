@@ -9,6 +9,8 @@ import WorkActions from '../../../js/actions/WorkActions'
 import CommonStore from '../../../js/stores/CommonStore'
 import CommonActions from '../../../js/actions/CommonActions'
 
+import m from 'moment'
+
 export default class WorksDetail extends React.Component {
 
   constructor(props) {
@@ -84,7 +86,10 @@ export default class WorksDetail extends React.Component {
         </h1>
 
         <dl>
-          <dt>担当部署</dt>
+          <dt>
+            担当部署
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>
             <label className="formSelect">
               <select
@@ -99,7 +104,10 @@ export default class WorksDetail extends React.Component {
         </dl>
 
         <dl>
-          <dt>期間指定</dt>
+          <dt>
+            期間指定
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>
             <label>開始日時</label>
             <input
@@ -108,6 +116,7 @@ export default class WorksDetail extends React.Component {
               className="w-s"
               onChange={this.handleText.bind(this)}
               value={data.entry_start}
+              data-type="datetime"
               />
 
             <label>終了日時</label>
@@ -118,13 +127,20 @@ export default class WorksDetail extends React.Component {
               onChange={this.handleText.bind(this)}
               value={data.entry_end}
               />
+
+            <p className="message">
+              必須項目です 0000-00-00 00:00:00の書式で入力してください
+            </p>
           </dd>
         </dl>
 
         <hr />
 
         <dl>
-          <dt>タイトル</dt>
+          <dt>
+            タイトル
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>
             <input
               type="text"
@@ -132,7 +148,13 @@ export default class WorksDetail extends React.Component {
               value={data.title}
               onChange={this.handleText.bind(this)}
               className="w-xl"
+              maxLength="120"
+              required={true}
               />
+
+              <p className="message">
+                必須項目です
+              </p>
           </dd>
         </dl>
 
@@ -158,6 +180,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.location}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -183,6 +206,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.break}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -196,6 +220,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.wage}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -209,6 +234,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.days}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -222,6 +248,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.holidays}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -235,6 +262,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.part}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -248,6 +276,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.term}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -261,6 +290,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.career}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -286,6 +316,7 @@ export default class WorksDetail extends React.Component {
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.cert}
+              maxLength="120"
               />
           </dd>
         </dl>
@@ -305,9 +336,12 @@ export default class WorksDetail extends React.Component {
         <hr />
 
         <dl>
-          <dt>短縮表示</dt>
+          <dt>
+            短縮表示
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>
-            <p>
+            <div className="abbr">
               <label>給与</label>
               <input
                 type="text"
@@ -316,9 +350,18 @@ export default class WorksDetail extends React.Component {
                 value={data.abbr_wage}
                 placeholder="860"
                 onChange={this.handleText.bind(this)}
+                maxLength="8"
+                data-type="int"
+                required={true}
                 />
                 <small>円</small>
               
+              <p className="message">
+                必須項目です 半角数字で入力してください
+              </p>
+            </div>
+
+            <div className="abbr">
               <label>単位</label>
               <label className="formSelect">
                 <select
@@ -329,17 +372,22 @@ export default class WorksDetail extends React.Component {
                   {wages}
                   </select>
               </label>
-            </p>
+            </div>
 
-            <label>時間</label>
-            <input
-              type="text"
-              name="abbr_time"
-              className="w-s"
-              value={data.abbr_time}
-              placeholder="09:00~17:00"
-              onChange={this.handleText.bind(this)}
-              />
+            <div>
+              <label>時間</label>
+              <input
+                type="text"
+                name="abbr_time"
+                className="w-s"
+                value={data.abbr_time}
+                placeholder="09:00~17:00"
+                onChange={this.handleText.bind(this)}
+                maxLength="12"
+                required={true}
+                />
+                <p className="message">必須項目です</p>
+            </div>
           </dd>
         </dl>
 
@@ -363,7 +411,10 @@ export default class WorksDetail extends React.Component {
         <hr />
 
         <dl>
-          <dt>スライダー検索用</dt>
+          <dt>
+            スライダー検索用
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>
             <label>開始時間</label>
             <input
@@ -372,6 +423,7 @@ export default class WorksDetail extends React.Component {
               className="w-s"
               value={data.time_start}
               onChange={this.handleText.bind(this)}
+              data-type="time"
               />
 
             <label>終了時間</label>
@@ -381,7 +433,12 @@ export default class WorksDetail extends React.Component {
               className="w-s"
               value={data.time_end}
               onChange={this.handleText.bind(this)}
+              data-type="time"
               />
+
+              <p className="message">
+                必須項目です 00:00:00の書式で入力してください
+              </p>
           </dd>
         </dl>
 
@@ -458,11 +515,64 @@ export default class WorksDetail extends React.Component {
 
   handleText(e) {
     const field = e.target.getAttribute('name');
+    const req = e.target.required;
+    const value = e.target.value;
+    const type = e.target.getAttribute('data-type');
+    const mes = e.target.parentNode.querySelector('p.message');
+
+    let isValid = true;
+    if (req && !this.isValidRequired(value)) {
+      isValid = false;
+    }
+    if (type == 'int' && !this.isValidInt(value)) {
+      isValid = false;
+    }
+    if (type == 'time' && !this.isValidTime(value)) {
+      isValid = false;
+    }
+    if (type == 'datetime' && !this.isValidDateTime(value)) {
+      isValid = false;
+    }
+
+    if (!isValid) {
+      e.target.style.borderColor = '#D9534F';
+      if (mes) mes.classList.add('show');
+    } else {
+      e.target.style.borderColor = '#CDCDCD';
+      if (mes) mes.classList.remove('show');
+    }
+
     let obj = this.state.works;
     obj[field] = e.target.value;
     this.setState({ works: obj });
   }
-  
+
+  isValidRequired(str) {
+    return (str.length > 0) ? true : false ;
+  }
+
+  isValidInt(str) {
+    return isFinite(str);
+  }
+
+  isValidDateTime(str) {
+    if (str == '0000-00-00 00:00:00') {
+      return true;
+    }
+    return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+  }
+
+  isValidDateTime(str) {
+    if (str == '0000-00-00 00:00:00') {
+      return true;
+    }
+    return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+  }
+
+  isValidTime(str) {
+    return m(str, 'HH:mm:ss', true).isValid();
+  }
+
   generateSelects(arr, key) {
     return Object.keys(arr).map((i) => {
       return <option
