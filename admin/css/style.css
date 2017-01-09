@@ -3602,6 +3602,36 @@ dl {
     width: 16rem; }
 
 /*
+ # .warning
+ フォーム用のクラス
+ 文字色を赤く
+ */
+.warning {
+  color: #D9534F; }
+
+/*
+ # p.message
+ フォーム用のクラス
+ デフォルトは非表示
+ 文字色を赤く
+ */
+p.message {
+  display: none;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  color: #D9534F; }
+  p.message.show {
+    display: block; }
+
+/*
+ # div.abbr
+ WorksDetail.jsx内の短縮表示のみで使用
+ */
+div.abbr {
+  margin-bottom: 2rem; }
+
+/*
   # layouts/index.sass */
 /*
   # layouts/Default.sass */

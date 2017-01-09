@@ -24,6 +24,18 @@ var _WorkActions = require('../../../js/actions/WorkActions');
 
 var _WorkActions2 = _interopRequireDefault(_WorkActions);
 
+var _CommonStore = require('../../../js/stores/CommonStore');
+
+var _CommonStore2 = _interopRequireDefault(_CommonStore);
+
+var _CommonActions = require('../../../js/actions/CommonActions');
+
+var _CommonActions2 = _interopRequireDefault(_CommonActions);
+
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31,6 +43,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// jsを詠込むためsrc, admin共にgulpしないと反映不可
+
 
 var WorksDetail = function (_React$Component) {
   _inherits(WorksDetail, _React$Component);
@@ -41,7 +56,14 @@ var WorksDetail = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
     var works = _WorkStore2.default.read();
-    _this.state = { works: works[0] };
+    _this.state = {
+      works: works[0],
+      commons: {
+        'categories': [],
+        'groups': [],
+        'sections': []
+      }
+    };
     return _this;
   }
 
@@ -50,11 +72,15 @@ var WorksDetail = function (_React$Component) {
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       _WorkActions2.default.adminEach(this.props.params.id);
+
+      _CommonStore2.default.subscribe(this.updateCommon.bind(this));
+      _CommonActions2.default.get();
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       _WorkStore2.default.destroy(this.updateState.bind(this));
+      _CommonStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
     key: 'handleAlert',
@@ -66,9 +92,19 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      if (!this.state.commons.categories[1]) return false;
+
       var data = this.state.works;
 
-      var sections = this.generateSections();
+      var sections = this.generateSelects(this.state.commons.sections, 'sections');
+
+      var wages = this.generateSelects(this.state.commons.wages, 'wages');
+
+      var locations = this.generateCheckbox(this.state.commons.categories[1], 'locations');
+
+      var times = this.generateCheckbox(this.state.commons.categories[2], 'times');
+
+      var categories = this.generateCheckbox(this.state.commons.categories[3], 'categories');
 
       return _react2.default.createElement(
         'article',
@@ -86,7 +122,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '担当部署'
+            '担当部署',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -112,7 +153,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '期間指定'
+            '期間指定',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -127,7 +173,8 @@ var WorksDetail = function (_React$Component) {
               name: 'entry_start',
               className: 'w-s',
               onChange: this.handleText.bind(this),
-              value: data.entry_start
+              value: data.entry_start,
+              'data-type': 'datetime'
             }),
             _react2.default.createElement(
               'label',
@@ -140,7 +187,12 @@ var WorksDetail = function (_React$Component) {
               className: 'w-s',
               onChange: this.handleText.bind(this),
               value: data.entry_end
-            })
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です 0000-00-00 00:00:00の書式で入力してください'
+            )
           )
         ),
         _react2.default.createElement('hr', null),
@@ -150,7 +202,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            'タイトル'
+            'タイトル',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -160,8 +217,15 @@ var WorksDetail = function (_React$Component) {
               name: 'title',
               value: data.title,
               onChange: this.handleText.bind(this),
-              className: 'w-xl'
-            })
+              className: 'w-xl',
+              maxLength: '120',
+              required: true
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です'
+            )
           )
         ),
         _react2.default.createElement(
@@ -200,7 +264,8 @@ var WorksDetail = function (_React$Component) {
               name: 'location',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.location
+              value: data.location,
+              maxLength: '120'
             })
           )
         ),
@@ -239,7 +304,8 @@ var WorksDetail = function (_React$Component) {
               type: 'text',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.break
+              value: data.break,
+              maxLength: '120'
             })
           )
         ),
@@ -259,7 +325,8 @@ var WorksDetail = function (_React$Component) {
               name: 'wage',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.wage
+              value: data.wage,
+              maxLength: '120'
             })
           )
         ),
@@ -279,7 +346,8 @@ var WorksDetail = function (_React$Component) {
               name: 'days',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.days
+              value: data.days,
+              maxLength: '120'
             })
           )
         ),
@@ -299,7 +367,8 @@ var WorksDetail = function (_React$Component) {
               name: 'holidays',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.holidays
+              value: data.holidays,
+              maxLength: '120'
             })
           )
         ),
@@ -319,7 +388,8 @@ var WorksDetail = function (_React$Component) {
               name: 'part',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.part
+              value: data.part,
+              maxLength: '120'
             })
           )
         ),
@@ -339,7 +409,8 @@ var WorksDetail = function (_React$Component) {
               name: 'term',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.term
+              value: data.term,
+              maxLength: '120'
             })
           )
         ),
@@ -359,7 +430,8 @@ var WorksDetail = function (_React$Component) {
               name: 'career',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.career
+              value: data.career,
+              maxLength: '120'
             })
           )
         ),
@@ -398,7 +470,8 @@ var WorksDetail = function (_React$Component) {
               name: 'cert',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.cert
+              value: data.cert,
+              maxLength: '120'
             })
           )
         ),
@@ -428,14 +501,19 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '短縮表示'
+            '短縮表示',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
             null,
             _react2.default.createElement(
-              'p',
-              null,
+              'div',
+              { className: 'abbr' },
               _react2.default.createElement(
                 'label',
                 null,
@@ -444,16 +522,28 @@ var WorksDetail = function (_React$Component) {
               _react2.default.createElement('input', {
                 type: 'text',
                 name: 'abbr_wage',
-                className: 'w-xs',
+                className: 'w-s',
                 value: data.abbr_wage,
                 placeholder: '860',
-                onChange: this.handleText.bind(this)
+                onChange: this.handleText.bind(this),
+                maxLength: '8',
+                'data-type': 'int',
+                required: true
               }),
               _react2.default.createElement(
                 'small',
                 null,
                 '円'
               ),
+              _react2.default.createElement(
+                'p',
+                { className: 'message' },
+                '必須項目です 半角数字で入力してください'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'abbr' },
               _react2.default.createElement(
                 'label',
                 null,
@@ -465,41 +555,38 @@ var WorksDetail = function (_React$Component) {
                 _react2.default.createElement(
                   'select',
                   {
-                    name: 'unit_wage',
+                    name: 'unit_wage_id',
                     onChange: this.handleText.bind(this),
-                    value: data.unit_wage
+                    value: data.unit_wage_id
                   },
-                  _react2.default.createElement(
-                    'option',
-                    { value: '1' },
-                    '時給'
-                  ),
-                  _react2.default.createElement(
-                    'option',
-                    { value: '2' },
-                    '日給'
-                  ),
-                  _react2.default.createElement(
-                    'option',
-                    { value: '3' },
-                    '月給'
-                  )
+                  wages
                 )
               )
             ),
             _react2.default.createElement(
-              'label',
+              'div',
               null,
-              '時間'
-            ),
-            _react2.default.createElement('input', {
-              type: 'text',
-              name: 'abbr_time',
-              className: 'w-s',
-              value: data.abbr_time,
-              placeholder: '09:00~17:00',
-              onChange: this.handleText.bind(this)
-            })
+              _react2.default.createElement(
+                'label',
+                null,
+                '時間'
+              ),
+              _react2.default.createElement('input', {
+                type: 'text',
+                name: 'abbr_time',
+                className: 'w-s',
+                value: data.abbr_time,
+                placeholder: '09:00~17:00',
+                onChange: this.handleText.bind(this),
+                maxLength: '12',
+                required: true
+              }),
+              _react2.default.createElement(
+                'p',
+                { className: 'message' },
+                '必須項目です'
+              )
+            )
           )
         ),
         _react2.default.createElement('hr', null),
@@ -514,54 +601,7 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'location_id',
-                onChange: this.handleText.bind(this),
-                value: data.location_id
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                '中区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                '北区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                '東区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '4' },
-                '西区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '5' },
-                '南区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '6' },
-                '浜北区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '7' },
-                '天竜区'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '8' },
-                'その他'
-              )
-            )
+            locations
           )
         ),
         _react2.default.createElement(
@@ -575,44 +615,7 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'time_id',
-                onChange: this.handleText.bind(this),
-                value: data.time_id
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                'フルタイム'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                '短時間'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                '短期'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '4' },
-                '午前中'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '5' },
-                '午後'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '6' },
-                '夕方'
-              )
-            )
+            times
           )
         ),
         _react2.default.createElement(
@@ -626,49 +629,7 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'category_id',
-                onChange: this.handleText.bind(this),
-                value: data.category_id
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                '清掃職'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                'ドライバー'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                'ビル管理スタッフ'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '4' },
-                '営業・事務職'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '5' },
-                '食品検査技師'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '6' },
-                '新卒'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '7' },
-                'その他'
-              )
-            )
+            categories
           )
         ),
         _react2.default.createElement('hr', null),
@@ -678,7 +639,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            'スライダー検索用'
+            'スライダー検索用',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -693,7 +659,8 @@ var WorksDetail = function (_React$Component) {
               name: 'time_start',
               className: 'w-s',
               value: data.time_start,
-              onChange: this.handleText.bind(this)
+              onChange: this.handleText.bind(this),
+              'data-type': 'time'
             }),
             _react2.default.createElement(
               'label',
@@ -705,8 +672,14 @@ var WorksDetail = function (_React$Component) {
               name: 'time_end',
               className: 'w-s',
               value: data.time_end,
-              onChange: this.handleText.bind(this)
-            })
+              onChange: this.handleText.bind(this),
+              'data-type': 'time'
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です 00:00:00の書式で入力してください'
+            )
           )
         ),
         _react2.default.createElement('hr', null),
@@ -747,7 +720,27 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      _WorkActions2.default.adminUpdate(this.state.works);
+      var keys = ['locations', 'times', 'categories'];
+
+      var tags = [];
+
+      Object.keys(keys).map(function (v) {
+        var arr = document.getElementsByName(keys[v]);
+        Object.keys(arr).map(function (i) {
+          if (arr[i].checked == true) {
+            tags.push(parseInt(arr[i].value));
+          }
+        });
+      });
+
+      var res = this.state.works;
+      res.tags = tags;
+
+      delete res.location_id;
+      delete res.time_id;
+      delete res.category_id;
+
+      _WorkActions2.default.adminUpdate(res);
       window.location.href = '/admin/works/';
     }
   }, {
@@ -755,6 +748,12 @@ var WorksDetail = function (_React$Component) {
     value: function updateState() {
       var res = _WorkStore2.default.read();
       this.setState({ works: res[0], tags: res.tags });
+    }
+  }, {
+    key: 'updateCommon',
+    value: function updateCommon() {
+      var res = _CommonStore2.default.read();
+      this.setState({ commons: res });
     }
   }, {
     key: 'handleSections',
@@ -765,23 +764,105 @@ var WorksDetail = function (_React$Component) {
     key: 'handleText',
     value: function handleText(e) {
       var field = e.target.getAttribute('name');
+      var req = e.target.required;
+      var value = e.target.value;
+      var type = e.target.getAttribute('data-type');
+      var mes = e.target.parentNode.querySelector('p.message');
+
+      var isValid = true;
+      if (req && !this.isValidRequired(value)) {
+        isValid = false;
+      }
+      if (type == 'int' && !this.isValidInt(value)) {
+        isValid = false;
+      }
+      if (type == 'time' && !this.isValidTime(value)) {
+        isValid = false;
+      }
+      if (type == 'datetime' && !this.isValidDateTime(value)) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        e.target.style.borderColor = '#D9534F';
+        if (mes) mes.classList.add('show');
+      } else {
+        e.target.style.borderColor = '#CDCDCD';
+        if (mes) mes.classList.remove('show');
+      }
+
       var obj = this.state.works;
       obj[field] = e.target.value;
       this.setState({ works: obj });
     }
   }, {
-    key: 'generateSections',
-    value: function generateSections() {
-      var arr = ['清掃', 'ビル', 'マンション', '運行', '指定管理', 'ベンリ-', '食品', '総務'];
-
+    key: 'isValidRequired',
+    value: function isValidRequired(str) {
+      return str.length > 0 ? true : false;
+    }
+  }, {
+    key: 'isValidInt',
+    value: function isValidInt(str) {
+      return isFinite(str);
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return (0, _moment2.default)(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return (0, _moment2.default)(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidTime',
+    value: function isValidTime(str) {
+      return (0, _moment2.default)(str, 'HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'generateSelects',
+    value: function generateSelects(arr, key) {
       return Object.keys(arr).map(function (i) {
         return _react2.default.createElement(
           'option',
           {
-            key: 'section' + i,
-            value: parseInt(i) + 1
+            key: key + i,
+            value: parseInt(arr[i].id)
           },
-          arr[i]
+          arr[i].name
+        );
+      });
+    }
+  }, {
+    key: 'generateCheckbox',
+    value: function generateCheckbox(arr, key) {
+      var _this2 = this;
+
+      return Object.keys(arr).map(function (i) {
+        var checked = '';
+        Object.keys(_this2.state.tags).map(function (v) {
+          if (arr[i].id == _this2.state.tags[v]) {
+            checked = 'checked';
+          }
+        });
+
+        return _react2.default.createElement(
+          'label',
+          { key: key + i },
+          arr[i].name,
+          _react2.default.createElement('input', {
+            name: key,
+            type: 'checkbox',
+            value: parseInt(arr[i].id),
+            defaultChecked: checked
+          })
         );
       });
     }

@@ -31,11 +31,23 @@ let _works = [
     desc: '',
     img: '',
     tel: '',
+    location_id: '',
+    time_id: '',
+    category_id: '',
     email: ''
   }
 ];
 
 function create(res) {
+  if (res[0].time_id == null) {
+    res[0].time_id = 0;
+  }
+  if (res[0].category_id == null) {
+    res[0].category_id = 0;
+  }
+  if (res[0].location_id == null) {
+    res[0].location_id = 0;
+  }
   _works = res;
 }
 
