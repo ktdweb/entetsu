@@ -25,8 +25,10 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.get');
             $sql = 'SELECT `works`.*, `sections`.`name`,';
-            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
+            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
 
             $sql .= ' WHERE ';
             $sql .= ' ( `works`.`entry_end` > NOW() ';
@@ -60,9 +62,10 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.get');
 
-            $sql  = 'SELECT `works`.* FROM `tags` ';
-            $sql .= 'INNER JOIN `works` ON ';
+            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `tags` ';
+            $sql .= ' INNER JOIN `works` ON ';
             $sql .= '`tags`.`work_id` = `works`.`id` ';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id` ';
             $sql .= 'WHERE (`tags`.`category_id` = ?)';
             $sql .= ' AND ( `entry_end` > NOW() ';
             $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
@@ -93,7 +96,8 @@ $app->group('/works', function () {
             $start = round($args['start'] * 24 / 100) . ':00';
             $end = round($args['end'] * 24 / 100) . ':00';
 
-            $sql  = 'SELECT `works`.* FROM `works` ';
+            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `works` ';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id` ';
             $sql .= 'WHERE (`time_start` >= ?) AND (`time_end` <= ?)';
             $sql .= ' AND ( `entry_end` > NOW() ';
             $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
@@ -122,8 +126,9 @@ $app->group('/works', function () {
             $db = $this->get('db.get');
 
             $key = $args['keyword'];
-            $sql  = 'SELECT `works`.* FROM `works` WHERE ';
-            $sql .= ' ( `entry_end` > NOW() ';
+            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `works` ';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
+            $sql .= ' WHERE ( `entry_end` > NOW() ';
             $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
             $sql .= ' AND ( `entry_start` < NOW() ';
             $sql .= " OR `entry_start` = '0000-00-00 00:00:00' ) AND ";
@@ -157,8 +162,10 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.get');
             $sql = 'SELECT `works`.*, `sections`.`name`,';
-            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
+            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
 
             $sql .= ' WHERE `works`.`id` = ? LIMIT 1';
             $body = $db->execute($sql, $args['id']);
@@ -192,8 +199,10 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.get');
             $sql = 'SELECT `works`.*, `sections`.`name`,';
-            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
+            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
 
             if (is_numeric($args['id'])) {
                 $sql .= ' WHERE `works`.`section_id` = ?';
@@ -222,8 +231,10 @@ $app->group('/works', function () {
         ) {
             $db = $this->get('db.get');
             $sql = 'SELECT `works`.*, `sections`.`name`,';
-            $sql .= ' `sections`.`tel`, `sections`.`email` from `works`';
+            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
+            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
 
             if ($args['name'] == 'admin') {
                 $body = $db->execute($sql);
