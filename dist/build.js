@@ -10940,6 +10940,8 @@ function create(res) {
   if (res[0].location_id == null) {
     res[0].location_id = 0;
   }
+  console.log('test');
+  console.log(res);
   _works = res;
 }
 

@@ -37,9 +37,8 @@ export default class Works extends React.Component {
   }
 
   render() {
-
     let eachWork;
-    if (this.state.works.length > 0) {
+    if (this.state.works.length > 1) {
       eachWork = Object.keys(this.state.works).map((i) => {
         return (
           <EachWork
