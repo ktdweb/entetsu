@@ -332,7 +332,7 @@ export default class WorksDetail extends React.Component {
 
         <div className="pf-Works-Banner">
           <a
-            href="http://entesu-hoikuen.com/"
+            href="http://www.entetsu-hoikuen.com/"
             target="_blank"
             >
             <img

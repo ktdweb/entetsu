@@ -8896,7 +8896,7 @@ var Works = function (_React$Component) {
       }), _react2.default.createElement('button', {
         onClick: this.getKeyword.bind(this)
       }, '検索')))), _react2.default.createElement('div', { className: 'pf-Works-Banner' }, _react2.default.createElement('a', {
-        href: 'http://entesu-hoikuen.com/',
+        href: 'http://www.entetsu-hoikuen.com/',
         target: '_blank'
       }, _react2.default.createElement('img', {
         src: '/imgs/banners/babyfarm.jpg',
@@ -9396,7 +9396,7 @@ var WorksDetail = function (_React$Component) {
         id: 'modalMerit',
         title: modal[2].title
       }), _react2.default.createElement('div', { className: 'pf-Works-Banner' }, _react2.default.createElement('a', {
-        href: 'http://entesu-hoikuen.com/',
+        href: 'http://www.entetsu-hoikuen.com/',
         target: '_blank'
       }, _react2.default.createElement('img', {
         src: '/imgs/banners/babyfarm.jpg',
