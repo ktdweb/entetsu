@@ -1179,7 +1179,7 @@ var Works = function (_React$Component) {
       var _this2 = this;
 
       var eachWork = void 0;
-      if (this.state.works.length > 0) {
+      if (this.state.works.length > 1) {
         eachWork = Object.keys(this.state.works).map(function (i) {
           return _react2.default.createElement(EachWork, {
             key: i,
@@ -2526,6 +2526,8 @@ function create(res) {
   if (res[0].location_id == null) {
     res[0].location_id = 0;
   }
+  console.log('test');
+  console.log(res);
   _works = res;
 }
 
