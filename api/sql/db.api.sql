@@ -18,6 +18,7 @@ DBSetOption profile=assist_test
 SHOW databases;
 SHOW tables;
 
+SELECT * FROM `works` WHERE `unit_wage_id` = 2;
 
 --- works
 
