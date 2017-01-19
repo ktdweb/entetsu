@@ -261,7 +261,7 @@
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p>リブロス笠井クリーンスタッフ</p>
+                <div class="recName"><p><?php echo mb_substr('リブロス笠井クリーンスタッフ', 0, 14) . '…'; ?></p>
                 <a class="link" href="works_detail.php?id=4">詳細</a></div>
                 <div class="recPost">
                     <p>フロア・トイレ等の日常清掃</p>
@@ -275,7 +275,7 @@
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p>幼稚園送迎バスの運転業務（馬郡町）</p>
+                <div class="recName"><p><?php echo mb_substr('幼稚園送迎バスの運転業務（馬郡町）', 0, 14) . '…'; ?></p>
                 <a class="link" href="works_detail.php?id=61">詳細</a></div>
                 <div class="recPost">
                     <p>（請負業務）幼稚園バス（マイクロバス）の運転業務です。主に浜松市西区エリアを回ります。先生が同乗してくれます。</p>
@@ -289,7 +289,7 @@
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p>温浴施設内の日常清掃（脱衣所・洗い場・階段等）</p>
+                <div class="recName"><p><?php echo mb_substr('温浴施設内の日常清掃（脱衣所・洗い場・階段等）', 0, 14) . '…'; ?></p>
                 <a class="link" href="works_detail.php?id=12">詳細</a></div>
                 <div class="recPost">
                     <p>工場施設内の日常清掃（通路・フロア・トイレ等）</p>
