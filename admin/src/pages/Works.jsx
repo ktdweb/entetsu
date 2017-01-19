@@ -59,15 +59,18 @@ export default class Works extends React.Component {
     return(
       <article id="Works">
         <DocumentTitle title="求人情報" />
-        <a
+        <Link
+          to={'/admin/works/detail/0'}
+          >
+          {/*<a
           onClick={this.handleAlert.bind(this)}
           href="/admin/works/detail/add"
-          >
+          >*/}
           <button className="headerButton">
             新規追加
             <i className="fa fa-plus-circle" />
           </button>
-        </a>
+        </Link>
 
         <h1>
           <i className="fa fa-paperclip" />
