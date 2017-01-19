@@ -41,7 +41,7 @@ if (!empty(json_decode(file_get_contents($url), true))) {
     <?php foreach ($works as $w) :  ?>    
     <div class="worksBox">
     <div class="recruitBox">
-    <div class="recName"><p><?php echo $w['title']; ?></p>
+    <div class="recName"><p><?php echo mb_substr($w['title'], 0, 14) . '…'; ?></p>
         <a class="link" href="works_detail.php?id=<?php echo $w['id']; ?>">
             詳細
         </a></div>
