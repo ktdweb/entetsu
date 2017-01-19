@@ -71,7 +71,9 @@ var WorksDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.adminEach(this.props.params.id);
+      if (this.props.params.id != 0) {
+        _WorkActions2.default.adminEach(this.props.params.id);
+      }
 
       _CommonStore2.default.subscribe(this.updateCommon.bind(this));
       _CommonActions2.default.get();
@@ -95,6 +97,7 @@ var WorksDetail = function (_React$Component) {
       if (!this.state.commons.categories[1]) return false;
 
       var data = this.state.works;
+      console.log(data);
 
       var sections = this.generateSelects(this.state.commons.sections, 'sections');
 
@@ -739,9 +742,10 @@ var WorksDetail = function (_React$Component) {
       delete res.location_id;
       delete res.time_id;
       delete res.category_id;
+      delete res.unit_wage;
 
       _WorkActions2.default.adminUpdate(res);
-      window.location.href = '/admin/works/';
+      //window.location.href = '/admin/works/';
     }
   }, {
     key: 'updateState',

@@ -255,88 +255,46 @@
 <section>
 <h2 class="stitle"><img src="imgs/new_rec_head.png" alt="新着求人" width="100%"></h2>
 <div class="newRec">
-        <div class="flexslider">
+        <div>
         <ul class="slides">
-        	<li>
+        	<li style="margin-bottom: 20px;">
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p>ホテル客室整備スタッフ</p>
-                <a class="link" href="w01.php">詳細</a></div>
-                <div class="recPost">
-                    <p>    リゾートホテルのチェックイン後の客室整備・布団敷き・基本和室（約３０部屋程度）での布団敷きの作業です が、時々洋室でのエキストラベッドの準備をして 頂きます。※２～３人１組にて作業</p>
-                </div>
-                <div class="recPoint"><span class="pay">時給: 860円</span><span class="hour">17:00~19:30</span></div>
-            </div>
-            </div>
-            </div>
-            </li>
-        	<li>
-            <div class="recruitBoxTop">
-            <div class="recruitBoxBtm">
-            <div class="recruitBox">
-                <div class="recName"><p>クリーンスタッフ</p>
-                <a class="link" href="w02.php">詳細</a></div>
-                <div class="recPost">
-                    <p>温浴施設内の日常清掃（脱衣所・洗い場・階段等）</p>
-                </div>
-                <div class="recPoint"><span class="pay">時給: 940円</span><span class="hour">5:30~8:30</span></div>
-            </div>
-            </div>
-            </div>
-            </li>
-        	<li>
-            <div class="recruitBoxTop">
-            <div class="recruitBoxBtm">
-            <div class="recruitBox">
-                <div class="recName"><p>クリーンスタッフ</p>
-                <a class="link" href="w03.php">詳細</a></div>
-                <div class="recPost">
-                    <p>事務所・工場内の日常清掃（玄関・通路・トイレ等）</p>
-                </div>
-                <div class="recPoint"><span class="pay">時給: 820円</span><span class="hour">7:30~11:30</span></div>
-            </div>
-            </div>
-            </div>
-            </li>
-        	<li>
-            <div class="recruitBoxTop">
-            <div class="recruitBoxBtm">
-            <div class="recruitBox">
-                <div class="recName"><p>クリーンスタッフ</p>
-                <a class="link" href="w04.php">詳細</a></div>
+                <div class="recName"><p>リブロス笠井クリーンスタッフ</p>
+                <a class="link" href="works_detail.php?id=4">詳細</a></div>
                 <div class="recPost">
                     <p>フロア・トイレ等の日常清掃</p>
                 </div>
-                <div class="recPoint"><span class="pay">時給: 830円</span><span class="hour">8:00~12:00</span></div>
+                <div class="recPoint"><span class="pay">時給: 840円</span><span class="hour">08:00~17:00</span></div>
             </div>
             </div>
             </div>
             </li>
-        	<li>
+        	<li style="margin-bottom: 20px;">
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p>A.客室整備　B.客室の布...</p>
-                <a class="link" href="w05.php">詳細</a></div>
+                <div class="recName"><p>幼稚園送迎バスの運転業務（馬郡町）</p>
+                <a class="link" href="works_detail.php?id=61">詳細</a></div>
                 <div class="recPost">
-                    <p>A.客室整備　B.客室の布団敷き</p>
+                    <p>（請負業務）幼稚園バス（マイクロバス）の運転業務です。主に浜松市西区エリアを回ります。先生が同乗してくれます。</p>
                 </div>
-                <div class="recPoint"><span class="pay">時給: 860円</span><span class="hour">9:00~13:00</span></div>
+                <div class="recPoint"><span class="pay">日給: 6100円</span><span class="hour">7:20~16:00</span></div>
             </div>
             </div>
             </div>
             </li>
-        	<li>
+        	<li style="margin-bottom: 20px;">
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p>駐車場管理業務（浜松...</p>
-                <a class="link" href="w06.php">詳細</a></div>
+                <div class="recName"><p>温浴施設内の日常清掃（脱衣所・洗い場・階段等）</p>
+                <a class="link" href="works_detail.php?id=12">詳細</a></div>
                 <div class="recPost">
-                    <p>街中の駐車場で、売上金やサービス券の回収・集計、駐車場機械操作、車両誘導などをするお仕事です。未経験者歓迎！</p>
+                    <p>工場施設内の日常清掃（通路・フロア・トイレ等）</p>
                 </div>
-                <div class="recPoint"><span class="pay">時給: 800円</span><span class="hour">5:45～20:00</span></div>
+                <div class="recPoint"><span class="pay">時給: 850円</span><span class="hour">8:00~12:00</span></div>
             </div>
             </div>
             </div>
@@ -451,6 +409,7 @@
         var lh = $('#lh');
 
         var flag = false;
+        var openflag = false;
         var cat = '';
 
         $('div.doorBtm').on('click', function() {
@@ -459,6 +418,8 @@
             t.animate({opacity: 1}, 500);
             c.animate({opacity: 1}, 500);
             l.animate({opacity: 1}, 500);
+
+            openflag = true;
 
         });
 
@@ -591,21 +552,27 @@
             tb1.attr('src', 'imgs/btn/time_e_a.png');
             tb2.attr('src', 'imgs/btn/time_f_d.png');
             tb3.attr('src', 'imgs/btn/time_g_d.png');
+            if (openflag) {
             window.location.href = 'works.php?category=12';
+            }
         });
 
         tb2.on('click', function() {
             tb1.attr('src', 'imgs/btn/time_e_d.png');
             tb2.attr('src', 'imgs/btn/time_f_a.png');
             tb3.attr('src', 'imgs/btn/time_g_d.png');
+            if (openflag) {
             window.location.href = 'works.php?category=13';
+            }
         });
 
         tb3.on('click', function() {
             tb1.attr('src', 'imgs/btn/time_e_d.png');
             tb2.attr('src', 'imgs/btn/time_f_d.png');
             tb3.attr('src', 'imgs/btn/time_g_a.png');
-            window.location.href = 'works.php?category=14';
+            if (openflag) {
+                window.location.href = 'works.php?category=14';
+            }
         });
         
         $('.sub').on('click', function(e) {
@@ -667,7 +634,7 @@
                 }
             }
 
-            if (!flag || id != 10) {
+            if (openflag && (!flag || id != 10)) {
               window.location.href = 'works.php?category=' +  id;
             }
         });

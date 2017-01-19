@@ -29,7 +29,9 @@ export default class WorksDetail extends React.Component {
 
   componentWillMount() {
     WorkStore.subscribe(this.updateState.bind(this));
-    WorkActions.adminEach(this.props.params.id);
+    if (this.props.params.id != 0) {
+      WorkActions.adminEach(this.props.params.id);
+    }
 
     CommonStore.subscribe(this.updateCommon.bind(this));
     CommonActions.get();
@@ -50,6 +52,7 @@ export default class WorksDetail extends React.Component {
     if (!this.state.commons.categories[1]) return false;
 
     let data = this.state.works;
+    console.log(data);
 
     const sections = this.generateSelects(
       this.state.commons.sections,
@@ -492,9 +495,10 @@ export default class WorksDetail extends React.Component {
     delete res.location_id;
     delete res.time_id;
     delete res.category_id;
+    delete res.unit_wage;
     
     WorkActions.adminUpdate(res);
-    window.location.href = '/admin/works/';
+    //window.location.href = '/admin/works/';
   }
 
   updateState() {

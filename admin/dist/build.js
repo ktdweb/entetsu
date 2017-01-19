@@ -1191,9 +1191,8 @@ var Works = function (_React$Component) {
         eachWork = _react2.default.createElement('tr', { className: 'result' }, _react2.default.createElement('td', { colSpan: '6' }, _react2.default.createElement('div', null, '登録件数は0件です')));
       }
 
-      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement('a', {
-        onClick: this.handleAlert.bind(this),
-        href: '/admin/works/detail/add'
+      return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement(_reactRouter.Link, {
+        to: '/admin/works/detail/0'
       }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works' }, 'すべて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/1' }, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/2' }, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/3' }, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/4' }, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/5' }, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/6' }, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/7' }, '食品検査')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/8' }, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachWork)));
     }
   }, {
@@ -1346,7 +1345,9 @@ var WorksDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.adminEach(this.props.params.id);
+      if (this.props.params.id != 0) {
+        _WorkActions2.default.adminEach(this.props.params.id);
+      }
 
       _CommonStore2.default.subscribe(this.updateCommon.bind(this));
       _CommonActions2.default.get();
@@ -1370,6 +1371,7 @@ var WorksDetail = function (_React$Component) {
       if (!this.state.commons.categories[1]) return false;
 
       var data = this.state.works;
+      console.log(data);
 
       var sections = this.generateSelects(this.state.commons.sections, 'sections');
 
@@ -1559,9 +1561,10 @@ var WorksDetail = function (_React$Component) {
       delete res.location_id;
       delete res.time_id;
       delete res.category_id;
+      delete res.unit_wage;
 
       _WorkActions2.default.adminUpdate(res);
-      window.location.href = '/admin/works/';
+      //window.location.href = '/admin/works/';
     }
   }, {
     key: 'updateState',
@@ -2509,14 +2512,22 @@ var _works = [{
   cert: '',
   desc: '',
   img: '',
+
+  abbr_wage: '',
+  abbr_time: '',
+  unit_wage_id: 1,
+
+  name: '',
   tel: '',
-  location_id: '',
-  time_id: '',
-  category_id: '',
-  email: ''
+  email: '',
+  unit_wage: '',
+
+  created: '',
+  modified: ''
 }];
 
 function create(res) {
+  /*
   if (res[0].time_id == null) {
     res[0].time_id = 0;
   }
@@ -2528,6 +2539,7 @@ function create(res) {
   }
   console.log('test');
   console.log(res);
+  */
   _works = res;
 }
 

@@ -105,10 +105,9 @@ var Works = function (_React$Component) {
         { id: 'Works' },
         _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }),
         _react2.default.createElement(
-          'a',
+          _reactRouter.Link,
           {
-            onClick: this.handleAlert.bind(this),
-            href: '/admin/works/detail/add'
+            to: '/admin/works/detail/0'
           },
           _react2.default.createElement(
             'button',

@@ -30,15 +30,23 @@ let _works = [
     cert: '',
     desc: '',
     img: '',
+
+    abbr_wage: '',
+    abbr_time: '',
+    unit_wage_id: 1,
+
+    name: '',
     tel: '',
-    location_id: '',
-    time_id: '',
-    category_id: '',
-    email: ''
+    email: '',
+    unit_wage: '',
+
+    created: '',
+    modified: ''
   }
 ];
 
 function create(res) {
+  /*
   if (res[0].time_id == null) {
     res[0].time_id = 0;
   }
@@ -50,6 +58,7 @@ function create(res) {
   }
   console.log('test');
   console.log(res);
+  */
   _works = res;
 }
 
