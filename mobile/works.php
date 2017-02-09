@@ -34,14 +34,14 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 <section>
 <div class="worksBg">
     <p>&nbsp;</p>
-
     <?php if (empty($works)) : ?>
         <p class="empty">検索結果が0件でした</p>
     <?php else : ?>
     <?php foreach ($works as $w) :  ?>    
     <div class="worksBox">
     <div class="recruitBox">
-    <div class="recName"><p><?php echo mb_substr($w['title'], 0, 14) . '…'; ?></p>
+    <div class="recName">
+    <p><?php echo mb_substr($w['title'], 0, 12) . '…'; ?></p>
         <a class="link" href="works_detail.php?id=<?php echo $w['id']; ?>">
             詳細
         </a></div>
