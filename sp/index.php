@@ -28,8 +28,8 @@
 // フェードインで表示するコンテンツをdisplay:noneで非表示にする
 $(window).load(function() {
   // フェードインidを指定と表示速度ミリ秒
-  $('.topFade').fadeIn(2000);
-    $('.topFade').delay(5000).animate({"opacity": 0}, 2000, function() {
+  $('.topFade').fadeIn(500);
+    $('.topFade').delay(2000).animate({"opacity": 0}, 700, function() {
       location.href = "top.php";
     });
 });
