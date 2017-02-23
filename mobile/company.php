@@ -154,12 +154,12 @@
                 <p class="article">本社を旭町より伝馬町へ移転</p>
             </li>
         	<li>
-            	<p class="date">2011年6月30日 </p>
-                <p class="article">本社を浜松市中区旭町へ移転</p>
+            	<p class="date">2011年6月29日 </p>
+                <p class="article">取締役社長に藤野聡氏就任</p>
             </li>
         	<li>
             	<p class="date">2011年10月24日 </p>
-                <p class="article">取締役社長に藤野聡氏就任</p>
+                <p class="article">本社を浜松市中区旭町へ移転</p>
             </li>
         	<li>
             	<p class="date">2015年2月6日 </p>
@@ -169,6 +169,10 @@
             	<p class="date">2015年10月1日 </p>
                 <p class="article">遠州鉄道株式会社から食品検査部門を営業譲受</p>
             </li>
+        	<li>
+            	<p class="date">2016年8月2日 </p>
+                <p class="article">ベンリー遠鉄浜松高林店オープン</p>
+            </li>
         </ul>
         <div class="access">
         	<div class="map"><img src="imgs/detail/company/company_map_l.png" alt="map" width="100%"></div>
@@ -177,11 +181,12 @@
         </div>
     </div>
 </section>
+
 <section id="business">
 	<div class="companyStitle">
     <img src="imgs/detail/company/company_stitle05.png" alt="遠鉄アシストの戦略事業" width="100%"></div>
     <div class="companyCont">
-        
+
         <div class="serviceList">
         <div class="head">指定管理業務</div>
         </div>
@@ -192,7 +197,7 @@
             <p>遠鉄アシストのお取引先は、浜松市内を中心に約1300社。設備管理、清掃等様々な業務を通じて培った豊富な実績により、民間企業だけでなく、浜松市をはじめ多くの行政機関ともお取引をいただいております。</p>
             <p>行政機関との関係では、指定管理事業にも取り組みはじめ、浜松城公園、浜松まつり会館、浜松市立青少年の家等の管理運営に携わっております。静岡県西部地域の観光振興や地域の活性化、青少年の健全育成等、遠鉄グループ経営理念の延長線上にある事業に参画しております。</p>
             <p>地域の皆様に育てられた企業として、今まで培ってきた経験、ノウハウ、実績を持って、地域の方々に恩返しができるよう努力しております。</p>
-            
+
             <ul class="pointList">
             	<li><a href="http://www.hamamatsu-navi.jp/shiro/" target="_blank">浜松城公園</a></li>
             	<li><a href="http://www.hamamatsu-navi.jp/matsuri/" target="_blank">浜松まつり会館</a></li>
@@ -210,7 +215,7 @@
             </ul>
             <p>遠鉄アシストでは、新しい業務にも積極的に取り組みます。</p>
         </div>
-        
+
         <div class="serviceList">
         <div class="head">食品検査</div>
         </div>
