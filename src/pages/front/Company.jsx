@@ -354,6 +354,12 @@ export default class Company extends React.Component {
                 </td>
               </tr>
 
+              <tr>
+                <td>2016年8月2日</td>
+                <td>
+                  ベンリー遠鉄浜松高林店オープン
+                </td>
+              </tr>
 
             </tbody>
           </table>
