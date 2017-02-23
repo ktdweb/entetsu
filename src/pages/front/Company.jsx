@@ -327,16 +327,16 @@ export default class Company extends React.Component {
               </tr>
 
               <tr>
-                <td>2011年6月30日</td>
+                <td>2011年6月29日</td>
                 <td>
-                  本社を浜松市中区旭町へ移転
+                  取締役社長に藤野聡氏就任
                 </td>
               </tr>
 
               <tr>
                 <td>2011年10月24日</td>
                 <td>
-                  取締役社長に藤野聡氏就任
+                  本社を浜松市中区旭町へ移転
                 </td>
               </tr>
 
@@ -354,6 +354,12 @@ export default class Company extends React.Component {
                 </td>
               </tr>
 
+              <tr>
+                <td>2016年8月2日</td>
+                <td>
+                  ベンリー遠鉄浜松高林店オープン
+                </td>
+              </tr>
 
             </tbody>
           </table>
