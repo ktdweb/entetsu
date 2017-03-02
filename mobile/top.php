@@ -289,7 +289,7 @@
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p><?php echo mb_substr('温浴施設内の日常清掃（脱衣所・洗い場・階段等）', 0, 12) . '…'; ?></p>
+                <div class="recName"><p><?php echo mb_substr('磐田市内工場内クリーンスタッフ', 0, 12) . '…'; ?></p>
                 <a class="link" href="works_detail.php?id=12">詳細</a></div>
                 <div class="recPost">
                     <p>工場施設内の日常清掃（通路・フロア・トイレ等）</p>
