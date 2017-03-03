@@ -152,39 +152,6 @@ $app->group('/topics', function () {
         }
     );
 
-    /**
-     * POST
-     */
-    $this->post(
-        '/',
-        function (
-            $request,
-            $response,
-            $args
-        ) {
-            $body = $request->getParsedBody();
-
-            $db = $this->get('db.post');
-
-            $sql  = 'INSERT INTO `users` ';
-
-            $fields = array_keys($body);
-            $values = array_values($body);
-            $holder = array_fill(0, count($values), '?');
-
-            $sql .= '(' . implode(', ', $fields) . ')';
-            $sql .= ' VALUES ';
-            $sql .= '(' . implode(', ', $holder) . ')';
-
-            $db->execute($sql, $values);
-
-            return $response->withJson(
-                $body,
-                200,
-                $this->get('settings')['withJsonEnc']
-            );
-        }
-    );
 
     /**
      * PUT
