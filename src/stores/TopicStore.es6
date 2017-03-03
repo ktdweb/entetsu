@@ -12,6 +12,8 @@ let _topics = [
     id: '',
     category_id: 1,
     title: '',
+    link: '',
+    desc: '',
     term_start: '',
     term_end: '',
 
