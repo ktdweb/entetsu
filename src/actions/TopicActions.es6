@@ -8,38 +8,9 @@ export default {
     })
   },
 
-  category: (id) => {
-    Dispatcher.dispatch({
-      actionType: TopicConstants.CATEGORY,
-      id: id
-    })
-  },
-
-  slider: (start, end) => {
-    Dispatcher.dispatch({
-      actionType: TopicConstants.SLIDER,
-      start: start,
-      end: end
-    })
-  },
-
-  keyword: (keyword) => {
-    Dispatcher.dispatch({
-      actionType: TopicConstants.KEYWORD,
-      keyword: keyword
-    })
-  },
-
   adminGet: (id = '') => {
     Dispatcher.dispatch({
       actionType: TopicConstants.ADMIN_GET,
-      id: id
-    })
-  },
-
-  adminEach: (id) => {
-    Dispatcher.dispatch({
-      actionType: TopicConstants.ADMIN_EACH,
       id: id
     })
   },

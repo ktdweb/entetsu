@@ -23,19 +23,6 @@ let _topics = [
 ];
 
 function create(res) {
-  /*
-  if (res[0].time_id == null) {
-    res[0].time_id = 0;
-  }
-  if (res[0].category_id == null) {
-    res[0].category_id = 0;
-  }
-  if (res[0].location_id == null) {
-    res[0].location_id = 0;
-  }
-  console.log('test');
-  console.log(res);
-  */
   _topics = res;
 }
 
@@ -84,36 +71,6 @@ Dispatcher.register( function(action) {
       });
       break;
 
-    case TopicConstants.CATEGORY:
-      let url = URL + 'category/' + action.id;
-      http.get(url).then(res => {
-        create(res);
-        topicStore.update();
-      }).catch(e => {
-        //console.error(e);
-      });
-      break;
-
-    case TopicConstants.SLIDER:
-      let slider = URL + 'slider/' + action.start + '/' + action.end;
-      http.get(slider).then(res => {
-        create(res);
-        topicStore.update();
-      }).catch(e => {
-        //console.error(e);
-      });
-      break;
-
-    case TopicConstants.KEYWORD:
-      let keyword = URL + 'keyword/' + action.keyword;
-      http.get(keyword).then(res => {
-        create(res);
-        topicStore.update();
-      }).catch(e => {
-        //console.error(e);
-      });
-      break;
-
     case TopicConstants.ADMIN_GET:
       let admin_get = URL + 'admin/' + action.id;
       http.get(admin_get).then(res => {
@@ -121,16 +78,6 @@ Dispatcher.register( function(action) {
         topicStore.update();
       }).catch(e => {
         //console.error(e);
-      });
-      break;
-
-    case TopicConstants.ADMIN_EACH:
-      let admin_each = URL + 'admin/each/' + action.id;
-      http.get(admin_each).then(res => {
-        create(res);
-        topicStore.update();
-      }).catch(e => {
-        // console.error(e);
       });
       break;
 

@@ -85,43 +85,6 @@ $app->group('/topics', function () {
      * GET
      */
     $this->get(
-        '/admin/each/{id:.*}',
-        function (
-            $request,
-            $response,
-            $args
-        ) {
-            $db = $this->get('db.get');
-            $sql = 'SELECT `works`.*, `sections`.`name`,';
-            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
-            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
-            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
-            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
-
-            $sql .= ' WHERE `works`.`id` = ? LIMIT 1';
-            $body = $db->execute($sql, $args['id']);
-
-            $sql = 'SELECT `category_id` FROM `tags`';
-            $sql .= ' WHERE `work_id` = ?';
-            $tags = $db->execute($sql, $args['id']);
-
-            foreach ($tags as $val) {
-                $body['tags'][] = $val->category_id;
-            }
-
-            return $response->withJson(
-                $body,
-                200,
-                $this->get('settings')['withJsonEnc']
-            );
-        }
-    );
-
-
-    /**
-     * GET
-     */
-    $this->get(
         '/admin/{id:.*}',
         function (
             $request,
@@ -129,14 +92,10 @@ $app->group('/topics', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'SELECT `works`.*, `sections`.`name`,';
-            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
-            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
-            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
-            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
+            $sql = 'SELECT * FROM `topics`';
 
             if (is_numeric($args['id'])) {
-                $sql .= ' WHERE `works`.`section_id` = ?';
+                $sql .= ' WHERE `id` = ?';
                 $body = $db->execute($sql, $args['id']);
             } else {
                 $body = $db->execute($sql);
