@@ -20,6 +20,17 @@ SHOW tables;
 
 SELECT * FROM `works` WHERE `unit_wage_id` = 2;
 
+ALTER TABLE `categories` COMMENT 'master:求人情報カテゴリテーブル';
+ALTER TABLE `category_groups` COMMENT 'master:求人情報カテゴリグループテーブル';
+ALTER TABLE `entries` COMMENT '求人エントリテーブル(未使用)';
+ALTER TABLE `members` COMMENT '会員情報テーブル(未使用)';
+ALTER TABLE `sections` COMMENT 'master:求人情報部署テーブル';
+ALTER TABLE `tags` COMMENT '求人情報タグテーブル';
+ALTER TABLE `tokens` COMMENT '登録識別用テーブル(未使用)';
+ALTER TABLE `topics` COMMENT '新着情報テーブル';
+ALTER TABLE `wages` COMMENT 'master:給料単位テーブル';
+ALTER TABLE `works` COMMENT '求人情報テーブル';
+
 --- works
 
 -- works テーブル確認 /*{{{*/
@@ -1133,4 +1144,45 @@ INSERT INTO `tokens` (
   `created`
 ) VALUES
 (1, '2157d1c1995ed74', NOW());
+/*}}}*/
+
+
+--- topics
+
+-- topics テーブル確認 /*{{{*/
+DESC `topics`;
+SELECT * FROM `topics`;
+/*}}}*/
+
+-- topics テーブル作成 /*{{{*/
+DROP TABLE `topics`;
+CREATE TABLE IF NOT EXISTS `topics` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `category_id` INT(1) NOT NULL,
+  `title` VARCHAR(30) NOT NULL,
+  `link` VARCHAR(255) NULL,
+  `desc` TEXT NULL,
+  `term_start` DATETIME NULL,
+  `term_end` DATETIME NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+/*}}}*/
+
+-- topics レコード挿入 /*{{{*/
+TRUNCATE `topics`;
+INSERT INTO `topics` (
+  `category_id`,
+  `title`,
+  `link`,
+  `desc`,
+  `term_start`,
+  `term_end`,
+  `created`,
+  `modified`
+) VALUES
+(1, 'ホームページリニューアル', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2016-06-28 00:00:00', '2016-06-28 00:00:00'),
+(2, '時間指定テスト用', '', '', '2016-06-28 00:00:00', '2016-06-30 00:00:00', '2016-06-28 00:00:00', '2016-06-28 00:00:00')
+;
 /*}}}*/

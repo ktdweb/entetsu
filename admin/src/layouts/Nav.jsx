@@ -40,14 +40,12 @@ export default class Nav extends React.Component {
       <aside id="Nav">
         <nav>
           <ul>
-            {/*
             <li>
               <i className="fa fa-check-square-o" />
               <Link to={root + '/topics'}>
                 新着情報
               </Link>
             </li>
-            */}
 
             <li>
               <i className="fa fa-paperclip" />
