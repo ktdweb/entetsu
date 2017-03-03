@@ -42,9 +42,8 @@ var TopicsDetail = function (_React$Component) {
 
     var topics = _TopicStore2.default.read();
     _this.state = {
-      topics: topics
+      topics: topics[0]
     };
-    _this.data = _this.state.topics[0];
     return _this;
   }
 
@@ -52,23 +51,27 @@ var TopicsDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _TopicStore2.default.subscribe(this.updateState.bind(this));
-      _TopicActions2.default.create();
+      if (this.props.params.id != 0) {
+        _TopicActions2.default.adminGet();
+      }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _TopicStore2.default.destroy(this.updateState.bind(this));this;
+      _TopicStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
     key: 'render',
     value: function render() {
-      var data = this.data;
+      var data = this.state.topics;
 
       for (var i = 0; i < this.state.topics.length; i++) {
         if (this.state.topics[i].id == this.props.params.id) {
           data = this.state.topics[i];
         }
       }
+
+      console.log(data);
 
       return _react2.default.createElement(
         'article',
@@ -127,7 +130,11 @@ var TopicsDetail = function (_React$Component) {
             null,
             _react2.default.createElement(
               'select',
-              null,
+              {
+                name: 'category_id',
+                onChange: this.handleText.bind(this),
+                value: data.category_id
+              },
               _react2.default.createElement(
                 'option',
                 { value: '1' },
@@ -147,30 +154,139 @@ var TopicsDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            'タイトル'
+            'タイトル',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
             null,
             _react2.default.createElement('input', {
               type: 'text',
-              value: 'ホームページが公開されました',
-              className: 'w-xl'
+              name: 'title',
+              value: data.title,
+              onChange: this.handleText.bind(this),
+              className: 'w-xl',
+              maxLength: '120',
+              required: true
+            })
+          )
+        ),
+        _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
+            'リンク'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement('input', {
+              type: 'text',
+              name: 'link',
+              value: data.link,
+              onChange: this.handleText.bind(this),
+              className: 'w-xl',
+              maxLength: '120',
+              required: true
             })
           )
         ),
         _react2.default.createElement(
           'button',
-          { className: 'w-s' },
+          {
+            className: 'w-s',
+            onClick: this.handleSubmit.bind(this)
+          },
           '更新'
         )
       );
     }
   }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      var res = this.state.topics;
+      console.log(res);
+
+      _TopicActions2.default.adminUpdate(res);
+      window.location.href = '/admin/topics/';
+    }
+  }, {
+    key: 'handleText',
+    value: function handleText(e) {
+      var field = e.target.getAttribute('name');
+      var req = e.target.required;
+      var value = e.target.value;
+      var type = e.target.getAttribute('data-type');
+      var mes = e.target.parentNode.querySelector('p.message');
+
+      var isValid = true;
+      if (req && !this.isValidRequired(value)) {
+        isValid = false;
+      }
+      if (type == 'int' && !this.isValidInt(value)) {
+        isValid = false;
+      }
+      if (type == 'time' && !this.isValidTime(value)) {
+        isValid = false;
+      }
+      if (type == 'datetime' && !this.isValidDateTime(value)) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        e.target.style.borderColor = '#D9534F';
+        if (mes) mes.classList.add('show');
+      } else {
+        e.target.style.borderColor = '#CDCDCD';
+        if (mes) mes.classList.remove('show');
+      }
+
+      var obj = this.state.topics;
+      obj[field] = e.target.value;
+      this.setState({ topics: obj });
+    }
+  }, {
+    key: 'isValidRequired',
+    value: function isValidRequired(str) {
+      return str.length > 0 ? true : false;
+    }
+  }, {
+    key: 'isValidInt',
+    value: function isValidInt(str) {
+      return isFinite(str);
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidTime',
+    value: function isValidTime(str) {
+      return m(str, 'HH:mm:ss', true).isValid();
+    }
+  }, {
     key: 'updateState',
     value: function updateState() {
       var res = _TopicStore2.default.read();
-      this.setState({ topics: res });
+      this.setState({ topics: res[0] });
     }
   }]);
 

@@ -13,28 +13,31 @@ export default class TopicsDetail extends React.Component {
 
     let topics = TopicStore.read();
     this.state = {
-      topics: topics
+      topics: topics[0]
     }
-    this.data = this.state.topics[0];
   }
 
   componentWillMount() {
     TopicStore.subscribe(this.updateState.bind(this));
-    TopicActions.create();
+    if (this.props.params.id != 0) {
+      TopicActions.adminGet();
+    }
   }
 
   componentWillUnmount() {
-    TopicStore.destroy(this.updateState.bind(this));this
+    TopicStore.destroy(this.updateState.bind(this));
   }
 
   render() {
-    let data = this.data;
+    let data = this.state.topics;
 
     for (let i = 0; i < this.state.topics.length; i++) {
       if (this.state.topics[i].id == this.props.params.id) {
         data = this.state.topics[i];
       }
     }
+
+    console.log(data);
 
     return(
       <article id="TopicsDetail">
@@ -68,7 +71,11 @@ export default class TopicsDetail extends React.Component {
         <dl>
           <dt>カテゴリ</dt>
           <dd>
-            <select>
+            <select
+              name="category_id"
+              onChange={this.handleText.bind(this)}
+              value={data.category_id}
+              >
               <option value="1">一般</option>
               <option value="2">お仕事を探す</option>
             </select>
@@ -76,24 +83,120 @@ export default class TopicsDetail extends React.Component {
         </dl>
 
         <dl>
-          <dt>タイトル</dt>
+          <dt>
+            タイトル
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>
             <input
               type="text"
-              value="ホームページが公開されました"
+              name="title"
+              value={data.title}
+              onChange={this.handleText.bind(this)}
               className="w-xl"
+              maxLength="120"
+              required={true}
               />
           </dd>
         </dl>
 
-        <button className="w-s">更新</button>
+        <dl>
+          <dt>
+            リンク
+          </dt>
+          <dd>
+            <input
+              type="text"
+              name="link"
+              value={data.link}
+              onChange={this.handleText.bind(this)}
+              className="w-xl"
+              maxLength="120"
+              required={true}
+              />
+          </dd>
+        </dl>
+
+        <button
+          className="w-s"
+          onClick={this.handleSubmit.bind(this)}
+          >更新</button>
 
       </article>
     );
   }
 
+  handleSubmit(e) {
+    let res = this.state.topics;
+    console.log(res);
+
+    TopicActions.adminUpdate(res);
+    window.location.href = '/admin/topics/';
+  }
+
+  handleText(e) {
+    const field = e.target.getAttribute('name');
+    const req = e.target.required;
+    const value = e.target.value;
+    const type = e.target.getAttribute('data-type');
+    const mes = e.target.parentNode.querySelector('p.message');
+
+    let isValid = true;
+    if (req && !this.isValidRequired(value)) {
+      isValid = false;
+    }
+    if (type == 'int' && !this.isValidInt(value)) {
+      isValid = false;
+    }
+    if (type == 'time' && !this.isValidTime(value)) {
+      isValid = false;
+    }
+    if (type == 'datetime' && !this.isValidDateTime(value)) {
+      isValid = false;
+    }
+
+    if (!isValid) {
+      e.target.style.borderColor = '#D9534F';
+      if (mes) mes.classList.add('show');
+    } else {
+      e.target.style.borderColor = '#CDCDCD';
+      if (mes) mes.classList.remove('show');
+    }
+
+    let obj = this.state.topics;
+    obj[field] = e.target.value;
+    this.setState({ topics: obj });
+  }
+
+  isValidRequired(str) {
+    return (str.length > 0) ? true : false ;
+  }
+
+  isValidInt(str) {
+    return isFinite(str);
+  }
+
+  isValidDateTime(str) {
+    if (str == '0000-00-00 00:00:00') {
+      return true;
+    }
+    return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+  }
+
+  isValidDateTime(str) {
+    if (str == '0000-00-00 00:00:00') {
+      return true;
+    }
+    return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+  }
+
+  isValidTime(str) {
+    return m(str, 'HH:mm:ss', true).isValid();
+  }
+
+
   updateState() {
     let res = TopicStore.read();
-    this.setState({ topics: res });
+    this.setState({ topics: res[0] });
   }
 }

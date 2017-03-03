@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events'
-import Dispatcher from '../dispathcer/Dispatcher'
+import Dispatcher from '../dispathcer/TopicDispatcher'
 import TopicConstants from '../constants/TopicConstants'
 
 import { http } from '../components/Http'
@@ -64,6 +64,7 @@ Dispatcher.register( function(action) {
   switch(action.actionType) {
     case TopicConstants.CREATE:
       http.get(URL).then(res => {
+        console.log('test3');
         create(res);
         topicStore.update();
       }).catch(e => {

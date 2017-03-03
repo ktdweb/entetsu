@@ -97,7 +97,6 @@ var WorksDetail = function (_React$Component) {
       if (!this.state.commons.categories[1]) return false;
 
       var data = this.state.works;
-      console.log(data);
 
       var sections = this.generateSelects(this.state.commons.sections, 'sections');
 
@@ -745,7 +744,7 @@ var WorksDetail = function (_React$Component) {
       delete res.unit_wage;
 
       _WorkActions2.default.adminUpdate(res);
-      //window.location.href = '/admin/works/';
+      window.location.href = '/admin/works/';
     }
   }, {
     key: 'updateState',

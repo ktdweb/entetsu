@@ -906,6 +906,14 @@ var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
 
+var _TopicStore = require('../../../js/stores/TopicStore');
+
+var _TopicStore2 = _interopRequireDefault(_TopicStore);
+
+var _TopicActions = require('../../../js/actions/TopicActions');
+
+var _TopicActions2 = _interopRequireDefault(_TopicActions);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -934,13 +942,69 @@ var Topics = function (_React$Component) {
   function Topics(props) {
     _classCallCheck(this, Topics);
 
-    return _possibleConstructorReturn(this, (Topics.__proto__ || Object.getPrototypeOf(Topics)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Topics.__proto__ || Object.getPrototypeOf(Topics)).call(this, props));
+
+    var topics = _TopicStore2.default.read();
+    _this.state = {
+      topics: topics
+    };
+    _this.data = _this.state.topics[0];
+    return _this;
   }
 
   _createClass(Topics, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      _TopicStore2.default.subscribe(this.updateState.bind(this));
+      _TopicActions2.default.adminGet();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      _TopicStore2.default.destroy(this.updateState.bind(this));this;
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Topics' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }), _react2.default.createElement(_reactRouter.Link, { to: '/admin/topics/detail/add' }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '内容'), _react2.default.createElement('th', null, '作成日')), _react2.default.createElement('tr', null, _react2.default.createElement('td', null, '1'), _react2.default.createElement('td', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/topics/detail/1' }, 'ホームページが公開されました')), _react2.default.createElement('td', null, '内容'), _react2.default.createElement('td', null, '2016-06-30 12:00:00')))));
+      var _this2 = this;
+
+      var eachTopic = void 0;
+      if (this.state.topics.length >= 1) {
+        eachTopic = Object.keys(this.state.topics).map(function (i) {
+          return _react2.default.createElement(EachTopic, {
+            key: i,
+            data: _this2.state.topics[i],
+            handleClick: _this2.adminDelete.bind(_this2)
+          });
+        });
+      } else {
+        eachTopic = _react2.default.createElement('tr', { className: 'result' }, _react2.default.createElement('td', { colSpan: '6' }, _react2.default.createElement('div', null, '登録件数は0件です')));
+      }
+
+      return _react2.default.createElement('article', { id: 'Topics' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }), _react2.default.createElement(_reactRouter.Link, {
+        to: '/admin/topics/detail/0'
+      }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '作成日'), _react2.default.createElement('th', null, '-')), eachTopic)));
+    }
+  }, {
+    key: 'updateState',
+    value: function updateState() {
+      var res = _TopicStore2.default.read();
+      console.log(res);
+      this.setState({ topics: res });
+    }
+  }, {
+    key: 'adminDelete',
+    value: function adminDelete(e) {
+      e.preventDefault();
+
+      var id = e.target.name;
+      var i = 'ID: ' + id + ' ';
+      var res = confirm(i + 'を本当に削除しますか?');
+      if (res) {
+        _TopicActions2.default.adminDelete(id);
+      } else {
+        return false;
+      }
     }
   }]);
 
@@ -949,7 +1013,33 @@ var Topics = function (_React$Component) {
 
 exports.default = Topics;
 
-},{"react":270,"react-document-title":43,"react-router":74}],11:[function(require,module,exports){
+var EachTopic = function (_React$Component2) {
+  _inherits(EachTopic, _React$Component2);
+
+  function EachTopic(props) {
+    _classCallCheck(this, EachTopic);
+
+    return _possibleConstructorReturn(this, (EachTopic.__proto__ || Object.getPrototypeOf(EachTopic)).call(this, props));
+  }
+
+  _createClass(EachTopic, [{
+    key: 'render',
+    value: function render() {
+      var data = this.props.data;
+
+      return _react2.default.createElement('tr', null, _react2.default.createElement('td', null, data.id), _react2.default.createElement('td', null, _react2.default.createElement(_reactRouter.Link, {
+        to: '/admin/topics/detail/' + data.id
+      }, data.title)), _react2.default.createElement('td', null, data.modified), _react2.default.createElement('td', null, _react2.default.createElement('button', {
+        name: data.id,
+        onClick: this.props.handleClick.bind(this)
+      }, '削除')));
+    }
+  }]);
+
+  return EachTopic;
+}(_react2.default.Component);
+
+},{"../../../js/actions/TopicActions":16,"../../../js/stores/TopicStore":28,"react":270,"react-document-title":43,"react-router":74}],11:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -1018,9 +1108,8 @@ var TopicsDetail = function (_React$Component) {
 
     var topics = _TopicStore2.default.read();
     _this.state = {
-      topics: topics
+      topics: topics[0]
     };
-    _this.data = _this.state.topics[0];
     return _this;
   }
 
@@ -1028,23 +1117,27 @@ var TopicsDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       _TopicStore2.default.subscribe(this.updateState.bind(this));
-      _TopicActions2.default.create();
+      if (this.props.params.id != 0) {
+        _TopicActions2.default.adminGet();
+      }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _TopicStore2.default.destroy(this.updateState.bind(this));this;
+      _TopicStore2.default.destroy(this.updateState.bind(this));
     }
   }, {
     key: 'render',
     value: function render() {
-      var data = this.data;
+      var data = this.state.topics;
 
       for (var i = 0; i < this.state.topics.length; i++) {
         if (this.state.topics[i].id == this.props.params.id) {
           data = this.state.topics[i];
         }
       }
+
+      console.log(data);
 
       return _react2.default.createElement('article', { id: 'TopicsDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '期間指定'), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始日時'), _react2.default.createElement('input', {
         type: 'text',
@@ -1054,17 +1147,111 @@ var TopicsDetail = function (_React$Component) {
         type: 'text',
         className: 'w-s',
         value: data.term_end
-      }))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'カテゴリ'), _react2.default.createElement('dd', null, _react2.default.createElement('select', null, _react2.default.createElement('option', { value: '1' }, '一般'), _react2.default.createElement('option', { value: '2' }, 'お仕事を探す')))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'タイトル'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
+      }))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'カテゴリ'), _react2.default.createElement('dd', null, _react2.default.createElement('select', {
+        name: 'category_id',
+        onChange: this.handleText.bind(this),
+        value: data.category_id
+      }, _react2.default.createElement('option', { value: '1' }, '一般'), _react2.default.createElement('option', { value: '2' }, 'お仕事を探す')))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'タイトル', _react2.default.createElement('span', { className: 'warning' }, ' ※')), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
         type: 'text',
-        value: 'ホームページが公開されました',
-        className: 'w-xl'
-      }))), _react2.default.createElement('button', { className: 'w-s' }, '更新'));
+        name: 'title',
+        value: data.title,
+        onChange: this.handleText.bind(this),
+        className: 'w-xl',
+        maxLength: '120',
+        required: true
+      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'リンク'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
+        type: 'text',
+        name: 'link',
+        value: data.link,
+        onChange: this.handleText.bind(this),
+        className: 'w-xl',
+        maxLength: '120',
+        required: true
+      }))), _react2.default.createElement('button', {
+        className: 'w-s',
+        onClick: this.handleSubmit.bind(this)
+      }, '更新'));
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      var res = this.state.topics;
+      console.log(res);
+
+      _TopicActions2.default.adminUpdate(res);
+      window.location.href = '/admin/topics/';
+    }
+  }, {
+    key: 'handleText',
+    value: function handleText(e) {
+      var field = e.target.getAttribute('name');
+      var req = e.target.required;
+      var value = e.target.value;
+      var type = e.target.getAttribute('data-type');
+      var mes = e.target.parentNode.querySelector('p.message');
+
+      var isValid = true;
+      if (req && !this.isValidRequired(value)) {
+        isValid = false;
+      }
+      if (type == 'int' && !this.isValidInt(value)) {
+        isValid = false;
+      }
+      if (type == 'time' && !this.isValidTime(value)) {
+        isValid = false;
+      }
+      if (type == 'datetime' && !this.isValidDateTime(value)) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        e.target.style.borderColor = '#D9534F';
+        if (mes) mes.classList.add('show');
+      } else {
+        e.target.style.borderColor = '#CDCDCD';
+        if (mes) mes.classList.remove('show');
+      }
+
+      var obj = this.state.topics;
+      obj[field] = e.target.value;
+      this.setState({ topics: obj });
+    }
+  }, {
+    key: 'isValidRequired',
+    value: function isValidRequired(str) {
+      return str.length > 0 ? true : false;
+    }
+  }, {
+    key: 'isValidInt',
+    value: function isValidInt(str) {
+      return isFinite(str);
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidDateTime',
+    value: function isValidDateTime(str) {
+      if (str == '0000-00-00 00:00:00') {
+        return true;
+      }
+      return m(str, 'YYYY-MM-DD HH:mm:ss', true).isValid();
+    }
+  }, {
+    key: 'isValidTime',
+    value: function isValidTime(str) {
+      return m(str, 'HH:mm:ss', true).isValid();
     }
   }, {
     key: 'updateState',
     value: function updateState() {
       var res = _TopicStore2.default.read();
-      this.setState({ topics: res });
+      this.setState({ topics: res[0] });
     }
   }]);
 
@@ -1176,7 +1363,7 @@ var Works = function (_React$Component) {
       var _this2 = this;
 
       var eachWork = void 0;
-      if (this.state.works.length > 1) {
+      if (this.state.works.length >= 1) {
         eachWork = Object.keys(this.state.works).map(function (i) {
           return _react2.default.createElement(EachWork, {
             key: i,
@@ -1368,7 +1555,6 @@ var WorksDetail = function (_React$Component) {
       if (!this.state.commons.categories[1]) return false;
 
       var data = this.state.works;
-      console.log(data);
 
       var sections = this.generateSelects(this.state.commons.sections, 'sections');
 
@@ -1561,7 +1747,7 @@ var WorksDetail = function (_React$Component) {
       delete res.unit_wage;
 
       _WorkActions2.default.adminUpdate(res);
-      //window.location.href = '/admin/works/';
+      window.location.href = '/admin/works/';
     }
   }, {
     key: 'updateState',
@@ -1807,40 +1993,11 @@ exports.default = {
     });
   },
 
-  category: function category(id) {
-    _TopicDispatcher2.default.dispatch({
-      actionType: _TopicConstants2.default.CATEGORY,
-      id: id
-    });
-  },
-
-  slider: function slider(start, end) {
-    _TopicDispatcher2.default.dispatch({
-      actionType: _TopicConstants2.default.SLIDER,
-      start: start,
-      end: end
-    });
-  },
-
-  keyword: function keyword(_keyword) {
-    _TopicDispatcher2.default.dispatch({
-      actionType: _TopicConstants2.default.KEYWORD,
-      keyword: _keyword
-    });
-  },
-
   adminGet: function adminGet() {
     var id = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
 
     _TopicDispatcher2.default.dispatch({
       actionType: _TopicConstants2.default.ADMIN_GET,
-      id: id
-    });
-  },
-
-  adminEach: function adminEach(id) {
-    _TopicDispatcher2.default.dispatch({
-      actionType: _TopicConstants2.default.ADMIN_EACH,
       id: id
     });
   },
@@ -2161,11 +2318,7 @@ function _interopRequireDefault(obj) {
 
 var TopicConstants = (0, _keymirror2.default)({
   CREATE: null,
-  CATEGORY: null,
-  SLIDER: null,
-  KEYWORD: null,
   ADMIN_GET: null,
-  ADMIN_EACH: null,
   ADMIN_UPDATE: null,
   ADMIN_DELETE: null,
   UPDATE: null,
@@ -2592,9 +2745,9 @@ var _createClass = function () {
 
 var _events = require('events');
 
-var _Dispatcher = require('../dispathcer/Dispatcher');
+var _TopicDispatcher = require('../dispathcer/TopicDispatcher');
 
-var _Dispatcher2 = _interopRequireDefault(_Dispatcher);
+var _TopicDispatcher2 = _interopRequireDefault(_TopicDispatcher);
 
 var _TopicConstants = require('../constants/TopicConstants');
 
@@ -2629,54 +2782,18 @@ var URL = '/api/topics/';
 
 var _topics = [{
   id: '',
-  section_id: 1,
+  category_id: 1,
   title: '',
-  detail: '',
-  location: '',
-  time: '',
-  time_start: '',
-  time_end: '',
-  entry_start: '',
-  entry_end: '',
-  break: '',
-  wage: '',
-  days: '',
-  holidays: '',
-  type: '',
-  term: '',
-  career: '',
-  selling: '',
-  cert: '',
+  link: '',
   desc: '',
-  img: '',
-
-  abbr_wage: '',
-  abbr_time: '',
-  unit_wage_id: 1,
-
-  name: '',
-  tel: '',
-  email: '',
-  unit_wage: '',
+  term_start: '',
+  term_end: '',
 
   created: '',
   modified: ''
 }];
 
 function create(res) {
-  /*
-  if (res[0].time_id == null) {
-    res[0].time_id = 0;
-  }
-  if (res[0].category_id == null) {
-    res[0].category_id = 0;
-  }
-  if (res[0].location_id == null) {
-    res[0].location_id = 0;
-  }
-  console.log('test');
-  console.log(res);
-  */
   _topics = res;
 }
 
@@ -2730,40 +2847,11 @@ var TopicStore = function (_EventEmitter) {
   return TopicStore;
 }(_events.EventEmitter);
 
-_Dispatcher2.default.register(function (action) {
+_TopicDispatcher2.default.register(function (action) {
   switch (action.actionType) {
     case _TopicConstants2.default.CREATE:
       _Http.http.get(URL).then(function (res) {
-        create(res);
-        topicStore.update();
-      }).catch(function (e) {
-        //console.error(e);
-      });
-      break;
-
-    case _TopicConstants2.default.CATEGORY:
-      var url = URL + 'category/' + action.id;
-      _Http.http.get(url).then(function (res) {
-        create(res);
-        topicStore.update();
-      }).catch(function (e) {
-        //console.error(e);
-      });
-      break;
-
-    case _TopicConstants2.default.SLIDER:
-      var slider = URL + 'slider/' + action.start + '/' + action.end;
-      _Http.http.get(slider).then(function (res) {
-        create(res);
-        topicStore.update();
-      }).catch(function (e) {
-        //console.error(e);
-      });
-      break;
-
-    case _TopicConstants2.default.KEYWORD:
-      var keyword = URL + 'keyword/' + action.keyword;
-      _Http.http.get(keyword).then(function (res) {
+        console.log('test3');
         create(res);
         topicStore.update();
       }).catch(function (e) {
@@ -2778,16 +2866,6 @@ _Dispatcher2.default.register(function (action) {
         topicStore.update();
       }).catch(function (e) {
         //console.error(e);
-      });
-      break;
-
-    case _TopicConstants2.default.ADMIN_EACH:
-      var admin_each = URL + 'admin/each/' + action.id;
-      _Http.http.get(admin_each).then(function (res) {
-        create(res);
-        topicStore.update();
-      }).catch(function (e) {
-        // console.error(e);
       });
       break;
 
@@ -2829,7 +2907,7 @@ _Dispatcher2.default.register(function (action) {
 var topicStore = new TopicStore();
 exports.default = topicStore;
 
-},{"../components/Http":18,"../constants/TopicConstants":21,"../dispathcer/Dispatcher":24,"events":273}],29:[function(require,module,exports){
+},{"../components/Http":18,"../constants/TopicConstants":21,"../dispathcer/TopicDispatcher":25,"events":273}],29:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };

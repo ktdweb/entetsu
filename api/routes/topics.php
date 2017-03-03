@@ -126,59 +126,18 @@ $app->group('/topics', function () {
             $del = $this->get('db.delete');
 
             $id = (int)$body['id'];
-            $tags = $body['tags'];
-
-            unset($body['email']);
-            unset($body['name']);
-            unset($body['tel']);
-            unset($body['id']);
-            unset($body['tags']);
-
-            // tags delete
-            $sql = 'DELETE FROM `tags` WHERE `work_id` = ?';
-            $del->execute($sql, $id);
-
-            // tags insert
-            $sql = '
-                INSERT INTO `tags` (
-                `work_id`,
-                `category_id`
-                ) VALUES
-            ';
-            foreach ($tags as $tag) {
-                $sql .= '(' . $id . ', ' . $tag . '),';
-            };
-            $sql = rtrim($sql, ',') . ';';
-
-            $post->execute($sql);
 
             // works
             $values = array_values($body);
 
-            $sql = 'UPDATE `works` SET ';
-            $sql .= '`section_id`=?,';
+            $sql = 'UPDATE `topics` SET ';
+            $sql .= '`id`=?,';
+            $sql .= '`category_id`=?,';
             $sql .= '`title`=?,';
-            $sql .= '`detail`=?,';
-            $sql .= '`location`=?,';
-            $sql .= '`time`=?,';
-            $sql .= '`time_start`=?,';
-            $sql .= '`time_end`=?,';
-            $sql .= '`entry_start`=?,';
-            $sql .= '`entry_end`=?,';
-            $sql .= '`break`=?,';
-            $sql .= '`wage`=?,';
-            $sql .= '`days`=?,';
-            $sql .= '`holidays`=?,';
-            $sql .= '`type`=?,';
-            $sql .= '`term`=?,';
-            $sql .= '`career`=?,';
-            $sql .= '`selling`=?,';
-            $sql .= '`cert`=?,';
+            $sql .= '`link`=?,';
             $sql .= '`desc`=?,';
-            $sql .= '`img`=?,';
-            $sql .= '`abbr_wage`=?,';
-            $sql .= '`abbr_time`=?,';
-            $sql .= '`unit_wage_id`=?,';
+            $sql .= '`term_start`=?,';
+            $sql .= '`term_end`=?,';
             $sql .= '`created`=?,';
             $sql .= '`modified`=? ';
             $sql .= ' WHERE `id` = ' . $id . ';';
@@ -270,12 +229,8 @@ $app->group('/topics', function () {
         ) {
             $db = $this->get('db.delete');
 
-            $sql = 'DELETE FROM `works` ';
+            $sql = 'DELETE FROM `topics` ';
             $sql .= 'WHERE `id` = ' . (int)$args['id'];
-            $res = $db->execute($sql);
-
-            $sql = 'DELETE FROM `tags` ';
-            $sql .= 'WHERE `work_id` = ' . (int)$args['id'];
             $res = $db->execute($sql);
 
             return $response->withJson(

@@ -52,7 +52,6 @@ export default class WorksDetail extends React.Component {
     if (!this.state.commons.categories[1]) return false;
 
     let data = this.state.works;
-    console.log(data);
 
     const sections = this.generateSelects(
       this.state.commons.sections,
@@ -498,7 +497,7 @@ export default class WorksDetail extends React.Component {
     delete res.unit_wage;
     
     WorkActions.adminUpdate(res);
-    //window.location.href = '/admin/works/';
+    window.location.href = '/admin/works/';
   }
 
   updateState() {
