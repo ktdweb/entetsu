@@ -16,13 +16,13 @@ var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
 
-var _WorkStore = require('../../../js/stores/WorkStore');
+var _TopicStore = require('../../../js/stores/TopicStore');
 
-var _WorkStore2 = _interopRequireDefault(_WorkStore);
+var _TopicStore2 = _interopRequireDefault(_TopicStore);
 
-var _WorkActions = require('../../../js/actions/WorkActions');
+var _TopicActions = require('../../../js/actions/TopicActions');
 
-var _WorkActions2 = _interopRequireDefault(_WorkActions);
+var _TopicActions2 = _interopRequireDefault(_TopicActions);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40,39 +40,39 @@ var TopicsDetail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TopicsDetail.__proto__ || Object.getPrototypeOf(TopicsDetail)).call(this, props));
 
-    var works = _WorkStore2.default.read();
+    var topics = _TopicStore2.default.read();
     _this.state = {
-      works: works
+      topics: topics
     };
-    _this.data = _this.state.works[0];
+    _this.data = _this.state.topics[0];
     return _this;
   }
 
   _createClass(TopicsDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      _WorkStore2.default.subscribe(this.updateState.bind(this));
-      _WorkActions2.default.create();
+      _TopicStore2.default.subscribe(this.updateState.bind(this));
+      _TopicActions2.default.create();
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _WorkStore2.default.destroy(this.updateState.bind(this));this;
+      _TopicStore2.default.destroy(this.updateState.bind(this));this;
     }
   }, {
     key: 'render',
     value: function render() {
       var data = this.data;
 
-      for (var i = 0; i < this.state.works.length; i++) {
-        if (this.state.works[i].id == this.props.params.id) {
-          data = this.state.works[i];
+      for (var i = 0; i < this.state.topics.length; i++) {
+        if (this.state.topics[i].id == this.props.params.id) {
+          data = this.state.topics[i];
         }
       }
 
       return _react2.default.createElement(
         'article',
-        { id: 'WorksDetail' },
+        { id: 'TopicsDetail' },
         _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }),
         _react2.default.createElement(
           'h1',
@@ -120,6 +120,33 @@ var TopicsDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
+            'カテゴリ'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'select',
+              null,
+              _react2.default.createElement(
+                'option',
+                { value: '1' },
+                '一般'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '2' },
+                'お仕事を探す'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
             'タイトル'
           ),
           _react2.default.createElement(
@@ -133,42 +160,6 @@ var TopicsDetail = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '内容'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            _react2.default.createElement('textarea', {
-              className: 'w-xl',
-              value: ''
-            })
-          )
-        ),
-        _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '画像'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            _react2.default.createElement(
-              'label',
-              { className: 'formFile' },
-              'アップロード',
-              _react2.default.createElement('input', { type: 'file' })
-            )
-          )
-        ),
-        _react2.default.createElement(
           'button',
           { className: 'w-s' },
           '更新'
@@ -178,8 +169,8 @@ var TopicsDetail = function (_React$Component) {
   }, {
     key: 'updateState',
     value: function updateState() {
-      var res = _WorkStore2.default.read();
-      this.setState({ works: res });
+      var res = _TopicStore2.default.read();
+      this.setState({ topics: res });
     }
   }]);
 
