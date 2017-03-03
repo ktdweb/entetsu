@@ -12,6 +12,36 @@ namespace Routes;
  */
 $app->group('/topics', function () {
 
+    /**
+     * GET
+     */
+    $this->get(
+        '/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT * FROM `topics`';
+
+            $sql .= ' WHERE ';
+            $sql .= ' ( `term_end` > NOW() ';
+            $sql .= " OR `term_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ';
+            $sql .= ' ( `term_start` < NOW() ';
+            $sql .= " OR `term_start` = '0000-00-00 00:00:00' )";
+
+            $body = $db->execute($sql);
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
 
     /**
      * GET
@@ -24,7 +54,7 @@ $app->group('/topics', function () {
             $args
         ) {
             $db = $this->get('db.get');
-            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql = 'SELECT `topics`.*, `sections`.`name`,';
             $sql .= ' `sections`.`tel`, `sections`.`email`, ';
             $sql .= '`wages`.`name` as `unit_wage` from `works` ';
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
