@@ -1134,3 +1134,37 @@ INSERT INTO `tokens` (
 ) VALUES
 (1, '2157d1c1995ed74', NOW());
 /*}}}*/
+
+
+--- topics
+
+-- topics テーブル確認 /*{{{*/
+DESC `topics`;
+SELECT * FROM `topics`;
+/*}}}*/
+
+-- topics テーブル作成 /*{{{*/
+DROP TABLE `topics`;
+CREATE TABLE IF NOT EXISTS `topics` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `category_id` INT(1) NOT NULL,
+  `title` VARCHAR(30) NOT NULL,
+  `link` VARCHAR(255) NULL,
+  `desc` TEXT NULL,
+  `term_start` DATETIME NULL,
+  `term_end` DATETIME NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+/*}}}*/
+
+-- topics レコード挿入 /*{{{*/
+TRUNCATE `topics`;
+INSERT INTO `topics` (
+  `member_id`,
+  `token`,
+  `created`
+) VALUES
+(1, '2157d1c1995ed74', NOW());
+/*}}}*/
