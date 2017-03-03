@@ -5,7 +5,6 @@ import DocumentTitle from 'react-document-title'
 import WorkStore from '../../../js/stores/WorkStore'
 import WorkActions from '../../../js/actions/WorkActions'
 
-
 export default class Works extends React.Component {
 
   constructor(props) {
@@ -38,7 +37,7 @@ export default class Works extends React.Component {
 
   render() {
     let eachWork;
-    if (this.state.works.length > 1) {
+    if (this.state.works.length >= 1) {
       eachWork = Object.keys(this.state.works).map((i) => {
         return (
           <EachWork
