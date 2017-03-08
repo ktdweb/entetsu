@@ -18,6 +18,7 @@ docs/*
 spec/js/*
 
 /.htaccess
+/admin/.htaccess
 /api/.htpasswd
 /index.html
 /index.php
