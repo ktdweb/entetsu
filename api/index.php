@@ -11,7 +11,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
  */
 $production_server_ips = array(
     //'10.0.2.15', // local
-    '150.60.6.11'
+    '150.60.165.126'
 );
 
 $env = new DetectEnvironment($production_server_ips);
