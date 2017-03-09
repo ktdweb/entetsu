@@ -49,7 +49,7 @@ export default class Nav extends React.Component {
 
             <li>
               <i className="fa fa-paperclip" />
-              <Link to={root + '/works'}>
+              <Link to={root + '/works/0'}>
                 求人情報
               </Link>
             </li>

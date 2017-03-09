@@ -511,6 +511,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = {
+  defaults: function defaults() {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.DEFAULTS
+    });
+  },
+
   create: function create() {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.CREATE
@@ -558,6 +564,13 @@ exports.default = {
   adminUpdate: function adminUpdate(obj) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_UPDATE,
+      obj: obj
+    });
+  },
+
+  adminInsert: function adminInsert(obj) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_INSERT,
       obj: obj
     });
   },
@@ -1494,6 +1507,7 @@ function _interopRequireDefault(obj) {
 }
 
 var WorkConstants = (0, _keymirror2.default)({
+  DEFAULTS: null,
   CREATE: null,
   CATEGORY: null,
   SLIDER: null,
@@ -1501,6 +1515,7 @@ var WorkConstants = (0, _keymirror2.default)({
   ADMIN_GET: null,
   ADMIN_EACH: null,
   ADMIN_UPDATE: null,
+  ADMIN_INSERT: null,
   ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
@@ -10916,7 +10931,7 @@ var CHANGE_EVENT = 'change';
 var URL = '/api/works/';
 
 var _works = [{
-  id: '',
+  id: 0,
   section_id: 1,
   title: '',
   detail: '',
@@ -10924,8 +10939,8 @@ var _works = [{
   time: '',
   time_start: '',
   time_end: '',
-  entry_start: '',
-  entry_end: '',
+  entry_start: '0000-00-00 00:00:00',
+  entry_end: '0000-00-00 00:00:00',
   break: '',
   wage: '',
   days: '',
@@ -10950,6 +10965,12 @@ var _works = [{
   created: '',
   modified: ''
 }];
+
+var def = _works;
+
+function defaultSetting() {
+  _works = def;
+}
 
 function create(res) {
   /*
@@ -11020,6 +11041,11 @@ var WorkStore = function (_EventEmitter) {
 
 _Dispatcher2.default.register(function (action) {
   switch (action.actionType) {
+    case _WorkConstants2.default.DEFAULT:
+      defaultSetting();
+      workStore.update();
+      break;
+
     case _WorkConstants2.default.CREATE:
       _Http.http.get(URL).then(function (res) {
         create(res);
@@ -11073,6 +11099,16 @@ _Dispatcher2.default.register(function (action) {
       var admin_each = URL + 'admin/each/' + action.id;
       _Http.http.get(admin_each).then(function (res) {
         create(res);
+        workStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_INSERT:
+      var admin_insert = URL;
+      _Http.http.post(admin_insert, action.obj).then(function (res) {
+        //create(res);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);

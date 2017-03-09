@@ -9,7 +9,7 @@ const URL = '/api/works/';
 
 let _works = [
   {
-    id: '',
+    id: 0, 
     section_id: 1,
     title: '',
     detail: '',
@@ -17,8 +17,8 @@ let _works = [
     time: '',
     time_start: '',
     time_end: '',
-    entry_start: '',
-    entry_end: '',
+    entry_start: '0000-00-00 00:00:00',
+    entry_end: '0000-00-00 00:00:00',
     break: '',
     wage: '',
     days: '',
@@ -44,6 +44,12 @@ let _works = [
     modified: ''
   }
 ];
+
+let def = _works;
+
+function defaultSetting() {
+  _works = def;
+}
 
 function create(res) {
   /*
@@ -98,6 +104,11 @@ class WorkStore extends EventEmitter {
 
 Dispatcher.register( function(action) {
   switch(action.actionType) {
+    case WorkConstants.DEFAULT:
+        defaultSetting();
+        workStore.update();
+      break;
+
     case WorkConstants.CREATE:
       http.get(URL).then(res => {
         create(res);
@@ -151,6 +162,16 @@ Dispatcher.register( function(action) {
       let admin_each = URL + 'admin/each/' + action.id;
       http.get(admin_each).then(res => {
         create(res);
+        workStore.update();
+      }).catch(e => {
+        // console.error(e);
+      });
+      break;
+
+    case WorkConstants.ADMIN_INSERT:
+      let admin_insert = URL;
+      http.post(admin_insert, action.obj).then(res => {
+        //create(res);
         workStore.update();
       }).catch(e => {
         // console.error(e);

@@ -55,14 +55,45 @@ var WorksDetail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
-    var works = _WorkStore2.default.read();
+    var works = {
+      id: 0,
+      section_id: 1,
+      title: '',
+      detail: '',
+      location: '',
+      time: '',
+      time_start: '',
+      time_end: '',
+      entry_start: '0000-00-00 00:00:00',
+      entry_end: '0000-00-00 00:00:00',
+      break: '',
+      wage: '',
+      days: '',
+      holidays: '',
+      type: '',
+      term: '',
+      career: '',
+      selling: '',
+      cert: '',
+      desc: '',
+      img: '',
+
+      abbr_wage: '',
+      abbr_time: '',
+      unit_wage_id: 1,
+
+      name: '',
+      tel: '',
+      email: '',
+      unit_wage: '',
+
+      created: '',
+      modified: ''
+    };
     _this.state = {
-      works: works[0],
-      commons: {
-        'categories': [],
-        'groups': [],
-        'sections': []
-      }
+      works: works,
+      commons: [],
+      tags: []
     };
     return _this;
   }
@@ -70,13 +101,15 @@ var WorksDetail = function (_React$Component) {
   _createClass(WorksDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      _CommonStore2.default.subscribe(this.updateCommon.bind(this));
+      _CommonActions2.default.get();
+
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       if (this.props.params.id != 0) {
         _WorkActions2.default.adminEach(this.props.params.id);
+      } else {
+        _WorkActions2.default.defaults();
       }
-
-      _CommonStore2.default.subscribe(this.updateCommon.bind(this));
-      _CommonActions2.default.get();
     }
   }, {
     key: 'componentWillUnmount',
@@ -94,7 +127,7 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (!this.state.commons.categories[1]) return false;
+      if (this.state.commons.length == 0) return false;
 
       var data = this.state.works;
 
@@ -699,7 +732,6 @@ var WorksDetail = function (_React$Component) {
             _react2.default.createElement(
               'label',
               {
-                onClick: this.handleAlert.bind(this),
                 className: 'formFile' },
               'アップロード',
               _react2.default.createElement('input', { type: 'file' })
@@ -743,8 +775,13 @@ var WorksDetail = function (_React$Component) {
       delete res.category_id;
       delete res.unit_wage;
 
-      _WorkActions2.default.adminUpdate(res);
-      window.location.href = '/admin/works/';
+      if (this.props.params.id == 0) {
+        _WorkActions2.default.adminInsert(res);
+      } else {
+        _WorkActions2.default.adminUpdate(res);
+      }
+
+      window.location.href = '/admin/works/' + this.props.params.cat + '/update';
     }
   }, {
     key: 'updateState',
