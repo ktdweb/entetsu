@@ -781,7 +781,7 @@ var WorksDetail = function (_React$Component) {
         _WorkActions2.default.adminUpdate(res);
       }
 
-      window.location.href = '/admin/works/' + this.props.params.cat + '/update';
+      //window.location.href = '/admin/works/' + this.props.params.cat + '/update';
     }
   }, {
     key: 'updateState',
@@ -892,6 +892,10 @@ var WorksDetail = function (_React$Component) {
             checked = 'checked';
           }
         });
+
+        if (_this2.props.params.id == 0 && key == 'categories' && i == 6) {
+          checked = 'checked';
+        }
 
         return _react2.default.createElement(
           'label',
