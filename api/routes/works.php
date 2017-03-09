@@ -354,7 +354,9 @@ $app->group('/works', function () {
             $args
         ) {
             $body = $request->getParsedBody();
+            $tags = $body['tags'];
 
+            $get = $this->get('db.get');
             $db = $this->get('db.post');
 
             $sql = 'INSERT INTO `works` (';
@@ -415,6 +417,24 @@ $app->group('/works', function () {
             );
 
             $res = $db->execute($sql, $values);
+
+            $sql = 'SELECT LAST_INSERT_ID() as `id`;';
+            $lastId = $get->execute($sql);
+
+            // tags insert
+            $sql = '
+                INSERT INTO `tags` (
+                `work_id`,
+                `category_id`
+                ) VALUES
+            ';
+            foreach ($tags as $tag) {
+                $sql .= '(' . $lastId[0]->id . ', ' . $tag . '),';
+            };
+            $sql = rtrim($sql, ',') . ';';
+
+            $db->execute($sql);
+
 
             return $response->withJson(
                 $res,
