@@ -103,14 +103,14 @@ var routes = _react2.default.createElement(
         nav: _Nav2.default,
         main: _WorksDetail2.default
       } }),
-    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/detail/:id',
+    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/detail/:id(/:cat)',
       global: root,
       components: {
         header: _Header2.default,
         nav: _Nav2.default,
         main: _WorksDetail2.default
       } }),
-    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works(/:id)',
+    _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/:id(/:update)',
       global: root,
       components: {
         header: _Header2.default,

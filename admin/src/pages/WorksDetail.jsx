@@ -15,26 +15,58 @@ export default class WorksDetail extends React.Component {
 
   constructor(props) {
     super(props);
+    let works = {
+      id: 0, 
+      section_id: 1,
+      title: '',
+      detail: '',
+      location: '',
+      time: '',
+      time_start: '',
+      time_end: '',
+      entry_start: '0000-00-00 00:00:00',
+      entry_end: '0000-00-00 00:00:00',
+      break: '',
+      wage: '',
+      days: '',
+      holidays: '',
+      type: '',
+      term: '',
+      career: '',
+      selling: '',
+      cert: '',
+      desc: '',
+      img: '',
 
-    let works = WorkStore.read();
+      abbr_wage: '',
+      abbr_time: '',
+      unit_wage_id: 1,
+
+      name: '',
+      tel: '',
+      email: '',
+      unit_wage: '',
+
+      created: '',
+      modified: ''
+    };
     this.state = {
-      works: works[0],
-      commons: {
-        'categories': [],
-        'groups': [],
-        'sections': [] 
-      }
+      works: works, 
+      commons: [],
+      tags: []
     }
   }
 
   componentWillMount() {
+    CommonStore.subscribe(this.updateCommon.bind(this));
+    CommonActions.get();
+
     WorkStore.subscribe(this.updateState.bind(this));
     if (this.props.params.id != 0) {
       WorkActions.adminEach(this.props.params.id);
+    } else {
+      WorkActions.defaults();
     }
-
-    CommonStore.subscribe(this.updateCommon.bind(this));
-    CommonActions.get();
   }
 
   componentWillUnmount() {
@@ -49,7 +81,7 @@ export default class WorksDetail extends React.Component {
   }
 
   render() {
-    if (!this.state.commons.categories[1]) return false;
+    if (this.state.commons.length == 0) return false 
 
     let data = this.state.works;
 
@@ -450,7 +482,6 @@ export default class WorksDetail extends React.Component {
           <dt>画像</dt>
           <dd>
             <label
-              onClick={this.handleAlert.bind(this)}
               className="formFile">
               アップロード
               <input type="file" />
@@ -496,8 +527,13 @@ export default class WorksDetail extends React.Component {
     delete res.category_id;
     delete res.unit_wage;
     
-    WorkActions.adminUpdate(res);
-    window.location.href = '/admin/works/';
+    if (this.props.params.id == 0) {
+      WorkActions.adminInsert(res);
+    } else {
+      WorkActions.adminUpdate(res);
+    }
+
+    window.location.href = '/admin/works/' + this.props.params.cat + '/update';
   }
 
   updateState() {

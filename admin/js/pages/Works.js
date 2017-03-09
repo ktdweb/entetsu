@@ -75,11 +75,18 @@ var Works = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log(this);
+      var cat = '';
+      if (this.props.params.id) {
+        cat = '/' + this.props.params.id;
+      }
+
       var eachWork = void 0;
       if (this.state.works.length >= 1) {
         eachWork = Object.keys(this.state.works).map(function (i) {
           return _react2.default.createElement(EachWork, {
             key: i,
+            cat: cat,
             data: _this2.state.works[i],
             handleClick: _this2.adminDelete.bind(_this2)
           });
@@ -100,6 +107,11 @@ var Works = function (_React$Component) {
         );
       }
 
+      var mes = '';
+      if (this.props.params.update) {
+        mes = '求人情報が更新されました';
+      }
+
       return _react2.default.createElement(
         'article',
         { id: 'Works' },
@@ -107,7 +119,7 @@ var Works = function (_React$Component) {
         _react2.default.createElement(
           _reactRouter.Link,
           {
-            to: '/admin/works/detail/0'
+            to: '/admin/works/detail/0' + cat
           },
           _react2.default.createElement(
             'button',
@@ -123,6 +135,11 @@ var Works = function (_React$Component) {
           '求人情報'
         ),
         _react2.default.createElement(
+          'div',
+          { className: 'warning' },
+          mes
+        ),
+        _react2.default.createElement(
           'nav',
           null,
           _react2.default.createElement(
@@ -133,7 +150,7 @@ var Works = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '/admin/works' },
+                { to: '/admin/works/0' },
                 'すべて'
               )
             ),
@@ -295,6 +312,11 @@ var EachWork = function (_React$Component2) {
   _createClass(EachWork, [{
     key: 'render',
     value: function render() {
+      var cat = '';
+      if (this.props.cat) {
+        cat = this.props.cat;
+      }
+
       var data = this.props.data;
       return _react2.default.createElement(
         'tr',
@@ -310,7 +332,7 @@ var EachWork = function (_React$Component2) {
           _react2.default.createElement(
             _reactRouter.Link,
             {
-              to: '/admin/works/detail/' + data.id
+              to: '/admin/works/detail/' + data.id + cat
             },
             data.title
           )

@@ -2,6 +2,12 @@ import Dispatcher from '../dispathcer/Dispatcher'
 import WorkConstants from '../constants/WorkConstants'
 
 export default {
+  defaults: () => {
+    Dispatcher.dispatch({
+      actionType: WorkConstants.DEFAULTS
+    })
+  },
+
   create: () => {
     Dispatcher.dispatch({
       actionType: WorkConstants.CREATE
@@ -47,6 +53,13 @@ export default {
   adminUpdate: (obj) => {
     Dispatcher.dispatch({
       actionType: WorkConstants.ADMIN_UPDATE,
+      obj: obj
+    })
+  },
+
+  adminInsert: (obj) => {
+    Dispatcher.dispatch({
+      actionType: WorkConstants.ADMIN_INSERT,
       obj: obj
     })
   },

@@ -78,7 +78,7 @@ var Nav = function (_React$Component) {
               _react2.default.createElement('i', { className: 'fa fa-paperclip' }),
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: root + '/works' },
+                { to: root + '/works/0' },
                 '求人情報'
               )
             )

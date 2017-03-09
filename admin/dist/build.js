@@ -118,13 +118,13 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     header: _Header2.default,
     nav: _Nav2.default,
     main: _WorksDetail2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/detail/:id',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/detail/:id(/:cat)',
   global: root,
   components: {
     header: _Header2.default,
     nav: _Nav2.default,
     main: _WorksDetail2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works(/:id)',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/works/:id(/:update)',
   global: root,
   components: {
     header: _Header2.default,
@@ -376,7 +376,7 @@ var Nav = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('aside', { id: 'Nav' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/topics' }, '新着情報')), _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/works' }, '求人情報')))));
+      return _react2.default.createElement('aside', { id: 'Nav' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/topics' }, '新着情報')), _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/works/0' }, '求人情報')))));
     }
   }]);
 
@@ -1362,11 +1362,18 @@ var Works = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log(this);
+      var cat = '';
+      if (this.props.params.id) {
+        cat = '/' + this.props.params.id;
+      }
+
       var eachWork = void 0;
       if (this.state.works.length >= 1) {
         eachWork = Object.keys(this.state.works).map(function (i) {
           return _react2.default.createElement(EachWork, {
             key: i,
+            cat: cat,
             data: _this2.state.works[i],
             handleClick: _this2.adminDelete.bind(_this2)
           });
@@ -1375,9 +1382,14 @@ var Works = function (_React$Component) {
         eachWork = _react2.default.createElement('tr', { className: 'result' }, _react2.default.createElement('td', { colSpan: '6' }, _react2.default.createElement('div', null, '登録件数は0件です')));
       }
 
+      var mes = '';
+      if (this.props.params.update) {
+        mes = '求人情報が更新されました';
+      }
+
       return _react2.default.createElement('article', { id: 'Works' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '求人情報' }), _react2.default.createElement(_reactRouter.Link, {
-        to: '/admin/works/detail/0'
-      }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works' }, 'すべて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/1' }, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/2' }, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/3' }, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/4' }, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/5' }, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/6' }, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/7' }, '食品検査')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/8' }, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachWork)));
+        to: '/admin/works/detail/0' + cat
+      }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), '求人情報'), _react2.default.createElement('div', { className: 'warning' }, mes), _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/0' }, 'すべて')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/1' }, '清掃')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/2' }, 'ビル')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/3' }, 'マンション')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/4' }, '運行')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/5' }, '指定管理')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/6' }, 'ベンリー')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/7' }, '食品検査')), _react2.default.createElement('li', null, _react2.default.createElement(_reactRouter.Link, { to: '/admin/works/8' }, '総務')))), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '時間'), _react2.default.createElement('th', null, '給与'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachWork)));
     }
   }, {
     key: 'updateState',
@@ -1418,9 +1430,14 @@ var EachWork = function (_React$Component2) {
   _createClass(EachWork, [{
     key: 'render',
     value: function render() {
+      var cat = '';
+      if (this.props.cat) {
+        cat = this.props.cat;
+      }
+
       var data = this.props.data;
       return _react2.default.createElement('tr', null, _react2.default.createElement('td', null, data.id), _react2.default.createElement('td', null, _react2.default.createElement(_reactRouter.Link, {
-        to: '/admin/works/detail/' + data.id
+        to: '/admin/works/detail/' + data.id + cat
       }, data.title)), _react2.default.createElement('td', null, data.abbr_time), _react2.default.createElement('td', null, data.unit_wage + data.abbr_wage + '円'), _react2.default.createElement('td', null, data.modified), _react2.default.createElement('td', null, _react2.default.createElement('button', {
         name: data.id,
         onClick: this.props.handleClick.bind(this)
@@ -1513,14 +1530,45 @@ var WorksDetail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
-    var works = _WorkStore2.default.read();
+    var works = {
+      id: 0,
+      section_id: 1,
+      title: '',
+      detail: '',
+      location: '',
+      time: '',
+      time_start: '',
+      time_end: '',
+      entry_start: '0000-00-00 00:00:00',
+      entry_end: '0000-00-00 00:00:00',
+      break: '',
+      wage: '',
+      days: '',
+      holidays: '',
+      type: '',
+      term: '',
+      career: '',
+      selling: '',
+      cert: '',
+      desc: '',
+      img: '',
+
+      abbr_wage: '',
+      abbr_time: '',
+      unit_wage_id: 1,
+
+      name: '',
+      tel: '',
+      email: '',
+      unit_wage: '',
+
+      created: '',
+      modified: ''
+    };
     _this.state = {
-      works: works[0],
-      commons: {
-        'categories': [],
-        'groups': [],
-        'sections': []
-      }
+      works: works,
+      commons: [],
+      tags: []
     };
     return _this;
   }
@@ -1528,13 +1576,15 @@ var WorksDetail = function (_React$Component) {
   _createClass(WorksDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      _CommonStore2.default.subscribe(this.updateCommon.bind(this));
+      _CommonActions2.default.get();
+
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       if (this.props.params.id != 0) {
         _WorkActions2.default.adminEach(this.props.params.id);
+      } else {
+        _WorkActions2.default.defaults();
       }
-
-      _CommonStore2.default.subscribe(this.updateCommon.bind(this));
-      _CommonActions2.default.get();
     }
   }, {
     key: 'componentWillUnmount',
@@ -1552,7 +1602,7 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (!this.state.commons.categories[1]) return false;
+      if (this.state.commons.length == 0) return false;
 
       var data = this.state.works;
 
@@ -1713,7 +1763,6 @@ var WorksDetail = function (_React$Component) {
         onChange: this.handleText.bind(this),
         'data-type': 'time'
       }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '画像'), _react2.default.createElement('dd', null, _react2.default.createElement('label', {
-        onClick: this.handleAlert.bind(this),
         className: 'formFile' }, 'アップロード', _react2.default.createElement('input', { type: 'file' })))), _react2.default.createElement('button', {
         className: 'w-s',
         onClick: this.handleSubmit.bind(this)
@@ -1746,8 +1795,13 @@ var WorksDetail = function (_React$Component) {
       delete res.category_id;
       delete res.unit_wage;
 
-      _WorkActions2.default.adminUpdate(res);
-      window.location.href = '/admin/works/';
+      if (this.props.params.id == 0) {
+        _WorkActions2.default.adminInsert(res);
+      } else {
+        _WorkActions2.default.adminUpdate(res);
+      }
+
+      window.location.href = '/admin/works/' + this.props.params.cat + '/update';
     }
   }, {
     key: 'updateState',
@@ -2051,6 +2105,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = {
+  defaults: function defaults() {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.DEFAULTS
+    });
+  },
+
   create: function create() {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.CREATE
@@ -2098,6 +2158,13 @@ exports.default = {
   adminUpdate: function adminUpdate(obj) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_UPDATE,
+      obj: obj
+    });
+  },
+
+  adminInsert: function adminInsert(obj) {
+    _Dispatcher2.default.dispatch({
+      actionType: _WorkConstants2.default.ADMIN_INSERT,
       obj: obj
     });
   },
@@ -2343,6 +2410,7 @@ function _interopRequireDefault(obj) {
 }
 
 var WorkConstants = (0, _keymirror2.default)({
+  DEFAULTS: null,
   CREATE: null,
   CATEGORY: null,
   SLIDER: null,
@@ -2350,6 +2418,7 @@ var WorkConstants = (0, _keymirror2.default)({
   ADMIN_GET: null,
   ADMIN_EACH: null,
   ADMIN_UPDATE: null,
+  ADMIN_INSERT: null,
   ADMIN_DELETE: null,
   UPDATE: null,
   DESTROY: null
@@ -2964,7 +3033,7 @@ var CHANGE_EVENT = 'change';
 var URL = '/api/works/';
 
 var _works = [{
-  id: '',
+  id: 0,
   section_id: 1,
   title: '',
   detail: '',
@@ -2972,8 +3041,8 @@ var _works = [{
   time: '',
   time_start: '',
   time_end: '',
-  entry_start: '',
-  entry_end: '',
+  entry_start: '0000-00-00 00:00:00',
+  entry_end: '0000-00-00 00:00:00',
   break: '',
   wage: '',
   days: '',
@@ -2998,6 +3067,12 @@ var _works = [{
   created: '',
   modified: ''
 }];
+
+var def = _works;
+
+function defaultSetting() {
+  _works = def;
+}
 
 function create(res) {
   /*
@@ -3068,6 +3143,11 @@ var WorkStore = function (_EventEmitter) {
 
 _Dispatcher2.default.register(function (action) {
   switch (action.actionType) {
+    case _WorkConstants2.default.DEFAULT:
+      defaultSetting();
+      workStore.update();
+      break;
+
     case _WorkConstants2.default.CREATE:
       _Http.http.get(URL).then(function (res) {
         create(res);
@@ -3121,6 +3201,16 @@ _Dispatcher2.default.register(function (action) {
       var admin_each = URL + 'admin/each/' + action.id;
       _Http.http.get(admin_each).then(function (res) {
         create(res);
+        workStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
+    case _WorkConstants2.default.ADMIN_INSERT:
+      var admin_insert = URL;
+      _Http.http.post(admin_insert, action.obj).then(function (res) {
+        //create(res);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);

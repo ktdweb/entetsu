@@ -64,7 +64,7 @@ const routes = (
           main: WorksDetail
         }} />
 
-      <Route path={root.documentRoot + '/works/detail/:id'}
+      <Route path={root.documentRoot + '/works/detail/:id(/:cat)'}
         global={root}
         components={{
           header: Header,
@@ -72,7 +72,7 @@ const routes = (
           main: WorksDetail
         }} />
 
-      <Route path={root.documentRoot + '/works(/:id)'}
+      <Route path={root.documentRoot + '/works/:id(/:update)'}
         global={root}
         components={{
           header: Header,

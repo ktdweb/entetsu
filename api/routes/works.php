@@ -204,7 +204,7 @@ $app->group('/works', function () {
             $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
             $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
 
-            if (is_numeric($args['id'])) {
+            if (is_numeric($args['id']) && $args['id'] != 0) {
                 $sql .= ' WHERE `works`.`section_id` = ?';
                 $body = $db->execute($sql, $args['id']);
             } else {
@@ -280,10 +280,14 @@ $app->group('/works', function () {
             unset($body['tel']);
             unset($body['id']);
             unset($body['tags']);
+            unset($body['created']);
+            unset($body['modified']);
 
             // tags delete
+            /*
             $sql = 'DELETE FROM `tags` WHERE `work_id` = ?';
             $del->execute($sql, $id);
+             */
 
             // tags insert
             $sql = '
@@ -326,8 +330,7 @@ $app->group('/works', function () {
             $sql .= '`abbr_wage`=?,';
             $sql .= '`abbr_time`=?,';
             $sql .= '`unit_wage_id`=?,';
-            $sql .= '`created`=?,';
-            $sql .= '`modified`=? ';
+            $sql .= '`modified`=NOW() ';
             $sql .= ' WHERE `id` = ' . $id . ';';
 
             $res = $db->execute($sql, $values);
@@ -354,20 +357,67 @@ $app->group('/works', function () {
 
             $db = $this->get('db.post');
 
-            $sql  = 'INSERT INTO `users` ';
+            $sql = 'INSERT INTO `works` (';
+            $sql .= '`section_id`,';
+            $sql .= '`title`,';
+            $sql .= '`detail`,';
+            $sql .= '`location`,';
+            $sql .= '`time`,';
+            $sql .= '`time_start`,';
+            $sql .= '`time_end`,';
+            $sql .= '`entry_start`,';
+            $sql .= '`entry_end`,';
+            $sql .= '`break`,';
+            $sql .= '`wage`,';
+            $sql .= '`days`,';
+            $sql .= '`holidays`,';
+            $sql .= '`type`,';
+            $sql .= '`term`,';
+            $sql .= '`career`,';
+            $sql .= '`selling`,';
+            $sql .= '`cert`,';
+            $sql .= '`desc`,';
+            $sql .= '`img`,';
+            $sql .= '`abbr_wage`,';
+            $sql .= '`abbr_time`,';
+            $sql .= '`unit_wage_id`,';
+            $sql .= '`created`,';
+            $sql .= '`modified` ';
+            $sql .= ') VALUES (';
+            $sql .= '?, ?, ?, ?, ?, ?, ?, ?, ?, ?,';
+            $sql .= '?, ?, ?, ?, ?, ?, ?, ?, ?, ?,';
+            $sql .= '?, ?, ?, NOW(), NOW());';
 
-            $fields = array_keys($body);
-            $values = array_values($body);
-            $holder = array_fill(0, count($values), '?');
+            $values = array(
+                $body['section_id'],
+                $body['title'],
+                $body['detail'],
+                $body['location'],
+                $body['time'],
+                $body['time_start'],
+                $body['time_end'],
+                $body['entry_start'],
+                $body['entry_end'],
+                $body['break'],
+                $body['wage'],
+                $body['days'],
+                $body['holidays'],
+                $body['type'],
+                $body['term'],
+                $body['career'],
+                $body['selling'],
+                $body['cert'],
+                $body['desc'],
+                $body['img'],
+                $body['abbr_wage'],
+                $body['abbr_time'],
+                $body['unit_wage_id']
+            );
 
-            $sql .= '(' . implode(', ', $fields) . ')';
-            $sql .= ' VALUES ';
-            $sql .= '(' . implode(', ', $holder) . ')';
-
-            $db->execute($sql, $values);
+            $res = $db->execute($sql, $values);
 
             return $response->withJson(
-                $body,
+                $res,
                 200,
                 $this->get('settings')['withJsonEnc']
             );

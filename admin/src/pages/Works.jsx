@@ -36,12 +36,19 @@ export default class Works extends React.Component {
   }
 
   render() {
+    console.log(this);
+    let cat = '';
+    if (this.props.params.id) {
+      cat = '/' + this.props.params.id;
+    }
+
     let eachWork;
     if (this.state.works.length >= 1) {
       eachWork = Object.keys(this.state.works).map((i) => {
         return (
           <EachWork
             key={i}
+            cat={cat}
             data={this.state.works[i]}
             handleClick={this.adminDelete.bind(this)}
             />
@@ -55,11 +62,16 @@ export default class Works extends React.Component {
                   </tr>;
     }
 
+    let mes = '';
+    if (this.props.params.update) {
+      mes = '求人情報が更新されました';
+    }
+
     return(
       <article id="Works">
         <DocumentTitle title="求人情報" />
         <Link
-          to={'/admin/works/detail/0'}
+          to={'/admin/works/detail/0' + cat}
           >
           {/*<a
           onClick={this.handleAlert.bind(this)}
@@ -76,10 +88,14 @@ export default class Works extends React.Component {
           求人情報
         </h1>
 
+        <div className="warning">
+          {mes}
+        </div>
+
         <nav>
           <ul>
             <li>
-              <Link to="/admin/works">
+              <Link to="/admin/works/0">
                 すべて
               </Link>
             </li>
@@ -170,13 +186,18 @@ class EachWork extends React.Component {
   }
 
   render() {
+    let cat = '';
+    if (this.props.cat) {
+      cat = this.props.cat;
+    }
+
     let data = this.props.data;
     return (
       <tr>
         <td>{data.id}</td>
         <td>
           <Link
-            to={'/admin/works/detail/' + data.id}
+            to={'/admin/works/detail/' + data.id + cat}
             >
             {data.title}
           </Link>
