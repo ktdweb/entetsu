@@ -533,7 +533,7 @@ export default class WorksDetail extends React.Component {
       WorkActions.adminUpdate(res);
     }
 
-    window.location.href = '/admin/works/' + this.props.params.cat + '/update';
+    //window.location.href = '/admin/works/' + this.props.params.cat + '/update';
   }
 
   updateState() {
@@ -629,6 +629,14 @@ export default class WorksDetail extends React.Component {
           checked = 'checked';
         }
       });
+
+      if (
+        this.props.params.id == 0 &&
+        key == 'categories' &&
+        i == 6
+      ) {
+        checked = 'checked';
+      }
 
       return <label key={key + i}>
         {arr[i].name}
