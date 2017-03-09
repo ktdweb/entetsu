@@ -533,7 +533,7 @@ export default class WorksDetail extends React.Component {
       WorkActions.adminUpdate(res);
     }
 
-    //window.location.href = '/admin/works/' + this.props.params.cat + '/update';
+    window.location.href = '/admin/works/' + this.props.params.cat + '/update';
   }
 
   updateState() {
