@@ -296,7 +296,7 @@ var Header = function (_React$Component) {
   }, {
     key: 'onClose',
     value: function onClose(e) {
-      window.location.href = 'http://dummy:dummy@entetsu-assist.co.jp/admin/logout';
+      window.location.href = encodeURIComponent('http://dummy:dummy@entetsu-assist.co.jp/admin/logout');
       history.pushState(null, null, null);
       window.open('about:blank', '_self').close();
     }
