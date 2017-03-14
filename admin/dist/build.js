@@ -284,10 +284,20 @@ var Header = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('p', null, _react2.default.createElement('img', {
+      return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('div', {
+        className: 'logout'
+      }, _react2.default.createElement('a', { href: '#',
+        onClick: this.onClose.bind(this)
+      }, 'ログアウト')), _react2.default.createElement('p', null, _react2.default.createElement('img', {
         src: '/admin/imgs/logo.png',
         alt: 'entets-assist.co.jp',
         width: '300' })));
+    }
+  }, {
+    key: 'onClose',
+    value: function onClose(e) {
+      history.pushState(null, null, null);
+      window.open('http://dummy:dummy@entetsu-assist.co.jp/admin/logout', '_self').close();
     }
   }]);
 

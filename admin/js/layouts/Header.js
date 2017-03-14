@@ -38,6 +38,19 @@ var Header = function (_React$Component) {
         'header',
         { id: 'Header' },
         _react2.default.createElement(
+          'div',
+          {
+            className: 'logout'
+          },
+          _react2.default.createElement(
+            'a',
+            { href: '#',
+              onClick: this.onClose.bind(this)
+            },
+            'ログアウト'
+          )
+        ),
+        _react2.default.createElement(
           'p',
           null,
           _react2.default.createElement('img', {
@@ -46,6 +59,12 @@ var Header = function (_React$Component) {
             width: '300' })
         )
       );
+    }
+  }, {
+    key: 'onClose',
+    value: function onClose(e) {
+      history.pushState(null, null, null);
+      window.open('http://dummy:dummy@entetsu-assist.co.jp/admin/logout', '_self').close();
     }
   }]);
 
