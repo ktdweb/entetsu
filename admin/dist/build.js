@@ -286,7 +286,7 @@ var Header = function (_React$Component) {
 
       return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('div', {
         className: 'logout'
-      }, _react2.default.createElement('a', { href: '#',
+      }, _react2.default.createElement('a', { href: 'http://dummy:dummy@entetsu-assist.co.jp/admin/logout',
         onClick: this.onClose.bind(this)
       }, 'ログアウト')), _react2.default.createElement('p', null, _react2.default.createElement('img', {
         src: '/admin/imgs/logo.png',

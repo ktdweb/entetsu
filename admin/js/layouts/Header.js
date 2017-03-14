@@ -44,7 +44,7 @@ var Header = function (_React$Component) {
           },
           _react2.default.createElement(
             'a',
-            { href: '#',
+            { href: 'http://dummy:dummy@entetsu-assist.co.jp/admin/logout',
               onClick: this.onClose.bind(this)
             },
             'ログアウト'

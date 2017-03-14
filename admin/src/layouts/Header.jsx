@@ -15,7 +15,7 @@ export default class Header extends React.Component {
         <div
           className="logout"
           >
-            <a href="#"
+            <a href="http://dummy:dummy@entetsu-assist.co.jp/admin/logout"
               onClick={this.onClose.bind(this)}
               >ログアウト</a>
         </div>
