@@ -482,7 +482,7 @@ export default class WorksDetail extends React.Component {
 
         <hr />
 
-        <dl>
+        {/*<dl>
           <dt>画像</dt>
           <dd>
             <label
@@ -491,7 +491,7 @@ export default class WorksDetail extends React.Component {
               <input type="file" />
             </label>
           </dd>
-        </dl>
+        </dl>*/}
 
         <button
           className="w-s"

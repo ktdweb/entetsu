@@ -66,11 +66,7 @@ var Nav = function (_React$Component) {
               'li',
               null,
               _react2.default.createElement('i', { className: 'fa fa-check-square-o' }),
-              _react2.default.createElement(
-                _reactRouter.Link,
-                { to: root + '/topics' },
-                '新着情報'
-              )
+              '新着情報'
             ),
             _react2.default.createElement(
               'li',

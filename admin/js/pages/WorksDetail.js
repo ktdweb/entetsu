@@ -723,26 +723,6 @@ var WorksDetail = function (_React$Component) {
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
-          'dl',
-          null,
-          _react2.default.createElement(
-            'dt',
-            null,
-            '画像'
-          ),
-          _react2.default.createElement(
-            'dd',
-            null,
-            _react2.default.createElement(
-              'label',
-              {
-                className: 'formFile' },
-              'アップロード',
-              _react2.default.createElement('input', { type: 'file' })
-            )
-          )
-        ),
-        _react2.default.createElement(
           'button',
           {
             className: 'w-s',

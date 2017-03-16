@@ -386,7 +386,7 @@ var Nav = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('aside', { id: 'Nav' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/topics' }, '新着情報')), _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/works/0' }, '求人情報')))));
+      return _react2.default.createElement('aside', { id: 'Nav' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/works/0' }, '求人情報')))));
     }
   }]);
 
@@ -1944,8 +1944,7 @@ var WorksDetail = function (_React$Component) {
         value: data.time_end,
         onChange: this.handleText.bind(this),
         'data-type': 'time'
-      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '画像'), _react2.default.createElement('dd', null, _react2.default.createElement('label', {
-        className: 'formFile' }, 'アップロード', _react2.default.createElement('input', { type: 'file' })))), _react2.default.createElement('button', {
+      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('button', {
         className: 'w-s',
         onClick: this.handleSubmit.bind(this)
       }, '更新'));
