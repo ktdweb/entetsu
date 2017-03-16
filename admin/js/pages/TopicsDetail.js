@@ -50,6 +50,10 @@ var TopicsDetail = function (_React$Component) {
   _createClass(TopicsDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       if (this.props.params.id != 0) {
         _TopicActions2.default.adminGet();

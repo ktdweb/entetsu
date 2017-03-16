@@ -36,6 +36,7 @@ ALTER TABLE `works` COMMENT '求人情報テーブル';
 -- works テーブル確認 /*{{{*/
 DESC `works`;
 SELECT * FROM `works`;
+SELECT * FROM `members`;
 /*}}}*/
 
 -- works テーブル作成 /*{{{*/

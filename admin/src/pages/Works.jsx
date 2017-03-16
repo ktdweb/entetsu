@@ -17,6 +17,10 @@ export default class Works extends React.Component {
   }
 
   componentWillMount() {
+    if (!window.login) {
+      location.href = '/admin/';
+    }
+
     WorkStore.subscribe(this.updateState.bind(this));
     WorkActions.adminGet(this.props.params.id);
   }

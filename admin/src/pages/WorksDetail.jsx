@@ -58,6 +58,10 @@ export default class WorksDetail extends React.Component {
   }
 
   componentWillMount() {
+    if (!window.login) {
+      location.href = '/admin/';
+    }
+
     CommonStore.subscribe(this.updateCommon.bind(this));
     CommonActions.get();
 

@@ -18,6 +18,10 @@ export default class TopicsDetail extends React.Component {
   }
 
   componentWillMount() {
+    if (!window.login) {
+      location.href = '/admin/';
+    }
+
     TopicStore.subscribe(this.updateState.bind(this));
     if (this.props.params.id != 0) {
       TopicActions.adminGet();

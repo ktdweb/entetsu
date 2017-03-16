@@ -50,6 +50,10 @@ var Works = function (_React$Component) {
   _createClass(Works, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       _WorkActions2.default.adminGet(this.props.params.id);
     }

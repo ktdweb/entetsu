@@ -80,7 +80,7 @@ var routes = _react2.default.createElement(
       components: {
         header: _Header2.default,
         nav: _Nav2.default,
-        main: _Topics2.default
+        main: _Home2.default
       } }),
     _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/topics',
       global: root,

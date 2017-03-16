@@ -18,6 +18,10 @@ export default class Topics extends React.Component {
   }
 
   componentWillMount() {
+    if (!window.login) {
+      location.href = '/admin/';
+    }
+
     TopicStore.subscribe(this.updateState.bind(this));
     TopicActions.adminGet();
   }

@@ -101,6 +101,10 @@ var WorksDetail = function (_React$Component) {
   _createClass(WorksDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _CommonStore2.default.subscribe(this.updateCommon.bind(this));
       _CommonActions2.default.get();
 

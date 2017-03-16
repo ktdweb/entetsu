@@ -99,7 +99,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
   components: {
     header: _Header2.default,
     nav: _Nav2.default,
-    main: _Topics2.default
+    main: _Home2.default
   } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/topics',
   global: root,
   components: {
@@ -286,7 +286,7 @@ var Header = function (_React$Component) {
 
       return _react2.default.createElement('header', { id: 'Header' }, _react2.default.createElement('div', {
         className: 'logout'
-      }, _react2.default.createElement('a', { href: 'http://dummy:dummy@entetsu-assist.co.jp/admin/logout',
+      }, _react2.default.createElement('a', { href: '#',
         onClick: this.onClose.bind(this)
       }, 'ログアウト')), _react2.default.createElement('p', null, _react2.default.createElement('img', {
         src: '/admin/imgs/logo.png',
@@ -296,9 +296,8 @@ var Header = function (_React$Component) {
   }, {
     key: 'onClose',
     value: function onClose(e) {
-      window.location.href = encodeURIComponent('http://dummy:dummy@entetsu-assist.co.jp/admin/logout');
-      history.pushState(null, null, null);
-      window.open('about:blank', '_self').close();
+      window.login = false;
+      location.href = '/admin/';
     }
   }]);
 
@@ -425,6 +424,14 @@ var _reactDocumentTitle = require('react-document-title');
 
 var _reactDocumentTitle2 = _interopRequireDefault(_reactDocumentTitle);
 
+var _MemberStore = require('../../../js/stores/MemberStore');
+
+var _MemberStore2 = _interopRequireDefault(_MemberStore);
+
+var _MemberActions = require('../../../js/actions/MemberActions');
+
+var _MemberActions2 = _interopRequireDefault(_MemberActions);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -453,13 +460,161 @@ var Home = function (_React$Component) {
   function Home(props) {
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+    _this.state = {
+      login: {
+        id: {
+          val: ''
+        },
+        pw: {
+          val: ''
+        }
+      }
+    };
+    return _this;
   }
 
   _createClass(Home, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      console.log(this.props);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {}
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'Home' }), _react2.default.createElement('h1', null, 'Home'));
+      return _react2.default.createElement('article', { id: 'Home' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: 'Login' }), _react2.default.createElement('h1', null, 'ログイン'), _react2.default.createElement('div', { className: 'login' }, _react2.default.createElement('label', null, 'ID'), _react2.default.createElement('input', {
+        type: 'text',
+        id: 'loginId',
+        name: 'id',
+        value: this.state.login.id.val,
+        onChange: this.formUpdate.bind(this)
+      }), _react2.default.createElement('br', null), _react2.default.createElement('label', null, 'PW'), _react2.default.createElement('input', {
+        type: 'password',
+        id: 'loginPassword',
+        name: 'pw',
+        value: this.state.login.pw.val,
+        onChange: this.formUpdate.bind(this)
+      }), _react2.default.createElement('p', { id: 'loginError', className: 'loginError' })), _react2.default.createElement('button', {
+        onClick: this.login.bind(this)
+      }, 'ログインする'));
+    }
+
+    /*
+     * submit
+     */
+
+  }, {
+    key: 'login',
+    value: function login(e) {
+      e.preventDefault();
+
+      var id = document.getElementById('loginId').value;
+      var pw = document.getElementById('loginPassword').value;
+
+      var obj = { id: id, password: pw };
+
+      _MemberActions2.default.login(obj, this.loginCallBack.bind(this));
+    }
+  }, {
+    key: 'loginCallBack',
+    value: function loginCallBack(res) {
+      var el = document.getElementById('loginError');
+
+      if (res === undefined) {
+        el.innerHTML = 'メールアドレス、パスワードをご確認ください';
+        el.classList.add('active');
+        window.login = false;
+      } else {
+        el.innerHTML = 'ログインに成功しました';
+        el.classList.add('active');
+        // this.props.changeLoginStatus(res);
+        window.login = true;
+      }
+    }
+  }, {
+    key: 'formUpdate',
+    value: function formUpdate(e) {
+      var field = e.target.name;
+      var val = e.target.value;
+
+      var login = this.state.login;
+
+      if (login[field].flag) {
+        val = '';
+        e.target.style.color = 'black';
+      }
+
+      login[field] = {
+        val: val,
+        flag: false
+      };
+
+      if (this.txtCount(field, val)) {
+        this.setState({
+          login: login
+        });
+      }
+    }
+  }, {
+    key: 'validateId',
+    value: function validateId() {
+      var vals = this.state.login;
+      var el = document.getElementById('loginId');
+
+      if (vals.id.val == '' || vals.id.val == 'メールアドレスを入力' || !vals.id.val.match(/^[A-Za-z0-9-_\.]+[\w-]+@[\w\.-]+\.\w{2,}$/)) {
+        return this.turnRed(el);
+      } else {
+        return this.turnGreen(el);
+      }
+    }
+  }, {
+    key: 'validatePw',
+    value: function validatePw() {
+      var vals = this.state.login;
+      var el = document.getElementById('loginPassword');
+
+      if (vals.pw.val == '' || vals.pw.val == 'パスワードを入力' || vals.pw.val.match(/[^A-Za-z0-9]+/)) {
+        return this.turnRed(el);
+      } else {
+        return this.turnGreen(el);
+      }
+    }
+
+    /*
+     * エラー時表示処理
+     */
+
+  }, {
+    key: 'turnRed',
+    value: function turnRed(el) {
+      el.classList.add('active');;
+      return false;
+    }
+  }, {
+    key: 'turnGreen',
+    value: function turnGreen(el) {
+      el.classList.remove('active');;
+      return true;
+    }
+  }, {
+    key: 'txtCount',
+    value: function txtCount(field, val) {
+      var cnt = void 0;
+
+      switch (field) {
+        case 'id':
+          cnt = 110;break;
+        case 'pw':
+          cnt = 16;break;
+        default:
+          break;
+      }
+
+      return val.length <= cnt ? true : false;
     }
   }]);
 
@@ -468,7 +623,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":270,"react-document-title":43,"react-router":74}],7:[function(require,module,exports){
+},{"../../../js/actions/MemberActions":15,"../../../js/stores/MemberStore":27,"react":270,"react-document-title":43,"react-router":74}],7:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -966,6 +1121,10 @@ var Topics = function (_React$Component) {
   _createClass(Topics, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       _TopicActions2.default.adminGet();
     }
@@ -1127,6 +1286,10 @@ var TopicsDetail = function (_React$Component) {
   _createClass(TopicsDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       if (this.props.params.id != 0) {
         _TopicActions2.default.adminGet();
@@ -1348,6 +1511,10 @@ var Works = function (_React$Component) {
   _createClass(Works, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       _WorkActions2.default.adminGet(this.props.params.id);
     }
@@ -1587,6 +1754,10 @@ var WorksDetail = function (_React$Component) {
   _createClass(WorksDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+
       _CommonStore2.default.subscribe(this.updateCommon.bind(this));
       _CommonActions2.default.get();
 

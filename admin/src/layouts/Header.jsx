@@ -15,7 +15,7 @@ export default class Header extends React.Component {
         <div
           className="logout"
           >
-            <a href="http://dummy:dummy@entetsu-assist.co.jp/admin/logout"
+            <a href="#"
               onClick={this.onClose.bind(this)}
               >ログアウト</a>
         </div>
@@ -32,8 +32,7 @@ export default class Header extends React.Component {
   }
 
   onClose(e) {
-    window.location.href = encodeURIComponent('http://dummy:dummy@entetsu-assist.co.jp/admin/logout');
-    history.pushState(null, null, null);
-    window.open('about:blank','_self').close();
+    window.login = false;
+    location.href = '/admin/';
   }
 }
