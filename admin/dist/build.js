@@ -1983,7 +1983,7 @@ var WorksDetail = function (_React$Component) {
         _WorkActions2.default.adminUpdate(res);
       }
 
-      window.location.href = '/admin/works/' + this.props.params.cat + '/update';
+      // window.location.href = '/admin/works/' + this.props.params.cat + '/update';
     }
   }, {
     key: 'updateState',
