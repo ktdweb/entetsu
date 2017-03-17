@@ -135,7 +135,7 @@ var Home = function (_React$Component) {
       var el = document.getElementById('loginError');
 
       if (res === undefined) {
-        el.innerHTML = 'メールアドレス、パスワードをご確認ください';
+        el.innerHTML = 'ID、パスワードをご確認ください';
         el.classList.add('active');
         window.login = false;
       } else {
@@ -175,7 +175,7 @@ var Home = function (_React$Component) {
       var vals = this.state.login;
       var el = document.getElementById('loginId');
 
-      if (vals.id.val == '' || vals.id.val == 'メールアドレスを入力' || !vals.id.val.match(/^[A-Za-z0-9-_\.]+[\w-]+@[\w\.-]+\.\w{2,}$/)) {
+      if (vals.id.val == '' || vals.id.val == 'IDを入力' || !vals.id.val.match(/^[A-Za-z0-9-_\.]+[\w-]+@[\w\.-]+\.\w{2,}$/)) {
         return this.turnRed(el);
       } else {
         return this.turnGreen(el);
