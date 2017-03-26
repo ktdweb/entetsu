@@ -8613,6 +8613,8 @@ var Works = function (_React$Component) {
     var works = _WorkStore2.default.read();
     var search = _SearchStore2.default.read();
 
+    window.doubleClickflag = true;
+
     _this.state = {
       works: works,
       search: search,
@@ -8978,17 +8980,23 @@ var Works = function (_React$Component) {
       var c = 820 - b;
       var d = 2000 / 10;
 
-      var interval = setInterval(function () {
-        var step = easeInOut(t, b, c, d);
-        var y = document.body.scrollTop || document.documentElement.scrollTop;
+      if (window.doubleClickflag) {
+        (function () {
+          window.doubleClickflag = false;
+          var interval = setInterval(function () {
+            var step = easeInOut(t, b, c, d);
+            var y = document.body.scrollTop || document.documentElement.scrollTop;
 
-        if (y < to) {
-          window.scrollTo(0, step);
-          t++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 0);
+            if (y < to) {
+              window.scrollTo(0, step);
+              t++;
+            } else {
+              clearInterval(interval);
+              window.doubleClickflag = true;
+            }
+          }, 0);
+        })();
+      }
 
       function easeInOut(t, b, c, d) {
         t /= d / 2;

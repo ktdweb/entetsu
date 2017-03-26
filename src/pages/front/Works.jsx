@@ -26,6 +26,8 @@ export default class Works extends React.Component {
     let works = WorkStore.read();
     let search = SearchStore.read();
 
+    window.doubleClickflag = true;
+
     this.state = {
       works: works,
       search: search,
@@ -562,18 +564,22 @@ export default class Works extends React.Component {
     let c = 820 - b;
     let d = 2000 / 10;
 
-    let interval = setInterval(function() {
-      let step = easeInOut(t, b, c, d);
-      let y = document.body.scrollTop || document.documentElement.scrollTop;
+    if (window.doubleClickflag) {
+      window.doubleClickflag = false;
+      let interval = setInterval(function() {
+        let step = easeInOut(t, b, c, d);
+        let y = document.body.scrollTop || document.documentElement.scrollTop;
 
-      if (y < to) {
-        window.scrollTo(0, step);
-        t++;
-      } else {
-        clearInterval(interval);
-      }
+        if (y < to) {
+          window.scrollTo(0, step);
+          t++;
+        } else {
+          clearInterval(interval);
+          window.doubleClickflag = true;
+        }
 
-    }, 0);
+      }, 0);
+    }
 
     function easeInOut(t, b, c, d) {
       t /= d/2;

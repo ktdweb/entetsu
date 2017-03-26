@@ -478,7 +478,7 @@ export default class WorksDetail extends React.Component {
 
         <hr />
 
-        <dl>
+        {/*<dl>
           <dt>画像</dt>
           <dd>
             <label
@@ -487,7 +487,9 @@ export default class WorksDetail extends React.Component {
               <input type="file" />
             </label>
           </dd>
-        </dl>
+        </dl>*/}
+
+        <p id="message" className="color-brand-danger"></p>
 
         <button
           className="w-s"
@@ -526,13 +528,59 @@ export default class WorksDetail extends React.Component {
     delete res.time_id;
     delete res.category_id;
     delete res.unit_wage;
-    
-    if (this.props.params.id == 0) {
-      WorkActions.adminInsert(res);
-    } else {
-      WorkActions.adminUpdate(res);
+
+
+    let txt;
+    let valid = true;
+    let el = document.getElementById('message');
+
+    if (res.title == '') {
+      txt = 'タイトルを入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
     }
 
+    if (res.entry_start == '' || res.entry_end == '') {
+      txt = '期間指定が入力されていません。指定しない場合は[0000-00-00 00:00:00]を入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (res.abbr_wage == '') {
+      txt = '短縮表示の給与を入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (res.abbr_time == '') {
+      txt = '短縮表示の時間を入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (res.tags.length == 0) {
+      txt = '場所・時間・業種のいずれか一つは選択して下さい'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (res.time_start == '' || res.time_end == '') {
+      txt = 'スライダー検索用の開始時間、終了時間を入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (valid) {
+      el.innerHTML = '';
+      if (this.props.params.id == 0) {
+        WorkActions.adminInsert(res);
+      } else {
+        WorkActions.adminUpdate(res);
+      }
+    }
+  }
+
+  toIndex() {
     window.location.href = '/admin/works/' + this.props.params.cat + '/update';
   }
 

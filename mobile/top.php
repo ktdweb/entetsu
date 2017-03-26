@@ -250,7 +250,7 @@
     </div>
 </div><!-- /#search -->
 
-<div id="contents">
+<div id="contents" style="z-index: 1000;">
 <article>
 <section>
 <h2 class="stitle"><img src="imgs/new_rec_head.png" alt="新着求人" width="100%"></h2>
