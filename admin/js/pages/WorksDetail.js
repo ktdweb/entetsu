@@ -722,6 +722,10 @@ var WorksDetail = function (_React$Component) {
           )
         ),
         _react2.default.createElement('hr', null),
+<<<<<<< HEAD
+=======
+        _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }),
+>>>>>>> release/v0.1.0
         _react2.default.createElement(
           'button',
           {
@@ -759,13 +763,63 @@ var WorksDetail = function (_React$Component) {
       delete res.category_id;
       delete res.unit_wage;
 
-      if (this.props.params.id == 0) {
-        _WorkActions2.default.adminInsert(res);
-      } else {
-        _WorkActions2.default.adminUpdate(res);
+      var txt = void 0;
+      var valid = true;
+      var el = document.getElementById('message');
+
+      if (res.title == '') {
+        txt = 'タイトルを入力してください';
+        el.innerHTML = txt;
+        valid = false;
       }
 
+      if (res.entry_start == '' || res.entry_end == '') {
+        txt = '期間指定が入力されていません。指定しない場合は[0000-00-00 00:00:00]を入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (res.abbr_wage == '') {
+        txt = '短縮表示の給与を入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (res.abbr_time == '') {
+        txt = '短縮表示の時間を入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+<<<<<<< HEAD
       // window.location.href = '/admin/works/' + this.props.params.cat + '/update';
+=======
+      if (res.tags.length == 0) {
+        txt = '場所・時間・業種のいずれか一つは選択して下さい';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (res.time_start == '' || res.time_end == '') {
+        txt = 'スライダー検索用の開始時間、終了時間を入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (valid) {
+        el.innerHTML = '';
+        if (this.props.params.id == 0) {
+          _WorkActions2.default.adminInsert(res);
+        } else {
+          _WorkActions2.default.adminUpdate(res);
+        }
+      }
+    }
+  }, {
+    key: 'toIndex',
+    value: function toIndex() {
+      window.location.href = '/admin/works/' + this.props.params.cat + '/update';
+>>>>>>> release/v0.1.0
     }
   }, {
     key: 'updateState',

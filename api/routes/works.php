@@ -284,10 +284,8 @@ $app->group('/works', function () {
             unset($body['modified']);
 
             // tags delete
-            /*
             $sql = 'DELETE FROM `tags` WHERE `work_id` = ?';
             $del->execute($sql, $id);
-             */
 
             // tags insert
             $sql = '
@@ -301,7 +299,7 @@ $app->group('/works', function () {
             };
             $sql = rtrim($sql, ',') . ';';
 
-            $post->execute($sql);
+            $test = $post->execute($sql);
 
             // works
             $values = array_values($body);
