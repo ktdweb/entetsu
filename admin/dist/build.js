@@ -1774,6 +1774,7 @@ var WorksDetail = function (_React$Component) {
       _CommonActions2.default.get();
 
       _WorkStore2.default.subscribe(this.updateState.bind(this));
+
       if (this.props.params.id != 0) {
         _WorkActions2.default.adminEach(this.props.params.id);
       } else {
@@ -1796,6 +1797,7 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.state.tags);
       if (this.state.commons.length == 0) return false;
 
       var data = this.state.works;
