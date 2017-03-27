@@ -191,12 +191,12 @@ export default class WorksDetail extends React.Component {
 
               <div className="pf-Works-Detail-column-section">
                 <div>
-                  {/*<img
+                  <img
                     src={'/imgs/works/' + data.img + 'l.jpg'}
                     width="180"
                     height="180"
                     alt="img"
-                    />*/}
+                    />
                   <span>{data.unit_wage}: {data.abbr_wage}円</span>
                   <span>{data.abbr_time}</span>
                 </div>

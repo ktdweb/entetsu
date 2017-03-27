@@ -578,7 +578,7 @@ export default class WorksDetail extends React.Component {
     }
 
     if (res.tags.length == 0) {
-      txt = '場所・時間・業種のいずれか一つは選択して下さい'; 
+      txt = '場所・時間・業種の各項目内のいずれか一つは選択して下さい'; 
       el.innerHTML = txt;
       valid = false;
     }
