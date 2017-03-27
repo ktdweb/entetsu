@@ -37,7 +37,7 @@ const routes = (
         components={{
           header: Header,
           nav: Nav,
-          main: Topics
+          main: Home
         }} />
 
       <Route path={root.documentRoot + '/topics'}

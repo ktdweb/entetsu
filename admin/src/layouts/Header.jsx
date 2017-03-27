@@ -32,7 +32,7 @@ export default class Header extends React.Component {
   }
 
   onClose(e) {
-    history.pushState(null, null, null);
-    window.open('http://dummy:dummy@entetsu-assist.co.jp/admin/logout','_self').close();
+    window.login = false;
+    location.href = '/admin/';
   }
 }

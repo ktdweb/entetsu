@@ -63,8 +63,8 @@ var Header = function (_React$Component) {
   }, {
     key: 'onClose',
     value: function onClose(e) {
-      history.pushState(null, null, null);
-      window.open('http://dummy:dummy@entetsu-assist.co.jp/admin/logout', '_self').close();
+      window.login = false;
+      location.href = '/admin/';
     }
   }]);
 
