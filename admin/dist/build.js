@@ -1760,7 +1760,6 @@ var WorksDetail = function (_React$Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       var key = window.sessionStorage.getItem('login');
-      console.log(key);
       if (key != 'added') {
         location.href = '/admin/';
       }
@@ -1797,8 +1796,7 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state.tags);
-      if (this.state.commons.length == 0) return false;
+      if (this.state.tags.length == 0) return false;
 
       var data = this.state.works;
 

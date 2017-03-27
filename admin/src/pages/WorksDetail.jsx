@@ -59,7 +59,6 @@ export default class WorksDetail extends React.Component {
 
   componentWillMount() {
     let key = window.sessionStorage.getItem('login');
-    console.log(key);
     if (key != 'added') {
       location.href = '/admin/';
     }
@@ -93,8 +92,7 @@ export default class WorksDetail extends React.Component {
   }
 
   render() {
-    console.log(this.state.tags);
-    if (this.state.commons.length == 0) return false 
+    if (this.state.tags.length == 0) return false 
 
     let data = this.state.works;
 
