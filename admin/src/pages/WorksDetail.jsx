@@ -73,6 +73,7 @@ export default class WorksDetail extends React.Component {
     CommonActions.get();
 
     WorkStore.subscribe(this.updateState.bind(this));
+
     if (this.props.params.id != 0) {
       WorkActions.adminEach(this.props.params.id);
     } else {
@@ -92,6 +93,7 @@ export default class WorksDetail extends React.Component {
   }
 
   render() {
+    console.log(this.state.tags);
     if (this.state.commons.length == 0) return false 
 
     let data = this.state.works;
