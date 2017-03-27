@@ -492,11 +492,8 @@ export default class WorksDetail extends React.Component {
             </label>
           </dd>
         </dl>*/}
-<<<<<<< HEAD
-=======
 
         <p id="message" className="color-brand-danger"></p>
->>>>>>> release/v0.1.0
 
         <button
           className="w-s"
@@ -559,9 +556,6 @@ export default class WorksDetail extends React.Component {
       valid = false;
     }
 
-<<<<<<< HEAD
-    // window.location.href = '/admin/works/' + this.props.params.cat + '/update';
-=======
     if (res.abbr_time == '') {
       txt = '短縮表示の時間を入力してください'; 
       el.innerHTML = txt;
@@ -592,7 +586,6 @@ export default class WorksDetail extends React.Component {
 
   toIndex() {
     window.location.href = '/admin/works/' + this.props.params.cat + '/update';
->>>>>>> release/v0.1.0
   }
 
   updateState() {

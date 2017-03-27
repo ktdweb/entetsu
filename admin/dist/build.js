@@ -1944,11 +1944,7 @@ var WorksDetail = function (_React$Component) {
         value: data.time_end,
         onChange: this.handleText.bind(this),
         'data-type': 'time'
-<<<<<<< HEAD
-      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('button', {
-=======
       }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }), _react2.default.createElement('button', {
->>>>>>> release/v0.1.0
         className: 'w-s',
         onClick: this.handleSubmit.bind(this)
       }, '更新'));
@@ -1990,9 +1986,6 @@ var WorksDetail = function (_React$Component) {
         valid = false;
       }
 
-<<<<<<< HEAD
-      // window.location.href = '/admin/works/' + this.props.params.cat + '/update';
-=======
       if (res.entry_start == '' || res.entry_end == '') {
         txt = '期間指定が入力されていません。指定しない場合は[0000-00-00 00:00:00]を入力してください';
         el.innerHTML = txt;
@@ -2036,7 +2029,6 @@ var WorksDetail = function (_React$Component) {
     key: 'toIndex',
     value: function toIndex() {
       window.location.href = '/admin/works/' + this.props.params.cat + '/update';
->>>>>>> release/v0.1.0
     }
   }, {
     key: 'updateState',

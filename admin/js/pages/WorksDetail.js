@@ -722,10 +722,7 @@ var WorksDetail = function (_React$Component) {
           )
         ),
         _react2.default.createElement('hr', null),
-<<<<<<< HEAD
-=======
         _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }),
->>>>>>> release/v0.1.0
         _react2.default.createElement(
           'button',
           {
@@ -791,9 +788,6 @@ var WorksDetail = function (_React$Component) {
         valid = false;
       }
 
-<<<<<<< HEAD
-      // window.location.href = '/admin/works/' + this.props.params.cat + '/update';
-=======
       if (res.tags.length == 0) {
         txt = '場所・時間・業種のいずれか一つは選択して下さい';
         el.innerHTML = txt;
@@ -819,7 +813,6 @@ var WorksDetail = function (_React$Component) {
     key: 'toIndex',
     value: function toIndex() {
       window.location.href = '/admin/works/' + this.props.params.cat + '/update';
->>>>>>> release/v0.1.0
     }
   }, {
     key: 'updateState',
