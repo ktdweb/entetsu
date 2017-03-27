@@ -55,9 +55,7 @@ var Home = function (_React$Component) {
 
   _createClass(Home, [{
     key: 'componentWillMount',
-    value: function componentWillMount() {
-      console.log(this.props);
-    }
+    value: function componentWillMount() {}
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {}
@@ -142,6 +140,7 @@ var Home = function (_React$Component) {
         el.innerHTML = 'ログインに成功しました';
         el.classList.add('active');
         // this.props.changeLoginStatus(res);
+        window.sessionStorage.setItem(['login'], ['added']);
         window.login = true;
       }
     }

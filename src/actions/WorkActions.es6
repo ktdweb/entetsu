@@ -50,17 +50,19 @@ export default {
     })
   },
 
-  adminUpdate: (obj) => {
+  adminUpdate: (obj, callback) => {
     Dispatcher.dispatch({
       actionType: WorkConstants.ADMIN_UPDATE,
-      obj: obj
+      obj: obj,
+      callback: callback
     })
   },
 
-  adminInsert: (obj) => {
+  adminInsert: (obj, callback) => {
     Dispatcher.dispatch({
       actionType: WorkConstants.ADMIN_INSERT,
-      obj: obj
+      obj: obj,
+      callback: callback
     })
   },
 

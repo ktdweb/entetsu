@@ -561,17 +561,19 @@ exports.default = {
     });
   },
 
-  adminUpdate: function adminUpdate(obj) {
+  adminUpdate: function adminUpdate(obj, callback) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_UPDATE,
-      obj: obj
+      obj: obj,
+      callback: callback
     });
   },
 
-  adminInsert: function adminInsert(obj) {
+  adminInsert: function adminInsert(obj, callback) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_INSERT,
-      obj: obj
+      obj: obj,
+      callback: callback
     });
   },
 
@@ -10991,9 +10993,12 @@ function create(res) {
   if (res[0].location_id == null) {
     res[0].location_id = 0;
   }
-  console.log('test');
-  console.log(res);
   */
+  _works = res;
+}
+
+function adminCreate(res, callback) {
+  callback();
   _works = res;
 }
 
@@ -11116,7 +11121,7 @@ _Dispatcher2.default.register(function (action) {
     case _WorkConstants2.default.ADMIN_INSERT:
       var admin_insert = URL;
       _Http.http.post(admin_insert, action.obj).then(function (res) {
-        //create(res);
+        adminCreate(res, action.callback);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);
@@ -11126,7 +11131,7 @@ _Dispatcher2.default.register(function (action) {
     case _WorkConstants2.default.ADMIN_UPDATE:
       var admin_update = URL + 'admin/update/';
       _Http.http.post(admin_update, action.obj).then(function (res) {
-        //create(res);
+        adminCreate(res, action.callback);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);

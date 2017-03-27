@@ -32,6 +32,7 @@ export default class Header extends React.Component {
   }
 
   onClose(e) {
+    window.sessionStorage.clear();
     window.login = false;
     location.href = '/admin/';
   }

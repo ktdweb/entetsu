@@ -101,9 +101,16 @@ var WorksDetail = function (_React$Component) {
   _createClass(WorksDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var key = window.sessionStorage.getItem('login');
+      console.log(key);
+      if (key != 'added') {
+        location.href = '/admin/';
+      }
+      /*
       if (!window.login) {
         location.href = '/admin/';
       }
+      */
 
       _CommonStore2.default.subscribe(this.updateCommon.bind(this));
       _CommonActions2.default.get();
@@ -818,9 +825,9 @@ var WorksDetail = function (_React$Component) {
       if (valid) {
         el.innerHTML = '';
         if (this.props.params.id == 0) {
-          _WorkActions2.default.adminInsert(res);
+          _WorkActions2.default.adminInsert(res, this.toIndex.bind(this));
         } else {
-          _WorkActions2.default.adminUpdate(res);
+          _WorkActions2.default.adminUpdate(res, this.toIndex.bind(this));
         }
       }
     }

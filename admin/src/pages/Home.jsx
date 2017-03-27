@@ -23,7 +23,6 @@ export default class Home extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
   }
 
   componentWillUnmount() {
@@ -92,6 +91,7 @@ export default class Home extends React.Component {
       el.innerHTML = 'ログインに成功しました';
       el.classList.add('active');
       // this.props.changeLoginStatus(res);
+      window.sessionStorage.setItem(['login'],['added']);
       window.login = true;
     }
   }

@@ -50,9 +50,15 @@ var Works = function (_React$Component) {
   _createClass(Works, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var key = window.sessionStorage.getItem('login');
+      if (key != 'added') {
+        location.href = '/admin/';
+      }
+      /*
       if (!window.login) {
         location.href = '/admin/';
       }
+      */
 
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       _WorkActions2.default.adminGet(this.props.params.id);
@@ -79,7 +85,6 @@ var Works = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this);
       var cat = '';
       if (this.props.params.id) {
         cat = '/' + this.props.params.id;
