@@ -635,7 +635,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '場所で選ぶ'
+            '場所で選ぶ',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -649,7 +654,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '時間で選ぶ'
+            '時間で選ぶ',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -663,7 +673,12 @@ var WorksDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            '業種で選ぶ'
+            '業種で選ぶ',
+            _react2.default.createElement(
+              'span',
+              { className: 'warning' },
+              ' ※'
+            )
           ),
           _react2.default.createElement(
             'dd',
@@ -741,11 +756,11 @@ var WorksDetail = function (_React$Component) {
     value: function handleSubmit(e) {
       var keys = ['locations', 'times', 'categories'];
 
-      var tags = [];
+      var tags = new Array();
 
       Object.keys(keys).map(function (v) {
         var arr = document.getElementsByName(keys[v]);
-        Object.keys(arr).map(function (i) {
+        Object.keys(arr).map(function (z, i) {
           if (arr[i].checked == true) {
             tags.push(parseInt(arr[i].value));
           }

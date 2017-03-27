@@ -1930,7 +1930,7 @@ var WorksDetail = function (_React$Component) {
         onChange: this.handleText.bind(this),
         maxLength: '12',
         required: true
-      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です')))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '場所で選ぶ'), _react2.default.createElement('dd', null, locations)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間で選ぶ'), _react2.default.createElement('dd', null, times)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '業種で選ぶ'), _react2.default.createElement('dd', null, categories)), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'スライダー検索用', _react2.default.createElement('span', { className: 'warning' }, ' ※')), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始時間'), _react2.default.createElement('input', {
+      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です')))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '場所で選ぶ', _react2.default.createElement('span', { className: 'warning' }, ' ※')), _react2.default.createElement('dd', null, locations)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '時間で選ぶ', _react2.default.createElement('span', { className: 'warning' }, ' ※')), _react2.default.createElement('dd', null, times)), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '業種で選ぶ', _react2.default.createElement('span', { className: 'warning' }, ' ※')), _react2.default.createElement('dd', null, categories)), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'スライダー検索用', _react2.default.createElement('span', { className: 'warning' }, ' ※')), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始時間'), _react2.default.createElement('input', {
         type: 'text',
         name: 'time_start',
         className: 'w-s',
@@ -1957,11 +1957,11 @@ var WorksDetail = function (_React$Component) {
     value: function handleSubmit(e) {
       var keys = ['locations', 'times', 'categories'];
 
-      var tags = [];
+      var tags = new Array();
 
       Object.keys(keys).map(function (v) {
         var arr = document.getElementsByName(keys[v]);
-        Object.keys(arr).map(function (i) {
+        Object.keys(arr).map(function (z, i) {
           if (arr[i].checked == true) {
             tags.push(parseInt(arr[i].value));
           }
