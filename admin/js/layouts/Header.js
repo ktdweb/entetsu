@@ -63,6 +63,7 @@ var Header = function (_React$Component) {
   }, {
     key: 'onClose',
     value: function onClose(e) {
+      window.sessionStorage.clear();
       window.login = false;
       location.href = '/admin/';
     }

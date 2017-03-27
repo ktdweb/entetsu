@@ -58,9 +58,16 @@ export default class WorksDetail extends React.Component {
   }
 
   componentWillMount() {
+    let key = window.sessionStorage.getItem('login');
+    console.log(key);
+    if (key != 'added') {
+      location.href = '/admin/';
+    }
+    /*
     if (!window.login) {
       location.href = '/admin/';
     }
+    */
 
     CommonStore.subscribe(this.updateCommon.bind(this));
     CommonActions.get();
@@ -542,7 +549,6 @@ export default class WorksDetail extends React.Component {
     delete res.category_id;
     delete res.unit_wage;
 
-
     let txt;
     let valid = true;
     let el = document.getElementById('message');
@@ -586,9 +592,9 @@ export default class WorksDetail extends React.Component {
     if (valid) {
       el.innerHTML = '';
       if (this.props.params.id == 0) {
-        WorkActions.adminInsert(res);
+        WorkActions.adminInsert(res, this.toIndex.bind(this));
       } else {
-        WorkActions.adminUpdate(res);
+        WorkActions.adminUpdate(res, this.toIndex.bind(this));
       }
     }
   }

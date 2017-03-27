@@ -17,9 +17,15 @@ export default class Works extends React.Component {
   }
 
   componentWillMount() {
+    let key = window.sessionStorage.getItem('login');
+    if (key != 'added') {
+      location.href = '/admin/';
+    }
+    /*
     if (!window.login) {
       location.href = '/admin/';
     }
+    */
 
     WorkStore.subscribe(this.updateState.bind(this));
     WorkActions.adminGet(this.props.params.id);
@@ -40,7 +46,6 @@ export default class Works extends React.Component {
   }
 
   render() {
-    console.log(this);
     let cat = '';
     if (this.props.params.id) {
       cat = '/' + this.props.params.id;

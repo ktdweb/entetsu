@@ -296,6 +296,7 @@ var Header = function (_React$Component) {
   }, {
     key: 'onClose',
     value: function onClose(e) {
+      window.sessionStorage.clear();
       window.login = false;
       location.href = '/admin/';
     }
@@ -477,9 +478,7 @@ var Home = function (_React$Component) {
 
   _createClass(Home, [{
     key: 'componentWillMount',
-    value: function componentWillMount() {
-      console.log(this.props);
-    }
+    value: function componentWillMount() {}
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {}
@@ -532,6 +531,7 @@ var Home = function (_React$Component) {
         el.innerHTML = 'ログインに成功しました';
         el.classList.add('active');
         // this.props.changeLoginStatus(res);
+        window.sessionStorage.setItem(['login'], ['added']);
         window.login = true;
       }
     }
@@ -1511,9 +1511,15 @@ var Works = function (_React$Component) {
   _createClass(Works, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var key = window.sessionStorage.getItem('login');
+      if (key != 'added') {
+        location.href = '/admin/';
+      }
+      /*
       if (!window.login) {
         location.href = '/admin/';
       }
+      */
 
       _WorkStore2.default.subscribe(this.updateState.bind(this));
       _WorkActions2.default.adminGet(this.props.params.id);
@@ -1540,7 +1546,6 @@ var Works = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this);
       var cat = '';
       if (this.props.params.id) {
         cat = '/' + this.props.params.id;
@@ -1754,9 +1759,16 @@ var WorksDetail = function (_React$Component) {
   _createClass(WorksDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var key = window.sessionStorage.getItem('login');
+      console.log(key);
+      if (key != 'added') {
+        location.href = '/admin/';
+      }
+      /*
       if (!window.login) {
         location.href = '/admin/';
       }
+      */
 
       _CommonStore2.default.subscribe(this.updateCommon.bind(this));
       _CommonActions2.default.get();
@@ -2019,9 +2031,9 @@ var WorksDetail = function (_React$Component) {
       if (valid) {
         el.innerHTML = '';
         if (this.props.params.id == 0) {
-          _WorkActions2.default.adminInsert(res);
+          _WorkActions2.default.adminInsert(res, this.toIndex.bind(this));
         } else {
-          _WorkActions2.default.adminUpdate(res);
+          _WorkActions2.default.adminUpdate(res, this.toIndex.bind(this));
         }
       }
     }
@@ -2386,17 +2398,19 @@ exports.default = {
     });
   },
 
-  adminUpdate: function adminUpdate(obj) {
+  adminUpdate: function adminUpdate(obj, callback) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_UPDATE,
-      obj: obj
+      obj: obj,
+      callback: callback
     });
   },
 
-  adminInsert: function adminInsert(obj) {
+  adminInsert: function adminInsert(obj, callback) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.ADMIN_INSERT,
-      obj: obj
+      obj: obj,
+      callback: callback
     });
   },
 
@@ -3316,9 +3330,12 @@ function create(res) {
   if (res[0].location_id == null) {
     res[0].location_id = 0;
   }
-  console.log('test');
-  console.log(res);
   */
+  _works = res;
+}
+
+function adminCreate(res, callback) {
+  callback();
   _works = res;
 }
 
@@ -3441,7 +3458,7 @@ _Dispatcher2.default.register(function (action) {
     case _WorkConstants2.default.ADMIN_INSERT:
       var admin_insert = URL;
       _Http.http.post(admin_insert, action.obj).then(function (res) {
-        //create(res);
+        adminCreate(res, action.callback);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);
@@ -3451,7 +3468,7 @@ _Dispatcher2.default.register(function (action) {
     case _WorkConstants2.default.ADMIN_UPDATE:
       var admin_update = URL + 'admin/update/';
       _Http.http.post(admin_update, action.obj).then(function (res) {
-        //create(res);
+        adminCreate(res, action.callback);
         workStore.update();
       }).catch(function (e) {
         // console.error(e);

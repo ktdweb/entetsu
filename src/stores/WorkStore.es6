@@ -62,9 +62,12 @@ function create(res) {
   if (res[0].location_id == null) {
     res[0].location_id = 0;
   }
-  console.log('test');
-  console.log(res);
   */
+  _works = res;
+}
+
+function adminCreate(res, callback) {
+  callback();
   _works = res;
 }
 
@@ -171,7 +174,7 @@ Dispatcher.register( function(action) {
     case WorkConstants.ADMIN_INSERT:
       let admin_insert = URL;
       http.post(admin_insert, action.obj).then(res => {
-        //create(res);
+        adminCreate(res, action.callback);
         workStore.update();
       }).catch(e => {
         // console.error(e);
@@ -181,7 +184,7 @@ Dispatcher.register( function(action) {
     case WorkConstants.ADMIN_UPDATE:
       let admin_update = URL + 'admin/update/';
       http.post(admin_update, action.obj).then(res => {
-        //create(res);
+        adminCreate(res, action.callback);
         workStore.update();
       }).catch(e => {
         // console.error(e);
