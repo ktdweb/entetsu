@@ -432,17 +432,26 @@ export default class WorksDetail extends React.Component {
         <hr />
 
         <dl>
-          <dt>場所で選ぶ</dt>
+          <dt>
+            場所で選ぶ
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>{locations}</dd>
         </dl>             
 
         <dl>
-          <dt>時間で選ぶ</dt>
+          <dt>
+            時間で選ぶ
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>{times}</dd>
         </dl>
 
         <dl>
-          <dt>業種で選ぶ</dt>
+          <dt>
+            業種で選ぶ
+            <span className="warning"> &#8251;</span>
+          </dt>
           <dd>{categories}</dd>
         </dl>
 
@@ -514,11 +523,11 @@ export default class WorksDetail extends React.Component {
       'categories'
     ];
 
-    let tags = [];
+    let tags = new Array();
 
     Object.keys(keys).map((v) => {
       let arr = document.getElementsByName(keys[v]);
-      Object.keys(arr).map((i) => {
+      Object.keys(arr).map((z, i) => {
         if (arr[i].checked == true) {
           tags.push(parseInt(arr[i].value));
         }
