@@ -1796,7 +1796,11 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.state.tags.length == 0) return false;
+      if (this.props.params.id == 0) {
+        if (this.state.commons.length == 0) return false;
+      } else {
+        if (this.state.tags.length == 0) return false;
+      }
 
       var data = this.state.works;
 
