@@ -92,7 +92,11 @@ export default class WorksDetail extends React.Component {
   }
 
   render() {
-    if (this.state.tags.length == 0) return false 
+    if (this.props.params.id == 0) {
+      if (this.state.commons.length == 0) return false 
+    } else {
+      if (this.state.tags.length == 0) return false 
+    }
 
     let data = this.state.works;
 
