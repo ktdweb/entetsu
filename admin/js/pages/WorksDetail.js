@@ -950,9 +950,15 @@ var WorksDetail = function (_React$Component) {
           }
         });
 
-        if (_this2.props.params.id == 0 && key == 'categories' && i == 6) {
+        /*
+        if (
+          this.props.params.id == 0 &&
+          key == 'categories' &&
+          i == 6
+        ) {
           checked = 'checked';
         }
+        */
 
         return _react2.default.createElement(
           'label',

@@ -701,6 +701,7 @@ export default class WorksDetail extends React.Component {
         }
       });
 
+      /*
       if (
         this.props.params.id == 0 &&
         key == 'categories' &&
@@ -708,6 +709,7 @@ export default class WorksDetail extends React.Component {
       ) {
         checked = 'checked';
       }
+      */
 
       return <label key={key + i}>
         {arr[i].name}
