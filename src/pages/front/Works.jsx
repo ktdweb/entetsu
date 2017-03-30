@@ -37,6 +37,8 @@ export default class Works extends React.Component {
       },
       total: 0
     }
+
+    this.sliderCat = 0;
   }
 
   componentWillMount() {
@@ -596,7 +598,7 @@ export default class Works extends React.Component {
     e.preventDefault();
     drag = false;
 
-    WorkActions.slider(start, end, 9);
+    WorkActions.slider(start, end, this.sliderCat);
     this.setState({ slider: {start: start, end: end} });
   }
 
@@ -653,6 +655,7 @@ export default class Works extends React.Component {
     SearchActions.updateField('keyword', '');
     WorkActions.category(id);
 
+    this.sliderCat = id;
     this.scrollMotion(820);
   }
 

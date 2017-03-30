@@ -8627,6 +8627,8 @@ var Works = function (_React$Component) {
       },
       total: 0
     };
+
+    _this.sliderCat = 0;
     return _this;
   }
 
@@ -9018,7 +9020,7 @@ var Works = function (_React$Component) {
       e.preventDefault();
       drag = false;
 
-      _WorkActions2.default.slider(start, end, 9);
+      _WorkActions2.default.slider(start, end, this.sliderCat);
       this.setState({ slider: { start: start, end: end } });
     }
   }, {
@@ -9077,6 +9079,7 @@ var Works = function (_React$Component) {
       _SearchActions2.default.updateField('keyword', '');
       _WorkActions2.default.category(id);
 
+      this.sliderCat = id;
       this.scrollMotion(820);
     }
   }, {
