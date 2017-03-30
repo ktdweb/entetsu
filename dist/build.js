@@ -8889,24 +8889,22 @@ var Works = function (_React$Component) {
         alt: 'img'
       })))), _react2.default.createElement('nav', { className: 'pf-Works-Paging' }, pages)), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { id: 'sliderArea', className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, '自分の好きな時間帯をみつける'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
         src: IMG + 'list_slider_button.png',
-        width: '30',
+        width: '60',
         alt: 'img',
         name: 'first',
         id: 'sliderFirst',
         onMouseDown: this.onMouseDown.bind(this),
         onMouseUp: this.onMouseUp.bind(this),
-        onMouseMove: this.onMouseMove.bind(this),
-        onMouseOut: this.onMouseUp.bind(this)
+        onMouseMove: this.onMouseMove.bind(this)
       }), _react2.default.createElement('img', {
         src: IMG + 'list_slider_button.png',
-        width: '30',
+        width: '60',
         alt: 'img',
         name: 'second',
         id: 'sliderSecond',
         onMouseDown: this.onMouseDown.bind(this),
         onMouseUp: this.onMouseUp.bind(this),
-        onMouseMove: this.onMouseMove.bind(this),
-        onMouseOut: this.onMouseUp.bind(this)
+        onMouseMove: this.onMouseMove.bind(this)
       })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement('input', {
         type: 'text',
         id: 'keyword',
