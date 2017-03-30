@@ -7,7 +7,6 @@ $works = array();
 if (!empty(json_decode(file_get_contents($url), true))) {
     $works = json_decode(file_get_contents($url), true);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
