@@ -223,6 +223,41 @@ $app->group('/works', function () {
      * GET
      */
     $this->get(
+        '/latest/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
+            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
+
+            $sql .= ' WHERE ';
+            $sql .= ' ( `works`.`entry_end` > NOW() ';
+            $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ';
+            $sql .= ' ( `works`.`entry_start` < NOW() ';
+            $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
+            $sql .= " ORDER BY `works`.`modified` DESC LIMIT 3;";
+
+            $body = $db->execute($sql);
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * GET
+     */
+    $this->get(
         '/{name:.*}',
         function (
             $request,
