@@ -110,6 +110,7 @@ $app->group('/works', function () {
             $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
             $sql .= ' AND ( `entry_start` < NOW() ';
             $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
+            $sql .= " GROUP BY `works`.`id`; ";
             $body = $db->execute($sql, array($start, $end));
 
             return $response->withJson(
