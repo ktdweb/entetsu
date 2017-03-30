@@ -7,6 +7,7 @@ $works = array();
 if (!empty(json_decode(file_get_contents($url), true))) {
     $works = json_decode(file_get_contents($url), true);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -258,6 +259,7 @@ if (!empty(json_decode(file_get_contents($url), true))) {
         </div>
     	<!-- /.loc -->
     </div>
+
 </div><!-- /#search -->
 
 <div id="contents">
@@ -267,26 +269,47 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 <div class="newRec" style="z-index: 1000;">
         <div>
         <ul class="slides">
-            <?php for ($i = 0; $i < 3; $i++) { ?>
-
+            <?php for ($i = 0; $i < 3; $i++): ?>
         	<li style="margin-bottom: 20px;">
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p><?php echo mb_substr($works[$i]['title'], 0, 12) . '…'; ?></p>
-                <a class="link" href="works_detail.php?id=4">詳細</a></div>
+                <div class="recName">
+                    <p>
+                        <?php
+                            $val = $works[$i]['title'];
+                            if (mb_strlen($val) > 12) {
+                                echo mb_substr($val, 0, 12) . '...';
+                            } else {
+                                echo $val;
+                            }
+                        ?>
+                    </p>
+                    <a class="link" href="works_detail.php?id=<?php echo $works[$i]['id']; ?>">詳細</a>
+                </div>
+
                 <div class="recPost">
-                <p><?php echo $works[$i]['detail']; ?></p>
+                <p>
+                    <?php
+                        $val = $works[$i]['detail'];
+                        if (mb_strlen($val) > 128) {
+                            echo mb_substr($val, 0, 128) . '...';
+                        } else {
+                            echo $val;
+                        }
+                    ?>
+                </p>
                 </div>
                 <div class="recPoint">
-                <span class="pay"><?php echo $works[$i]['unit_wage']; ?>: <?php echo $works[$i]['abbr_wage']; ?>円</span>
+                <span class="pay">
+                    <?php echo $works[$i]['unit_wage']; ?>: <?php echo $works[$i]['abbr_wage']; ?>円</span>
                     <span class="hour"><?php echo $works[$i]['abbr_time']; ?></span>
                 </div>
             </div>
             </div>
             </div>
             </li>
-            <?php } ?>
+            <?php endfor; ?>
         </ul>
         </div>
 </div>
@@ -401,6 +424,7 @@ if (!empty(json_decode(file_get_contents($url), true))) {
         var cat = '';
 
         $('div.doorBtm').on('click', function() {
+            $('.searchBox').show();
             $('div.doorBtm').animate({top: '1400px'}, 1500);
             $('#contents').animate({paddingTop: '1400px'}, 1500);
             t.animate({opacity: 1}, 500);
@@ -408,7 +432,6 @@ if (!empty(json_decode(file_get_contents($url), true))) {
             l.animate({opacity: 1}, 500);
 
             openflag = true;
-
         });
 
         t.on('click', function() {
@@ -630,6 +653,8 @@ if (!empty(json_decode(file_get_contents($url), true))) {
         $('#search button').on('click', function() {
             window.location.href = 'works.php';
         });
+
+        $('.searchBox').hide();
     });
 </script>
 
@@ -637,14 +662,12 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 <script type="text/javascript">
     $(document).ready(function() {
         $('.searchTime').scrollInTurn();
-    });
-
-    $(document).ready(function() {
         $('.searchBusiness').scrollInTurn();
-    });
-
-    $(document).ready(function() {
         $('.searchPlace').scrollInTurn();
+
+        $('.link').on('click', function() {
+            console.log('red');
+        });
     });
 </script>
 
