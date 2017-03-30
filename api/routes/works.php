@@ -85,7 +85,7 @@ $app->group('/works', function () {
      * GET
      */
     $this->get(
-        '/slider/{start:[0-9]+}/{end:[0-9]+}',
+        '/slider/{start:[0-9]+}/{end:[0-9]+}/{category:[0-9]+}',
         function (
             $request,
             $response,
@@ -96,9 +96,16 @@ $app->group('/works', function () {
             $start = round($args['start'] * 24 / 100) . ':00';
             $end = round($args['end'] * 24 / 100) . ':00';
 
-            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `works` ';
+            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `tags` ';
+            $sql .= ' INNER JOIN `works` ON ';
+            $sql .= '`tags`.`work_id` = `works`.`id` ';
             $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id` ';
             $sql .= 'WHERE (`time_start` >= ?) AND (`time_end` <= ?)';
+
+            if ($args['category'] != 0) {
+                $sql .= ' AND (`tags`.`category_id` = ' . $args['category'] . ') ';
+            }
+
             $sql .= ' AND ( `entry_end` > NOW() ';
             $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
             $sql .= ' AND ( `entry_start` < NOW() ';

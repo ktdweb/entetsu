@@ -530,11 +530,12 @@ exports.default = {
     });
   },
 
-  slider: function slider(start, end) {
+  slider: function slider(start, end, category) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.SLIDER,
       start: start,
-      end: end
+      end: end,
+      category: category
     });
   },
 
@@ -9017,7 +9018,7 @@ var Works = function (_React$Component) {
       e.preventDefault();
       drag = false;
 
-      _WorkActions2.default.slider(start, end);
+      _WorkActions2.default.slider(start, end, 9);
       this.setState({ slider: { start: start, end: end } });
     }
   }, {
@@ -11082,7 +11083,7 @@ _Dispatcher2.default.register(function (action) {
       break;
 
     case _WorkConstants2.default.SLIDER:
-      var slider = URL + 'slider/' + action.start + '/' + action.end;
+      var slider = URL + 'slider/' + action.start + '/' + action.end + '/' + action.category;
       _Http.http.get(slider).then(function (res) {
         create(res);
         workStore.update();

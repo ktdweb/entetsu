@@ -596,7 +596,7 @@ export default class Works extends React.Component {
     e.preventDefault();
     drag = false;
 
-    WorkActions.slider(start, end);
+    WorkActions.slider(start, end, 9);
     this.setState({ slider: {start: start, end: end} });
   }
 

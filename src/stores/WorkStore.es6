@@ -132,7 +132,7 @@ Dispatcher.register( function(action) {
       break;
 
     case WorkConstants.SLIDER:
-      let slider = URL + 'slider/' + action.start + '/' + action.end;
+      let slider = URL + 'slider/' + action.start + '/' + action.end + '/' + action.category;
       http.get(slider).then(res => {
         create(res);
         workStore.update();
