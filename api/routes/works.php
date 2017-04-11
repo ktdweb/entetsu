@@ -85,7 +85,7 @@ $app->group('/works', function () {
      * GET
      */
     $this->get(
-        '/slider/{start:[0-9]+}/{end:[0-9]+}',
+        '/slider/{start:[0-9]+}/{end:[0-9]+}/{category:[0-9]+}',
         function (
             $request,
             $response,
@@ -96,13 +96,21 @@ $app->group('/works', function () {
             $start = round($args['start'] * 24 / 100) . ':00';
             $end = round($args['end'] * 24 / 100) . ':00';
 
-            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `works` ';
+            $sql  = 'SELECT `works`.*, `wages`.`name` as `unit_wage` FROM `tags` ';
+            $sql .= ' INNER JOIN `works` ON ';
+            $sql .= '`tags`.`work_id` = `works`.`id` ';
             $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id` ';
             $sql .= 'WHERE (`time_start` >= ?) AND (`time_end` <= ?)';
+
+            if ($args['category'] != 0) {
+                $sql .= ' AND (`tags`.`category_id` = ' . $args['category'] . ') ';
+            }
+
             $sql .= ' AND ( `entry_end` > NOW() ';
             $sql .= " OR `entry_end` = '0000-00-00 00:00:00' )";
             $sql .= ' AND ( `entry_start` < NOW() ';
             $sql .= " OR `entry_start` = '0000-00-00 00:00:00' )";
+            $sql .= " GROUP BY `works`.`id`; ";
             $body = $db->execute($sql, array($start, $end));
 
             return $response->withJson(
@@ -210,6 +218,41 @@ $app->group('/works', function () {
             } else {
                 $body = $db->execute($sql);
             }
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+    /**
+     * GET
+     */
+    $this->get(
+        '/latest/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT `works`.*, `sections`.`name`,';
+            $sql .= ' `sections`.`tel`, `sections`.`email`, ';
+            $sql .= '`wages`.`name` as `unit_wage` from `works` ';
+            $sql .= ' LEFT JOIN `sections` ON `works`.`section_id` = `sections`.`id`';
+            $sql .= ' LEFT JOIN `wages` ON `works`.`unit_wage_id` = `wages`.`id`';
+
+            $sql .= ' WHERE ';
+            $sql .= ' ( `works`.`entry_end` > NOW() ';
+            $sql .= " OR `works`.`entry_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ';
+            $sql .= ' ( `works`.`entry_start` < NOW() ';
+            $sql .= " OR `works`.`entry_start` = '0000-00-00 00:00:00' )";
+            $sql .= " ORDER BY `works`.`modified` DESC LIMIT 3;";
+
+            $body = $db->execute($sql);
 
             return $response->withJson(
                 $body,

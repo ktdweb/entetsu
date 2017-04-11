@@ -530,11 +530,12 @@ exports.default = {
     });
   },
 
-  slider: function slider(start, end) {
+  slider: function slider(start, end, category) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.SLIDER,
       start: start,
-      end: end
+      end: end,
+      category: category
     });
   },
 
@@ -8626,6 +8627,8 @@ var Works = function (_React$Component) {
       },
       total: 0
     };
+
+    _this.sliderCat = 0;
     return _this;
   }
 
@@ -8889,24 +8892,22 @@ var Works = function (_React$Component) {
         alt: 'img'
       })))), _react2.default.createElement('nav', { className: 'pf-Works-Paging' }, pages)), _react2.default.createElement('div', { className: 'pf-Works-Search' }, _react2.default.createElement('div', { id: 'sliderArea', className: 'pf-Works-Search-slider' }, _react2.default.createElement('h1', null, '自分の好きな時間帯をみつける'), _react2.default.createElement('p', { id: 'sliderLabel' }), _react2.default.createElement('img', {
         src: IMG + 'list_slider_button.png',
-        width: '30',
+        width: '60',
         alt: 'img',
         name: 'first',
         id: 'sliderFirst',
         onMouseDown: this.onMouseDown.bind(this),
         onMouseUp: this.onMouseUp.bind(this),
-        onMouseMove: this.onMouseMove.bind(this),
-        onMouseOut: this.onMouseUp.bind(this)
+        onMouseMove: this.onMouseMove.bind(this)
       }), _react2.default.createElement('img', {
         src: IMG + 'list_slider_button.png',
-        width: '30',
+        width: '60',
         alt: 'img',
         name: 'second',
         id: 'sliderSecond',
         onMouseDown: this.onMouseDown.bind(this),
         onMouseUp: this.onMouseUp.bind(this),
-        onMouseMove: this.onMouseMove.bind(this),
-        onMouseOut: this.onMouseUp.bind(this)
+        onMouseMove: this.onMouseMove.bind(this)
       })), _react2.default.createElement('div', { className: 'pf-Works-Search-advance' }, _react2.default.createElement('input', {
         type: 'text',
         id: 'keyword',
@@ -9019,7 +9020,7 @@ var Works = function (_React$Component) {
       e.preventDefault();
       drag = false;
 
-      _WorkActions2.default.slider(start, end);
+      _WorkActions2.default.slider(start, end, this.sliderCat);
       this.setState({ slider: { start: start, end: end } });
     }
   }, {
@@ -9078,6 +9079,7 @@ var Works = function (_React$Component) {
       _SearchActions2.default.updateField('keyword', '');
       _WorkActions2.default.category(id);
 
+      this.sliderCat = id;
       this.scrollMotion(820);
     }
   }, {
@@ -11084,7 +11086,7 @@ _Dispatcher2.default.register(function (action) {
       break;
 
     case _WorkConstants2.default.SLIDER:
-      var slider = URL + 'slider/' + action.start + '/' + action.end;
+      var slider = URL + 'slider/' + action.start + '/' + action.end + '/' + action.category;
       _Http.http.get(slider).then(function (res) {
         create(res);
         workStore.update();

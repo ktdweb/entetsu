@@ -37,6 +37,8 @@ export default class Works extends React.Component {
       },
       total: 0
     }
+
+    this.sliderCat = 0;
   }
 
   componentWillMount() {
@@ -443,26 +445,24 @@ export default class Works extends React.Component {
 
             <img
               src={IMG + 'list_slider_button.png'}
-              width="30"
+              width="60"
               alt="img"
               name="first"
               id="sliderFirst"
               onMouseDown={this.onMouseDown.bind(this)}
               onMouseUp={this.onMouseUp.bind(this)}
               onMouseMove={this.onMouseMove.bind(this)}
-              onMouseOut={this.onMouseUp.bind(this)}
               />
 
             <img
               src={IMG + 'list_slider_button.png'}
-              width="30"
+              width="60"
               alt="img"
               name="second"
               id="sliderSecond"
               onMouseDown={this.onMouseDown.bind(this)}
               onMouseUp={this.onMouseUp.bind(this)}
               onMouseMove={this.onMouseMove.bind(this)}
-              onMouseOut={this.onMouseUp.bind(this)}
               />
           </div>
 
@@ -598,7 +598,7 @@ export default class Works extends React.Component {
     e.preventDefault();
     drag = false;
 
-    WorkActions.slider(start, end);
+    WorkActions.slider(start, end, this.sliderCat);
     this.setState({ slider: {start: start, end: end} });
   }
 
@@ -655,6 +655,7 @@ export default class Works extends React.Component {
     SearchActions.updateField('keyword', '');
     WorkActions.category(id);
 
+    this.sliderCat = id;
     this.scrollMotion(820);
   }
 

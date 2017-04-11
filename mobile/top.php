@@ -1,3 +1,14 @@
+<?php
+ini_set('allow_url_fopen', 1);
+include 'include/env.php';
+
+$url = DOMAIN . 'api/works/latest/';
+$works = array();
+if (!empty(json_decode(file_get_contents($url), true))) {
+    $works = json_decode(file_get_contents($url), true);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -248,57 +259,57 @@
         </div>
     	<!-- /.loc -->
     </div>
+
 </div><!-- /#search -->
 
-<div id="contents" style="z-index: 1000;">
+<div id="contents">
 <article>
 <section>
 <h2 class="stitle"><img src="imgs/new_rec_head.png" alt="新着求人" width="100%"></h2>
-<div class="newRec">
+<div class="newRec" style="z-index: 1000;">
         <div>
         <ul class="slides">
+            <?php for ($i = 0; $i < 3; $i++): ?>
         	<li style="margin-bottom: 20px;">
             <div class="recruitBoxTop">
             <div class="recruitBoxBtm">
             <div class="recruitBox">
-                <div class="recName"><p><?php echo mb_substr('リブロス笠井クリーンスタッフ', 0, 12) . '…'; ?></p>
-                <a class="link" href="works_detail.php?id=4">詳細</a></div>
-                <div class="recPost">
-                    <p>フロア・トイレ等の日常清掃</p>
+                <div class="recName">
+                    <p>
+                        <?php
+                            $val = $works[$i]['title'];
+                            if (mb_strlen($val) > 12) {
+                                echo mb_substr($val, 0, 12) . '...';
+                            } else {
+                                echo $val;
+                            }
+                        ?>
+                    </p>
+                    <a class="link" href="works_detail.php?id=<?php echo $works[$i]['id']; ?>">詳細</a>
                 </div>
-                <div class="recPoint"><span class="pay">時給: 840円</span><span class="hour">08:00~17:00</span></div>
+
+                <div class="recPost">
+                <p>
+                    <?php
+                        $val = $works[$i]['detail'];
+                        if (mb_strlen($val) > 128) {
+                            echo mb_substr($val, 0, 128) . '...';
+                        } else {
+                            echo $val;
+                        }
+                    ?>
+                </p>
+                </div>
+                <div class="recPoint">
+                <span class="pay">
+                    <?php echo $works[$i]['unit_wage']; ?>: <?php echo $works[$i]['abbr_wage']; ?>円</span>
+                    <span class="hour"><?php echo $works[$i]['abbr_time']; ?></span>
+                </div>
             </div>
             </div>
             </div>
             </li>
-        	<li style="margin-bottom: 20px;">
-            <div class="recruitBoxTop">
-            <div class="recruitBoxBtm">
-            <div class="recruitBox">
-                <div class="recName"><p><?php echo mb_substr('幼稚園送迎バスの運転業務（馬郡町）', 0, 12) . '…'; ?></p>
-                <a class="link" href="works_detail.php?id=61">詳細</a></div>
-                <div class="recPost">
-                    <p>（請負業務）幼稚園バス（マイクロバス）の運転業務です。主に浜松市西区エリアを回ります。先生が同乗してくれます。</p>
-                </div>
-                <div class="recPoint"><span class="pay">日給: 6100円</span><span class="hour">7:20~16:00</span></div>
-            </div>
-            </div>
-            </div>
-            </li>
-        	<li style="margin-bottom: 20px;">
-            <div class="recruitBoxTop">
-            <div class="recruitBoxBtm">
-            <div class="recruitBox">
-                <div class="recName"><p><?php echo mb_substr('磐田市内工場内クリーンスタッフ', 0, 12) . '…'; ?></p>
-                <a class="link" href="works_detail.php?id=12">詳細</a></div>
-                <div class="recPost">
-                    <p>工場施設内の日常清掃（通路・フロア・トイレ等）</p>
-                </div>
-                <div class="recPoint"><span class="pay">時給: 850円</span><span class="hour">8:00~12:00</span></div>
-            </div>
-            </div>
-            </div>
-            </li>
+            <?php endfor; ?>
         </ul>
         </div>
 </div>
@@ -413,6 +424,7 @@
         var cat = '';
 
         $('div.doorBtm').on('click', function() {
+            $('.searchBox').show();
             $('div.doorBtm').animate({top: '1400px'}, 1500);
             $('#contents').animate({paddingTop: '1400px'}, 1500);
             t.animate({opacity: 1}, 500);
@@ -420,7 +432,6 @@
             l.animate({opacity: 1}, 500);
 
             openflag = true;
-
         });
 
         t.on('click', function() {
@@ -642,6 +653,8 @@
         $('#search button').on('click', function() {
             window.location.href = 'works.php';
         });
+
+        $('.searchBox').hide();
     });
 </script>
 
@@ -649,14 +662,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('.searchTime').scrollInTurn();
-    });
-
-    $(document).ready(function() {
         $('.searchBusiness').scrollInTurn();
-    });
-
-    $(document).ready(function() {
         $('.searchPlace').scrollInTurn();
+
+        $('.link').on('click', function() {
+            console.log('red');
+        });
     });
 </script>
 

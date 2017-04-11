@@ -21,11 +21,12 @@ export default {
     })
   },
 
-  slider: (start, end) => {
+  slider: (start, end, category) => {
     Dispatcher.dispatch({
       actionType: WorkConstants.SLIDER,
       start: start,
-      end: end
+      end: end,
+      category: category
     })
   },
 

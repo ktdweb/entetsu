@@ -1860,6 +1860,7 @@ var WorksDetail = function (_React$Component) {
         value: data.time
       }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '休憩時間'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
         type: 'text',
+        name: 'break',
         className: 'w-l',
         onChange: this.handleText.bind(this),
         value: data.break,
@@ -2152,9 +2153,15 @@ var WorksDetail = function (_React$Component) {
           }
         });
 
-        if (_this2.props.params.id == 0 && key == 'categories' && i == 6) {
+        /*
+        if (
+          this.props.params.id == 0 &&
+          key == 'categories' &&
+          i == 6
+        ) {
           checked = 'checked';
         }
+        */
 
         return _react2.default.createElement('label', { key: key + i }, arr[i].name, _react2.default.createElement('input', {
           name: key,
@@ -2371,11 +2378,12 @@ exports.default = {
     });
   },
 
-  slider: function slider(start, end) {
+  slider: function slider(start, end, category) {
     _Dispatcher2.default.dispatch({
       actionType: _WorkConstants2.default.SLIDER,
       start: start,
-      end: end
+      end: end,
+      category: category
     });
   },
 
@@ -3420,7 +3428,7 @@ _Dispatcher2.default.register(function (action) {
       break;
 
     case _WorkConstants2.default.SLIDER:
-      var slider = URL + 'slider/' + action.start + '/' + action.end;
+      var slider = URL + 'slider/' + action.start + '/' + action.end + '/' + action.category;
       _Http.http.get(slider).then(function (res) {
         create(res);
         workStore.update();
