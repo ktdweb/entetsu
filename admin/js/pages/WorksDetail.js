@@ -352,6 +352,7 @@ var WorksDetail = function (_React$Component) {
             null,
             _react2.default.createElement('input', {
               type: 'text',
+              name: 'break',
               className: 'w-l',
               onChange: this.handleText.bind(this),
               value: data.break,

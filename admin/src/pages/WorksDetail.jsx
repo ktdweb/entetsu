@@ -252,6 +252,7 @@ export default class WorksDetail extends React.Component {
           <dd>
             <input
               type="text"
+              name="break"
               className="w-l"
               onChange={this.handleText.bind(this)}
               value={data.break}
