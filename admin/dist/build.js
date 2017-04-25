@@ -387,7 +387,7 @@ var Nav = function (_React$Component) {
     value: function render() {
       var root = this.props.route.global.documentRoot;
 
-      return _react2.default.createElement('aside', { id: 'Nav' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/works/0' }, '求人情報')))));
+      return _react2.default.createElement('aside', { id: 'Nav' }, _react2.default.createElement('nav', null, _react2.default.createElement('ul', null, _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/topics' }, '新着情報')), _react2.default.createElement('li', null, _react2.default.createElement('i', { className: 'fa fa-paperclip' }), _react2.default.createElement(_reactRouter.Link, { to: root + '/works/0' }, '求人情報')))));
     }
   }]);
 
@@ -1121,9 +1121,16 @@ var Topics = function (_React$Component) {
   _createClass(Topics, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var key = window.sessionStorage.getItem('login');
+      if (key != 'added') {
+        location.href = '/admin/';
+      }
+
+      /*
       if (!window.login) {
         location.href = '/admin/';
       }
+      */
 
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       _TopicActions2.default.adminGet();
@@ -1276,9 +1283,20 @@ var TopicsDetail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TopicsDetail.__proto__ || Object.getPrototypeOf(TopicsDetail)).call(this, props));
 
-    var topics = _TopicStore2.default.read();
+    var topics = {
+      id: '',
+      category_id: 1,
+      title: '',
+      desc: '',
+      term_start: '0000-00-00 00:00:00',
+      term_end: '0000-00-00 00:00:00',
+
+      created: '',
+      modified: ''
+    };
+
     _this.state = {
-      topics: topics[0]
+      topics: topics
     };
     return _this;
   }
@@ -1286,13 +1304,22 @@ var TopicsDetail = function (_React$Component) {
   _createClass(TopicsDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      if (!window.login) {
+      var key = window.sessionStorage.getItem('login');
+      if (key != 'added') {
         location.href = '/admin/';
       }
 
+      /*
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+      */
+
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       if (this.props.params.id != 0) {
-        _TopicActions2.default.adminGet();
+        _TopicActions2.default.adminGet(this.props.params.id);
+      } else {
+        _TopicActions2.default.defaults();
       }
     }
   }, {
@@ -1311,15 +1338,17 @@ var TopicsDetail = function (_React$Component) {
         }
       }
 
-      console.log(data);
-
       return _react2.default.createElement('article', { id: 'TopicsDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '期間指定'), _react2.default.createElement('dd', null, _react2.default.createElement('label', null, '開始日時'), _react2.default.createElement('input', {
         type: 'text',
+        name: 'term_start',
         className: 'w-s',
+        onChange: this.handleText.bind(this),
         value: data.term_start
       }), _react2.default.createElement('label', null, '終了日時'), _react2.default.createElement('input', {
         type: 'text',
+        name: 'term_end',
         className: 'w-s',
+        onChange: this.handleText.bind(this),
         value: data.term_end
       }))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'カテゴリ'), _react2.default.createElement('dd', null, _react2.default.createElement('select', {
         name: 'category_id',
@@ -1333,15 +1362,12 @@ var TopicsDetail = function (_React$Component) {
         className: 'w-xl',
         maxLength: '120',
         required: true
-      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, 'リンク'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
-        type: 'text',
-        name: 'link',
-        value: data.link,
-        onChange: this.handleText.bind(this),
+      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, _react2.default.createElement('textarea', {
+        name: 'desc',
         className: 'w-xl',
-        maxLength: '120',
-        required: true
-      }))), _react2.default.createElement('button', {
+        onChange: this.handleText.bind(this),
+        value: data.desc
+      }))), _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }), _react2.default.createElement('button', {
         className: 'w-s',
         onClick: this.handleSubmit.bind(this)
       }, '更新'));
@@ -1350,10 +1376,36 @@ var TopicsDetail = function (_React$Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       var res = this.state.topics;
-      console.log(res);
 
-      _TopicActions2.default.adminUpdate(res);
-      window.location.href = '/admin/topics/';
+      var valid = true;
+      var el = document.getElementById('message');
+
+      if (res.title == '') {
+        txt = 'タイトルを入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (res.entry_start == '' || res.entry_end == '') {
+        txt = '期間指定が入力されていません。指定しない場合は[0000-00-00 00:00:00]を入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (valid) {
+        el.innerHTML = '';
+        if (this.props.params.id == 0) {
+          _TopicActions2.default.adminInsert(res, this.toIndex.bind(this));
+        } else {
+          console.log(res);
+          _TopicActions2.default.adminUpdate(res, this.toIndex.bind(this));
+        }
+      }
+    }
+  }, {
+    key: 'toIndex',
+    value: function toIndex() {
+      // window.location.href = '/admin/topics/';
     }
   }, {
     key: 'handleText',
@@ -1711,7 +1763,7 @@ var WorksDetail = function (_React$Component) {
   function WorksDetail(props) {
     _classCallCheck(this, WorksDetail);
 
-    var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
+    var _this2 = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
     var works = {
       id: 0,
@@ -1748,12 +1800,13 @@ var WorksDetail = function (_React$Component) {
       created: '',
       modified: ''
     };
-    _this.state = {
+    _this2.state = {
       works: works,
       commons: [],
-      tags: []
+      tags: [],
+      upload: ''
     };
-    return _this;
+    return _this2;
   }
 
   _createClass(WorksDetail, [{
@@ -1803,6 +1856,16 @@ var WorksDetail = function (_React$Component) {
       }
 
       var data = this.state.works;
+
+      var imgpath = '/imgs/works/default/001l.jpg';
+      if (data.img != '') {
+        imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      }
+      var imgtag = _react2.default.createElement('p', { id: 'imageOutput' }, _react2.default.createElement('img', {
+        src: imgpath,
+        width: '120',
+        alt: 'img'
+      }));
 
       var sections = this.generateSelects(this.state.commons.sections, 'sections');
 
@@ -1888,10 +1951,10 @@ var WorksDetail = function (_React$Component) {
         maxLength: '120'
       }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用形態'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
         type: 'text',
-        name: 'part',
+        name: 'type',
         className: 'w-l',
         onChange: this.handleText.bind(this),
-        value: data.part,
+        value: data.type,
         maxLength: '120'
       }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '雇用期間'), _react2.default.createElement('dd', null, _react2.default.createElement('input', {
         type: 'text',
@@ -1961,7 +2024,12 @@ var WorksDetail = function (_React$Component) {
         value: data.time_end,
         onChange: this.handleText.bind(this),
         'data-type': 'time'
-      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }), _react2.default.createElement('button', {
+      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です 00:00:00の書式で入力してください'))), _react2.default.createElement('hr', null), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '画像'), _react2.default.createElement('dd', null, _react2.default.createElement('label', {
+        className: 'formFile' }, 'アップロード', _react2.default.createElement('input', {
+        type: 'file',
+        name: 'image',
+        onChange: this.handleImage.bind(this)
+      })))), imgtag, _react2.default.createElement('p', { id: 'imageOutput' }), _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }), _react2.default.createElement('button', {
         className: 'w-s',
         onClick: this.handleSubmit.bind(this)
       }, '更新'));
@@ -1987,6 +2055,9 @@ var WorksDetail = function (_React$Component) {
 
       var res = this.state.works;
       res.tags = tags;
+
+      var upload = this.state.upload;
+      res.upload = upload;
 
       delete res.location_id;
       delete res.time_id;
@@ -2143,12 +2214,12 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'generateCheckbox',
     value: function generateCheckbox(arr, key) {
-      var _this2 = this;
+      var _this3 = this;
 
       return Object.keys(arr).map(function (i) {
         var checked = '';
-        Object.keys(_this2.state.tags).map(function (v) {
-          if (arr[i].id == _this2.state.tags[v]) {
+        Object.keys(_this3.state.tags).map(function (v) {
+          if (arr[i].id == _this3.state.tags[v]) {
             checked = 'checked';
           }
         });
@@ -2170,6 +2241,84 @@ var WorksDetail = function (_React$Component) {
           defaultChecked: checked
         }));
       });
+    }
+  }, {
+    key: 'handleImage',
+    value: function handleImage(e) {
+      var tgt = document.getElementById('imageOutput');
+      var el = document.getElementById('message');
+      var fr = new FileReader();
+      var file = e.target.files[0];
+
+      var img = new Image();
+      var src = window.URL.createObjectURL(file);
+      img.src = src;
+
+      var _this = this;
+      fr.onload = function (file) {
+        img.onload = function () {
+          if (_this.validateImage(file, img, el) != false) {
+            initImage();
+            var base64 = _this.convertBase64(img);
+            _this.setState({ upload: base64 });
+
+            img.width = 180;
+            tgt.appendChild(img);
+
+            el.innerHTML = '更新ボタンをクリックすると画像を正方形に加工後保存されます';
+            el.classList.add('pa-EventsAdd-fileMsg');
+          }
+        };
+      }(file);
+
+      function initImage() {
+        tgt.innerHTML = '';
+        // el.classList.remove('pa-EventsAdd-fileMsg');
+        el.innerHTML = '';
+      }
+    }
+  }, {
+    key: 'convertBase64',
+    value: function convertBase64(img) {
+      var canvas = document.createElement('canvas');
+      var ctx = canvas.getContext('2d');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      var base64 = canvas.toDataURL('image/jpeg');
+
+      return base64.replace(/^.*,/, '');
+    }
+  }, {
+    key: 'validateImage',
+    value: function validateImage(file, img, el) {
+      var message = '';
+
+      if (file.type != 'image/jpeg') {
+        message = 'jpegファイルを選択してください';
+      }
+
+      if (img.width < 720) {
+        message = '画像の横幅が足りません。720px以上を使用下さい';
+      } else if (img.width > 1440) {
+        message = '画像の横幅が大きすぎます。720px程度を使用下さい';
+      }
+
+      if (img.width < img.height) {
+        message = '横長の画像を使用してください';
+      }
+
+      if (message) {
+        el.innerHTML = message;
+        el.classList.add('pa-EventsAdd-fileMsg');
+      }
+
+      var res = true;
+      if (message != '') {
+        res = false;
+      }
+
+      return res;
     }
   }]);
 
@@ -2295,6 +2444,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = {
+  defaults: function defaults() {
+    _TopicDispatcher2.default.dispatch({
+      actionType: _TopicConstants2.default.DEFAULTS
+    });
+  },
+
   create: function create() {
     _TopicDispatcher2.default.dispatch({
       actionType: _TopicConstants2.default.CREATE
@@ -2310,10 +2465,19 @@ exports.default = {
     });
   },
 
-  adminUpdate: function adminUpdate(obj) {
+  adminInsert: function adminInsert(obj, callback) {
+    _TopicDispatcher2.default.dispatch({
+      actionType: _TopicConstants2.default.ADMIN_INSERT,
+      obj: obj,
+      callback: callback
+    });
+  },
+
+  adminUpdate: function adminUpdate(obj, callback) {
     _TopicDispatcher2.default.dispatch({
       actionType: _TopicConstants2.default.ADMIN_UPDATE,
-      obj: obj
+      obj: obj,
+      callback: callback
     });
   },
 
@@ -2410,17 +2574,17 @@ exports.default = {
     });
   },
 
-  adminUpdate: function adminUpdate(obj, callback) {
+  adminInsert: function adminInsert(obj, callback) {
     _Dispatcher2.default.dispatch({
-      actionType: _WorkConstants2.default.ADMIN_UPDATE,
+      actionType: _WorkConstants2.default.ADMIN_INSERT,
       obj: obj,
       callback: callback
     });
   },
 
-  adminInsert: function adminInsert(obj, callback) {
+  adminUpdate: function adminUpdate(obj, callback) {
     _Dispatcher2.default.dispatch({
-      actionType: _WorkConstants2.default.ADMIN_INSERT,
+      actionType: _WorkConstants2.default.ADMIN_UPDATE,
       obj: obj,
       callback: callback
     });
@@ -2641,8 +2805,10 @@ function _interopRequireDefault(obj) {
 }
 
 var TopicConstants = (0, _keymirror2.default)({
+  DEFAULTS: null,
   CREATE: null,
   ADMIN_GET: null,
+  ADMIN_INSERT: null,
   ADMIN_UPDATE: null,
   ADMIN_DELETE: null,
   UPDATE: null,
@@ -3110,16 +3276,26 @@ var _topics = [{
   id: '',
   category_id: 1,
   title: '',
-  link: '',
   desc: '',
-  term_start: '',
-  term_end: '',
+  term_start: '0000-00-00 00:00:00',
+  term_end: '0000-00-00 00:00:00',
 
   created: '',
   modified: ''
 }];
 
+var def = _topics;
+
+function defaultSetting() {
+  _topics = def;
+}
+
 function create(res) {
+  _topics = res;
+}
+
+function adminCreate(res, callback) {
+  callback();
   _topics = res;
 }
 
@@ -3175,6 +3351,11 @@ var TopicStore = function (_EventEmitter) {
 
 _TopicDispatcher2.default.register(function (action) {
   switch (action.actionType) {
+    case _TopicConstants2.default.DEFAULTS:
+      defaultSetting();
+      topicStore.update();
+      break;
+
     case _TopicConstants2.default.CREATE:
       _Http.http.get(URL).then(function (res) {
         console.log('test3');
@@ -3195,10 +3376,20 @@ _TopicDispatcher2.default.register(function (action) {
       });
       break;
 
+    case _TopicConstants2.default.ADMIN_INSERT:
+      var admin_insert = URL;
+      _Http.http.post(admin_insert, action.obj).then(function (res) {
+        adminCreate(res, action.callback);
+        topicStore.update();
+      }).catch(function (e) {
+        // console.error(e);
+      });
+      break;
+
     case _TopicConstants2.default.ADMIN_UPDATE:
       var admin_update = URL + 'admin/update/';
       _Http.http.post(admin_update, action.obj).then(function (res) {
-        //create(res);
+        adminCreate(res, action.callback);
         topicStore.update();
       }).catch(function (e) {
         // console.error(e);

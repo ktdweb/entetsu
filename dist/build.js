@@ -562,17 +562,17 @@ exports.default = {
     });
   },
 
-  adminUpdate: function adminUpdate(obj, callback) {
+  adminInsert: function adminInsert(obj, callback) {
     _Dispatcher2.default.dispatch({
-      actionType: _WorkConstants2.default.ADMIN_UPDATE,
+      actionType: _WorkConstants2.default.ADMIN_INSERT,
       obj: obj,
       callback: callback
     });
   },
 
-  adminInsert: function adminInsert(obj, callback) {
+  adminUpdate: function adminUpdate(obj, callback) {
     _Dispatcher2.default.dispatch({
-      actionType: _WorkConstants2.default.ADMIN_INSERT,
+      actionType: _WorkConstants2.default.ADMIN_UPDATE,
       obj: obj,
       callback: callback
     });
@@ -9216,6 +9216,15 @@ var Column = function (_React$Component2) {
 
       var data = this.props.data;
 
+      var imgdata = new Image();
+      var imgpath = '/imgs/works/default/001l.jpg';
+
+      imgdata.onload = function () {
+        imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      };
+
+      imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
+
       return _react2.default.createElement(_reactRouter.Link, {
         to: '/works_detail/' + data.id,
         ref: 'el'
@@ -9224,7 +9233,7 @@ var Column = function (_React$Component2) {
         width: '40',
         alt: 'img'
       })), _react2.default.createElement('div', { className: 'pf-Works-List-column-section' }, _react2.default.createElement('img', {
-        src: '/imgs/works/' + data.img + 's.jpg',
+        src: imgpath,
         width: '45',
         height: '45',
         alt: 'img'
@@ -9388,8 +9397,17 @@ var WorksDetail = function (_React$Component) {
         }
       }
 
+      var imgdata = new Image();
+      var imgpath = '/imgs/works/default/001l.jpg';
+
+      imgdata.onload = function () {
+        imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      };
+
+      imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
+
       return _react2.default.createElement('article', { id: 'WorksDetail' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '仕事を探す | 遠鉄アシスト' }), _react2.default.createElement('div', { className: 'pf-Works-Detail' }, _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'pf-Works-Detail-tab' }, '検索結果'), _react2.default.createElement('div', { className: 'pf-Works-Detail-column' }, _react2.default.createElement('div', { className: 'pf-Works-Detail-column-head' }, _react2.default.createElement('p', null, data.title)), _react2.default.createElement('div', { className: 'pf-Works-Detail-column-section' }, _react2.default.createElement('div', null, _react2.default.createElement('img', {
-        src: '/imgs/works/' + data.img + 'l.jpg',
+        src: imgpath,
         width: '180',
         height: '180',
         alt: 'img'

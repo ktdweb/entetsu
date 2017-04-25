@@ -318,6 +318,81 @@ $app->group('/works', function () {
             $id = (int)$body['id'];
             $tags = $body['tags'];
 
+            $upload = $body['upload'];
+            if ($upload != '') {
+                $fpath = '../imgs/works/';
+                $fname = $fpath . sprintf('%03d', $id);
+                $scheme = 'data:application/octet-stream;base64,';
+                list($width, $height) = getimagesize($scheme . $upload);
+                $fdata = imagecreatefromstring(base64_decode($upload));
+
+                $size = 120;
+                $new_width = $width * ($size / $height);
+                $fimg = imagecreatetruecolor($new_width, $size);
+
+                // thumbnail
+                imagecopyresampled(
+                    $fimg,
+                    $fdata,
+                    0,
+                    0,
+                    0,
+                    0,
+                    $new_width,
+                    $size,
+                    $width,
+                    $height
+                );
+
+                $thumb = imagecrop(
+                    $fimg,
+                    array(
+                        'x' => ($new_width - $size) / 2,
+                        'y' => 0,
+                        'width' => $size,
+                        'height' => $size
+                    )
+                );
+
+                imagejpeg($thumb, $fname . 's.jpg', 100);
+
+                // large image
+                $size = 400;
+                $new_width = $width * ($size / $height);
+                $fimg = imagecreatetruecolor($new_width, $size);
+
+                imagecopyresampled(
+                    $fimg,
+                    $fdata,
+                    0,
+                    0,
+                    0,
+                    0,
+                    $new_width,
+                    $size,
+                    $width,
+                    $height
+                );
+
+                $large = imagecrop(
+                    $fimg,
+                    array(
+                        'x' => ($new_width - $size) / 2,
+                        'y' => 0,
+                        'width' => $size,
+                        'height' => $size
+                    )
+                );
+
+                imagejpeg($large, $fname . 'l.jpg', 100);
+
+                // original
+                file_put_contents($fname . 'm.jpg', base64_decode($upload));
+
+                // for database
+                $body['img'] = sprintf('%03d', $id);
+            }
+
             unset($body['email']);
             unset($body['name']);
             unset($body['tel']);
@@ -325,6 +400,7 @@ $app->group('/works', function () {
             unset($body['tags']);
             unset($body['created']);
             unset($body['modified']);
+            unset($body['upload']);
 
             // tags delete
             $sql = 'DELETE FROM `tags` WHERE `work_id` = ?';
@@ -399,6 +475,7 @@ $app->group('/works', function () {
 
             $get = $this->get('db.get');
             $db = $this->get('db.post');
+            $put = $this->get('db.put');
 
             $sql = 'INSERT INTO `works` (';
             $sql .= '`section_id`,';
@@ -476,6 +553,88 @@ $app->group('/works', function () {
 
             $db->execute($sql);
 
+            $id = $lastId[0]->id;
+            $upload = $body['upload'];
+            if ($upload != '') {
+                $fpath = '../imgs/works/';
+                $fname = $fpath . sprintf('%03d', $id);
+                $scheme = 'data:application/octet-stream;base64,';
+                list($width, $height) = getimagesize($scheme . $upload);
+                $fdata = imagecreatefromstring(base64_decode($upload));
+
+                $size = 120;
+                $new_width = $width * ($size / $height);
+                $fimg = imagecreatetruecolor($new_width, $size);
+
+                // thumbnail
+                imagecopyresampled(
+                    $fimg,
+                    $fdata,
+                    0,
+                    0,
+                    0,
+                    0,
+                    $new_width,
+                    $size,
+                    $width,
+                    $height
+                );
+
+                $thumb = imagecrop(
+                    $fimg,
+                    array(
+                        'x' => ($new_width - $size) / 2,
+                        'y' => 0,
+                        'width' => $size,
+                        'height' => $size
+                    )
+                );
+
+                imagejpeg($thumb, $fname . 's.jpg', 100);
+
+                // large image
+                $size = 400;
+                $new_width = $width * ($size / $height);
+                $fimg = imagecreatetruecolor($new_width, $size);
+
+                imagecopyresampled(
+                    $fimg,
+                    $fdata,
+                    0,
+                    0,
+                    0,
+                    0,
+                    $new_width,
+                    $size,
+                    $width,
+                    $height
+                );
+
+                $large = imagecrop(
+                    $fimg,
+                    array(
+                        'x' => ($new_width - $size) / 2,
+                        'y' => 0,
+                        'width' => $size,
+                        'height' => $size
+                    )
+                );
+
+                imagejpeg($large, $fname . 'l.jpg', 100);
+
+                // original
+                file_put_contents($fname . 'm.jpg', base64_decode($upload));
+
+                // for database
+                $sql = 'UPDATE `works` SET ';
+                $sql .= '`img`= ? WHERE `id` = ?;';
+                $values = array(
+                    sprintf('%03d', $id),
+                    $id
+                );
+                $put->execute($sql, $values);
+            }
+
 
             return $response->withJson(
                 $res,
@@ -535,6 +694,11 @@ $app->group('/works', function () {
             $sql = 'DELETE FROM `tags` ';
             $sql .= 'WHERE `work_id` = ' . (int)$args['id'];
             $res = $db->execute($sql);
+
+            $imgpath = '../imgs/works/' . sprintf('%03d', (int)$args['id']);
+            unlink($imgpath . 'l.jpg');
+            unlink($imgpath . 'm.jpg');
+            unlink($imgpath . 's.jpg');
 
             return $response->withJson(
                 $res,

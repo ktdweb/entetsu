@@ -18,9 +18,16 @@ export default class Topics extends React.Component {
   }
 
   componentWillMount() {
+    let key = window.sessionStorage.getItem('login');
+    if (key != 'added') {
+      location.href = '/admin/';
+    }
+
+    /*
     if (!window.login) {
       location.href = '/admin/';
     }
+    */
 
     TopicStore.subscribe(this.updateState.bind(this));
     TopicActions.adminGet();

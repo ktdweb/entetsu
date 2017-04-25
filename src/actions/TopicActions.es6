@@ -2,6 +2,12 @@ import Dispatcher from '../dispathcer/TopicDispatcher'
 import TopicConstants from '../constants/TopicConstants'
 
 export default {
+  defaults: () => {
+    Dispatcher.dispatch({
+      actionType: TopicConstants.DEFAULTS
+    })
+  },
+
   create: () => {
     Dispatcher.dispatch({
       actionType: TopicConstants.CREATE
@@ -15,10 +21,19 @@ export default {
     })
   },
 
-  adminUpdate: (obj) => {
+  adminInsert: (obj, callback) => {
+    Dispatcher.dispatch({
+      actionType: TopicConstants.ADMIN_INSERT,
+      obj: obj,
+      callback: callback
+    })
+  },
+
+  adminUpdate: (obj, callback) => {
     Dispatcher.dispatch({
       actionType: TopicConstants.ADMIN_UPDATE,
-      obj: obj
+      obj: obj,
+      callback: callback
     })
   },
 

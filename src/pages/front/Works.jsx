@@ -767,6 +767,15 @@ class Column extends React.Component {
 
     let data = this.props.data;
 
+    let imgdata = new Image();
+    let imgpath = '/imgs/works/default/001l.jpg';
+
+    imgdata.onload = function() {
+      imgpath = '/imgs/works/' + data.img + 'l.jpg';
+    }
+
+    imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
+
     return (
       <Link
         to={'/works_detail/' + data.id}
@@ -784,7 +793,7 @@ class Column extends React.Component {
         
           <div className="pf-Works-List-column-section">
             <img
-              src={'/imgs/works/' + data.img + 's.jpg'}
+              src={imgpath}
               width="45"
               height="45"
               alt="img"
