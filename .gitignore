@@ -14,6 +14,7 @@ sys-common
 
 js/*
 docs/*
+imgs/*
 
 spec/js/*
 
