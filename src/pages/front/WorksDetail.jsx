@@ -67,6 +67,8 @@ export default class WorksDetail extends React.Component {
 
     imgdata.onload = function() {
       imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      let el = document.getElementById('column' + data.id);
+      el.src = imgpath;
     }
 
     imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
@@ -201,6 +203,7 @@ export default class WorksDetail extends React.Component {
               <div className="pf-Works-Detail-column-section">
                 <div>
                   <img
+                    id={'column' + data.id}
                     src={imgpath}
                     width="180"
                     height="180"

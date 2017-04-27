@@ -772,6 +772,8 @@ class Column extends React.Component {
 
     imgdata.onload = function() {
       imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      let el = document.getElementById('column' + data.id);
+      el.src = imgpath;
     }
 
     imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
@@ -793,6 +795,7 @@ class Column extends React.Component {
         
           <div className="pf-Works-List-column-section">
             <img
+              id={'column' + data.id}
               src={imgpath}
               width="45"
               height="45"

@@ -4,6 +4,9 @@ import DocumentTitle from 'react-document-title'
 
 import data from '../../../src/movies/top/top'
 
+import TopicStore from '../../stores/TopicStore'
+import TopicActions from '../../actions/TopicActions'
+
 var canvas;
 var lib = data.lib;
 var images = data.img;
@@ -13,6 +16,16 @@ export default class Home extends React.Component {
 
   constructor(props) {
     super(props);
+
+    let topics = TopicStore.read();
+    this.state = {
+      topics: topics
+    }
+  }
+
+  componentWillMount() {
+    TopicStore.subscribe(this.updateState.bind(this));
+    TopicActions.adminGet(this.updateState.bind(this));
   }
 
   componentDidMount() {
@@ -27,6 +40,8 @@ export default class Home extends React.Component {
   }
 
   render() {
+    console.log(this.state.topics);
+    let topics = <li>test</li>;
 
     return (
       <article id="Home">
@@ -45,9 +60,16 @@ export default class Home extends React.Component {
           <tbody>
             <tr>
               <td>
+                {/*<ul className="pf-Home-cola">
+                  <img src="imgs/pages/top/col_a_top.jpg"
+                    width="405"
+                    height="47"
+                    alt="新着情報"
+                  />
+                </ul>*/}
                 <img src="imgs/pages/top/col_a.jpg"
                   width="405"
-                  height="315"
+                  height="326"
                   alt="新着情報"
                 />
               </td>
@@ -127,6 +149,13 @@ export default class Home extends React.Component {
         </div>*/}
       </article>
     );
+  }
+
+  updateState() {
+    let topics = TopicStore.read();
+    this.setState({
+      topics: topics
+    });
   }
 
   init() {
