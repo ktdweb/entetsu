@@ -278,7 +278,13 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 <?php for ($i = 0; $i < 3; $i++): ?>
 <?php if (!empty($topics[$i]['title'])): ?>
     <li>
-        <p><?php echo date('Y年m月d日', strtotime($topics[$i]['created'])); ?></p>
+        <p>
+           <img
+                src="/imgs/pages/top/category_0<?php echo $topics[$i]['category_id']; ?>.jpg"
+                width="60"
+                />
+           <?php echo date('Y年m月d日', strtotime($topics[$i]['created'])); ?>
+        </p>
         <span class="topiclink" name="<?php echo $i; ?>"><?php echo $topics[$i]['title']; ?></span>
         <div id="topic<?php echo $i; ?>" class="desc">
             <pre><?php echo $topics[$i]['desc']; ?></pre>
