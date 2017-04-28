@@ -7508,7 +7508,19 @@ div#badge {
       margin: 0px 14px;
       height: 30px;
       border-bottom: 1px solid #999;
-      line-height: 30px; }
+      line-height: 30px;
+      font-size: 0.7rem; }
+      #Front .pf-Home-cola li span.pf-Home-cola-date {
+        display: inline-block;
+        padding-right: 7px; }
+      #Front .pf-Home-cola li span.pf-Home-cola-title {
+        color: #428BCA;
+        cursor: pointer; }
+        #Front .pf-Home-cola li span.pf-Home-cola-title:hover {
+          color: #2a6496; }
+      #Front .pf-Home-cola li img {
+        vertical-align: -4px;
+        margin-right: 10px; }
   #Front article#Works {
     padding-top: 180px;
     max-width: 100%; }

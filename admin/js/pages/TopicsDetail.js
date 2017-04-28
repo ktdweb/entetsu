@@ -198,7 +198,12 @@ var TopicsDetail = function (_React$Component) {
               className: 'w-xl',
               maxLength: '120',
               required: true
-            })
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です'
+            )
           )
         ),
         _react2.default.createElement(
@@ -236,6 +241,7 @@ var TopicsDetail = function (_React$Component) {
     value: function handleSubmit(e) {
       var res = this.state.topics;
 
+      var txt = void 0;
       var valid = true;
       var el = document.getElementById('message');
 
@@ -264,7 +270,7 @@ var TopicsDetail = function (_React$Component) {
   }, {
     key: 'toIndex',
     value: function toIndex() {
-      // window.location.href = '/admin/topics/';
+      window.location.href = '/admin/topics/update';
     }
   }, {
     key: 'handleText',

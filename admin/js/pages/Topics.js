@@ -75,6 +75,11 @@ var Topics = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var mes = '';
+      if (this.props.params.update) {
+        mes = '新着情報が更新されました';
+      }
+
       var eachTopic = void 0;
       if (this.state.topics.length >= 1) {
         eachTopic = Object.keys(this.state.topics).map(function (i) {
@@ -123,6 +128,11 @@ var Topics = function (_React$Component) {
           '新着情報'
         ),
         _react2.default.createElement(
+          'div',
+          { className: 'warning' },
+          mes
+        ),
+        _react2.default.createElement(
           'table',
           { className: 'sheet' },
           _react2.default.createElement(
@@ -144,7 +154,7 @@ var Topics = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 null,
-                '作成日'
+                '更新日'
               ),
               _react2.default.createElement(
                 'th',
@@ -161,7 +171,6 @@ var Topics = function (_React$Component) {
     key: 'updateState',
     value: function updateState() {
       var res = _TopicStore2.default.read();
-      console.log(res);
       this.setState({ topics: res });
     }
   }, {

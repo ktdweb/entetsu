@@ -100,7 +100,7 @@ var routes = _react2.default.createElement(_reactRouter.Router, { history: _reac
     header: _Header2.default,
     nav: _Nav2.default,
     main: _Home2.default
-  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/topics',
+  } }), _react2.default.createElement(_reactRouter.Route, { path: root.documentRoot + '/topics(/:update)',
   global: root,
   components: {
     header: _Header2.default,
@@ -1145,6 +1145,11 @@ var Topics = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var mes = '';
+      if (this.props.params.update) {
+        mes = '新着情報が更新されました';
+      }
+
       var eachTopic = void 0;
       if (this.state.topics.length >= 1) {
         eachTopic = Object.keys(this.state.topics).map(function (i) {
@@ -1160,13 +1165,12 @@ var Topics = function (_React$Component) {
 
       return _react2.default.createElement('article', { id: 'Topics' }, _react2.default.createElement(_reactDocumentTitle2.default, { title: '新着情報' }), _react2.default.createElement(_reactRouter.Link, {
         to: '/admin/topics/detail/0'
-      }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '作成日'), _react2.default.createElement('th', null, '-')), eachTopic)));
+      }, _react2.default.createElement('button', { className: 'headerButton' }, '新規追加', _react2.default.createElement('i', { className: 'fa fa-plus-circle' }))), _react2.default.createElement('h1', null, _react2.default.createElement('i', { className: 'fa fa-check-square-o' }), '新着情報'), _react2.default.createElement('div', { className: 'warning' }, mes), _react2.default.createElement('table', { className: 'sheet' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'ID'), _react2.default.createElement('th', null, 'タイトル'), _react2.default.createElement('th', null, '更新日'), _react2.default.createElement('th', null, '-')), eachTopic)));
     }
   }, {
     key: 'updateState',
     value: function updateState() {
       var res = _TopicStore2.default.read();
-      console.log(res);
       this.setState({ topics: res });
     }
   }, {
@@ -1362,7 +1366,7 @@ var TopicsDetail = function (_React$Component) {
         className: 'w-xl',
         maxLength: '120',
         required: true
-      }))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, _react2.default.createElement('textarea', {
+      }), _react2.default.createElement('p', { className: 'message' }, '必須項目です'))), _react2.default.createElement('dl', null, _react2.default.createElement('dt', null, '備考'), _react2.default.createElement('dd', null, _react2.default.createElement('textarea', {
         name: 'desc',
         className: 'w-xl',
         onChange: this.handleText.bind(this),
@@ -1377,6 +1381,7 @@ var TopicsDetail = function (_React$Component) {
     value: function handleSubmit(e) {
       var res = this.state.topics;
 
+      var txt = void 0;
       var valid = true;
       var el = document.getElementById('message');
 
@@ -1405,7 +1410,7 @@ var TopicsDetail = function (_React$Component) {
   }, {
     key: 'toIndex',
     value: function toIndex() {
-      // window.location.href = '/admin/topics/';
+      window.location.href = '/admin/topics/update';
     }
   }, {
     key: 'handleText',
@@ -3357,8 +3362,7 @@ _TopicDispatcher2.default.register(function (action) {
       break;
 
     case _TopicConstants2.default.CREATE:
-      _Http.http.get(URL).then(function (res) {
-        console.log('test3');
+      _Http.http.get(URL + 'front/').then(function (res) {
         create(res);
         topicStore.update();
       }).catch(function (e) {

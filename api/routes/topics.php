@@ -31,6 +31,7 @@ $app->group('/topics', function () {
             $sql .= ' AND ';
             $sql .= ' ( `term_start` < NOW() ';
             $sql .= " OR `term_start` = '0000-00-00 00:00:00' )";
+            $sql .= ' ORDER BY `created` DESC;';
 
             $body = $db->execute($sql);
 
@@ -42,6 +43,36 @@ $app->group('/topics', function () {
         }
     );
 
+    /**
+     * GET
+     */
+    $this->get(
+        '/front/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT * FROM `topics`';
+
+            $sql .= ' WHERE ';
+            $sql .= ' ( `term_end` > NOW() ';
+            $sql .= " OR `term_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ';
+            $sql .= ' ( `term_start` < NOW() ';
+            $sql .= " OR `term_start` = '0000-00-00 00:00:00' )";
+            $sql .= ' ORDER BY `created` DESC;';
+
+            $body = $db->execute($sql);
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
 
     /**
      * GET
@@ -96,8 +127,10 @@ $app->group('/topics', function () {
 
             if (is_numeric($args['id'])) {
                 $sql .= ' WHERE `id` = ?';
+                $sql .= ' ORDER BY `created` DESC;';
                 $body = $db->execute($sql, $args['id']);
             } else {
+                $sql .= ' ORDER BY `created` DESC;';
                 $body = $db->execute($sql);
             }
 
@@ -130,6 +163,7 @@ $app->group('/topics', function () {
 
             unset($body['id']);
             unset($body['link']);
+            unset($body['modified']);
 
             // works
             $values = array_values($body);
@@ -141,7 +175,7 @@ $app->group('/topics', function () {
             $sql .= '`term_start`=?,';
             $sql .= '`term_end`=?,';
             $sql .= '`created`=?,';
-            $sql .= '`modified`=? ';
+            $sql .= '`modified`=NOW() ';
             $sql .= ' WHERE `id` = ' . $id . ';';
 
             $res = $db->execute($sql, $values);

@@ -40,7 +40,7 @@ const routes = (
           main: Home
         }} />
 
-      <Route path={root.documentRoot + '/topics'}
+      <Route path={root.documentRoot + '/topics(/:update)'}
         global={root}
         components={{
           header: Header,

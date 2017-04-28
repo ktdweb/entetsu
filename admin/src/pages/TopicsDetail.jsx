@@ -123,6 +123,10 @@ export default class TopicsDetail extends React.Component {
               maxLength="120"
               required={true}
               />
+
+              <p className="message">
+                必須項目です
+              </p>
           </dd>
         </dl>
 
@@ -152,6 +156,7 @@ export default class TopicsDetail extends React.Component {
   handleSubmit(e) {
     let res = this.state.topics;
 
+    let txt;
     let valid = true;
     let el = document.getElementById('message');
 
@@ -179,7 +184,7 @@ export default class TopicsDetail extends React.Component {
   }
 
   toIndex() {
-    // window.location.href = '/admin/topics/';
+    window.location.href = '/admin/topics/update';
   }
 
   handleText(e) {

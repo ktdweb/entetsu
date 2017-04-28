@@ -119,3 +119,33 @@ div.worksBg p.empty {
     color: white;
     text-align: center;
 }
+
+/* topics */
+
+ul.topTopics {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+ul.topTopics li {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #0099de; 
+    line-height: 18px;
+}
+
+ul.topTopics li span {
+    color: #0099de;
+    cursor: pointer;
+}
+
+ul.topTopics li span:hover {
+    color: #95d5f1;
+}
+
+ul.topTopics li div.desc {
+    display: none;
+    line-height: 18px;
+    padding: 10px;
+}

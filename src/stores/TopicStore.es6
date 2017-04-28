@@ -78,8 +78,7 @@ Dispatcher.register( function(action) {
       break;
 
     case TopicConstants.CREATE:
-      http.get(URL).then(res => {
-        console.log('test3');
+      http.get(URL + 'front/').then(res => {
         create(res);
         topicStore.update();
       }).catch(e => {
