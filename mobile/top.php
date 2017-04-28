@@ -280,7 +280,7 @@ if (!empty(json_decode(file_get_contents($url), true))) {
     <li>
         <p>
            <img
-                src="/imgs/pages/top/category_0<?php echo $topics[$i]['category_id']; ?>.jpg"
+                src="imgs/category_0<?php echo $topics[$i]['category_id']; ?>.jpg"
                 width="60"
                 />
            <?php echo date('Y年m月d日', strtotime($topics[$i]['created'])); ?>
