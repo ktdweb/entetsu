@@ -62,6 +62,17 @@ export default class WorksDetail extends React.Component {
       }
     }
 
+    let imgdata = new Image();
+    let imgpath = '/imgs/works/default/001l.jpg';
+
+    imgdata.onload = function() {
+      imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      let el = document.getElementById('column' + data.id);
+      el.src = imgpath;
+    }
+
+    imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
+
     return (
       <article id="WorksDetail">
         <DocumentTitle title="仕事を探す | 遠鉄アシスト" />
@@ -192,7 +203,8 @@ export default class WorksDetail extends React.Component {
               <div className="pf-Works-Detail-column-section">
                 <div>
                   <img
-                    src={'/imgs/works/' + data.img + 'l.jpg'}
+                    id={'column' + data.id}
+                    src={imgpath}
                     width="180"
                     height="180"
                     alt="img"

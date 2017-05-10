@@ -4,6 +4,11 @@ import DocumentTitle from 'react-document-title'
 
 import data from '../../../src/movies/top/top'
 
+import TopicStore from '../../stores/TopicStore'
+import TopicActions from '../../actions/TopicActions'
+
+import m from 'moment'
+
 var canvas;
 var lib = data.lib;
 var images = data.img;
@@ -13,6 +18,16 @@ export default class Home extends React.Component {
 
   constructor(props) {
     super(props);
+
+    let topics = TopicStore.read();
+    this.state = {
+      topics: topics
+    }
+  }
+
+  componentWillMount() {
+    TopicStore.subscribe(this.updateState.bind(this));
+    TopicActions.create(this.updateState.bind(this));
   }
 
   componentDidMount() {
@@ -27,6 +42,63 @@ export default class Home extends React.Component {
   }
 
   render() {
+    console.log(this.state);
+    let topics = Object.keys(this.state.topics).map((i) => {
+      let cat = ('00' + this.state.topics[i].category_id).slice(-2);
+      return (
+        <li key={i}>
+          <img
+            src={'imgs/pages/top/category_' + cat + '.jpg'}
+            width="50"
+            alt="category"
+            />
+          <span className="pf-Home-cola-date">
+            {
+              m(this.state.topics[i].created)
+                .format("YYYY年MM月DD日")
+            }
+          </span>
+          <span
+            className="pf-Home-cola-title"
+            name={i}
+            onClick={this.enableModal.bind(this)}
+            >
+            {this.state.topics[i].title}
+          </span>
+        </li>
+      );
+    });
+
+    let detail = Object.keys(this.state.topics).map((i) => {
+      return (
+        <div
+          key={'topic' + i}
+          id="topicsDetail"
+          className="modal"
+          >
+          <div>
+            <a
+              href="#"
+              onClick={this.disableModal.bind(this)}
+              >
+              <img
+                className="modalClose"
+                src="/imgs/close.png"
+                width="30"
+                height="30"
+                alt="close"
+                />
+            </a>
+
+            <h1 id="topicsTitle"></h1>
+            <p>
+              <pre id="topicsDesc">
+              </pre>
+            </p>
+          </div>
+        </div>
+      );
+    });
 
     return (
       <article id="Home">
@@ -41,15 +113,20 @@ export default class Home extends React.Component {
             />
         </div>
 
+        {detail}
+
         <table className="menuTop">
           <tbody>
             <tr>
               <td>
-                <img src="imgs/pages/top/col_a.jpg"
-                  width="405"
-                  height="315"
-                  alt="新着情報"
-                />
+                <ul className="pf-Home-cola">
+                  <img src="imgs/pages/top/col_a_top.jpg"
+                    width="405"
+                    height="47"
+                    alt="新着情報"
+                  />
+                  {topics}
+                </ul>
               </td>
               <td>
                 <p>
@@ -127,6 +204,13 @@ export default class Home extends React.Component {
         </div>*/}
       </article>
     );
+  }
+
+  updateState() {
+    let topics = TopicStore.read();
+    this.setState({
+      topics: topics
+    });
   }
 
   init() {
@@ -225,5 +309,27 @@ export default class Home extends React.Component {
     //        eq_IE11:document.uniqueID && window.matchMedia && !window.ActiveXObject,
     Trident:document.uniqueID
     }
+  }
+
+  enableModal(e) {
+    e.preventDefault();
+    let id = e.target.getAttribute('name');
+    window.scroll(0, 0);
+    let el = document.getElementById('topicsDetail');
+    let title = document.getElementById('topicsTitle');
+    let desc = document.getElementById('topicsDesc');
+
+    title.innerHTML = this.state.topics[id].title;
+    desc.innerHTML = this.state.topics[id].desc;
+    el.classList.add('enable');
+
+    let height = document.documentElement.scrollHeight || document.body.scrollHeight;
+    el.style.height = height + 'px'; 
+  }
+
+  disableModal(e) {
+    e.preventDefault();
+    let el = document.getElementById('topicsDetail');
+    el.classList.remove('enable');
   }
 }

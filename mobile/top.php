@@ -8,6 +8,12 @@ if (!empty(json_decode(file_get_contents($url), true))) {
     $works = json_decode(file_get_contents($url), true);
 }
 
+$url = DOMAIN . 'api/topics/';
+$topics = array();
+if (!empty(json_decode(file_get_contents($url), true))) {
+    $topics = json_decode(file_get_contents($url), true);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -264,6 +270,31 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 
 <div id="contents">
 <article>
+
+<!-- topics -->
+<section>
+<h2 class="stitle"><img src="imgs/new_rec_head2.png" alt="新着情報" width="100%"></h2>
+<ul class="topTopics">
+<?php for ($i = 0; $i < 3; $i++): ?>
+<?php if (!empty($topics[$i]['title'])): ?>
+    <li>
+        <p>
+           <img
+                src="imgs/category_0<?php echo $topics[$i]['category_id']; ?>.jpg"
+                width="60"
+                />
+           <?php echo date('Y年m月d日', strtotime($topics[$i]['created'])); ?>
+        </p>
+        <span class="topiclink" name="<?php echo $i; ?>"><?php echo $topics[$i]['title']; ?></span>
+        <div id="topic<?php echo $i; ?>" class="desc">
+            <pre><?php echo $topics[$i]['desc']; ?></pre>
+        </div>
+    </li>
+<?php endif; ?>
+<?php endfor; ?>
+</ul>
+</section>
+
 <section>
 <h2 class="stitle"><img src="imgs/new_rec_head.png" alt="新着求人" width="100%"></h2>
 <div class="newRec" style="z-index: 1000;">
@@ -667,6 +698,11 @@ if (!empty(json_decode(file_get_contents($url), true))) {
 
         $('.link').on('click', function() {
             console.log('red');
+        });
+
+        $('.topiclink').on('click', function() {
+            var id = $(this).attr('name');
+            $('#topic' + id).toggle();
         });
     });
 </script>

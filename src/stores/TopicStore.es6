@@ -12,17 +12,27 @@ let _topics = [
     id: '',
     category_id: 1,
     title: '',
-    link: '',
     desc: '',
-    term_start: '',
-    term_end: '',
+    term_start: '0000-00-00 00:00:00',
+    term_end: '0000-00-00 00:00:00',
 
     created: '',
     modified: ''
   }
 ];
 
+let def = _topics;
+
+function defaultSetting() {
+  _topics = def;
+}
+
 function create(res) {
+  _topics = res;
+}
+
+function adminCreate(res, callback) {
+  callback();
   _topics = res;
 }
 
@@ -62,9 +72,13 @@ class TopicStore extends EventEmitter {
 
 Dispatcher.register( function(action) {
   switch(action.actionType) {
+    case TopicConstants.DEFAULTS:
+        defaultSetting();
+        topicStore.update();
+      break;
+
     case TopicConstants.CREATE:
-      http.get(URL).then(res => {
-        console.log('test3');
+      http.get(URL + 'front/').then(res => {
         create(res);
         topicStore.update();
       }).catch(e => {
@@ -82,10 +96,20 @@ Dispatcher.register( function(action) {
       });
       break;
 
+    case TopicConstants.ADMIN_INSERT:
+      let admin_insert = URL;
+      http.post(admin_insert, action.obj).then(res => {
+        adminCreate(res, action.callback);
+        topicStore.update();
+      }).catch(e => {
+        // console.error(e);
+      });
+      break;
+
     case TopicConstants.ADMIN_UPDATE:
       let admin_update = URL + 'admin/update/';
       http.post(admin_update, action.obj).then(res => {
-        //create(res);
+        adminCreate(res, action.callback);
         topicStore.update();
       }).catch(e => {
         // console.error(e);

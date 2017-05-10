@@ -31,6 +31,7 @@ $app->group('/topics', function () {
             $sql .= ' AND ';
             $sql .= ' ( `term_start` < NOW() ';
             $sql .= " OR `term_start` = '0000-00-00 00:00:00' )";
+            $sql .= ' ORDER BY `created` DESC;';
 
             $body = $db->execute($sql);
 
@@ -42,6 +43,36 @@ $app->group('/topics', function () {
         }
     );
 
+    /**
+     * GET
+     */
+    $this->get(
+        '/front/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $db = $this->get('db.get');
+            $sql = 'SELECT * FROM `topics`';
+
+            $sql .= ' WHERE ';
+            $sql .= ' ( `term_end` > NOW() ';
+            $sql .= " OR `term_end` = '0000-00-00 00:00:00' )";
+            $sql .= ' AND ';
+            $sql .= ' ( `term_start` < NOW() ';
+            $sql .= " OR `term_start` = '0000-00-00 00:00:00' )";
+            $sql .= ' ORDER BY `created` DESC;';
+
+            $body = $db->execute($sql);
+
+            return $response->withJson(
+                $body,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
 
     /**
      * GET
@@ -96,8 +127,10 @@ $app->group('/topics', function () {
 
             if (is_numeric($args['id'])) {
                 $sql .= ' WHERE `id` = ?';
+                $sql .= ' ORDER BY `created` DESC;';
                 $body = $db->execute($sql, $args['id']);
             } else {
+                $sql .= ' ORDER BY `created` DESC;';
                 $body = $db->execute($sql);
             }
 
@@ -108,6 +141,7 @@ $app->group('/topics', function () {
             );
         }
     );
+
 
     /**
      * POST
@@ -127,20 +161,73 @@ $app->group('/topics', function () {
 
             $id = (int)$body['id'];
 
+            unset($body['id']);
+            unset($body['link']);
+            unset($body['modified']);
+
             // works
             $values = array_values($body);
 
             $sql = 'UPDATE `topics` SET ';
-            $sql .= '`id`=?,';
             $sql .= '`category_id`=?,';
             $sql .= '`title`=?,';
-            $sql .= '`link`=?,';
             $sql .= '`desc`=?,';
             $sql .= '`term_start`=?,';
             $sql .= '`term_end`=?,';
             $sql .= '`created`=?,';
-            $sql .= '`modified`=? ';
+            $sql .= '`modified`=NOW() ';
             $sql .= ' WHERE `id` = ' . $id . ';';
+
+            $res = $db->execute($sql, $values);
+
+            return $response->withJson(
+                $res,
+                200,
+                $this->get('settings')['withJsonEnc']
+            );
+        }
+    );
+
+
+    /**
+     * POST
+     */
+    $this->post(
+        '/',
+        function (
+            $request,
+            $response,
+            $args
+        ) {
+            $body = $request->getParsedBody();
+
+            $db = $this->get('db.put');
+            $post = $this->get('db.post');
+            $del = $this->get('db.delete');
+
+            $id = (int)$body['id'];
+
+            // works
+            $values = array_values($body);
+
+            $sql = 'INSERT INTO `topics` (';
+            $sql .= '`category_id`,';
+            $sql .= '`title`,';
+            $sql .= '`desc`,';
+            $sql .= '`term_start`,';
+            $sql .= '`term_end`,';
+            $sql .= '`created`,';
+            $sql .= '`modified` ';
+            $sql .= ' ) VALUES (';
+            $sql .= '?, ?, ?, ?, ?, NOW(), NOW());';
+
+            $values = array(
+                $body['category_id'],
+                $body['title'],
+                $body['desc'],
+                $body['term_start'],
+                $body['term_end']
+            );
 
             $res = $db->execute($sql, $values);
 
@@ -167,6 +254,7 @@ $app->group('/topics', function () {
 
             $db = $this->get('db.put');
 
+            $body['link'] = $body['links'];
             $fields = array_keys($body);
             $values = array_values($body);
 

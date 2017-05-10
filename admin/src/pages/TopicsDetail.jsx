@@ -11,20 +11,40 @@ export default class TopicsDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    let topics = TopicStore.read();
+    let topics = {
+      id: '',
+      category_id: 1,
+      title: '',
+      desc: '',
+      term_start: '0000-00-00 00:00:00',
+      term_end: '0000-00-00 00:00:00',
+
+      created: '',
+      modified: ''
+    };
+
     this.state = {
-      topics: topics[0]
+      topics: topics
     }
   }
 
   componentWillMount() {
-    if (!window.login) {
+    let key = window.sessionStorage.getItem('login');
+    if (key != 'added') {
       location.href = '/admin/';
     }
 
+    /*
+    if (!window.login) {
+      location.href = '/admin/';
+    }
+    */
+
     TopicStore.subscribe(this.updateState.bind(this));
     if (this.props.params.id != 0) {
-      TopicActions.adminGet();
+      TopicActions.adminGet(this.props.params.id);
+    } else {
+      TopicActions.defaults();
     }
   }
 
@@ -41,8 +61,6 @@ export default class TopicsDetail extends React.Component {
       }
     }
 
-    console.log(data);
-
     return(
       <article id="TopicsDetail">
         <DocumentTitle title="新着情報" />
@@ -57,14 +75,18 @@ export default class TopicsDetail extends React.Component {
             <label>開始日時</label>
             <input
               type="text"
+              name="term_start"
               className="w-s"
+              onChange={this.handleText.bind(this)}
               value={data.term_start}
               />
 
             <label>終了日時</label>
             <input
               type="text"
+              name="term_end"
               className="w-s"
+              onChange={this.handleText.bind(this)}
               value={data.term_end}
               />
           </dd>
@@ -101,25 +123,26 @@ export default class TopicsDetail extends React.Component {
               maxLength="120"
               required={true}
               />
+
+              <p className="message">
+                必須項目です
+              </p>
           </dd>
         </dl>
 
         <dl>
-          <dt>
-            リンク
-          </dt>
+          <dt>備考</dt>
           <dd>
-            <input
-              type="text"
-              name="link"
-              value={data.link}
-              onChange={this.handleText.bind(this)}
+            <textarea
+              name="desc"
               className="w-xl"
-              maxLength="120"
-              required={true}
+              onChange={this.handleText.bind(this)}
+              value={data.desc}
               />
           </dd>
         </dl>
+
+        <p id="message" className="color-brand-danger"></p>
 
         <button
           className="w-s"
@@ -132,10 +155,36 @@ export default class TopicsDetail extends React.Component {
 
   handleSubmit(e) {
     let res = this.state.topics;
-    console.log(res);
 
-    TopicActions.adminUpdate(res);
-    window.location.href = '/admin/topics/';
+    let txt;
+    let valid = true;
+    let el = document.getElementById('message');
+
+    if (res.title == '') {
+      txt = 'タイトルを入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (res.entry_start == '' || res.entry_end == '') {
+      txt = '期間指定が入力されていません。指定しない場合は[0000-00-00 00:00:00]を入力してください'; 
+      el.innerHTML = txt;
+      valid = false;
+    }
+
+    if (valid) {
+      el.innerHTML = '';
+      if (this.props.params.id == 0) {
+        TopicActions.adminInsert(res, this.toIndex.bind(this));
+      } else {
+        console.log(res);
+        TopicActions.adminUpdate(res, this.toIndex.bind(this));
+      }
+    }
+  }
+
+  toIndex() {
+    window.location.href = '/admin/topics/update';
   }
 
   handleText(e) {

@@ -37,6 +37,7 @@ ALTER TABLE `works` COMMENT '求人情報テーブル';
 DESC `works`;
 SELECT * FROM `works`;
 SELECT * FROM `members`;
+SELECT * FROM `topics`;
 /*}}}*/
 
 -- works テーブル作成 /*{{{*/
@@ -1169,6 +1170,11 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+
+ALTER TABLE `topics` ADD `date` DATE NOT NULL after `category_id`;
+ALTER TABLE `topics` DROP `date`;
+DESC `topics`;
+SELECT * FROM `topics`;
 /*}}}*/
 
 -- topics レコード挿入 /*{{{*/
@@ -1184,6 +1190,6 @@ INSERT INTO `topics` (
   `modified`
 ) VALUES
 (1, 'ホームページリニューアル', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2016-06-28 00:00:00', '2016-06-28 00:00:00'),
-(2, '時間指定テスト用', '', '', '2016-06-28 00:00:00', '2016-06-30 00:00:00', '2016-06-28 00:00:00', '2016-06-28 00:00:00')
+(2, '時間指定テスト用', '',  '', '2016-06-28 00:00:00', '2016-06-30 00:00:00', '2017-04-28 00:00:00', '2017-04-28 00:00:00')
 ;
 /*}}}*/

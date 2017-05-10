@@ -18,9 +18,16 @@ export default class Topics extends React.Component {
   }
 
   componentWillMount() {
+    let key = window.sessionStorage.getItem('login');
+    if (key != 'added') {
+      location.href = '/admin/';
+    }
+
+    /*
     if (!window.login) {
       location.href = '/admin/';
     }
+    */
 
     TopicStore.subscribe(this.updateState.bind(this));
     TopicActions.adminGet();
@@ -31,6 +38,11 @@ export default class Topics extends React.Component {
   }
 
   render() {
+    let mes = '';
+    if (this.props.params.update) {
+      mes = '新着情報が更新されました';
+    }
+
     let eachTopic;
     if (this.state.topics.length >= 1) {
       eachTopic = Object.keys(this.state.topics).map((i) => {
@@ -67,12 +79,16 @@ export default class Topics extends React.Component {
           新着情報
         </h1>
 
+        <div className="warning">
+          {mes}
+        </div>
+
         <table className="sheet">
           <tbody>
             <tr>
               <th>ID</th>
               <th>タイトル</th>
-              <th>作成日</th>
+              <th>更新日</th>
               <th>-</th>
             </tr>
 
@@ -87,7 +103,6 @@ export default class Topics extends React.Component {
 
   updateState() {
     let res = TopicStore.read();
-    console.log(res);
     this.setState({ topics: res });
   }
 

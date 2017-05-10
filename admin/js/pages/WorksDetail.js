@@ -53,7 +53,7 @@ var WorksDetail = function (_React$Component) {
   function WorksDetail(props) {
     _classCallCheck(this, WorksDetail);
 
-    var _this = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
+    var _this2 = _possibleConstructorReturn(this, (WorksDetail.__proto__ || Object.getPrototypeOf(WorksDetail)).call(this, props));
 
     var works = {
       id: 0,
@@ -90,12 +90,13 @@ var WorksDetail = function (_React$Component) {
       created: '',
       modified: ''
     };
-    _this.state = {
+    _this2.state = {
       works: works,
       commons: [],
-      tags: []
+      tags: [],
+      upload: ''
     };
-    return _this;
+    return _this2;
   }
 
   _createClass(WorksDetail, [{
@@ -145,6 +146,20 @@ var WorksDetail = function (_React$Component) {
       }
 
       var data = this.state.works;
+
+      var imgpath = '/imgs/works/default/001l.jpg';
+      if (data.img != '') {
+        imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      }
+      var imgtag = _react2.default.createElement(
+        'p',
+        { id: 'imageOutput' },
+        _react2.default.createElement('img', {
+          src: imgpath,
+          width: '120',
+          alt: 'img'
+        })
+      );
 
       var sections = this.generateSelects(this.state.commons.sections, 'sections');
 
@@ -436,10 +451,10 @@ var WorksDetail = function (_React$Component) {
             null,
             _react2.default.createElement('input', {
               type: 'text',
-              name: 'part',
+              name: 'type',
               className: 'w-l',
               onChange: this.handleText.bind(this),
-              value: data.part,
+              value: data.type,
               maxLength: '120'
             })
           )
@@ -749,6 +764,32 @@ var WorksDetail = function (_React$Component) {
           )
         ),
         _react2.default.createElement('hr', null),
+        _react2.default.createElement(
+          'dl',
+          null,
+          _react2.default.createElement(
+            'dt',
+            null,
+            '画像'
+          ),
+          _react2.default.createElement(
+            'dd',
+            null,
+            _react2.default.createElement(
+              'label',
+              {
+                className: 'formFile' },
+              'アップロード',
+              _react2.default.createElement('input', {
+                type: 'file',
+                name: 'image',
+                onChange: this.handleImage.bind(this)
+              })
+            )
+          )
+        ),
+        imgtag,
+        _react2.default.createElement('p', { id: 'imageOutput' }),
         _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }),
         _react2.default.createElement(
           'button',
@@ -781,6 +822,9 @@ var WorksDetail = function (_React$Component) {
 
       var res = this.state.works;
       res.tags = tags;
+
+      var upload = this.state.upload;
+      res.upload = upload;
 
       delete res.location_id;
       delete res.time_id;
@@ -941,12 +985,12 @@ var WorksDetail = function (_React$Component) {
   }, {
     key: 'generateCheckbox',
     value: function generateCheckbox(arr, key) {
-      var _this2 = this;
+      var _this3 = this;
 
       return Object.keys(arr).map(function (i) {
         var checked = '';
-        Object.keys(_this2.state.tags).map(function (v) {
-          if (arr[i].id == _this2.state.tags[v]) {
+        Object.keys(_this3.state.tags).map(function (v) {
+          if (arr[i].id == _this3.state.tags[v]) {
             checked = 'checked';
           }
         });
@@ -973,6 +1017,84 @@ var WorksDetail = function (_React$Component) {
           })
         );
       });
+    }
+  }, {
+    key: 'handleImage',
+    value: function handleImage(e) {
+      var tgt = document.getElementById('imageOutput');
+      var el = document.getElementById('message');
+      var fr = new FileReader();
+      var file = e.target.files[0];
+
+      var img = new Image();
+      var src = window.URL.createObjectURL(file);
+      img.src = src;
+
+      var _this = this;
+      fr.onload = function (file) {
+        img.onload = function () {
+          if (_this.validateImage(file, img, el) != false) {
+            initImage();
+            var base64 = _this.convertBase64(img);
+            _this.setState({ upload: base64 });
+
+            img.width = 180;
+            tgt.appendChild(img);
+
+            el.innerHTML = '更新ボタンをクリックすると画像を正方形に加工後保存されます';
+            el.classList.add('pa-EventsAdd-fileMsg');
+          }
+        };
+      }(file);
+
+      function initImage() {
+        tgt.innerHTML = '';
+        // el.classList.remove('pa-EventsAdd-fileMsg');
+        el.innerHTML = '';
+      }
+    }
+  }, {
+    key: 'convertBase64',
+    value: function convertBase64(img) {
+      var canvas = document.createElement('canvas');
+      var ctx = canvas.getContext('2d');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      var base64 = canvas.toDataURL('image/jpeg');
+
+      return base64.replace(/^.*,/, '');
+    }
+  }, {
+    key: 'validateImage',
+    value: function validateImage(file, img, el) {
+      var message = '';
+
+      if (file.type != 'image/jpeg') {
+        message = 'jpegファイルを選択してください';
+      }
+
+      if (img.width < 720) {
+        message = '画像の横幅が足りません。720px以上を使用下さい';
+      } else if (img.width > 1440) {
+        message = '画像の横幅が大きすぎます。720px程度を使用下さい';
+      }
+
+      if (img.width < img.height) {
+        message = '横長の画像を使用してください';
+      }
+
+      if (message) {
+        el.innerHTML = message;
+        el.classList.add('pa-EventsAdd-fileMsg');
+      }
+
+      var res = true;
+      if (message != '') {
+        res = false;
+      }
+
+      return res;
     }
   }]);
 

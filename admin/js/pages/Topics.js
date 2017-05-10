@@ -51,9 +51,16 @@ var Topics = function (_React$Component) {
   _createClass(Topics, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var key = window.sessionStorage.getItem('login');
+      if (key != 'added') {
+        location.href = '/admin/';
+      }
+
+      /*
       if (!window.login) {
         location.href = '/admin/';
       }
+      */
 
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       _TopicActions2.default.adminGet();
@@ -67,6 +74,11 @@ var Topics = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _this2 = this;
+
+      var mes = '';
+      if (this.props.params.update) {
+        mes = '新着情報が更新されました';
+      }
 
       var eachTopic = void 0;
       if (this.state.topics.length >= 1) {
@@ -116,6 +128,11 @@ var Topics = function (_React$Component) {
           '新着情報'
         ),
         _react2.default.createElement(
+          'div',
+          { className: 'warning' },
+          mes
+        ),
+        _react2.default.createElement(
           'table',
           { className: 'sheet' },
           _react2.default.createElement(
@@ -137,7 +154,7 @@ var Topics = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 null,
-                '作成日'
+                '更新日'
               ),
               _react2.default.createElement(
                 'th',
@@ -154,7 +171,6 @@ var Topics = function (_React$Component) {
     key: 'updateState',
     value: function updateState() {
       var res = _TopicStore2.default.read();
-      console.log(res);
       this.setState({ topics: res });
     }
   }, {

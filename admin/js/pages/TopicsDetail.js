@@ -40,9 +40,20 @@ var TopicsDetail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TopicsDetail.__proto__ || Object.getPrototypeOf(TopicsDetail)).call(this, props));
 
-    var topics = _TopicStore2.default.read();
+    var topics = {
+      id: '',
+      category_id: 1,
+      title: '',
+      desc: '',
+      term_start: '0000-00-00 00:00:00',
+      term_end: '0000-00-00 00:00:00',
+
+      created: '',
+      modified: ''
+    };
+
     _this.state = {
-      topics: topics[0]
+      topics: topics
     };
     return _this;
   }
@@ -50,13 +61,22 @@ var TopicsDetail = function (_React$Component) {
   _createClass(TopicsDetail, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      if (!window.login) {
+      var key = window.sessionStorage.getItem('login');
+      if (key != 'added') {
         location.href = '/admin/';
       }
 
+      /*
+      if (!window.login) {
+        location.href = '/admin/';
+      }
+      */
+
       _TopicStore2.default.subscribe(this.updateState.bind(this));
       if (this.props.params.id != 0) {
-        _TopicActions2.default.adminGet();
+        _TopicActions2.default.adminGet(this.props.params.id);
+      } else {
+        _TopicActions2.default.defaults();
       }
     }
   }, {
@@ -74,8 +94,6 @@ var TopicsDetail = function (_React$Component) {
           data = this.state.topics[i];
         }
       }
-
-      console.log(data);
 
       return _react2.default.createElement(
         'article',
@@ -105,7 +123,9 @@ var TopicsDetail = function (_React$Component) {
             ),
             _react2.default.createElement('input', {
               type: 'text',
+              name: 'term_start',
               className: 'w-s',
+              onChange: this.handleText.bind(this),
               value: data.term_start
             }),
             _react2.default.createElement(
@@ -115,7 +135,9 @@ var TopicsDetail = function (_React$Component) {
             ),
             _react2.default.createElement('input', {
               type: 'text',
+              name: 'term_end',
               className: 'w-s',
+              onChange: this.handleText.bind(this),
               value: data.term_end
             })
           )
@@ -176,7 +198,12 @@ var TopicsDetail = function (_React$Component) {
               className: 'w-xl',
               maxLength: '120',
               required: true
-            })
+            }),
+            _react2.default.createElement(
+              'p',
+              { className: 'message' },
+              '必須項目です'
+            )
           )
         ),
         _react2.default.createElement(
@@ -185,22 +212,20 @@ var TopicsDetail = function (_React$Component) {
           _react2.default.createElement(
             'dt',
             null,
-            'リンク'
+            '備考'
           ),
           _react2.default.createElement(
             'dd',
             null,
-            _react2.default.createElement('input', {
-              type: 'text',
-              name: 'link',
-              value: data.link,
-              onChange: this.handleText.bind(this),
+            _react2.default.createElement('textarea', {
+              name: 'desc',
               className: 'w-xl',
-              maxLength: '120',
-              required: true
+              onChange: this.handleText.bind(this),
+              value: data.desc
             })
           )
         ),
+        _react2.default.createElement('p', { id: 'message', className: 'color-brand-danger' }),
         _react2.default.createElement(
           'button',
           {
@@ -215,10 +240,37 @@ var TopicsDetail = function (_React$Component) {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       var res = this.state.topics;
-      console.log(res);
 
-      _TopicActions2.default.adminUpdate(res);
-      window.location.href = '/admin/topics/';
+      var txt = void 0;
+      var valid = true;
+      var el = document.getElementById('message');
+
+      if (res.title == '') {
+        txt = 'タイトルを入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (res.entry_start == '' || res.entry_end == '') {
+        txt = '期間指定が入力されていません。指定しない場合は[0000-00-00 00:00:00]を入力してください';
+        el.innerHTML = txt;
+        valid = false;
+      }
+
+      if (valid) {
+        el.innerHTML = '';
+        if (this.props.params.id == 0) {
+          _TopicActions2.default.adminInsert(res, this.toIndex.bind(this));
+        } else {
+          console.log(res);
+          _TopicActions2.default.adminUpdate(res, this.toIndex.bind(this));
+        }
+      }
+    }
+  }, {
+    key: 'toIndex',
+    value: function toIndex() {
+      window.location.href = '/admin/topics/update';
     }
   }, {
     key: 'handleText',

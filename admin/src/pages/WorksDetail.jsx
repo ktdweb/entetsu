@@ -53,7 +53,8 @@ export default class WorksDetail extends React.Component {
     this.state = {
       works: works, 
       commons: [],
-      tags: []
+      tags: [],
+      upload: ''
     }
   }
 
@@ -99,6 +100,19 @@ export default class WorksDetail extends React.Component {
     }
 
     let data = this.state.works;
+
+    let imgpath = '/imgs/works/default/001l.jpg';
+    if (data.img != '') {
+      imgpath = '/imgs/works/' + data.img + 'l.jpg';
+    }
+    let imgtag = <p id="imageOutput">
+      <img
+        src={imgpath}
+        width="120"
+        alt="img"
+        />
+    </p>
+
 
     const sections = this.generateSelects(
       this.state.commons.sections,
@@ -308,10 +322,10 @@ export default class WorksDetail extends React.Component {
           <dd>
             <input
               type="text"
-              name="part"
+              name="type"
               className="w-l"
               onChange={this.handleText.bind(this)}
-              value={data.part}
+              value={data.type}
               maxLength="120"
               />
           </dd>
@@ -503,17 +517,23 @@ export default class WorksDetail extends React.Component {
 
         <hr />
 
-        {/*<dl>
+        <dl>
           <dt>画像</dt>
           <dd>
             <label
               className="formFile">
               アップロード
-              <input type="file" />
+              <input
+                type="file"
+                name="image"
+                onChange={this.handleImage.bind(this)}
+                />
             </label>
           </dd>
-        </dl>*/}
+        </dl>
 
+        {imgtag}
+        <p id="imageOutput"></p>
         <p id="message" className="color-brand-danger"></p>
 
         <button
@@ -548,6 +568,9 @@ export default class WorksDetail extends React.Component {
 
     let res = this.state.works;
     res.tags = tags;
+
+    let upload = this.state.upload;
+    res.upload = upload;
 
     delete res.location_id;
     delete res.time_id;
@@ -723,4 +746,81 @@ export default class WorksDetail extends React.Component {
       </label>
     });
   }
+
+  handleImage(e) {
+    var tgt = document.getElementById('imageOutput');
+    var el = document.getElementById('message');
+    let fr = new FileReader();
+    let file = e.target.files[0];
+
+    let img = new Image(); 
+    let src = window.URL.createObjectURL(file);
+    img.src = src;
+
+
+    let _this = this;
+    fr.onload = (function(file) {
+      img.onload = function() {
+        if (_this.validateImage(file, img, el) != false) {
+          initImage();
+          let base64 = _this.convertBase64(img);
+          _this.setState({ upload: base64 });
+
+          img.width = 180;
+          tgt.appendChild(img);
+
+          el.innerHTML = '更新ボタンをクリックすると画像を正方形に加工後保存されます';
+          el.classList.add('pa-EventsAdd-fileMsg');
+        }
+      }
+    })(file);
+
+    function initImage() {
+      tgt.innerHTML = '';
+      // el.classList.remove('pa-EventsAdd-fileMsg');
+      el.innerHTML = '';
+    }
+  }
+
+  convertBase64(img) {
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d'); 
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+    let base64 = canvas.toDataURL('image/jpeg');
+    
+    return base64.replace(/^.*,/, '');
+  }
+
+  validateImage(file, img, el) {
+    var message = '';
+
+    if (file.type != 'image/jpeg') {
+      message = 'jpegファイルを選択してください';
+    }
+
+    if (img.width < 720) {
+      message = '画像の横幅が足りません。720px以上を使用下さい';
+    } else if (img.width > 1440) {
+      message = '画像の横幅が大きすぎます。720px程度を使用下さい';
+    }
+
+    if (img.width < img.height) {
+      message = '横長の画像を使用してください';
+    }
+
+    if (message) {
+      el.innerHTML = message;
+      el.classList.add('pa-EventsAdd-fileMsg');
+    }
+
+    let res = true;
+    if (message != '') {
+      res = false;
+    }
+
+    return res;
+  }
+
 }
