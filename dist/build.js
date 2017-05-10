@@ -7472,6 +7472,14 @@ var Home = function (_React$Component) {
       };
     }
   }, {
+    key: 'overflow',
+    value: function overflow(txt, cnt) {
+      if (txt.length > cnt) {
+        txt = txt.slice(0, cnt) + '…';
+      }
+      return txt;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -7483,11 +7491,11 @@ var Home = function (_React$Component) {
           src: 'imgs/pages/top/category_' + cat + '.jpg',
           width: '50',
           alt: 'category'
-        }), _react2.default.createElement('span', { className: 'pf-Home-cola-date' }, (0, _moment2.default)(_this2.state.topics[i].created).format("YYYY年MM月DD日")), _react2.default.createElement('span', {
+        }), _react2.default.createElement('span', { className: 'pf-Home-cola-date' }, (0, _moment2.default)(_this2.state.topics[i].created).format("MM月DD日")), _react2.default.createElement('span', {
           className: 'pf-Home-cola-title',
           name: i,
           onClick: _this2.enableModal.bind(_this2)
-        }, _this2.state.topics[i].title));
+        }, _this2.overflow(_this2.state.topics[i].title, 18)));
       });
 
       var detail = Object.keys(this.state.topics).map(function (i) {
