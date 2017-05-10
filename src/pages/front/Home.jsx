@@ -41,6 +41,13 @@ export default class Home extends React.Component {
     };
   }
 
+  overflow(txt, cnt) {
+    if (txt.length > cnt) {
+      txt = txt.slice(0, cnt) + '…';
+    }
+    return txt;
+  }
+
   render() {
     console.log(this.state);
     let topics = Object.keys(this.state.topics).map((i) => {
@@ -55,7 +62,7 @@ export default class Home extends React.Component {
           <span className="pf-Home-cola-date">
             {
               m(this.state.topics[i].created)
-                .format("YYYY年MM月DD日")
+                .format("MM月DD日")
             }
           </span>
           <span
@@ -63,7 +70,7 @@ export default class Home extends React.Component {
             name={i}
             onClick={this.enableModal.bind(this)}
             >
-            {this.state.topics[i].title}
+            {this.overflow(this.state.topics[i].title, 18)}
           </span>
         </li>
       );
