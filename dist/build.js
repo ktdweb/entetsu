@@ -9437,7 +9437,7 @@ var Column = function (_React$Component2) {
       var data = this.props.data;
 
       var imgdata = new Image();
-      var imgpath = '/imgs/works/loading_s.jpg';
+      var imgpath = '/imgs/works/loading_s.gif';
 
       imgdata.onload = function () {
         imgpath = '/imgs/works/' + data.img + 's.jpg';
@@ -9621,7 +9621,7 @@ var WorksDetail = function (_React$Component) {
       }
 
       var imgdata = new Image();
-      var imgpath = '/imgs/works/loading_l.jpg';
+      var imgpath = '/imgs/works/loading_l.gif';
 
       imgdata.onload = function () {
         imgpath = '/imgs/works/' + data.img + 'l.jpg';

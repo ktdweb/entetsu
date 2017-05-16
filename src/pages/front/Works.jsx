@@ -768,7 +768,7 @@ class Column extends React.Component {
     let data = this.props.data;
 
     let imgdata = new Image();
-    let imgpath = '/imgs/works/loading_s.jpg';
+    let imgpath = '/imgs/works/loading_s.gif';
 
     imgdata.onload = function() {
       imgpath = '/imgs/works/' + data.img + 's.jpg';
