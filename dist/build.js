@@ -9437,15 +9437,15 @@ var Column = function (_React$Component2) {
       var data = this.props.data;
 
       var imgdata = new Image();
-      var imgpath = '/imgs/works/default/001l.jpg';
+      var imgpath = '/imgs/works/loading_s.jpg';
 
       imgdata.onload = function () {
-        imgpath = '/imgs/works/' + data.img + 'l.jpg';
+        imgpath = '/imgs/works/' + data.img + 's.jpg';
         var el = document.getElementById('column' + data.id);
         el.src = imgpath;
       };
 
-      imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
+      imgdata.src = '/imgs/works/' + data.img + 's.jpg';
 
       return _react2.default.createElement(_reactRouter.Link, {
         to: '/works_detail/' + data.id,
@@ -9621,7 +9621,7 @@ var WorksDetail = function (_React$Component) {
       }
 
       var imgdata = new Image();
-      var imgpath = '/imgs/works/default/001l.jpg';
+      var imgpath = '/imgs/works/loading_l.jpg';
 
       imgdata.onload = function () {
         imgpath = '/imgs/works/' + data.img + 'l.jpg';
