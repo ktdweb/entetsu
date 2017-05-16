@@ -768,15 +768,15 @@ class Column extends React.Component {
     let data = this.props.data;
 
     let imgdata = new Image();
-    let imgpath = '/imgs/works/default/001l.jpg';
+    let imgpath = '/imgs/works/loading_s.jpg';
 
     imgdata.onload = function() {
-      imgpath = '/imgs/works/' + data.img + 'l.jpg';
+      imgpath = '/imgs/works/' + data.img + 's.jpg';
       let el = document.getElementById('column' + data.id);
       el.src = imgpath;
     }
 
-    imgdata.src = '/imgs/works/' + data.img + 'l.jpg';
+    imgdata.src = '/imgs/works/' + data.img + 's.jpg';
 
     return (
       <Link
