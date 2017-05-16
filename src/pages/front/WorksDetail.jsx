@@ -63,7 +63,7 @@ export default class WorksDetail extends React.Component {
     }
 
     let imgdata = new Image();
-    let imgpath = '/imgs/works/default/001l.jpg';
+    let imgpath = '/imgs/works/loading_l.jpg';
 
     imgdata.onload = function() {
       imgpath = '/imgs/works/' + data.img + 'l.jpg';
