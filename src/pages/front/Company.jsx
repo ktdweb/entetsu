@@ -140,7 +140,7 @@ export default class Company extends React.Component {
             </div>
 
             <div className="ceo">
-              <p>取締役社長<br />藤野 聡</p>
+              <p>取締役社長<br />寺田　宏明</p>
               <img src={IMG + 'ceo_photo.jpg'} width="140" height="210" alt="CEO" />
             </div>
 
