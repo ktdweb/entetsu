@@ -206,7 +206,7 @@ export default class Company extends React.Component {
                 
                 <tr>
                   <td>代表者</td>
-                  <td>取締役社長　藤野　聡</td>
+                  <td>取締役社長　寺田　宏明</td>
                 </tr>
             
                 <tr>
@@ -358,6 +358,13 @@ export default class Company extends React.Component {
                 <td>2016年8月2日</td>
                 <td>
                   ベンリー遠鉄浜松高林店オープン
+                </td>
+              </tr>
+
+              <tr>
+                <td>2017年6月29日</td>
+                <td>
+                  取締役社長に寺田宏明氏就任
                 </td>
               </tr>
 

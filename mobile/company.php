@@ -75,7 +75,7 @@
             </tr>
         	<tr>
             	<th abbr="項目名">代表者</th>
-                <td>取締役社長　藤野　聡</td>
+                <td>取締役社長　寺田　宏明</td>
             </tr>
         	<tr>
             	<th abbr="項目名">従業員</th>
@@ -172,6 +172,10 @@
         	<li>
             	<p class="date">2016年8月2日 </p>
                 <p class="article">ベンリー遠鉄浜松高林店オープン</p>
+            </li>
+        	<li>
+            	<p class="date">2017年6月29日 </p>
+                <p class="article">取締役社長に寺田宏明氏就任</p>
             </li>
         </ul>
         <div class="access">
